@@ -1,0 +1,368 @@
+<HTML>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<HEAD>
+<TITLE>TeX Support</TITLE>
+</HEAD>
+<BODY BGCOLOR = "#CCFFCC">
+<A NAME = "top"></A>
+<div align = "right"><I>Last Update: April 9, 2016</I></div>
+<HR>
+<H2>TeX Support</H2>
+
+<ul>
+<li><a href="#about">About This Page</a>
+<li><a href="#tex">TeX</a>
+<li><a href="#installation">Installation</a>
+<li><a href="#basics">Basics</a>
+<li><a href="#misc">Miscellanious</a>
+<li><a href="#thesis">Thesis</a>
+<li><a href="#presentation">Presentation</a>
+<p>
+<li><a href="tex-online.html">TeX Online</a>
+<li><a href="#links">Useful Links</a>
+</ul>
+<a name="about"></a>
+<hr>
+<DIV ALIGN = RIGHT><TABLE BORDER = 3 BGCOLOR = "#FFFFFF"><TR>
+<TD><A HREF = "#top">TOP</TD>
+<TD><A HREF = "index.html">CW in ME</A></TD>
+<TD><A HREF = "../../index-j.html">HOME (J)</A></TD>
+<TD><A HREF = "../../index.html">HOME (E)</A></TD>
+</TR>
+</TABLE>
+</DIV>
+<H3>About This Page </H3>
+
+This page is designed mainly to support ICU students who will write senior thesis and master thesis by TeX.
+
+<p>
+<a name="tex"></a>
+<hr>
+<DIV ALIGN = RIGHT><TABLE BORDER = 3 BGCOLOR = "#FFFFFF"><TR>
+<TD><A HREF = "#top">TOP</TD>
+</TR>
+</TABLE>
+</DIV>
+<H3>TeX, LaTeX, pLaTeX, ...</H3>
+
+TeX と称されるのは、D. Knuth のグループが開発した組み版システムの総称である。使いやすくするために、マクロといわれる標準的に利用するものを付け加えて L. Lamport が LaTeX と呼ばれるシステムにしてから、数式を使うことが多い、数学、理論物理学、数理情報科学などで利用者が増え、これらの分野では標準的な論文作成ツールとなっている。
+<p>
+Unix 上で開発が進められたことにより、そのコマント群が中心となっている。*.tex と拡張子のついた、テキストファイルを、latex というコマントで、*.dvi と拡張子のついた、divice independent file と呼ばれる、バイナリーファイルが作成され（同時に、他に、*.aux, *.log などの参照ファイルが作成される）これから、さらに、印刷するために、*.ps というポストスクリプトファイル、または、*.pdf という PDF (Portable Document Format) ファイルに変換され、印刷される。*.dvi ファイルを画面に表示するのは、dvi viewer などと呼ばれる。コマンドを [command] で記述すると、
+<blockquote>
+*.tex -> [latex]-> *.dvi -> [dvips] - *.ps (または [dvipdf] -> *.pdf)
+</blockquote>
+日本語化はいくつか存在するが、基本的なものは、pLaTeX で、そのもとでは、おおよそ
+<blockquote>
+*.tex -> [platex]-> *.dvi -> [dvipsk] - *.ps (または [dvipdfmx] -> *.pdf)
+</blockquote>
+となっている。最初の *.tex ファイルは、様々な、エディター（代表的なものは、Emacs) ただ、MS Word などしか利用したことが無く、エディターの概念も無く、コンピュータを使う場合が多くなり、基本的なコマンドをコマンドラインで打ち込むのは、初心者には、敷居が高いこともあり、上記コマンド群を使いやすくしたものがいくつか現れている。これもたくさん種類があるが、ここでは、Macintosh に関しては、TeXshop、Windows に関しては、Winshell に限り紹介する。個人的には、Macintosh または、Unix 系を日常的に利用しているので、Windows 系は、時折、周辺のコンピュータの管理上さわる程度で、詳しくはないことを断っておく。
+<p>
+まとめると、Macintosh では、TeXshop が適切に動き、Windows で Winshell が適切に動けば、あとは、コマンド群のことは、知らなくても、TeX システムを利用することができる。ただし、これらは、背景にある、コマンド群を使いやすくする者で、TeX システム自体ではないので、まずは、TeX システム自体をインストールし、その上で、これらを設定する必要があることである。
+<p>
+<a name="installation"></a>
+<hr>
+<DIV ALIGN = RIGHT><TABLE BORDER = 3 BGCOLOR = "#FFFFFF"><TR>
+<TD><A HREF = "#top">TOP</TD>
+</TR>
+</TABLE>
+</DIV>
+<H3>Installation</H3>
+2015年11月時点では、TeXLive2015 という Distribution（関連ソフトをまとめたもの）でそれぞれのシステムへのインストール用に提供されているものを使えば、日本語環境も含め、基本的に問題はない。上にも書いた、使いやすい環境にするソフトは、システム毎に種類が違うが、それは、TeXWiki などを参照して頂きたい。[2015.11.20]
+<p>
+基本的なコンピュータの仕組み、Opearting System (Unix, MS-DOS 等) についても基本的な知識があることが望ましいが、まず、TeX を使うことも重要である。それにしては、最初のハードルが高い。
+なるべく、単純なインストールで、かつ広く使われているものについて説明する。
+
+<H4>Microsoft Windows</H4>
+
+以下の記事は多少古いので、TeXLive2015 または下にもある角藤さんがまとめてあるものをつかうのが、よいでしょう。どちらも大きな違いはないようです。TeXLive2013 が出てからは、わたしは、基本的に、TeXLive をベースにしています。[2015.11.20]
+<p>
+<UL>
+<LI>基本インストール：<br>
+角藤さんによるW32TeX (インストーラー）・dviout for Windows（Windows 標準の Viewer、TeX で書いたもののできあがりを見るもの）・Ghostscript（8.11以降）画像ファイルなどの対応・GSview（その関連）
+<OL>
+<LI><a href="http://www.ms.u-tokyo.ac.jp/~abenori/mycreate/abtexinst.html">あべのりさん（阿部 紀行氏）のページ</a> へ。
+<LI>「詳しいこと」にあるドキュメントと、「プラグイン」の readme を読む。たまに失敗することがあるとしてその時の対処方法も書いてある。
+<LI>TeX インストーラー３「最新版」と、「プラグイン集」をダウンロード（abtexinst に version number がついたものと、abtexinst_plugins ができる。ダブルクリックして解凍または、自動で解凍されていると、どちらも abtexinst となっているかも知れない。）
+<LI>「最新版」をダブルクリックして解凍。abtexinst ができる。完全には解凍されていない時は、abtexinst を ダブルクリックしたとき指示に従い、[すべて展開]を選ぶ。（ファイルはまずは幾つかのものをまとめてそれを圧縮指定あるので二段階になっている。一度に解凍できるかどうかは設定によると思われる。）
+<LI>インストーラー (abtexinst.exe) をダブルクリック。インストールするものすべてのチェックボックスにチェックが吐いているので、そのまま、「次へ」このあと、何が出ても「次へ」「Install」「ＯＫ」をただ押し続ければ良い。（この間に必要なものをすべてダウンロードしてインストールしていくので [キャンセル] は選ばない。環境によって異なるがダウンロードだけで大体 15 分程度。大体４回ほど「次へ」を押すと、暫くして、インストールと出て、インストール作業が開始される。Ghostscript のインストールの時に一度止まるので「Install」を押す。）<br>
+次の項目にいけず、適切なものが見つからないときは、下の Tab に、展開ソフトが動いている、そこを見ると、Setup ボタンを押すということになっているかも知れない、すると　言語を選ぶので English を選択、その後 Next を 4回。すると GSview が適切にインストールされているはず。
+<LI>「詳しいこと」のドキュメントに、次のように書いてある。<br>
+<blockquote?インストール後にGSviewを起動し（スタート→プログラム→Ghostgum→gsview **.**），Options→Advanced Configureと選びます．出てきた「Ghostscript Options」の欄に，<br>
+ -dWINKANJI<br>
+と追加してください．
+</blockquote>
+窓が一つあいて、そこに GhostView のアイコンが見えるのでそれをダブルクリックすれば良い。Option にもいろいろ書いてあるが、その最後に「-dWINKANJI」を追加しなさいという指示。そして 「OK」。（ここで、GSView の File から C: にある、gs の中の example の tiger を選択すると、tiger の絵が出る。すると成功といろいろなところに書いてあります。GSview Install の Tab で 「Exit」を選べば終了。）
+<LI>dviout の印トール場所の確認が出ますが、これも 「OK」で最後に、「インストールの完了」と出れば、「完了」を押して終了。「再起動が必要です」と出るので、再起動。
+</OL>
+<LI>追加項目のインストール<br>
+Xy-pic（TeX では難しい図などを書くためのもの）・ispell（英語の TeX にも使えるスペルチェッカー）・WinShell（高機能TeX統合ソフト）・pLaTeX2e 新ドキュメントクラス（日本語関連の新しい書式）<br>
+詳しい説明は、「プラグイン」readme にある、リンクを参照。
+<OL>
+<LI>「プラグイン集」を解凍。abtexinst-plugins ができる。「プラグイン集」のフォールダの中味を、「最新版」インストーラの plugin フォールダーに入れる。
+<LI>「最新版」を解凍して、上で使った、abtexinst.exe を起動。今度は、最初はすべてインストールしそうだが、「インストールファイルの選択」が出ると殆どチェックボックスにチェックが入っていない。それで良い。「次へ」とすると、今度は、追加する「プラグイン」のリストが出る。このあとも、「次へ」「ＯＫ」を繰り返す。途中で一回言語を Japanese とすること、Winshell の利用規約に同意することが出るが、言語は OK とし、同意は「同意」を選択すれば、良い。最終的には、WinShellが立ち上がる。すぐ、次へ進まないで、一旦落ち着いて、インストーラのタブを選択し、完了とでて、再起動を求められるので、再起動するのが良い。
+</OL>
+<LI>WinShell の設定<br>
+基本は、どのプログラムを実際の実行に使うかで、日本語 TeX を使う独特の設定があるため、多少面倒。日本語を全く使わないのであれば、殆ど何もしなくて良いが、それなら、上の基本インストールなども、もっと簡単にできたわけで、せっかくなので、あと少し頑張ってみる。<br>
+TeX では、ソースファイル (file.tex) というものから、印刷に必要な各種ファイルを生成し、(file.dvi, file.aux, file.log, file.toc 等）それを見 (dviout などで）、修正する。さらに、必要に応じて pdf を生成する。dviout を使わず、つねに、pdf を見ながら編集する手もあるが、Windows では、divout が基本になっている。それぞれの段階で使うプログラムが、今は、eplatex.exe, pbibtex.exe などなどとなっているので、その設定が必要になる。
+<OL><LI><a href="http://oku.edu.mie-u.ac.jp/~okumura/texwiki/?WinShell3">TeXWiki の WinShell3 のページ<a> にいき、設定までをざっと読む。
+<LI>おそらくデスクトップにアイコンができているので、それをダブルクリックかまたは、おプログラムファイルから、WinShell を起動させ、「オプション」から、TeX 関連プログラムの設定（開いたオプションページからも選べる）を選び、設定の項目に従って設定する。少し面倒なのが主なTeXプログラムの設定で、右の方のプログラムにある項目を一つずつ選択し、それぞれで以下の仕事をする。大切なのは、以下の三点である。
+<ol>
+<li>exe ファイル名の確認。大体は、参照を選び、能動的に、そのファイルの入っている、C:\usr\local\win32tex\bin や C:\gs の中に入って、当該の実行ファイルをみつけ、選択すること。（win32tex\bin および \gs の中から選ぶことが重要、dviout は、win32tex/divout/ に入っている。）
+<li>コマンドラインの修正。コピーして、ペースト。
+<li>PDFView に関しては、通常 Acrobat Reader を利用すると思われるが、Adobe Reader X と Adobe Reader 9 以前とで設定が違うので注意を要する。良く指定を読むこと。
+<li>右にあるチェックボックスの確認。特に、PDFView で、右の PDFLaTeX を先に実行のチェックボックスを外すところである。これは、直接 pdf を作るコマンドが英語にしか対応していないので、日本語が入っている場合には、二段階にするためである。
+</ol>
+</OL>
+<LI>テスト
+<ol>
+<LI>たとえば、TeXwiki の <a href="http://oku.edu.mie-u.ac.jp/~okumura/texwiki/?TeX%E5%85%A5%E9%96%80">使い方、最初の例</a>にある例の、\documentclass{jarticle} から \end{document} をコピーし、WinShell のファイルで新規として、これを貼り付ける。
+<LI>実行から「LaTeX」を選ぶと、まず保存先を聞かれるので、自分のDocument の中に、「TeX」など適当に名前をつけたフォルダーを作り、その中に、test.tex という名前で保存。すると、なにか動き最後に、WinShell の下に、「０個のエラー」と出れば成功。この時点で、先ほどの、TeX フォルダーには、いくつかのファイルができています。
+<LI>次にWinShell の実行から「DVI閲覧」を選ぶと、divout が動き、次が出るはずです。出たら成功。
+<LI>次にWinShell の実行から「PDFLaTeX」を選択。「０個のエラー」と出れば成功。上の「TeX」フォルダに pdf ができているはずです。
+<LI>次に WinShell の実行から「PDF閲覧」を選択すると、Adobe Reader が立ち上がって、表示されるハズです。むろん、TeX フォルダにあるものを開いても同じです。
+<LI>PSというポストスクリプトファイルを作り、それを見たいときは実行の他のものを使うということです。
+<LI>英語の文章であれば、iSpell でスペルチェックが掛けられます。
+</ol>
+<LI>終了。お疲れさま。
+<LI>WinShell は高機能だが、多少設定が面倒なので、他のもののほうが簡単かもしれない。大学で入れてあるのは、WinShell なので、その解説とした。
+<LI>TeXWiki のインストールを読みながら進めると２時間程度はかかるが、この「あべのり」さんのもんを使うとここまで45分程度。大分楽だ。ここにいたるまで、開発に携わって下さった方に感謝。
+<p>
+<LI>上のテストが成功しなかった場合、まず、チェックするのは、WinShell の設定。次には、GhostView の設定。他で間違うことはあまりない。これらをチェックして、どうしてもうまくいかなければ、win32tex と、gs をすべて消してやり直すのが良いが、これらの名前だけを winretex-old などと変えて最初からやり直すのがお薦め。
+<p>
+<LI>なるべく新しい日本語の本で、インストールのための CD や DVD がついている物を利用するのも良い。図書館にも大体入っているハズである。
+</UL>
+<p>
+
+<H4>Apple MacOS</H4>
+以下の記事は多少古いので、TeXLive2015 またはそれに多少 Mac Original な TeX 関連ソフトをまとめた、MacTeX を使うか、最小限のものに限った BasicTeX を使うかでしょう。頻繁に利用する場合は、MacTeX がよいかと思いますが 2GB 程度ありますし、すべて使うわけではないので、TeXLive2015 で充分でしょう。これもかなり大きいです。Rmarkdown などで、pdf を書き出す補助としてつかうなら、BasicTeX で充分だと思いますが、こちらは、試していません。RStudio などで、Rmarkdown を使う場合などは、それらの検索項目で調べてみて下さい。TeXLive2013 が出てからは、わたしは、基本的に、TeXLive をベースにしています。[2015.11.20]
+<p>
+<i>[2012.6.29]</i><br>
+[OLD] に残してある方法を個人的には使ってきたが、学生などに教えるときは、Unix の知識がないと、問題を起こすこともあるので、極力簡単な方法を書いておこうと思う。Unix の基本知識を知っておくことは、是非学生には、進めたいが、TeX を使うのに必須なわけではないので、以下にインストールの方法などを書くこととする。
+
+<UL>
+<LI>基本インストール：「<a href="http://www2.kumagaku.ac.jp/teacher/herogw/index.html">小川氏のサイト</a>」の Drag and Drop UpTeX を利用する。（利点は、これだけでも基本的なことはできること。TeXshop への連携も簡単な事、さらに最も重要なこととして、日本語の encoding を気にせずに利用できることである。）
+<ol>
+<li>[TeX と基本的な周辺ツールのインストール] 
+<ol type="i">
+<li><a href="http://www2.kumagaku.ac.jp/teacher/herogw/index.html">小川氏のサイトから</a> Drag &Drop pTeX をダウンロード。（Drag &Drop pTeX は大きなファイルのため、多少ダウンロードに時間がかかります。）
+<li>ダウンロードフォールダに UTeX のあとに日付がついたファイルがある。(2012.6.29 現在 UTeX20111010.dmg 約 200MB) これをダブルクリック。ここにある、UpTeX.app をアプリケーションフォルダに入れる。（UpTeX.app 以外に、説明が入っており、これを丁寧に読めば、これ以降のことがすべて、もっと丁寧に書いてある。ただ、理解するのに時間がかかるかも知れないし、見慣れない用語があるかも知れないので、一番標準的なことだけ書く。）
+<li>（このステップが以下に書いてある状況と違っていたり、よく分からなかったら、スキップしてもさしあたって大きな問題はないと思われる。ただしあとから、この作業をするときは、これ以降のステップをやり直すこと。）2012.6.20 現在、UpTeX 差分ファイルが公開されており、それも、上の小川氏のサイトにある。uptexdiff20111010.dmg が公開されているので、これを、ダウンロード。ダウンロードフォルダに入っているものを、ダブルクリック。これは、dvipdfmx というコマンド（の binary file）が入っている。アプリケーションフォルダの、UpTeX を control キーを押しながらクリック。すると、メニューがあらわれ、「パッケージの中身をを表示」が二番目あたりに現れるので、それを選択。あらわれたら、teTeX フォルダーの中の bin フォルダーに先ほどの、dvipdfmx を入れる。そこにも古いものがはいっているので、置きかえてもよいかと出るので、置きかえる。
+<li>アプリケーションフォルダの UpTeX.app をダブルクリック。すると、「初期化？」が出るので、OK. （ここでやめても十分使えます。その場合は、次の TeXshop のインストールをとばして、その次へ。お薦めは、TeXshop をインストール。）
+</ol>
+<li>TeXを使いやすくするための TeXshop をインストール：
+<ol type="i">
+<li>[TeXShop のインストール] <a href="http://darkwing.uoregon.edu/~koch/texshop/texshop.html ">ここ</a>の上のタブ Obtaining  からダウンロードして（zip ファイル形式で、おそらく自動的に解凍となります）それをアプリケーションフォルダに入れる。
+<li>[設定] アプリケーションフォルダにいれた TeXshop をダブルクリック。TeXshop メニューの環境設定を開く。上のタブで書類を選び、下の設定プロファイルから、pTeX(Shift-Jis) を選ぶ。内部設定タブを開きその中の、(pdf)TeX を、/Applications/UpTeX.app/teTeX/bin にする。右真ん中の LaTeX を Xtexshop にする。一度閉じる。
+</ol>
+<li>追加インストールをする時
+<ol type="i">
+<li>何か追加でインストールする事があります。追加スタイルなどです。そのときは、その readme などを良く読んで、大体、1 (iii) のことをし、そのあと、1 (iv) を実行すれば使えると思います。うまくいかなければ、2 (ii) を確認してください。
+<li>TeXShop を update するときは、おそらくただインストールすれば問題ありません。おかしくなったら、2 (ii) を確認してください。
+</ol>
+</ol>
+<li>使い方
+<ol>
+<li>TeXshop で使う時。
+<ol type="i">
+<li>*.tex ファイルを、TeXshop にドラッグドロップするか、TeXshop をダブルクリックすると editor が立ち上がります。修正して、タイプセットボタンを押せばおしまい。
+<li>ウインドウメニューに、LaTeX メニューなどがあります。タグボタンなども有効でしょう。
+</ol>
+<li>Drag&Drop UpTeX だけで使う時
+<ol type="i">
+<li>*.tex ファイルを、UpTeX.app に Drag&Drop。TeX2PDF と出てくるので、OK とすると、pdf ができます。edit として OK すると、TeXPad というエディターが立ち上がり、修正ができます。修正し、保存をしてから、右下のボタンを押すと、pdf を作ってくれます。
+<li>もう少し詳しいことが、最初にダウンロードし多フォルダーの説明書に書いてありますので、読んでみて下さい。
+</ol>
+<li>Terminal で Unix コマンドも使いたいとき。
+<ol type="i">
+<li>[下準備] .bash_profile というファイルに、path を指定する次の一文を入れます。<br>
+		export PATH=/Applications/UpTeX.app/teTeX/:${PATH}<br>
+		これが何のことか分からない人はやめておいた方がよいでしょう。
+<li>アプリケーションのユーティリティにある、Terminal を立ち上げます。
+<ol type="a">
+<li>*.tex などの入っているフォルダに移動。または、cd とうちそのあとに、*tex ファイルが入っている、フォルダをドラッグドロップ
+<li>/Applications/UpTeX.app/teTeX/platex <i>file name.tex</i><br>
+これで、dvi ファイルなどができます。上でパスを通してあれば、platex <i>file name.tex</i>
+<li>/Applications/UpTeX.app/teTeX/dvipdfmx <i>file name.dvi</i><br>
+pdf ファイルができます。
+<li>この二つができれば、たとえ、div file を送られてきて、それを見たいときも、問題ないでしょう。
+<li>さらに、ps file を見たり、dvi file を見たりしたいときは、「<a href="http://osksn2.hep.sci.osaka-u.ac.jp/~taku/osx/install_xtexgsgv.html">教授でもできる</a>」を参照して、下さい。
+</ol>
+</ol>
+</ol>
+</UL>
+
+<h4>OLD</h4>
+基本的に現在はお薦めではない、または、使えないと思って下さい。しかし、記録のために残します。
+<p>
+<i>[2011.7.11]
+<UL>
+<LI>基本インストール：「<a href="http://osksn2.hep.sci.osaka-u.ac.jp/~taku/osx/install_xtexgsgv.html">教授でもできる</a>」 をずっと利用させていただいている。<a href="http://oku.edu.mie-u.ac.jp/~okumura/texwiki/?Mac">texwiki</a> からもリンクがあり、個人的には使いやすい。多少の難点は、Terminal を使った設定が最初にすこしあること。しかし、その部分の解説も詳しいので、おそらく問題はないと思われる。基本は以下の通り。
+<ol>
+<li>[下準備] .bash_profile というファイルに、path を指定する次の一文を入れます。<br>
+		export PATH=/usr/local/bin:${PATH}
+<li>[pTeX と gs のインストール] <a href="http://www2.kumagaku.ac.jp/teacher/herogw/index.html">小川氏のサイトから</a> Drag &Drop pTeX と ESP Ghostscript7.07.1 をダウンロードしてインストール。 （Drag &Drop pTeX は大きなファイルのため、多少ダウンロードに時間がかかります。）
+<li>[gv - Ghorstview のインストール] <a href=""http://www2.kumagaku.ac.jp/teacher/herogw/archive/gsv060121.dmg">GS Previewer</a>をダウンロードしてインストール。
+<li>[TeXShop のインストール] <a href="http://darkwing.uoregon.edu/~koch/texshop/texshop.html ">ここ</a> からダウンロードしてインストール。設定は、<a href="http://osksn2.hep.sci.osaka-u.ac.jp/~taku/osx/install_texshop.html">ここ </a> を参照。
+</ol>
+<li>参照サイトを見てインストールすれば、殆ど一般のMacソフトと替わらないので、簡単。下準備のところだけ、Unix を知らない人は良く読んでから実行すること。Terminal が動かなくなるなどのことがたまにおこるが、それは、.bash_profile や、.tcshrc に変なことを書いてしまったためなので、一度消してやり直せばよい。
+</UL>
+</i>
+<H4>Unix</H4>
+
+<a name="basics"></a>
+<hr>
+<DIV ALIGN = RIGHT><TABLE BORDER = 3 BGCOLOR = "#FFFFFF"><TR>
+<TD><A HREF = "#top">TOP</TD>
+</TR>
+</TABLE>
+</DIV>
+<H3>Basics</H3>
+
+下のリンクリストにもありますが、<a href="http://mytexpert.sourceforge.jp/">渡辺徹さんのページ</a> MyTeXpert にいき、左のフレームにある「好き好きLaTeX2e/初級編」を選択し、「配布形式」のなかの「電子媒体」の「閲覧用 PDF」を選択して、「好き好きLaTeX2e/初級編」を見てみることをお薦めします。これは、ダウンロードしていつでも参照できるようにしておくと便利でしょう。印刷体の本も安価で出ていますので、それを購入するのもよいですし、図書館で、何冊かみてみて、そのなかで自分が使いやすいものを一冊購入することをお薦めします。冊子体のものと、電子媒体のものと一長一短ですから、上手に利用して下さい。
+
+この本自体も無論TeXで書かれていてそのソースも公開されています。
+<p>
+少しなれてきたら、Links にある小田先生のページを見て下さい。
+<p>
+<a name="misc"></a>
+<hr>
+<DIV ALIGN = RIGHT><TABLE BORDER = 3 BGCOLOR = "#FFFFFF"><TR>
+<TD><A HREF = "#top">TOP</TD>
+</TR>
+</TABLE>
+</DIV>
+<H3>Miscellaneous</H3>
+
+
+<a name="thesis"></a>
+<hr>
+<DIV ALIGN = RIGHT><TABLE BORDER = 3 BGCOLOR = "#FFFFFF"><TR>
+<TD><A HREF = "#top">TOP</TD>
+</TR>
+</TABLE>
+</DIV>
+<H3>Thesis</H3>
+
+ICUの学生は、学内 web から、スタイルファイルをダウンロードして利用してください。
+<p>
+<a href="http://w3.icu.ac.jp/people/hsuzuki/support/senior.html">ICU内サポートページ</a>
+<p>
+<a name="presentation"></a>
+<hr>
+<DIV ALIGN = RIGHT><TABLE BORDER = 3 BGCOLOR = "#FFFFFF"><TR>
+<TD><A HREF = "#top">TOP</TD>
+</TR>
+</TABLE>
+</DIV>
+<H3>Presentation</H3>
+
+用途、好み、環境、時間をどの程度使うかなどにより、いろいろな方法が考えられるが、大部分の内容は LaTeX で書かれたものがすでにある場合を想定して、何種類か、プロジェクターを使って、スクリーンに東映することを想定して、説明する。上にある方が、基本的には、作業量が少ないと思って良い。
+<UL>
+<LI>[A5 横置きにして、ページ区切りのみ変更する方法] <br>
+<pre>
+\documentclass[a5paper, 12pt, landscape]{article}
+\AtBeginDocument{\special{papersize=\the\paperwidth,\the\paperheight}}
+%A5 Size Setting
+\topmargin = -1cm
+\oddsidemargin = 0cm \evensidemargin = 0cm
+\textheight = 10cm \textwidth = 16cm 
+%A5 size Setting End
+</pre>
+最後の A5 setting は余白をコントロールするためのもので、入れなくても問題はありません。つまり重要なのは、上の二行のみ。<br>
+これが一番簡単ですが、フォントが通常のフォントなので、プロジェクターによっては、読みにくいこともある。
+<p>
+<LI>[Slide のスタイルを使う方法]<br>
+<pre>
+\documentclass[a5paper, landscape]{slides}
+\AtBeginDocument{\special{papersize=\the\paperwidth,\the\paperheight}}
+%A5 Size Setting
+\topmargin = -2.5cm
+\oddsidemargin = -0.5cm \evensidemargin = 0cm
+\textheight = 11.5cm \textwidth = 17cm % default \textheight = 10cm \textwidth = 16cm 
+%A5 size Setting End
+</pre>
+OHP シートなどに使ったものをそのまま使う方法。基本的にこれで十分。問題は字が大きくなり、あまりたくさんのコンテンツを一ページに入れられない。そこで、上の例でも A5サイズで、余白を少なくするようにしてある。これは任意。最近は、プロジェクターの性能が良くなっており、もっと小さなフォントでも読むことができるので、高機能なものを利用するのも良いが、これを使っておけば、どこででも問題が無いことも確か。<br>
+なお、このスタイルと使うときは、それぞれのページを、
+<pre>
+\begin{slide}{}
+
+\end{slide}
+</pre>
+でかこむこと。セクションなどは、使えない。
+<p>
+
+<LI>[Beamer を利用する方法]<br>
+<pre>
+\documentclass{beamer}
+\title{Presentation Using Beamer}
+\author{Suzuki, Hiroshi}
+\date{\today}
+\begin{document}
+\maketitle
+\begin{frame}{Introduciton}% {} でも構いません。ページ左上に見出しがでます。
+It is not difficult to use Beamer if it is properly installed.
+
+日本語も問題無いはずです。
+
+\medskip
+ただ、通常の slide より、詰めて表示するので、これだけだと、真ん中によりちょっとさびしい。
+\end{frame}
+\end{document}
+</pre>
+詳しくは、下の<A HREF="#links">リンク</A>のページを参照して下さい。
+<LI>[Powerdot を利用する方法]<br>
+Web で検索して下さい。（準備中）
+<LI>[Powerpoint などのプレゼンテーションツールを利用する方法]<br>
+基本的な部分は、プレゼンテーションツールを用い数式などは、TeX からつくった pdf を切り貼りする方法である。図などが多い場合は、これも有効。しかし、あまりに恰好に手を掛けるのは、疑問も残る。
+</UL>
+
+<p>
+<a name="links"></a>
+<hr>
+<DIV ALIGN = RIGHT><TABLE BORDER = 3 BGCOLOR = "#FFFFFF"><TR>
+<TD><A HREF = "#top">TOP</TD>
+</TR>
+</TABLE>
+</DIV>
+<H3>Links </H3>
+
+<ol>
+<li><a href="https://texwiki.texjp.org">TeXWiki</a>: All fundamental information about Japanese TeX users.<br>
+奥村晴彦先生が運営なさっていました TeX Wiki は，2016 年 1 月 20 日をもって，日本語 TeX 開発コミュニティに移管とのことです。奥村先生本当に長い間お世話になりました。
+<li><a href="https://oku.edu.mie-u.ac.jp/~okumura/">奥村先生のページ</a>：統計や情報なども含めこれまで蓄えられている情報は充実しています。
+<li><a href="https://osdn.jp/projects/mytexpert/releases/">MyTeXpert</a>: 渡辺徹さんのページから移されたダウンロードページ。「渡辺さんの『好き好きLaTeX - 初級編』閲覧用をダウンロードしておけば、基本的なことは殆どすべて解決。出版物のこれからの形としても、模範となるべきものである。」といつも学生に紹介していたもの。<br>
+ページリンク先に 1.1.3 などとして「好き好きLaTeX - 初級編」が配布されている、また、ron として「LATEX による論文作成の手引き」ので、基本的なものは、みな入手できるが、充実したページが更新されていくのは、楽しみだったが、それが無くなってしまったのは残念。渡辺徹先生もご苦労様でした。わたしのぺーじはどうしようかな。
+<li><a href="http://www.math.tohoku.ac.jp/~kaoru/web/local/tex/oda_tex.pdf">小田忠雄先生（東北大名誉教授）</a> のページ。国際基督教大学でもオスマー客員教授を一年間務めて下さった。「数学の常識・非常識---由緒正しい \TeX 入力法」はTEX Source File まで公開して下さっている。是非参考にしてほしい。
+<li>LaTeX Presentation のための、Beamer についての <A HREF="http://www.opt.mist.i.u-tokyo.ac.jp/~tasuku/beamer.html">相馬 輔（Soma, Tasuku）さん</A>のページ。これで十分だと思います。あとは、ネットで検索すると、いくつもサンプルが得られます。研究分野が近い、信州大学の <A HREF="http://math.shinshu-u.ac.jp/~hanaki/beamer/beamer.html">花木さん</A> のサンプルのリンクをつけておきます。
+<p>
+<li>Online TeX：詳細は<a href="tex-online.html">こちら</a>
+<OL>
+<LI><A HREF="https://cloudlatex.io/ja">Cloud LaTeX</A>: Acaric が運営する、日本語 TeX が Default で使えるサイト。
+<LI><A HREF="https://ja.sharelatex.com">SHARE LATEX</A>: おそらく最もよく使われている Online TeX<br>
+日本語については、<A HREF="https://ja.sharelatex.com/learn/Japanese">ここ</A>に説明があるが、単に、次の一行を加えれば問題ないと思われる。<br>
+\usepackage[whole,autotilde]{bxcjkjatype}
+<LI><A HREF="https://www.overleaf.com">OverLeaf</A>: WriteLaTeX として、Online Latex としては、最初にスタートしたサイト、いまは、OverLeaf として生まれ変わっている。日本語を用いる場合は、次の一行を加えれば問題ないと思われる。<br>
+\usepackage[whole,autotilde]{bxcjkjatype}
+<LI><A HREF="https://cloud.sagemath.com">SageMathCloud</A>: 総合環境で、この中で TeX も使える。SageMath Worksheet がメインであるが、他に、Octave (MatLab の Free 版), IPython, R なども使える。日本語を用いる場合は、次の一行を加えれば問題ないと思われる。<br>
+\usepackage[whole,autotilde]{bxcjkjatype}
+</OL>
+<li>日本語TeXについて
+<ol>
+<li><A HREF="http://mytexpert.osdn.jp/?TeX%A4%CE%BA%C7%B6%E1%A4%CE%C6%B0%B8%FE">TeXの最近の動向</A>: 「好き好きLaTeX」の渡辺さんのページ
+<li><A HREF="http://knoppix-math.org/wiki/index.php?plugin=attach&refer=%BF%F4%B3%D8%A5%BD%A5%D5%A5%C8%A5%A6%A5%A7%A5%A2%A4%C8%A5%D5%A5%EA%A1%BC%A5%C9%A5%AD%A5%E5%A5%E1%A5%F3%A5%C8%2F14&openfile=msfd14ptex.pdf">pTEX系列の最近の状況について</A>: epsilon–pTEXの開発者北川弘典氏の2012年3月25日の講演スライド（個人的にはこの記事で大体を把握しました）
+</ol>
+</UL>
+
+</ol>
+
+<hr>
+<DIV ALIGN = RIGHT><TABLE BORDER = 3 BGCOLOR = "#FFFFFF"><TR>
+<TD><A HREF = "#top">TOP</TD>
+<TD><A HREF = "index.html">CW in ME</A></TD>
+<TD><A HREF = "../index-j.html">HOME (J)</A></TD>
+<TD><A HREF = "../index.html">HOME (E)</A></TD>
+</TR>
+</TABLE>
+</DIV>
+</BODY>
+</HTML>

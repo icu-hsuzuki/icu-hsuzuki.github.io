@@ -1,0 +1,285 @@
+<HTML>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<HEAD>
+<TITLE>TeX-Online</TITLE>
+</HEAD>
+<BODY BGCOLOR = "#CCFFCC">
+<A NAME = "top"></A>
+<div align = "right"><I>Last Update: March 3, 2017</I></div>
+<HR>
+<H2>TeX Online</H2>
+
+<ul>
+<li><a href="#about">About This Page（このページについて）</a>
+<li><a href="#platex">pLaTeX</a>
+<li><a href="#pdflatex">pdfLaTeX</a>
+<li><a href="#lualatex">LuaLaTeX</a>
+<li><a href="#xelatex">XeLaTeX</a>
+<li>Online TeX Sites
+<ul>
+<li><a href="#cloudlatex">CloudLaTeX</a>
+<li><a href="#overleaf">OverLeaf</a>
+<li><a href="#sharelatex">ShareLaTeX</a>
+<li><a href="#smc">SageMath Cloud</a>
+<li><a href="#papeeria">Papeeria</a>
+<li><a href="#misc">Miscellaneous</a>
+</ul>
+<li><a href="TeX_Workshop2016.pdf">TeX Workshop 2016 Slides</a><br>
+Screen-capture video: <a href="tex_ws2016.mp4">[209MB in mp4]</a>
+<p>
+<li><a href="#links">Useful Links</a>
+</ul>
+<a name="about"></a>
+<hr>
+<DIV ALIGN = RIGHT><TABLE BORDER = 3 BGCOLOR = "#FFFFFF"><TR>
+<TD><A HREF = "#top">TOP</TD>
+<TD><A HREF = "tex.html">TeX</A></TD>
+<TD><A HREF = "index.html">CW in ME</A></TD>
+<TD><A HREF = "../../index-j.html">HOME (J)</A></TD>
+<TD><A HREF = "../../index.html">HOME (E)</A></TD>
+</TR>
+</TABLE>
+</DIV>
+<H3>About This Page（このページについて） </H3>
+
+2014年10月に大学院のコース QALL401 Computing for Researchers で "TeX-Online" と題して一回話し、その後、毎年春に<!--2015年6月と2016年4月に-->、学生（一部大学院生を含む）を対象に TeX Workshop を実施している。卒業論文を作成することを目的とした、Onlie での TeX すなわち、Cloud 上で使える TeX の紹介である。<p>
+
+私は、全くのユーザーということもあり不正確な情報もあると思うが記すことにしたのは、ネット上で得た情報も、不十分または不正確だからである。あまり実際には利用されていない方が書かれたと思われる。おそらく、現段階では、殆どの TeX User は、自分の Computer に Install して利用しており、Cloud 上の TeX は、実験的に使っているからだろう。特に、日本語 TeX を主として使う者は、後で述べる理由から、Online TeX は、使いづらいと考えているのではないだろうか。<p>
+
+指導学生で、Cloud 上の TeX で論文を完成する者が増えてきたこと、また、指導教員である私とのやりとりも、研究室での指導も、学生が利用している環境で説明することが適切と考え、説明するときは、わたしも Cloud 上の TeX を使うようになり、それなりに経験値も上がったと思う。Cloud 上の TeX には、ファイルを共有して、共同作業をしたり、Chat などで、コメントをやりとりできるものもあり、Version 管理もそれなりにできるので、個人的には頻繁には使っていないが、共同研究にも有効であろう。Git で version 管理をし、そのファイルを利用することも可能である。<p>
+
+しかし、Cloud 上のものと、Stand Alone の computer にインストールして使うことが混在すると、一つだけ問題が生じる。それは、dvi ファイルから、pdf を作成するときに、dvipdfmx で行うか、pdflatex などを利用して、直接、pdf を作成するかである。もう少し詳細にも書けるが、この程度の表現とする。その問題があることを理解していれば、修正はほとんど一行か二行ですむが、それを面倒だと感じるひともいるだろう。そのことも考えて、下には、多少の説明を加えた。これで、個人的には問題を感じていない。<p>
+	
+付記すると、この問題は、R Markdown や、Jupyter など、LaTeX を埋め込むことができるシステムを使うときにも、認識が必要である。このページの情報は十分ではないが、利用していただければと願っている。<p>
+	
+	さらに、現時点での評価として、個人的な意見を書くと、私は、無償版しか使っていないこともあり、それぞれの、Cloud TeX の機能に一長一短があり、それぞれ多少不便を感じることはある。Editor の使いやすさ、Error の指摘、ファイルの共有、Spell Checker の有無、Template の質と多様さ、Compile Engine の選択の可否と多様性などであろうか。わたしは（以前は UNIX を使っていたが）基本的に、Mac User であるので分からないが、Shift-JIS や半角の句読点やカタカナなどを多用する Windows User は、両方のシステムでファイルを利用するときは、上に述べていない困難がさらに生じるかもしれない。全体の動向は、多言語対応であるから、この問題は、過渡的なものと判断することにする。<p>
+
+ 最終的には、学生（数学、物理学、情報科学、経済学）が国際基督教大学（International Christian University）で卒業論文、修士論文などを、書くことができるようにすることが目的であるため、大学で利用している、Moodle 内に TeX_Suport を作って、サポートをしている。国際基督教大学の学生は、参照のこと。
+
+卒業論文は、英文か和文で英文の場合は和文抄訳をつける、和文の場合は English Summary をつけると言う形式になっている。ページの構成や、表紙の書き方も、決まっており、それに、そろえる必要があるので、template を配布している。大学としては、英文の卒業論文を書くことを薦めているので、以前は、Template for English Thesis with Japanese Summary だけを配布していたが、いろいろな学生の学修支援をするなかで、和文の論文のサポートも考え、そのTemplate も配布している。Contents も含めるので、style file の中で、tableofcontents も使えることが重要。分野によっては、和文も多いので、和文で tableofcontents を使うことも想定し、日本語化についての情報も記す。
+<p>
+いくつかの TeX engine での compile もふくめ、<A HREF="https://cloudlatex.io/ja">Cloud LaTeX</A>, <A HREF="https://www.overleaf.com">OverLeaf</A>, <A HREF="https://ja.sharelatex.com">SHARE LATEX</A>, <A HREF="https://cloud.sagemath.com">SageMathCloud</A>, <a href="https://www.papeeria.com">Papeeria</a> の利用を想定して記す。これらについては、確認済み。
+<p>
+<a name="platex"></a>
+<hr>
+<DIV ALIGN = RIGHT><TABLE BORDER = 3 BGCOLOR = "#FFFFFF"><TR>
+<TD><A HREF = "#top">TOP</TD>
+</TR>
+</TABLE>
+</DIV>
+<H3>pLaTeX</H3>
+
+日本語 TeX で最も一般的で、dvipdfmx と組み合わせて利用する。
+
+<pre>
+% English with Japanese 英文主体で日本語を利用
+\documentclass[a4paper, 12pt]{article} % short paper
+% \documentclass[a4paper, 12pt]{report} % long paper
+% \documentclass[a4paper, 12pt]{book} % book
+</pre>
+<p>
+<pre>
+% Japanese with English 和文主体で英文も含める
+\documentclass[a4paper, 12pt]{jarticle} % short paper
+% \documentclass[a4paper, 12pt]{jreport} % long paper
+% \documentclass[a4paper, 12pt]{jbook} % book
+</pre>
+
+<ul>
+<li>他のスタイルファイルも利用可能、ただし、beamer  など、dvipdfmx をサポートしていない class を利用するときには、pdfLaTeX などを利用。</li>
+<li>通常モードで上の形が使えるのは、CloudLaTeX のみ</li>
+<li>OverLeaf で pLaTeX + dvipdfmx 利用の場合の説明が丁寧になされている。（まだ成功していない）
+</ul>
+
+<p>
+<a name="pdflatex"></a>
+<hr>
+<DIV ALIGN = RIGHT><TABLE BORDER = 3 BGCOLOR = "#FFFFFF"><TR>
+<TD><A HREF = "#top">TOP</TD>
+</TR>
+</TABLE>
+</DIV>
+<H3>pdfLaTeX</H3>
+
+CloudLaTeX 以外では、Default  になっている。
+
+<pre>
+% English with Japanese 英文主体で日本語を利用
+\documentclass[a4paper, 12pt]{report} % article, book
+\usepackage[whole]{bxcjkjatype}
+</pre>
+<p>
+
+<ul>
+<li>日本語クラスは、tableofcontents が未確認
+<li>\documentclass[pdflatex, ja=standard, a4paper, 12pt]{bxjsreport} <br>
+\usepackage[whole,autotilde]{bxcjkjatype} 
+<li><a href="ftp://get-software.net/ctan/language/japanese/BX/bxjscls/bxjscls-manual.pdf">BXjscls パッケージ　ユーザーマニュアル</a>
+</ul>
+
+<p>
+<a name="lualatex"></a>
+<hr>
+<DIV ALIGN = RIGHT><TABLE BORDER = 3 BGCOLOR = "#FFFFFF"><TR>
+<TD><A HREF = "#top">TOP</TD>
+</TR>
+</TABLE>
+</DIV>
+<H3>LuaLaTeX</H3>
+
+<pre>
+% English with Japanese 英文主体で日本語を利用
+\documentclass[a4paper, 12pt]{report}% for english
+\usepackage{luatexja} 
+\usepackage[ipa]{luatexja-preset}
+</pre>
+<p>
+<pre>
+% Japanese with English 和文主体で英文も含める
+\documentclass[report]{ltjsbook} % ltjsarticle for a shor paper
+%\usepackage{luatexja} % ltjclasses, ltjsclasses を使うときはこの行不要
+\usepackage[ipa]{luatexja-preset}
+</pre>
+<p>
+<ul>
+<li>report のときは、ltjsbook cls を利用し、option で report を指定することを注意
+</ul>
+<p>
+<a name="xelatex"></a>
+<hr>
+<DIV ALIGN = RIGHT><TABLE BORDER = 3 BGCOLOR = "#FFFFFF"><TR>
+<TD><A HREF = "#top">TOP</TD>
+</TR>
+</TABLE>
+</DIV>
+<H3>XeLaTeX</H3>
+
+<pre>
+% English with Japanese 英文主体で日本語を利用
+\documentclass[a4paper, 12pt]{report} % article, book
+%\documentclass[a4paper, 12pt]{bxjsreport} % bxjsarticle, bxjsbook 和文主体で英文も含めるときは、行頭の % をはずす
+\usepackage{xeCJK}
+\usepackage{zxjatype}
+\setCJKmainfont{ipaexm.ttf}
+\setCJKsansfont{ipaexg.ttf}
+\setCJKmonofont{ipaexg.ttf}
+</pre>
+<p>
+
+<ul>
+<li>日本語フォントを他のもので置き換えることも簡単にできる。
+<li>紙サイズ、余白などが同じようにはいかないので Senior Thesis Template で和文で書く時は注意</li>
+<li>ShareLaTeX で確認済み</li>
+</ul>
+<p>
+<a name="list"></a>
+<hr>
+<DIV ALIGN = RIGHT><TABLE BORDER = 3 BGCOLOR = "#FFFFFF"><TR>
+<TD><A HREF = "#top">TOP</TD>
+</TR>
+</TABLE>
+</DIV>
+<H3>Online TeX Sites</H3>
+
+<a name="cloudlatex"></a>
+<H4>CloudLaTeX</H4>
+
+<ul>
+<li>URL: <A HREF="https://cloudlatex.io/ja">https://cloudlatex.io/ja</A></li>
+<li>日本語が default で Acaric が運営するサイト</li>
+<li>LaTeX engine: pLaTeX, pdfTeX, LuaLaTeX
+<li>日本語の template いくつかから選択することができ、beamer なども、template からスタートすれば困難が少ない。
+<li>共有環境は提供していない。
+</ul>
+[2016.4.14, 2016.12.13]
+<p>
+
+<a name="overleaf"></a>
+<H4>OverLeaf</H4>
+
+<ul>
+<li>URL: <A HREF="https://www.overleaf.com">https://www.overleaf.com</a></li>
+<li>WriteLaTeX として、Online Latex としては、最初にスタートしたサイト</li>
+<li>LaTeX engine: pLaTeX, pdfTeX, LuaLaTeX, XeLaTeX
+<li>設定から engine と preview を選択。
+<li>豊富な template から選択することができる。
+<li>無償版での共有環境は提供していない。
+</ul>
+[2016.4.14, 2016.12.13]
+<p>
+
+<a name="sharelatex"></a>
+<H4>ShareLaTeX</H4>
+
+<ul>
+<li>URL: <A HREF="https://ja.sharelatex.com">https://ja.sharelatex.com</A></li>
+<li>東京大学も含め多くの大学が団体契約しているサイト</li>
+<li>LaTeX engine: pdfTeX, LuaLaTeX, XeLaTeX
+<li>エンジンを選択
+<li>豊富な template から選択することができる。
+<li>無償版は他に一人と共有することが可能。
+</ul>
+[2016.4.14, 2016.12.13]
+<p>
+
+<a name="smc"></a>
+<H4>SageMathCloud</H4>
+
+<ul>
+<li>URL: <A HREF="https://cloud.sagemath.com">https://cloud.sagemath.com</A></li>
+<li>数式処理が可能な、SageMath の cloud 版</li>
+<li>LaTeX engine: pdflatex, lualatex, xelatex などと、build で指定。 
+<li>SageMath Worksheet がメインであるが、他に、Octave (MatLab の Free 版), IPython (Jupyter notebook), R なども使える。 , 
+<li>共有は Project 毎に何人とでも可能である。
+<li>別途有償版があり、無償版は、ときどき遅く感じられるときがある。
+</ul>
+[2016.4.14, 2016.12.13]
+<p>
+
+<a name="papeeria"></a>
+<H4>Papeeria: Cloud research platform</H4>
+
+<ul>
+<li>URL: <A HREF="https://www.papeeria.com">https://www.papeeria.com</A></li>
+<li>LaTeX engine: pdflatex, lualatex, xelatex  (TeXLive の version も選べる）
+<li>Online LaTeX and Markdown editor and plot compiler. Free, fast and reliable.
+<li>共有は何人とでも可能。
+<li>無償版は、Project 数などに制限がある。
+</ul>
+[2016.12.13]
+<p>
+<a name="misc"></a>
+<hr>
+<DIV ALIGN = RIGHT><TABLE BORDER = 3 BGCOLOR = "#FFFFFF"><TR>
+<TD><A HREF = "#top">TOP</TD>
+</TR>
+</TABLE>
+</DIV>
+<H3>Miscellaneous</H3>
+
+JaxEdit なども紹介することを考えていたが、未定。小さな、良いシステムで、ネット上でも利用可能であるが、開発が止まっており、機能も限定されているので、お試し用のみにしか使えないかもしれない。
+<p>
+<a name="links"></a>
+<hr>
+<DIV ALIGN = RIGHT><TABLE BORDER = 3 BGCOLOR = "#FFFFFF"><TR>
+<TD><A HREF = "#top">TOP</TD>
+</TR>
+</TABLE>
+</DIV>
+<H3>Links </H3>
+
+<OL>
+<li>
+</OL>
+<hr>
+<DIV ALIGN = RIGHT><TABLE BORDER = 3 BGCOLOR = "#FFFFFF"><TR>
+<TD><A HREF = "#top">TOP</TD>
+<TD><A HREF = "tex.html">TeX</A></TD>
+<TD><A HREF = "index.html">CW in ME</A></TD>
+<TD><A HREF = "../index-j.html">HOME (J)</A></TD>
+<TD><A HREF = "../index.html">HOME (E)</A></TD>
+</TR>
+</TABLE>
+</DIV>
+</BODY>
+</HTML>

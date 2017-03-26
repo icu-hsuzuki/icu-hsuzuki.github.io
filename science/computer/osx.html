@@ -1,0 +1,265 @@
+<html>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="Text/html; CHARSET=ISO-2022-JP">
+<title>Macintosh OSX</title>
+</HEAD>
+<BODY BGCOLOR = "#CCFFCC">
+<A NAME = "top"></A>
+<DIV ALIGN = RIGHT><I>Last Update: December 30, 2005</I></DIV>
+<HR>
+<H2>Macintosh OSX Note</H2>
+        <UL>
+	<LI><a href="#notes">Notes</a>
+	<LI><a href="#memo">Memos</a>
+	<LI><a href="#review">Review</a>
+	<LI><a href="#journal">Journal</a>
+        <LI><a href="osxlog.html">Installation Log of OSX Applications</a>
+	<P>
+	<LI><a href="#references">References</a>
+	<LI><a href="#links">Links</a>
+        </UL>
+<a name="notes"></a>
+<HR>
+<DIV ALIGN = RIGHT><TABLE BORDER = 3 BGCOLOR = "#FFFFFF"><TR>
+<TD><A HREF = "#top">TOP</A></TD>
+<TD><A HREF = "index.html">COMPUTER</A></TD>
+<TD><A HREF = "../index-j.html">HOME</A></TD>
+</TR>
+</TABLE>
+</DIV>
+<H3>Notes</H3>
+
+わたしのいる大学では、昨年２００１年のコンピュータ入れ換えにともない、かなりの数の、Macintosh Cube が研究室に導入されたが、あまり OSX を利用している人がいないようである。たまたまこの入れ換えの時期から１年間特別研究期間をいただいて、海外に出ていたため、帰国後この Cube にはじめて触れることとなった。すでに OS の version は OS10.1.3 で OS10.2 のリリースが発表されており、それに愛称までついているというので、近いうちに、OS10.2 に入れ換える事にして、ともかく私自身は OSX を使う事とした。大学の仲間の相談にも乗れるように、次のことを計画した。実際の記録は、Journal 参照のこと。
+
+<UL>
+<LI>第一段階として、最初の OS に付随するものに最小限のものを加えたもので何ができるかを見極める事。それに加えて Classic は使わず、OSX だけで作業をすること。
+<LI>第二段階として、いくつかのフリーのソフトを試す事。
+<LI>第三段階として、OSX.2 に変更する。
+<LI>第四段階として、X server をいれ、Unix との親和がどの程度はかれるかを調べる事。
+<LI>第五段階として、現在通常行なっている仕事が、OSX のみで可能かどうかを見極め、ネットワークの利用で補間できることも加えて検討する。
+</UL> 
+<p>
+<a name="memo"></a>
+<HR>
+<DIV ALIGN = RIGHT><TABLE BORDER = 3 BGCOLOR = "#FFFFFF"><TR>
+<TD><A HREF = "#top">TOP</A></TD>
+<TD><A HREF = "index.html">COMPUTER</A></TD>
+<TD><A HREF = "../index-j.html">HOME</A></TD>
+</TR>
+</TABLE>
+</DIV>
+<H3>Memos</H3>
+
+<UL>
+<LI>Internet Explorer 5.1 で取りこんだ表が Microsoft Excel v.X で読もうとすると日本語が正しく表示されない。<br>
+一旦、ミミカキエディットで読み込み、unicode (UCS-2) で save してから読み込むと問題がなく読み込めた。理由や他の方法は不明。（２００２年１２月１０日）
+<p>
+<LI>Shift-JIS などから UTFー８への変換が必要。
+<OL>
+<LI>"ls -v": terminal での日本語ファイル名の表示。（環境設定での ASCII code 以外を skip はチェックをはずす）
+<LI>"export LESSCHARSET=utf-8" または "setenv LESSCHARSET utf-8" で less で utf-8 を表示可能に。
+<LI>"iconv -f sjis [jis, euc] -t utf8 imput_file_name > output_file_name"
+<LI>"open /Applications/iCal.app" Application の起動。
+</OL>
+</UL>
+<P>
+
+<a name="review"></a>
+<HR>
+<DIV ALIGN = RIGHT><TABLE BORDER = 3 BGCOLOR = "#FFFFFF"><TR>
+<TD><A HREF = "#top">TOP</A></TD>
+<TD><A HREF = "index.html">COMPUTER</A></TD>
+<TD><A HREF = "../index-j.html">HOME</A></TD>
+</TR>
+</TABLE>
+</DIV>
+<H3>Review</H3>
+
+<OL>
+<LI>OS X10.2 はやっと一人前の OS となった感がある。周辺機器のドライバーはまだまだだが、新しいものは問題がないようだ。（２００３年１月８日）
+<p>
+<LI>全体として非常に美しく、かつ、Freeze の心配がほとんどないことは非常に大きなメリット。個人的には Unix を利用するので、Terminal で日本語が表示できないのが、残念で、日本語を emacs または mule で使えないのが不便だが、これは、OSX.2 で基本的には解決済とのこと。X 環境も導入できるとのことなので、今は、このままで利用したいと思う。いずれ、次のレベルに進む時に検証する。Terminal で使える unix の命令として、ssh, scp などもあるので、text editor を整えれば日本語も問題なく使えるのであろう。付属のものは、rtf での保存となり、Text 保存できないのが、不便。iTune できく、ラジオの音楽は素晴らしく、ついつい流してしまう。ストリーミング技術も、音にかんしては、十分なれべるに達しているということだろう。iTune, RealOne Player, Windows Media Player と揃っており、不便しない。（２００２年９月３０日）
+</OL>
+
+<a name="journal"></a>
+<HR>
+<DIV ALIGN = RIGHT><TABLE BORDER = 3 BGCOLOR = "#FFFFFF"><TR>
+<TD><A HREF = "#top">TOP</A></TD>
+<TD><A HREF = "index.html">COMPUTER</A></TD>
+<TD><A HREF = "../index-j.html">HOME</A></TD>
+</TR>
+</TABLE>
+</DIV>
+<H3>Journal</H3>
+
+<UL>
+<LI>２００３年１月５日：スキャナー EPSON 9300UF設定。ドライバをダウンロードしてインストール。機能によっては Classic が必要なようだが、基本的な読み込みは可能。
+<P>
+<LI>２００３年１月３日：プリンタ Epson 3500C は問題なし。Fuji Xerox DocuPrint 201PS はドライバーが存在せず。サイトでは検討中。近そうな 記述ファイルを選び現在のところ問題なし。
+<P>
+<LI>２００２年１２月２７日：Mac OS 10.2 と AppleWorks 6.3 を購入。Cube と iBook にインストール。10.2 こそ始めての本格的 Mac OSX のシステムと確信。
+<P>
+<LI>２００２年１２月２４日：AppleWorks は Classic 環境で画像を読み込めない。updata をダウンロードしてインストールすると解決。プリンタ Epson 980C は問題がないが、ドライバーがかわりできることは、「フィットページ」などすこし減少した。
+<P>
+<LI>２００２年１２月２４日：iBook (２００１年７月購入）に Mac OS 10.1 をインストール。家族も使うので multiuser で設定。
+<P>
+<LI>２００２年１２月９日：「ミミカキエディット」(mi2.1.0) をインストール。<BR>
+単にダウンロード、指示通りアプリケーションにコピー。
+<p>
+<LI>２００２年１１月：スキャナー EPSON 9300UF を購入。CD をいれたとたん Classic が起動しそうになったので、慌てて停止。ドライバー、付属ソフトは OSX ではいろいろと問題あり。そろそろ良いかとおもって購入も、単純ではなさそう。返品も考えたが、Classic を使うことを試すのも、悪くはないと思い、時間をみて、いろいろとトライすることとする。最近、何回かフリーズ。OSX になってから４回。[command]+[ctr]+[powerkey] 以外の process を切ることすらできない状態からの復帰をすこし、しらべる必要を感じる。unix であれば、電源を切る前にすることは、かなり色々とあるのだから。<P> 
+<LI>２００２年９月２８日：はじめてのフリーズ。リモートで入ってプロセスを消すことは可能性があったかも知れないが、[Apple]+[Option]+[ESC] で現れたものをキルしても、回復できず、[Apple]+[Ctr]+[PowerButton] で再起動。通常より時間はかかったようだが、無事再起動。フリーズの原因は、損傷のある、FD から Word Document を読もうとした結果と思われる。
+<P>
+<LI>２００２年９月２６日：プリンタ Epson 3500c を接続。ドライバーをダウンロードして、問題なく、仕様可能となった。おまけでついているソフトが使えるかは確認せず。
+<P> 
+<LI>２００２年９月：Internet Explorer から取り込んだファイルを Excel で読もうとすると日本語の文字化け。言語に日本語を加え、優先順位を一番上にすると良いとのこと。未確認。
+<P>
+<LI>２００２年８月：現在 iBook 上の OS9.1 で使っていた FireWire 接続の HD を接続したが全く問題がなく、接続。
+<P>
+<LI>２００２年８月：Mail soft が他の機械で mail を確認しているときとぶつかって、確認にいくと、ロックされてしまい、再起動しないと、inbox を開けないことがあるようだ。
+<P>
+<LI>２００２年８月２４日：Mac OS X (10.1.3) インストール
+     <UL>
+     <LI>6.4G+6.4G+6.4G の partition を切ってある OS9.1がインストールされている cube が支給されていたので、これを、本学教員の標準と想定して、OS9.1 が入っていない空の部分に OS X をインストール。メールアドレス、IP, subnetmask, router, DNS が分かっていれば、問題なし。
+     <LI>Microsoft Office X を インストール（全コンポーネントを選択）
+     <LI>Value Pack のうち、フォント、Mail からインポート、Microsoft Word 97-x コンバータ、文章校正ツール、Windows Media Player for Mac 合計 46M bite をインストール。
+     <LI>メールソフトとしては、標準の Mail を選択。
+     <LI>Apple Talk を確認して、プリンタ設定。デフォルトを選ぶ。
+     </UL>
+<P>
+</UL>
+
+<a name="references"></a>
+<HR>
+<DIV ALIGN = RIGHT><TABLE BORDER = 3 BGCOLOR = "#FFFFFF"><TR>
+<TD><A HREF = "#top">TOP</A></TD>
+<TD><A HREF = "index.html">COMPUTER</A></TD>
+<TD><A HREF = "../index-j.html">HOME</A></TD>
+</TR>
+</TABLE>
+</DIV>
+<H3>References</H3>
+
+<OL>
+<li>「Xcode プログラミング入門」柴田文彦、MYCOM（ISBN4-8399-1357-9, 2004.3.30）<br>
+Xcode Guide to Programming が英語名。Xcode は、Mac OS X v10.3 "Panther" 付属の開発環境。総合開発環境でありながら、普通に添付されている。C と Java が基本言語だが、よく設計されているようだ。十分使うところまではいけなかったが、是非、使ってみたい。この書は、その入門としては、十分であるように思われる。このようなものが数冊出版されることを望む。（２００５年１月２日）<p>
+
+<li>「Mac Fan Office 2004 for Mac マスターブック」東弘子著、毎日コミュニケーションズ（ISBN4-8399-1443-5, 2004.7.31）<br>
+MS Office X からなかなか次のものがでず、やっと２００４年７月にでたのが、Office 2004。コードの問題、システムディスク以外のファイルの保存に関する問題なども解消し、今回の Office 2004 は十分なものにやっとなったと感じられる。しかし、その大体の機能をつかうにも、やはり一通りは解説の本がないと理解できない。かえって、機能が邪魔に感じられるだけである。この書は、基本しかかかれていないがそれなりに、バランス良く書かれているように感じられる。（２００５年１月２日）
+<p>
+
+<li>「すぐ効く Mac OSX v10.3 "Panther" のトラブルシューティング」渡辺竜生著、毎日コミュニケーションズ（ISBN4-8399-1446-X, 2004.5.28）<br>
+Q&A 全３０５項目と表紙に書いてある。いっときとくらべ、特に、Panther が出てから、この手の本の質が非常に上がっている。やっと本格的に使う人が増えてきたと言うことであろう。コンピュータにマニュアルがつかなくなったのは何時からかわからないが、大体触ればわかるようになっているものの、機能はその程度ではわからないものまで豊富である。時々、このようなものをざっと見ることは重要であると思う。正直、わたしは、かなり使っているが、知らなかった機能も、聞いただけで、深く理解していなかった機能も、この本を読んで、いくつか知った。（２００５年１月２日）
+<p>
+
+<li>「Mac OSX v10.3 "Panther" UNIX アプリケーション簡単活用ガイド」石田豊、毎日コミュニケーションズ（ISBN4-8399-1451-6, 2004.6.18）<br>
+Unix の知識不要となっている。この次のものと対照的に、この書は、OSX の一つの機能として、Unix の部分を活用することにより、OSX でつかえるアプリケーションを増やすことが目的である。とはいっても、Unix の知識がなにもなくては、おそらく難しいであろうし、何よりも楽しめないのではないか。しかし、最初には、問題がおきたとき、復帰しやすいように、べつにアカウントをつくって作業をするなど、初心者向けに、丁寧に解説している。ただ、紹介アプリケーションも、ちょっと不満。この手の使い方をするには、もう少し時が必要な気もする。Open Office 正式版が出てからか。（２００５年１月２日）<p>
+
+<li>「Mac OSX v10.3 Panther で使おう UNIX」大津真・新居雅之・松尾真一郎、MYCOM (ISBN4-8399-1467-2, 2004.5.10)<br>
+Easy Package および Panther についての解説。OSX についてよりも、Unix としての活用法に中心をおいている。本体３９１頁。TEX のことまで詳しく解説されている。Unix を使うことを主眼にする場合、この一冊で十分であろう。（２００５年１月２日）<p>
+
+<li>「Mac OSX 10.3 Panther」アスキームック ASCII (ISBN4-7561-4481-0, 2004.7.2)<br>
+フリーウェア＆シェアウェア１３０本の解説。最後には、X11 Unix のものも含まれる。Widget や Screen saver など面白いソフトが多い。しかし、この手のものの宿命だが、短命かつ、本当に必要なものは、一つか二つ。(２００５年１月２日）<p>
+
+<li>「Mac OSX v10.2 パワフルガイドブック」大谷和利・大津貢・柴田文彦・新居雅行・向井領治共著、LOCUS (ISBN4-89814-385-4, 2002.12.1)<br>
+基本的な解説書。PROLOGUE として Mac OSX v10.2 にまつわる十戒 から始めている。Mac OS から OSX に移って来ることを想定しても、このようなことを私も伝えたくなる。ことによると十分 OSX と出会う前に拒否反応を起こしてしまう可能性もあるので。章は以下のとおり。１ Mac OSX の導入 ２ デスクトップ環境 ３ アプリケーション ４ システム設定 ５ UNIX としてみた Mac OSX ６ネットワークの利用 ７ Mac OSX の開発環境。最後の部分は簡単に書いてあるだけだが、雰囲気は伝わって来る。ある程度網羅的に書かれているので、余計書いていないことが目についてしまうのかも知れないが、ちょっと中途半端な感じがする。基本的なことは書いてあるが、必要な人がごくわずかな部分も多くまたこの本では扱われていない為に他を当たらなければならないことも多いのでは。（２００３年１月１２日）
+<p>
+
+<LI>「Mac OSX で使おう Unix」大津真、新居雅行、松尾真一郎共著、MYCOM (2002.7.30, ISBN4-8399-0784-6, 3,800yen+tax)<br>
+表紙およびはじめにから「Mac OSX のコア OS である Darwin は、オープンソースの Unix です。プリエンプティブ・マルチタスク、高度なメモリ・プロテクションといった UNIX の特性は今までにないほど安定したシステムと言う恩恵をユーザにもたらします。」とあり、さらに、本書はオープンソース UNIX のソフトウェアを活用するための解説書として書かれたとなっています。期待を非常に持たせる本である。残念なのは、基本的に 10.1 に関して書かれている事。10.2 ではさまざまな部分に改訂が加えられているので、そのままこの本の内容が使えるかは不明。しかし、時間を見付けて、少しずつ例ながら読んでみたい一冊。
+<p>
+
+<LI>「MAC TIPS -- マックを愛するすべての人へ」仕事場著、マガジンハウス (2022, ISBN4-8387-1395-9, 1055yen)<br>
+裏表紙に「これ一冊で大丈夫、初心者から上級者までの定番本」とある。そのいみでも、２３９ページのなかによく書かれている。網羅的でもないし、深さも十分ではないが、これ一冊持って、もうちょっとマックを愛する事ができるようになるかも知れない一冊。題名に文化を感じる。マックをこけにするひとはあまたいるが、ウィンドーズをこよなく愛する人はいるのだろうか。愛するかどうかは、性能とは無関係というあたりも面白い。<a href="http://science.icu.ac.jp/~hsuzuki/books2003.html">読書記録</a> 参照。（２００３年１月８日）
+<p>
+
+<LI>"Special Edition -- Using Mac OS X", Brad Miser, QUE (ISBN 0-7897-2470-7)<br>
+全体で 794ページ。中級・上級用。このような形のマニュアルは非常にアメリカ的。日本では売れないだろう。かなり細かく設定などについて書かれているが、10.2 になればまた新しいのが出る事になるのであろう。そのいみで、個人的には馴染めない。
+<p>
+
+<LI>"Cocoa programming for Mac OS X", by Aaron Hillegass. Addison-Wesley, c2002.<P>
+
+<LI>"Learning Unix for Mac OS X", by Dave Taylor and Jerry Peek ; with Grace Todino and John Strang. O'Reilly, c2002. (ISBN 0-596-00342-0)<BR>
+Mac OS X を通しての Unix 入門書。Unix の基本を知っているひとにとっては、ほとんど既知のことだが、":" を含む file name の扱い、改行コードの問題の扱い方、なども書かれている。しかしあくまでも、Mac で Terminal を使うための入門書と考えた法が良い。      
+<P>
+               
+<LI>"Mac Os X", in Against the Clock. Prentice Hall, c2002.
+<P>
+               
+<LI>"Mac OS X 10.1", by Maria Langer. Peachpit, c2002.
+<P>
+               
+<LI>"Mac OS X : the complete reference", by Jesse Feiler. Osborne/McGraw-Hill, c2001.
+<P>
+               
+<LI>"The Mac OS X book", by Mark R. Bell. Coriolis, c2001.
+<P>
+               
+<LI>"Mac OS X developer's guide", by Jesse Feiler. Morgan Kaufmann, c2002.
+<P>
+               
+<LI>"Mac OS X disaster relief : troubleshooting techniques to help fix it yourself", by Ted Landau, with Dan Frakes. Peachpit, c2002.
+<P>
+               
+<LI>"Mac OS X pocket reference", by Chuck Toporek. O'Reilly, c2002.(ISBN 0-596-00346-3) <BR>
+いちおう基本的な説明が通常の "pocket reference" として書かれているが、これだけで、OS X を理解しようというのは無理。コンピュータは良く使っているが、OS X を使いはじめるために、短時間で一通り目を通すためのものとしては、旧 Mac User, Windows User, Unix User にそれぞれの解説が加えられている。
+<P>
+               
+<LI>"Mac OS X programming", by Dan Parks Sydow. New Riders, c2002.
+<P>
+
+<LI>"MAC OS X unleashed", by John Ray, William C. Ray. Sams, c2002.
+<P>
+               
+<LI>"Mac OS X version 10.1 Black book", by Mark R. Bell, Debrah D. Suggs. Coriolis, c2002. (ISBN 1-57610-606-3)<br>
+From the back cover, "Black Books provide immediate solutions and in-depth analysis of global programming and admisinstrative challenges. They are designed to be problem-solving guides and compelte references that help you perform specific tasks, especially critical ones that are note well-documented in other books.<br>
+This Book is Written for: Fower users, Network administrators and system technicians, Programmers and develpers."<br>
+このような本は日本の市場にはなかなか出てこれないであろう。ここまでのユーザは日本では非常に少ないと思われる。したがって、著者も限られ、翻訳のばあいは、実際に使うには間に合わない。
+<P>
+               
+<LI>"Mac OS X Server システム管理ガイド",  伊藤宣博〔ほか〕著 アスキー 2000.7
+<P>
+               
+<LI>"Macworld Mac OS X bible : covers version 10.1", by Lon Poole and Dennis R. Cohen. Hungry Minds, c2002.
+<P>
+               
+<LI>"Mastering MAC OS X", by Todd Stauffer. Sybex, 2001.
+<P>
+               
+<LI>"Mac OS X Server complete guide - The powerful Internet and workgroup server", 有賀妙子／共著 秀和システム 1999.9
+<P>
+               
+<LI>"Mac OS X Server 徹底活用ガイド 「稼げる」Web アプリ開発技法", 案浦浩二〔ほか〕著 日経ＢＰ社 1999.6
+<P>
+               
+<LI>"Mac OS X パブリックベータガイドブック", 大谷和利著 エクシード・プレス 2000.11
+
+<P>
+
+</OL>
+
+<a name="links"></a>
+<HR>
+<DIV ALIGN = RIGHT><TABLE BORDER = 3 BGCOLOR = "#FFFFFF"><TR>
+<TD><A HREF = "#top">TOP</A></TD>
+<TD><A HREF = "index.html">COMPUTER</A></TD>
+<TD><A HREF = "../index-j.html">HOME</A></TD>
+</TR>
+</TABLE>
+</DIV>
+<H3>Links</H3>
+
+<UL>
+<LI><a href="http://www.apple.co.jp/macosx/index.html">日本アップル社の OS X 関連ページ</a>
+<LI><a href="http://www.apple.com/macosx/index.html">Apple Computer 社の OS X 関連ページ</a>
+</UL>
+<a name="bottom"><a>
+<HR>
+<DIV ALIGN = RIGHT><TABLE BORDER = 3 BGCOLOR = "#FFFFFF"><TR>
+<TD><A HREF = "#top">TOP</A></TD>
+<TD><A HREF = "index.html">COMPUTER</A></TD>
+<TD><A HREF = "../index-j.html">HOME</A></TD>
+</TR>
+</TABLE>
+</DIV>
+</BODY>
+</HTML>

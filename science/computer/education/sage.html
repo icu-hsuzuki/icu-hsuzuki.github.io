@@ -1,0 +1,681 @@
+<HTML>
+<HEAD>
+<TITLE>Sage by Example</TITLE>
+</HEAD>
+<BODY BGCOLOR = "#CCFFCC">
+<A NAME = "top"></A>
+<div align = "right"><I>Last Update: June 24, 2012</I></div>
+<HR>
+<H2>Sage by Example</H2>
+
+<ul>
+<li><a href="#about">About This Page</a>
+<li><a href="#general">General</a>
+<li><a href="#linear">Linear Algebra</a>
+<li><a href="#calculus">Calculus</a>
+<li><a href="#bcm">Basic Concepts in Mathematics</a>
+<li><a href="#algebra">Algebra</a>
+<li><a href="#graph">Algebraic Graph Theory</a>
+<p>
+<li><a href="#gapinsagenb">GAP in Sage Notebook</a>
+<p>
+<li><a href="#links">Basic References and Useful Links</a>
+<p>
+<li><a href="sage-j.html"><i>Introduction to Sage in Japanese</i></a></ul>
+<a name="about"></a>
+<hr>
+<DIV ALIGN = RIGHT><TABLE BORDER = 3 BGCOLOR = "#FFFFFF"><TR>
+<TD><A HREF = "#top">TOP</TD>
+<TD><A HREF = "index.html">CW in ME</A></TD>
+<TD><A HREF = "../../index-j.html">HOME (J)</A></TD>
+<TD><A HREF = "../../index.html">HOME (E)</A></TD>
+</TR>
+</TABLE>
+</DIV>
+<H3>About This Page </H3>
+
+In this page, I record examples of SAGE input I used in my class or introduced to students.
+<p>
+<a name="general"></a>
+<hr>
+<DIV ALIGN = RIGHT><TABLE BORDER = 3 BGCOLOR = "#FFFFFF"><TR>
+<TD><A HREF = "#top">TOP</TD>
+</TR>
+</TABLE>
+</DIV>
+<H3>General</H3>
+
+<ol>
+<li>Probability to exist a pair with same birthday.
+<pre>
+[INPUT]
+def birthday(n): # same as birthday 2 
+    return 1-RR(binomial(365,n)*factorial(n)/(365^n))
+</pre>
+<p>
+<pre>
+[INPUT]
+def birthday2(n):
+    p=1
+    for i in range(0,n):
+        p = p*(365-i)/365
+    return 1-RR(p)
+</pre>
+<p>
+<pre>
+[INPUT]
+def birthday3(n):
+    p=1
+    for i in range(0,n):
+        p = p*(366-i)/366
+    return 1-RR(p)
+</pre>
+<p>
+
+<li>Probability to exist a person with a certain birth month,
+<pre>
+[INPUT]
+n=var('n'); f = 1-RR((365-31)/365)^n
+</pre>
+<p>
+
+<li>Quadratic Equation (Symbolic)
+<pre>
+[INPUT]
+var('a, b, c')
+solve(x^2+b*x+c==0,x)
+</pre>
+<p>
+
+<li>Expansion and Factorization
+<pre>
+[INPUT]
+var('a,b')
+f=expand((a-b)^3*(a+3*b))
+f; factor(f)
+</pre>
+<p>
+</ol>
+
+<a name="linear"></a>
+<hr>
+<DIV ALIGN = RIGHT><TABLE BORDER = 3 BGCOLOR = "#FFFFFF"><TR>
+<TD><A HREF = "#top">TOP</TD>
+</TR>
+</TABLE>
+</DIV>
+<H3>Linear Algebra</H3>
+
+<ol>
+<li>System of Linear Equations
+<pre>
+[INPUT]
+x,y,z=var('x,y,z')
+eq=(x-y-z==0, 5*x+13*y==8, -13*y+14*z==3)
+sol=solve(eq, x,y,z); sol
+</pre>
+<p>
+
+<li>Matrix and Determinant
+<pre>
+[INPUT]
+U=matrix([[1,1,1,1],[1,-1,0,0],[1,0,-1,0],[1,0,0,-1]]); print(U); U.det()
+</pre>
+<p>
+<pre>
+[INPUT]
+var('a')
+U1=matrix([[1,a,a,a],[1,-a,0,0],[1,0,-a,0],[1,0,0,-a]]); show(U1); U1.det()
+</pre>
+<p>
+
+<li>Matrix, its Columns and LaTeX Source of its Inverse
+<pre>
+T = matrix([[-1, -1, 2],[1, 0, -1],[0, 1, 1]]); T
+</pre>
+<p>
+<pre>
+T1=T[:,0]; T2=T[:,1]; T3=T[:,2]; T1; T2; T3
+</pre>
+<p>
+<pre>
+latex(T^-1)
+</pre>
+<p>
+
+<li>Matrix Operations<br>
+After defining a matix A, input A.[tab] to see operatrions.
+<pre>
+[INPUT]
+# A definition of a matrix
+A = Matrix([[1, 0, 2],[2, -1, 3], [1, 1, 8]])
+</pre>
+<p>
+<pre>
+A.det(); A.trace()
+</pre>
+<p>
+<pre>
+factor(A.charpoly())
+</pre>
+<p>
+<pre>
+A.transpose(); A.adjoint()
+</pre>
+<p>
+<pre>
+A*A.adjoint()
+</pre>
+<p>
+
+</ol>
+
+<a name="calculus"></a>
+<hr>
+<DIV ALIGN = RIGHT><TABLE BORDER = 3 BGCOLOR = "#FFFFFF"><TR>
+<TD><A HREF = "#top">TOP</TD>
+</TR>
+</TABLE>
+</DIV>
+<H3>Calculus</H3>
+
+<ol>
+<li>Definite Integral
+<pre>
+[INPUT]
+# x is a preassgned variable and no need to define
+f1a=cos(arcsec(x))/(x*sqrt(x^2-1))
+integral(f1a,x,2/sqrt(3),2)
+</pre>
+<p>
+
+<pre>
+[INPUT]
+var('y')
+f1b=1/(y*sqrt(1+(log(y)^2)))
+integral(f1b,y,1,exp(1))
+</pre>
+<p>
+<li>Indefinite Integral
+<pre>
+[INPUT]
+var('t')
+f1c=(t^4-4*t^3+2*t^2-3*t+1)/(t^2+1)^3
+if1c=integral(f1c,t); if1c; if1c.derivative(); if1c.derivative().factor()
+</pre>
+<p>
+
+<pre>
+[INPUT]
+f1d=16*x^3*(log(x))^2
+integral(f1d,x)
+</pre>
+<p>
+
+<pre>
+[INPUT]
+var('v')
+f1e=sqrt(1-v^2)/v^2
+integral(f1e,v)
+</pre>
+<p>
+
+<pre>
+[INPUT]
+f1g=1/(1+sin(x)+cos(x))
+integral(f1g,x)
+</pre>
+<p>
+
+<li>Limit of a Sequence
+<pre>
+[INPUT]
+var('n')
+f6=(n/(n+1))^n
+f6.limit(n=oo)
+</pre>
+<p>
+<pre>
+[INPUT]
+var('y')
+f9=y^2/(cos(y)-cosh(y))
+f9.limit(y=0)
+</pre>
+<p>
+
+<li>Taylor Expansion
+<pre>
+[INPUT]
+f7=exp(sin(x))
+taylor(f7,x,0,2)
+</pre>
+<p>
+
+<pre>
+[INPUT]
+f8=arcsinh(x)
+taylor(f8,x,0,10)
+</pre>
+<p>
+
+<li>Test of Convergence
+<pre>
+[INPUT]
+#If the following value is greater than 1, the series converges
+f10=n*((2*n)*(2*n+1)/(2*n-1)^2-1)
+f10.limit(n=oo)
+</pre>
+<p>
+</ol>
+
+<a name="bcm"></a>
+<hr>
+<DIV ALIGN = RIGHT><TABLE BORDER = 3 BGCOLOR = "#FFFFFF"><TR>
+<TD><A HREF = "#top">TOP</TD>
+</TR>
+</TABLE>
+</DIV>
+<H3>Basic Concepts in Mathematics </H3>
+<ol>
+<li>Construction of a Function
+<pre>
+[INPUT]
+x=var('x'); f = x^3 - 3*x^2 - 3*x -1; [f(n) for n in range(8)]
+</pre>
+<p>
+<li>Construction of a Function, Values, Roots, and Derivative
+<pre>
+[INPUT]
+x=var('x') 
+f = x^5 + 2*x - 5
+print(f.subs(x=1))
+print(f.subs(x=2))
+find_root(f,1,2)
+f.derivative()
+</pre>
+
+<li>Factorization of Fermat Numbers, I
+<pre>
+for i in range(0,9):  
+    factor(2^(2^i)+1)
+</pre>
+<p>
+<li>Factorization of Fermat Numbers, II
+<pre>
+def fe(n):
+    v = []
+    for i in range(0,n):
+        v.append(factor(2^(2^i)+1))
+    return v
+ 
+m = fe(9); m
+</pre>
+<p>
+<li>Construction of Mersenne primes.
+<pre>
+[INPUT]
+def me(n): 
+	v = []
+	for i in prime_range(2,n): 
+		if is_prime(2^i-1):
+			v.append(i)
+	return v
+</pre>
+<p>
+<li>Fibonatti Series up to n
+<pre>
+def fibonatti(n):
+    f=[1,1]
+    for i in range(2,n):
+        f.append(f[i-1]+f[i-2])
+    return f
+    
+fibonatti(10)
+</pre>
+<li>Greatest common divisor d  and its expression d = ax+by
+<pre>
+[INPUT]
+print(xgcd(51, 288))
+print(xgcd(357,629))
+print(xgcd(180, 252))
+print(xgcd(4278, 71929))
+print(factor(4278))
+print(factor(71929))
+</pre>
+</ol>
+<p>
+<a name="algebra"></a>
+<hr>
+<DIV ALIGN = RIGHT><TABLE BORDER = 3 BGCOLOR = "#FFFFFF"><TR>
+<TD><A HREF = "#top">TOP</TD>
+</TR>
+</TABLE>
+</DIV>
+<H3>Algebra</H3>
+
+<ol>
+<li>U(18)
+<pre>
+[INPUT]
+U18=[g for g in Integers(18) if g.is_unit()];
+len(U18);U18;[g.multiplicative_order() for g in Integers(18) if g.is_unit()]
+</pre>
+<p>
+<li>The Order of Elements a Symmetric Group and an Alternating Group
+<pre>
+[INPUT]
+S9=SymmetricGroup(9); A9=AlternatingGroup(9); 
+Set([x.order() for x in S9]); Set([x.order() for x in A9])
+</pre>
+N=8 or 9 may be a practical limit. See magma section.
+<p>
+<li>The Number of Elements of Certain Order
+<pre>
+[INPUT]
+S6=SymmetricGroup(6); 
+Q= Set([x for x in S6 if x.order() == 4]); 
+I= Set([x for x in S6 if x.order() == 2]); 
+Q.cardinality(); I.cardinality()
+</pre>
+<p>
+<li>Subgroup of a Permutation Group and a Word Problem
+<pre>
+[INPUT]
+G=SymmetricGroup(6)
+r=G((1,3,4,5,6)); s=G((1,3,2))
+K=G.subgroup([r,s])
+K; K.order()
+</pre>
+<p>
+<pre>
+g=G('(1,6,5,2,3)')
+g.word_problem(K.gens())
+</pre>
+<p>
+<li>[Indiana College Mathematics Competition (quote from "Contemporary Abstract Algebra", by J.A.Gallian] <br>
+A card-shuffling machine always rearranges cards in the same way relative to the order in which they were given to it. All of the hearts arranged in order from ace to king were put into the machine again to be shuffled. If the cards emerged in order 10, 9, Q, 8, K, 3, 4, A, 5, J, 6, 2, 7, in what order were the cards after the first shuffle? 
+<pre>
+[INPUT] 
+c = Permutation([8,12,6,7,9,11,13,4,2,1,10,3,5])
+b=power(c,6).inverse()
+b; a.cycle_string()
+</pre>
+<p>
+<pre>
+[INPUT]
+a=Permutation('(1,2,8,12,4,3,7,6,13,11,5,10,9)')
+b=a.inverse()
+s=range(1,14)
+b.action(s); (b*b).action(s)
+</pre>
+<li>Fundamental Theorem of of Finite Abelian Groups
+<pre>
+[INPUT] 
+R=Integers(220)
+print(R.unit_group_order())
+print(factor(euler_phi(200)))
+print(R.unit_gens())
+r220=[a.multiplicative_order() for a in R.unit_gens()]
+AbelianGroup(r220).elementary_divisors()
+</pre>
+</ol>
+
+<p>
+<a name="graph"></a>
+<hr>
+<DIV ALIGN = RIGHT><TABLE BORDER = 3 BGCOLOR = "#FFFFFF"><TR>
+<TD><A HREF = "#top">TOP</TD>
+</TR>
+</TABLE>
+</DIV>
+<H3>Algebraic Graph Theory</H3>
+
+<ol>
+<li>Drawing the Petersen Graph
+<pre>
+[INPUT]
+g=graphs.PetersenGraph()
+pg=g.plot()
+pg.show()
+</pre>
+<p>
+<li>Parameters of Johnson Graphs and their irreducible Terwilliger modules
+<pre>
+[INPUT]
+# Information of J(n,d) taken from Terwilliger's Subconstituent Algebra paper 1,2,3
+
+n,d,i,j,nu,mu,diam = var('n,d,i,j,nu,mu,diam')
+
+# Information taken from page 192 in subconst 3
+# r = -n+d-1; s = -n-2; t = -n*(n-1)/(d*(n-d))
+def johnson_bj(n,d,j):
+    return (d-j)*(n-d-j)
+    
+def johnson_cj(n,d,j):
+    return j^2
+    
+def johnson_aj(n,d,j):
+    return d*(n-d) - j^2 - (d-j)*(n-d-j)
+	
+def johnson_array(n,d): # d has to be a positive integer
+    c = [johnson_cj(n,d,j) for j in range(d+1)]
+    a = [johnson_aj(n,d,j) for j in range(d+1)]
+    b = [johnson_bj(n,d,j) for j in range(d+1)] 
+    return matrix(3,d+1,[c,a,b])
+
+def johnson_evj(n,d,j):
+    s = -n-2
+    return d*(n-d) + j*(j+1+s)
+    
+def johnson_devj(n,d,j):
+    t = -n*(n-1)/(d*(n-d))
+    return n-1 + t*j
+	
+# Information taken from page 372 in subconst 1
+def johnson_bsj(n,d,j):
+    r = -n+d-1; s = -n-2; t = -n*(n-1)/(d*(n-d))
+    if d==j: 
+        return 0
+    else:
+        return t*(j-d)*(j+1+s)*(j+1+r)/((2*j+1+s)*(2*j+2+s))
+    
+def johnson_csj(n,d,j):
+    r = -n+d-1; s = -n-2; t = -n*(n-1)/(d*(n-d))
+    if d==j: 
+        return -t*d*(d+s-r)/(2*d+s)
+    else:
+        return -t*j*(j+s+d+1)*(j+s-r)/((2*j+1+s)*(2*j+s))
+    
+def johnson_asj(n,d,j):
+    r = -n+d-1; s = -n-2; t = -n*(n-1)/(d*(n-d))
+    if d==j:
+        return n-1 - johnson_csj(n,d,j)
+    else:
+        return n-1 - johnson_csj(n,d,j) - johnson_bsj(n,d,j)
+		
+def johnson_dualarray(n,d): # d has to be a positive integer
+    c = [johnson_csj(n,d,j) for j in range(d+1)]
+    a = [johnson_asj(n,d,j) for j in range(d+1)]
+    b = [johnson_bsj(n,d,j) for j in range(d+1)] 
+    return matrix(3,d+1,[c,a,b])
+	
+def johnson_diam(n,d,nu,mu): # n, d, nu, mu have to be a nonnegative integers
+    d1 = d-2*nu
+    d2 = min(d-mu,n-d-2*nu)
+    if (d1 < 0) or (d1 < d - 2*nu) or (d1 > d - mu):
+        if (d2 < 0) or (d2 < d - 2*nu) or (d2 > d - mu):
+            return []
+        else:
+            return [d2]
+    else:
+        if (d2 < 0) or (d2 < d - 2*nu) or (d2 > d - mu) or (d1 == d2):
+            return [d1]
+        else:
+            return [d1, d2]
+            			
+def johnson_mod_parameters(n,d):
+    return [(nu,mu,diam) 
+    for nu in range(0,d+1) 
+    for mu in range(nu,d+1) 
+    for diam in johnson_diam(n,d,nu,mu)]
+	
+# Information taken from page 198 in subconst 3
+def johnson_mod_bj(n,d,nu,mu,diam,j):
+    return (diam-j)*(n-diam-2*nu-mu-j)
+    
+def johnson_mod_cj(n,d,nu,mu,diam,j):
+    return j*(j+2*nu-mu)
+    
+def johnson_mod_aj(n,d,nu,mu,diam,j):
+    return d*(n-d)+mu*(mu+diam-n-1)+diam*(diam-n+2*nu)+j*(n-4*nu-2*j)
+    
+def johnson_mod_array(n,d,nu,mu,diam): # d has to be a positive integer
+    c = [johnson_mod_cj(n,d,nu,mu,diam,j) for j in range(diam+1)]
+    a = [johnson_mod_aj(n,d,nu,mu,diam,j) for j in range(diam+1)]
+    b = [johnson_mod_bj(n,d,nu,mu,diam,j) for j in range(diam+1)] 
+    return matrix(3,diam+1,[c,a,b])
+	
+def a2m(a,i,j):
+    if j==i+1:
+        return a[0][i+1]
+    elif j==i:
+        return a[1][i]
+    elif j==i-1:
+        return a[2][i-1]
+    else:
+        return 0
+ 
+def array2matrix(a):
+    return matrix(len(a[0]),len(a[0]),[a2m(a,i,j) for i in range(len(a[0]))
+    for j in range(len(a[0]))])
+</pre>
+
+<li>Parameters of distance-regular graphs with classical parameters
+<pre>
+[INPUT]
+# distance-regular graphs with classical parameters (d,b,alpha, beta, b)
+
+m, n, d, b, alpha, beta, h, i, j, q= var('m, n, d, b, alpha, beta, h, i, j, q')
+
+def bn(m,b): # (b^m-1)/(b-1)
+    if m<0:
+        return 0
+    else:
+        return sum(b^i, i, 0, m-1)
+
+def a2m(a,i,j):
+    if j==i+1:
+        return a[0][i+1]
+    elif j==i:
+        return a[1][i]
+    elif j==i-1:
+        return a[2][i-1]
+    else:
+        return 0
+ 
+def array2matrix(a):
+    return matrix(len(a[0]),len(a[0]),[a2m(a,i,j) for i in range(len(a[0]))
+    for j in range(len(a[0]))])
+
+def classical_bj(d, b, alpha, beta, j):
+    return (bn(d,b)-bn(j,b))*(beta-alpha*bn(j,b))
+    
+def classical_cj(d, b, alpha, beta, j):
+    return bn(j,b)*(1+alpha*bn(j-1,b))
+    
+def classical_aj(d, b, alpha, beta, j):
+    return bn(j,b)*(beta-1+alpha*(bn(d,b)-bn(j,b)-bn(j-1,b)))
+    
+def classical_array(d, b, alpha, beta): # d has to be a positive integer
+    c = [classical_cj(d, b, alpha, beta, j) for j in range(d+1)]
+    a = [classical_aj(d, b, alpha, beta, j) for j in range(d+1)]
+    b = [classical_bj(d, b, alpha, beta, j) for j in range(d+1)] 
+    return matrix(3,d+1,[c,a,b])
+
+def classical_evj(d, b, alpha, beta, j):
+    return b^(-j)*classical_bj(d,b,alpha,beta,j) - bn(j,b)
+</ol>
+<p>
+
+<a name="gapinsagenb"></a>
+<hr>
+<DIV ALIGN = RIGHT><TABLE BORDER = 3 BGCOLOR = "#FFFFFF"><TR>
+<TD><A HREF = "#top">TOP</TD>
+</TR>
+</TABLE>
+</DIV>
+<H3>GAP in Sage Notebook</H3>
+
+Choose gap from the fourth pulldown menu from the left.
+
+<ol>
+<li>Permutation Group and its Subgroup
+<pre>
+G:=SymmetricGroup(6);
+r:=(1,3,4,5,6); s:=(1,3,2);
+K:=Subgroup(G,[r,s]);
+Size(K);
+</pre>
+<p>
+<li>Word Problem in a Permutation Group
+<pre>
+t:=s*r;
+Factorization(K,t);
+Factorization(K,(1,2)*(3,4,5,6)); # Operation is from the left
+Factorization(K,(1,2,3,4,5));
+</pre>
+<p>
+</ol>
+<p>
+
+<a name="links"></a>
+<hr>
+<DIV ALIGN = RIGHT><TABLE BORDER = 3 BGCOLOR = "#FFFFFF"><TR>
+<TD><A HREF = "#top">TOP</TD>
+</TR>
+</TABLE>
+</DIV>
+<H3>Basic References and Useful Links </H3>
+
+<ol>
+<li><a href="http://www.sagemath.org/"><b>Sage Math</b></a>: A free open-source mathematics software system licensed under the GPL.<p>
+
+<li>Sage Notebook Server:
+<ol type="a">
+<li><A HREF="http://www.sagenb.org/">Main Notebook Server of Sage</A> supported by NSF in U.S.A.
+<li><A HREF="http://test.sagenb.org/register">"Test" Notebook Server of Sage</A> supported by NSF in U.S.A.
+<li><A HREF="http://alpha.sagenb.org/">"alpha" Notebook Server of Sage</A> supported by NSF in U.S.A.
+<li><A HREF="http://sage.math.canterbury.ac.nz/">Notebook Server at University of Canterbury</A>  in Christchurch, New Zealand.
+</ol>
+<p>
+<li><a href = "http://www.sagemath.org/help.html">Basic References:</a>
+<ol type="a">
+<li><A HREF="http://www.sagemath.org/doc/reference/">Reference Manual  by the Sage Development Team [HTML]</A><br>
+Online Manual containing everything.
+<li><A HREF="http://www.sagemath.org/pdf/reference.pdf">Refernce Manual by the Sage Development Team [PDF]</A> <br>
+This is huge. It is better to download it on your desktop for quick search. Release 4.7.2 has 6972 pages. 
+<li><A HREF="http://www.sagemath.org/help-video.html">Screencasts and Videos</A> <br>
+Video Introduction to Sage by William Stein, main figure in the development team, and a seried of lectures on python language, Sage is based on.
+<li><A HREF="http://wiki.sagemath.org/quickref">Quick Reference Cards</A>
+</ol>
+<p>
+<li>Books on Sage and using Sage:
+<ol type="a">
+<li><A HREF="http://www.packtpub.com/sage-beginners-guide/book">Sage Beginner's Guide</A> by Craig Finch, Packt Publishing (May 11, 2011), ISBN-13: 978-1849514460.
+<li><A HREF="http://wstein.org/ent/">Elementary Number Theory:
+Primes, Congruences, and Secrets</A> by William Stein. Free Legal PDF of this book is downloadable at this site.
+<li><A HREF="http://linear.ups.edu/">A First Course in Linear Algebra</A> by Robert A. Beezer. Free Legal PDF of this book is downloadable at this site.
+</ol>
+</ol>
+
+<hr>
+<DIV ALIGN = RIGHT><TABLE BORDER = 3 BGCOLOR = "#FFFFFF"><TR>
+<TD><A HREF = "#top">TOP</TD>
+<TD><A HREF = "index.html">CW in ME</A></TD>
+<TD><A HREF = "../index-j.html">HOME (J)</A></TD>
+<TD><A HREF = "../index.html">HOME (E)</A></TD>
+</TR>
+</TABLE>
+</DIV>
+</BODY>
+</HTML>

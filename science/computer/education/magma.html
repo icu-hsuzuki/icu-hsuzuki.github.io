@@ -1,0 +1,276 @@
+<HTML>
+<HEAD>
+<TITLE>Magma by Example</TITLE>
+</HEAD>
+<BODY BGCOLOR = "#CCFFCC">
+<A NAME = "top"></A>
+<div align = "right"><I>Last Update : May 6, 2011</I></div>
+<HR>
+<H2>Magma Calculator by Example</H2>
+
+<ul>
+<li><a href="#about">About This Page</a>
+<li><a href="#linear">Linear Algebra</a>
+<li><a href="#calculus">Calculus</a>
+<li><a href="#bcm">Basic Concepts in Mathematics</a>
+<li><a href="#algebra">Algebra</a>
+<li><a href="#graph">Algebraic Graph Theory</a>
+<p>
+<li><a href="#links">Useful Links</a>
+</ul>
+<a name="about"></a>
+<hr>
+<DIV ALIGN = RIGHT><TABLE BORDER = 3 BGCOLOR = "#FFFFFF"><TR>
+<TD><A HREF = "#top">TOP</TD>
+<TD><A HREF = "index.html">CW in ME</A></TD>
+<TD><A HREF = "../../index-j.html">HOME (J)</A></TD>
+<TD><A HREF = "../../index.html">HOME (E)</A></TD>
+</TR>
+</TABLE>
+</DIV>
+<H3>About This Page </H3>
+
+In this page, I record examples of Magma input I used in my class or introduced to students. I restricted only to those that can be treated by Magma Calculator.
+<p>
+<a name="linear"></a>
+<hr>
+<DIV ALIGN = RIGHT><TABLE BORDER = 3 BGCOLOR = "#FFFFFF"><TR>
+<TD><A HREF = "#top">TOP</TD>
+</TR>
+</TABLE>
+</DIV>
+<H3>Linear Algebra</H3>
+
+<a name="calculus"></a>
+<hr>
+<DIV ALIGN = RIGHT><TABLE BORDER = 3 BGCOLOR = "#FFFFFF"><TR>
+<TD><A HREF = "#top">TOP</TD>
+</TR>
+</TABLE>
+</DIV>
+<H3>Calculus</H3>
+
+<a name="bcm"></a>
+<hr>
+<DIV ALIGN = RIGHT><TABLE BORDER = 3 BGCOLOR = "#FFFFFF"><TR>
+<TD><A HREF = "#top">TOP</TD>
+</TR>
+</TABLE>
+</DIV>
+<H3>Basic Concepts in Mathematics </H3>
+
+<a name="algebra"></a>
+<hr>
+<DIV ALIGN = RIGHT><TABLE BORDER = 3 BGCOLOR = "#FFFFFF"><TR>
+<TD><A HREF = "#top">TOP</TD>
+</TR>
+</TABLE>
+</DIV>
+<H3>Algebra</H3>
+
+<ol>
+<li>U(n):=Z*n = Unit Group of Z/(n)
+<pre>
+[INPUT]
+U:= function(n)
+G, psi:=UnitGroup(ResidueClassRing(n));
+return G, psi, Inverse(psi);
+end function;
+"U(25) ";
+Order(U(25)); O25:={Order(g): g in U(25)}; O25, "|U(25)|=", #O25;
+"IsCyclic? ",  IsCyclic(U(25));
+" ";
+"U(32) ";
+U32, psi, phi := U(32);
+"IsCyclic? ", IsCyclic(U32);
+"Order of Generators? ";
+for i in {1..#Generators(U32)} do
+Order(U32.i);
+end for;
+"|5| =", Order(phi(5));
+</pre>
+
+<li>The Order of Elements a Symmetric Group and an Alternating Group
+<pre>
+[INPUT]
+S:=SymmetricGroup(10); A:=AlternatingGroup(10); 
+"|S_n|=", Order(S); {Order(g): g in S}; 
+"|A_n|=", Order(A); {Order(g): g in A};
+</pre>
+
+<li>The Number of Elements of Certain Order
+<pre>
+[INPUT]
+S:=SymmetricGroup(6); 
+Q:= {g : g in S | Order(g) eq 4}; #Q;
+I:={g : g in S | Order(g) eq 2}; #I;
+</pre>
+
+<li>Action of a Permutation
+<pre>
+[INPUT]
+S:=SymmetricGroup(13); 
+a:=S!(1,2,8,12,4,3,7,6,13,11,5,10,9);
+b:=a^(-1);
+[1,2,3,4,5,6,7,8,9,10,11,12,13]^b;
+[1,2,3,4,5,6,7,8,9,10,11,12,13]^(b^2);
+</pre>
+
+<li>Number of Subgroups of Certain Order
+<pre>
+[INPUT]
+G:=DirectProduct([CyclicGroup(12), CyclicGroup(20), CyclicGroup(10)]); 
+C20:= Subgroups(G: OrderEqual:=20, IsCyclic:=true); 
+S20:= Subgroups(G: OrderEqual:=20); 
+T20:= {x: x in G | Order(x) eq 20};
+"Number of Cyclic Subgroups of Order 20 = ",#C20; 
+"Number of Subgroup of Order 20 = ", #S20;
+"Number of Elements of Order 20 = ", #T20;
+for i in [1..5] do C20[i]; end for;
+</pre>
+</ol>
+
+<a name="graph"></a>
+<hr>
+<DIV ALIGN = RIGHT><TABLE BORDER = 3 BGCOLOR = "#FFFFFF"><TR>
+<TD><A HREF = "#top">TOP</TD>
+</TR>
+</TABLE>
+</DIV>
+<H3>Algebraic Graph Theory</H3>
+
+<ol>
+<li>Characteristic Polynomial and Eigenvalues of a Graph
+<pre>
+[INPUT]
+/* Polynomial Ring */ 
+P<x>:=PolynomialRing(Integers()); 
+/* Square */ 
+square:=Graph<4 | {1,2}, {2,3}, {3,4}, {4,1}>; 
+/* g44 */ 
+g44:=Graph<4 | {1,2}, {2,3}, {3,1}, {4,1}>; 
+CharacteristicPolynomial(square); 
+Factorization(CharacteristicPolynomial(square)); 
+Spectrum(square); 
+" "; 
+CharacteristicPolynomial(g44); 
+Factorization(CharacteristicPolynomial(g44)); 
+Spectrum(g44); 
+</pre>
+
+<li>Number of Walks
+<pre>
+[INPUT]
+/* Square */ 
+square:=Graph<4 | {1,2}, {2,3}, {3,4}, {4,1}>; 
+as:=AdjacencyMatrix(square); "cube "; as; 
+"as2 = "; as^2; "as3 = "; as^3; "as4 = "; as^4; 
+" "; 
+/* g44 */ 
+g44:=Graph<4 | {1,2}, {2,3}, {3,1}, {4,1}>; 
+ag:=AdjacencyMatrix(g44); "g44 "; ag; 
+"ag2 = "; ag^2; "ag3 = "; ag^3; "ag4 = "; ag^4; 
+</pre>
+
+<li>Symmetirc Polynomials to Compute Total Number of Closed Walks
+<pre>
+[INPUT]
+Q := Rationals(); 
+m := SFAMonomial(Q); 
+E := SFAElementary(Q); 
+E!m.[2]; 
+E!m.[3]; 
+P<x,y,z>:=PolynomialRing(Q,3); 
+(x+y+z)^3-3*(x*y+y*z+z*x)*(x+y+z) + 3*x*y*z eq x^3+y^3+z^3; 
+Factorization((x+y+z)^3-3*(x*y+y*z+z*x)*(x+y+z) + 3*x*y*z); 
+</pre>
+
+<li>Incidence Matrix and Line graph
+<pre>
+{INPUT]
+g44:=Graph<4 | {1,2}, {2,3}, {3,1}, {4,1}>; 
+lg44:=LineGraph(g44);
+"Adjacency Matrix of g44:";
+AdjacencyMatrix(g44);
+" ";
+"Adjacency Matrix of the Line Graph of g44:";
+AdjacencyMatrix(lg44);
+" ";
+"Incidence Matrix of g44:";
+X:=IncidenceMatrix(g44); X;
+" ";
+"XX^t:= ", X*Transpose(X);
+" ";
+"X^tX:= ", Transpose(X)*X;
+</pre>
+
+<li>Circulant Graphs [See Source]
+<pre>
+[INPUT]
+Z8&lt;a&gt;:=CyclicGroup(8);<br />
+C81:=sub&lt;Z8 | a, a^4, a^7&gt;;<br />
+G1:=UnderlyingGraph(CayleyGraph(C81));<br />
+C82:=sub&lt;Z8 | a^2, a^4, a^6&gt;;<br />
+G2:=UnderlyingGraph(CayleyGraph(C82));<br />
+C83:=sub&lt;Z8 | a^3, a^4, a^5&gt;;<br />
+G3:=UnderlyingGraph(CayleyGraph(C83));<br />
+OG1:=OrbitalGraph(Z8, 1, {2, 5, 8});<br />
+OG2:=OrbitalGraph(Z8, 1, {3, 5, 7});<br />
+OG3:=OrbitalGraph(Z8, 1, {4, 5, 6});<br />
+IsIsomorphic(G1, OG1), IsIsomorphic(G2, OG2), IsIsomorphic(G3, OG3);<br />
+IsIsomorphic(OG1, OG2), IsIsomorphic(OG1, OG3), IsIsomorphic(OG2, OG3);<br />
+G2; OG2;<br />
+</pre>
+
+<li>3-Regular Graphs on 8 Vertices
+<pre>
+[INPUT]
+/* The following five 3-regular connected graphs on 8 vertices were generated by F:=GenerateGraphs(8: Connected:=true, MinDeg:=3, MaxDeg:=3);
+t, G:=NextGraph(F); Edges(G); */
+
+RG81:=Graph<8 | {1, 5}, {1, 6}, {1, 7}, {2, 5}, {2, 6}, {2, 8}, {3, 5}, {3, 7}, {3, 8}, {4, 6}, {4, 7}, {4, 8} >;
+RG82:=Graph<8 | {1, 4}, {1, 5}, {1, 6}, {2, 5}, {2, 6}, {2, 7}, {3, 6}, {3, 7}, {3, 8}, {4, 7}, {4, 8}, {5, 8} >;
+RG83:=Graph<8 | {1, 4}, {1, 6}, {1, 8}, {2, 5}, {2, 6}, {2, 7}, {3, 5}, {3, 7}, {3, 8}, {4, 7}, {4, 8}, {5, 6} >;
+RG84:=Graph<8 | {1, 4}, {1, 7}, {1, 8}, {2, 5}, {2, 6}, {2, 7}, {3, 5}, {3, 6}, {3, 8}, {4, 7}, {4, 8}, {5, 6} >;
+RG85:=Graph<8 | {1, 4}, {1, 6}, {1, 7}, {2, 5}, {2, 7}, {2, 8}, {3, 5}, {3, 7}, {3, 8}, {4, 6}, {4, 8}, {5, 6} >;
+IsIsomorphic(RG81,RG82), IsIsomorphic(RG81,RG83), IsIsomorphic(RG81,RG84), IsIsomorphic(RG81,RG85), IsIsomorphic(RG82,RG83), IsIsomorphic(RG82,RG84), IsIsomorphic(RG82,RG85), IsIsomorphic(RG83,RG84), IsIsomorphic(RG83,RG85), 
+IsIsomorphic(RG84,RG85);
+RG8:=[RG81, RG82, RG83, RG84, RG85];
+" ";
+Z8:=CyclicGroup(8);
+OG1:=OrbitalGraph(Z8, 1, {2, 5, 8});
+for i in [1..#RG8] do IsIsomorphic(OG1, RG8[i]); end for;
+</pre>
+
+<li>Automorphism Group of a Graph
+<pre>
+[INPUT]
+G:=Graph<13 | {10,1}, {10,2}, {10,4}, {10,5}, {10,7}, {10,8}, {1,2}, {2,3}, {3,4}, {4,5}, {5,6}, {6,7}, {7,8}, {8,9}, {9,1}, {1,11}, {4,12}, {7,13}>; 
+AutomorphismGroup(G);
+</pre>
+</ol>
+
+<a name="links"></a>
+<hr>
+<DIV ALIGN = RIGHT><TABLE BORDER = 3 BGCOLOR = "#FFFFFF"><TR>
+<TD><A HREF = "#top">TOP</TD>
+</TR>
+</TABLE>
+</DIV>
+<H3>Links </H3>
+
+<ol>
+<li><a href="http://magma.maths.usyd.edu.au/calc/">Magma Calculator</a>: Online-Demo of the computer algebra for ALGEBRA.<br>
+</ol>
+
+<hr>
+<DIV ALIGN = RIGHT><TABLE BORDER = 3 BGCOLOR = "#FFFFFF"><TR>
+<TD><A HREF = "#top">TOP</TD>
+<TD><A HREF = "index.html">CW in ME</A></TD>
+<TD><A HREF = "../index-j.html">HOME (J)</A></TD>
+<TD><A HREF = "../index.html">HOME (E)</A></TD>
+</TR>
+</TABLE>
+</DIV>
+</BODY>
+</HTML>

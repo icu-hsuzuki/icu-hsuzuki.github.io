@@ -1,0 +1,54 @@
+<html>
+<HEAD>
+<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="TEXT/HTML; CHARSET=ISO-2022-JP">
+<title>Macintosh OSX Installation Log</title>
+</HEAD>
+<BODY BGCOLOR = "#CCFFCC">
+<A NAME = "top"></A>
+<DIV ALIGN = RIGHT><I>Last Update : June 28, 2003</I></DIV>
+<HR>
+<H2>Installation Log of Macintosh OSX Applications</H2>
+        <UL>
+	<LI><a href="#donkey">Donkey</a> (for SKey of OTP)
+        </UL>
+<a name="donkey"></a>
+<HR>
+<DIV ALIGN = RIGHT><TABLE BORDER = 3 BGCOLOR = "#FFFFFF"><TR>
+<TD><A HREF = "#top">TOP</A></TD>
+<TD><A HREF = "osx.html">OSX</A></TD>
+<TD><A HREF = "index.html">COMPUTER</A></TD>
+<TD><A HREF = "../index-j.html">HOME</A></TD>
+</TR>
+</TABLE>
+</DIV>
+<H3>DONKEY</H3>
+
+(Installation using Terminal)
+<ol>
+<li>Download donkey-current.tar.gz from: <a href="ftp://ftp.aist-nara.ac.jp/pub/Security/tool/donkey/">ftp://ftp.aist-nara.ac.jp/pub/Security/tool/donkey/</a>
+<li>% tar zxf donkey-current.tar.gz<br>
+(Stuff-it expander may have expanded the file on your desktop already.)
+<li>% cd donkey-0.5
+<li>% ./setup Darwin
+<li>% cd obj/Darwin/
+<li>% ./configure
+<li>% make
+<li>% sudo make install
+<li>% Password: XXXXXXXX
+<li>% rehash
+<li>% donkey -f md5 nnn xxnnnn
+</ol>
+(June 28, 2003)
+</ul>
+
+<a name="bottom"><a>
+<HR>
+<DIV ALIGN = RIGHT><TABLE BORDER = 3 BGCOLOR = "#FFFFFF"><TR>
+<TD><A HREF = "#top">TOP</A></TD>
+<TD><A HREF = "index.html">COMPUTER</A></TD>
+<TD><A HREF = "../index-j.html">HOME</A></TD>
+</TR>
+</TABLE>
+</DIV>
+</BODY>
+</HTML>

@@ -1,0 +1,1155 @@
+<!doctype html>
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<TITLE>Introduction to Sage in Japanese</TITLE>
+</HEAD>
+<BODY BGCOLOR = "#CCFFCC">
+<A NAME = "top"></A>
+<div align = "right"><I>Last Update: July 23, 2015</I></div>
+<HR>
+<H4>Introduction to Sage in Japanese</H4>
+<H3>日本語による Sage 紹介のページ</H3>
+<ul>
+<li><a href="#about">このページについて</a>
+<li><a href="#start">はじめの一歩</a>
+<li><a href="#general">数学一般</a>
+<li><a href="#linear">線形代数</a>
+<li><a href="#calculus">微分積分</a>
+<li><a href="#complex">関数論</a>
+<li><a href="#bcm">集合と代数系の基礎</a>
+<li><a href="#algebra">代数学</a>
+<li><a href="#graph">代数的グラフ理論</a>
+<p>
+<li><a href="#gapinsagenb">Sage ノートブックで GAP を使いたいとき</a>
+<p>
+<li><a href="#links">マニュアル・関連サイト・参考文献</a>
+</ul>
+<a name="about"></a>
+<hr>
+<DIV ALIGN = RIGHT><TABLE BORDER = 3 BGCOLOR = "#FFFFFF"><TR>
+<TD><A HREF = "#top">TOP</TD>
+<TD><A HREF = "index.html">CW in ME</A></TD>
+<TD><A HREF = "../../index-j.html">HOME (J)</A></TD>
+<TD><A HREF = "../../index.html">HOME (E)</A></TD>
+</TR>
+</TABLE>
+</DIV>
+<H3>このページについて</H3>
+
+Sage を日本語化することがどの程度意味があるか不明であるし、しばらくは不可能であろう。しかし、あまりに、Sage に関する日本語圏の貢献、紹介ページが少ないことを考えると、何らかの紹介を日本語で書くことの意味もあると考え、このページをスタートさせることにした。基本的には、ICU の学生を対象としているが、GPL というオープンソースのライセンス形態で開発されているだけでも、数学が関係する教育に決定的な価値をもつ Sage を、他の日本語圏のみなさんにも紹介したいと思う。他に有益なページが増えれば、このページの更新を続けるつもりはない。
+<p>
+Sage は Unix 系OS、MacOS、Windows OS いずれにも対応している数式処理システムである。Maple, Mathematica などと同様と考えて良い。決定的な違いは、オープンソースつまり、システムの中身が公開されていて、GPL というライセンス形態で、開発されており、無償で提供されている点である。責任を持つ企業などがないから不安だと考えるひともいるかも知れないが、同時に、たとえば Maple や Mathematica は利用しているアルゴリズムなどが公開されておらず、問題があった場合には、開発元が修正するまでは待つしかない。アルゴリズムが公開されていないということは、学術的に信頼ができるかどうか、peer review の原則にたつ、研究の評価にもある枷がかかることになる。他にも Magma などは、代数計算において優れたシステムであるが、これをシステムの一部にとりこんで、自ら開発する事はできない。新しいクラスなどを定義することができないためである。そう考えたときに、Sage のようなオープンソースのシステムの価値は高い。
+<p>
+これまで、Sage 以外にも、オープンソースのシステムはいくつも存在したが、研究のために開発されたものが多く、汎用性が高いものは少なく、特に、初心者に使いやすいものも少なかった。その意味では、Maple や Mathematica は優れていると言わざるを得なかったであろう。しかし、教育目的を考えた時、これら市販のシステムの値段の高さはいかんともしがたい。日本以外の100を越える国々（日本以外ほとんどすべてと言ってもよい）では、Student License が 100ドル未満の値段で提供されているが、日本は例外的にこの二倍から三倍の価格となっている。それでも安くなった方で、以前はもっと高額であった。わたしは、本社にこのことを訴えたが返事はすべて代理店経由でくるため、ほとんど改善は得られなかった。日本の数学が一般人に受け入れられない理由はいくつもあるだろうが、そのうちの一つだと個人的には認識している。また、学生用以外のものの値段は、よほどの研究費をもっている研究機関でないと、すくなくとも自由には利用できない。たとえ、安価になっても、学生が家で、そして、卒業してからも一生のものとして、色々なカタチで数学を身近なものとするために、利用することをかんがえると、たとえ機能があるていど限定されていても、無償のものの価値は人間の財産として重要である。
+<p>
+Sage の良い点は、既存の オープンソースのシステムをも利用できるように設計されている点である。Maxima がもとだと言われているが、群論関係では有名な GAP も利用できるようになっている。他のオープンソースのシステムを利用してきた研究者にもなじみやすいのではないだろうか。
+<p>
+Sage には、四つのインターフェイスが用意されている。Terminal モード、Notebook モード、SageMathCell、SageMathCloud である。Notebook モードはオンラインでも、インストールしても利用できる。
+<p>
+<A HREF="http://sagecell.sagemath.org">SageMathCell</A> は、電卓としても（実際に、SageMathCell Server を用いた、SmartPhone のアプリも存在する）簡単なデモ用にも、Interact モードを利用して教育用にも有効である。SageMathCell では、Sage, GAP, GP, HTML, Maxima, Octave, Python, R が利用可能である。Octave は MatLab のコードがほぼ使えるので、線形代数などを使った数値計算にも有効である。
+<li>
+<A HREF="https://cloud.sagemath.com">SageMathCloud (SMC) </A>は、最も進んだインターフェイスと言ってよいだろう。Linux の Terminal も使えるようになっており、SageMath Worksheet 以外にも、IPython の拡張の Jupyter や LaTeX、さらにコースや共同研究にも使えるようになっている。Terminal 上で、GAP なども使えるようになっている。2014年11月に正式版レリースとなった。非常に素晴らしいシステムだが、一つだけ、心配なのは、サーバーは一つだけで、いずれ、何らかの形でコマーシャルベイスとなる可能性があることである。教育用には、是非、オープンソース、フリーで残して欲しい。
+<li>
+その意味でも、いくつものサイトにサーバーが立てられている、Notebook は無視することができない。サーバーについては、下のリスト参照。以下は、SageMathCloud が存在しなかったまたは、ベータ版だったときに書いたものであるが、基本的には、どのインターフェイスでも同じであるので、参考にして頂きたい。
+<li>
+SMC, SageMathNotebook, SageMathCell は、ホームページ閲覧ソフト（web browser）で扱えるため、利用が簡単で、かつ TeX も組み込まれているため、Typset も美しく、さらに図もきれいに表示できるようになっている。
+<li>
+Sage ノートブック・サーバは、大本のものは、利用者が多いためか、かなり遅く利用に適さないときもあるが、それ以外のものは、いまのところ、問題なく利用できる。個人的には、このようなサーバーの運用経験はないが、日本でもいくつかのサーバーを立ち上げることで、貢献したり、そこで解説やサポートなども行うことにより、利用者を増やすこともできるであろう。
+<p>
+Sage によって数学が、専門家だけのものではなく、また数学を使う人が、専門家だけではなく、すべてのひとにひろがることを願っている。計算力があることは望ましいし、そのことは、研究推進に大きな力になるであろう。しかし、計算力がなくても、すこし数学を理解することで、Sage の利用が可能となり、数学が多くの人に利用されるようになると信じている。スポーツがプロだけのものではなく、肉体的な訓練を十分しなくても楽しめ、かつ人生を豊かにするように、数学もすべてのひとが楽しむことができるようになることを期待している。数学は人間すべてにとってすばらしいもので、利用し、楽しむ人それぞれにとって、意味はすこしずつ違っていても、価値のあるものだと信じるからである。
+<p>
+<a name="start"></a>
+<hr>
+<DIV ALIGN = RIGHT><TABLE BORDER = 3 BGCOLOR = "#FFFFFF"><TR>
+<TD><A HREF = "#top">TOP</TD>
+</TR>
+</TABLE>
+</DIV>
+<H3>はじめの一歩</H3>
+
+最初の一歩は使い始めること。
+
+<OL>
+<LI>このページの下についているリンクから Sage ノートブック・サーバにアクセスし、アカウントを作る。
+<OL type="a">
+<LI>Sign up for a Sage Notebook account を選択し、Username と Password を設定すれば OK
+<LI>この段階で遅いと感じたら、他のノートブック・サーバを利用するのがよい。ただし、記録が長くは残らないサーバーもあるので多少注意が必要。
+</OL>
+
+<LI>Login したら、New Worksheet を選択。適当に名前をつける。これで準備 OK
+
+<LI>3+5 などと枠に入れ、枠の下の evaluete をクリックすると答えがでることを確認。
+
+<LI>factor(123456789) などと入れると、この9桁の数の素因数分解をしてくれる。
+
+<LI>あとは、好みに合わせて、試してみるのがよい。一応いくつかの選択肢を書くと以下の通り。
+<OL type="a">
+<LI>下にある、例をコピー・ペーストして入れてみる。
+<LI>下のリンクにある、「基本項目をまとめたカード」の中の興味のあるものを選択してためす。
+<LI>Notebook の上の Help を選択し、上の Tutorial をためす。これは、中身を適当に修正しても evaluate してくれるので、自分のこのみに変えて試すこともできる。
+</OL>
+
+<LI>さらなる Help とマニュアル
+<OL type="a">
+<LI>Help にある Reference Manual を利用するのもよいが、Sage 開発チームによる Manual のpdf のものの方が全文検索もできるので、使いやすい。これを download して利用するのもよい。
+<LI>上のカードなどで、ある程度分かってきたら、たとえば、factor? のようにクエスチョンマークをつけたり、それを二つ ?? とつけることにより、マニュアルにアクセスできるのでそれに慣れるのがよい。
+<LI>例にも挙げておいたが、たとえば、行列 A などを定義したら、A.[tab] とすることで、この行列に関してどのようなことができるかが表示され、非常に便利である。
+<LI>上のステップで少し慣れてきたら、もう一度 Help にいって、興味のある部分を読んでみるのもよい。ひとによって利用する機能はかなり異なるからである。
+<LI>下のリンクにもある Sage 紹介ビデオ、音声付き画面録画をみてみるのも良いかも知れない。開発を統括している Stein さんにもお会いすることができます。
+</OL>
+ 
+ <LI>使い方を広げるために
+ <OL type="a">
+ <LI>枠の挿入・削除・コメント
+ <OL type="i">
+ <LI>枠の上あたりにマウスを近づけると青い線が現れる、それをクリックすると、新しい枠が挿入される。
+ <LI>空の枠で [delete] キーを押すと、その枠が消える。
+ <LI>青い線のところで [shift] を推しながらクリックすると、Textbox が現れる。そこにコメントを書き入れることができる。
+ <LI>枠のなかにコメントを書くときは、# をつけそのあとにコメント。
+</OL type="a">
+<LI>ワークシートを見てみるといろいろなリンクがあることに気づく。File, Action, Data, sage のプルダウンメニューと、Typeset のチェックボタン。これらを試してみると、なにも起こらないことを発見することもあるだろうが、可能性も感じることができるのではないだろうか。
+<LI>Typeset をチェックして計算をしてみると、違いはすぐ分かるはず。ただチェックしないメリットもそのうち気づくと思うがそれは個人個人利用の仕方によって違うので、ここには書かない。
+</OL>
+
+<LI>自分のコンピュータへのインストール
+<OL type="a">
+<LI>もうすこし使ってみたいと感じたらインストールをお薦め。
+<LI>Windows は Virtual Box Player をまずインストールしてからとなっている。これについては、次の version  で改善されると計画されてはいる。個人的には、MacOSX と Windows に install したが特に問題はなかった。
+<LI>Notebook 主体でするか、Command Mode で長いプログラムなどを書いて利用するかにより、多少ことなるが、あとは、sage のホームページの説明を見て頂くのがよいと思うのと、バージョンが変わったときにすぐには対応できないので、書かないこととする。
+</OL>
+
+<LI>楽しんで下さった方へ
+<OL type="a">
+<LI>このホームページ全体のホームに電子メールアドレスも公開していますので、お気づきの点、他に良いサイトなどありましたら、お知らせ下さい。
+<LI>このページは、定期的に更新するつもりはありませんので悪しからず。
+<LI>Sage を一緒に楽しみましょう。
+</OL>
+</OL>
+
+<p>
+<a name="general"></a>
+<hr>
+<DIV ALIGN = RIGHT><TABLE BORDER = 3 BGCOLOR = "#FFFFFF"><TR>
+<TD><A HREF = "#top">TOP</TD>
+</TR>
+</TABLE>
+</DIV>
+<H3>数学一般</H3>
+
+<ol>
+<li>n 人の中に同じ日（月日）が誕生日の二人以上の人がいる確率
+<pre>
+[INPUT]
+def birthday(n): # same as birthday 2 
+    return 1-RR(binomial(365,n)*factorial(n)/(365^n))
+</pre>
+<p>
+<pre>
+[INPUT]
+def birthday2(n):
+    p=1
+    for i in range(0,n):
+        p = p*(365-i)/365
+    return 1-RR(p)
+</pre>
+<p>
+<pre>
+[INPUT]
+def birthday3(n):
+    p=1
+    for i in range(0,n):
+        p = p*(366-i)/366
+    return 1-RR(p)
+</pre>
+<p>
+
+<li>n 人の中に誕生月がある特定の月である人がいる確率
+<pre>
+[INPUT]
+n=var('n'); f = 1-RR((365-31)/365)^n
+</pre>
+<p>
+
+<li>二次方程式の一般解
+<pre>
+[INPUT]
+var('a, b, c')
+solve(x^2+b*x+c==0,x)
+</pre>
+
+<li>Expansion and Factorization
+<pre>
+[INPUT]
+var('a,b')
+f=expand((a-b)^3*(a+3*b))
+f; factor(f)
+</pre>
+<p>
+</ol>
+<a name="linear"></a>
+<hr>
+<DIV ALIGN = RIGHT><TABLE BORDER = 3 BGCOLOR = "#FFFFFF"><TR>
+<TD><A HREF = "#top">TOP</TD>
+</TR>
+</TABLE>
+</DIV>
+<H3>線形代数</H3>
+
+<ol>
+<li>連立一次方程式
+<pre>
+[INPUT]
+x,y,z=var('x,y,z')
+eq=(x-y-z==0, 5*x+13*y==8, -13*y+14*z==3)
+sol=solve(eq, x,y,z); sol
+</pre>
+<p>
+
+<li>連立一次方程式の応用 (D. Lay 1.6.8)
+<pre>
+[INPUT]
+# Problem 1.6.8
+# H, O, Ca, C in this order
+# H3O + CaCO3 -> H2O + Ca + CO2
+A8 = Matrix([[3,0,-2,0,0,0],[1,3,-1,0,-2,0],[0,1,0,-1,0,0],[0,1,0,0,-1,0]])
+print(A8)
+print
+A8.echelon_form()
+</pre>
+<p>
+
+<li>連立一次方程式の応用 (D. Lay 1.6.10) [解1: 整数の範囲で]
+<pre>
+[INPUT]
+# Pb, N, Cr, Mn, O in this order
+# PbN6 + CrMn2O8 -> Pb3O4 + Cr2O3 + MnO2 + NO
+# treat as integer matrix
+A10 = Matrix([[1, 0, -3, 0, 0, 0, 0], [6,0,0,0,0,-1, 0],[0,1,0,-1,0,0,0],[0,1,0,0,-1,0,0],[0,8,-4,-3,-2,-1,0]])
+print(A10)
+print
+A10.echelon_form()
+</pre>
+<p>
+
+<li>連立一次方程式の応用 (D. Lay 1.6.10)  [解2: 有理数の範囲で]
+<pre>
+[INPUT]
+# Pb, N, Cr, Mn, O in this order
+# PbN6 + CrMn2O8 -> Pb3O4 + Cr2O3 + MnO2 + NO
+# treat as a matrix with rational number entries 有理数（分数）行列として扱う
+A10 = Matrix(QQ, [[1, 0, -3, 0, 0, 0, 0], [6,0,0,0,0,-1, 0],[0,1,0,-1,0,0,0],[0,1,0,0,-1,0,0],[0,8,-4,-3,-2,-1,0]])
+print(A10)
+print
+A10.echelon_form()
+</pre>
+<p>
+
+<li>連立一次方程式の応用 (D. Lay 1.6.10) [解3: 方程式として]
+<pre>
+[INPUT]
+var('x1,x2,x3,x4,x5,x6')
+eq = [x1 - 3*x3 == 0, 6*x1 - x6 ==0, x2 - x4 == 0, x2 - x5 == 0, 8*x2 - 4*x3 - 3*x3 -2 *x5 - x6 == 0]
+solve(eq, [x1,x2,x3,x4,x5,x6])
+</pre>
+<p>
+
+<li>行列と行列式
+<pre>
+[INPUT]
+U=matrix([[1,1,1,1],[1,-1,0,0],[1,0,-1,0],[1,0,0,-1]]); print(U); U.det()
+</pre>
+<p>
+<pre>
+[INPUT]
+var('a')
+U1=matrix([[1,a,a,a],[1,-a,0,0],[1,0,-a,0],[1,0,0,-a]]); show(U1); U1.det()
+</pre>
+<p>
+
+<li>行列とその列ベクトル、逆行列の LaTeX ソースコード
+<pre>
+T = matrix([[-1, -1, 2],[1, 0, -1],[0, 1, 1]]); T
+</pre>
+<p>
+<pre>
+T1=T[:,0]; T2=T[:,1]; T3=T[:,2]; T1; T2; T3
+</pre>
+<p>
+
+<li>行列演算<br>
+行列 A を定義した後,  A.[tab] とすると、利用できるものを見ることができる.
+<pre>
+[INPUT]
+# A definition of a matrix
+A = Matrix([[1, 0, 2],[2, -1, 3], [1, 1, 8]])
+</pre>
+<p>
+<pre>
+A.det(); A.trace()
+</pre>
+<p>
+<pre>
+factor(A.charpoly())
+</pre>
+<p>
+<pre>
+A.transpose(); A.adjoint()
+</pre>
+<p>
+<pre>
+A*A.adjoint()
+</pre>
+<p>
+</ol>
+
+<H4>2011年度線形代数学入門期末試験問題</H4>
+線形代数学 I（2008年度から2011年度はコースの名称が線形代数学入門）の<A HREF="http://subsite.icu.ac.jp/people/hsuzuki/science/class/linear1/linear1_exam.html">過去問</A>のうち、2011年度のものを Sage で解く場合の Input を参考のために記します。
+
+<OL>
+<LI>線形写像 T の定義：
+<pre>
+[INPUT]
+var('x1,x2,x3')
+T = matrix([2*x1+3*x2+x3,x1-x2-x3,-x1+3*x2+5*x3])
+</pre>
+<p>
+<OL type="a">
+<LI>T の行列表示
+<pre>
+[INPUT]
+A1=matrix(3,3); A1[0] = T(x1=1,x2=0,x3=0);  A1[1] = T(x1=0,x2=1,x3=0);  A1[2] = T(x1=0,x2=0,x3=1)
+A11 = A1.transpose(); A11
+</pre>
+<LI>T の列ベクトルのベクトル積
+<pre>
+[INPUT]
+A1T=A11.transpose(); A1T[0].cross_product(A1T[1])
+</pre>
+<LI>平行六面体の体積
+<pre>
+[INPUT]
+A11.det().abs()
+</pre>
+</OL>
+
+<LI>行列式、固有値、固有ベクトル、対角化<br>
+行列の定義
+<pre>
+[INPUT]
+var('a,b')
+A2=matrix([[a,b,b,b],[b,a,b,b],[b,b,a,b],[b,b,b,a]])
+B2=matrix([[b,b,b,b],[b,b,b,b],[b,b,b,b],[b,b,b,b]])
+A2; B2
+</pre>
+<OL type="a">
+<LI>行列式とその因数分解
+<pre>
+[INPUT]
+print(A2.determinant())
+print("Determinant of A")
+factor(A2.determinant())
+</pre>
+<p>
+<LI>固有多項式と固有値
+<pre>
+[INPUT]
+print(A2.characteristic_polynomial())
+A2.eigenvalues()
+</pre>
+<p>
+<LI>固有ベクトル
+<pre>
+[INPUT]
+B2.eigenvectors_right()
+</pre>
+<p>
+<LI>固有行列
+<pre>
+[INPUT]
+D2,T2 = B2.eigenmatrix_right();
+print(D2)
+print(T2)
+</pre>
+<p>
+<LI>対角化
+<pre>
+[INPUT]
+T2^-1*A2*T2
+</pre>
+<p>
+</ol>
+<LI>行列式、クラメールの公式、随伴行列、行列の基本変形<br>
+行列の定義
+<pre>
+[INPUT]
+A3 = matrix([[3,-1,2,0],[1,2,-2,5],[-1,3,1,1],[2,3,1,-2]])
+A3
+</pre>
+<OL>
+<LI>行列式とその素因数分解
+<pre>
+[INPUT]
+print(A3.det())
+factor(A3.det())
+</pre>
+<p>
+<LI>基本変形
+<pre>
+[INPUT]
+b3 = matrix([1,2,3,4]).transpose()
+print(A3[:,0])
+B31 = copy(A3); B32 = copy(A3)
+print(B31)
+print(B32)
+B31.column(1,b3)
+print(B31)
+A3
+</pre>
+<p>
+</OL>
+
+</OL>
+
+
+<a name="calculus"></a>
+<hr>
+<DIV ALIGN = RIGHT><TABLE BORDER = 3 BGCOLOR = "#FFFFFF"><TR>
+<TD><A HREF = "#top">TOP</TD>
+</TR>
+</TABLE>
+</DIV>
+<H3>微分積分</H3>
+
+
+<ol>
+<li>定積分
+<pre>
+[INPUT]
+# x は変数として定義されているので定義しなくてもよい。
+f1a=cos(arcsec(x))/(x*sqrt(x^2-1))
+integral(f1a,x,2/sqrt(3),2)
+</pre>
+<p>
+
+<pre>
+[INPUT]
+var('y')
+f1b=1/(y*sqrt(1+(log(y)^2)))
+integral(f1b,y,1,exp(1))
+</pre>
+<p>
+<li>不定積分（微分による検算）
+<pre>
+[INPUT]
+var('t')
+f1c=(t^4-4*t^3+2*t^2-3*t+1)/(t^2+1)^3
+if1c=integral(f1c,t); if1c; if1c.derivative(); if1c.derivative().factor()
+</pre>
+<p>
+
+<pre>
+[INPUT]
+f1d=16*x^3*(log(x))^2
+integral(f1d,x)
+</pre>
+<p>
+
+<pre>
+[INPUT]
+var('v')
+f1e=sqrt(1-v^2)/v^2
+integral(f1e,v)
+</pre>
+<p>
+
+<pre>
+[INPUT]
+f1g=1/(1+sin(x)+cos(x))
+integral(f1g,x)
+</pre>
+<p>
+
+<li>数列の極限
+<pre>
+[INPUT]
+var('n')
+f6=(n/(n+1))^n
+f6.limit(n=oo)
+</pre>
+<p>
+<pre>
+[INPUT]
+var('y')
+f9=y^2/(cos(y)-cosh(y))
+f9.limit(y=0)
+</pre>
+<p>
+
+<li>テイラー展開
+<pre>
+[INPUT]
+f7=exp(sin(x))
+taylor(f7,x,0,2)
+</pre>
+<p>
+
+<pre>
+[INPUT]
+f8=arcsinh(x)
+taylor(f8,x,0,10)
+</pre>
+<p>
+
+<li>収束判定
+<pre>
+[INPUT]
+#下の値が1より大きければ収束、小さければ発散
+f10=n*((2*n)*(2*n+1)/(2*n-1)^2-1)
+f10.limit(n=oo)
+</pre>
+<p>
+</ol>
+
+<a name="complex"></a>
+<hr>
+<DIV ALIGN = RIGHT><TABLE BORDER = 3 BGCOLOR = "#FFFFFF"><TR>
+<TD><A HREF = "#top">TOP</TD>
+</TR>
+</TABLE>
+</DIV>
+<H3>関数論</H3>
+
+<ol>
+<li>Laurent Series
+<pre>
+[INPUT]
+# Any line after # is a comment.
+# R.&lt;x&gt; is a polynomial ring with rational coefficients
+# P.&lt;z&gt; is a power series ring, which is called Laurent Series Ring, with coefficients in R.<x>
+R.&lt;x&gt;=PolynomialRing(QQ,1)
+P.&lt;z&gt; = LaurentSeriesRing(R)
+f = 1-2*x*z + z^2
+g = 1/f
+# Display f and find Coefficients of f
+print(f)
+f.coefficients()
+</pre>
+<p>
+<pre>
+[INPUT]
+# find the first 6 coefficients starting from 0th coefficient
+for i in range(6):
+    g.coefficients()[i]
+</pre>
+<p>
+<pre>
+[INPUT]
+# the first 6 coefficients of g = 1/f, simpler way
+g.coefficients()[:6]</pre>
+<p>
+<pre>
+[INPUT]
+# using Landau's symbol
+g+O(z^6)</pre>
+<p>
+</ol>
+
+<a name="bcm"></a>
+<hr>
+<DIV ALIGN = RIGHT><TABLE BORDER = 3 BGCOLOR = "#FFFFFF"><TR>
+<TD><A HREF = "#top">TOP</TD>
+</TR>
+</TABLE>
+</DIV>
+<H3>集合と代数系の基礎</H3>
+<ol>
+<li>関数の定義
+<pre>
+[INPUT]
+x=var('x'); f = x^3 - 3*x^2 - 3*x -1; [f(n) for n in range(8)]
+</pre>
+<p>
+<li>関数の定義、その値、根、微分 （ある区間に根が丁度一個あることを示す）
+<pre>
+[INPUT]
+x=var('x') 
+f = x^5 + 2*x - 5
+print(f.subs(x=1))
+print(f.subs(x=2))
+find_root(f,1,2)
+f.derivative()
+</pre>
+
+<li>フェルマー数の因数分解
+<pre>
+for i in range(0,9):  
+    factor(2^(2^i)+1)
+</pre>
+<p>
+<li>フェルマー数の因数分解のリスト
+<pre>
+def fe(n):
+    v = []
+    for i in range(0,n):
+        v.append(factor(2^(2^i)+1))
+    return v
+ 
+m = fe(9); m
+</pre>
+<p>
+<li>メルセンヌ素数の構成
+<pre>
+[INPUT]
+def me(n): 
+	v = []
+	for i in prime_range(2,n): 
+		if is_prime(2^i-1):
+			v.append(i)
+	return v
+</pre>
+<p>
+<li>n 番目までのフィボナッチ数列
+<pre>
+def fibonatti(n):
+    f=[1,1]
+    for i in range(2,n):
+        f.append(f[i-1]+f[i-2])
+    return f
+    
+fibonatti(10)
+</pre>
+<p>
+<li>全射の数
+<pre>
+[INPUT]
+var('n,m,k')
+def surj(m,n): # number of onto mappings from an m-set to an  n-set
+    s=0
+    for k in range(0,n):
+        s = s+(-1)^k*binomial(n,k)*(n-k)^m
+    return s
+</pre>
+<p>
+<li>関数とグラフ（逆関数）
+<pre>
+[INPUT]
+var('y')
+solve(y==3*x/(x-2),x)
+</pre>
+単純に x について解くことで逆関数を求めます。x だけは最初から変数として登録してありますから、定義する必要はありませんが、他の変数（この例では、y）は定義しないと、使うことができません。
+<p>
+<pre>
+[INPUT]
+g(x) = 3*x/(x-2)
+h(x) = 2*x/(x-3)
+p1=plot(g,(x,-10,15), ymax=10, ymin=-1, color='red', detect_poles = 'show')
+p2=plot(h,(x,-10,15), ymax=10, ymin=-1, color='blue', detect_poles = 'show')
+p3=plot(x,(x,-10,15), color='black')
+(p1+p2+p3).show(aspect_ratio=1)
+</pre>
+上の例で求めた、逆関数が h(x) となっています。それも定義して、グラフにしたものです。plot の中のオプションは、大体想像できると思います。まずは、plot ?? と入力して、どのようなものが使えるか、また例を見てみるのが良いでしょう。plot は条件を表す点（この場合はグラフ）を決めるものです。それを表示するのは、show()。一つのグラフとして表すので、p1+p2+p3 としています。p3 は対称軸を表しています。
+<p>
+<li>関数の極大極小とグラフ
+<pre>
+[INPUT]
+f(x) = x/(x^2+1)
+plot(f(x),(x,-10,10)).show(figsize=[8,4])
+f.derivative().show()
+sol=solve(f.derivative(),x)
+print(sol)
+for i in range(len(sol)):
+    print("at x = {0}, f(x) = {1}".format(sol[i].rhs(), f(sol[i].rhs())))
+minval,xmin=find_minimum_on_interval(f,-5,5)
+print("Min at x={0}, Min value = {1}").format(xmin, minval)
+</pre>
+関数の極大極小を求めるものです。関数を定義し、グラフを表示し、導関数を計算し表示、導関数が 0になる、つまり臨界点（critical point）を計算し、その値を、表示させています。solve の答えは、リストで、[x==a, x==b] と得られますから、それぞれの右辺を代入した結果を表示させています。最後は、極小の値を、数値で求めています。print の中身は、{0}, {1} は表示させるデータを意味し、最初の例では、sol[i].rhs() だったり、f(sol[i].rhs()) だったりということです。range(2) は 0, 1 を表します。そして、sol[0] が一つ目、sol[1] が二つ目と言うことになります。
+<p>
+<li>最大公約数 d と d = ax+by 表示
+<pre>
+[INPUT]
+print(xgcd(51, 288))
+print(xgcd(357,629))
+print(xgcd(180, 252))
+print(xgcd(4278, 71929))
+print(factor(4278))
+print(factor(71929))
+</pre>
+</ol>
+<p>
+<a name="algebra"></a>
+<hr>
+<DIV ALIGN = RIGHT><TABLE BORDER = 3 BGCOLOR = "#FFFFFF"><TR>
+<TD><A HREF = "#top">TOP</TD>
+</TR>
+</TABLE>
+</DIV>
+<H3>代数学</H3>
+
+<ol>
+<li>U(18)：既約剰余類群
+<pre>
+[INPUT]
+U18=[g for g in Integers(18) if g.is_unit()];
+len(U18);U18;[g.multiplicative_order() for g in Integers(18) if g.is_unit()]
+</pre>
+<p>
+<li>対称群と交代群の元の位数
+<pre>
+[INPUT]
+S9=SymmetricGroup(9); A9=AlternatingGroup(9); 
+Set([x.order() for x in S9]); Set([x.order() for x in A9])
+</pre>
+N=8 or 9 may be a practical limit. See magma section.
+<p>
+<li>特定の位数の元の個数
+<pre>
+[INPUT]
+S6=SymmetricGroup(6); 
+Q= Set([x for x in S6 if x.order() == 4]); 
+I= Set([x for x in S6 if x.order() == 2]); 
+Q.cardinality(); I.cardinality()
+</pre>
+<p>
+<li>置換群の部分群と生成元の積による表示
+<pre>
+[INPUT]
+G=SymmetricGroup(6)
+r=G((1,3,4,5,6)); s=G((1,3,2))
+K=G.subgroup([r,s])
+K; K.order()
+</pre>
+<p>
+<pre>
+g=G('(1,6,5,2,3)')
+g.word_problem(K.gens())
+</pre>
+<p>
+<li>トランプの並べ替えの問題（インディアナ州での問題から quote from "Contemporary Abstract Algebra", by J.A.Gallian）
+<blockquote>
+毎回同じ方法（置換）で順番を入れ換えるカードを切る機械がある。A から K までのハートのトランプをこの機械で二回切ると 10, 9, Q, 8, K, 3, 4, A, 5, J, 6, 2, 7 が得られた。一回切ったあとはどうなっているか。
+</blockquote>
+b をその置換とすると、c = b・b = (1,8,4,7,13,5,9,2,12,3,6,11,10) だから、b の 13乗が恒等写像であることが、わかる。そこで、b の逆元を a とすると、b の 12乗 すなわち、c の 6乗が a であることが分かるので、その逆元をもとめれば b が分かる。 
+<pre>
+[INPUT] 
+c = Permutation([8,12,6,7,9,11,13,4,2,1,10,3,5])
+b=power(c,6).inverse()
+b; a.cycle_string()
+</pre>
+<p>
+<pre>
+[INPUT]
+a=Permutation('(1,2,8,12,4,3,7,6,13,11,5,10,9)')
+b=a.inverse()
+s=range(1,14)
+b.action(s); (b*b).action(s)
+</pre>
+<p>
+<li>置換群の生成と同型判定 (Gallian Ex 7.21)
+<pre>
+[INPUT]
+G721=PermutationGroup([[(1,2)],[(2,3,4)]])
+print("Group in question is: \n{0}".format(G721))
+print("\nOrder of the group is {0}".format(G721.order()))
+print("Is isomorphic to Sym(4)? {0}.".format(G721.\
+is_isomorphic(SymmetricGroup(4))))
+</pre>
+<p>
+<li>置換群の固定部分群と軌道 (Gallian Ex 7.35)
+<pre>
+[INPUT]
+G735=PermutationGroup([[(1)], [(1,2),(3,4)], [(1,2,3,4),(5,6)],\
+ [(1,3),(2,4)], [(1,4,3,2),(5,6)], [(5,6),(1,3)], \
+ [(1,4),(2,3)], [(2,4),(5,6)]])
+print("Group in question is: \n{0}".format(G735))
+print("\nOrder of the group is {0}".format(G735.order()))
+print("Is Abelian? {0}".format(G735.is_abelian()))
+print("\nStabilizer of 1 is: \n{0}".format(G735.stabilizer(1)))
+print("Order = {0}".format(G735.stabilizer(1).order()))
+print("Orbit of 1 is the set {0}".format(G735.orbit(1)))
+print("\nStabilizer of 3 is: \n{0}".format(G735.stabilizer(3)))
+print("Order = {0}".format(G735.stabilizer(3).order()))
+print("Orbit of 3 is the set {0}".format(G735.orbit(3)))
+print("\nStabilizer of 5 is: \n{0}".format(G735.stabilizer(5)))
+print("Order = {0}".format(G735.stabilizer(5).order()))
+print("Orbit of 5 is the set {0}".format(G735.orbit(5)))
+</pre>
+<p>
+<li>Z<sub>12</sub>xZ<sub>20</sub>xZ<sub>10</sub> の位数 20の巡回部分群を５個リストする問題 (Gallian Chapter 5-8, Ex.18)
+<pre>
+[INPUT]
+# The following program takes time to run. Please wait patiently.
+G19=AbelianGroup(3,[12,20,10],names = list("abc"))
+sub = G19.subgroups()
+sub20=[g for g in sub if order(g)==20]
+len(sub20)
+for i in range(5):
+    print(sub20[i])
+</pre>
+<p>
+<li>Z<sub>20</sub>xZ<sub>5</sub>xZ<sub>60</sub> の位数 4 の非巡回部分群の元をリストする問題 (Gallian Chapter 5-8, Ex.32)
+<pre>
+[INPUT]
+# The following program takes time to run. Please wait patiently.
+G20=AbelianGroup(3,[20,5,60],names = list("stu"))
+sub1 = G20.subgroups()
+print("Number of subgroups = {0}".format(len(sub1)))
+sub1n=[g for g in sub1 if g.is_cyclic()==False]
+print("Number of noncyclic subgroups = {0}".format(len(sub1n)))
+sub14=[g for g in sub1n if g.invariants()==[2,2]]
+print("Number of subgroups isomorphic to Z2xZ2 = {0}".format(len(sub14)))
+print(sub14[0])
+print(list(sub14[0]))
+</pre>
+<li>有限アーベル群の基本定理 U(220)
+<pre>
+[INPUT] 
+R=Integers(220)
+print(R.unit_group_order())
+print(factor(euler_phi(200)))
+print(R.unit_gens())
+r220=[a.multiplicative_order() for a in R.unit_gens()]
+AbelianGroup(r220).elementary_divisors()
+</pre>
+<p>
+<li>円分多項式
+<pre>
+[INPUT] 
+# nth cyclotomic polynomial
+for i in range(1,20):
+    print "n=",i,": ", cyclotomic_polynomial(i)
+    
+[OUTPUT]       	
+n= 1 :  x - 1
+n= 2 :  x + 1
+n= 3 :  x^2 + x + 1
+n= 4 :  x^2 + 1
+n= 5 :  x^4 + x^3 + x^2 + x + 1
+n= 6 :  x^2 - x + 1
+n= 7 :  x^6 + x^5 + x^4 + x^3 + x^2 + x + 1
+n= 8 :  x^4 + 1
+n= 9 :  x^6 + x^3 + 1
+n= 10 :  x^4 - x^3 + x^2 - x + 1
+n= 11 :  x^10 + x^9 + x^8 + x^7 + x^6 + x^5 + x^4 + x^3 + x^2 + x + 1
+n= 12 :  x^4 - x^2 + 1
+n= 13 :  x^12 + x^11 + x^10 + x^9 + x^8 + x^7 + x^6 + x^5 + x^4 
+                + x^3 + x^2 + x + 1
+n= 14 :  x^6 - x^5 + x^4 - x^3 + x^2 - x + 1
+n= 15 :  x^8 - x^7 + x^5 - x^4 + x^3 - x + 1
+n= 16 :  x^8 + 1
+n= 17 :  x^16 + x^15 + x^14 + x^13 + x^12 + x^11 + x^10 + x^9 + x^8
+                + x^7 + x^6 + x^5 + x^4 + x^3 + x^2 + x + 1
+n= 18 :  x^6 - x^3 + 1
+n= 19 :  x^18 + x^17 + x^16 + x^15 + x^14 + x^13 + x^12 + x^11 + x^10
+                + x^9 + x^8 + x^7 + x^6 + x^5 + x^4 + x^3 + x^2 + x + 1
+
+[INPUT]
+# coefficient c[m] of x^m of the nth cyclotomic polynomial that is not 1 or -1
+for n in range(1,150):
+    f = cyclotomic_polynomial(n)
+    c = f.coefficients()
+    for m in range(len(c)):
+        if c[m].abs() > 1:
+            print n, m, c[m]
+            
+[OUTPUT]
+105 5 -2
+105 27 -2
+</pre>
+<!--li>多項式環
+<pre>
+[INPUT] 
+R.<x>=PolynomialRing(IntegerModRing(5),1)
+factor(x^4+15*x^3+7)
+</pre>
+<p>
+<pre>
+[INPUT] 
+R2.<x>=PolynomialRing(IntegerModRing(2),1)
+factor(x^8-x)
+</pre>
+<p>
+
+<li>数体
+<pre>
+[INPUT] 
+K.<s> = NumberField(x^3-2)
+(1+s^2)/(2-s)
+</pre-->
+</ol>
+<p>
+
+<a name="graph"></a>
+<hr>
+<DIV ALIGN = RIGHT><TABLE BORDER = 3 BGCOLOR = "#FFFFFF"><TR>
+<TD><A HREF = "#top">TOP</TD>
+</TR>
+</TABLE>
+</DIV>
+<H3>代数的グラフ理論</H3>
+
+<ol>
+<li>ペテルセングラフの表示
+<pre>
+[INPUT]
+g=graphs.PetersenGraph()
+pg=g.plot()
+pg.show()
+</pre>
+<p>
+
+<li>ジョンソングラフとその ターウィリガー加群のパラメタ
+<pre>
+[INPUT]
+# Information of J(n,d) taken from Terwilliger's Subconstituent Algebra paper 1,2,3
+
+n,d,i,j,nu,mu,diam = var('n,d,i,j,nu,mu,diam')
+
+# Information taken from page 192 in subconst 3
+# r = -n+d-1; s = -n-2; t = -n*(n-1)/(d*(n-d))
+def johnson_bj(n,d,j):
+    return (d-j)*(n-d-j)
+    
+def johnson_cj(n,d,j):
+    return j^2
+    
+def johnson_aj(n,d,j):
+    return d*(n-d) - j^2 - (d-j)*(n-d-j)
+	
+def johnson_array(n,d): # d has to be a positive integer
+    c = [johnson_cj(n,d,j) for j in range(d+1)]
+    a = [johnson_aj(n,d,j) for j in range(d+1)]
+    b = [johnson_bj(n,d,j) for j in range(d+1)] 
+    return matrix(3,d+1,[c,a,b])
+
+def johnson_evj(n,d,j):
+    s = -n-2
+    return d*(n-d) + j*(j+1+s)
+    
+def johnson_devj(n,d,j):
+    t = -n*(n-1)/(d*(n-d))
+    return n-1 + t*j
+	
+# Information taken from page 372 in subconst 1
+def johnson_bsj(n,d,j):
+    r = -n+d-1; s = -n-2; t = -n*(n-1)/(d*(n-d))
+    if d==j: 
+        return 0
+    else:
+        return t*(j-d)*(j+1+s)*(j+1+r)/((2*j+1+s)*(2*j+2+s))
+    
+def johnson_csj(n,d,j):
+    r = -n+d-1; s = -n-2; t = -n*(n-1)/(d*(n-d))
+    if d==j: 
+        return -t*d*(d+s-r)/(2*d+s)
+    else:
+        return -t*j*(j+s+d+1)*(j+s-r)/((2*j+1+s)*(2*j+s))
+    
+def johnson_asj(n,d,j):
+    r = -n+d-1; s = -n-2; t = -n*(n-1)/(d*(n-d))
+    if d==j:
+        return n-1 - johnson_csj(n,d,j)
+    else:
+        return n-1 - johnson_csj(n,d,j) - johnson_bsj(n,d,j)
+		
+def johnson_dualarray(n,d): # d has to be a positive integer
+    c = [johnson_csj(n,d,j) for j in range(d+1)]
+    a = [johnson_asj(n,d,j) for j in range(d+1)]
+    b = [johnson_bsj(n,d,j) for j in range(d+1)] 
+    return matrix(3,d+1,[c,a,b])
+	
+def johnson_diam(n,d,nu,mu): # n, d, nu, mu have to be a nonnegative integers
+    d1 = d-2*nu
+    d2 = min(d-mu,n-d-2*nu)
+    if (d1 < 0) or (d1 < d - 2*nu) or (d1 > d - mu):
+        if (d2 < 0) or (d2 < d - 2*nu) or (d2 > d - mu):
+            return []
+        else:
+            return [d2]
+    else:
+        if (d2 < 0) or (d2 < d - 2*nu) or (d2 > d - mu) or (d1 == d2):
+            return [d1]
+        else:
+            return [d1, d2]
+            			
+def johnson_mod_parameters(n,d):
+    return [(nu,mu,diam) 
+    for nu in range(0,d+1) 
+    for mu in range(nu,d+1) 
+    for diam in johnson_diam(n,d,nu,mu)]
+	
+# Information taken from page 198 in subconst 3
+def johnson_mod_bj(n,d,nu,mu,diam,j):
+    return (diam-j)*(n-diam-2*nu-mu-j)
+    
+def johnson_mod_cj(n,d,nu,mu,diam,j):
+    return j*(j+2*nu-mu)
+    
+def johnson_mod_aj(n,d,nu,mu,diam,j):
+    return d*(n-d)+mu*(mu+diam-n-1)+diam*(diam-n+2*nu)+j*(n-4*nu-2*j)
+    
+def johnson_mod_array(n,d,nu,mu,diam): # d has to be a positive integer
+    c = [johnson_mod_cj(n,d,nu,mu,diam,j) for j in range(diam+1)]
+    a = [johnson_mod_aj(n,d,nu,mu,diam,j) for j in range(diam+1)]
+    b = [johnson_mod_bj(n,d,nu,mu,diam,j) for j in range(diam+1)] 
+    return matrix(3,diam+1,[c,a,b])
+	
+def a2m(a,i,j):
+    if j==i+1:
+        return a[0][i+1]
+    elif j==i:
+        return a[1][i]
+    elif j==i-1:
+        return a[2][i-1]
+    else:
+        return 0
+ 
+def array2matrix(a):
+    return matrix(len(a[0]),len(a[0]),[a2m(a,i,j) for i in range(len(a[0]))
+    for j in range(len(a[0]))])
+</pre>
+
+<li>クラシカルパラメタを持つ距離正則グラフのパラメタ
+<pre>
+[INPUT]
+# distance-regular graphs with classical parameters (d,b,alpha, beta, b)
+
+m, n, d, b, alpha, beta, h, i, j, q= var('m, n, d, b, alpha, beta, h, i, j, q')
+
+def bn(m,b): # (b^m-1)/(b-1)
+    if m<0:
+        return 0
+    else:
+        return sum(b^i, i, 0, m-1)
+
+def a2m(a,i,j):
+    if j==i+1:
+        return a[0][i+1]
+    elif j==i:
+        return a[1][i]
+    elif j==i-1:
+        return a[2][i-1]
+    else:
+        return 0
+ 
+def array2matrix(a):
+    return matrix(len(a[0]),len(a[0]),[a2m(a,i,j) for i in range(len(a[0]))
+    for j in range(len(a[0]))])
+
+def classical_bj(d, b, alpha, beta, j):
+    return (bn(d,b)-bn(j,b))*(beta-alpha*bn(j,b))
+    
+def classical_cj(d, b, alpha, beta, j):
+    return bn(j,b)*(1+alpha*bn(j-1,b))
+    
+def classical_aj(d, b, alpha, beta, j):
+    return bn(j,b)*(beta-1+alpha*(bn(d,b)-bn(j,b)-bn(j-1,b)))
+    
+def classical_array(d, b, alpha, beta): # d has to be a positive integer
+    c = [classical_cj(d, b, alpha, beta, j) for j in range(d+1)]
+    a = [classical_aj(d, b, alpha, beta, j) for j in range(d+1)]
+    b = [classical_bj(d, b, alpha, beta, j) for j in range(d+1)] 
+    return matrix(3,d+1,[c,a,b])
+
+def classical_evj(d, b, alpha, beta, j):
+    return b^(-j)*classical_bj(d,b,alpha,beta,j) - bn(j,b)
+</ol>
+<p>
+
+
+<a name="gapinsagenb"></a>
+<hr>
+<DIV ALIGN = RIGHT><TABLE BORDER = 3 BGCOLOR = "#FFFFFF"><TR>
+<TD><A HREF = "#top">TOP</TD>
+</TR>
+</TABLE>
+</DIV>
+<H3>Sage ノートブックで GAP を使いたいとき</H3>
+
+プルダウンメニューの左から四つ目（通常 sage となっているもの）から gap を選ぶ。
+ライブラリーなどは、入っていないことが多いが、基本的なものは使うことができる。また GAP ライブラリーは<A HREF="http://www.sagemath.org/download-packages.html">Sage のサイト</A> からも簡単にダウンロードおよびインストールができるようになっている。
+
+<ol>
+<li>置換群とその部分群の定義
+<pre>
+G:=SymmetricGroup(6);
+r:=(1,3,4,5,6); s:=(1,3,2);
+K:=Subgroup(G,[r,s]);
+Size(K);
+</pre>
+<p>
+<li>置換群の元を生成元の積で表す
+<pre>
+t:=s*r;
+Factorization(K,t);
+Factorization(K,(1,2)*(3,4,5,6)); # Operation は左の元から
+Factorization(K,(1,2,3,4,5));
+</pre>
+<p>
+</ol>
+<p>
+<a name="links"></a>
+<hr>
+<DIV ALIGN = RIGHT><TABLE BORDER = 3 BGCOLOR = "#FFFFFF"><TR>
+<TD><A HREF = "#top">TOP</TD>
+</TR>
+</TABLE>
+</DIV>
+<H3>マニュアル・関連サイト・参考文献</H3>
+
+<ol>
+<li><a href="http://www.sagemath.org/"><b>Sage Math</b></a>: オープン・ソースに関するライセンス (GPL) のもとで開発された数学のソフトウェアである <i>Sage</i> の 開発元ホームページ<p>
+
+<li>Sage ノートブック・サーバー:
+<ol type="a">
+<li><A HREF="http://www.sagenb.org/">Sage のメインサーバー</A> アメリカ合州国自然科学基金 (NSF) の援助で運営されている
+<li><A HREF="http://test.sagenb.org/">Sage の"Test" サーバー</A> アメリカ合州国自然科学基金 (NSF) の援助で運営されている
+<li><A HREF="http://alpha.sagenb.org/">Sage の"alpha" サーバー</A> アメリカ合州国自然科学基金 (NSF) の援助で運営されている
+<li><A HREF="http://demo.sagenb.org/">Sage の"demo" サーバー</A>アメリカ合州国自然科学基金 (NSF) の援助で運営されている
+<li><A HREF="http://sage.math.canterbury.ac.nz/">University of Canterbury が運営するサーバー</A> Christchurch, New Zealand.
+<li><A HREF="http://www2.math.ritsumei.ac.jp/">立命館大学数理科学が運営するサーバ</A>
+</ol>
+<p>
+<li><a href = "http://www.sagemath.org/help.html">マニュアル：</a>
+<ol type="a">
+<li><A HREF="http://www.sagemath.org/doc/reference/">Sage 開発チームによるマニュアル [HTML]</A><br>
+オンライン版
+<li><A HREF="http://www.sagemath.org/pdf/reference.pdf">Sage 開発チームによるマニュアル [PDF]</A> <br>
+リリース 4.7.2 版で 6972 ページあるマニュアルであるため、コンピュータのデスクトップに保存するなどしての利用が有効
+<li><A HREF="http://www.sagemath.org/help-video.html">Sage 紹介ビデオ・音声付きスライド</A> <br>
+Sage 開発の中心的役割を担うWilliam Stein による Sage の紹介で、Sage 開発の哲学まで丁寧に紹介されている。また、Sage は python というコンピュータ言語で書かれ、高度な利用のためには、python の構文を利用したプログラムが必須となるが、その python の入門講座ビデオも掲載されている
+<li><A HREF="http://wiki.sagemath.org/quickref">基本項目をまとめたカード</A><br>
+基本事項、数学一般、線形代数、微分積分、初等整数論、群論のシートが掲載されている
+</ol>
+<p>
+<li>日本語関連サイト：
+<ol type="a">
+<li><A HREF="http://www.pwv.co.jp/~take/TakeWiki/index.php?FrontPage">An Introduction to Sage in Japanese</A> by Mr. Hiroshi Takemoto
+</ol>
+<p>
+<li>Sage に関する本および Sage を用いた教科書:
+<ol type="a">
+<li><A HREF="http://www.people.vcu.edu/~clarson/bard-sage-for-undergraduates-2014.pdf">Sage for Undergraduates</A>  (online version)
+Gregory V. Bard. 書籍としても販売しているが、pdf 版として公開されている。343ページ。GPL の SageMath が教育に有効であることを考えると、待望の一書。
+<li><A HREF="http://www.packtpub.com/sage-beginners-guide/book">Sage Beginner's Guide</A> by Craig Finch, Packt Publishing (May 11, 2011), ISBN-13: 978-1849514460.<br>
+2011年11月時点で唯一手にとって Sage の基本を学べる本。独特の構成になっているが、十分な内容を含んでいる。
+<li><A HREF="http://wstein.org/ent/">Elementary Number Theory:
+Primes, Congruences, and Secrets</A> by William Stein. Free Legal PDF of this book is downloadable at this site.<br>
+暗号理論を紹介する初等整数論の入門書ではあるが、Sage を用いた例も豊富で、内容的にも十分な深さがある。Sage の様々な利用法を学ぶ目的には適さないかも知れないが、Sage のパワーを感じることのできる数学書。
+<li><A HREF="http://linear.ups.edu/">A First Course in Linear Algebra</A> by Robert A. Beezer. Free Legal PDF of this book is downloadable at this site.<br>
+教科書のオープンソース化も進みつつあるが、数学においてその推進役にもなっている本である。pdf で無償で入手することができると共に、安価で製本されたものを得ることもできる。近い将来、基礎教育においては、このような形式へと進むことを期待する。
+</ol>
+</ol>
+
+<hr>
+<DIV ALIGN = RIGHT><TABLE BORDER = 3 BGCOLOR = "#FFFFFF"><TR>
+<TD><A HREF = "#top">TOP</TD>
+<TD><A HREF = "sage.html">Sage</A></TD>
+<TD><A HREF = "index.html">CW in ME</A></TD>
+<TD><A HREF = "../index-j.html">HOME (J)</A></TD>
+<TD><A HREF = "../index.html">HOME (E)</A></TD>
+</TR>
+</TABLE>
+</DIV>
+</BODY>
+</HTML>

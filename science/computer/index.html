@@ -1,0 +1,131 @@
+<HTML>
+<HEAD>
+<TITLE>Computer</TITLE>
+</HEAD>
+<BODY BGCOLOR = "#CCFFCC">
+<A NAME = "top"></A>
+<div align = "right"><I>Last Update : Januaray 8, 2003</I></div>
+<HR>
+<H2>Computer Memo</H2>
+
+<ul>
+<li><a href="#unix">Unix</a>
+<li><a href="#linux">Linux</a>
+<li><a href="osx.html">Macintosh:OSX</a>
+<li><a href="#mac">Macintosh:Classic</a>:
+    <ul>
+    <li><a href="#ssh">SSH by Mindterm</a>
+    </ul>
+</ul>
+<p>
+<a name="unix"></a>
+<hr>
+<DIV ALIGN = RIGHT><TABLE BORDER = 3 BGCOLOR = "#FFFFFF"><TR>
+<TD><A HREF = "#top">TOP</TD>
+<TD><A HREF = "../index-j.html">HOME</A></TD>
+</TR>
+</TABLE>
+</DIV>
+<H3>Unix</H3>
+
+<H3>DIGITAL UNIX 4.0D</H3>
+
+<ul>
+<li>DONKEY:<br>
+    <ol>
+<li>Download donkey-current.tar.gz from: <a href="ftp://ftp.aist-nara.ac.jp/pub/Security/tool/donkey/">ftp://ftp.aist-nara.ac.jp/pub/Security/tool/donkey/</a>
+<li>% tar zxf donkey-current.tar.gz
+<li>% cd donkey-0.5
+<li>% ./setup OSF1
+<li>% cd obj/OSF1/
+<li>% ./configure
+<li>% make
+<li>% su
+<li># make install
+<li># exit
+<li>% rehash
+<li>% donkey -f md5 nnn xxnnnn
+</ol>
+(June 27, 2003)
+</ul>
+<p>
+<a name="linux"></a>
+<hr>
+<DIV ALIGN = RIGHT><TABLE BORDER = 3 BGCOLOR = "#FFFFFF"><TR>
+<TD><A HREF = "#top">TOP</TD>
+<TD><A HREF = "../index-j.html">HOME</A></TD>
+</TR>
+</TABLE>
+</DIV>
+<h3>Linux</h3>
+
+<p>
+<a name="mac"></a>
+<hr>
+<DIV ALIGN = RIGHT><TABLE BORDER = 3 BGCOLOR = "#FFFFFF"><TR>
+<TD><A HREF = "#top">TOP</TD>
+<TD><A HREF = "../index-j.html">HOME</A></TD>
+</TR>
+</TABLE>
+</DIV>
+<h3>Macintosh</h3>
+
+<ul>
+<a name="ssh"></a>
+<li>SSH for Macintosh : MRJ SDK + Mindterm + BetterTelnet/Fetch (2001.7.25)<br>
+
+湘南藤沢インフォメーションテクノロジーセンターの<a href="http://www.sfc.keio.ac.jp/itc/ssh/mac.html">「MacintoshでのSSHを使った接続方法」</a> でほとんど尽きていますが、このままだと苦労した部分がありますので、それを書き換えておきます。
+
+<ol>
+<li>MRJ2.2.5 および MRJ Software Development Kit (SDK) 2.2 を Download してこの順番で Install : <br>
+Download Site <a href="http://developer.apple.com/java/download.html">http://developer.apple.com/java/download.html</a>
+<li>MindTerm2.0 (MindTerm application binaries) を Download : <br>
+Download Site <a href="http://www.appgate.org/products/mindterm/personal/mindterm_downloads.html">http://www.appgate.org/products/mindterm/personal/mindterm_downloads.html</a>
+<li>BetterTelnetJ 2.0 を Download して Install : <br>
+Download Site <a href="http://www.vector.co.jp/soft/mac/net/se061545.html">http://www.vector.co.jp/soft/mac/net/se061545.html</a>
+<li>MRJ SDK 2.2:Tools:Application Builders:JBindery を起動 
+<li>Open で mindterm_2.0-bin:mindterm.jar を開く
+<li>Class nameを、com.mindbright.application.MindTerm に変更
+<li>Save as で、Save as application にチェックを入れたまま Mindterm2 などと名前をつけて、好きな場所に保存。後のことを考えると BetterTelnetJ Folder 内などもおすすめ。
+</ol>
+
+<p>MindTermの使い方(基本)：</p>
+<ol>
+<li>Mindterm2 を起動
+<li>File menu から Connect を選び New Server ボタンをおして表示されたウィンドウに、Server [Username, Password, Save as alias ボタン] 入力、Connect ボタンをおして Connect
+<li>Tunnelsメニュー→Basicを選ぶ
+<li>Local port: 8888、Protocol: telnet、Remote host: 接続先ホスト名、
+Remote port: 23と入力し[telnet を選ぶと自動的に入る]、Addボタンを押す
+<li>BetterTelnetを起動
+<li>Fileメニュー→Open connectionを選び、接続先をlocalhost:8888と
+入力
+<li>指定した接続先ホストのログインプロンプトが表示されるので、ここでログイン名、パスワードを入力すれば、ログインして BetterTelnetJ の機能[日本語など]を telnet したときと同じように扱うことができる
+</ol>
+２回目からは、２で Save as alias ボタンを選んであれば、alias をいれ、すぐ接続できる。
+
+<p>MindTermを経由のftp</p>
+
+<ol>
+<li>Mindterm2.appを起動
+<li>remote host に接続
+<li>Tunnelsメニュー→Basicを選ぶ
+<li>Local port: 8889 (任意ですが、うまく行かないときは別の数にしてみてく
+    ださい)、Protocol: ftp、Remote host: 接続先ホスト名、
+Remote port: 21と入力し、Addボタンを押します。
+<li>Fetchを起動し、Customizeメニュー→Preferences 設定ダイアログを開く
+<li>FirewallタブでUse passive mode transfers(PASV)にチェックを入れる
+<li>Fileメニュー→New connectionを選び、接続先をlocalhost:8889と
+入力し、ログイン名、パスワードを入力する
+</ol>
+
+</ul>
+
+<hr>
+<DIV ALIGN = RIGHT><TABLE BORDER = 3 BGCOLOR = "#FFFFFF"><TR>
+<TD><A HREF = "#top">TOP</TD>
+<TD><A HREF = "../index-j.html">HOME</A></TD>
+</TR>
+</TABLE>
+</DIV>
+</BODY>
+</HTML>
