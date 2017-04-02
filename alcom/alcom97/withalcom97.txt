@@ -1,0 +1,32 @@
+accommodation-j.html:    朝食（和定食）　7:00AM-10:00AM<br>
+accommodation-j.html:    〒180　武蔵野市吉祥寺本町 2-4-14<BR>
+accommodation.html:    Japanese Style Breakfast　7:00AM-10:00AM<br>
+direction2icu-j.html:<UL><LI><A HREF = "#train">公的交通機関を利用する場合</A>
+direction2icu-j.html:<H3>公的交通機関を利用する場合</H3>
+index-j.html:〒１８１　東京都三鷹市大沢３丁目１０ー２<BR>
+index-j.html:〒１８１　東京都三鷹市大沢３丁目１０ー２<BR>
+index-j.html:〒１８１　東京都三鷹市大沢３丁目１０ー２<BR>
+index-j.html:このページのお問い合わせ先：<A HREF="MAILTO:alcom97@icu.ac.jp">alcom97@icu.ac.jp</A>
+index.html:please write to the organizers (e-mail address: <A HREF="MAILTO:alcom97@icu.ac.jp">alcom97@icu.ac.jp.</A>).
+index.html:inquire by e-mail (<A HREF="MAILTO:alcom97@icu.ac.jp">alcom97@icu.ac.jp.</A>) or see the <A HREF="accom-e.html">accommodation information home page</A>.<P>
+index.html:Please email us at <A HREF="MAILTO:alcom97@icu.ac.jp">alcom97@icu.ac.jp.</A><P> 
+index.html:Eiichi Bannai (Chairman), (Kyushu University), bannai@math.kyushu-u.ac.jp<BR>
+index.html:Hiroshi Suzuki (International Christian University), hsuzuki@icu.ac.jp<BR>
+index.html:Hiroyoshi Yamaki (Kumamoto University), yamaki@gpo.kumamoto-u.ac.jp<BR>
+index.html:Tomoyuki Yoshida (Hokkaido University), yoshidat@math.hokudai.ac.jp<P>
+otherinfo-j.html:	<LI>図書館（シンポジウム出席者専用）ターミナル　３台<BR>
+program-j.html:<TD><A HREF = "#munemasa">宗政</A></TD>
+program-j.html:<LI> 16:05-16:30  宗政昭弘 (九州大学)<BR> 
+second.html:<FORM ACTION="mailto:hsuzuki@icu.ac.jp, maki@icu.ac.jp" METHOD="POST">
+second.html:<A HREF="MAILTO:alcom97@icu.ac.jp">alcom97@icu.ac.jp.</A><P>
+second.html:Eiichi Bannai (Chairman), (Kyushu University), bannai@math.kyushu-u.ac.jp<BR>
+second.html:Hiroshi Suzuki (International Christian University), hsuzuki@icu.ac.jp<BR>
+second.html:Hiroyoshi Yamaki (Kumamoto University), yamaki@gpo.kumamoto-u.ac.jp<BR>
+second.html:Tomoyuki Yoshida (Hokkaido University), yoshidat@math.hokudai.ac.jp<P>
+second.html:<LI>Eiichi Bannai (Chairman), (Kyushu University), bannai@math.kyushu-u.ac.jp
+second.html:<LI><A HREF="http://torch.icu.ac.jp/~hsuzuki/index.html">Hiroshi Suzuki</A> (Secretary),  (International Christian University), hsuzuki@icu.ac.jp
+second.html:	<LI>Maki Murata (Assistant Secretary, Miss), (International Christian University), maki@icu.ac.jp
+second.html:<LI>Hiroyoshi Yamaki (Kumamoto University), yamaki@gpo.kumamoto-u.ac.jp
+second.html:<LI>Tomoyuki Yoshida (Hokkaido University), yoshidat@math.hokudai.ac.jp
+second.html:Any Questions to This Page: <A HREF="MAILTO:alcom97@icu.ac.jp">alcom97@icu.ac.jp</A>
+timetable-j.html:三鷹駅 (南口)　２番乗り場より、鷹５１、小田急バス</TD>

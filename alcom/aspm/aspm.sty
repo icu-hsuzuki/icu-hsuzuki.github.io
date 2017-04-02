@@ -1,0 +1,1102 @@
+%% 2001.2.10.: revised by H.S.
+% See aspmsty.txt and aspmmanl.txt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Copyright (C) 1988,1989 Chiaki Tsukamoto
+%%
+% aspm.sty  ver. 1.0  C. Tsukamoto  30 Nov. 89
+%      style file for AmSTeX based on amsppt.sty
+%%
+%
+%
+% aspm.sty  ver. 1.1  H. Naito
+%      style file for AmSTeX version 2.0 based on amsppt.sty
+%
+%%
+\hoffset=60pt % These values set the print position.
+\voffset=60pt % Adjust them for your printer.
+%%
+% issue head
+% The \def of \pretitle must be changed for each volume.
+%%
+\def\pretitle{\vbox to 0pt{\setbox0=\vtop{\ninepoint\hbox{\sstrut %
+%
+Advanced Studies in Pure Mathematics 2?, 2001}\hbox{\sstrut %
+Groups and Combinatorics --- in memory of Michio Suzuki}\hbox{\sstrut %
+%
+pp.~\number\firstpage--\number\lastpage}}%
+%
+\skip0=\headsep \advance\skip0by-\dp0
+\global\titlesep=-\skip0
+\vss\box0\vskip\skip0}}
+%%
+% Hereinafter the text should not be modified in any circumstances!
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\catcode`\@=11
+\ifx\aspmloaded@AmS\relax
+\catcode`\@=\active\let\next\endinput\else
+\let\aspmloaded@AmS\relax\relaxnext@\fi
+\next
+%
+\def\CR@@{\W@{aspm.sty - ver. 1.1}\W@{ style file for AmSTeX version 2.0, test
+ version}}
+\CR@@
+\everyjob{\CR@\CR@@}
+%
+%
+\newif\ifversiontw@
+\versiontw@true
+%
+% The followings are ignored
+\def\Monograph{\W@{\string\Monograph\space is ignored.}}
+\def\toc{\W@{\string\toc\space is ignored.}}
+\def\endtoc{\W@{\string\endtoc\space is ignored.}}
+\def\widestnumber{\W@{\string\widestnumber\space is ignored.}}
+\def\bookinquotes{\W@{\string\bookinquotes\space is ignored.}}
+\def\paperinquotes{\W@{\string\paperinquotes\space is ignored.}}
+\def\TagsOnRight{\W@{\string\TagsOnRight\space is ignored.}}
+\def\TagsAsMath{\W@{\string\TagsAsMath\space is ignored.}}
+\def\TopOrBottomTagsOnSplits{\W@{\string\TopOrBottomTagsOnSplits\space is
+ ignored.}}
+\let\thetag\tag
+\TagsOnLeft
+\TagsAsText
+\CenteredTagsOnSplits
+%
+%%
+\hsize312\p@
+\vsize504\p@
+\parindent18\p@
+\smallskipamount4\p@ plus1\p@ minus1\p@
+\medskipamount8\p@ plus2\p@ minus2\p@
+\bigskipamount16\p@ plus4\p@ minus4\p@
+\skip\footins\bigskipamount
+%
+\captionwidth@\hsize \advance\captionwidth@-6pc
+%
+\newskip\headsep \headsep16\p@
+\newskip\titlesep \titlesep\z@skip
+%
+\def\sstrut{\strut@}
+%
+\newcount\firstpage
+\newcount\lastpage
+\firstpage\z@ \lastpage\z@
+\loadmsam
+\loadmsbm
+\loadeufm
+
+%#
+%#\loadeurm
+%#\loadeusm
+%#
+\UseAMSsymbols
+%%
+%\font@\twelverm=cmr10 scaled\magstep1
+\font@\twelverm=cmr12
+% \tenrm=cmr10
+\font@\ninerm=cmr9
+%\font@\eightrm=cmr8
+% \sevenrm=cmr7
+\font@\sixrm=cmr6
+% \fiverm=cmr5
+%
+%\font@\twelvei=cmmi10 scaled\magstep1 \skewchar\twelvei='177
+\font@\twelvei=cmmi12   \skewchar\twelvei='177
+% \teni=cmmi10
+\font@\ninei=cmmi9      \skewchar\ninei='177
+%\font@\eighti=cmmi8    \skewchar\eighti='177
+% \seveni=cmmi7
+\font@\sixi=cmmi6       \skewchar\sixi='177
+% \fivei=cmmi5
+%
+\font@\twelvesy=cmsy10 scaled\magstep1 \skewchar\twelvesy='60
+% \tensy=cmsy10
+\font@\ninesy=cmsy9     \skewchar\ninesy='60
+%\font@\eightsy=cmsy8   \skewchar\eightsy='60
+% \sevensy=cmsy7
+\font@\sixsy=cmsy6      \skewchar\sixsy='60
+% \fivesy=cmsy5
+%
+%\font@\twelvebf=cmbx10 scaled\magstep1
+\font@\twelvebf=cmbx12
+% \tenbf=cmbx10
+\font@\ninebf=cmbx9
+%\font@\eightbf=cmbx8
+% \sevenbf=cmbx7
+\font@\sixbf=cmbx6
+% \fivebf=cmbx5
+%
+%\font@\twelveit=cmti10 scaled\magstep1
+\font@\twelveit=cmti12
+% \tenit=cmti10
+\font@\nineit=cmti9
+%\font@\eightit=cmti8
+%
+\font@\twelvebi=cmbxti10 scaled\magstep1
+\font@\tenbi=cmbxti10
+%\font@\ninebi=cmbxti10 scaled900
+%
+%\font@\twelvesl=cmsl10 scaled\magstep1
+\font@\twelvesl=cmsl12
+% \tensl=cmsl10
+\font@\ninesl=cmsl9
+%\font@\eightsl=cmsl8
+%
+\font@\twelvemsa=msam10 scaled\magstep1
+% \tenmsa=msam10
+\font@\ninemsa=msam9
+%\font@\eightmsa=msam8
+% \sevenmsa=msam7
+\font@\sixmsa=msam6
+% \fivemsa=msam5
+%
+\font@\twelvemsb=msbm10 scaled\magstep1
+% \tenmsb=msbm10
+\font@\ninemsb=msbm9
+%\font@\eightmsb=msbm8
+% \sevenmsb=msbm7
+\font@\sixmsb=msbm6
+% \fivemsb=msbm5
+%
+\font@\twelveeufm=eufm10 scaled\magstep1
+% \teneufm=eufm10
+\font@\nineeufm=eufm9
+%\font@\eighteufm=eufm8
+% \seveneufm=eufm7
+\font@\sixeufm=eufm6
+% \fiveeufm=eufm5
+%
+\font@\twelvesmc=cmcsc10 scaled\magstep1
+\font@\tensmc=cmcsc10
+%\font@\eightsmc=amcsc8
+%%
+\def\twelvepoint{%
+\normalbaselineskip15\p@
+\normallineskiplimit2.7\p@
+\normallineskip\normallineskiplimit
+\textonlyfont@\rm\twelverm
+\textonlyfont@\it\twelveit
+\textonlyfont@\sl\twelvesl
+\textonlyfont@\bf\twelvebf
+\textonlyfont@\bi\twelvebi
+\textonlyfont@\smc\twelvesmc
+\ifsyntax@\def\big##1{{\hbox{$\left##1\right.$}}}\else\let\big\twelvebig@
+\textfont\z@\twelverm   \scriptfont\z@\ninerm   \scriptscriptfont\z@\sixrm
+\textfont\@ne\twelvei   \scriptfont\@ne\ninei   \scriptscriptfont\@ne\sixi
+\textfont\tw@\twelvesy  \scriptfont\tw@\ninesy  \scriptscriptfont\tw@\sixsy
+\textfont\thr@@\tenex   \scriptfont\thr@@\tenex \scriptscriptfont\thr@@\tenex
+\textfont\itfam\twelveit
+\textfont\slfam\twelvesl
+\textfont\bffam\twelvebf
+\scriptfont\bffam\ninebf
+\scriptscriptfont\bffam\sixbf
+\textfont\msafam=\twelvemsa
+\scriptfont\msafam=\ninemsa
+\scriptscriptfont\msafam=\sixmsa
+\textfont\msbfam=\twelvemsb
+\scriptfont\msbfam=\ninemsb
+\scriptscriptfont\msbfam=\sixmsb
+\textfont\eufmfam=\twelveeufm
+\scriptfont\eufmfam=\nineeufm
+\scriptscriptfont\eufmfam=\sixeufm
+\fi
+\setbox\strutbox\hbox{\vrule height10.5\p@ depth4.5\p@ width\z@}%
+\setbox\strutbox@\hbox{\vrule height9.5\p@ depth3.5\p@ width\z@}%
+\normalbaselines
+\twelverm
+\ex@=.2326ex}
+\def\twelvebig@#1{{\hbox{$\left#1\vbox to10.5\p@{}\right.\n@space$}}}
+%%
+\def\tenpoint{%
+\normalbaselineskip12\p@
+\normallineskiplimit1.8\p@
+\normallineskip\normallineskiplimit
+\abovedisplayskip 9\p@ plus3\p@ minus3\p@
+\belowdisplayskip\abovedisplayskip
+\abovedisplayshortskip \z@ plus3\p@
+\belowdisplayshortskip 6\p@ plus3\p@ minus3\p@
+\textonlyfont@\rm\tenrm
+\textonlyfont@\it\tenit
+\textonlyfont@\sl\tensl
+\textonlyfont@\bf\tenbf
+\textonlyfont@\bi\tenbi
+\textonlyfont@\smc\tensmc
+\ifsyntax@\def\big##1{{\hbox{$\left##1\right.$}}}\else\let\big\tenbig@
+\textfont\z@\tenrm      \scriptfont\z@\sevenrm  \scriptscriptfont\z@\fiverm
+\textfont\@ne\teni      \scriptfont\@ne\seveni  \scriptscriptfont\@ne\fivei
+\textfont\tw@\tensy     \scriptfont\tw@\sevensy \scriptscriptfont\tw@\fivesy
+\textfont\thr@@\tenex   \scriptfont\thr@@\tenex \scriptscriptfont\thr@@\tenex
+\textfont\itfam\tenit
+\textfont\slfam\tensl
+\textfont\bffam\tenbf
+\scriptfont\bffam\sevenbf
+\scriptscriptfont\bffam\fivebf
+\textfont\msafam=\tenmsa
+\scriptfont\msafam=\sevenmsa
+\scriptscriptfont\msafam=\fivemsa
+\textfont\msbfam=\tenmsb
+\scriptfont\msbfam=\sevenmsb
+\scriptscriptfont\msbfam=\fivemsb
+\textfont\eufmfam=\teneufm
+\scriptfont\eufmfam=\seveneufm
+\scriptscriptfont\eufmfam=\fiveeufm
+\fi
+\setbox\strutbox\hbox{\vrule height8.5\p@ depth3.5\p@ width\z@}%
+\setbox\strutbox@\hbox{\vrule height8\p@ depth3\p@ width\z@}%
+\normalbaselines
+\tenrm
+\ex@=.2326ex}
+\def\tenbig@#1{{\hbox{$\left#1\vbox to8.5\p@{}\right.\n@space$}}}
+%%
+\def\ninepoint{%
+\normalbaselineskip11\p@
+\normallineskiplimit1.8\p@
+\normallineskip\normallineskiplimit
+\abovedisplayskip8.1\p@ plus2.7\p@ minus2.7\p@
+\belowdisplayskip\abovedisplayskip
+\abovedisplayshortskip\z@ plus2.7\p@
+\belowdisplayshortskip5.4\p@ plus2.7\p@ minus2.7\p@
+\textonlyfont@\rm\ninerm
+\textonlyfont@\it\nineit
+\textonlyfont@\sl\ninesl
+\textonlyfont@\bf\ninebf
+\ifsyntax@\def\big##1{{\hbox{$\left##1\right.$}}}\else\let\big\ninebig@
+\textfont\z@\ninerm     \scriptfont\z@\sixrm    \scriptscriptfont\z@\fiverm
+\textfont\@ne\ninei     \scriptfont\@ne\sixi    \scriptscriptfont\@ne\fivei
+\textfont\tw@\ninesy    \scriptfont\tw@\sixsy   \scriptscriptfont\tw@\fivesy
+\textfont\thr@@\tenex   \scriptfont\thr@@\tenex \scriptscriptfont\thr@@\tenex
+\textfont\itfam\nineit
+\textfont\slfam\ninesl
+\textfont\bffam\ninebf
+\scriptfont\bffam\sixbf
+\scriptscriptfont\bffam\fivebf
+\textfont\msafam=\ninemsa
+\scriptfont\msafam=\sixmsa
+\scriptscriptfont\msafam=\fivemsa
+\textfont\msbfam=\ninemsb
+\scriptfont\msbfam=\sixmsb
+\scriptscriptfont\msbfam=\fivemsb
+\textfont\eufmfam=\nineeufm
+\scriptfont\eufmfam=\sixeufm
+\scriptscriptfont\eufmfam=\fiveeufm
+\fi
+\setbox\strutbox\hbox{\vrule height7.75\p@ depth3.25\p@ width\z@}%
+\setbox\strutbox@\hbox{\vrule height7\p@ depth2.5\p@ width\z@}%
+\normalbaselines
+\ninerm
+\ex@=.2326ex}
+\def\ninebig@#1{{\hbox{$\left#1\vbox to7.25\p@{}\right.\n@space$}}}
+%%
+\newcount\footmarkcount@
+\footmarkcount@\z@
+\def\footmarkform@#1{$^{#1}$}
+\let\thefootnotemark\footmarkform@
+%
+\def\makefootnote@#1#2{\insert\footins
+{\interlinepenalty\interfootnotelinepenalty
+\ninepoint
+\splittopskip\ht\strutbox
+\splitmaxdepth\dp\strutbox
+\floatingpenalty\@MM
+\leftskip\z@skip\rightskip\z@skip\spaceskip\z@skip\xspaceskip\z@skip
+\noindent{#1}\footstrut\ignorespaces#2\unskip
+\lower\dp\strutbox
+\vbox to\dp\strutbox{}}}
+%
+\def\footnotemark{\let\@sf\empty\relaxnext@
+\ifhmode\edef\@sf{\spacefactor\the\spacefactor}\/\fi
+\def\next@{\ifx[\next
+\let\next\nextii@\else\ifx"\next
+\let\next\nextiii@\else
+\let\next\nextiv@\fi\fi\next}%
+\def\nextii@[##1]{\footmarkform@{##1}\@sf}%
+\def\nextiii@"##1"{{##1}\@sf}%
+\def\nextiv@{\global\advance\footmarkcount@\@ne
+\footmarkform@{\number\footmarkcount@}\@sf}%
+\futurelet\next\next@}
+%
+\def\footnotetext{\relaxnext@
+\def\next@{\ifx[\next
+\let\next\nextii@\else\ifx"\next
+\let\next\nextiii@\else
+\let\next\nextiv@\fi\fi\next}%
+\def\nextii@[##1]##2{\makefootnote@{\footmarkform@{##1}}{##2}}%
+\def\nextiii@"##1"##2{\makefootnote@{##1}{##2}}%
+\def\nextiv@##1{\makefootnote@{\footmarkform@{\number\footmarkcount@}}{##1}}%
+\futurelet\next\next@}
+%
+\def\footnote{\let\@sf\empty\relaxnext@
+\ifhmode\edef\@sf{\spacefactor\the\spacefactor}\/\fi
+\def\next@{\ifx[\next
+\let\next\nextii@\else\ifx"\next
+\let\next\nextiii@\else
+\let\next\nextiv@\fi\fi\next}%
+\def\nextii@[##1]##2{\footnotemark[##1]\footnotetext[##1]{##2}}%
+\def\nextiii@"##1"##2{\footnotemark"##1"\footnotetext"##1"{##2}}%
+\def\nextiv@##1{\footnotemark\footnotetext{##1}}%
+\futurelet\next\next@}
+%
+\def\adjustfootnotemark#1{\advance\footmarkcount@#1\relax}
+%%
+\let\topmatter\relax
+%%
+\def\@SPMerr#1{\errhelp\n@goy@help\errmessage{ASPM style error: #1}}
+\newhelp\n@goy@help{For further help, please refer to the editorial board^^J
+of ``Advanced Study in Pure Mathematics'' in Nagoya University.^^J}
+\defaulthelp@=\n@goy@help
+%
+\Invalid@\nofrills
+\Invalid@\usualspace
+%
+\def\overlong{\W@{\string\overlong\space is ignored.}}
+\def\filhss@{plus\@m\p@\relax}
+%
+\newif\ifnofrills@
+\def\usualspace@#1{\ifnofrills@\def\usualspace{#1}\fi}
+%%%%%%%%%%%% begin added
+\def\addto#1#2{\csname \expandafter\eat@\string#1@\endcsname
+  \expandafter{\the\csname \expandafter\eat@\string#1@\endcsname#2}}
+\newdimen\bigsize@
+\def\big@#1#2{{\hbox{$\left#2\vcenter to#1\bigsize@{}%
+  \right.\nulldelimiterspace\z@\m@th$}}}
+\def\big{\big@\@ne}
+\def\Big{\big@{1.5}}
+\def\bigg{\big@\tw@}
+\def\Bigg{\big@{2.5}}
+\def\raggedcenter@{\leftskip\z@ plus.4\hsize \rightskip\leftskip
+ \parfillskip\z@ \parindent\z@ \spaceskip.3333em \xspaceskip.5em
+ \pretolerance9999\tolerance9999 \exhyphenpenalty\@M
+ \hyphenpenalty\@M \let\\\linebreak}
+\def\upperspecialchars{\def\ss{SS}\let\i=I\let\j=J\let\ae\AE\let\oe\OE
+  \let\o\O\let\aa\AA\let\l\L}
+\def\uppercasetext@#1{%
+  {\spaceskip1.2\fontdimen2\the\font plus1.2\fontdimen3\the\font
+   \upperspecialchars\uctext@#1$\m@th\aftergroup\eat@$}}
+\def\uctext@#1$#2${\endash@#1-\endash@$#2$\uctext@}
+\def\endash@#1-#2\endash@{\uppercase{#1}\if\notempty{#2}--\endash@#2\endash@\fi}
+\def\runaway@#1{\DN@{#1}\ifx\envir@\next@
+  \Err@{You seem to have a missing or misspelled \string\end#1 ...}%
+  \let\envir@\empty\fi}
+\newif\iftemp@
+\def\notempty#1{TT\fi\def\test@{#1}\ifx\test@\empty\temp@false
+  \else\temp@true\fi \iftemp@}
+%%%%%%%%%%%%%%%   end added
+%
+\def\nofrills@#1#2{\def\next@{\ifx\next\nofrills
+\nofrills@true\let#2\relax\def\next@\nofrills{\nextii@}\else
+\nofrills@false\def#2{#1}\let\next@\nextii@\fi
+\next@}}
+%
+\newif\iftitlep@ge
+\titlep@gefalse
+%
+\newbox\titlebox@
+\setbox\titlebox@\vbox{}
+\def\title#1\endtitle{\begingroup
+\let\\=\cr
+\global\setbox\titlebox@\vbox{\tabskip\z@\filhss@
+\twelvepoint\bf
+\halign to\hsize{\hfil\ignorespaces##\unskip\hfil\cr#1\cr}}\endgroup
+\titlep@getrue}
+%
+\newif\ifsubtitl@
+\newbox\subtitl@box
+\setbox\subtitl@box\vbox{}
+\def\subtitle#1\endsubtitle{\begingroup
+\let\\=\cr
+\global\setbox\subtitl@box\vbox{\tabskip\z@\filhss@
+\tenpoint\bf
+\halign to\hsize{\hfil\ignorespaces##\unskip\hfil\cr#1\cr}}\endgroup
+\subtitl@true}
+%
+\newbox\authorbox@
+\setbox\authorbox@\vbox{}
+\def\author#1\endauthor{\begingroup
+\let\\=\cr
+\global\setbox\authorbox@\vbox{\tabskip\z@\filhss@
+\tenpoint\bf
+\halign to\hsize{\hfil\ignorespaces##\unskip\hfil\cr#1\cr}}\endgroup}
+%
+\def\affil#1\endaffil{\W@{\string\affil...\string\endaffil\space is ignored.}}
+%
+\newif\ifdedic@
+\newbox\dedic@box
+\def\dedication#1\enddedication{\begingroup
+\let\\=\cr
+\global\setbox\dedic@box\vbox{\tabskip\z@\filhss@
+\tenpoint\bi
+\halign to\hsize{\hfil\ignorespaces##\unskip\hfil\cr#1\cr}}\endgroup
+\dedic@true}
+%
+%
+\newif\ifaddress@f
+\newcount\addresscount@
+\addresscount@\@ne
+\def\address{\begingroup
+\def\next@##1\endaddress{\expandafter\gdef
+\csname address\number\addresscount@\endcsname{##1}\endgroup
+\advance\addresscount@\@ne}%
+\obeylines
+\next@}
+%
+%%%%%%%%%%% begin added
+%
+\newcount\emailcount@
+\def\email{\begingroup
+\emailcount@\addresscount@
+\advance\emailcount@ by-1
+\def\next@##1\endemail{\expandafter\gdef
+\csname email\number\emailcount@\endcsname{##1}\endgroup
+}%
+\obeylines
+\next@}
+%\def\email{\nofrills@{\eightpoint{\it E-mail\/}:\enspace}\email@
+%  \DNii@##1\endemail{%
+%  \expandafter\gdef\csname email\number\addresscount@\endcsname
+%  {\def\usualspace{{\it\enspace}}\smallskip\noindent\eightpoint\email@
+%  \ignorespaces##1\par}}%
+% \FN@\next@}
+%%%%%%%%%%
+\def\thedate@{}
+\def\date#1\enddate{\gdef\thedate@{\tenpoint\ignorespaces#1\unskip}
+\makefootnote@{}{\indent\ignorespaces#1\unskip}}
+\def\thethanks@{}
+\def\thanks#1\endthanks{\gdef\thethanks@{\eightpoint\ignorespaces#1.\unskip}
+\makefootnote@{}{\indent\ignorespaces#1\unskip}}
+%   for V.1
+%\def\date#1{\makefootnote@{}{\indent\ignorespaces#1\unskip}}
+%\let\thanks\date
+%%%% end added
+%
+\def\eatnofrills@{\relaxnext@
+\def\next@{\ifx\next\nofrills
+\def\next@\nofrills{\eat@}\else
+\let\next@\eat@\fi\next@}%
+\futurelet\next\next@}
+\def\keywords{\W@{\string\keywords\space are ignored.}\eatnofrills@}
+\def\subjclass{\W@{\string\subjclass\space is ignored.}\eatnofrills@}
+%
+%%%%%%%%%%%% begin added
+\newif\ifabstract@
+\newbox\theabstract@
+\setbox\theabstract@\vbox{}
+\def\abstract{\nofrills@{{\bf\noindent Abstract.\smallskip}}\abstract@
+\long\def\nextii@{\setbox\theabstract@\vbox\bgroup
+\leftskip\parindent\rightskip\parindent
+\usualspace@{{\smallskip}}
+%\ninepoint\noindent\abstract@\ignorespaces}%
+\ninepoint\abstract@\ignorespaces}%
+\futurelet\next\next@}
+\def\endabstract{\global\abstract@true
+\egroup}
+% for V.1
+%\newif\ifabstract@
+%\def\theabstract@{}
+%\def\abstract{\relaxnext@
+%\nofrills@{{\bf\noindent Abstract.\smallskip}}\abstract@
+%\long\def\nextii@##1{\long\gdef\theabstract@{\usualspace@{{\smallskip}}
+%\ninepoint\abstract@\ignorespaces##1\par}}%
+%\global\abstract@true
+%\futurelet\next\next@}
+%%%%%%%%%%% end added
+%
+\def\presubtitle{}
+\def\preauthor{}
+\def\prededication{}
+\def\preabstract{}
+\def\prepaper{}
+%
+\def\endtopmatter{\hrule height\z@\vskip-\topskip
+\pageno=\firstpage
+\pretitle
+\advance\titlesep36\p@ plus4\p@ minus2\p@
+\vskip\titlesep
+\unvbox\titlebox@
+\presubtitle
+\ifsubtitl@\vskip12\p@\unvbox\subtitl@box\fi
+\preauthor
+\vskip18\p@
+\unvbox\authorbox@
+\prededication
+\ifdedic@\vskip18\p@\unvbox\dedic@box\fi
+\preabstract
+%%%% begin added
+\ifabstract@\vskip18\p@
+%{\leftskip\parindent\rightskip\parindent\noindent\theabstract@}\fi
+\unvbox\theabstract@
+\fi
+%%%% end added
+% for V.1
+%\ifabstract@\vskip18\p@
+%{\leftskip\parindent\rightskip\parindent\noindent\theabstract@}\fi
+\prepaper
+\outer\def\proclaim{\innerproclaim@}%
+\outer\def\endproclaim{\innerendproclaim@}%
+\vskip24\p@ plus4\p@ minus2\p@
+\tenpoint}
+%
+\newcount\count@@
+\def\lastmatter{}
+\outer\def\enddocument{\relaxnext@
+\vskip\z@ plus.2\vsize\relax
+\penalty1000\vskip\z@ plus-.2\vsize\relax
+\bigskip
+\sfcode`\.=3000
+\leftskip\z@skip
+\begingroup
+\ninepoint\it
+\parskip\z@skip
+\everypar={\setbox\z@=\lastbox\ignorespaces}%
+\def\next@{\relax\ifaddress@f\endgroup\endgraf\nobreak\else
+\endgraf\nobreak\fi}%
+%
+\def\of{\begingroup\address@ftrue\rm\noindent}%
+\let\par=\next@
+\count@\z@
+\count@@\z@
+\loop\advance\count@\@ne\ifnum\count@<\addresscount@
+{\obeylines\csname address\number\count@\endcsname}%
+{{\tt \obeylines\csname email\number\count@\endcsname}}
+%
+\penalty1000\medskip
+\repeat
+%
+\removelastskip
+\endgroup
+\vfill
+\lastmatter
+\supereject
+{\advance\pageno by-\@ne
+\ifnum\lastpage=\pageno\else
+\W@{Please check \string\lastpage\space
+(\string\lastpage\space was \number\lastpage)}\fi}%
+\end}
+%%
+\def\c@ption#1#2{\centerline{\dimen@=\z@
+\setbox\@ne\hbox{\ignorespaces#1\unskip}%
+\setbox\tw@\hbox{\ignorespaces#2\unskip}%
+\ifdim\wd\@ne=\z@\else\ifdim\wd\tw@=\z@\else\dimen@1em\fi\fi
+\advance\dimen@\wd\@ne \wd\@ne=\dimen@
+\dimen@i\dimen@ \advance\dimen@i\wd\tw@
+\ifdim\dimen@i>\captionwidth@
+\vtop{\hsize=\captionwidth@
+\hangindent\dimen@ \hangafter\@ne
+\noindent \box\@ne
+\ignorespaces#2\unskip}\else
+\hbox{\box\@ne\box\tw@}\fi}}
+%
+\def\Caption#1#2{\par
+\removelastskip\unpenalty\nobreak\smallskip
+\begingroup
+\ninepoint
+\c@ption{#1}{#2}%
+\endgroup
+\bigbreak}
+%
+\newcount\figureno \figureno\z@
+%
+\def\Figure#1#2#3{\midinsert
+\vbox to #1{}%
+\nobreak\smallskip
+\ninepoint
+\c@ption{#2}{#3}%
+\endinsert}
+%
+\def\figure#1#2{\advance\figureno\@ne\Figure{#1}{Fig.~\number\figureno.}{#2}}
+%%
+\newcount\chapterno \chapterno\z@
+%
+\newcount\sectionno \sectionno\z@
+%
+\newcount\subsectionno \subsectionno\z@
+%
+\def\Chapter#1#2{\bigbreak
+\begingroup\bf
+\c@ption{#1}{#2}%
+\nobreak\medskip
+\endgroup}
+%
+\def\chapter#1{\advance\chapterno\@ne
+\Chapter{Chapter~\uppercase\expandafter{\romannumeral\chapterno.}}{#1}%
+\sectionno\z@ \subsectionno\z@}
+%%
+\newbox\headbox@
+\setbox\headbox@\hbox{}
+\def\head#1\endhead{\begingroup
+\global\setbox\headbox@\hbox{\bf#1}\endgroup
+\chapter{\unhbox\headbox@}
+}
+%%
+%
+\def\Section#1#2{\bigbreak
+\begingroup\bf
+\setbox\z@\hbox{\ignorespaces#1\unskip}%
+\ifdim\wd\z@=\z@\dimen@i=\z@\else\dimen@i1em\fi
+\hangindent\wd\z@ \hangafter\@ne
+\noindent
+\box\z@
+\hskip\dimen@i
+\ignorespaces#2\par
+\nobreak\medskip
+\endgroup}
+%
+\def\section#1{\advance\sectionno\@ne
+\Section{\S\number\sectionno.}{#1}%
+\subsectionno\z@}
+%%
+\newbox\subheadbox@
+\setbox\subheadbox@\hbox{}
+\def\subhead#1\endsubhead{\begingroup
+\global\setbox\subheadbox@\hbox{\bf#1}\endgroup
+\section{\unhbox\subheadbox@}
+}
+%%
+%
+\def\Subsection#1#2{\medbreak
+\begingroup\bf
+\setbox\z@\hbox{\ignorespaces#1\unskip}%
+\ifdim\wd\z@=\z@\dimen@i=\z@\else\dimen@i1em\fi
+\leftskip\parindent\rightskip\parindent
+\hangindent\wd\z@ \hangafter\@ne
+\noindent
+\box\z@
+\hskip\dimen@i
+\ignorespaces#2\par
+\nobreak\smallskip
+\endgroup}
+%
+\def\subsection#1{\advance\subsectionno\@ne
+\Subsection{\number\sectionno.\number\subsectionno.}{#1}}
+%%
+\newbox\subsubheadbox@
+\setbox\subsubheadbox@\hbox{}
+\def\subsubhead#1\endsubsubhead{\begingroup
+\global\setbox\subsubheadbox@\hbox{\bf#1}\endgroup
+\subsection{\unhbox\subsubheadbox@}
+}
+%%
+%
+\def\Paragraph#1{\medbreak
+\indent
+\begingroup\bf
+\ignorespaces#1\unskip
+\endgroup
+\quad\ignorespaces}
+%
+\def\paragraph{\advance\subsectionno\@ne
+\Paragraph{\number\sectionno.\number\subsectionno.}}
+%%
+\newif\ifproclaim@
+\def\innerproclaim@{\relaxnext@
+\nofrills@{.\quad}\proclaim@
+\def\nextii@##1{\medbreak\indent\usualspace@{{\bf\quad}}%
+\bf\ignorespaces##1\unskip\proclaim@
+\it
+\ifproclaim@\Err@{Previous \expandafter\eat@\string\\proclaim
+has no matching \expandafter\eat@\string\\endproclaim}\else
+\proclaim@true\fi
+\ignorespaces}\futurelet\next\next@}
+%
+\def\innerendproclaim@{\proclaim@false\par\penalty50\medskip\rm}
+%
+\def\demo{\relaxnext@
+\nofrills@{.\quad}\demo@
+\def\nextii@##1{\medbreak\indent{\usualspace@{{\it\quad}}%
+\it\ignorespaces##1\unskip\demo@}%
+\rm
+\ifproclaim@\Err@{Previous \expandafter\eat@\string\\proclaim
+has no matching \expandafter\eat@\string\\endproclaim}\fi
+\ignorespaces}\futurelet\next\next@}
+%
+\def\enddemo{\par\penalty50\medskip}
+%%
+\let\example\demo
+\let\endexample\enddemo
+\let\remark\demo
+\let\endremark\enddemo
+\let\definition\demo
+\let\enddefinition\enddemo
+%%
+%
+\def\Proof{\demo{Proof}}
+%
+\def\QED{{\unskip\nobreak\hfil\penalty50\quad\null\nobreak\hfil
+\hbox{\rm Q.E.D.}\parfillskip\z@skip\finalhyphendemerits\z@\par
+\penalty-100\medskip}}
+%
+\def\cite#1{\def\nextii@##1,##2\end@{[##1,##2]}\in@,{#1}\ifin@
+\def\next@{\nextii@#1\end@}\else
+\def\next@{[#1]}\fi
+\next@}
+%
+\newcount\rostercount@
+\newif\iffirstitem@
+\newtoks\everypartoks@
+\let\plainitem@\item
+%
+\def\par@{\everypartoks@=\expandafter{\the\everypar}\everypar{}}
+%
+\def\roster{\relaxnext@
+\edef\leftskip@{\leftskip\the\leftskip}\rostercount@\z@
+\def\item{\futurelet\next\rosteritem@}%
+\def\next@{\ifx\next\runinitem
+\let\next\nextii@\else
+\let\next\nextiii@\fi\next}%
+\def\nextii@\runinitem{\unskip
+\def\next@{\ifx[\next
+\let\next\nextii@\else\ifx"\next
+\let\next\nextiii@\else
+\let\next\nextiv@\fi\fi\next}%
+\def\nextii@[####1]{\rostercount@####1\relax
+\enspace{\rm(\number\rostercount@)}~\ignorespaces}%
+\def\nextiii@"####1"{\enspace{\rm####1}~\ignorespaces}%
+\def\nextiv@{\enspace{\rm(1)}\rostercount@\@ne~}%
+\par@\firstitem@false
+\futurelet\next\next@}%
+\def\nextiii@{\par\par@\skip@\lastskip\removelastskip\penalty\@m
+\ifdim\skip@<\smallskipamount
+\smallskip\else
+\vskip\skip@\vskip-\parskip\fi
+\firstitem@true}%
+\futurelet\next\next@}
+%
+\def\rosteritem@{\iffirstitem@\firstitem@false\else\par\vskip-\parskip\fi
+\leftskip2\parindent\noindent
+\def\next@[##1]{\rostercount@##1\relax
+\llap{\hbox to1.5\parindent{\hss\rm(\number\rostercount@)}%
+\hskip.5\parindent}\ignorespaces}%
+\def\nextii@"##1"{%
+\llap{\hbox to1.5\parindent{\hss\rm##1}\hskip.5\parindent}\ignorespaces}%
+\def\nextiii@{\advance\rostercount@\@ne
+\llap{\hbox to1.5\parindent{\hss\rm(\number\rostercount@)}%
+\hskip.5\parindent}}%
+\ifx[\next
+\let\next\next@\else\ifx"\next
+\let\next\nextii@\else
+\let\next\nextiii@\fi\fi\next}
+%
+\def\therosteritem#1{{\rm(\ignorespaces#1\unskip)}}
+\newif\ifnextRunin@
+\def\endroster{\relaxnext@
+\par\leftskip@
+\penalty-50 \vskip-\parskip \smallskip
+\def\next@{\ifx\next\Runinitem
+\let\next@\relax
+\else\nextRunin@false\let\item\plainitem@
+\ifx\next\par
+\def\next@\par{\everypar=\expandafter{\the\everypartoks@}}\else
+\def\next@{\noindent\everypar=\expandafter{\the\everypartoks@}}\fi
+\fi\next@}\futurelet\next\next@}
+%
+\newcount\rosterhangafter@
+\def\Runinitem#1\roster\runinitem{\relaxnext@
+\rostercount@\z@
+\def\item{\futurelet\next\rosteritem@}%
+\def\runinitem@{#1}%
+\def\next@{\ifx[\next
+\let\next\nextii@\else\ifx"\next
+\let\next\nextiii@\else
+\let\next\nextiv@\fi\fi\next}%
+\def\nextii@[##1]{\rostercount@##1\relax\def\item@{{\rm(\number
+\rostercount@)}}\nextv@}%
+\def\nextiii@"##1"{\def\item@{{\rm##1}}\nextv@}%
+\def\nextiv@{\advance\rostercount@\@ne\def\item@{{\rm(\number
+\rostercount@)}}\nextv@}%
+\def\nextv@{\setbox\z@\vbox{\ifnextRunin@\noindent\fi
+\runinitem@\unskip\enspace\item@~\par
+\global\rosterhangafter@\prevgraf}\firstitem@false
+\ifnextRunin@\else\par\fi
+\hangafter\rosterhangafter@\hangindent2\parindent
+\ifnextRunin@\noindent\fi
+\runinitem@\unskip\enspace
+\item@~\ifnextRunin@\else\par@\fi
+\nextRunin@true\ignorespaces}\futurelet\next\next@}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% references
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newskip\refindent
+\def\maxkey{\relaxnext@
+\def\next@{\ifx[\next
+\let\next@\nextii@\else
+\let\next@\nextiii@\fi\next@}%
+\def\nextii@[##1]{\setbox0\hbox{\ninepoint[##1]\quad}\global\refindent=\wd0
+\ignorespaces}%
+\def\nextiii@##1{\global\refindent=##1}%
+\futurelet\next\next@}
+\maxkey[99]
+%
+\newif\ifref@ne
+%
+\outer\def\Refs{\relaxnext@
+\def\refskip@{\hskip\@ne sp\hskip\m@ne sp}%
+\def\next@{\ifx\next\nofrills
+\def\next@\nofrills{\nextii@}\else
+\def\next@{\nextii@{References}}\fi\next@}%
+\def\nextii@##1{\par
+\vskip\z@ plus.2\vsize\relax\penalty-100
+\vskip\z@ plus-.2\vsize\relax\bigskip
+\vbox{\kern4\p@
+\hbox to\hsize{\hfil\bf\ignorespaces##1\unskip\hfil}}\nobreak
+\medskip\sfcode`.=\@m
+\ninepoint}%
+\ref@netrue
+\futurelet\next\next@}
+%
+\newbox\nobox@ \newbox\keybox@
+\newbox\bybox@ \newbox\bysamebox@
+\newbox\paperbox@ \newbox\paperinfobox@
+\newbox\jourbox@ \newbox\volbox@ \newbox\issuebox@
+\newbox\yrbox@ \newbox\pagesbox@
+\newbox\bookbox@ \newbox\bookinfobox@
+\newbox\publbox@ \newbox\publaddrbox@
+\newbox\finalinfobox@
+%%%%%%%
+\newbox\langbox@
+\newbox\edbox@ \newbox\edsbox@
+%%%%%%%%
+%\newbox\refinfobox@
+%
+%%%%%%
+\newif\iflang@
+\newif\ifed@
+\newif\ifeds@
+\newif\iftransl@
+%%%%%%%%
+\newif\ifno@ \newif\ifkey@
+\newif\ifby@ \newif\ifmanyby@ \newif\ifbysame@
+\newif\ifpaper@ \newif\ifpaperinfo@
+\newif\ifjour@ \newif\ifvol@ \newif\ifissue@
+\newif\ifyr@ \newif\iftoappear@
+\newif\ifpages@ \newif\ifpage@
+\newif\ifbook@ \newif\ifinbook@ \newif\ifbookinfo@
+\newif\ifpubl@ \newif\ifpubladdr@
+\newif\iffinalinfo@
+%\newif\ifrefinfo@
+\newif\ifnojourinfo@
+\newif\ifafterbook@
+\newif\iffirstref@ \newif\iflastref@
+\newif\ifprevjour@ \newif\ifprevinbook@
+%\newif\ifprevbook@
+%
+\newdimen\maxbysamerule@ \maxbysamerule@24\p@
+%
+\def\ref@{\global\no@false\global\key@false
+\global\by@false\global\bysame@false
+\global\paper@false\global\paperinfo@false
+\global\jour@false\global\vol@false\global\issue@false\global\yr@false
+\global\toappear@false
+\global\pages@false\global\page@false
+\global\book@false\global\inbook@false\global\bookinfo@false
+\global\publ@false\global\publaddr@false
+%%
+\global\lang@false
+\global\ed@false\global\eds@false
+%%
+\global\finalinfo@false
+\bgroup\ignorespaces}
+%
+\Invalid@\moreref
+%
+\outer\def\ref{\ifref@ne\ref@nefalse\else\penalty-50\fi
+\begingroup
+\advance\leftskip by \refindent
+\hangindent=1em
+\hangafter\@ne
+\noindent
+\firstref@true\lastref@false
+\def\moreref{\egroup\endref@\global\firstref@false\ref@}\ref@}
+%%%%%%%%%%%%%
+\def\endrefitem@{\unskip\egroup}
+\def\transl{\endrefitem@\endref@\firstref@false
+  \afterbook@false
+  \transl@true
+  \setboxz@h\bgroup \aftergroup\unhbox\aftergroup\z@
+    \def\endrefitem@{\unskip\egroup}\ignorespaces}%
+%%%%%%%%%%%%%
+\def\refdef@#1#2{\def#1{\egroup
+\csname\expandafter\eat@\string#1@true\endcsname
+\expandafter\setbox
+\csname\expandafter\eat@\string#1box@\endcsname\hbox\bgroup#2}}
+%
+\refdef@\no\relax \refdef@\key\relax
+%
+\def\by{\egroup\by@true\bysame@false\global\manyby@false
+\setbox\bybox@\hbox\bgroup}
+%
+\def\manyby{\egroup\global\manyby@true\by@true\setbox\bybox@\hbox\bgroup}
+%
+\def\bysame{\egroup\bysame@true\bgroup}
+%
+\refdef@\paper\relax \refdef@\paperinfo\relax
+%
+\def\jour{\egroup\jour@true
+\prevjour@true\previnbook@false
+\setbox\jourbox@\hbox\bgroup}
+%
+\refdef@\vol\bf \refdef@\issue\relax \refdef@\yr\relax
+%
+\def\toappear{\egroup\toappear@true\bgroup}
+%
+\refdef@\pages\relax
+%
+\def\page{\egroup\page@true\setbox\pagesbox@\hbox\bgroup}
+%
+\def\book{\egroup\book@true\prevjour@false\setbox\bookbox@\hbox\bgroup}
+%
+%%
+\def\inbook{\egroup\inbook@true
+\previnbook@true\prevjour@false
+\setbox\bookbox@\hbox\bgroup}
+%
+\refdef@\bookinfo\relax \refdef@\publ\relax
+\refdef@\publaddr\relax \refdef@\finalinfo\relax
+%
+%%%
+%
+\refdef@\lang\relax
+\refdef@\ed\relax
+\refdef@\eds\relax
+%
+%%
+%\refdef@\refinfo\relax
+%
+\def\setpunct@{\def\prepunct@{\lastpenalty@\ifafterbook@''\fi,\penalty@\relax
+\space\afterbook@false}}
+\def\lastpenalty@{\ifnum\lastpenalty<0
+\edef\penalty@{\penalty\the\lastpenalty}\unpenalty
+\else\ifdim\lastskip=\@ne sp
+\unskip\unskip
+\edef\penalty@{\penalty\the\lastpenalty}\unpenalty
+\else
+\let\penalty@\relax
+\fi\fi}
+%
+\def\ppunbox@#1{\prepunct@\unhbox#1\unskip}
+\def\pptranslunbox@#1{\iftransl@\space\else\prepunct@\fi\unhbox#1\unskip}
+%
+\def\endref@{\let\prepunct@\relax
+\iffirstref@
+  \ifno@\hbox to\z@{\hskip-\refindent[\hbox to 1em{\hss
+  \unhbox\nobox@\unskip\hss}]\hss}\fi
+  \ifkey@\hbox to\z@{\hskip-\refindent[\unhbox\keybox@\unskip]\hss}\fi
+  \ifmanyby@
+    \ifby@
+      \hbox{\unhcopy\bybox@\unskip}\setpunct@
+      \global\setbox\bysamebox@\hbox{\unhcopy\bybox@\unskip}\else
+        \ifbysame@
+          \ifdim\wd\bysamebox@>\maxbysamerule@
+          \hbox to\maxbysamerule@{\leaders\hrule\hfill}\else
+          \hbox to\wd\bysamebox@{\leaders\hrule\hfill}\fi
+        \setpunct@
+     \fi
+  \fi\else
+  \ifby@\unhcopy\bybox@\unskip\setpunct@\fi
+\fi\fi
+\ifpaper@\ppunbox@\paperbox@\setpunct@\fi
+\ifpaperinfo@\ppunbox@\paperinfobox@\setpunct@\fi
+\ifjour@
+\pptranslunbox@\jourbox@\setpunct@\transl@false
+\ifvol@\ppunbox@\volbox@\setpunct@\fi
+\ifissue@\ \unhbox\issuebox@\unskip\setpunct@\fi
+\ifyr@\ (\unhbox\yrbox@\unskip\lastpenalty@)\penalty@\relax\setpunct@\fi
+\iftoappear@\prepunct@{to appear}\setpunct@\fi
+\ifpages@\ppunbox@\pagesbox@\setpunct@\fi
+\ifpage@\prepunct@ p.~\unhbox\pagesbox@\unskip\setpunct@\fi
+\else
+\ifprevjour@
+\unskip
+\nojourinfo@false
+\ifvol@\else\ifissue@\else\ifyr@\else\nojourinfo@true\fi\fi\fi
+\ifnojourinfo@\else,\fi
+\ifvol@\ppunbox@\volbox@\setpunct@\fi
+\ifissue@\ \unhbox\issuebox@\unskip\setpunct@\fi
+\ifyr@\ (\unhbox\yrbox@\unskip\lastpenalty@)\penalty@\relax\setpunct@\fi
+\iftoappear@\prepunct@{to appear}\setpunct@\fi
+\ifpages@\ppunbox@\pagesbox@\setpunct@\fi
+\ifpage@\prepunct@ p.~\unhbox\pagesbox@\unskip\setpunct@\fi
+\fi\fi
+\ifbook@\prepunct@``\unhbox\bookbox@\unskip\afterbook@true\setpunct@\fi
+\ifinbook@
+\prepunct@\unskip\ in ``\unhbox\bookbox@\unskip
+\afterbook@true\setpunct@\global\book@true
+\fi
+%%%%%%%%%%%%%%
+\ifeds@\ifed@\@SPMerr{You cannot use \string\\eds and \string\\ed at same time!}
+  \else\prepunct@(\unhbox\edsbox@\unskip\setpunct@, eds\.)\fi
+\else
+\ifed@\prepunct@(\unhbox\edbox@\unskip\setpunct@, ed\.)\fi
+\fi
+%%%%%%%%%%%%%%%
+\ifbookinfo@\ppunbox@\bookinfobox@\setpunct@\fi
+\ifpubl@\ppunbox@\publbox@\setpunct@\fi
+\ifpubladdr@\ppunbox@\publaddrbox@\setpunct@\fi
+\ifbook@
+\ifyr@\prepunct@\unhbox\yrbox@\unskip\setpunct@\fi
+\iftoappear@\prepunct@{to appear}\setpunct@\fi
+\ifpages@\prepunct@ pp.~\unhbox\pagesbox@\unskip\setpunct@\fi
+\ifpage@\prepunct@ p.~\unhbox\pagesbox@\unskip\setpunct@\fi
+\else
+\ifprevinbook@\unskip
+\ifyr@\prepunct@\unhbox\yrbox@\unskip\setpunct@\fi
+\iftoappear@\prepunct@{to appear}\setpunct@\fi
+\ifpages@\prepunct@ pp.~\unhbox\pagesbox@\unskip\setpunct@\fi
+\ifpage@\prepunct@ p.~\unhbox\pagesbox@\unskip\setpunct@\fi
+\fi\fi
+%%%%%%%%%%%%%%
+\iflang@\prepunct@(\unhbox\langbox@\unskip\setpunct@)\fi
+%%%%%%%%%%%%%%
+\iffinalinfo@\ifafterbook@''\fi.\afterbook@false
+\spacefactor3000\relax\space\unhbox\finalinfobox@
+\else
+\iflastref@\ifafterbook@''\fi.\afterbook@false\else
+\lastpenalty@\ifafterbook@''\fi;\afterbook@false\penalty@\relax\space
+\fi\fi}
+%
+\def\endref{\egroup\global\lastref@true\endref@
+\global\prevjour@false\global\previnbook@false
+\par\endgroup}
+%%
+\let\ldots\plainldots@
+\let\cdots\plaincdots@
+%%
+\let\nopagenumbers\relax
+\let\NoPageNumbers\relax
+\let\nologo\relax
+%
+\newif\ifsetheadline@
+\setheadline@true
+\def\NoRunningHead{\setheadline@false}
+\newtoks\lefthe@d \newtoks\righthe@d
+\def\setheadline#1#2{\ifsetheadline@
+\lefthe@d={\ninepoint\number\pageno\hfil\hbox{#1}\hfil}%
+\righthe@d={\ninepoint\hfil\hbox{\it#2}\hfil\number\pageno}
+\else
+\lefthe@d={\ninepoint\number\pageno\hfil\hfill}%
+\righthe@d={\ninepoint\hfill\hfil\number\pageno}
+\fi}
+%%
+\output={\output@}
+\def\output@{\shipout\vbox{%
+\iftitlep@ge
+\global\titlep@gefalse\else
+\ifodd\pageno
+\setbox\z@=\hbox to\hsize{\the\righthe@d}\else
+\setbox\z@=\hbox to\hsize{\the\lefthe@d}\fi
+\vtop to\z@{\vss\dp\z@=\z@\box\z@}\nointerlineskip\fi
+\vskip\headsep
+\vbox to\vsize{\boxmaxdepth=\maxdepth \pagecontents}}%
+\global\advance\pageno\@ne
+\ifnum\outputpenalty>-\@MM\else\dosupereject\fi}
+%
+\def\footnoterule{\vskip-3.4\p@\hrule width 96\p@ \vskip 3\p@}
+%%
+\def\proclaim{\innerproclaim@}
+\def\endproclaim{\innerendproclaim@}
+\tenpoint
+%%
+\catcode`\@=\active
+%
+\def\styname{aspm}\def\styversion{1.0}
