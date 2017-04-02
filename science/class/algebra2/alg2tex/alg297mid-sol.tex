@@ -1,0 +1,166 @@
+%Algebra 
+%Algebra II Midterm : original  October 19, 20, 1997
+%revised : November 3, 1997
+
+\documentstyle[12pt]{jarticle}
+
+%A4 Size Setting
+\topmargin = -0.5cm
+\oddsidemargin = 0cm \evensidemargin = 0cm
+\textheight = 24cm \textwidth = 16cm % default 16cm
+%A4 size Setting End
+
+\pagestyle{empty}
+
+\newtheorem{thm}{定理}
+\newcommand{\bZ}{\mbox{\boldmath $Z$}}
+\newcommand{\bQ}{\mbox{\boldmath $Q$}}
+\newcommand{\bR}{\mbox{\boldmath $R$}}
+\newcommand{\bC}{\mbox{\boldmath $C$}}
+\newcommand{\bigx}{{\large $\times$}}
+\newcommand{\qed}{\hfill\hbox{\rule{6pt}{6pt}}}
+\newcommand{\sol}{{\gt \mbox{解．}\quad}}
+
+\begin{document}
+\begin{center}
+{\LARGE\gt Algebra II  Midterm} {\LARGE\sf SOLUTION}\\
+{\gt October 27, 1997, Autumn}
+\end{center}
+
+\begin{enumerate}
+\item 次のうち正しいものには $\bigcirc$、誤っているものには \bigx を記入せよ。
+     \begin{enumerate}
+     \item $R$ が単項イデアル整域ならば、$R$ 上の多項式環 $R[x]$ は、単項イデアル整域である。\hfill (\bigx)
+     \item 体 $K$ のイデアルは、$K$ と、$\{0\}$ のみである。\hfill($\bigcirc$)
+     \item $(0)$ が素イデアルである可換環は、整域である。\hfill($\bigcirc$)
+     \item $I, J$ を可換環 $R$ のイデアルとすると、
+     $$\{xy\mid x\in I, \:y\in J\}$$
+     は、$R$ のイデアルである。\hfill (\bigx)
+     \item $n$ を $2$ 以上の整数とするとき、$\bZ/n\bZ$ の元で正則元でないものは、すべて、零因子である。\hfill($\bigcirc$)
+     \end{enumerate}
+
+\newpage
+\item $R$ を可換環とし、$R[x]$ を $R$ を係数とする多項式全体のなす環、$U(R)$ をその単数群（正則元全体のなす群）とするとき次を示せ。
+     \begin{enumerate}
+     \item $f(x), g(x)\in R[x]$ とするとき、
+     $$\deg f(x)g(x) \leq \deg f(x) + \deg g(x)$$
+     であり、特に、$R$ が整域であれば、等号が成り立つことを示せ。\\
+     \sol
+     $f(x) = a_nx^n + \cdots + a_1x + a_0$、$g(x) = b_mx^m + \cdots + b_1x + b_0$、$a_n\neq 0 \neq b_m$ とする。$n = \deg f(x)$、$m = \deg g(x)$。$x^t, \;(t>n+m)$ の係数は 0 で、$x^{n+m}$ の係数は、$a_nb_m$。従って、$f(x)g(x)$ の次数は、$n+m$ 以下。また、整域ならば、$a_nb_m\neq 0$ だから、次数は、$n+m$ である。
+     \qed
+     
+     \item $R$ が整域ならば $R[x]$ も整域であることを示せ。\\
+     \sol
+     $f(x), g(x)\in R[x]$ とし、$\deg f(x)g(x) = 0$ とすると、前問より、
+     $$-\infty = \deg 0 = \deg f(x)g(x) = \deg f(x) + \deg g(x)$$
+     だから、$\deg f(x) = -\infty$ または、$\deg g(x) = -\infty$。これより、$f(x) = 0$ または、$g(x) = 0$ を得る。従って、$R[x]$ は整域である。
+     \qed
+     
+     \item $R[x,y]$ を $R[x]$ を係数とし、$y$ を変数とする多項式環とする。$R$ が整域ならば、$R[x,y]$ も整域であることを示せ。\\
+     \sol
+     $R$ が整域なら、$R[x]$ は整域、従って、$R[x]$ を係数とする多項式環 $R[x,y] = (R[x])[y]$ も整域である。
+     \qed
+     
+     \item $R$ を整域と仮定するとき、$U(R[x]) = U(R)$ であることを示せ。\\
+     \sol
+     $f(x), g(x)\in R[x]$ とし、$\deg f(x)g(x) = 1$ とすると、
+     $$0 = \deg 1 = \deg f(x)g(x) = \deg f(x) + \deg g(x)$$
+     だから、$\deg f(x) = \deg g(x) = 0$。これより、$f(x), g(x) \in R$ を得る。従って、$U(R[x])\subset U(R)$。$U(R)\subset U(R[x])$ は明らかだから $U(R[x]) = U(R)$ を得る。
+     \qed
+     
+     \item $R$ を整域とは仮定しないとき、$U(R[x]) = U(R)$ か。正しければ証明し、正しくなければ、反例を上げよ。\\
+     \sol
+     $R = \bZ_4$、$f(x) = 2x+1$ とする。
+     $$(f(x))^2 = (2x+1)(2x+1) = 4x^2 + 4x + 1 = 1$$
+     だから、$2x+1\in U(R[x])$。しかし、$2x+1\not\in R$ だから、$U(R[x]) \neq U(R)$ しかし $2x+1\not\in R$。
+     \qed
+     \end{enumerate}
+
+\newpage 
+\item $R$ を可換環、$P$ を $R$ の素イデアル、$S = R - P$、$R'$ を可換環、$f:R\to R'$ を環準同型とするとき、次を示せ。
+     \begin{enumerate}
+     \item $S$ は、乗法的部分集合であることを示せ。（0 を含まず、1 を含み、積に関して閉じている集合）\\
+     \sol
+     $1\not\in P$ だから、$1\in S$。$0\in P$ だから、$0\not\in S$。$x,y\in S$ とすると、$x,y\not\in P$ かつ $P$ は素イデアルだから、$xy\not\in P$。従って、$xy\in S$。これは、$S$ が乗法的部分集合であることを示す。
+     \qed
+     
+     \item $I'$ を $R'$ のイデアルとすると、
+     $$I = f^{-1}(I') = \{x\in R\mid f(x)\in I'\}$$
+     は、$R$ のイデアルであることを示せ。\\
+     \sol
+     $x,y\in I$ とする。仮定より、$f(x), f(y)\in I'$ で、$I'$ は、イデアルだから、
+     $$I'\ni f(x) + f(y) = f(x+y).$$
+     これは、$x+y\in I$ を示す。また、$r\in R$ とすると、$f(rx) = rf(x)\in I'$ だから、$rx\in I$ がえられ、$I$ が $R$ のイデアルであることが分かる。
+     \qed
+     
+     \item $R'$ が整域ならば、$\ker f$ は、素イデアルであることを示せ。\\
+     \sol
+     環の準同型定理によって、$R/\ker f\simeq f(R) \subset R'$。$f(R)$ は、整域 $R'$ の部分環だから、零因子を含まない。従って、$f(R)$ またそれと同型な $R/\ker f$ も整域である。これより、$\ker f$ は、素イデアルである。
+     \qed
+     
+     \item 上の $I$ と、$I'$ において、$I'$ が $R'$ の素イデアルならば、$I = f^{-1}(I')$ も素イデアルであることを示せ。\\
+     \sol
+     $I'$ は $R'$ の素イデアルだから、$R'/I'$ は整域である。ここで、$g = \pi\circ f$、$\pi$ は、$R'\to R'/I'$ なる自然な準同型とする。
+     $$\ker g = f^{-1}(\ker \pi) = f^{-1}(I') = I$$
+     だから前問より、$I$ は、$R$ の素イデアルである。
+     \qed\\
+     {\gt 別解．}\quad
+     (b) より $I$ はイデアル。$x,y\in R$ で、$xy\in I$ とする。$I'\ni f(xy) = f(x)f(y)$ で、$I'$ が素イデアルだから、$f(x)\in I'$ または、$f(y)\in I'$。従って、$x\in I$ 又は、$y\in I$。これより、$I$ が素イデアルであることが分かる。この議論は (a) の証明にも同様に用いられる。
+     \qed
+     
+     \item $R$ が単項イデアル整域ならば、$S^{-1}R$ も単項イデアル整域であることを示せ。
+     \sol
+     $I'$ を $S^{-1}R$ のイデアルとする。$f:R\to S^{-1}R$ を自然な準同型とすると、$I = f^{-1}(I')$ は (b) より単項イデアル整域 $R$ のイデアルだから、$I = (a)$ とかける。ここで、$I' = S^{-1}Rf(a)$ であることを示せばよい。$f(a)\in I'$ だから、$I' \supset S^{-1}Rf(a)$ であることは明か。$x/s\in I'$ とする。$f(x) = x/1 = sx/s \in I'$ だから、$x\in I$。$x = ra$、$r\in R$ とすると、
+     $$x/s = ra/s = r/s(a/1) = r/sf(a)\in S^{-1}Rf(a)$$
+     だから $I' \subset S^{-1}Rf(a)$ も成り立ち、$I'$ は単項イデアルとなる。
+     \qed
+          \end{enumerate}
+
+\newpage         
+\item $R = \bQ[x]$ を、有理数体上の多項式環とし、$p(x) = (x-1)(x+1)(x^{10 }-2)$ とする。このとき、以下を示せ。
+     \begin{enumerate}
+     \item $x^{10 }- 2$ は、$\bQ$ 上既約であることを示せ。\\
+     \sol
+     $p = 2$ として、Eisenstein の既約性判定法を用いいると、最高次の係数は、1 だから $2$ で割り切れず、それ以外は、$2$ で割り切れ、定数項は、4 で割れないから、$x^{10}-2$ は既約である。
+     \qed
+     
+     \smallskip
+     以下の問題においては、$R = \bQ[x]$ がユークリッド整域だから単項イデアル整域であるという事実が重要です。このあとは、どの程度の定理を用いるかによって解答が変わってきます。しっかりとした理解が出来ていれば定理を引用しても、直接証明しても構いません。直接証明してもそれほど大変ではありません。次を用いると簡単です。
+     
+     $R$ の零でないイデアルを、$(f(x))$ とすると、
+     $$(f(x))\mbox{：極大イデアル} \Leftrightarrow (f(x))\mbox{：素イデアル}\Leftrightarrow f(x)\mbox{：既約}$$
+     証明はクラスですでにしているので省きます。
+     
+     \item $R/(x^{10} - 2)$ は、体であることを示せ。ここで、$(x^{10} - 2)$ は、$x^{10}-2$ で生成されたイデアル、$R(x^{10}-2)$ を表すものとする。\\
+     \sol
+     $\bQ[x]$ においては、既約多項式で生成されたイデアルは、極大イデアルだから $(x^{10}-2)$ は、極大イデアル。従って、$R/(x^{10} - 2)$ は、体である。
+     \qed
+     
+     \item $p(x)$ で生成されたイデアルを $I = (p(x))$ とする。$I$ は、素イデアルかどうか判定せよ。\\
+     \sol
+     $\bQ[x]$ においては、$(p(x))$ が素イデアルであることと、それが極大イデアルであることと、$p(x)$  が既約であることは同値である。しかし、$p(x)$ は明らかに既約ではないから素イデアルではない。\\
+     {\gt 別解．}\quad
+     $(x-1)(x+1)$ と、$x^{10}-2$ をかけると $p(x)$ になるから、$I$ に入る。しかし、どちらも $p(x)$ では割り切れないから $(p(x))$ には入らない。従って、$(p(x))$ は素イデアルではない。
+     \qed
+     
+     \item $R$ の $(0)$ 以外の素イデアルは、極大イデアルでもあることを示せ。\\
+     \sol
+     $R$ は単項イデアル整域だから、$(0)$ 以外の素イデアルは極大イデアルである。
+     \qed
+     
+     \item $I = (p(x))$ を含む $R$ の極大イデアルをすべて求めよ。\\
+     \sol
+     $(x+1)$、$(x-1)$、$(x^{10}-2)$。
+     \qed
+     
+     \end{enumerate}
+\end{enumerate}
+
+\vspace{2ex}
+\noindent
+Midterm を １００点、演習を ５０点、FINAL を １５０ 点満点として計算して、成績を出す予定です。
+
+\begin{flushright}
+鈴木寛@国際基督教大学数学教室
+\end{flushright}
+\end{document}

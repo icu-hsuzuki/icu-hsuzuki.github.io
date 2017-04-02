@@ -1,0 +1,143 @@
+% Algebra III Midterm Solution
+% Imported from AlgIII96MidTerm.tex
+% Algebra III Midterm : original January 15, 1997
+%	Imported from Algebra III Midterm : original January 26, 1996
+
+\documentstyle[12pt]{jarticle}
+
+%A4 Size Setting
+\topmargin = -0.5cm %default 0cm
+\oddsidemargin = 0cm \evensidemargin = 0cm
+\textheight = 23cm \textwidth = 16cm 
+%A4 size Setting End
+
+\newcommand{\bZ}{\mbox{\boldmath $Z$}}
+\newcommand{\bQ}{\mbox{\boldmath $Q$}}
+\newcommand{\bR}{\mbox{\boldmath $R$}}
+\newcommand{\bC}{\mbox{\boldmath $C$}}
+\newcommand{\sol}{{\gt 解答：}}
+\newcommand{\note}{{\gt 注：}}
+\newcommand{\qed}{\hfill\hbox{\rule{6pt}{6pt}}}
+
+\pagestyle{empty}
+
+\begin{document}
+\begin{center}
+{\gt\LARGE Algebra III  Take-Home Midterm\\
+Solutions + $\alpha$}\\
+{\gt Winter 1996-7}
+\end{center}
+
+\begin{enumerate}
+\item $L = \bQ(\sqrt{3},i),\; (i = \sqrt{-1})$ とする。このとき以下の問いに答えよ。
+     \begin{enumerate}
+     \item 拡大 $L:\bQ$ は、単純拡大であることを示せ。すなわち、$L$ のある元 $\alpha$ で、$L = \bQ(\alpha)$ となるものを見つけよ。
+     
+     \sol
+     $\alpha = (\sqrt{3} + i)/2 = \cos(\pi/6) + i\sin(\pi/6)$ とする。これは、1 の原始12 乗根であるから、$\alpha^3 = i$。従って、$i, \sqrt{3} = 2\alpha- i\in \bQ(\alpha) \subset \bQ(\sqrt{3},i)$ であるから、$\bQ(\alpha)=\bQ(\sqrt{3},i)$ を得、$L$  が、単純拡大であることが分かる。
+     \qed
+     
+     \item 上で求めた $\alpha$ について、その $\bQ$ 上の、最小多項式を求めよ。
+     
+     \sol
+     $[L:\bQ] = [\bQ(\sqrt{3})(i):\bQ(\sqrt{3})][\bQ(\sqrt{3}):\bQ]$ とかくと、$i\not\in \bQ(\sqrt{3})$ であることより、$i$ の $\bQ(\sqrt{3})$ 上の最小多項式は、$x^2+1$ であることが分かる。$\sqrt{3}$ の、$\bQ$ 上の最小多項式が、$x^2-3$ であることを考えると、$[L:\bQ] = [\bQ(\alpha):\bQ] = 4$ である。
+     $$x^{12}-1 = (x^3-1)(x^3+1)(x^2+1)(x^4-x^2+1)$$
+     と分解できることは、明らか。$\alpha^{12} -1 = 0$ で、$\alpha$ の最小多項式の次数は、４だから、上の分解から、最小多項式は、$x^4-x^2+1$ であることが分かる。特に、この多項式は、既約である。（直接、これが、既約を言おうとしたら、どうしますか。）
+     \qed
+     
+     \item $L$ の自己同型写像で、$\sqrt{3}$ を、$\sqrt{3}i$ に移すものは存在するか判定し、その理由も述べよ。（$L$ の自己同型写像は、$\bQ$ の元を、動かさないことは、証明せずに使っても良い。）
+     
+     \sol
+     $\sigma$ を、そのような自己同型とする。
+     $$3 = \sigma(3) = \sigma((\sqrt{3})^2) = \sigma(\sqrt{3})^2 = \sigma(\sqrt{3}i)^2 = \sigma((\sqrt{3}i)^2)= \sigma(-3) = -3$$
+     これは矛盾であるから、そのような自己同型は、存在しない。
+     \qed
+     
+     \item 体 $L$ は、上で求めた $\alpha$ の最小多項式の $\bQ$ 上の分解体であることを示せ。
+     
+     \sol 
+     まず、$\alpha^{12} = 1$ かつ、$\{j\mid (j,12) = 1, \;0\leq j\leq 12\} = \{1,5,7,11\}$ であることに注意する。$L$ の乗法群の中で、$<\alpha> = <\alpha^5> = <\alpha^7> = <\alpha^{11}>$ だから、$L = \bQ(\alpha^j) $、$j = 1,5,7,11$。従って、これらの、最小多項式の次数は 4、よって、上の、分解から、これらは、$x^4-x^2+1$ の根でなければならない。よって、この多項式は、$L$  で分解し、$L = \bQ(\alpha)$ であることより、これは、分解体である。
+     \qed
+     
+     \item $L$ の自己同型写像 $\tau$ で、$\tau(\sqrt{3}) = -\sqrt{3}$、$\tau(i) = -i$ を満たすものが存在することを示せ。
+     
+     \sol$x^2-3$ は、$\bQ$ 上既約で、その根は、$\pm\sqrt{3}$ だから、定理1.3 によって、$\bQ(\sqrt{3})$ から、$\bQ(\sqrt{3})$ への同型写像 $\sigma$ で、$\sqrt{3}$ を $-\sqrt{3}$ に移すものが存在する。$x^2+1$ は、$\bQ(\sqrt{3})$ 上 の既約多項式で、$\pm i$ は、その根だから、また、定理 1.3 により、$L$ から、$L$ への自己同型 $\tau$ で、$\tau(i) = -i$ かつ、$\bQ(\sqrt{3})$ 上では、$\sigma$ と等しくなっているものが存在する。これは、$\tau(\sqrt{3}) = -\sqrt{3}$ を意味し、ここで求めるものになっている。
+     \qed
+     \end{enumerate}
+     
+\item $K$ を ２個の元からなる体（$\simeq\bZ_2$）とし、$m(t) = t^4+t+1\in K[t]$ とする。このとき以下の問いに答えよ。
+     \begin{enumerate}
+     \item $m(t)$ は、$K$ 上の、既約多項式であることを示せ。
+     
+     \sol
+     2 次以下の既約多項式は、$t$、$t+1$、$t^2+t+1$ だから、それぞれで、割れないことを確かめる。最初の二つについては、$0, 1$ を代入して、0 にならないことより明らか。同じようにして、$t^2+t+1$ がただ一つの２次の既約多項式だと言うことが分かる。従って、$m(t)$ が、既約でなければ、$(t^2+t+1)^2　＝t^4+t^2+1$ と等しくならなければならない。これは矛盾。従って、この多項式は、既約。\qed
+     
+     \item $L = K[t]/(m(t))$ は、１６個の元からなる体であることを示せ。
+     
+     \sol
+     $m(t)$ は、既約だから、$L$ は体、しかも、$\deg m = 4$ より、
+     $$L = \{a_0 + a_1t + a_2t^2 + a_3t^3 + (m(t))\mid a_0, a_1, a_2, a_3\in K\}$$
+     で、この表し方は、一意的だから、$|L| = 16$。命題 1.1 参照。\qed
+          
+     \item $L$ を、$K$ の拡大体と見たとき、この拡大は、正規拡大であることを示せ。
+     
+     \sol
+     $\alpha = t+(m(t))$ とする。$\alpha, \alpha^2, \alpha^4, \alpha^8$ は、全て、$m(t)$  の根で、かつ、相異なるから、$m(t)$ は、分解し、従って、正規拡大となる。\qed
+     
+     \note
+     一般に、$K$ を標数 $p$ の体とする。すると、$f(t)\in K[t]$ に対して、$f(t)^p = f(t^p)$ 従って、$f(\alpha) = 0$ ならば、
+     $$f(\alpha^p) = f(\alpha^{p^2}) = \cdots = f(\alpha^{p^j}) = 0$$
+     が成り立っている。$\alpha^p = \alpha^{p^j}$ となる条件は、何でしょうか。
+
+     
+     \item $t^3+t+1$ は、$L$ 内に根を持たないことを示せ。
+     
+     \sol
+     $\beta$ を根とする。$\beta\neq 0,1$ だから、$t^3+t+1$ は、既約。これより、$[K(\beta):K] = 3$。しかし、これは、$[L:K] = 4$ を割り切らなければいけないので、矛盾。（Exercise 参照。)\qed
+     \end{enumerate}
+
+\item $\alpha = ^4\!\!\!\!\sqrt{3}$ (すなわち、$\alpha$ は、$4$ 乗すると $3$ になる、正の実数）とし、$L = \bQ(\alpha)$ とする。
+	\begin{enumerate}
+	\item $(\alpha+1)^{-1}$ を $\alpha$ の３次以下の多項式で表せ。
+	
+	\sol
+	$(\alpha+1)(\alpha-1)(\alpha^2+1) = \alpha^4-1 = 2$。従って、
+	$$\frac{1}{\alpha+1} = \frac{1}{2}(\alpha-1)(\alpha^2+1)  = \frac{1}{2}(\alpha^3 - \alpha^2 + \alpha - 1)$$
+	を得る。\qed
+	
+	\item $L$ の $\bQ$-自己同型をすべて求めよ。
+	
+	\sol
+	$\sigma$ を自己同型とする。$\sigma(\alpha)^4 = 3$ であることより、$\sigma(\alpha) = \pm\alpha, \pm\alpha i$。しかし、$L\subset \bR$ だから、$\sigma(\alpha) = \pm\alpha$。$t^4-3$ は、Eisenstein の定理により、$\bQ$ 上既約だから、定理 1.3 により、$\sigma(\alpha) = -\alpha$ となる、自己同型も存在するので、これによって、定まる、二つの自己同型がありそれのみであることが分かる。
+	\qed
+	
+	\item $L$ は、$\bQ$ 上正規拡大ではないことを示せ。
+	
+	\sol
+	$x^4-3$ は、$L$ に根を持つ、$\bQ$ 上の既約多項式であるが、$\alpha i\not\in L$ だから、正規ではない。\qed
+	
+	\item $L$ の拡大体で $\bC$ に含まれ、$L:\bQ$ が正規拡大となるものの内、拡大次数が、最小となるものは、ただ、一つしかないことを示せ。
+	
+	\sol
+	$\alpha$ 以外に、$\alpha i$ も含まなければならず、$L$ の拡大体で $\bC$ に含まれ、$L:\bQ$ が正規拡大となるものは、$M = \bQ(\alpha,i)$ を含む。$M$ は、$t^4-3$ の分解体であるから、$\bQ$ 上正規。従って、これが、最小で、ただ一つしかないことは、明らか。\qed
+
+	\end{enumerate}
+
+\item 
+	\begin{enumerate}
+	\item 「代数学の基本定理 」（複素数体 $\bC$ 上の多項式は、$\bC$ 上で、分解する）を証明せよ。(16pts)
+	
+	\sol
+	省略。\qed
+	
+	\item $L$ を $\bC$ の代数拡大とすると、$L = \bC$ であることを示せ。
+	
+	\sol 
+	$\alpha\in L$ とする。これは、$\bC$ 上の零でない多項式の根である。ところが、そのような根は、全て、$\bC$ の元であるから、$\alpha\in \bC$ すなわち、$L = \bC$ を得る。
+	\end{enumerate}
+ \end{enumerate}
+
+\begin{flushright}
+鈴木寛@国際基督教大学数学教室
+\end{flushright}
+\end{document}

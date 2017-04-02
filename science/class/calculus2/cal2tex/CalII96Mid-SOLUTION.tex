@@ -1,0 +1,143 @@
+% Calculus II Take-home midterm solutions + alpha
+% Original is Taken From Calculus II TAKE-HOME MidTerm
+%% Original Taken From Calculus II Final (Original Feb. 28, 1995)
+%% Calculus II TAKE-HOME MidTerm to be distributed on January 9, 1997
+% Original : January 17, 1997
+%% revised : January 18, 1997
+% revised after the distribution : January 23, 1997
+
+\documentstyle[12pt]{jarticle}
+
+%A4 Size Setting
+\topmargin = 0cm
+\oddsidemargin = 0cm \evensidemargin = 0cm
+\textheight = 23cm \textwidth = 16cm
+%A4 size Setting End
+
+\pagestyle{empty}
+
+\newcommand{\sol}{{\gt 解答：}}
+\newcommand{\note}{{\gt 注：}}
+
+\begin{document}
+\begin{center}
+{\gt\LARGE Calculus II  Take-Home Midterm\\
+Solutions + $\alpha$}\\
+{\gt Winter Term, AY1996-7}
+\end{center}
+
+\bigskip
+\noindent
+大体良くできていました。教科書などを見なくても、この程度は、出来るように良く理解しておいて下さい。１は、少し難しかったかも知れません。今回は、証明問題を出しませんでしたが、証明を理解することにより、本質を理解することが出来ます。定理の関連性も理解していって下さい。
+
+\begin{enumerate}
+\item $f(x,y)$ を以下のような関数とする。(Let $f(x,y)$ be a function defined as follows.)
+$$f(x,y) = \left\{\begin{array}{cl} \frac{xy^3}{x^2+y^6} & (x,y)\neq (0,0)\\ 0 & (x,y) = (0,0)\end{array}\right..$$
+	\begin{enumerate}
+	\item $f(x,y)$ は、点 $(0,0)$ で連続かどうか判定し、理由ものべよ。
+	(Determine whether the function $f(x,y)$ is continuous at $(0,0)$. Give your reason.)
+	
+	\sol
+	$x = y^3$ とすると、全ての $y\neq 0$ の値について、
+	$$f(x,y) = f(y^3,y) = \frac{y^3y^3}{(y^2)^3+y^6} = \frac12 \neq f(0,0)$$
+	だから、$f(x,y)$ は、連続ではない。すなわち、$x = y^3$ に沿って、点 $(0,0)$ に近づいたとすると、その値は、$0$ には、近づかない。従って、連続ではない。
+	
+	\note
+	$f(x,0) = 0$ であるから、$y = 0$ に沿って、点 $(0,0)$ に近づくと、極限は、$0$ になる。上のことと合わせると、$f(x,y)$ は、点が $(0,0)$ に近づくとき、極限値を持たないことが分かる。従って、勿論、$f(x,y)$ は、連続ではない。
+	
+	\item $f(x,y)$ は、点 $(0,0)$ で $x$ に関して偏微分可能かどうか判定し、理由ものべよ。
+	(Determine whether the partial derivative of the function $f(x,y)$ with respect to $x$ exists at $(0,0)$. 
+	Give your reason.)
+	
+	\sol
+	$f(x,0) = 0$  だから、$f(x,y)$ の 点 $(0,0)$ での $x$ による偏微分は、$0$ となり、偏微分可能です。定義に戻れば、
+	$$f_x(0,0) = \lim_{h\to 0}\frac{f(h,0)-f(0,0)}{h} = \lim_{h\to 0}\frac{0}{h} = 0.$$
+
+	\item $f(x,y)$ は、点 $(0,0)$ で全微分可能かどうか判定し、理由ものべよ。
+	(Determine whether the total derivative of the function $f(x,y)$ exists at $(0,0)$. 
+	Give your reason.)
+	
+	\sol
+	$f(x,y)$ は、点 $(0,0)$ で連続ではないから、全微分可能ではない。実際、全微分可能とすると、
+	$$f(h,k) - f(0,0) = hf_x(0,0) + kf_y(0,0) + \epsilon(h,k),\;\lim_{(h,k)\to (0,0)}\frac{\epsilon(h,k)}{\sqrt{h^2+k^2}} = 0$$
+	となるが、$f_x(0,0) = f_y(0,0) = 0$  であるから、$f(h,k) = \epsilon(h,k)$。$f(k^3,k) = 1/2$ だったから、最後の極限は、$0$ には、ならない。
+	
+	\note 
+	上の証明を真似することにより、点 $(p,q)$ で、関数 $f(x,y)$ が全微分可能ならば、$f(x,y)$ は、点 $(p,q)$ で連続であることを証明せよ。
+	
+	\item $z = f(x,y)$ の点 $(2,1,f(2,1))$ での接平面の方程式を求めよ。
+	(Find the equation of the tangent plane of the surface $z = f(x,y)$ at $(2,1,f(2,1)$.)
+	\end{enumerate}
+	
+	\sol
+	$f(2,1) = 2/5$ かつ、$f_x(2,1) = -3/25$、$f_y(2,1) = 18/25$ だから、求める方程式は、
+	$$z - \frac25 = -\frac3{25}(x-2) + \frac{18}{25}(y-1).$$
+
+\item $z = \cos(x/y)$ とする。(Let $z = \cos(x/y)$.)
+     \begin{enumerate}
+     \item $x$ と、$y$ に関する $z$ の偏導関数を求めよ。(Find the partial derivatives of $z$ with respect to $x$ and $y$.)
+     
+     \sol
+     ${\displaystyle z_x = -\sin\left(\frac{x}{y}\right)\cdot \frac{1}{y},\;
+     z_y = \sin\left(\frac{x}{y}\right)\cdot \frac{x}{y^2}}$。
+     
+     \item $z$ は、次の式を満たすことを示せ。(Show that $z$ satisfies the following equation.)
+     $$x^2\frac{\partial^2z}{\partial x^2} + 2xy\frac{\partial^2z}{\partial y\partial x} + y^2\frac{\partial^2z}{\partial y^2} = 0.$$
+     
+     \sol 
+     $z_{xx}$、$z_{xy} = z_{yx}$、$z_{yy}$ を求めると、それぞれ、次のようになる。
+     $$-\cos({\frac {x}{y}}){y}^{-2},\;\cos({\frac {x}{y}})x{y}^{-3}+\sin({\frac {x}{y}}){y}^{-2},\;-\cos({\frac {x}{y}}){x}^{2}{y}^{-4}-2\,\sin({\frac {x}{y}})x{y}^{-3}.$$
+     これより、等式を得る。
+     
+     \note
+     $x^2z_{xx} + 2xyz_{xy} + y^2z_{yy} \stackrel{\mbox{?}}{=} (xz_x + yz_y)^2$。これは、どのようなときに成り立つのでしょうか。
+     \end{enumerate}
+
+\item 次の式で与えられた合成関数について、$u$, $v$ に関する偏導関数を求めよ。(Find the partial derivatives of the following composite functions with respect to $u$ and $v$.)
+$$z = e^{xy}, \;x = \sin uv, \;y = \cos(u+v)$$
+
+	\sol
+	\begin{eqnarray*}
+	\frac{\partial z}{\partial u} & = & \frac{\partial z}{\partial x}\frac{\partial x}{\partial u} + \frac{\partial z}{\partial y}\frac{\partial y}{\partial u}\\
+	& = & (e^{xy}y)(\cos uv\cdot v) - (e^{xy}x)\sin(u+v)\\
+	& = & e^{xy}(yv\cos uv - x\sin(u+v))\\
+	& = & e^{\sin uv\cdot \cos(u+v)}(v\cos(u+v)\cos uv - \sin uv\sin(u+v))\\
+	\frac{\partial z}{\partial v} & = & \frac{\partial z}{\partial x}\frac{\partial x}{\partial v} + \frac{\partial z}{\partial y}\frac{\partial y}{\partial v}\\
+	& = & (e^{xy}y)(\cos uv\cdot u) - (e^{xy}x)\sin(u+v)\\
+	& = & e^{xy}(yu\cos uv - x\sin(u+v))\\
+	& = & e^{\sin uv\cdot \cos(u+v)}(u\cos(u+v)\cos uv - \sin uv\sin(u+v))
+	\end{eqnarray*}
+	
+\item 次の関数の、極大値、極小値を決定せよ。(Determine maximum and minimum of the following function.)
+     \begin{enumerate}
+     \item $f(x,y) = x^3 + 3xy - y^3$。
+     
+     \sol
+     $f_x = 3x^2 + 3y$、$f_y = 3x - 3y^2$ だから、停留点 $f_x(x,y) = f_y(x,y) = 0$ を満たす $(x,y)$ 求める。
+     最初の式から、$y = -x^2$ を得、これを、２番目の式に代入すると、
+     $0 = x - x^4 = -x(x-1)(x^2+x+1)$。$x^2+x+1$ は、実数の範囲で、正だから、$x = 0$ または、$x = 1$ を得る。従って、停留点は、$(1,-1)、(0,0)$。$A = f_{xx} = 6x$、$B = f_{xy} = 3$、$C = f_{yy} = -6y$ だから、判別式 $D = B^2 - AC = 9+36xy$。$(0,0)$ の時は、$D = 9>0$、従って、$(0,0)$ では、極値を持たない。$(1,-1)$ の時は、$D = -27<0$、$A = 6>0$ だから、極小値 $-1$ を持つ。
+     
+     \item $f(x,y) = xy(ax+by+c), \; (abc > 0)$。
+     
+     \sol
+     上と、同じようにして、
+     $f_x = 2axy + by^2 + cy = y(2ax + by + c)$、$f_y = a{x}^{2}+2xyb+xc = x(ax+2by + c)$ だから、停留点 $f_x(x,y) = f_y(x,y) = 0$ を満たす $(x,y)$ 求める。
+     最初の式から、$y = 0$ または、$2ax + by + c = 0$ を得、２番目の式から、$x = 0$ または、$ax + 2by + c = 0$ を得る。これより、以下の４つの解を停留点の座標として得る。
+     $$(x,y) = (0,0),\;(0,-c/b),\;(-c/a,0),\;(-c/3a,-c/3b).$$
+     さらに、$A = f_{xx} = 2ay$、$B = f_{xy} = 2ax+2by+c$、$C = f_{yy} = 2bx$ だから、判別式は、
+     $$D = (2ax+2by+c)^2 - 4abxy = 4\,{a}^{2}{x}^{2}+4\,yaxb+4\,axc+4\,{b}^{2}{y}^{2}+4\,byc+{c}^{2}$$
+     となる。それぞれの場合に、判別式の値を計算すると、$abc > 0$ に注意すると、
+     \begin{itemize}
+     \item $(0,0)$ : $D = c^2 > 0$、極値を持たない。
+     \item $(0,-c/b)$: $D = c^2 > 0$、極値を持たない。
+     \item $(-c/a,0)$: $D = c^2 > 0$、極値を持たない。
+     \item $(-c/3a,-c/3b)$: $D = (-2c/3 - 2c/3 + c)^2 - 4c^2/9 = -c^2/3 < 0$、$A = -2ac/3b < 0$。従って、極大値、$\frac {{c}^{3}}{27\,ab}$ をとる。
+     \end{itemize}
+     \end{enumerate}
+\end{enumerate}
+
+\begin{flushright}
+鈴木寛@国際基督教大学数学教室
+\end{flushright}   
+
+\end{document}

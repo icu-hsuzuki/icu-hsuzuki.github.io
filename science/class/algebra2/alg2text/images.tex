@@ -1,0 +1,3570 @@
+\batchmode
+
+
+
+
+
+
+
+
+
+
+
+
+\documentstyle[12pt]{jarticle}
+\makeatletter
+%
+\topmargin = -0.5cm
+\oddsidemargin = 0cm \evensidemargin = 0cm
+\textheight = 23cm \textwidth = 15cm %
+
+
+\title{ALGEBRA II}
+      
+\author{Hiroshi SUZUKI\thanks{E-mail:hsuzuki@icu.ac.jp}\\  
+        Department of Mathematics \\  
+        International Christian University}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\newtheorem {thm}{定理}[section]
+
+\newtheorem {prop}[thm]{命題}
+
+\newtheorem {lemma}[thm]{補題}
+
+\newtheorem {cor}[thm]{系}
+
+\newtheorem {exercise}{練習問題}[section]
+
+\newtheorem {example}{例}[section]
+
+\newtheorem {problem}{問題}[section]
+
+\newtheorem {defin}{定義}[section]
+
+\newenvironment {definition}{\begin{defin} \rm}{\end{defin}}
+
+\newenvironment {ex}{\begin{exercise} \rm}{\end{exercise}}
+
+\newenvironment {eg}{\begin{example} \rm}{\end{example}}
+
+\newenvironment {prob}{\begin{problem} \rm}{\end{problem}}
+
+\newcommand {\remarks}{\vspace{2ex}\noindent{\bf Remarks.\quad}}
+
+\newcommand {\note}{\vspace{2ex}\noindent{\gt 注\quad}}
+
+\newcommand {\proof}{{\gt 証明\quad}}
+
+\newcommand {\pf}{({\it Pf.})\quad}
+
+\newcommand {\qed}{\hfill\hbox{\rule{6pt}{6pt}}}
+
+\newcommand {\bZ}{\mbox{\boldmath $Z$}}
+
+\newcommand {\bN}{\mbox{\boldmath $N$}}
+
+\newcommand {\bR}{\mbox{\boldmath $R$}}
+
+\newcommand {\bC}{\mbox{\boldmath $C$}}
+
+\newcommand {\bQ}{\mbox{\boldmath $Q$}}
+
+\newcommand {\cQ}{{\cal Q}}
+
+\newcommand {\mat}{\mbox{{\rm Mat}}}
+
+\newcommand {\GL}{\mbox{{\rm GL}}}
+
+\newcommand {\mod}{\mbox{{\rm mod} }}
+
+\renewcommand {\ker}{\mbox{{\rm Ker}}}
+
+\newcommand {\sker}{\mbox{{\scriptsize\rm Ker}}}
+
+\newcommand {\im}{\mbox{{\rm Im}}}
+
+\makeatother
+\newenvironment{tex2html_wrap}{}{}
+\newwrite\lthtmlwrite
+\def\lthtmltypeout#1{{\let\protect\string\immediate\write\lthtmlwrite{#1}}}%
+\newbox\sizebox
+\begin{document}
+\pagestyle{empty}
+\setcounter{page}{0}
+\stepcounter{section}
+{\newpage
+\clearpage
+\samepage \begin{definition}加法と乗法という二つの演算が定義された集合 $R$ が環 (ring) であるとは、次の R1 $\sim$ R4 を満たすことである。
+\begin{itemize}
+\item[R1] $R$ は加法に関して加群 (commutative [abelian] group)。
+\item[R2]  任意の $a, b, c\in R$ に対して、$(ab)c = a(bc)$。（結合律 (associative law)）
+\item[R3]  任意の $a, b, c\in R$ に対して、$a(b+c) = ab + ac, \;(a+b)c = ac + bc$。（分配律 (distributive law))
+\item[R4] $R$ の $0$ （$R$ の加法の単位元）と異なる元 $1$ で、$1x = x1 = x$ を任意の $x\in R$ に対して満たすものがある。（乗法の単位元）
+
+さらに次の R5 を満たすとき、可換環 (commutative ring) という。
+\item[R5] $ab = ba$ for all $a, b\in R$。
+\end{itemize}
+\end{definition}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\sim$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline612: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$U(R)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline616: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$0x = x0 = 0\;(\neq 1)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline618: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$U(R)\subset R-\{0\}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline622: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$R-\{0\}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline624: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$R^{\#}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline626: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$0 = 0x + (-0x) = (0+0)x + (-0x) = 0x + 0x + (-0x) = 0x + 0 = 0x$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline628: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{definition}$U(R) = R - \{0\} = R^{\#}$ となる環を斜体 (skew field) 、可換な（すなわち R5 を満たす）斜体を、体 (field) という。
+\end{definition}
+}
+
+{\newpage
+\clearpage
+\samepage \begin{definition}環 $R$ の元 $a$ に対し、$b\neq 0$ で $ab = 0$ [$ba = 0$] となるものが存在するとき、$a$ は左零因子 (left zero divisor) [右零因子 (right zero divisor)] という。可換環の時は単に零因子 (zero divisor) という。$0$  以外に零因子のない可換環を整域という。すなわち、
+\begin{itemize}
+\item[R6] $ab = 0 \longrightarrow a = 0 \mbox{ or } b = 0$。
+\end{itemize}
+を満たす可換環、または R1 $\sim$ R6 を満たすもの。
+\end{definition}
+}
+
+{\newpage
+\clearpage
+\samepage \begin{eg}\begin{enumerate}
+\item 有理整数環 $\bZ$ は、整域である。
+\item 有理数体 $\bQ$、実数体 $\bR$、複素数体 $\bC$ は、いずれも可換体である。
+\item $R$ を環とするとき、$R$ 上の全行列環、$\mat_n(R)$ は、非可換な環である。
+\item $n$ を自然数としたとき、$\bZ_n = \bZ/n\bZ = \{\bar{0}, \bar{1}, \ldots, \overline{n-1}\}$ に、通常の和、積の $n$ による剰余によって演算を定義すると、元の数が $n$ である可換環になる。
+\end{enumerate}
+\end{eg}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\bZ$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline672: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{displaymath}f(x) = a_0 + a_1x + \cdots + a_nx^n, \;a_i\in R \mbox{ for } i = 0,1,\ldots, n\end{displaymath}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$R[x]$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline686: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{displaymath}f = f(x) = a_0 + a_1x + \cdots + a_nx^n, \;g = g(x) = b_0 + b_1x + \cdots + b_mx^m\end{displaymath}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$R[x]$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline694: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{eqnarray*}f + g  & = & \sum_i (a_i + b_i)x^i\\ 
+fg & = & \sum_i\Bigl(\sum_ja_jb_{i-j}\Bigr)x^i
+\end{eqnarray*}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$R[x]$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline696: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$f = f(x) = a_0 + a_1x + \cdots + a_nx^n \in R[x], \;a_n\neq 0$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline700: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$n = \deg f$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline702: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$f(x) = 0$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline706: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\deg f = \deg 0 = -\infty$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline708: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{prop}$R$ を整域、$f, g\in R[x]$ とする。このとき、次が成立する。
+\begin{itemize}
+\item[$(1)$] $\deg(f+g) \leq \max(\deg f, \deg g)$。
+\item[$(2)$] $\deg(fg) = \deg f + \deg g$。特に、整域 $R$ 上の多項式環は、また整域である。
+\end{itemize}
+\end{prop}
+}
+
+{\newpage
+\clearpage
+\samepage \begin{displaymath}-\infty = \deg fg = \deg f + \deg g.\end{displaymath}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\deg f = -\infty$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline728: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\deg g = -\infty$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline730: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{thm}% latex2html id marker 103
+\label{thm:poly-euclid}
+$R$ を可換環。$f, g\in R[x]$ とし、$g$ の最高次の係数は、$R$ の正則元だとする。このとき、$q, r\in R[x]$、$\deg r < \deg g$ で、$f = gq + r$ となるものが存在する。さらに、$R$ が整域ならば、この様な $q, r\in R[x]$ は、ただ一つに決まる。
+\end{thm}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$f = a_nx^n + \cdots + a_1x + a_0$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline754: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$a_n\neq 0$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline756: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$g = b_mx^m + \cdots + b_1x + b_0$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline758: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$n\geq m$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline766: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$n = \deg f$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline768: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$b_m$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline770: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$h = f - (a_nb_m^{-1})x^{n-m}g$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline772: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\deg h < n$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline776: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$R[x]$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline778: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$q_1, r$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline780: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\deg r < \deg g$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline782: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$h = gq_1 + r$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline784: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{displaymath}f = g(q_1 + (a_nb_m^{-1})x^{n-m}) + r\end{displaymath}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$q = q_1 + (a_nb_m^{-1})x^{n-m}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline788: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{displaymath}f = gq + r = gq' + r', \; \deg r, \deg r' < \deg g\end{displaymath}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$g(q - q') = r' - r$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline794: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{displaymath}\deg g + \deg(q - q') = \deg(g(q-q')) = \deg(r' -r) \leq \max(\deg r', \deg r) < \deg g.\end{displaymath}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$g\neq 0$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline798: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$q - q' = 0$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline800: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$r' - r = 0$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline802: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$q = q'$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline804: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$r = r'$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline806: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$R[x_1,\ldots, x_n] = (R[x_1,\ldots, x_{n-1}])[x_n]$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline810: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{displaymath}\sum_{i_1, \ldots, i_n}a_{i_1,\ldots, i_n}x_1^{i_1}\cdots x_n^{i_n}, \; a_{i_1,\ldots, i_n}\in R.\end{displaymath}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$R[x,y] = (R[x])[y] = (R[y])[x]$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline814: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+\stepcounter{section}
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$R/I$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline820: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$R/I$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline822: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$xy \in (x+I)(y+I)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline824: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{displaymath}(x+I)(y+I) \subset xy + I\end{displaymath}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$xI\subset I$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline832: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$Iy\subset I$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline834: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{definition}環 $R$ の部分集合 $I\neq \emptyset$ が、次の二つの条件、
+\begin{itemize}
+\item $a, b\in I\longrightarrow a+b\in I$
+\item $a\in I, \;r\in R \longrightarrow ra\in I,\;[ar\in I]$.
+\end{itemize}
+を満たすとき、$I$ を $R$ の左イデアル [右イデアル] と呼び、左右イデアルを両側イデアルと呼ぶ。
+\end{definition}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$A + B = \{a + b\mid a\in A, b\in B\}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline854: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$AB = \{\sum_ia_ib_i \mid a_i\in A, \;b\in B\}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline856: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{ex}以下を示せ。
+\begin{enumerate}
+\item 環 $R$ の左（右、両側）イデアル $I, J$ に対して、$I\cap J$、$I+J$ は共に、左（右、両側）イデアルである。
+\item $I, J$ が環 $R$ の両側イデアルならば、$IJ$ も両側イデアルで、$IJ\subset I\cap J$ を満たす。また、等号が成り立たない例をあげよ。
+\end{enumerate}
+\end{ex}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$I\neq R$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline878: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$R/I$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline880: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{displaymath}(a + I) + (b + I) = (a+b) + I, \; (a + I)\cdot (b + I) = (ab) + I\end{displaymath}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$R/I$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline884: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$a\in R$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline886: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(a)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline896: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$0 = \{0\}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline898: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{displaymath}I = R \Leftrightarrow U(R)\cap I \neq \emptyset.\end{displaymath}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$1\in I\cap U(R)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline914: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$U(R)\cap I \neq \emptyset$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline916: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$u\in U(R)\cap I$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline918: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$r\in R$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline920: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{displaymath}r = r(u^{-1}u) = (ru^{-1})u \in RI \subset I.\end{displaymath}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$R \subset I$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline924: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{prop}% latex2html id marker 133
+\label{prop:field}
+$R$ を環としたとき、次は、同値。\\ 
+$R$ は、斜体 $\Leftrightarrow$ $R$ の左 {\rm [右]} イデアルは、$0$ と $R$ のみ。
+\end{prop}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\Rightarrow$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline940: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$a\in I - \{0\}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline948: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$a\in U(R)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline950: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\Leftarrow$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline954: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$a\neq 0$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline956: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$a\in Ra$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline958: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$1\in R = Ra$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline964: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$b\neq 0$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline972: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{displaymath}c = c1 = c(ba) = (cb)a = 1a = a\end{displaymath}
+}
+
+{\newpage
+\clearpage
+\samepage \begin{definition}\begin{enumerate}
+\item 任意のイデアルが、単項である整域を単項イデアル整域 (PID : principal ideal domain) と言う。
+\item 整域 $R$ から、整列集合 (well-ordered set) $X$ への写像 $\rho : R \rightarrow X$ があって、次の二つの条件を満たすとき、$R$ はユークリッド整域 (Euclidean domain) であると言う。
+	\begin{enumerate}
+	\item $0\neq a\in R \Rightarrow \rho(0) < \rho(a)$.
+	\item $a, b\in R$ $(a\neq 0)\Rightarrow  b = aq + r,\;\rho(r) < \rho(a)$ となる $q, r\in R$ がある。
+	\end{enumerate}
+\end{enumerate}
+\end{definition}
+}
+
+{\newpage
+\clearpage
+\samepage \begin{thm}% latex2html id marker 143
+\label{thm:euclid-pid}
+ユークリッド整域は、単項イデアル整域である。
+\end{thm}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$I\neq 0$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1018: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{displaymath}\emptyset \neq \{\rho(x)\mid 0\neq x\in I\}\subset X\end{displaymath}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\rho(a)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1022: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$a\in I$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1024: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$b\in I$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1026: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\rho(r) < \rho(a)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1030: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$q, r\in R$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1032: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$r = b - aq \in I$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1034: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$b\in Ra$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1040: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{eg}% latex2html id marker 146
+\begin{enumerate}
+\item $\rho : \bZ \rightarrow \{0\}\cup \bN$ を $\rho(a) = |a|$ によって定義すると、$\bZ$ はユークリッド整域になる。特に、定理~\ref{thm:euclid-pid} より、$\bZ$ は、単項イデアル整域である。実は、$\bZ$ においては、イデアルであることと、部分加群であることは同じであるから、単項イデアル整域であることは、単に、$\bZ$ の部分群が巡回群であることを主張しているに過ぎない。
+\item $K$ を体とする。$\rho : K[x] \rightarrow \{-\infty, 0\}\cup \bN$ を $\rho(f) = \deg f$ によって定義すると、定理~\ref{thm:poly-euclid} により、$K[x]$ はユークリッド整域になる。特に、定理~\ref{thm:euclid-pid} より、$K[x]$ は単項イデアル整域である。
+\end{enumerate}
+\end{eg}
+}
+
+\stepcounter{section}
+{\newpage
+\clearpage
+\samepage \begin{definition}環 $R$ から、$R'$ への写像 $f : R\rightarrow R'$ が、
+\begin{displaymath}f(a + b) = f(a) + f(b), \; f(ab) = f(a)f(b), \; f(1_R) = f_{R'}\end{displaymath}
+を満たすとき、$f$ を $R$ から、$R'$ への（環）準同型 ((ring) homomorophism) と言う。$f$ が全単射の時同型と言い、$R\simeq R'$ と書く。
+\end{definition}
+}
+
+{\newpage
+\clearpage
+\samepage \begin{eg}$I$  を、環 $R$ の両側イデアルで、$(R\neq I)$ とするとき、
+\begin{displaymath}f : R \longrightarrow R/I, \; (a\mapsto a + I)\end{displaymath}
+は、環準同型で、全射である。
+\end{eg}
+}
+
+{\newpage
+\clearpage
+\samepage \begin{definition}環 $R$ の部分集合 $S$ が次の条件
+\begin{displaymath}a, b\in S \Rightarrow a - b\in S, \; ab\in S, \; 1_R\in S\end{displaymath}
+を満たすとき、$S$ は、$R$ の部分環 (subring) であるという。また、$R$ は、$S$ の拡大環 (extension ring) であるという。
+\end{definition}
+}
+
+{\newpage
+\clearpage
+\samepage \begin{ex}部分環は、環である。
+\end{ex}
+}
+
+{\newpage
+\clearpage
+\samepage \begin{prop}% latex2html id marker 163
+\label{prop:ringhomo}
+$f : R \rightarrow R'$ を環準同型とする。
+\begin{itemize}
+\item[$(1)$] $\ker f = \{a\in R\mid f(a) = 0\}$ は、両側イデアル。
+\item[$(2)$] $\im f = \{f(a) \mid a\in R\}$ は、$R'$ の部分環。
+\end{itemize}
+\end{prop}
+}
+
+{\newpage
+\clearpage
+\samepage \begin{thm}（準同型定理）
+$R$、$R'$ を環、$f: R \rightarrow R'$ を環準同型とすると、
+\begin{displaymath}R/\ker f \simeq \im f.\end{displaymath}
+\end{thm}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$R/\ker f$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1128: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\im f$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1130: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{displaymath}\bar{f} : R/\ker f \rightarrow \im f,\; (a + \ker f \mapsto f(a))\end{displaymath}
+}
+
+{\newpage
+\clearpage
+\samepage \begin{displaymath}\bar{f}((a+\ker f)(b+\ker f)) = \bar{f}(ab + \ker f) = f(ab) = f(a)f(b) = \bar{f}(a+\ker f)\bar{f}(b+\ker f)\end{displaymath}
+}
+
+{\newpage
+\clearpage
+\samepage \begin{displaymath}\bar{f}(1_{R/{\sker} f}) = \bar{f}(1+\ker f) = f(1_R) = 1_{R'}.\end{displaymath}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\bar{f}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1138: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{displaymath}f(a) = f(b) \Leftrightarrow f(a-b) = 0 \Leftrightarrow a-b\in \ker f \Leftrightarrow a+\ker f = b + \ker f\end{displaymath}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\bar{f}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1142: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{eg}% latex2html id marker 182
+$K\subset L$  を体、$\alpha\in L$ とする。$\phi:K[x] \to L \;(f(x) \mapsto f(\alpha))$ を環準同型とする。$\im\phi$  を $K[\alpha]$ と書く。すなわち、$K[\alpha] = \{f(\alpha)\mid f(x)\in K[x]\}$。すると、準同型定理により、$K[x]/\ker\phi\simeq K[\alpha]$ となるが、$\ker\phi$  は、単項イデアル整域 $K[x]$ のイデアルだから、ある $p(x)\in K[x]$ によって、$\ker\phi = K[x]p(x) = (p(x))$ と書ける。$p(x) = 0$ すなわち $\ker\phi = 0$ の時、$\alpha$ を $K$ 上超越的な元と呼ぶ。$p(x)\neq 0$ の時は、$p(x)$ として、モニック（最高次の係数が $1$ のもの）をとる事が出来る。実は、$p(x)$ は、$\ker\phi$ の $0$ でない多項式の内で、次数が最小で、モニックなものとして、一意的に決まる。定理~\ref{thm:euclid-pid} の証明参照。このとき、$\alpha$ を $K$ 上代数的な元、$p(x)$ を $\alpha$ の $K$ 上の最小多項式という。
+
+以下 $K = \bQ$、$L = \bC$ とする。$\mbox{e}$、$\pi$ は、$\bQ$ 上超越的な元である。（$\bQ$ 上超越的な元を超越数 (transcendental number) と呼ぶ。一般的には、超越数であることを証明することは、とても難しい。
+
+$\alpha = \sqrt{-1}$ とすると、$\ker\phi = (x^2 + 1)$ であり、$\bQ[\sqrt{-1}] = \{a + b\sqrt{-1}\mid a,b\in \bQ\}$ が環であることもこれより分かった。次回には、これが体になることも分かる。
+
+$\alpha = {}^3\!\!\sqrt{2}$ とすると、$\ker\phi = (x^3 -2)$ であり、$\bQ[{}^3\!\!\sqrt{2}] = \{a + b{}^3\!\!\sqrt{2} + c({}^3\!\!\sqrt{2})^2\mid a,b\in\bQ\}$ となる。
+\end{eg}
+}
+
+{\newpage
+\clearpage
+\samepage \begin{eg}$A\in\mat_n(\bC)$、$\psi:\bC[x]\to \mat_n(\bC)\;(f(x)\mapsto f(A))$ とする。Hamilton-Cayley の定理により、$\ker\psi\supset (\det(xI - A))\neq 0$。よって、monic な多項式によって、$\ker\psi = p_A(x)$ と書ける。この $p_A(x)$ を最小多項式という。上の事から $p_A\mid \det(xI - A)$ である。例えば、
+\begin{displaymath}A = \left(\begin{array}{cc} 1 & 0 \\  0 & -2\end{array}\right),\; B = \left(\begin{array}{cc} 0 & 1 \\  -4 & 4\end{array}\right),\;C = \left(\begin{array}{cc} 2 & 0 \\  0 & 2\end{array}\right)\end{displaymath}
+としたとき、それぞれの最小多項式は、
+\begin{displaymath}p_A(x) = (x-1)(x+2), \; p_B(x) = (x-2)^2,\;p_C(x) = x-2\end{displaymath}
+である。
+\end{eg}
+}
+
+\stepcounter{section}
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$R/I$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1240: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{definition}\begin{itemize}
+\item[$(1)$] 可換環 $R$ のイデアル $I (\neq R)$ について、
+\begin{displaymath}ab\in I \longrightarrow a\in I \mbox{ または } b\in I\end{displaymath}
+が成立するとき、$I$ を素イデアル (prime ideal) という。
+\item[$(2)$] 可換環 $R$ のイデアル $I (\neq R)$ について、
+\begin{displaymath}I \subset J : \mbox{ $R$ のイデアル} \longrightarrow I = J \mbox{ または } J = R\end{displaymath}
+が成立するとき、$I$ を極大イデアル (maximal ideal) という。
+\end{itemize}
+\end{definition}
+}
+
+{\newpage
+\clearpage
+\samepage \begin{thm}% latex2html id marker 216
+\label{thm:R/I}
+$R$ を可換環、$I$ をそのイデアルとする。
+\begin{itemize}
+\item[$(1)$] $R/I$ は整域 $\Leftrightarrow$ $I$ は素イデアル。
+\item[$(2)$] $R/I$ は体 $\Leftrightarrow$ $I$ は極大イデアル。
+\item[$(3)$] 極大イデアルは、素イデアル。
+\end{itemize}
+\end{thm}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(1)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1286: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$R/I$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1288: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{eqnarray*}\lefteqn{\bar{a}, \bar{b}\in R/I, \;\bar{a}\bar{b} = \bar{0} \rightarrow \bar{a} = \bar{0}\mbox{ または }\bar{b} = \bar{0}}\\ 
+&\Leftrightarrow& a,b\in R,\; (a+I)(b+I) = ab+I = I \rightarrow a+I = I \mbox{ または }b+I = I\\ 
+&\Leftrightarrow& a,b\in R,\; ab\in I \rightarrow a\in I \mbox{ または }b\in I\\ 
+& & (x+ I = y+I \leftrightarrow x-y\in I\mbox{ に注意})
+\end{eqnarray*}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(2)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1290: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$R/I$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1292: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$R/I$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1294: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$R/I$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1298: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(3)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1312: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\Leftrightarrow$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1316: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$R/I$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1318: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\Rightarrow$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1320: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$R/I$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1322: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\Leftrightarrow$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1324: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(0)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1330: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(0)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1334: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{prop}% latex2html id marker 237
+\label{prop:pid}
+$R$ を単項イデアル整域 {\rm (PID)}、$I$ を $R$ のイデアルで $I\neq (0)$ なるものとする。このとき、次は同値。
+\begin{displaymath}I\mbox{：素イデアル} \Leftrightarrow I\mbox{：極大イデアル}\end{displaymath}
+\end{prop}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$I = (a) \neq (0)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1348: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$J = (b)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1360: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$a\in (a) = I \subset J = (b)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1362: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$c\in R$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1366: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$I = (a)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1368: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$b\in I$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1370: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$c\in I$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1372: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$b\in I$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1374: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$J = (b) \subset (a) = I$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1376: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$c\in I = (a)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1382: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$d\in R$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1386: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{displaymath}a = bc = bad = abd\rightarrow a(bd - 1) = 0\end{displaymath}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$a\neq 0$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1390: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$R = (1) \subset (b) = J$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1394: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{prop}% latex2html id marker 244
+\label{prop:integer}
+$n$ を有理整数環 $\bZ$ の零でない元とする。ことのき、次は同値。
+\begin{displaymath}(n)\mbox{：極大イデアル} \Leftrightarrow (n)\mbox{：素イデアル}\Leftrightarrow n\mbox{ は素数}\end{displaymath}
+\end{prop}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(n) \subset (m)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1406: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$m\mid n$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1408: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(m) = (n)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1410: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$m = \pm n$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1412: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(m)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1414: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(m)\subset (n)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1416: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(n) = (m)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1418: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(n) = (1)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1420: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\pm n$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1424: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\pm 1$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1426: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(1) = \bZ$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1428: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{displaymath}(n)\mbox{：極大イデアル} \Leftrightarrow  n\mbox{ は素数}\end{displaymath}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\bZ$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1432: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\bZ_n = \bZ/(n)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1434: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{definition}整域 $R$ 上の次数が $1$ 以上の多項式 $f(x)$ は、$R[x]$ において、$f(x) = g(x)h(x)$ $\deg g>0$、$\deg h>0$ と分解されるとき（$R$ 上）可約、そうでないとき、（$R$ 上）既約であるという。
+\end{definition}
+}
+
+{\newpage
+\clearpage
+\samepage \begin{prop}% latex2html id marker 255
+\label{prop:poly}
+$K$ を体とし、$f(x)\in K[x]$ を零でない多項式とする。このとき、次は同値。
+\begin{displaymath}(f(x))\mbox{：極大イデアル} \Leftrightarrow (f(x))\mbox{：素イデアル}\Leftrightarrow f(x)\mbox{ は既約}\end{displaymath}
+\end{prop}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$f(x)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1462: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\deg f(x)\geq 1$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1464: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$K[x]$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1466: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(f(x))$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1468: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$f(x)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1470: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$f(x)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1472: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$f(x) = g(x)h(x)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1474: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\deg g(x)>1$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1476: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\deg h(x)>1$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1478: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{displaymath}(f(x)) \subset (g(x)) \subset K[x]\end{displaymath}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$U(K[x]) = U(K) = K^*$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1482: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{displaymath}(f_1(x)) = (f_2(x)) \Leftrightarrow f_1(x) = cf_2(x)\;(c\in K^*).\end{displaymath}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(f(x))$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1486: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(g(x))$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1488: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(f(x))$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1490: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$K[x]$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1492: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$f(x) = g(x)h(x)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1494: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$f(x)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1496: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{eg}$x^2+1$、$x^2-2$ が $\bQ$ 上既約であることは簡単に確かめられるから、$(x^2+1)$、$(x^2-2)$ は、$\bQ[x]$ の極大イデアルであり、従って、$\bQ[\sqrt{-1}]\simeq \bQ[x]/(x^2+1)$、$\bQ[\sqrt{2}]\simeq \bQ[x]/(x^2-2)$ は、体であることが分かる。
+\end{eg}
+}
+
+{\newpage
+\clearpage
+\samepage \begin{prop}% latex2html id marker 265
+{\rm [Eisenstein の既約性判定法]}\label{prop:eisenstein}
+$p$ を素数、$f(x) = a_nx^n + \cdots + a_1x + a_0\in \bZ[x]$ で以下の条件を満たすとする。
+\begin{displaymath}a_n\not\equiv 0 \;(\mod p),\;a_{n-1}\equiv \cdots \equiv a_1 \equiv a_0 \equiv 0\;(\mod p),\;a_0 \not\equiv 0\;(\mod p^2)\end{displaymath}
+このとき、$f(x)$ は、$\bZ$ 上既約である。
+\end{prop}
+}
+
+{\newpage
+\clearpage
+\samepage \begin{displaymath}f(x) = g(x)h(x),\;r = \deg g>0,\;s = \deg h>0,\end{displaymath}
+}
+
+{\newpage
+\clearpage
+\samepage \begin{displaymath}g(x) = b_rx^r + \cdots + b_0,\;h(x) = c_sx^s + \cdots + c_0\end{displaymath}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$a_0 = b_0c_0$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1528: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$p^2$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1532: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$b_0$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1536: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$c_0$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1538: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$a_n = b_rc_s$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1540: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$c_s$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1544: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$c_0$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1548: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$c_i$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1554: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{displaymath}c_0 \equiv c_1 \equiv \cdots \equiv c_{i-1} \equiv 0 \not\equiv c_i\;(\mod p).\end{displaymath}
+}
+
+{\newpage
+\clearpage
+\samepage \begin{displaymath}a_i = b_0c_i + b_1c_{i-1} + \cdots + b_ic_0\equiv b_0c_i \not\equiv 0\;(\mod p).\end{displaymath}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$n = i < s = \deg h$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1562: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$f(x)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1564: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\bZ$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1566: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\bQ$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1568: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$x^n - 2$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1570: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$x^3 - 3x^2 - 9x -6$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1572: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\bZ$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1574: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\bQ$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1576: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+\stepcounter{section}
+{\newpage
+\clearpage
+\samepage \begin{definition}環 $R_1, R_2, \ldots, R_n$ が与えられたとき、直積
+\begin{displaymath}R = R_1\times R_2 \times \cdots \times R_n = \{(a_1,a_2,\ldots, a_n)\mid a_i\in R_i,\;i = 1,\ldots, n\}\end{displaymath}
+に加法と乗法を次のように定義する。
+\begin{itemize}
+\item[加法：] $(a_1,\ldots, a_n) + (b_1,\ldots,b_n) = (a_1 + b_1,\ldots, a_n+b_n)$
+\item[乗法：] $(a_1,\ldots, a_n) \cdot (b_1,\ldots,b_n) = (a_1\cdot b_1,\ldots, a_n\cdot b_n)$
+\end{itemize}
+このとき、$R$ は環になる。$R$ を $R_1,\ldots, R_n$ の直和といい、以下のように書く。
+\begin{displaymath}R = R_1\oplus R_2 \oplus \cdots \oplus R_n.\end{displaymath}
+\end{definition}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$1_R = (1_{R_1},1_{R_2},\ldots, 1_{R_n})$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1594: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$0_R = (0_{R_1},0_{R_2},\ldots, 0_{R_n})$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1596: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$R_i^* = \{(0,\ldots, 0,a,0,\ldots, 0)\mid a\in R_i\}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1598: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$R_i^*$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1604: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{displaymath}I+J = R\Leftrightarrow x+y = 1\mbox{ となる }x\in I, \;y\in J \mbox{ が存在する。}\end{displaymath}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\bZ$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1620: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(m)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1622: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(n)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1624: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(m,n) = 1$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1626: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$x\in (m), \;y\in (n)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1636: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$a,b\in\bZ$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1640: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(m,n) = 1$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1642: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{thm}% latex2html id marker 286
+{\rm [中国剰余定理]}\label{thm:crt}
+$R$ を可換環、$I_1, I_2, \ldots, I_n$ をどの二つも互いに素なイデアル（すなわち、$i\neq j$  のとき、$I_i + I_j = R$）とする。$a_1, a_2, \ldots, a_n\in R$  を任意の元とするとき、$x\equiv a_i\;(\mod I_i)$ がすべての $i = 1, 2, \ldots, n$ に対して、成り立つ元 $x\in R$ が存在する。
+\end{thm}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$1 = c_1 + c_2$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1662: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$c_1\in I_1,\;c_2\in I_2$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1664: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$x = a_1c_2 + a_2c_1$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1666: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(\mod I_1)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1668: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{displaymath}x\equiv a_1c_2 + a_2c_1 \equiv a_1c_2 \equiv a_1(1-c_1) \equiv a_1 - a_1c_1 \equiv a_1\end{displaymath}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$x \equiv a_2 \;(\mod I_2)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1672: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$x_i\in R$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1678: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{displaymath}x_i \equiv 1 \;(\mod I_i),\;j\neq i \mbox{ の時は } x_i\equiv 0\;(\mod I_j).\end{displaymath}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$j\geq 2$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1684: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$I_1 + I_j = R$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1686: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$c_1^{(j)}+c_j = 1$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1688: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$c_1^{(j)}\in I_1$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1690: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$c_j\in I_j$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1692: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{displaymath}1 = \prod_{j=2}^n(c_1^{(j)}+c_j) \equiv c_2\cdots c_n\;(\mod I_1)\end{displaymath}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$1 - c_2\cdots c_n = c_1$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1696: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$c_1\in I_1$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1698: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$R = I_1 + I_2\cdots I_n$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1700: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$I_1$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1702: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$I_2\cdots I_n$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1704: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$x_1\in R$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1708: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{displaymath}x_1\equiv 1 \;(\mod I_1),\;x_1\equiv 0\;(\mod I_2\cdots I_n)\end{displaymath}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$j\geq 2$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1712: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$I_2\cdots I_n \subset I_j$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1714: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$x_1\equiv 0\;(\mod I_j)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1716: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$x_i$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1720: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$x = a_1x_1 + \cdots + a_nx_n$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1722: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{eqnarray*}x & \equiv & a_1x_1 + \cdots + a_nx_n \;(\mod I_i)\\ 
+& \equiv & a_ix_i \;(\mod I_i)\\ 
+& \equiv & a_i \;(\mod I_i)
+\end{eqnarray*}
+}
+
+\stepcounter{section}
+{\newpage
+\clearpage
+\samepage \begin{definition}可換環 $R$ の部分集合 $S$ が次の条件
+\begin{displaymath}(i)\;a,b\in S\rightarrow ab\in S\qquad (ii)\;1\in S,0\not\in S\end{displaymath}
+を満たすとき、$S$ は $R$ の乗法的部分集合、積閉集合 (multiplicative subset) と言う。
+\end{definition}
+}
+
+{\newpage
+\clearpage
+\samepage \begin{eg}\begin{enumerate}
+\item $R$ の非零因子全体（零因子以外の元すべて）は、乗法的部分集合である。
+\item $P$ を $R$ の素イデアルとしたとき、$R-P$ は、乗法的部分集合である。
+\end{enumerate}
+\end{eg}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$R\times S$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1746: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{displaymath}(a,s)\sim (a',s') \Leftrightarrow (as'-a's)t = 0 \mbox{ となる }t\in S\mbox{ が存在する。}\end{displaymath}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(a,s)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1750: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$a/s$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1752: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$S^{-1}R$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1754: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$S^{-1}R$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1756: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(a_1/s_1) + (a_2/s_2) = (a_1s_2 + a_2s_1)/s_1s_2$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1758: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(a_1/s_1)(a_2/s_2) = (a_1a_2/s_1s_2)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1760: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$S^{-1}R$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1762: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$0_{S^{-1}R} = 0/1$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1768: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$1_{S^{-1}R} = 1/1$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1770: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$-(a/s) = (-a)/s$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1772: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$s\in S$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1774: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$s/1\in U(S^{-1}R)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1776: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$a/s = a'/s' \Leftrightarrow as'-a's = 0$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1780: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\phi_S:R \to S^{-1}R\;(a\mapsto a/1)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1782: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\phi_S$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1784: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\Leftrightarrow$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1786: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{eg}\begin{enumerate}
+\item $S$ を $R$ の非零因子全体の時、$S^{-1}R$ を $R$ の全商環 (ring of total quotients) という。
+\item $R$ が整域のときは、$R$ の全商環は体になる。これを商体 (quotient field) と呼び、$\cQ(R)$ とかく。
+	\begin{enumerate}
+	\item $\cQ(\bZ) = \bQ$、有理整数環の商体は、有理数体である。
+	\item $\cQ(K[x_1,\ldots, x_n]) = K(x_1,\ldots, x_n) = \{f/g\mid f,g\in K[x_1,\ldots x_n], \;g\neq 0\}$ であり、これを有理関数体という。
+	\item $P$ を可換環 $R$ の素イデアル、$(R-p)^{-1}R$ を $R_{P}$ と書き、$R$ の $P$ による局所化 (localization) と呼ぶ。
+	\end{enumerate}
+\end{enumerate}
+\end{eg}
+}
+
+{\newpage
+\clearpage
+\samepage \begin{definition}可換環 $R$ がただ一つの極大イデアル $M$ を持つとき、$R$ は、局所環 (local ring) であるという。
+\end{definition}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(0)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1826: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$I\subset M$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1840: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{prop}% latex2html id marker 330
+\label{prop:local_ring}
+可換環 $R$ について、次の二つは、同値。{\rm [(1) $\Rightarrow$ (2) には、選択公理が必要]}
+\begin{itemize}
+\item[$(1)$] $R$ は局所環。
+\item[$(2)$] $R-U(R)$ は、$R$ のイデアル。
+\end{itemize}
+\end{prop}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(1)\Rightarrow (2)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1860: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$M\neq R$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1866: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$M\cap U(R) = \emptyset$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1868: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$M\subset R - U(R)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1870: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$a\in R- U(R)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1872: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$Ra \neq R$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1874: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$a\in Ra \subset M$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1876: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$R - U(R)\subset M$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1878: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$M = R - U(R)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1880: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(2)\Rightarrow (1)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1882: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$R\neq J$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1886: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$I = R - U(R)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1890: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$J\cap U(R) = \emptyset$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1892: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$J\subset I$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1894: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{prop}$P$  を可換環 $R$ の素イデアルとすると、局所化 $R_P$ は局所環で、
+\begin{displaymath}P' = \{a/s\mid a\in P,\;s\not\in P\}\end{displaymath}
+がそのただ一つの極大イデアルである。
+\end{prop}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$P'$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1908: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$R_P$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1910: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(a/s)+(b/t) = (at+bs)/st$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1912: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$a,b\in P,\;s,t\not\in P$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1914: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$at+bs\in P$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1916: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$st\not\in P$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1918: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(at+bs)/st\in P'$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1920: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$r\in R$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1922: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(r/t)(a/s) = ar/ts\in P'$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1924: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$P'$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1926: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$R_P$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1928: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$a/s\in P'\Leftrightarrow a\not\in P$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1930: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\Rightarrow$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1932: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$a\in P$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1934: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$a/s\in P'$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1936: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\Leftarrow$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1938: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$a/s\in P'$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1940: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$a/s = a'/s'$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1942: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$a'\in P$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1944: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$s'\not\in P$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1946: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(as' - a's)t = 0$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1948: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$t\not\in P$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1950: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$as't = a'st\in P$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1952: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$a\in P$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1954: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$R_P - P' = U(R_P)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1956: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\subset$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1958: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$a/s\not\in P'$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1960: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$a\not\in P$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1962: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$s/a\in R_P$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1964: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$a/s\in U(R_P)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1966: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\supset$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1968: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$1\not\in P$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1970: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$1/1\not\in P'$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1972: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$a/s\in U(R_P)\cap P'$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1974: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$a\in P$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1976: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(a/s)(b/t) = 1/1$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1978: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$b\in R$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1980: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$t\not\in P$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1982: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$t'\not\in P$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1984: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$abt' = stt'$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1986: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$U(R_P)\cap P' = \emptyset$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1992: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$R_P - P' = U(R_P)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1994: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+\stepcounter{section}
+\stepcounter{subsection}
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$a,b\in R$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline1998: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(a) \subset (b) \Leftrightarrow a = bc$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2000: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$c\in R$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2002: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$b\mid a$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2004: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(a) = (b) \Leftrightarrow a = bu$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2006: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$u\in U(R)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2008: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$a\approx b$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2010: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$p\neq 0$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2014: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$p = uv \to u\in U(R)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2016: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$v\in U(R)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2018: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{definition}整域 $R$ が次の二つの条件を満たすとき、$R$ を一意分解整域 (UFD = Unique Factorization Domain) であるという。
+\begin{itemize}
+\item[$(i)$] $a\in R$ を零でない単元でもない元とする。$a = p_1p_2\cdots p_r$ ($p_i$ は素元) と書ける。
+\item[$(ii)$] $a = p_1p_2\cdots p_r = q_1q_2\cdots q_s$ ($p_i,q_j$ は素元）ならば $r = s$ で番号を付け替えれば $p_i\approx q_i$。
+\end{itemize}
+\end{definition}
+}
+
+{\newpage
+\clearpage
+\samepage \begin{prop}% latex2html id marker 349
+\label{prop:ufd:prime}
+$R$ を整域、$0\neq p\in R$ とする。
+\begin{itemize}
+\item[$(1)$] $(p)$ が素イデアル ならば、 $p$ は素元。
+\item[$(2)$] $R$ が {\rm UFD} ならば $(p)$ が素イデアルことと、$p$ は素元であることは同値。
+\end{itemize}
+\end{prop}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(1)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2062: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$a\in (p)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2066: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$b\in (p)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2068: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$a\in (p)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2070: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(a)\subset (p) = (ab) \subset (a)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2072: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$a\approx p$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2074: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$u\in U(R)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2078: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$a(b - u) = p - p = 0$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2080: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$b = u\in U(R)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2084: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(2)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2086: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$ab\in (p)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2090: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$b\in U(R)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2094: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$a = p_1\cdots p_r$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2098: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$b = q_1\cdots q_s$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2100: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$c = v_1\cdots v_t$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2102: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{displaymath}p_1\cdots p_rq_1\cdots q_s = pv_1\cdots v_t\end{displaymath}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$p\approx p_i$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2106: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$p\approx q_j$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2108: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$p\approx p_i$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2110: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$a = p_1\cdots p_r\in (p_i) = (p)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2112: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$p\approx q_j$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2114: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$b = q_1\cdots q_s\in (q_j) = (p)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2116: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{prop}% latex2html id marker 355
+\label{prop:pid:prime}
+$R$ を単項イデアル整域、$p\neq 0$ とすると次は同値。
+\begin{itemize}
+\item[$(1)$] $p$ は素元。
+\item[$(2)$] $(p)$ は素イデアル。
+\item[$(3)$] $(p)$ は極大イデアル。
+\end{itemize}
+\end{prop}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(2)\Leftrightarrow (3)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2136: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(2)\Rightarrow (1)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2138: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(1)\Rightarrow (3)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2140: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(p) \subset I = (q) \subset R$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2142: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(q) = R$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2150: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(p) = (q)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2152: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(p)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2154: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{thm}% latex2html id marker 362
+\label{thm:pidisufd}
+単項イデアル整域は一意分解整域である。
+\end{thm}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$0\neq a\in R - U(R)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2158: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(a) \neq R$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2160: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(a)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2162: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(p_1)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2164: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$p_1$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2166: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(a)\subset (p_1)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2168: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$a = p_1a_1$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2170: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$p_1\not\in U(R)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2172: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(a_1)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2174: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(a)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2176: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$a_1\not\in U(R)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2178: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$p_2$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2180: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$a_1 = p_2a_2$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2182: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$a = p_1p_2a_2$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2184: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$a_i$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2186: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{displaymath}(a) \subset (a_1) \subset (a_2) \subset \cdots \subset (a_i)\subset \cdots\end{displaymath}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\bigcup_{i=1}^\infty (a_i)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2190: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\bigcup_{i = 1}^\infty (a_i) = (d)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2194: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$d\in (a_i)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2198: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(a_i) = (a_{i+1})$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2200: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$a_r$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2204: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$p_ra_r$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2206: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$a = p_1p_2\cdots (p_ra_r)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2208: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$a = p_1p_2\cdots p_r = q_1q_2\cdots q_s$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2210: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$r\leq s$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2212: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$q_1q_2 \cdots q_s = a\in (p_1)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2216: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(p_1)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2218: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$q_i\in (p_1)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2220: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(q_i)\subset (p_1)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2224: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$q_i\approx p_1$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2226: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$q_1 = p_1u$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2228: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$u\in U(R)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2230: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{displaymath}p_1p_2\cdots p_r = p_1uq_2\cdots q_s\end{displaymath}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$p_2\cdots p_r = uq_2\cdots q_s$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2234: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$p_i\approx q_i$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2238: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\bZ[x]$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2240: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\bQ[x_1,\cdots, x_n]$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2242: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{eg}% latex2html id marker 370
+$\bZ[\sqrt{-5}] = \{a + b\sqrt{-5}\mid a,b\in \bZ\}$ は一意分解整域ではない事を示す。
+上でも注意したように、2  は素元であるが、$(2)$ は素イデアルではないことを示す。
+\begin{itemize}
+\item $\alpha = a +b\sqrt{-5}$ のとき、$N(\alpha) = \alpha\bar{\alpha} = a^2 + 5b^2$ とすると、
+\begin{displaymath}\alpha\in U(\bZ[\sqrt{-5}]) \Leftrightarrow N(\alpha) = 1 \Leftrightarrow \alpha = \pm 1.\end{displaymath}
+
+\pf 
+$\pm 1\in U(\bZ[\sqrt{-5}])$ は明らか。逆に $\alpha\beta = 1$ とすると、
+\begin{displaymath}1 = N(\alpha\beta) = N(\alpha)N(\beta)\end{displaymath}
+だから、$a^2 + 5b^2 = N(\alpha) = 1$。これを満たす $a,b\in \bZ$ を考えると、$b = 0$、$a = \pm 1$ であることが分かる。
+\item $2$ は素元。
+
+\pf 
+$2 = \alpha\beta$、$N(\alpha)\neq 1$、$N(\beta)\neq 1$、$\alpha = a + b\sqrt{-5}$ とする。
+\begin{displaymath}4 = N(2) = N(\alpha\beta) = N(\alpha)N(\beta)\end{displaymath}
+だから、$a^2 + 5b^2 = N(\alpha) = 2$。しかしこれは不可能である。従って、$N(\alpha) = 1$ 又は、$N(\beta) = 1$ すなわち、$\alpha, \beta$ のうちどちらかは、単元である。
+\item $(2)$ は、素イデアルではない。
+
+\pf
+$(1+\sqrt{-5})(1-\sqrt{-5}) = 6 \in (2)$。ここで、$1\pm\sqrt{-5}$ のどちらかが、$(2)$ に入るとすると、$1\pm \sqrt{-5} = 2\gamma$ と書いたとき、
+\begin{displaymath}6 = N(1\pm\sqrt{-5}) = 4N(\gamma)\end{displaymath}
+となり、これは不可能である。従って、$1\pm\sqrt{-5}$ どちらも $(2)$ に入らない。これは、$(2)$ が素イデアルではないことを示す。
+\end{itemize}
+\end{eg}
+}
+
+\stepcounter{subsection}
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$K = \cQ(R)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2308: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$a_1, \ldots, a_n\in R$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2312: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$d\mid a_i$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2314: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$i = 1, 2,\ldots, n$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2316: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$c\mid a_i$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2318: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$i = 1, 2, \ldots, n$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2320: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$c\mid d$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2322: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$a_1, \ldots, a_n\in R$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2326: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$a_i\mid l$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2328: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$i = 1, 2,\ldots, n$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2330: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$a_i\mid m$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2332: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$i = 1, 2, \ldots, n$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2334: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$l\mid m$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2336: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$a_1, a_2, \ldots, a_n$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2338: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$a_1, a_2, \ldots, a_n$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2340: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$a_0, a_1, \ldots, a_n$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2342: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$f(x) = a_0 + a_1x + \cdots + a_nx^n\in R[x]$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2344: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{thm}% latex2html id marker 394
+\label{thm:poly_ufd}
+単項イデアル整域 $R$ 上の多項式環 $R[x_1,x_2,\ldots,x_n]$ は、単項イデアル整域である。
+\end{thm}
+}
+
+{\newpage
+\clearpage
+\samepage \begin{lemma}% latex2html id marker 397
+\label{lemma:inhalt}
+$f(x)\in K[x]$ とすると、$c\in K$ と、原始多項式 $f_0(x)\in R[x]$ で、$f(x) = cf_0(x)$ となるものがある。この $c$ は $R$ の正則元倍をのぞいて一意的に決まる。これを $I(f)$ と書く。
+\end{lemma}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$f(x) = (b_0/a_0) + (b_1/a_1)x + \cdots + (b_n/a_n)x^n$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2366: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$0\neq a_i, b_j\in R$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2368: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$a_0, a_1, \ldots, a_n$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2372: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$m = a_ic_i$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2374: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$b_0c_0, b_1c_1, \ldots, b_nc_n$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2378: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$de_i = b_ic_i$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2380: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$e_0, e_1, \ldots, e_n$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2382: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{eqnarray*}f(x) & = & (b_0/a_0) + (b_1/a_1)x + \cdots + (b_n/a_n)x^n\\ 
+	& = & \frac1m(b_0c_0 + b_1c_1x + \cdots + b_nc_nx^n)\\ 
+	& = & \frac dm(e_0 + e_1x + \cdots + e_nx^n)
+\end{eqnarray*}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$c = d/m$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2384: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$f_0(x) = e_0 + e_1x + \cdots + e_nx^n$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2386: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$f(x) = cf_0(x) = c'f'_0(x)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2388: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$f_0(x)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2390: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$f_0'(x)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2392: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$c = b/a$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2396: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$c' = b'/a'$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2398: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$a'$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2404: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$b'$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2406: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$a'bf_0(x) = ab'f'_0(x)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2410: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$f_0(x)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2412: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$f_0'(x)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2414: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$a'b = ab'u$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2416: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$u\in U(R)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2418: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$c = b/a = (b'/a')u = c'u$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2420: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$c, c'$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2424: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$c' = cu$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2426: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$u\in U(R)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2428: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$c\approx c'$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2430: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$f(x)\in K[x]$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2432: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$f(x)\in R[x] \Leftrightarrow I(f)\in R$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2434: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$f(x) \mbox{ が原始多項式 } \Leftrightarrow I(f)\approx 1$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2436: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{lemma}% latex2html id marker 405
+\label{lemma:productofprimitive}
+\begin{itemize}
+\item[$(1)$] 原始多項式の積は原始多項式。
+\item[$(2)$] $f(x), g(x)\in K[x]$ ならば、$I(fg)\approx I(f)I(g)$。
+\end{itemize}
+\end{lemma}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(1)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2446: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$f(x) = a_0 + a_1x + \cdots + a_lx^l$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2448: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$g(x) = b_0 + b_1x + \cdots + b_mx^m$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2450: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{displaymath}h(x) = f(x)g(x) = c_0 + c_1x + \cdots + a_nx^n,\;p\mid c_i, ;i = 0,1,\ldots, n\end{displaymath}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$a_i$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2456: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$i_0$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2462: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$b_j$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2464: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$j_0$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2470: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{eqnarray*}c_{i_0+j_0} & = & a_0b_{i_0+j_0}  + \cdots + a_{i_0-1}b_{j_0+1}+ a_{i_0}b_{j_0}+ a_{i_0+1}b_{j_0-1} + \cdots + a_{i_0+j_0}b_0\\ 
+& \equiv & a_{i_0}b_{j_0} \;(\mod (p))\\ 
+& \not\equiv & 0\;(\mod (p))
+\end{eqnarray*}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(2)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2472: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$f(x) = I(f)f_0(x)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2474: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$g(x) = I(g)g_0(x)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2476: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$f_0(x)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2478: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$g_0(x)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2480: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$f(x)g(x) = I(f)I(g)f_0(x)g_0(x)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2482: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$f_0(x)g_0(x)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2484: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(1)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2486: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$I(f)I(g)\approx I(fg)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2488: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{prop}% latex2html id marker 423
+\label{prop:gauss'lemma}
+$f(x)\in R[x]$ に対して、$f(x)$ が $R[x]$ の元として既約であることと、$K[x]$ の元として既約であることは同値である。
+\end{prop}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$f(x)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2498: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$K[x]$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2500: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$R[x]$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2502: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$K[x]$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2504: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$f(x) = g(x)h(x)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2506: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$g(x), h(x)\in K[x]$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2508: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$g(x) = I(g)g_0(x)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2510: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$h(x) = I(h)h_0(x)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2512: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$f_0(x), g_0(x)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2514: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$f(x) = I(g)I(h)g_0(x)h_0(x)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2516: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$f(x)\in R[x]$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2518: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$I(g)I(h)\approx I(gh)\in R$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2520: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\deg g_0 = \deg g = 0$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2522: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\deg h_0 = \deg h = 0$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2524: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$K[x]$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2526: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{lemma}% latex2html id marker 426
+\label{lemma:primeinpoly}
+$f(x)$ を $R[x]$ の素元とすると、次のいずれかが成立。
+\begin{itemize}
+\item[$(i)$] $\deg f = 0$ で、$f$ は $R$ の素元。
+\item[$(ii)$] $\deg f>0$ で、$f$ は既約な原始多項式。
+\end{itemize}
+\end{lemma}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$U(R[x]) = U(R)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2546: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(i),(ii)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2548: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$f(x)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2550: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$U(R[x]) = U(R)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2556: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$f\in R$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2558: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\deg f = 0$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2560: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\deg f >0$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2566: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$f = I(f)f_0$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2570: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$I(f)\in U(R)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2572: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(ii)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2576: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$R[x_1,\ldots, x_{n-1},x_n] = (R[x_1,\ldots,x_{n-1}])[x_{n}]$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2578: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$R[x]$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2584: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$0\neq f(x)\in R[x]$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2586: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\deg f$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2588: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\deg f = 0$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2590: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(i)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2594: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$R[x]$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2596: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\deg f > 0$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2598: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\deg g>0, \deg h>0$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2602: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\deg g<\deg f$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2604: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\deg h<\deg f$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2606: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$f = I(f)f_0$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2614: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$f_0$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2616: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$f_0$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2618: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(ii)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2620: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$I(f)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2622: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$R[x]$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2626: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$f = p_1\cdots p_kf_1\cdots f_l = q_1\cdots q_mg_1\cdots g_n$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2628: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$p_1, \ldots, p_k, q_1, \ldots, q_m\in R$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2632: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$f_1, \ldots, f_l, g_1, \ldots, g_n$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2634: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$f_1\cdots f_l$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2636: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$g_1\cdots g_n$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2638: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{displaymath}I(f) \approx p_1\cdots p_k \approx q_1\cdots q_m\end{displaymath}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$u\in U(R)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2642: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$up_1\cdots p_k = q_1\cdots q_m$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2644: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$K[x]$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2648: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$uf_1\cdots f_l = g_1\cdots g_n$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2650: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$c_if_i = g_i$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2652: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$c_i\in K$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2654: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$I(g_i) = 1$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2656: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$c_i\in R$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2658: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$g_i$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2660: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$c_i\in U(R)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2662: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+\stepcounter{section}
+{\newpage
+\clearpage
+\samepage \begin{definition}$R$ を環、$M$ を加群とし、写像、
+\begin{displaymath}R\times M \to M,\;(r,m)\mapsto rm\end{displaymath}
+が与えられ、次の条件を満たすとき、$M$ を $R$-左加群（または単に $R$-加群）という。
+\begin{displaymath}r(x+y) = rx+ry, \;(r+s)x = rx+ry,\;(rs)x = r(sx), \;1x = x\end{displaymath}
+$(x,y\in M,\;r,s\in R)$。
+\end{definition}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$N\subset M$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2686: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$rx\in N$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2692: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$r\in R$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2694: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$x\in N$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2696: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$RN\subset N$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2698: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$f:M\to M'$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2704: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{displaymath}f(a+b) = f(a)+f(b),\;f(ra) = rf(a),\;(r\in R,\;a,b\in M)\end{displaymath}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$f(ra) = rf(a)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2710: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{eg}\begin{enumerate}
+\item 加群は、$\bZ$-加群である。
+\item 環 $R$ は、$R$-加群であり、$I$ が $R$-加群 $R$ の部分加群であることと、$I$ が $R$ の左イデアルであることは同値である。
+\item $K$ を体としたとき、$K$-加群は、$K$-ベクトル空間の事である。
+\end{enumerate}
+\end{eg}
+}
+
+{\newpage
+\clearpage
+\samepage \begin{definition}\begin{enumerate}
+\item $M$ を $R$-加群、$S\subset M$ とするとき、
+\begin{displaymath}<U> = \left\{\sum_{i}r_iu_i\mid r_i\in R, \;u_i\in U\right\}\end{displaymath}
+を $U$ で生成される $R$-部分加群という。
+\item $|U|<\infty$ なる$U$ について、$M = <U>$ となるとき、$M$ を $R$-有限生成という。このときは、その生成元を $u_1, u_2, \ldots, u_n$ とすると、$M = Ru_1 + Ru_2 + \cdots + Ru_n$。
+\item $r_1u_1 + r_2u_2 + \cdots r_nu_n = 0$、$(r_i\in R)$ ならば、$r_1 = r_2 = \cdots= r_n = 0$ が成り立つとき、$u_1, u_2, \ldots, u_n$ は、$R$-自由であるという。$M$ を生成する部分集合 $U$ が $R$-自由（すなわち $U$ の任意の有限部分集合が $R$-自由）
+であるとき、$M$ は、$U$ を基とする $R$-自由加群であるという。
+\end{enumerate}
+\end{definition}
+}
+
+{\newpage
+\clearpage
+\samepage \begin{definition}$R$ を 可換環とする。$R$-加群でかつ環である $A$ が次の条件を満たすとき $A$ は $R$ 上の多元環（$R$-代数）であるという。
+\begin{displaymath}a, b\in A,\;r\in R\mbox{ に対し }(ra)b = a(rb) = r(ab).\end{displaymath}
+\end{definition}
+}
+
+{\newpage
+\clearpage
+\samepage \begin{eg}% latex2html id marker 458
+\begin{enumerate}
+\item $R$ 上の全行列環は、$R$ 多元環である。
+\item $G = \{1 = u_1, u_2, \ldots, u_n\}$ を有限群とし、$G$ の元を基とする $R$-自由加群 $R[G] = Ru_1 \oplus \cdots \oplus Ru_n$ に次のように積を定義したものを群環という。
+\begin{displaymath}\left(\sum_{i=1}^n\alpha_iu_i\right)\left(\sum_{j=1}^n\beta_ju_j\right) = \sum_{i,j = 1}^n\alpha_i\beta_ju_iu_j.\end{displaymath}
+\end{enumerate}
+\end{eg}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$A = \bC[G]$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2830: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$g\in G$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2836: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\phi(g) : V\to V, \;(v\mapsto gv)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2838: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\phi(g)\in \GL(V)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2840: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\phi: G\to \GL(V), \;(g\mapsto \phi(g))$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2842: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\phi:G\to GL(V)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2844: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{thm}% latex2html id marker 465
+{\rm (Schur's Lemma)} \label{thm:schurslemma}
+$M$、$N$ を共に既約 $R$-加群とする。
+\begin{itemize}
+\item[$(1)$] $f:M\to N$ を $R$-準同型で恒等的に $0$ でなければ、$f$ は同型である。
+\item[$(2)$] End${}_R(M)$ で $M\to M$ なる準同型全体とすると、End${}_R(M)$ は斜体となる。
+\end{itemize}
+\end{thm}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\ker f$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2890: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\im f$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2892: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(1)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2896: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$f\neq 0$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2898: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\ker f \neq M$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2900: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\im f\neq 0$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2902: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\ker f = 0$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2904: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\im f = N$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2906: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(2)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2910: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(1)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2912: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+\stepcounter{section}
+{\newpage
+\clearpage
+\samepage \begin{definition}\begin{enumerate}
+\item $R$-(左)加群 $M$ に対して、その $R$-部分加群の任意の空でない集合に極大 [極小] なものが存在するとき、$M$ は、ネーター [アルチン] 加群であると言う。
+\item 環 $R$ が $R$-(左)加群として、ネーター [アルチン] 環であるとき $R$ は (左)-ネーター [アルチン] 環であるという。
+\item $M$ の $R$-部分加群の任意の列
+\begin{displaymath}M_1\subset M_2 \subset \cdots \subset M_i\subset \cdots\;(M_1\supset M_2 \supset \cdots \supset M_i\supset \cdots)\end{displaymath}
+に対して、ある $n$ が存在して、$M_n = M_{n+1} = \cdots $ となるとき、$M$ は昇鎖律 [降鎖律] を満たすという。
+\end{enumerate}
+\end{definition}
+}
+
+{\newpage
+\clearpage
+\samepage \begin{prop}% latex2html id marker 479
+\label{prop:dcc:acc}
+$R$-加群 $M$ がネーター{\rm [アルチン] }加群であるという事と、$M$ が昇鎖律 {\rm [降鎖律]} を満たすことは同値である。
+\end{prop}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$M_1\subset M_2\subset \cdots $}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2950: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\{M_i\mid i\in\bN\}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2952: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$M_n$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2954: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$M_n = M_{n+1} = \cdots $}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2956: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$M_1\subset M_2\subset \cdots \subset M_i$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2960: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$M_i$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2962: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$M_i\subset M_{i+1},\;M_i\neq M_{i+1}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2966: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{prop}% latex2html id marker 487
+\label{prop:noether}
+$R$-加群 $M$ について、次は同値。
+\begin{itemize}
+\item[$(i)$] $M$ はネーター加群。
+\item[$(ii)$] $M$ の任意の $R$-部分加群は $R$-有限生成。
+\end{itemize}
+\end{prop}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(i)\Rightarrow (ii)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline2984: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$N_0$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline3002: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$N\neq N_0$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline3004: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$x\in N-N_0$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline3006: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$Rx + N_0$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline3008: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$N_0$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline3010: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$N_0$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline3012: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$N = N_0$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline3014: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(ii)\Rightarrow (i)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline3018: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$M_1\subset M_2 \subset \cdots $}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline3020: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$N = \bigcup_iM_i$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline3024: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$N = <u_1,u_2,\ldots, u_n>$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline3028: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$M_m$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline3032: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$u_1, u_2, \ldots, u_n$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline3034: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{displaymath}N \subset M_m\subset M_{m+1}\subset \cdots \subset N.\end{displaymath}
+}
+
+{\newpage
+\clearpage
+\samepage \begin{cor}単項イデアル整域は、ネーター環である。
+\end{cor}
+}
+
+{\newpage
+\clearpage
+\samepage \begin{thm}% latex2html id marker 496
+\label{thm:polyovernoether}
+可換ネーター環 $R$ 上の多項式環 $R[x_1,x_2,\ldots, x_n]$ はネーター環である。
+\end{thm}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$R[x]$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline3050: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{displaymath}I_i = \{r\in R\mid f(x) = a_ix^i + \cdots + a_1x + a_0 \in I \mbox{ で } a_i = r\mbox{ となるものがる。}\}\end{displaymath}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$f(x) = a_ix^i + \cdots + a_1x + a_0\in I$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline3056: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$xf(x) = a_ix^{i+1} + \cdots + a_1x^2 + a_0x\in I$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline3058: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$I_0\subset I_1\subset I_2 \subset \cdots $}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline3060: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$I_r = I_{r+1} = \cdots $}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline3064: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$I_0, I_1, \ldots, I_r$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline3068: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$a_{i_1},\ldots, a_{i_{s_i}}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline3070: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$I_i$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline3072: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$(i = 0, 1, \ldots, r)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline3074: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$f_{i_j}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline3078: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$a_{i_j}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline3080: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{displaymath}I = \sum_{i=0}^r\sum_{j = 1}^{s_i} R[x]f_{i_j}(x).\end{displaymath}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$f = a_mx^m + \cdots + a_1x + a_0\in I$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline3090: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$m = \deg f$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline3092: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$f = a_0 \in I_0 = \sum_{j=1}^{s_0}Ra_{0_j} = \sum_{j=1}^{s_0}Rf_{0_j}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline3096: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$r\geq m$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline3104: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{displaymath}a_m \in I_m = I_{m-e} = \sum_{j = 1}^{s_{m-e}}Ra_{(m-e)_j}\end{displaymath}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$a_m = \sum_{j = 1}^{s_{m-e}}c_ja_{(m-e)_j}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline3110: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{displaymath}\deg (f(x) - x^{e}\sum_{j = 1}^{s_{m-e}}c_jf_{(m-e)_j}(x)) < \deg f(x)\end{displaymath}
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$f\in \sum_{i=0}^r\sum_{j = 1}^{s_i} R[x]f_{i_j}(x)$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline3114: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$R[x]$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline3116: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$R[x]$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline3118: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$s_1, \ldots, s_n\in S$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline3124: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\{s_1,\ldots, s_n\}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline3128: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\{s_1,\ldots, s_n\}$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline3134: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\bZ[x]$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline3140: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\bZ$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline3144: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\bZ[x]$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline3146: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\bZ$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline3148: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \setbox\sizebox=\hbox{$\bZ + \bZ x$}\lthtmltypeout{latex2htmlSize :tex2html_wrap_inline3150: \the\ht\sizebox::\the\dp\sizebox.}\box\sizebox
+}
+
+{\newpage
+\clearpage
+\samepage \begin{cor}可換ネーター環上有限生成な可換環はネーター環である。
+\end{cor}
+}
+
+\stepcounter{section}
+
+\end{document}

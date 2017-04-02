@@ -1,0 +1,86 @@
+%Algebra III Final : imported from AlgIII95Final.tex February 23, 1996
+%Algebra III Final : original February 27, 28, 1997
+%% Final given on March 4, 1997
+
+\documentstyle[12pt]{jarticle}
+
+%A4 Size Setting
+\topmargin = -0.5cm %default 0cm
+\oddsidemargin = 0cm \evensidemargin = 0cm
+\textheight = 23cm \textwidth = 15cm % default 16cm
+%A4 size Setting End
+
+\newcommand{\bZ}{\mbox{\boldmath $Z$}}
+\newcommand{\bQ}{\mbox{\boldmath $Q$}}
+\newcommand{\bR}{\mbox{\boldmath $R$}}
+\newcommand{\bC}{\mbox{\boldmath $C$}}
+\newcommand{\qed}{\hfill$\Box$}
+
+\newtheorem{thm}{定理}
+\newtheorem{prop}{命題}
+
+\pagestyle{empty}
+
+\begin{document}
+\begin{center}
+{\gt\LARGE Algebra III  Final}\\
+{\gt Winter AY1996}
+\end{center}
+
+\noindent
+ID 番号、氏名を、各解答用紙に、また、問題番号も忘れずに書いて下さい。「\ldots を求めよ。」という問題についても、単に、答えのみではなくそれが、求めるものになる理由も詳しく書くこと。
+
+\begin{enumerate}
+\item $A$ を、複素数体 $\bC$  の元で、有理数体 $\bQ$ 上代数的なもの全体とする。このとき、次を示せ。
+	\begin{enumerate}
+	\item $K\subset \bC$ を $\bQ$ 上有限次元の拡大体とする。このとき、$K\subset A$。
+	\item $\alpha,\beta\in A$ とすると、$\alpha + \beta\in A$。
+	\item $A$ は、体である。
+	\item $A$ の $\bQ$ 上の拡大次数 $[A:\bQ]$ は、有限ではない。
+	\end{enumerate}
+	
+\item $K$ を、標数 $0$ の体、$L$ をその正規拡大体とする。このとき、以下を示せ。ただし、次の命題は使ってもよい。
+\begin{prop}
+$M:F$ を体の拡大とし、$f(x), g(x)\in F[x]$ を多項式とする。$f(x)$ と、$g(x)$ の、$F[x]$ における最大公約多項式は、$M[x]$ においても、最大公約多項式である。
+\end{prop}
+	\begin{enumerate}
+	\item  $\alpha \in L$ の $K$ 上の最小多項式を $f(x)\in K[x]$ とする。このとき、$f(x)$ は、$L$ において、重根を持たない。（すなわち、$\alpha$ は、$K$ 上分離的である。)
+	\item  $\beta \in L$ の $K$ 上の最小多項式を $g(x)\in K[x]$ とし、$(a)$ における、$f(x)$ の根を、$\alpha_1 = \alpha, \alpha_2,\ldots,\alpha_m$、$g(x)$ の根を、$\beta_1 = \beta,\beta_2,\ldots, \beta_n$ とする。$(\alpha_i - \alpha_j)/(\beta_k - \beta_l)$、$(1\leq i\neq j\leq m,\:1\leq k\neq l\leq n)$ のどれとも一致しない $K$ の元 $c$ を取る。$\gamma = \beta + c\alpha$ とおく。$h(x) = g(\gamma - cx)$ とおくと、$f(x)$ と、$h(x)$ の $L$ における共通根は $\alpha$  のみであり、$L[x]$ における $f(x)$ と、$h(x)$ の最大公約式は、$x - \alpha$ である。 
+	\item $\alpha, \beta \in K(\gamma)$ である。
+	\item $M:K$ を、有限次拡大とする。このとき、$\delta\in M$ で、$M = K(\delta)$ となるものが存在する。
+	\end{enumerate}
+	
+\item $F$ を $729 = 3^6$ 個の元からなる体とする。このとき以下ことを示せ。
+     \begin{enumerate}
+     \item $x\in F$ とすると、$x + x + x = 0$ である。
+     \item $F$ は、素体上のある既約多項式の分解体になっている。その既約多項式を求めよ。
+     \item 体 $F$ の自己同型群は、位数 $6$ の巡回群である。
+     \item $F$ の部分体は、いくつあるか。その理由も詳しく述べよ。
+     \end{enumerate}
+     
+\item $\alpha = \root{6}\of{2}$ (すなわち、$\alpha$ は、$6$ 乗すると $2$ になる、正の実数）とし、$K = \bQ(\alpha)$ とする。このとき、以下の問いに答えよ。
+     \begin{enumerate}
+     \item $K$ は、$\bQ$ 上正規拡大ではないことを示せ。
+     \item $K$ の $\bQ$ 上の正規閉包 $L$ で $\bC$ に含まれるものを求めよ。
+     \item $L$ を $\bQ$ 上のベクトル空間と考えたときの基底を一つ求めよ。
+     \item $\Gamma(L:\bQ)$ の元 $\sigma$ で $\sigma(\alpha) = -\alpha$ となるものを全て求めよ。
+     \item $(d)$ で求めたそれぞれの元によって固定される中間体を決定せよ。
+     \item $\Gamma(L:\bQ)$ は、可換群ではないことを示せ。
+     \item $L:\bQ$  の中間体 $M$ で $M:\bQ$ が正規拡大となるものは、いくつあるか決定せよ。
+     \item $\sqrt{3}\in L$ かどうか決定せよ。
+     \end{enumerate}
+
+\vspace{5ex}
+\noindent Algebra I, II, III を受講した感想、コメント、なんでも構いませんから書いて下さい。（これによって、成績に不利益を及ぼすことはありませんが、同時に、利益を受けることもありません。）
+
+\vspace{2ex}
+\noindent
+Midterm を 100 点満点、FINAL を 200 点満点とし、演習の点を 100 点満点、合計400 点満点で計算して、成績を出す予定です。
+	\end{enumerate}　	
+
+\begin{flushright}
+鈴木寛@国際基督教大学数学教室
+\end{flushright}
+\end{document}
+
+%%%\root{n}\of{n}-1

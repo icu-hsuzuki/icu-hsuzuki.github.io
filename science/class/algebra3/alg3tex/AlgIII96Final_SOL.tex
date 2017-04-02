@@ -1,0 +1,168 @@
+%Algebra III Final Solution
+%% original : 1997. 3. 4, 5
+%Algebra III Final : imported from AlgIII96Final.tex
+%Algebra III Final : imported from AlgIII95Final.tex February 23, 1996
+%Algebra III Final : original February 27, 28, 1997
+%% Final given on March 4, 1997
+%% revised : March 6, 1997
+
+\documentstyle{jarticle}
+
+%A4 Size Setting
+\topmargin = -0.5cm %default 0cm
+\oddsidemargin = 0cm \evensidemargin = 0cm
+\textheight = 23cm \textwidth = 15cm % default 16cm
+%A4 size Setting End
+
+\newcommand{\bZ}{\mbox{\boldmath $Z$}}
+\newcommand{\bQ}{\mbox{\boldmath $Q$}}
+\newcommand{\bR}{\mbox{\boldmath $R$}}
+\newcommand{\bC}{\mbox{\boldmath $C$}}
+\newcommand{\qed}{\hfill$\Box$}
+
+\newtheorem{thm}{定理}
+\newtheorem{prop}{命題}
+
+\newcommand{\sol}{{\bf 解答：}}
+
+\pagestyle{empty}
+
+\begin{document}
+\begin{center}
+{\gt\LARGE Algebra III  Final SOLUTION}\\
+{\gt Winter AY1996}
+\end{center}
+
+\begin{enumerate}
+\item $A$ を、複素数体 $\bC$  の元で、有理数体 $\bQ$ 上代数的なもの全体とする。このとき、次を示せ。
+	\begin{enumerate}
+	\item $K\subset \bC$ を $\bQ$ 上有限次元の拡大体とする。このとき、$K\subset A$。
+	
+	\sol
+	$\alpha\in K$ とする。$[K:\bQ]$ は、有限拡大であるから、$1, \alpha, \alpha^2, \ldots, \alpha^n, \ldots$ は、$\bQ$ 上一次独立ではあり得ない。従って、すべては零ではない $a_0, a_1, \ldots, a_n\in \bQ$ で、$a_0 + a_1\alpha + \cdots + a_n\alpha^n = 0$ となる。従って、$f(x) = a_0 + a_1x + \cdots + a_nx^n \in\bQ[x]$ は、零ではない多項式で $f(\alpha) = 0$ となる。従って、$\alpha$ は、$\bQ$ 上代数的である。よって、$K\subset A$。
+
+	\item $\alpha,\beta\in A$ とすると、$\alpha + \beta\in A$。
+	
+	\sol
+	$\alpha$ の最小多項式を $f(x)$、$\beta$ の最小多項式を $g(x)$ とすると、
+	$[\bQ(\alpha):\bQ] = \deg f(x) < \infty$、$[\bQ(\beta):\bQ] = \deg g(x) < \infty$ とすると、
+	$$[\bQ(\alpha,\beta):\bQ] = [\bQ(\alpha)(\beta) : \bQ] = [\bQ(\alpha)(\beta):\bQ(\alpha)][\bQ(\alpha):\bQ] \leq \deg g(x)\deg f(x) < \infty.$$
+	従って、$\bQ(\alpha,\beta):\bQ$ は、有限次拡大。(a) より、$\bQ(\alpha,\beta)$ の元、$\alpha + \beta$ は、$\bQ$ 上代数的。すなわち $\alpha + \beta\in A$。
+
+	\item $A$ は、体である。
+	
+	\sol
+	(b) より、$\bQ(\alpha,\beta)$ の元は、すべて $\bQ$ 上代数的、従って、$\alpha\beta\in A$、また $\alpha\neq 0$ ならば、$\alpha^{-1}\in A$。よって、$A$ は、$\bC$ の部分体となる。
+
+	\item $A$ の $\bQ$ 上の拡大次数 $[A:\bQ]$ は、有限ではない。
+	
+	\sol
+	$[A:\bQ] = n$ とする。Eisenstein の既約性判定条件より$x^{n+1} - 2$ は、$\bQ$ 上既約。この多項式の根を $\alpha \in\bC$ とすると(ここでは、正確には、$\bC$ が、代数的閉体、すなわち、$\bC$ 係数の多項式は、$\bC$ の中で一次因子に分解する事を用いている。これを使いたくないときは、$x^{2n+1} - 2$ を考えると、これは、奇数次数だから、中間値の定理より、必ず実数根を持つ。このことを用いれば、十分。）従って、
+	$$n = [A:\bQ] \geq [\bQ(\alpha):\bQ] = n+1.$$
+	これは、矛盾。従って、$[A:\bQ] = \infty$。
+
+	\end{enumerate}
+	
+\item $K$ を、標数 $0$ の体、$L$ をその正規拡大体とする。このとき、以下を示せ。ただし、次の命題は使ってもよい。
+\begin{prop}
+$M:F$ を体の拡大とし、$f(x), g(x)\in F[x]$ を多項式とする。$f(x)$ と、$g(x)$ の、$F[x]$ における最大公約多項式は、$M[x]$ においても、最大公約多項式である。
+\end{prop}
+	\begin{enumerate}
+	\item  $\alpha \in L$ の $K$ 上の最小多項式を $f(x)\in K[x]$ とする。このとき、$f(x)$ は、$L$ において、重根を持たない。（すなわち、$\alpha$ は、$K$ 上分離的である。)
+	
+	\sol
+	$f(x) = (x-\gamma)^2h(x)$ と $L[x]$ において、分解したとする。すると、$f(x)$ の微分 $Df(x) = (x-\gamma)(2h(x) + (x-\gamma)Dh(x))$ は、$x-\gamma$ を因子に持つ。従って、$L[x]$ において、$f(x)$  と、$Df(x)$ の最大公約多項式は $1$ ではない。命題から、$K[x]$ においても最大公約多項式は $1$ ではない。しかし、$f(x)$ は、既約だからこの最大公約多項式は、$f(x)$ となり、$f(x)$ は、$Df(x)$ を割り切る。次数を考えると、$Df(x) = 0$ 以外には、あり得ないことがわかる。これは、標数 0 に反する。
+	
+	\item  $\beta \in L$ の $K$ 上の最小多項式を $g(x)\in K[x]$ とし、(a) における、$f(x)$ の根を、$\alpha_1 = \alpha, \alpha_2,\ldots,\alpha_m$、$g(x)$ の根を、$\beta_1 = \beta,\beta_2,\ldots, \beta_n$ とする。$(\beta_i - \beta_j)/(\alpha_k - \alpha_l)$、$(1\leq i\neq j\leq m,\:1\leq k\neq l\leq n)$ のどれとも一致しない $K$ の零でない元 $c$ を取る。$\gamma = \beta + c\alpha$ とおく。$h(x) = g(\gamma - cx)$ とおくと、$f(x)$ と、$h(x)$ の $L$ における共通根は $\alpha$  のみであり、$L[x]$ における $f(x)$ と、$h(x)$ の最大公約式は、$x - \alpha$ である。 
+	
+	\sol
+	まず、$h(\alpha) = g(\gamma - c\alpha) = g(\beta) = 0$。また、ある $i$ について、$h(\alpha_i) = 0$ とすると、$g(\gamma - c\alpha_i) = 0$ だから、$g(x) = 0$ の根が、$\beta_1, \ldots, \beta_n$ であることから、$\beta_j = \gamma - c\alpha_i = \beta + c\alpha - c\alpha_i$ となる、$j$ が存在する。$c$ の取り方から、$i = 1$ となる。$L:K$ が正規拡大だから、$f(x)$ は、分解していることを考えると、$f(x)$ と、$h(x)$ の $L$ における共通根は $\alpha$  のみであり、$L[x]$ における $f(x)$ と、$h(x)$ の最大公約式は、$x - \alpha$ であることがわかる。
+	
+	\item $\alpha, \beta \in K(\gamma)$ である。
+	
+	\sol
+	命題より、$f(x), h(x)\in K(\gamma)[x]$ の $K(\gamma)[x]$ における最大公約多項式は、$x-\alpha$ の定数倍であることがわかるから、$\alpha\in K(\gamma)$。これより、$\beta\in K(\gamma)$ も得る。
+	
+	\item $M:K$ を、有限次拡大とする。このとき、$\delta\in M$ で、$M = K(\delta)$ となるものが存在する。
+	
+	\sol
+	有限次拡大だから、$M = K(\alpha_1, \alpha_2,\ldots, \alpha_n)$ とかける。$n$  に関する帰納法を用いる。$\alpha = \alpha_{n-1}$、$\beta = \alpha_n$ として、上の結果を適用すると、ある、$\gamma$ によって、$K(\alpha_{n-1}, \alpha_n) = K(\gamma)$ と書けることがわかる。従って、$M = K(\alpha_1, \ldots, \alpha_{n-2},\gamma)$ となる。これは、$K$ 上 $n-1$ 個の元で生成されているから、帰納法の仮定により、$M = K(\delta)$  となる $\delta\in M$ をとることが出来る。
+	\end{enumerate}
+	
+\item $F$ を $729 = 3^6$ 個の元からなる体とする。このとき以下ことを示せ。
+     \begin{enumerate}
+     \item $x\in F$ とすると、$x + x + x = 0$ である。
+     
+     \sol
+     $px = 0$ となる最小の自然数 $p$ を選ぶ。$F$ は、有限個の元からなるから、このような自然数は必ず存在し、かつ、$F$ は、体であるから、$p$ は、素数である。$P = \{1,2,\ldots, p-1\}$ は、素体を作る。$F$ の $P$ 上の次元を $n$ とすると、$|F| = p^n$ となるから、$p = 3, n = 6$。
+     
+     \item $F$ は、素体上のある既約多項式の分解体になっている。その既約多項式を求めよ。
+     
+     \sol
+     $F$ の元は全て、$x^{729} - x$ の根で、かつ、素体上の拡大次数は、$6$ である。$x^6 - x^5 - 1$ は、$P$ 上既約であることがわかるので、例えばこれが求めるもの。（実は、たくさんあります。$6$ 次で $P$ 上既約であれば何でもよい。）
+     
+     \item 体 $F$ の自己同型群は、位数 $6$ の巡回群である。
+     
+     \sol 
+     $\sigma : x \to x^3$ とすると、$x\in F$ について、$x^{729} = x$ だったから $\sigma^ 6 = 1$。拡大次数 $[F:P] = 6$ で、位数が $6$ のものがあったから位数 $6$ の巡回群。（かつ、拡大 $F:P$ がガロア拡大であることもこのことからわかる。）
+     
+     \item $F$ の部分体は、いくつあるか。その理由も詳しく述べよ。
+     
+     \sol
+     $F$ は、$P$ 上ガロア拡大だから、(分離多項式 $x^{729} - x$ の分解体。）位数６の巡回群の部分群の個数を求めればよい。従って、$6$ の約数と対応し、4 個。
+     \end{enumerate}
+     この、問題特に、(b) は、難しかったですね。(c) は、過去問をみれば大丈夫と思っていたのですが。
+     
+\item $\alpha = \root{6}\of{2}$ (すなわち、$\alpha$ は、$6$ 乗すると $2$ になる、正の実数）とし、$K = \bQ(\alpha)$ とする。このとき、以下の問いに答えよ。
+     \begin{enumerate}
+     \item $K$ は、$\bQ$ 上正規拡大ではないことを示せ。
+     
+     \sol
+     まず、$x^6 - 1 = (x-1)(x+1)(x^2+x+1)(x^2-x+1)$ であることに注意すると、1 の原始 6 乗根（６乗して始めて 1 になる元）は、$x^2 - x + 1$ の根。$\zeta = (1 + \sqrt{-3})/2$ とする。すると、$x^6 - 2$ の根は、$\alpha\zeta^i$、$i = 0,1,\ldots, 5$ であることがわかる。$x^6 - 2$ は、Eisenstein の既約性判定条件から、$\bQ$ 上既約で、$K$ 内に根を持つが、$K\subset \bR$ で、$\zeta\not\in \bR$ だから、$\alpha\zeta\not\in K$。従って、正規拡大ではない。
+     
+     \item $K$ の $\bQ$ 上の正規閉包 $L$ で $\bC$ に含まれるものを求めよ。
+
+	\sol
+	$x^6 - 2$ の分解体 $\bQ(\alpha, \zeta) = \bQ(\root{6}\of{2}, \sqrt{-3})$ は、正規閉包である。
+	
+     \item $L$ を $\bQ$ 上のベクトル空間と考えたときの基底を一つ求めよ。
+     $[\bQ(\alpha,\zeta):\bQ] = [\bQ(\alpha,\beta):\bQ(\alpha)][\bQ(\alpha):\bQ] = 12$  だから、例えば、次が基底となる。
+     $$\{1, \alpha, \alpha^2, \alpha^3, \alpha^4, \alpha^5, \sqrt{-3}, \alpha\sqrt{-3}, \alpha^2\sqrt{-3}, \alpha^3\sqrt{-3}, \alpha^4\sqrt{-3}, \alpha^5\sqrt{-3}\}$$
+     
+     \item $\Gamma(L:\bQ)$ の元 $\sigma$ で $\sigma(\alpha) = -\alpha$ となるものを全て求めよ。
+     
+     \sol
+     $\sigma(\alpha) = -\alpha$ となるものは、$\bQ(\alpha)$ 上では、ただ一つに決まるので、$L:\bQ(\alpha)$ の拡大の同型として、$\sigma(\sqrt{-3}) = \pm\sqrt{-3}$ で二通りとなる。上の基底から、これ以外にはないこと、$\alpha$ と、$\sqrt{-3}$ の行き先を決めると、一意に決まることは、明らか。
+     
+     \item (d) で求めたそれぞれの元によって固定される中間体を決定せよ。
+     
+     \sol
+     $\sigma(\sqrt{-3}) = \sqrt{-3}$ となるものを $\sigma_1$、$\sigma(\sqrt{-3}) = -\sqrt{-3}$ の方を改めて、$\sigma_2$ とする。$\sigma_1^2 = \sigma_2^2 = 1$ は、明らか。$M_1$ を $\sigma_1$ の不変体、$M_2$ を $\sigma_2$ の不変体とする。$M_1 = \bQ(\alpha^2,\sqrt{-3})$ であることは、$[M_1:\bQ] = 6$ より、明らか。$M_2 = \bQ(\alpha^2,\sqrt{-3}\alpha)$ も $[M_2:\bQ] = 6$ より、明らか。
+     
+     \item $\Gamma(L:\bQ)$ は、可換群ではないことを示せ。
+     
+     \sol
+     可換群ならば、全ての部分群は、正規部分群だから中間体も全て正規拡大。しかし、$K:\bQ$ は、正規拡大ではない。
+     
+     \item $L:\bQ$  の中間体 $M$ で $M:\bQ$ が正規拡大となるものは、いくつあるか決定せよ。
+     
+     \sol
+     $G = \Gamma(L:\bQ)$ とする。
+     $\rho(\alpha) = \alpha\zeta, \rho(\zeta) = \zeta$、$\tau(\alpha) = \alpha$、$\tau(\zeta) = \zeta^{-1} = (1 - \sqrt{-3})/2$ とすると、
+     $$G = \{1, \rho, \rho^2, \rho^3 = \sigma, \rho^4, \rho^5, \tau, \rho\tau, \rho^2\tau, \rho^3\tau = \sigma_2, \rho^4\tau, \rho^5\tau\}$$
+     $\tau\rho\tau\rho = \rho^6 = \tau^2 = 1$。
+     これより、$|G| = 12$ で、２面体群と同型だから正規部分群の数は、位数１のもの１、位数２のもの、１、位数３のもの１、位数６のもの３、位数１２のもの１。計７個。
+     
+     \item $\sqrt{3}\in L$ かどうか決定せよ。
+     
+     \sol
+     $\sqrt{3}\in L$ とすると、$\sqrt{-1}\in L$、$\sqrt{2} = \alpha^3 \in L$ より、$\bQ(\sqrt{2},\sqrt{3},\sqrt{-1})$ を含む。すると、$[\bQ(\sqrt{2},\sqrt{3},\sqrt{-1}):\bQ] = 8$ が、$[L:\bQ] = 12$ を割り切らないので、矛盾。
+     \end{enumerate}
+     (g) は、少し難しかったかも知れません。
+\end{enumerate}
+\begin{flushright}
+鈴木寛@国際基督教大学数学教室
+\end{flushright}
+\end{document}
+
+%%%\root{n}\of{n}-1

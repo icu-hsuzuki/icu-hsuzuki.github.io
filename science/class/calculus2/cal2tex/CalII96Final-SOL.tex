@@ -1,0 +1,197 @@
+%Calculus II 96 Final Solution : original : 1997. 3. 2, 3, 6
+% Original Taken From Calculus II Final (Original Feb. 28, 1995)
+% Calculus II TAKE-HOME MidTerm to be distributed on January 9, 1997
+% Calculus II Final, on February 28, 1997, at 8:30
+%% original: February 26, 27, 1997.
+
+\documentstyle{jarticle}
+
+%A4 Size Setting
+\topmargin = -0.5cm
+\oddsidemargin = 0cm \evensidemargin = 0cm
+\textheight = 23.5cm \textwidth = 16cm
+%A4 size Setting End
+
+\pagestyle{empty}
+
+\newtheorem{thm}{定理}
+\newcommand{\proof}{{\gt 証明\quad}}
+\newcommand{\sol}{{\gt 解答\quad}}
+\newcommand{\qed}{\hfill\hbox{\rule{6pt}{6pt}}}
+
+\def\inkern{\mathchoice{\!\!\!}{\!\!}{\!\!}{\!\!}}
+\def\iint{\int\inkern\int} %double iterated integral
+\def\iiint{\int\inkern\int\inkern\int} %triple iterated integral
+
+\begin{document}
+\begin{center}
+{\gt\LARGE Calculus II  Final Solution}\\
+{\gt Winter Term, AY1996-7}
+\end{center}
+
+\begin{enumerate}
+\item 曲面、${\displaystyle z = \frac{x^2}{3^2} + \frac{y^2}{5^2}}$ の、点 $(3,-5,2)$ における接平面の方程式を求めよ。(Find the equation of the tangent plane of a surface 
+${\displaystyle z = \frac{x^2}{3^2} + \frac{y^2}{5^2}}$ at the point $(3,-5,2)$.)\\
+\sol 
+$z_x = 2x/9$、$z_y = 2y/25$ だから、$z_x(3,-5) = 2/3$、$z_y(3,-5) = -2/5$。従って、
+$z - 2 = 2/3(x-3) -2/5(y+5)$ が、接平面の方程式。
+
+一般に、$z = f(x,y)$ で定義される曲面上の点 $(p,q,f(p,q))$ での接平面の方程式は
+
+\fbox{$z - f(p,q) = f_x(p,q)(x-p) + f_y(p,q)(y-q)$}
+
+\item 原点から、曲面 $z^2 = xy - 5x - 4y + 16$ 上の点までの距離の最小値を求めよ。
+(Determine the minimal distance between the origin and the points on the surface 
+$z^2 = xy - 5x - 4y + 16$.)\\
+\sol
+$g(x,y)$ で、原点から、曲面上の点までの距離の二乗を表すとする。距離は、常に非負だから、距離が最短になるのは、距離の二乗が最短になる時を求めればよい。
+$$g(x,y) = x^2 + y^2 + z^2 = x^2 + y^2 + xy - 5x - 4y + 16$$
+より、$g_x(x,y) = 2x + y - 5$、$g_y(x,y) = 2y + x - 4$ が共に $0$ になる停留点を求めると、$(x,y) = (2,1)$ 停留点がただ一つだからこれが最小となる点を与えることは殆ど明らかであるが、判定法を用いると、$g_{xx}(x,y) = 2 > 0$、$g_{xy}(x,y) = 1$、$g_{yy}(x,y) = 2$ より、判別式は $D = 1 - 4 = -3<0$ 従って、確かに、極小値を与え、それは、最小となる。$g(2,1) = 9$ だから距離の最小値は $3$。
+
+\item 下の定理は、ラグランジュの乗数定理と呼ばれる。この証明の、各部分の空欄を埋める式を解答用紙に記入せよ。(The following is called Lagrange's multiplier theorem. Fill the empty boxes with the suitable formulas in the proof.)
+\begin{thm}
+$g(x,y) = 0$ の条件のもとで、関数 $f(x,y)$ が、点 $(a,b)$ で極値を持つとする。ただし、$g_x(a,b)$ と、$g_y(a,b)$ は、同時には、$0$ にならないものとする。そのとき、
+$$f_x(a,b) + \lambda g_x(a,b) = 0,\quad f_y(a,b) + \lambda g_y(a,b) = 0$$
+を満たす定数 $\lambda$ が存在する。
+\end{thm}
+\proof
+$g_y(x,y) \neq 0$ とする。$g(x,y) = 0$、$g_y(x,y) \neq 0$ より、陰関数の定理により、$y = \phi(x)$ とかける。$g(x,\phi(x)) = 0$  を合成関数として、$x$ で微分すると、
+[合成関数の微分を用いることによって、$dx/dx = 1$ だから、]
+
+$(a)$ \fbox{$g_x(x,\phi(x)) + g_y(x,\phi(x))\phi'(x) = 0$}
+
+が得られる。従って、
+
+$(b)$ \fbox{${\displaystyle \frac{d\phi}{dx} = -\frac{g_x(x,\phi(x))}{g_y(x,\phi(x))}}$}
+
+一方、$f(x,\phi(x))$ が、$(a,b)$ で極値を取るという条件から、
+
+$(c)$ \fbox{$f_x(a,b) + f_y(a,b)\phi'(x) = 0$}
+
+である。この式に、上で求めた、$\phi'(a)$  を代入して整理すると次の式が得られる。
+
+$(d)$ \fbox{${\displaystyle \frac{f_x(a,b)}{g_x(a,b)} = \frac{f_y(a,b)}{g_y(a,b)}}$}
+
+この比の値を $-\lambda$ と置くと、定理の結果を得る。
+
+$g_x(x,y) \neq 0$ の時も同様。
+\qed
+
+\item 次の積分の順序を変更せよ。ただし、$a>0$ とし、答えは、いくつかの積分の和になっても構わない。(Change the order of the integrals of the following.  Here $a>0$ and the solution may be a sum of several integrals.)
+$$\int^a_0\left\{\int^{2a - x}_{x^2/a}f(x,y)dy\right\}dx.$$
+\sol
+$$\int_0^a\int_0^{\sqrt{ay}}f(x,y)dxdy + \int_a^{2a}\int_0^{2a-y}f(x,y)dxdy.$$
+
+\item 下の変数変換を用いて、重積分を求めよ。(Evaluate the integral by changing the variables as indicated below.)
+$$\iint_D \frac{x^2+y^2}{(x+y)^3}dxdy,\quad D = \{(x,y)\mid 1\leq x+y\leq 2, x\geq 0,y\geq 0\}, \:(x + y = u, y = uv).$$
+\sol
+$x = u - y = u - uv$ だから、
+$$J = \left|\begin{array}{cc}
+\frac{\partial x}{\partial u} & \frac{\partial x}{\partial v}\\ 
+\frac{\partial y}{\partial u} & \frac{\partial y}{\partial v} \end{array}\right| 
+= \left|\begin{array}{cc}1-v & -u \\ 
+v & u \end{array}\right| 
+= u - uv + uv = u.$$
+これより、$D = \{(u,v)\mid 1\leq u\leq 2, u - uv\geq 0,uv\geq 0\}$。$u > 0$ より、$1 - v\geq 0$、$v\geq 0$。従って、$0\leq v\leq 1$。
+\begin{eqnarray*}
+\iint_D \frac{x^2+y^2}{(x+y)^3}dxdy & = & \int_1^2\int_0^1\frac{u^2(1-v)^2 + u^2v^2}{u^3}\cdot ududv\\
+& = & \int_1^2du\int_0^1(2v^2 - 2v + 1)dv\\
+& = & \Bigl[u\Bigr]_1^2\Bigl[\frac23v^3 - v^2 + v\Bigr]_0^1\\
+& = & \frac23.
+\end{eqnarray*}
+
+\item 次の重積分を求めよ。(Evaluate the following multiple integrals.)
+$$\iint_D \sin(x+y)dxdy, \quad 
+D = \{(x,y)| 0\leq x, \:0\leq y, \:x+y \leq\frac{\pi}2\}.$$
+\sol
+\begin{eqnarray*}
+\iint_D \sin(x+y)dxdy & = & \int_0^{\pi/2}\int_0^{\pi/2-x}\sin(x+y)dydx\\
+& = & \int_0^{\pi/2}\Bigl[-\cos(x+y)\Bigr]_0^{\pi/2-x}dx\\
+& = & \int_0^{\pi/2}\cos xdx = \Bigl[\sin x\Bigr]_0^{\pi/2}\\
+& = & 1.
+\end{eqnarray*}
+
+\item 球 $x^2 + y^2 + z^2 \leq a^2 \:(a>0)$ の円柱 $x^2 + y^2 = ax$ の内部にある部分の体積を求めよ。(Find the volume of a part of a sphere $x^2 + y^2 + z^2 \leq a^2 \:(a>0)$ bounded by a cylinder $x^2 + y^2 = ax$.)\\
+\sol
+$x = r\cos\theta$、$y = r\sin\theta$、$z = z$ の円柱座標で表すと、Jacobian は、$r$、
+$D = \{(r,\theta)\mid -\pi/2\leq \theta \leq \pi/2, \;0\leq r\leq a\cos\theta\}$ だから、
+\begin{eqnarray*}
+2\iint_D\sqrt{a^2 - x^2 - y^2}dxdy & = & -\int_{-\pi/2}^{\pi/2}\int_0^{a\cos\theta}\sqrt{a^2 - r^2}(-2r)drd\theta\\
+& = & -2\int_0^{\pi/2}\frac{2}{3}\Bigl[(a^2 - r^2)^{3/2}\Bigr]_0^{a\cos\theta}d\theta\\
+& = & -2\int_0^{\pi/2}\frac{2}{3}(a^3\sin^3\theta - a^3)d\theta\\
+& = & \frac{4a^3}{3}\Bigl(\int_0^{\pi/2}1d\theta + \int_0^{\pi/2}(1-\cos^2\theta)(-\sin\theta)d\theta\Bigr)\\
+& = & \frac{4a^3}{3}\Bigl[(\theta + \cos\theta-\frac13\cos^3\theta\Bigr]_0^{\pi/2}\\
+& = & \frac{4a^3}{3}(\frac{\pi}{2} - 1 + \frac13)\\
+& = & \frac29a^3(3\pi-4).
+\end{eqnarray*}
+
+\item 次の級数の収束、発散を決定せよ。(Determine whether each of the following seires converges or diverges.)
+     \begin{enumerate}
+     \item $\displaystyle{\sum_{n=1}^{\infty}\Bigl(\sin\frac1n\Bigr)^n}.$\\
+     \sol 
+     ${\displaystyle \lim_{n\to\infty}\root{n}\of{\Bigl(\sin\frac1n\Bigr)^n} = 
+     \lim_{n\to\infty}\sin\frac1n = 0 < 1}$ より、この級数は収束する。
+     \item $\displaystyle{\sum_{n=1}^{\infty}(\sqrt{n^2 + 1} - n)}.$\\
+     \sol
+     $n^2 + 1 \leq 4n^2$ だから、
+     $$\sum_{n=1}^{\infty}(\sqrt{n^2 + 1} - n) = \sum_{n=1}^{\infty}\frac{1}{\sqrt{n^2 + 1} +n} >  \sum_{n=1}^{\infty}\frac{1}{3n} = \frac13 \sum_{n=1}^{\infty}\frac{1}{n}$$
+     で、最後の調和級数は、発散するから、この級数は発散する。（この、ダランベール商を考えると、極限は $1$ となり、それからは、判定できないことを確認せよ。）
+     \end{enumerate}
+
+\item 次のべき級数の収束半径を求めよ。(Determine the radius of convergence of the following power series.)
+     \begin{enumerate}
+     \item $\alpha$ を実数としたとき、
+$$1 + \alpha x + \frac{\alpha(\alpha-1)}{2}x^2 + \cdots + \frac{\alpha(\alpha-1)\cdots(\alpha - n + 1)}{n!}x^n + \cdots. $$
+	\sol
+	ダランベール商を用いると、
+	$$\frac1r = \lim_{n\to\infty}\left|\frac{a_{n+1}}{a_{n}}\right| = \lim_{n\to\infty}\left|\frac{\alpha - n}{n+1}\right| = \lim_{n\to\infty}\left|\frac{\frac{\alpha}n - 1}{1+\frac1n}\right| =1.$$
+	従って、収束半径は $1$。
+     \item $\displaystyle{\sum_{n=1}^{\infty}(2^n + n)x^n}.$\\
+     \sol
+     これも、ダランベール商を用いると、
+     $$\frac1r = \lim_{n\to\infty}\frac{2^{n+1} + n + 1}{2^n + n} = 
+     \lim_{n\to\infty}\frac{2 + \frac{n}{2^n} + \frac{1}{2^n}}{1 + \frac{n}{2^n}} = 2.$$
+     従って、収束半径は $1/2$。
+     \end{enumerate}
+
+\vspace{3ex}
+\noindent
+次の２問の中から、１問を選択し、解答せよ。(Choose one of the following problems and solve it.)
+     
+\item ${\displaystyle \frac{1}{1-3x + 2x^2}}$ をべき級数で表し、その収束半径を求めよ。(Express ${\displaystyle \frac{1}{1-3x + 2x^2}}$ by power series and find the radius of convergence.)\\
+\sol
+部分分数分解を用いると、
+$$\frac{1}{1-3x + 2x^2} = \frac{2}{1 - 2x} - \frac{1}{1-x}.$$
+だから、収束半径が、前者は、$1/2$、後者は、$1$ だから、収束半径の定義（及び、Abel の定理）を考えると、収束半径は、$1/2$ であることが分かる。実際、
+\begin{eqnarray*}
+\frac{2}{1 - 2x} - \frac{1}{1-x} & = & 2\sum_{n=0}^\infty (2x)^n - \sum_{n=0}^\infty x^n\\
+& = & \sum_{n=0}^\infty (2^{n+1} - 1)x^n.
+\end{eqnarray*}
+
+\item 曲面 $z = xy$ の 円柱 $x^2 + y^2 \leq a^2$  の内部の部分の面積を求めよ。(Find the area of a surface $z = xy$ bounded by a cylinder $x^2 + y^2 \leq a^2$. )\\
+\sol
+領域 $D$ 上で定義され、極座標で表示された、関数 $z=f(r,\theta)$ で与えられる曲面積は、次の式で与えられた。
+$$\iint_D\sqrt{1+\Bigl(\frac{\partial z}{\partial r}\Bigr)^2 + \Bigl(\frac{1}{r}\frac{\partial z}{\partial \theta}\Bigr)^2}rdrd\theta.$$
+ここで、$x = r\cos\theta, \;y = r\sin\theta$。すると、$z = (r^2/2)\sin2\theta$。
+従って、
+$$\frac{\partial z}{\partial r} = r\sin2\theta,\;\frac{\partial z}{\partial \theta} = r^2\cos2\theta,$$
+\begin{eqnarray*}
+\int_0^{2\pi}\int_0^a\sqrt{1+r^2\sin^22\theta + r^2\cos^22\theta}rdrd\theta
+& = & \frac12\int_0^{2\pi}\int_0^a\sqrt{1+r^2}(2r)drd\theta\\
+& = & 2\pi\left.\frac{1}{3}(1+r^2)^{3/2}\right|_0^a\\
+& = & \frac23\pi((1+a^2)^{3/2} - 1).
+\end{eqnarray*}
+\end{enumerate}
+    
+
+\end{document}
+%%%%%%%%%%%%%%%%%%%% End of Document %%%%%%%%%%%%
+
+\item $f(x,y) = 4xy - 2y^2 - x^4$ とする。
+\begin{enumerate}
+\item 停留点をすべて求めよ。(Find all stationary points.)
+\item 停留点が極点かどうかを判定し、極点の場合には、極値を求めよ。(Determine extremum and find the values at each relative maximum and relative minimum point.)
+\end{enumerate}
+
+\item 極座標を用いて次の重積分の値を求めよ。(Find the value of the following integral using polar coordinates.)
+$$\iint_D\sqrt{x^2+y^2}dxdy,\quad D = \{(x,y)\mid x^2 + y^2 \leq y\}$$

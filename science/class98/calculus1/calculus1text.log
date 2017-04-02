@@ -1,0 +1,90 @@
+This is PTeX, C Version 2.99 j1.7 p1.0.9F (preloaded format=jlplain 95.8.20)  4 JUN 1997 12:01
+**&jlatex calculus1text
+(calculus1text.tex
+LaTeX Version 2.09 <24 May 1989>
+(/usr/local/lib/tex/jmacros/jarticle.sty
+Document Style `jarticle' <18 Dec 88>.
+(/usr/local/lib/tex/jmacros/jart12.sty)
+\c@part=\count78
+\c@section=\count79
+\c@subsection=\count80
+\c@subsubsection=\count81
+\c@paragraph=\count82
+\c@subparagraph=\count83
+\c@figure=\count84
+\c@table=\count85
+)
+\c@thm=\count86
+\c@exercise=\count87
+\c@example=\count88
+\c@problem=\count89
+\c@defin=\count90
+ (calculus1text.aux) [0
+
+] [1] [1]
+[2] [3] [1] [2] [3] [4] [1] [1] [2] [3]
+Overfull \hbox (6.23761pt too wide) in paragraph at lines 445--446
+[] []\twlmin 関数 $\twlmi f\twlrm (\twlmi x\twlrm )$\twlmin 、 $\twlmi g\twlrm 
+(\twlmi x\twlrm )$ \twlmin が 、 $\twlrm (\twlmi a; b\twlrm )$ \twlmin で微分可
+能で $\twlmi g[]\twlrm (\twlmi x\twlrm ) \twlsy 6\twlrm =
+
+\hbox(9.33105+3.0)x397.41664, glue set - 1.0
+.\hbox(0.0+0.0)x0.0
+.\glue 0.0
+.\hbox(9.33105+3.0)x166.16206, yoko direction
+..\glue -29.3747
+..\glue 0.0
+..\glue 0.0
+..\glue -5.87494
+..\hbox(9.33105+3.0)x166.16206, yoko direction
+...\glue 5.87494
+...\twlgt 定
+...\twlgt 理
+...\glue 4.5 plus 2.25 minus 1.5
+...\twlbf 6
+...etc.
+..etc.
+.\penalty 0
+.\twlmin 関
+.etc.
+
+[1] [2] [3] [4] [1] [1] [2] [1] [2] [3] [1] [2] [1] [2] [3] [1] [1]
+Overfull \hbox (5.06606pt too wide) detected at line 899
+[] [] \twlrm = [] [] = [] [] = []
+
+\hbox(22.80008+9.3009)x426.79134
+.\vbox(8.33331+8.13332)x24.6184
+..\hbox(8.33331+0.0)x24.6184, glue set 4.14957fil
+...\glue 0.0 plus 1.0fil minus 1.0fil
+...\twlrm l
+...\twlrm i
+...\twlrm m
+...\glue 0.0 plus 1.0fil minus 1.0fil
+..\kern1.66666
+..\hbox(5.46666+0.0)x24.6184
+...\egtrm ^^A
+...\egtmi x
+...\egtsy !
+...\egtrm 0
+..\kern1.0
+.\glue(\thinmuskip) 1.99997
+.\hbox(17.11809+8.23141)x95.62764
+..\hbox(17.11809+8.23141)x95.62764
+...\hbox(0.0+0.0)x1.2, shifted -3.0
+...\vbox(17.11809+8.23141)x93.22765 []
+...\hbox(0.0+0.0)x1.2, shifted -3.0
+.\glue(\thickmuskip) 3.33328 plus 3.33328
+.\twlrm =
+.etc.
+
+[2] [3] (calculus1text.aux) 
+Here is how much of TeX's memory you used:
+ 212 strings out of 4315
+ 1943 string characters out of 62137
+ 38253 words of memory out of 262141
+ 2253 multiletter control sequences out of 9500
+ 24665 words of font info for 93 fonts, out of 72000 for 255
+ 14 hyphenation exceptions out of 607
+ 12i,12n,15p,585b,285s stack positions out of 300i,40n,60p,4096b,4000s
+
+Output written on calculus1text.dvi (32 pages, 101960 bytes).

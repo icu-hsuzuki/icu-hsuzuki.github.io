@@ -1,0 +1,70 @@
+This is pTeX, Version p2.1.9, based on TeX, Version 3.14159 (EUC) (Web2C 7.3.1) (format=platex 2001.3.27)  7 NOV 2002 15:48
+**final97.tex
+(final97.tex
+pLaTeX2e <2000/02/29>+0 (based on LaTeX2e <1999/12/01> patch level 1)
+(/usr/share/texmf/ptex/platex/base/jarticle.cls
+Document Class: jarticle 1999/05/18 v1.1q Standard pLaTeX class
+\c@@paper=\count81
+(/usr/share/texmf/ptex/platex/base/jsize11.clo
+File: jsize11.clo 1999/05/18 v1.1q Standard pLaTeX file (size option)
+)
+\c@part=\count82
+\c@section=\count83
+\c@subsection=\count84
+\c@subsubsection=\count85
+\c@paragraph=\count86
+\c@subparagraph=\count87
+\c@figure=\count88
+\c@table=\count89
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\symmincho=\mathgroup4
+LaTeX Font Info:    Overwriting symbol font `mincho' in version `bold'
+(Font)                  JY1/mc/m/n --> JY1/gt/m/n on input line 596.
+LaTeX Info: Redefining \mathrm on input line 598.
+LaTeX Info: Redefining \mathbf on input line 599.
+\toclineskip=\dimen118
+\@lnumwidth=\dimen119
+\bibindent=\dimen120
+\heisei=\count90
+)
+No file final97.aux.
+\openout1 = `final97.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for JY1/mc/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for JT1/mc/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <10.95> on input line 43.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 43.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 43.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 43.
+[1
+
+] [2] (final97.aux) ) 
+Here is how much of TeX's memory you used:
+ 315 strings out of 20657
+ 2996 string characters out of 194763
+ 57269 words of memory out of 350001
+ 3474 multiletter control sequences out of 10000+15000
+ 16731 words of font info for 63 fonts, out of 400000 for 1000
+ 14 hyphenation exceptions out of 10000
+ 22i,9n,19p,280b,358s stack positions out of 3000i,100n,1500p,50000b,4000s
+
+Output written on final97.dvi (2 pages, 8476 bytes).

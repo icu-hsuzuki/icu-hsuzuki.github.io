@@ -1,0 +1,382 @@
+%% aspmproc.sty
+%% test version by A. M.
+%% 1999/03/06
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{aspmproc}
+\hoffset=60pt
+\voffset=60pt
+\newsavebox{\aspmlogo}
+\newlength{\logodepth}
+\newcounter{firstpage}
+\newcounter{lastpage}
+\AtBeginDocument{
+\sbox{\aspmlogo}{\parbox[t]{\textwidth}{%
+\renewcommand{\baselinestretch}{1.05}
+\small
+Advanced Studies in Pure Mathematics 24, 1996\\
+Progress in Algebraic Combinatorics\\
+pp.~\thefirstpage--\thelastpage}}%
+\settodepth{\logodepth}{\usebox{\aspmlogo}}
+}
+\def\serieslogo@{\usebox{\aspmlogo}}
+\AtEndDocument{%
+\ifnum\thelastpage=\thepage\else
+\typeout{Please check the counter lastpage
+(lastpage was \thelastpage)}
+\fi}
+\setlength{\topmargin}{-7pt}
+\setlength{\evensidemargin}{0pt}
+\setlength{\oddsidemargin}{0pt}
+\setlength{\headheight}{7pt}
+\setlength{\headsep}{16pt}
+\setlength{\textheight}{504pt}
+\setlength{\textwidth}{312pt}
+\setlength{\parindent}{18pt}
+\newskip\smallskipamountaspm
+\smallskipamountaspm4\p@ plus1\p@ minus1\p@
+\newskip\medskipamountaspm
+\medskipamountaspm8\p@ plus2\p@ minus2\p@
+\newskip\bigskipamountaspm
+\bigskipamountaspm16\p@ plus4\p@ minus4\p@
+\skip\footins\bigskipamountaspm
+\def\@adjustvertspacing{%
+  \bigskipamount.7\baselineskip plus.7\baselineskip
+  \medskipamount\bigskipamount \divide\medskipamount\tw@
+  \smallskipamount\medskipamount \divide\smallskipamount\tw@
+  \jot\baselineskip \divide\jot 4 \relax
+  \abovedisplayskip 9\p@ plus3\p@ minus3\p@
+  \belowdisplayskip\abovedisplayskip
+  \abovedisplayshortskip \z@ plus3\p@
+  \belowdisplayshortskip 6\p@ plus3\p@ minus3\p@
+}
+\def\ps@headings{\ps@empty
+  \def\@evenhead{\normalfont\small
+      \rlap{\thepage}\hfil \leftmark{}{}\hfil}%
+  \def\@oddhead{\normalfont\small \hfil
+      \rightmark{}{}\hfil \llap{\thepage}}%
+  \let\@mkboth\markboth
+}
+\pagestyle{headings}
+\def\ps@firstpage{\ps@plain
+  \def\@oddfoot{%\normalfont\scriptsize \hfil\thepage\hfil
+     \global\topskip\normaltopskip}%
+  \let\@evenfoot\@oddfoot
+  \def\@oddhead{\serieslogo@\hss}%
+  \let\@evenhead\@oddhead}
+\def\@setaddresses{\par
+  \nobreak \begingroup
+\footnotesize
+  \def\author##1{\nobreak\addvspace\bigskipamount}%
+  \interlinepenalty\@M
+  \def\address##1##2{\begingroup
+    \par\addvspace\bigskipamountaspm\noindent
+     \@ifnotempty{##1}{(\ignorespaces##1\unskip) }%
+    {\itshape\small\ignorespaces##2}\par\endgroup}%
+  \def\curraddr##1##2{\begingroup
+    \@ifnotempty{##2}{\nobreak\indent{\itshape Current address}%
+      \@ifnotempty{##1}{, \ignorespaces##1\unskip}\/:\space
+      ##2\par\endgroup}}%
+  \def\email##1##2{\begingroup
+    \@ifnotempty{##2}{\nobreak\noindent{\itshape E-mail address}%
+      \@ifnotempty{##1}{, \ignorespaces##1\unskip}\/:\space
+      \ttfamily##2\par\endgroup}}%
+  \def\urladdr##1##2{\begingroup
+    \@ifnotempty{##2}{\nobreak\noindent{\itshape URL}%
+      \@ifnotempty{##1}{, \ignorespaces##1\unskip}\/:\space
+      \ttfamily##2\par\endgroup}}%
+  \addresses
+  \endgroup
+}
+\def\rcvdate#1{\def\@rcvdate{#1}}
+\let\@rcvdate\@empty
+\def\rvsdate#1{\def\@rvsdate{#1}}
+\let\@rvsdate\@empty
+\def\@setrcvdate{\upshape\rcvdatename\ \@rcvdate\@addpunct.}
+\def\@setrvsdate{\upshape\rvsdatename\ \@rvsdate\@addpunct.}
+\newcommand{\rcvdatename}{Received}
+\newcommand{\rvsdatename}{Revised}
+\renewcommand{\title}[2][]{\gdef\shorttitle{#1}\gdef\@title{%
+\addtolength{\baselineskip}{1pt}
+#2}}
+\edef\title{\@nx\@dblarg
+  \@xp\@nx\csname\string\title\endcsname}
+\def\subtitle#1{\def\@subtitle{#1}}
+\let\@subtitle=\@empty
+\def\maketitle{\par
+  \@topnum\z@
+  \ifx\@empty\shortauthors \let\shortauthors\shorttitle
+  \else \andify\shortauthors  \fi
+  \begingroup
+  \@maketitle
+  \toks@\@xp{\shortauthors}\@temptokena\@xp{{\itshape\shorttitle}}%
+  \edef\@tempa{\@nx\markboth{\the\toks@}{\the\@temptokena}}\@tempa
+  \endgroup
+ \thispagestyle{firstpage}% this sets first page specifications
+ \setcounter{page}{\thefirstpage}
+  \c@footnote\z@
+  \def\do##1{\let##1\relax}%
+  \do\maketitle \do\@maketitle \do\title \do\@xtitle \do\@title
+  \do\subtitle \do\@subtitle
+  \do\author \do\@xauthor \do\address \do\@xaddress
+  \do\email \do\@xemail \do\curraddr \do\@xcurraddr
+  \do\dedicatory \do\@dedicatory \do\thanks \do\thankses
+  \do\rcvdate \do\@rcvdate
+  \do\rvsdate \do\@rvsdate
+}% end of \maketitle
+\def\@maketitle{%
+  \normalfont\normalsize
+  \let\@makefnmark\relax  \let\@thefnmark\relax
+  \ifx\@empty\@rcvdate\else \@footnotetext{\@setrcvdate}\fi
+  \ifx\@empty\@rvsdate\else \@footnotetext{\@setrvsdate}\fi
+  \ifx\@empty\thankses\else \@footnotetext{%
+    \def\par{\let\par\@par}\@setthanks}\fi
+  \@mkboth{\@nx\shortauthors}{\@nx\shorttitle}%
+  \global\topskip36pt plus 4pt minus 2pt\relax
+  \global\advance\topskip\logodepth
+  \global\advance\topskip by -\headsep
+  \normalfont\Large
+  \newlength{\tmpex}
+  \settoheight{\tmpex}{X}
+  \global\advance\topskip\tmpex
+  \@settitle
+  \ifx\@empty\@subtitle
+  \else
+    \vtop{\centering{\normalsize\bfseries\@subtitle\@@par}%
+      \global\dimen@i\prevdepth}\prevdepth\dimen@i
+  \fi
+  \ifx\@empty\authors \else \@setauthors \fi
+  \ifx\@empty\@dedicatory
+  \else
+    \vtop{\centering{\normalsize\itshape\bfseries\@dedicatory\@@par}%
+      \global\dimen@i\prevdepth}\prevdepth\dimen@i
+  \fi
+  \@setabstract
+  \normalsize
+  \if@titlepage
+    \newpage
+  \else
+    \dimen@34\p@ \advance\dimen@-\baselineskip
+    \vskip\dimen@\relax
+  \fi
+} % end \@maketitle
+\def\@setauthors{%
+  \begingroup
+  \trivlist
+  \vskip14\p@
+  \centering
+  \normalsize
+  \bfseries
+  \item\relax
+  \andify\authors
+  \authors
+  \endtrivlist
+  \endgroup
+} % end \@setauthors
+\renewenvironment{abstract}{%
+  \ifx\maketitle\relax
+    \ClassWarning{\@classname}{Abstract should precede
+      \protect\maketitle\space in AMS documentclasses; reported}%
+  \fi
+  \global\setbox\abstractbox=\vtop \bgroup
+  \normalfont\small
+  \advance \hsize -\parindent
+  \advance \hsize -\parindent
+   \noindent{\bfseries\abstractname.}
+   \vspace{\smallskipamountaspm}\par
+}{%
+  \egroup
+  \ifx\@setabstract\relax \@setabstracta \fi
+}
+\def\@setabstracta{%
+  \ifvoid\abstractbox
+  \else
+    \skip@24\p@ \advance\skip@-\lastskip
+    \advance\skip@-\baselineskip \vskip\skip@
+  \moveright \parindent
+    \box\abstractbox
+  \vspace{-9pt}
+  \fi
+}
+\def\@sect#1#2#3#4#5#6[#7]#8{%
+  \edef\@toclevel{\ifnum#2=\@m 0\else\number#2\fi}%
+  \ifnum #2>\c@secnumdepth \let\@secnumber\@empty
+  \else \@xp\let\@xp\@secnumber\csname the#1\endcsname\fi
+ \ifnum #2>\c@secnumdepth
+   \let\@svsec\@empty
+ \else
+    \refstepcounter{#1}%
+    \edef\@svsec{\ifnum#2<\@m
+       \@ifundefined{#1name}{}{%
+         \ignorespaces\csname #1name\endcsname\space}\fi
+       \@nx\textup{%
+         \csname the#1\endcsname.}\enspace
+    }%
+  \fi
+  \@tempskipa #5\relax
+  \ifdim \@tempskipa>\z@ % then this is not a run-in section heading
+    \begingroup #6\relax
+    \@hangfrom{\hskip #3\relax\@svsec}{\interlinepenalty\@M
+    \hspace{.1em} #8\par}%
+    \endgroup
+    \ifnum#2>\@m \else \@tocwrite{#1}{#8}\fi
+  \else
+  \def\@svsechd{#6\hskip #3\@svsec
+    \@ifnotempty{#8}{\ignorespaces#8}%
+    \ifnum#2>\@m \else \@tocwrite{#1}{#8}\fi
+  }%
+  \fi
+  \global\@nobreaktrue
+  \@xsect{#5}}
+\def\section{\@startsection{section}{1}%
+  \z@{\bigskipamountaspm}{.7\linespacing}%
+  {\noindent\mathhexbox278\normalfont\bfseries}}
+\def\subsection{\@startsection{subsection}{2}%
+  \normalparindent{\medskipamountaspm}{\smallskipamount}%
+  {\normalfont\bfseries}}
+%
+%\renewcommand\thesection{\mathhexbox278\arabic{section}}
+%
+\renewenvironment{thebibliography}[1]{%
+\addvspace{27pt}
+\begin{center}\bfseries\refname\end{center}
+\vspace{4pt}
+  \normalfont\small\labelsep .5em\relax
+  \renewcommand\theenumiv{\arabic{enumiv}}\let\p@enumiv\@empty
+\newdimen\truelabelwidth
+\settowidth\truelabelwidth{#1}
+  \list{[\makebox[\truelabelwidth]{\theenumiv}]}{
+        \settowidth\labelwidth{\@biblabel{#1}}%
+        \leftmargin\labelwidth \advance\leftmargin\labelsep
+\addtolength{\leftmargin}{1em}
+\addtolength{\itemindent}{-1em}
+    \usecounter{enumiv}}%
+  \sloppy \clubpenalty\@M \widowpenalty\clubpenalty
+  \sfcode`\.=\@m
+}{%
+  \def\@noitemerr{\@latex@warning{Empty `thebibliography' environment}}%
+  \endlist
+}
+\def\footnoterule{\vskip-3.4\p@\hrule width 96\p@ \vskip 3\p@}
+\long\def\@footnotetext#1{\insert\footins{%
+  \normalfont\small
+  \interlinepenalty\interfootnotelinepenalty
+  \splittopskip\footnotesep \splitmaxdepth \dp\strutbox
+  \floatingpenalty\@MM \hsize\columnwidth
+  \@parboxrestore \parindent\normalparindent \sloppy
+  \edef\@currentlabel{\p@footnote\@thefnmark}%
+  \@makefntext{\rule\z@\footnotesep\ignorespaces#1\unskip\strut\par}}}
+\def\@captionheadfont{\upshape}
+\def\@captionfont{\small}
+\def\figurename{Fig.}
+\newlength{\captionwidtha}
+\setlength{\captionwidtha}{\textwidth}
+\addtolength{\captionwidtha}{-6pc}
+\def\hangcaption{\refstepcounter\@captype\@dblarg{%
+\@hangcaption\@captype}}
+\long\def\@hangcaption#1[#2]#3{%
+  \baselineskip 14.5\p@
+  \addcontentsline{\csname ext@#1\endcsname}{#1}%
+    {\protect\numberline{\csname the#1\endcsname}{\ignorespaces #2}}%
+  \par
+  \begingroup
+    \@parboxrestore
+    \setbox\@tempboxa\hbox{\csname fnum@#1\endcsname: #3}%
+    \ifdim \wd\@tempboxa > \captionwidtha
+      \begingroup
+        \setbox\@tempboxa\hbox{\csname fnum@#1\endcsname: }%
+        \advance \captionwidtha by -\wd\@tempboxa
+        \@makecaption{\csname fnum@#1\endcsname}%
+            {\ignorespaces{\protect\parbox[t]{%
+             \captionwidtha}{\leavevmode#3}}}%
+      \endgroup
+    \else
+      \begingroup
+        \@makecaption{\csname fnum@#1\endcsname}{\ignorespaces #3}%
+      \endgroup
+    \fi
+    \par\vspace{1.7ex}%
+  \endgroup}
+\let\caption\hangcaption
+\def\@thm#1#2#3{\normalfont
+  \trivlist
+  \edef\@restorelabelsep{\labelsep\the\labelsep}%
+  \normalfont\bfseries
+  \labelsep1em\relax
+  \normalfont
+  \let\thmheadnl\relax
+  \let\thm@indent\noindent % no indent
+  \let\thm@swap\@gobble
+  \thm@headfont{\bfseries}% heading font bold
+  \thm@headpunct{.}% add period after heading
+  \thm@preskip\topsep
+  \thm@postskip\thm@preskip
+  #1% style overrides
+  \@topsep \thm@preskip               % used by first \item
+  \@topsepadd \thm@postskip           % used by \@endparenv
+  \def\@tempa{#2}\ifx\@empty\@tempa
+    \def\@tempa{\@oparg{\@begintheorem{#3}{}}[]}%
+  \else
+    \refstepcounter{#2}%
+    \def\@tempa{\@oparg{\@begintheorem{#3}{\csname the#2\endcsname}}[]}%
+  \fi
+  \@tempa
+}
+\renewcommand{\qedsymbol}{\hbox{Q.E.D.}}
+\def\th@plain{%
+  \let\thm@indent\indent
+  \thm@headfont{\bfseries}% heading font bold face
+  \thm@notefont{\mdseries\upshape}%
+  \let\thmhead\thmhead@plain \let\swappedhead\swappedhead@plain
+  \thm@preskip.5\baselineskip\@plus.2\baselineskip
+                                    \@minus.2\baselineskip
+  \thm@postskip\thm@preskip
+  \itshape
+}
+\def\th@definition{%
+  \let\thm@indent\indent
+  \thm@headfont{\bfseries}% heading font bold face
+  \thm@notefont{\mdseries\upshape}%
+  \let\thmhead\thmhead@plain \let\swappedhead\swappedhead@plain
+  \thm@preskip.5\baselineskip\@plus.2\baselineskip
+                                    \@minus.2\baselineskip
+  \thm@postskip\thm@preskip
+  \upshape
+}
+\def\th@remark{%
+  \let\thm@indent\indent
+  \thm@headfont{\itshape}% heading font italic
+  \thm@notefont{\mdseries\upshape}%
+  \let\thmhead\thmhead@plain \let\swappedhead\swappedhead@plain
+  \thm@preskip.5\baselineskip\@plus.2\baselineskip
+                                    \@minus.2\baselineskip
+  \thm@postskip\thm@preskip
+  \upshape
+}
+\renewenvironment{proof}[1][\proofname]{\par \normalfont
+  \topsep6\p@\@plus6\p@ \trivlist \itemindent\normalparindent
+  \item[\hskip\labelsep\itshape
+    #1\@addpunct{.}\hspace{5pt}]\ignorespaces
+}{%
+  \qed\endtrivlist
+}
+\def\@cite#1#2{{%
+ \m@th\upshape\mdseries[{#1\if@tempswa, #2\fi}]}}
+\@ifundefined{cite }{%
+  \expandafter\let\csname cite \endcsname\cite
+  \edef\cite{\@nx\protect\@xp\@nx\csname cite \endcsname}%
+}{}
+%% for compatibility purpose only:
+\@ifundefined{thm@headfont}{%
+  \PackageWarning{aspmproc.sty}{Use the latest amsproc.cls}
+  \let\captionheadfont@\@captionheadfont
+  \let\captionfont@\@captionfont
+  \let\theoremindent\indent
+  \let\thm@headfont\theoremheadfont
+  \let\thm@headpunct\theoremheadpunct
+  \let\thm@preskip\theorempreskipamount
+  \let\thm@postskip\theorempostskipamount
+  \let\thm@notefont\theoremnotefont}{}
+%% end for compatibility purpose only.
+\endinput
+%%
+%% End of file `aspmproc.sty'.

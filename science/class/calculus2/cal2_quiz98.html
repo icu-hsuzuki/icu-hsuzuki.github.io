@@ -1,0 +1,128 @@
+<HTML>
+<HEAD>
+<TITLE>CALCULUSII QUIZ98</TITLE>
+</HEAD>
+<BODY BGCOLOR = "#C8F9D9">
+<A NAME = "top"></A>
+<DIV ALIGN = RIGHT><I>Last Update : December 22, 1998</I></DIV>
+<HR><H3>CALII 微分積分学II</H3>
+<H2>１９９８年度 QUIZ : </H2>
+	<UL>
+	<LI><A HREF = "#quiz1">Take-Home Quiz 1</A>
+	<LI><A HREF = "#quiz1_sol">Take-Home Quiz 1 : Solution</A>
+	</UL>
+
+<A NAME = "quiz1"></A>
+<HR>
+<DIV ALIGN = RIGHT><TABLE BORDER = 3  BGCOLOR = "#FFFFFF"><TR>
+<TD><A HREF = "#top">TOP</A></TD>
+<TD><A HREF = "index-j.html">CALII HOME</A></TD>
+<TD><A HREF = "../../index-j.html">HOME</A></TD>
+</TR>
+</TABLE></DIV>
+<H3>QUIZ 1 1998</H3>
+
+提出日：1998年12月18日 午後1時半 鈴木研究室
+<P>
+<OL TYPE = "I">
+<LI>f(x,y) を (x,y) が (0,0) とことなる時は、x<SUP>2</SUP>y/(x<SUP>2</SUP>+y<SUP>2</SUP>)、f(0,0) = 0 で定義された関数とする。
+<P>
+	<OL TYPE = "1">
+	<LI>f(x,y) は (0,0) で連続かどうか判定し、理由も述べよ。
+	<P>
+	<LI>f(x,y) は (0,0) で x に関して偏微分可能かどうか判定せよ。可能なら、f<SUB>x</SUB>(0,0) を求め、不可能ならそのことを示せ。
+	</OL>
+<P>
+<LI>g(x,y) を (x,y) が (0,0) とことなる時は、xy/(x<SUP>2</SUP>+y<SUP>2</SUP>)、g(0,0) = 0 で定義された関数とする。
+<P>
+	<OL TYPE = "1">
+	<LI>g(x,y) は (0,0) で連続かどうか判定し、理由も述べよ。
+	<P>
+	<LI>g(x,y) は (0,0) で x に関して偏微分可能かどうか判定せよ。可能なら、g<SUB>x</SUB>(0,0) を求め、不可能ならそのことを示せ。
+	<P>
+	<LI>g(x,y) は (0,0) で全微分可能か判定し、その理由も述べよ。
+	</OL>
+<P>
+</OL>
+
+<B>通信欄：</B> Cal II に期待することその他何でも。
+
+<A NAME = "quiz1_sol"></A>
+<HR>
+<DIV ALIGN = RIGHT><TABLE BORDER = 3  BGCOLOR = "#FFFFFF"><TR>
+<TD><A HREF = "#top">TOP</A></TD>
+<TD><A HREF = "index-j.html">CALII HOME</A></TD>
+<TD><A HREF = "../../index-j.html">HOME</A></TD>
+</TR>
+</TABLE></DIV>
+
+<H3>QUIZ 1 1998 : Solution</H3>
+
+<P>
+<OL TYPE = "I">
+<LI>f(x,y) を (x,y) が (0,0) とことなる時は、x<SUP>2</SUP>y/(x<SUP>2</SUP>+y<SUP>2</SUP>)、f(0,0) = 0 で定義された関数とする。
+<P>
+	<OL TYPE = "1">
+	<LI>f(x,y) は (0,0) で連続かどうか判定し、理由も述べよ。<P>
+
+	<B>解答：</B>
+	x = r cos t, y = r sin t とおく。すると、<BR>
+	lim<SUB>(x,y)→(0,0)</SUB>|f(x,y)| = lim<SUB>r→0</SUB>(r<SUP>3</SUP> |cos<SUP>2</SUP>t sin t|)/r<SUP>2</SUP> = lim<SUB>r→0</SUB> r |cos<SUP>2</SUP>t sin t|) = 0 = f(0,0)<BR>
+だから、f(x,y) は (0,0) で連続である。<BR>
+|cos<SUP>2</SUP>t sin t| は１以下であることに注意。y = mt とおいて調べただけでは不十分です。<BR>
+原点を通る直線上では、一定の値だが、曲線を通って (0,0) に近付く時にはある一定の値にならないような例も作れます。h(x,y) = x<SUP>2</SUP>y<SUP>4</SUP>/(x<SUP>2</SUP>+y<SUP>4</SUP>) などを考えてみて下さい。
+	<P>
+	<LI>f(x,y) は (0,0) で x に関して偏微分可能かどうか判定せよ。可能なら、f<SUB>x</SUB>(0,0) を求め、不可能ならそのことを示せ。<P>
+
+	<B>解答：</B>
+	lim<SUB>h→0</SUB>(f(h,0)-f(0,0))/h = lim<SUB>h→0</SUB>0 = 0<BR>
+だから f<SUB>x</SUB>(0,0) = 0 である。最初から y = 0 としているところに注意して下さい。
+	</OL>
+<P>
+<LI>g(x,y) を (x,y) が (0,0) とことなる時は、xy/(x<SUP>2</SUP>+y<SUP>2</SUP>)、g(0,0) = 0 で定義された関数とする。
+<P>
+	<OL TYPE = "1">
+	<LI>g(x,y) は (0,0) で連続かどうか判定し、理由も述べよ。<P>
+
+	<B>解答：</B>
+	x = y = t とする。もし、g(x,y) が (0,0) で連続ならば、lim<SUB>(x,y)→(0,0)</SUB>g(x,y) が存在して、g(0,0) = 0 と等しくなければならない。ところが、<BR>
+	 0 = lim<SUB>(x,y)→(0,0)</SUB>g(x,y) = lim<SUB>t→0</SUB>g(t,t) = lim<SUB>t→0</SUB> 1/2 = 1/2<BR>
+	これは、矛盾である。従って、連続ではない。
+	<P>
+	<LI>g(x,y) は (0,0) で x に関して偏微分可能かどうか判定せよ。可能なら、g<SUB>x</SUB>(0,0) を求め、不可能ならそのことを示せ。<P>
+
+	<B>解答：</B>
+	lim<SUB>h→0</SUB>(g(h,0)-g(0,0))/h = lim<SUB>h→0</SUB>0 = 0<BR>
+だから g<SUB>x</SUB>(0,0) = 0 である。すなわち、偏微分可能です。
+	<P>
+	<LI>g(x,y) は (0,0) で全微分可能か判定し、その理由も述べよ。<P>
+
+	<B>解答：</B>
+	全微分可能であれば (0,0) で連続でなくてはいけないが、１より連続ではないので、全微分可能でもない。<BR>
+	判定条件として、g<SUB>x</SUB>(x,y) および g<SUB>y</SUB>(x,y) が (0,0) の近くで連続であれば良いが、これは、連続ではありません。また、これらが連続でないことが示されたからといって 全微分可能ではないとは結論できません。このことにも注意して下さい。
+	</OL>
+<P>
+</OL>
+
+
+<HR>
+<DIV ALIGN = RIGHT><TABLE BORDER = 3  BGCOLOR = "#FFFFFF"><TR>
+<TD><A HREF = "#top">TOP</A></TD>
+<TD><A HREF = "index-j.html">CALII HOME</A></TD>
+<TD><A HREF = "../../index-j.html">HOME</A></TD>
+</TR>
+</TABLE></DIV>
+</BODY>
+</HTML>
+
+
+
+
+
+
+
+
+
+
+
+

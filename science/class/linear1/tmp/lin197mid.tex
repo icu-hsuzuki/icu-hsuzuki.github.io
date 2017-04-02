@@ -1,0 +1,308 @@
+%Linear Algebra I 97 Autumn Take-Home Midterm Test Solution
+%original : Oct. 23, 24, 1997
+%% -- Scheduled Oct 17, 1997 -- Due Oct. 20, 1997 by 4:10pm
+
+\documentstyle[11pt]{jarticle}
+%\documentstyle{jarticle}
+%A4 Size Setting
+\topmargin = -1cm
+\oddsidemargin = -1cm \evensidemargin = 0cm
+\textheight = 24cm \textwidth = 17cm % default 16cm
+%A4 size Setting End
+
+\newcommand{\note}{\vspace{2ex}\noindent{\gt 注\quad}}
+\newcommand{\proof}{{\gt 証明\quad}}
+\newcommand{\sol}{{\gt 解．\quad}}
+\newcommand{\qed}{\hfill\hbox{\rule{6pt}{6pt}}}
+\newcommand{\ba}{\mbox{\boldmath $a$}}
+\newcommand{\bb}{\mbox{\boldmath $b$}}
+\newcommand{\bd}{\mbox{\boldmath $d$}}
+\newcommand{\be}{\mbox{\boldmath $e$}}
+\newcommand{\bu}{\mbox{\boldmath $u$}}
+\newcommand{\bv}{\mbox{\boldmath $v$}}
+\newcommand{\bw}{\mbox{\boldmath $w$}}
+\newcommand{\bx}{\mbox{\boldmath $x$}}
+\newcommand{\by}{\mbox{\boldmath $y$}}
+\newcommand{\bo}{\mbox{\boldmath $0$}}
+
+\pagestyle{empty}
+
+\begin{document}
+\begin{center}
+{\bf\Large Linear Algebra I Take-Home Midterm 1997\\
+and Solution}
+\end{center}
+
+
+\begin{enumerate}
+\item 次の連立一次方程式について考える。
+$$\left\{\begin{array}{ccc}
+x_1 + x_2 + 2x_3 + x_4 & = & 2\\
+x_2 -2x_4 & = & 1\\
+-2x_1 + x_2 - 3x_3 -6x_4 & = & 1\\
+2x_1 + x_2 + 3x_3 + 2x_4 & = & 1
+\end{array}\right.$$
+\begin{enumerate}
+\item 行列の方程式 $A\bx = \bb$ で表すとき、それぞれ、$A, \bx, \bb$ は何か。\\
+\sol 
+$$A = \left[\begin{array}{cccc}
+1 & 1 & 2 & 1\\
+0 & 1 & 0 & -2 \\
+-2 & 1 & -3 & -6 \\
+2 & 1 & 3 & 2 
+\end{array}\right], \;
+\bx = \left[\begin{array}{c}
+x_1\\ x_2\\ x_3\\ x_4\end{array}\right],\;
+\bb = \left[\begin{array}{c}
+2\\ 1\\ 1\\ 1\end{array}\right]$$
+
+\item この方程式の拡大係数行列を求めよ。\\
+\sol
+$$\left[\begin{array}{ccccc}
+1 & 1 & 2 & 1 & 2\\
+0 & 1 & 0 & -2 & 1\\
+-2 & 1 & -3 & -6 & 1\\
+2 & 1 & 3 & 2 & 1
+\end{array}\right]$$
+\end{enumerate}
+
+\newpage
+\item 次の行列は、$x_1, x_2, x_3, x_4$ を変数とする連立一次方程式の拡大係数行列であるとする。
+$$B = \left[\begin{array}{ccccc}
+1 & 1 & 2 & 1 & b_1\\
+0 & 1 & 0 & -2 & b_2\\
+-2 & 1 & -3 & -6 & b_3\\
+2 & 1 & 3 & 2 & b_4
+\end{array}\right].$$
+\begin{enumerate}
+\item $B$ に行の基本変形を何回か施し、既約ガウス行列にせよ。\\
+\sol
+\begin{eqnarray*}
+\left[\begin{array}{ccccc}
+1 & 1 & 2 & 1 & b_1\\
+0 & 1 & 0 & -2 & b_2\\
+-2 & 1 & -3 & -6 & b_3\\
+2 & 1 & 3 & 2 & b_4
+\end{array}\right] & \to & 
+\left[\begin{array}{ccccc}
+1 & 1 & 2 & 1 & b_1\\
+0 & 1 & 0 & -2 & b_2\\
+0 & 3 & 1 & -4 & 2b_1+b_3\\
+0 & -1 & -1 & 0 & -2b_1+b_4
+\end{array}\right]\\
+\to \; \left[\begin{array}{ccccc}
+1 & 0 & 2 & 3 & b_1-b_2\\
+0 & 1 & 0 & -2 & b_2\\
+0 & 0 & 1 & 2 & 2b_1-3b_2+b_3\\
+0 & 0 & -1 & -2 & -2b_1+b_2 +b_4
+\end{array}\right] 
+& \to &
+\left[\begin{array}{ccccc}
+1 & 0 & 0 & -1 & -3b_1+ 5b_2 - 2b_3\\
+0 & 1 & 0 & -2 & b_2\\
+0 & 0 & 1 & 2 & 2b_1-3b_2 +b_3\\
+0 & 0 & 0 & 0 & -2b_2+b_3 +b_4
+\end{array}\right] 
+\end{eqnarray*}
+さて、この答えは一意的に決まるでしょうか。決まらないとすると、どの程度自由度があるでしょうか。
+
+\item $B$ を拡大係数行列とする、連立一次方程式が解を持つときの条件を $b_1, b_2, b_3, b_4$ を用いて表せ。\\
+\sol
+$-2b_2 + b_3 + b_4 = 0$ 又は、$2b_2 = b_3 + b_4$。$b_1$ は、任意。
+\end{enumerate}
+
+\newpage
+\item $x_1, x_2, x_3, x_4, x_5, x_6$ を変数とする連立一次方程式の拡大行列が次のような既約ガウス行列に変形されたとする。このとき、解を求めよ。
+$$\left[\begin{array}{ccccccc}
+0 & 1 & 2 & 0 & 0 & -1 & 3\\
+0 & 0 & 0 & 1 & 0 & 5 & 1\\
+0 & 0 & 0 & 0 & 1 & -2 & -4\\
+0 & 0 & 0 & 0 & 0 & 0 & 0
+\end{array}\right]$$
+\sol
+二通りの方法で解を記す。
+$$\left\{\begin{array}{ccl}
+x_1 & = & t_1\\ x_2 & = &-2t_2 + t_3 + 3\\
+x_3 & = & t_2 \\ x_4 & = & -5t_3 + 1\\
+x_5 & = & 2t_3 - 4\\ x_6 & = &t_3
+\end{array}\right.,$$
+$$\left[\begin{array}{c}
+x_1 \\ x_2 \\ x_3 \\ x_4 \\ x_5 \\ x_6\end{array}\right] = 
+\left[\begin{array}{c}
+0 \\ 3 \\ 0 \\ 1 \\ -4 \\ 0\end{array}\right] + 
+t_1\cdot
+\left[\begin{array}{c}
+1 \\ 0 \\ 0 \\ 0 \\ 0 \\0\end{array}\right] + 
+t_2\cdot
+\left[\begin{array}{c}
+0 \\ -2 \\ 1 \\ 0 \\ 0 \\ 0\end{array}\right] +
+t_3\cdot
+\left[\begin{array}{c}
+0 \\ 1 \\ 0 \\ -5 \\ 2 \\ 1\end{array}\right].$$
+$x_1$ は、$0$ ではありません。自由に取れます。
+
+\newpage
+\item $C$, $\by$, $\bd$ を以下のようにする。
+$$C = \left[\begin{array}{cccc} 7 & 0 & 3 & 1\\
+3 & 1 & 1 & 1 \\ 2 & 0 & 1 & 0 \\ 1 & 7 & 1 & 1 \end{array}\right],
+\;\by = \left[\begin{array}{c} y_1 \\ y_2 \\ y_3 \\ y_4 \end{array}\right],
+\;\bd = \left[\begin{array}{c} d_1 \\ d_2 \\ d_3 \\ d_4 \end{array}\right].$$
+\begin{enumerate}
+\item $C$ の逆行列を求めよ。\\
+\sol
+{\small \begin{eqnarray*}
+\left[\begin{array}{cccc|cccc}
+7 & 0 & 3 & 1 & 1 & 0 & 0 & 0 \\
+3 & 1 & 1 & 1 & 0 & 1 & 0 & 0 \\
+2 & 0 & 1 & 0 & 0 & 0 & 1 & 0 \\
+1 & 7 & 1 & 1 & 0 & 0 & 0 & 1\end{array}\right] & \to &   
+\left[\begin{array}{cccc|cccc}
+7 & 0 & 3 & 1 & 1 & 0 & 0 & 0 \\
+1 & 1 & 0 & 1 & 0 & 1 & -1 & 0 \\
+2 & 0 & 1 & 0 & 0 & 0 & 1 & 0 \\
+1 & 7 & 1 & 1 & 0 & 0 & 0 & 1 
+\end{array}\right] \to \\
+\left[\begin{array}{cccc|cccc}
+0 & -7 & 3 &-6 & 1 & -7 & 7 & 0 \\
+1 & 1 & 0 & 1 & 0 & 1 & -1 & 0 \\
+0 & -2 & 1 & -2 & 0 & -2 & 3 & 0 \\
+0 & 6 & 1 & 0 & 0 & -1 & 1 & 1 \end{array}\right] & \to &
+\left[\begin{array}{cccc|cccc}
+0 & -1 & 4 & -6 & 1 & -8 & 8 & 1 \\
+1 & 1 & 0 & 1 & 0 & 1 & -1 & 0 \\
+0 & -2 & 1 & -2 & 0 & -2 & 3 & 0 \\
+0 & 6 & 1 & 0 & 0 & -1 & 1 & 1
+\end{array}\right] \; \to \\ 
+\left[\begin{array}{cccc|cccc}
+0 & -1 & 4 & -6 & 1 & -8 & 8 & 1 \\
+1 & 0 & 4 &-5 & 1 & -7 & 7 & 1 \\
+0 & 0 & -7 & 10 & -2 & 14 & -13 & -2 \\
+0 & 0 & 25 & -36 & 6 & -49 & 49 & 7 \end{array}\right] &\to &
+\left[\begin{array}{cccc|cccc}
+0 & 1 & -4 & 6 & -1 & 8 & -8 & -1 \\
+1 & 0 & 4 &-5 & 1 & -7 & 7 & 1 \\
+0 & 0 & -7 & 10 & -2 & 14 & -13 & -2 \\
+0 & 0 & 50 & -72 & 12 & -98 & 98 & 14
+\end{array}\right] \;\to \\ 
+\left[\begin{array}{cccc|cccc}
+1 & 0 & 4 &-5 & 1 & -7 & 7 & 1 \\
+0 & 1 & -4 & 6 & -1 & 8 & -8 & -1 \\
+0 & 0 & -7 & 10 & -2 & 14 & -13 & -2 \\
+0 & 0 & 1 & -2 & -2 & 0 & 7 & 0 \end{array}\right] &  \to &
+\left[\begin{array}{cccc|cccc}
+1 & 0 & 0 &3 & 9 & -7 & -21 & 1 \\
+0 & 1 & 0 & -2 & -9 & 8 & 20 & -1 \\
+0 & 0 & 0 & -4 & -16 & 14 & 36 & -2 \\
+0 & 0 & 1 & -2 & -2 & 0 & 7 & 0 
+\end{array}\right]\;\to \\ 
+\left[\begin{array}{cccc|cccc}
+1 & 0 & 0 &3 & 9 & -7 & -21 & 1 \\
+0 & 1 & 0 & -2 & -9 & 8 & 20 & -1 \\
+0 & 0 & 1 & -2 & -2 & 0 & 7 & 0 \\
+0 & 0 & 0 & 1 & 4 & -7/2 & -9 & 1/2 \end{array}\right] &\to &
+\left[\begin{array}{cccc|cccc}
+1 & 0 & 0 &0 & -3 & 7/2 & 6 & -1/2 \\
+0 & 1 & 0 & 0& -1 & 1 & 2 & 0 \\
+0 & 0 & 1 & 0 & 6 & -7 & -11 & 1 \\
+0 & 0 & 0 & 1 & 4 & -7/2 & -9 & 1/2 
+\end{array}\right]  
+\end{eqnarray*}
+
+$$C^{-1} = \left [\begin {array}{cccc} -3&7/2&6&-1/2\\-1&1&2
+&0\\6&-7&-11&1\\4&-7/2&-9&1/2
+\end {array}\right ].$$
+}%end of smallfonts
+検算をすれば正しいかどうか確認できますよね。Take-Home は時間があるのですから、計算間違いは避けましょう。
+
+\item $d_1 = 1, d_2 = -2, d_3 = 3, d_4 = -4$ であるとき、$y_1, y_2, y_3, y_4$ を求めよ。\\
+\sol 
+$C\by = \bd$ だから、
+{\small
+$$\by = C^{-1}\bd = \left [\begin {array}{cccc} -3&7/2&6&-1/2\\-1&1&2
+&0\\6&-7&-11&1\\4&-7/2&-9&1/2
+\end {array}\right ]\left [\begin {array}{c} 1 \\ -2 \\ 3 \\ -4 \end{array}\right] = 
+\left [\begin {array}{c} 10\\3
+\\-17\\-18\end {array}\right ]$$
+}%end of smallfonts
+
+\item 行列で表した方程式 $C\by = \bd$ には、$d_1, d_2, d_3, d_4$ が何であってもただ一組の解があることを示せ。（すなわち、この方程式を満たす $\by$ は、常にあり、かつ、ただ一つに決まることを示せ。）\\
+$C$ は、上で見たように可逆行列だったから、$\by = C^{-1}\bd$ と置けば、
+$$C\by = C(C^{-1}\bd) = (CC^{-1})\bd = I\bd = \bd$$
+となり、$C\by = \bd$ を満たす。また、$\by$ が、$C\by = \bd$ を満たすとすると、両辺に左から、$C^{-1}$ をかけることにより、
+$$C^{-1}\bd = C^{-1}(C\by) = (C^{-1}C)\by = I\by = \by$$
+となるから、$C^{-1}\bd$ は、ただ一つの解である。
+\end{enumerate}
+
+\newpage
+\item 以下の連立一次方程式について考える。ただし、$m<n$ であると仮定する。
+$$\left\{\begin{array}{ccc}
+a_{11}x_1 + a_{12}x_2 + \cdots + a_{1n}x_n & = & b_1\\
+a_{21}x_1 + a_{22}x_2 + \cdots + a_{2n}x_n & = & b_2\\
+\multicolumn{3}{c}{\cdots\cdots\cdots} \\
+a_{m1}x_1 + a_{m2}x_2 + \cdots + a_{mn}x_n & = & b_m
+\end{array}\right.$$
+\begin{enumerate}
+\item 連立一次同次方程式、すなわち、$b_1 = b_2 = \cdots = b_m = 0$ とする。すると、この方程式は、無限個解を持つことを説明せよ。\\
+\sol
+拡大係数行列に行に関する基本変形を施して、既約ガウス行列にする。同次であるので、$x_1 = x_2 = \cdots = x_n = 0$ となる解はいつでも存在する。また、$m<n$ だから、先頭の 1 が対応していない列が必ずある。ここで、階数を $r$ とし、$l = 1,\ldots, r$ に対して、$l$ 行目の先頭の 1 が $i_l$ 列目であるとするとし、
+$$\{i_1,i_2,\ldots,i_r,j_1,j_2,\ldots,j_{n-r}\} = \{1,2,\ldots,n\}$$
+とする。すると、この方程式は、
+$$\left\{\begin{array}{cccccccc}
+x_{i_1} & & & & + & \sum_{k=1}^{n-r}c_{1k}x_{j_k} & = & 0\\
+ & x_{i_2} & & & + & \sum_{k=1}^{n-r}c_{2k}x_{j_k} & = & 0\\
+  & & \ddots & &  & \multicolumn{3}{c}{\vdots} \\
+  & & & x_{i_r} & + & \sum_{k=1}^{n-r}c_{rk}x_{j_k} & = & 0
+\end{array}\right.$$
+と書けるから、$x_{j_1},\cdots, x_{j_{n-r}}$ は、任意の値を取ることができる。
+今の条件は、$r\leq m$ より、$n-r \geq n-m > 0$ である。
+
+教科書の定理を引用した場合も正解としました。ただ、教科書は、殆ど証明がないので、自分で理由が分かるようにしておいて下さい。
+
+\item 上のような方程式で解が一つもないようなものもあることを具体的な例を示して示せ。\\
+\sol 次のような方程式 $m = 2<3 = n$ を考えれば良い。
+$$\left\{\begin{array}{ccc}
+x_1 + x_2 + x_3 & = & 0\\
+x_1 + x_2 + x_3 & = & 1
+\end{array}\right.$$
+\end{enumerate}
+\end{enumerate}
+
+\newpage
+%\medskip
+\begin{center}{\gt ちょっと難しい? ボーナス問題}\end{center}
+
+\begin{itemize}
+\item[(A)]  上の 問題 5 の様な方程式 （すなわち、$m<n$ で方程式の数の方が、変数の数より少ない方程式）は、解が一つもないか、又は、無限個あることを説明せよ。\\
+\sol
+係数行列を $A$ とする。解が一つあったとする。それを、ベクトル表示で $\bx$ とする。さらに、$\by$ を $A\by = \bo$ を満たすベクトルとすると、$\by$ は、同次方程式の解である。
+$$A(\bx + \by) = A\bx + A\by = A\bx + \bo = A\bx = \bb$$
+だから、$\bx + \by$ もまた、解である。$\by$ の取り方は、無限個あるから、解も無限個ある。
+
+\item[(B)]  行列 $P = [p_{r,s}]$ に対して、$P^t = [p_{s,r}]$ で転置行列を表すものとする。
+\begin{enumerate}
+\item $A = [a_{i,j}]$、$B = [b_{k,l}]$ を共に $n$ 次正方行列とする。このとき、$(AB)^t = B^tA^t$ が成り立つことを示せ。\\
+\sol
+行列 $M$ の $(i,j)$ 成分を $M_{i,j}$ とすると、
+$$((AB)^t)_{i,j} = (AB)_{j,i} = \sum_{k=1}^n a_{j,k}b_{k,i} = 
+\sum_{k=1}^n b_{k,i}a_{j,k} = \sum_{k=1}^n (B^t)_{i,k}(A^t)_{k,j} = (B^tA^t)_{i,j}.$$
+
+\item $P(i,j) = I - E_{i,i} - E_{j,j} + E_{i,j} + E_{j,i}$ $1\leq i\neq j\leq n$ を $n$ 次の基本行列の一つのタイプとする。$P$ を $P(i,j)$、$1\leq i\neq j\leq n$  のいくつかの積とする。このとき、$P^t = P^{-1}$ が成立する事を証明せよ。($P$ は、例えば、$n = 4$ として、$P(1,2)P(2,3)P(3,4)P(1,3)$ と言うようなものである。）\\
+\sol
+$P(i,j)$ を左からかけることは、第 $i$ 行と、第 $j$ 行を入れ替えるだけだから特に、$P(i,j)^{-1} = P(i,j) = P(i,j)^{t}$ である。$P = P_mP_{m-1}\cdots P_2P_1$、$P_k = P(i_k,j_k)$ とすると、各 $k$ について、$P^t_{k} = P^{-1}_k$ だから、
+\begin{eqnarray*}
+P^t & = & (P_mP_{m-1}\cdots P_2P_1)^t\; = \; P_1^tP_2^t\cdots P_{m-1}^tP_m^t\\
+& = & P_1^{-1}P_2^{-1}\cdots P_{m-1}^{-1}P_m^{-1}\; =  \;(P_mP_{m-1}\cdots P_2P_1)^{-1}\\
+& = & P^{-1}
+\end{eqnarray*}
+
+\item 前問と同じように、$P$ を $P(i,j)$、$1\leq i\neq j\leq n$  のいくつかの積とする。$P$ は、常に成分は、1 又は、0 でかつ、1 は、各行各列にただ一つだけであることを示せ。\\
+\sol
+$P = P_mP_{m-1}\cdots P_2P_1$ を $I$ に順に、$P_i$ をかけていくと考える。$I$ の成分は、明らかに、1 又は、0 でかつ、1 は、各行各列にただ一つだけである。$P_k = P(i_k,j_k)$ は、第 $i$ 行と、第 $j$ 行を入れ替えるだけだから、$P_k$ をかけても上の性質は保たれる。
+
+\end{enumerate}
+\end{itemize}
+
+\begin{flushright}
+鈴木寛@数学教室
+\end{flushright}
+\end{document}

@@ -1,0 +1,2013 @@
+%original : Linear Algebra I Text : started September 10, 1997
+%original : 「連立一次方程式と行列」Sept. 10, 11, 1997
+%original : 「行列の階数と、連立一次同次方程式」Sept. 17, 1997
+%original : 「行列演算」Sept. 24, 1997
+%original : 「逆行列」Sept. 30, Oct. 1, 1997
+%original : 「連立一次方程式と可逆性」Oct. 2, 1997
+%original : 「行列式」Oct. 10, 11, 12, 1997
+%original : 「行列式の計算」Oct. 23, 1997
+%original : 「行列式の性質」Oct. 29,  30, 1997
+%original : 「Cramer の公式」Nov. 1, 2, 3, 4, 5, 1997
+%original : 「復習」Nov. 5, 6, 7, 8, 9,1997
+%%imported from Calculus I-text.tex
+%%revised Sept.18, 1997 after the 2nd class
+%%revised Sept. 25, 1997 after the 3rd class
+%%revised Oct. 2, 4, 1997 after the 4th class
+%%revised Oct. 9, 1997 after the 5th class
+%%revised Sec 1, 2, Nov. 1, 6, 1997
+
+\documentstyle[12pt]{jarticle}
+%A4 Size Setting
+\topmargin = -0.5cm
+\oddsidemargin = 0cm \evensidemargin = 0cm
+\textheight = 23cm \textwidth = 15cm % default 16cm
+%A4 size Setting End
+
+\title{LINEAR ALGEBRA I}
+      
+\author{Hiroshi SUZUKI\thanks{E-mail:hsuzuki@icu.ac.jp}\\ 
+        Department of Mathematics \\ 
+        International Christian University}
+
+\renewcommand{\thepage}{%
+        \arabic{section}--\arabic{page}}
+\newcommand{\mysection}[1]{%
+        \section{#1}\setcounter{page}{1}}
+
+\newtheorem{thm}{定理}[section]
+\newtheorem{prop}[thm]{命題}
+\newtheorem{lemma}[thm]{補題}
+\newtheorem{cor}[thm]{系}
+\newtheorem{exercise}{練習問題}[section]
+\newtheorem{example}{例}[section]
+\newtheorem{problem}{問題}[section]
+\newtheorem{defin}{定義}[section]
+\newenvironment{definition}{\begin{defin} \rm}{\end{defin}}
+\newenvironment{ex}{\begin{exercise} \rm}{\end{exercise}}
+\newenvironment{eg}{\begin{example} \rm}{\end{example}}
+\newenvironment{prob}{\begin{problem} \rm}{\end{problem}}
+\newcommand{\remarks}{\vspace{2ex}\noindent{\bf Remarks.\quad}}
+\newcommand{\note}{\vspace{2ex}\noindent{\gt 注\quad}}
+\newcommand{\proof}{{\gt 証明\quad}}
+\newcommand{\qed}{\hfill\hbox{\rule{6pt}{6pt}}}
+\newcommand{\ba}{\mbox{\boldmath $a$}}
+\newcommand{\bb}{\mbox{\boldmath $b$}}
+\newcommand{\be}{\mbox{\boldmath $e$}}
+\newcommand{\bu}{\mbox{\boldmath $u$}}
+\newcommand{\bv}{\mbox{\boldmath $v$}}
+\newcommand{\bw}{\mbox{\boldmath $w$}}
+\newcommand{\bx}{\mbox{\boldmath $x$}}
+\newcommand{\by}{\mbox{\boldmath $y$}}
+\newcommand{\bo}{\mbox{\boldmath $0$}}
+\newcommand{\bZ}{\mbox{\boldmath $Z$}}
+\newcommand{\bR}{\mbox{\boldmath $R$}}
+\newcommand{\bC}{\mbox{\boldmath $C$}}
+\newcommand{\bQ}{\mbox{\boldmath $Q$}}
+\newcommand{\rank}{\mbox{{\rm rank }}}
+\newcommand{\sgn}{\mbox{{\rm sgn}}}
+
+\begin{document}
+\setcounter{page}{0}
+\maketitle
+\newpage
+\mysection{連立一次方程式と行列}
+次の連立方程式を解いてみよう。
+
+$$\left\{\begin{array}{rrrrrrr}
+3x & + & y  & + & 2z & = & 4\\
+x & + & y & + & z & = & 1\\
+11x & - & y & + & 5z & = & 17
+\end{array}\right. \qquad\qquad 
+\left[\begin{array}{rrrr}
+3 & 1 & 2 & 4\\
+1 & 1 & 1 &  1\\
+11 & 1 & 5 & 17
+\end{array}\right]$$
+\begin{itemize}
+\item １式と、２式を交換する。
+$$\left\{\begin{array}{rrrrrrr}
+x & + & y & + & z & = & 1\\
+3x & + & y  & + & 2z & = & 4\\
+11x & - & y & + & 5z & = & 17
+\end{array}\right. \qquad\qquad  
+\left[\begin{array}{rrrr}
+1 & 1 & 1 &  1\\
+3 & 1 & 2 & 4\\
+11 & 1 & 5 & 17
+\end{array}\right]$$
+\item １式の３倍を２式から、１式の１１倍を３式から引く。
+$$\left\{\begin{array}{rrrrrrr}
+x & + & y & + & z & = & 1\\
+ & & -2y  & - & z & = & 1\\
+ &  & -12y & - & 6z & = & 6
+\end{array}\right. \qquad\qquad  
+\left[\begin{array}{rrrr}
+1 & 1 & 1 &  1\\
+0 & -2 & -1 & 1\\
+0 & -12 & -6 & 6
+\end{array}\right]$$
+\item ２式の６倍を３式から引く。
+$$\left\{\begin{array}{rrrrrrr}
+x & + & y & + & z & = & 1\\
+ & & -2y  & - & z & = & 1\\
+ &  &  &  & 0 & = & 0
+\end{array}\right. \qquad\qquad  
+\left[\begin{array}{rrrr}
+1 & 1 & 1 &  1\\
+0 & -2 & -1 & 1\\
+0 & 0 & 0 & 0
+\end{array}\right]$$
+これは、解が一つに決まらない形をしている。例えば、$z$ を決めると、$y$ は決定され、それを用いると、$x$ も決まるが、最初の $z$ は、何でも良いからである。このような場合は、パラメター（媒介変数 (parameter) ）を使って解を表示する。そのためもう少し変形してみよう。
+\item ２式を -２で割る。
+$$\left\{\begin{array}{rrrrrrr}
+x & + & y & + & z & = & 1\\
+ & & y  & + & \frac12z & = & -\frac12
+\end{array}\right. \qquad\qquad  
+\left[\begin{array}{rrrr}
+1 & 1 & 1 &  1\\
+0 & 1 & \frac12 & -\frac12\\
+0 & 0 & 0 & 0
+\end{array}\right]$$
+\item ２式を１式から引く。
+$$\left\{\begin{array}{rrrrrrr}
+x & &  & + & \frac12z & = & \frac32\\
+ & & y  & + & \frac12z & = & -\frac12
+\end{array}\right. \qquad\qquad  
+\left[\begin{array}{rrrr}
+1 & 0 & \frac12 &  \frac32\\
+0 & 1 & \frac12 & -\frac12\\
+0 & 0 & 0 & 0
+\end{array}\right]$$
+\item これは、$z = t$ として、解をパラメターを使って表すと以下のようになる。
+$$\left\{\begin{array}{rcl}
+x & = & -\frac12t + \frac32\\
+y & = & -\frac12t - \frac12\\
+z & = & t
+\end{array}\right. \qquad\qquad  
+\left[\begin{array}{r}
+x \\ y \\ z 
+\end{array}\right] =
+t\cdot \left[\begin{array}{r}
+-\frac12 \\ -\frac12 \\ 1
+\end{array}\right]  + 
+\left[\begin{array}{r}
+\frac32 \\ -\frac12 \\ 0 
+\end{array}\right] $$
+\end{itemize}
+
+\medskip
+$n$ 変数の１次方程式 $m$ 個からなる連立一次方程式は、
+$$\left\{\begin{array}{ccc}
+a_{11}x_1 + a_{12}x_2 + \cdots + a_{1n}x_n & = & b_1\\
+a_{21}x_1 + a_{22}x_2 + \cdots + a_{2n}x_n & = & b_2\\
+\multicolumn{3}{c}{\cdots\cdots\cdots} \\
+a_{m1}x_1 + a_{m2}x_2 + \cdots + a_{mn}x_n & = & b_m
+\end{array}\right.$$
+の形に表すことができる。ここで、$a_{ij}$、$b_k$  は定数。係数を表すのには、$a_{ij}$ のような２重添字 (double index) を用いる。上のように変形して解を求めるときは、$x,y,z$ や、$x_1, x_2, \ldots, x_n$ などの変数の係数のみが変化するから、他の部分を省略し、長方形（矩形）に書いたものを考える。これを、連立一次方程式の{\gt 拡大係数行列}という。実際、この係数の変化のみを拡大係数行列を使って書いたものを上の変形の右に並べて書いてみた。上の一般の連立一次方程式の場合は、以下のようになる。
+$$\left[\begin{array}{ccccc}
+a_{11} & a_{12} & \cdots & a_{1n} & b_1\\
+a_{21} & a_{22} & \cdots & a_{2n} & b_2\\
+\vdots & \vdots &            & \vdots & \vdots\\
+a_{m1} & a_{m2} & \cdots & a_{mn} & b_m
+\end{array}
+\right]$$
+また、$b_1, b_2, \cdots, b_m$ の部分をのぞいたものを「係数行列」という。
+$$\left[\begin{array}{cccc}
+a_{11} & a_{12} & \cdots & a_{1n}\\
+a_{21} & a_{22} & \cdots & a_{2n} \\
+\multicolumn{4}{c}{\cdots\cdots\cdots}\\
+a_{m1} & a_{m2} & \cdots & a_{mn}
+\end{array}
+\right]$$
+
+以下の二つの連立一次方程式の拡大係数行列を書き上に行った方法で解いてみよう。よくイメージがわかないときは、方程式の変形をし、それと並べて、行列の変形をしてみよう。
+
+$$\left\{\begin{array}{rrrrrrr}
+3x & + & y  & + & 2z & = & 2\\
+x & + & y & + & z & = & 2\\
+9x & - & y & + & 5z & = & 6
+\end{array}\right. \qquad\qquad 
+\left\{\begin{array}{rrrrrrr}
+3x & + & y  & + & 2z & = & 4\\
+x & + & y & + & z & = & 1\\
+11x & - & y & + & 5z & = & 1
+\end{array}\right.$$
+左の解は、$x = -4, y = -2, z = 8$、右の方は解はない。
+
+もう一つ、次はどうだろうか。
+$$\left\{\begin{array}{rrrrrrr}
+-x & + & 3y & + & 2z & = & 1\\
+3x & - & 9y & - & 6z & = & -3
+\end{array}\right.\qquad\qquad
+\left[\begin{array}{cccc}
+1 & -3 & -2 & -1\\
+0 & 0 & 0 & 0
+\end{array}
+\right]$$
+これより、$x = 3t + 2u -1, y = t, z = u$。となる。この場合には、２つのパラメターによって解が表示された。即ち、自由度は２個ある（正確な意味は後述）。
+
+\medskip
+これは、いずれ示すが、{\gt 「連立一次方程式の解は、ないか（０個）、１個か、無限個である。」}
+
+線型代数学 I の最初に学ぶことは、連立一次方程式の解き方と、アルゴリズム（算法）、それと、解があるか、ないか、あるとしたら、自由に取れるパラメターはいくつ取れるか等の判定法とそれに関係する基礎理論である。
+
+
+\medskip
+以下の行列を係数拡大行列とする、連立一次方程式の解は何であろうか。
+$$\left[\begin{array}{cccc}
+1 & 0 & 0 & 1\\
+0 & 1 & 0 & 2\\
+0 & 0 & 1 & 3
+\end{array}\right]\qquad
+\left[\begin{array}{cccc}
+1 & 0 & 5 & 2\\
+0 & 1 & 1 & 1\\
+0 & 0 & 0 & 0
+\end{array}\right]\qquad 
+\left[\begin{array}{cccc}
+1 & 0 & 5 & 2\\
+0 & 1 & 1 & 1\\
+0 & 0 & 0 & 3
+\end{array}\right]$$
+変数を $x_1, x_2, x_3$ とすると、左は、$x_1 = 1, x_2 = 2, x_3 = 3$、中は、$x_1 = 2-5t, x_2 = 1-t, x_3 = t$、右は、解なし。
+
+次の行列はどうであろうか。
+$$\left[\begin{array}{cccccc}
+1 & 5 & 0 & 0 & 5 & -1\\
+0 & 0 & 1 & 0 & 3 & 1\\
+0 & 0 & 0 & 1 & 4 & 2\\
+0 & 0 & 0 & 0 & 0 & 0
+\end{array}\right] \qquad
+\left[\begin{array}{c}
+x_1\\x_2\\x_3\\x_4\\x_5
+\end{array}\right] =
+\left[\begin{array}{c}
+-1\\0\\1\\2\\0
+\end{array}\right] +  
+t\cdot \left[\begin{array}{c}
+-5\\1\\0\\0\\0
+\end{array}\right] + 
+u\cdot\left[\begin{array}{c}
+-5\\0\\-3\\-4\\1
+\end{array}\right]$$
+
+厳密には、ここでは述べないが、上の形のような拡大係数行列を持つ連立一次方程式の解は、機械的に記述することができる。連立一次方程式解法のアウトラインは、拡大係数行列に、「基本的な行に関する変形」だけを行って、上の形のような「簡単な行列」にし、そこから機械的に解を読みとることである。そこで、以下に、「簡単な行列」とは何かと、「基本的な変形」とは何かを定義する。
+
+\begin{definition}
+次のような行列を{\gt 既約ガウス行列}という。
+\begin{enumerate}
+\item もし、ある行が 0 以外の数を含めば、最初の 0 でない数は 1 である。（これを先頭の 1 という。）
+\item もし、すべての数が 0 であるような行が含まれていれば、それらの行は下の方によせて集められている。
+\item すべてが 0 ではない 2 つの行について、上の行の先頭の 1 は、下の行の先頭の 1 よりも前に存在する。
+\item 先頭の 1 を含む列の他の数は、すべて 0 である。
+\end{enumerate}
+\end{definition}
+
+連立方程式に対する以下の変形を基本変形という。
+\begin{enumerate}
+\item 1 次方程式を何倍かする。（０倍はのぞく。）
+\item ２つの方程式を交換する。
+\item ある方程式に別の方程式を何倍かして加える。
+\end{enumerate}
+
+これを拡大係数行列の言葉に変えると以下のようになる。
+\begin{definition}
+以下の変形を行列の {\gt 行の基本変形} という。
+\begin{enumerate}
+\item ある行に０でない定数をかける。
+\item 2 つの行を交換する。
+\item ある行に、別の行を何倍かして加える。
+\end{enumerate}
+\end{definition}
+
+\begin{thm}
+任意 {\rm (arbitrary)} の行列は、行の基本変形を何回か施して、既約ガウス行列にすることができる。
+\end{thm}
+\proof
+以下に、行の基本変形を何回か施して、既約ガウス行列にする算法（アルゴリズム）を以下に述べる。
+\begin{enumerate}
+\item すべての成分が 0 ではない最初の列を $i_1$ とする。そのような列がなければ行列は 0 行列だから既約ガウス行列である。行の順序を入れ替え、第1行第$i_1$列に零でない項が来るようにする。それを $c_1$ とする。
+\item 第1行を $c_1$ で割る。第1行の最初の零でない項は $i_1$ 列目でそれは、1（先頭の 1)である。他の行の零でない成分は、$i_1$ 列目以降である。$i_1$ 列目に零でない成分 $c$ があれば、それを $j$ 行目とするとき、第 1 行の $c$ 倍を、第 $j$ 行から引くと、第 $i_1$ 列で零でないのは、第 1 行目にある先頭の 1 だけになる。
+\item 第2行目以降ですべての成分が 0 ではない最初の列を $i_2$ とする。そのような列がなければ、２行目以降はすべて零だからそれは既約ガウス行列である。行の順序を入れ替え、第2行第$i_2$列に零でない項が来るようにする。それを $c_2$ とする。
+\item 第2行を $c_2$ で割る。第2行の最初の零でない項は $i_2$ 列目でそれは、1（先頭の 1)である。3行目以降の零でない成分は、$i_2$ 列目以降である。$i_2$ 列目に零でない成分 $c$ があれば（第1行も含めて）、それを $j$ 行目とするとき、第 2 行の $c$ 倍を、第 $j$ 行から引くと、第 $i_2$ 列で零でないのは、第2行目にある先頭の 1 だけになる。
+\item 第3行目以降ですべての成分が 0 ではない最初の列を $i_3$ とする。そのような列がなければ、3行目以降はすべて零だからそれは既約ガウス行列である。行の順序を入れ替え、第3行第$i_3$列に零でない項が来るようにする。それを $c_3$ とする．．．\\
+これを続けていけば良い。
+\end{enumerate}
+\qed
+
+\newpage
+\mysection{行列の階数と、連立一次同次方程式}
+\subsection{行列の階数と解の存在非存在}
+まず、復習から始める。
+
+\smallskip
+次の連立一次方程式に対して、
+$$\left\{\begin{array}{ccc}
+a_{11}x_1 + a_{12}x_2 + \cdots + a_{1n}x_n & = & b_1\\
+a_{21}x_1 + a_{22}x_2 + \cdots + a_{2n}x_n & = & b_2\\
+\multicolumn{3}{c}{\cdots\cdots\cdots} \\
+a_{m1}x_1 + a_{m2}x_2 + \cdots + a_{mn}x_n & = & b_m
+\end{array}\right.\qquad\qquad 
+\left\{\begin{array}{rrrrrrr}
+3x & + & y  & + & 2z & = & 4\\
+x & + & y & + & z & = & 1\\
+11x & - & y & + & 5z & = & 17
+\end{array}\right.$$
+
+まず「拡大係数行列」を考えた。 
+$$\left[\begin{array}{ccccc}
+a_{11} & a_{12} & \cdots & a_{1n} & b_1\\
+a_{21} & a_{22} & \cdots & a_{2n} & b_2\\
+\vdots & \vdots &            & \vdots & \vdots\\
+a_{m1} & a_{m2} & \cdots & a_{mn} & b_m\\
+\end{array}
+\right]\qquad\qquad 
+\left[\begin{array}{rrrr}
+3 & 1 & 2 & 4\\
+1 & 1 & 1 &  1\\
+11 & 1 & 5 & 17
+\end{array}\right]$$
+
+この行列に、「行の基本変形」
+\begin{enumerate}
+\item ある行に０でない定数をかける。
+\item 2 つの行を交換する。
+\item ある行に、別の行を何倍かして加える。
+\end{enumerate}
+を何回か施して、「既約ガウス行列」に変形して解を求めた。
+$$\left[\begin{array}{ccccccccccc}
+0 & \cdots & 0 & 1 & \multicolumn{2}{c}{***} & 0 & \multicolumn{2}{c}{***} & 0 & ***\\
+0 & \cdots & 0 & 0 & \cdots & 0 & 1 & \multicolumn{2}{c}{***} & 0 & ***\\
+\multicolumn{11}{c}{\cdots\cdots\cdots}\\
+0 & \cdots & 0 & 0 & \cdots & 0 & 0 & \cdots & 0 & 1 & ***\\
+0 & \cdots & 0 & 0 & \cdots & 0 & 0 & \cdots & 0 & 0 & \cdots\\
+\multicolumn{11}{c}{\cdots\cdots\cdots}
+\end{array}
+\right]$$
+
+$$\left\{\begin{array}{rrrrrrr}
+x & &  & + & \frac12z & = & \frac32\\
+ & & y  & + & \frac12z & = & -\frac12
+\end{array}\right. \qquad\qquad  
+\left[\begin{array}{rrrr}
+1 & 0 & \frac12 &  \frac32\\
+0 & 1 & \frac12 & -\frac12\\
+0 & 0 & 0 & 0
+\end{array}\right]$$
+
+このとき、解は、１個も無いか、１個か、又は、無限個であった。例えば、拡大係数行列に行の基本変形を行い得た既約ガウス行列が次のような形のものは、解が無かった。
+$$\left[\begin{array}{cccc}
+1 & 0 & 5 & 0\\
+0 & 1 & 1 & 0\\
+0 & 0 & 0 & 1
+\end{array}\right]
+\qquad\qquad
+\left\{\begin{array}{rrrrrrr}
+x & &  & + & 5z & = & 0\\
+ & & y  & + & z & = & 0\\
+ & & & & 0 & = & 1
+\end{array}\right.$$
+
+\begin{definition}
+行の基本変形で得た既約ガウス行列の０でない行の数をその行列の{\gt 階数 (rank)} と言い、行列
+$A$ に対して、$\rank A$ と書く。
+\end{definition}
+
+この定義は、これでよいのだが、既約ガウス行列の求め方はただ一つではないので、求め方によって、階数が変わってしまう可能性がある。（実は、これは一定です。）そこで、しばらくは、既約ガウス行列にのみ「階数」が定義されているものとする。
+
+\begin{eg}
+$$\rank \left[\begin{array}{cccc}
+1 & 0 & 5 & 0\\
+0 & 1 & 1 & 0\\
+0 & 0 & 0 & 1
+\end{array}\right] = 3,\qquad 
+\rank \left[\begin{array}{ccc}
+1 & 0 & 5 \\
+0 & 1 & 1 \\
+0 & 0 & 0 
+\end{array}\right] = 2$$
+$$\rank\left[\begin{array}{cccccc}
+1 & 5 & 0 & 0 & 5 & -1\\
+0 & 0 & 1 & 0 & 3 & 1\\
+0 & 0 & 0 & 1 & 4 & 2\\
+0 & 0 & 0 & 0 & 0 & 0
+\end{array}\right] = 3$$
+\end{eg}
+
+\begin{eg}
+$A$ を $n$ 次正方行列とする。$A$ が既約ガウス行列ならば $A = I$ すなわち対角線上に 1 がならび、他はすべて 0 である行列（単位行列と呼ばれる）か、又は、一番下の行はすべて 0 かのいずれかである。
+\end{eg}
+
+この階数と、解には密接な関係がある。次の定理が成り立つ。
+\begin{thm}\label{thm:lineqbasic1}
+連立一次方程式の解について以下が成立する。
+\begin{itemize}
+\item[$(1)$] 拡大係数行列（から得られた既約ガウス行列）の階数と、係数行列の部分の階数が異なれば、その連立一次方程式は解を持たない。
+\item[$(2)$] 拡大係数行列（から得られた既約ガウス行列）の階数と、係数行列の部分の階数が等しければ、その連立一次方程式は解を持つ。
+\end{itemize}
+\end{thm}
+\proof
+拡大係数行列の階数と、係数行列の階数が等しくないという事は、既約ガウス行列に変形したとき、最後の列が 1 で他が零という行があると言うことである。このときは、解は無い。そうでなければ解は常にある。
+\qed
+
+\bigskip
+いくつかの疑問がわく。
+\begin{enumerate}
+\item 最初の連立一次方程式の解と、最後に得た既約ガウス行列に対応する解とは等しいだろうか。
+\item 解が存在するとき、それがどれくらいあるかはどのように決まるのか。
+\end{enumerate}
+
+\subsection{連立一次同次方程式の解}
+まず、最後の問題を考えるため、連立一次{\gt 同次}方程式について考える。これは、定数項がすべて零のものである。（「同次」を「斉次（さいじ・せいじ）」と呼ぶこともある。）
+
+$$\left\{\begin{array}{ccc}
+a_{11}x_1 + a_{12}x_2 + \cdots + a_{1n}x_n & = & 0\\
+a_{21}x_1 + a_{22}x_2 + \cdots + a_{2n}x_n & = & 0\\
+\multicolumn{3}{c}{\cdots\cdots\cdots} \\
+a_{m1}x_1 + a_{m2}x_2 + \cdots + a_{mn}x_n & = & 0
+\end{array}\right.\qquad\qquad 
+\left\{\begin{array}{rrrrrrr}
+3x & + & y  & + & 2z & = & 0\\
+x & + & y & + & z & = & 0\\
+11x & - & y & + & 5z & = & 0
+\end{array}\right.$$
+
+この様な方程式は必ず解を持つ。
+それは、$x_1 = x_2 = \cdots = x_n = 0$  が解になっていることから分かる。
+
+この拡大係数行列を考えて、行の基本変形で、既約ガウス行列にする事を考える。
+$$\left[\begin{array}{ccccc}
+a_{11} & a_{12} & \cdots & a_{1n} & 0\\
+a_{21} & a_{22} & \cdots & a_{2n} & 0\\
+\multicolumn{5}{c}{\cdots\cdots\cdots}\\
+a_{m1} & a_{m2} & \cdots & a_{mn} & 0\\
+\end{array}
+\right]\qquad\qquad 
+\left[\begin{array}{cccc}
+3 & 1 & 2 & 0\\
+1 & 1 & 1 & 0\\
+11 & 1 & 5 & 0
+\end{array}\right]$$
+
+行の基本変形をしても最後の列が 0 であることは変わらない。従って、それから得られる既約ガウス行列の最後の行も 0 である。
+（このことから、この連立一次方程式は、解を持つことが 定理~\ref{thm:lineqbasic1} から分かるが、それは、すべて 0 という解を持つと言うことから明らかなことであった。）
+
+$$\left[\begin{array}{cccccccccccc}
+0 & \cdots & 0 & 1 & \multicolumn{2}{c}{***} & 0 & \multicolumn{2}{c}{***} & 0 & *** & 0\\
+0 & \cdots & 0 & 0 & \cdots & 0 & 1 & \multicolumn{2}{c}{***} & 0 & *** & 0\\
+\multicolumn{12}{c}{\cdots\cdots\cdots}\\
+0 & \cdots & 0 & 0 & \cdots & 0 & 0 & \cdots & 0 & 1 & *** & 0\\
+0 & \cdots & 0 & 0 & \cdots & 0 & 0 & \cdots & 0 & 0 & \cdots & 0\\
+\multicolumn{12}{c}{\cdots\cdots\cdots}
+\end{array}
+\right]$$
+
+ここで、階数を $r$ とし、$l = 1,\ldots, r$ に対して、$l$ 行目の先頭の 1 が $i_l$ 列目であるとするとし、
+$$\{i_1,i_2,\ldots,i_r,j_1,j_2,\ldots,j_{n-r}\} = \{1,2,\ldots,n\}$$
+とする。すると、この方程式は、
+$$\left\{\begin{array}{cccccccc}
+x_{i_1} & & & & + & \sum_{k=1}^{n-r}c_{1k}x_{j_k} & = & 0\\
+ & x_{i_2} & & & + & \sum_{k=1}^{n-r}c_{2k}x_{j_k} & = & 0\\
+  & & \ddots & &  & \multicolumn{3}{c}{\vdots} \\
+  & & & x_{i_r} & + & \sum_{k=1}^{n-r}c_{rk}x_{j_k} & = & 0
+\end{array}\right.$$
+と書けるから、$x_{j_1},\cdots, x_{j_{n-r}}$ は、任意の値を取ることができる。
+
+\smallskip
+もう少し具体的な例で見てみよう。
+既約ガウス行列が、次のようになったとしよう。
+$$\left[\begin{array}{ccccccc}
+1 & 5 & 0 & 0 & 5 & -1 & 0\\
+0 & 0 & 1 & 0 & 3 & 1 & 0\\
+0 & 0 & 0 & 1 & 4 & 2 & 0\\
+0 & 0 & 0 & 0 & 0 & 0 & 0
+\end{array}\right] \qquad
+\left\{\begin{array}{ccccccc}
+x_{1} & & & +  & 5x_2 + 5x_5 + (-1)x_6  & = & 0\\
+ & x_{2} & & + & 0x_2 + 3x_5 + 1x_6  & = & 0\\
+  & & x_3 & +  & 0x_2 + 4x_5 + 2x_6  & = & 0
+\end{array}\right.$$
+この場合、$i_1 = 1, i_2 = 3, i_3 = 4, j_1 = 2, j_2 = 5, j_3 = 6$ で、$j_1, j_2, j_2$  に対応する、$x_2, x_5, x_6$ を自由パラメターとして、解を書くことができる。
+
+\medskip
+この様にして、次の結果を得た。
+
+\begin{thm}\label{thm:homog}
+$n$  個の変数を持つ連立一次同次方程式の拡大係数行列（から得られた既約ガウス行列）の階数を $r$ とする。すると、これは係数行列の階数とも等しい。$n=r$ ならば、この連立一次同次方程式の解は、$x_1 = x_2 = \cdots = x_n = 0$ のみであり、$n>r$ ならば、$n-r$ 個のパラメターを用いて解を書くことができる。とくに解は、無限個ある。
+\end{thm}
+\proof
+$n = r$ のときは、既約ガウス行列は次のような形をしていることに注意する。
+$$\left[\begin{array}{ccccc}
+1 & 0 & \cdots & 0 & 0\\
+0 & 1 & \cdots & 0 & 0\\
+\multicolumn{2}{c}{\cdots} & \ddots & \multicolumn{2}{c}{\cdots}\\
+0 & 0 & \cdots & 1 & 0 
+\end{array}\right]\qquad\qquad
+\begin{array}{cccccc}
+x_1 & & & & = & 0\\
+ & x_2 & & & = & 0\\
+ & \ddots & \multicolumn{3}{c}{\cdots}\\
+& & &  x_n & = & 0
+\end{array}.$$
+従って、主張は明らかである。
+\qed
+
+\medskip
+ここでの考察から同時に次のことも分かった。
+
+\begin{cor}
+連立一次同次方程式の解は、$1$ 個か、または、無限個である。
+\end{cor}
+
+さらに行列の階数について次の事も分かった。
+
+\begin{prop} \label{prop:rank}
+$m$ 行 $n$ 列の行列の階数を $r$ とすると、$r\leq m$、$r\leq n$ が成り立つ。
+\end{prop}
+\proof
+行列の階数は、既約ガウス行列にしたときの零でない行の数だったから、$r\leq m$ である。
+さらに、零でない行には、先頭の 1 といわれるものがあり、先頭の 1 の現れる列は、すべて異なるのだから、行列の階数は、列の数以下である。即ち、$r\leq n$。
+\qed
+
+\newpage
+\mysection{行列演算}
+\subsection{行列の定義と演算}
+今まですでに、何度も「行列」という言葉を使ってきたが、ここで、改めてその定義を述べる。
+
+\begin{definition}
+\begin{enumerate}
+\item $m\times n$ 個の数を長方形（矩形）に並べた
+$$A = \left[\begin{array}{cccc}
+a_{11} & a_{12} & \cdots & a_{1n}\\
+a_{21} & a_{22} & \cdots & a_{2n} \\
+\multicolumn{4}{c}{\cdots\cdots\cdots}\\
+a_{m1} & a_{m2} & \cdots & a_{mn} \\
+\end{array}
+\right]$$
+を {\gt $m\times n$ 行列}、又は、$(m,n)$ 行列と言う。上の行列を略して、$A = [a_{ij}]$ などと書くこともある。
+\item 二つの行列は、そのサイズ $(m,n)$ が等しく、かつ、その成分（矩形に並べた $m\times n$ 個の数）が等しいときに等しい。
+\item $1\times n$ 行列 $[a_1,a_2,\ldots, a_n]$ を {\gt $n$ 次行ベクトル}、$m\times 1$ 行列、
+$$\left[\begin{array}{c}a_1\\a_2\\ \vdots\\a_m\end{array}\right]$$
+を {\gt $m$ 次列ベクトル}という。
+\item 上の行列 $A$ において、左から、$j$ 番目の縦に並んだ、
+$$\ba_j = \left[\begin{array}{c}a_{1j}\\a_{2j}\\ \vdots\\a_{mj}\end{array}\right]$$
+を $A$ の {\gt 第 $j$ 列}と言い、上から、$i$ 番目の横に並んだ、
+$$\ba_i' = [a_{i1},a_{i2},\ldots,a_{in}]$$
+を $A$ の{\gt 第 $i$ 行}と言い、$A$ を次のようにも書く。
+$$A = [\ba_1,\ba_2,\ldots,\ba_n] = \left[\begin{array}{c}\ba_{1}'\\ \ba_{2}'\\ \vdots\\ \ba_{m}'\end{array}\right]$$
+\item 第 $i$ 行 第 $j$ 列を $(i,j)$ {\gt 成分}と呼ぶ。上の行列 $A$ は、$(i,j)$ 成分が $a_{ij}$ であるような行列である。
+\end{enumerate}
+\end{definition}
+
+次に行列に演算を定義する。
+
+\begin{definition}
+$A$、$B$ を共に同じ型（$m\times n$）の行列、$c$ を数（スカラー）とする、{\gt 和 $A + B$}、{\gt スカラー倍 $cA$} を成分での和と、$c$ 倍とで定義する。すなわち、
+$$A + B = \left[\begin{array}{cccc}
+a_{11} + b_{11} & a_{12} + b_{12} & \!\cdots\! & a_{1n} + b_{1n}\\
+a_{21} + b_{21} & a_{22} + b_{22} & \!\cdots\! & a_{2n} + b_{2n}\\
+\multicolumn{4}{c}{\cdots\cdots\cdots}\\
+a_{m1} + b_{m1} & a_{m2} + b_{m2} & \!\cdots\!  & a_{mn} +b_{mn}\\
+\end{array}
+\right],
+cA = \left[\begin{array}{cccc}
+ca_{11} & ca_{12} & \!\cdots\!  & ca_{1n}\\
+ca_{21} & ca_{22} & \!\cdots\!  & ca_{2n} \\
+\multicolumn{4}{c}{\cdots\cdots\cdots}\\
+ca_{m1} & ca_{m2} & \!\cdots\!  & ca_{mn} \\
+\end{array}
+\right]$$
+\end{definition}
+
+ここで、最初の方程式の解に戻ってみよう。解を、以下のように書いたのは、上の定義のもとでである。
+
+$$\left\{\begin{array}{rcl}
+x & = & -\frac12t + \frac32\\
+y & = & -\frac12t - \frac12\\
+z & = & t
+\end{array}\right. \qquad
+\left[\begin{array}{r}
+x \\ y \\ z 
+\end{array}\right] =
+\left[\begin{array}{r}
+-\frac12 t + \frac32 \\ -\frac12 t - \frac12 \\ t
+\end{array}\right] =
+t\cdot \left[\begin{array}{r}
+-\frac12 \\ -\frac12 \\ 1
+\end{array}\right]  + 
+\left[\begin{array}{r}
+\frac32 \\ -\frac12 \\ 0 
+\end{array}\right] $$
+
+\begin{definition}
+$A = (a_{i,j})$ を $m\times r$  行列、$B = (b_{k,l})$ を $r\times n$ 行列とする。このとき、$m\times n$ 行列 $C = (c_{s,t})$ の各成分は次のようにして定義されたものとする。
+$$c_{s,t} = \sum_{u = 1}^r a_{s,u}b_{u,t} = a_{s,1}b_{1,t} + a_{s,2}b_{2,t} + \cdots + a_{s,r}b_{r,t}.$$
+このとき、$C = AB$ と書き、{\gt 行列 $A$ と $B$ の積}という。
+$$C = AB = \left[\begin{array}{cccc}
+\sum_{u = 1}^ra_{1,u}b_{u,1} & \sum_{u = 1}^ra_{1,u}b_{u,2} & \cdots & \sum_{u = 1}^ra_{1,u}b_{u,n}\\
+\sum_{u = 1}^ra_{2,u}b_{u,1} & \sum_{u = 1}^ra_{2,u}b_{u,2} & \cdots & \sum_{u = 1}^ra_{2,u}b_{u,n}\\
+\multicolumn{4}{c}{\cdots\cdots\cdots}\\
+\sum_{u = 1}^ra_{m,u}b_{u,1} & \sum_{u = 1}^ra_{m,u}b_{u,2} & \cdots & \sum_{u = 1}^ra_{m,u}b_{u,n}
+\end{array}
+\right]$$
+\end{definition}
+
+\begin{eg}
+\begin{enumerate}
+\item ${\displaystyle A = 
+\left[\begin{array}{ccc}1 & 0 & 2\\0 & 1 & 1\end{array}\right],\;
+B = 
+\left[\begin{array}{cc}2 & 5\\
+3 & 6 \\
+4 & 7\end{array}\right]}$ とすると、
+$$AB = \left[\begin{array}{ccc}1 & 0 & 2\\0 & 1 & 1\end{array}\right]
+\left[\begin{array}{cc}2 & 5\\
+3 & 6 \\
+4 & 7\end{array}\right] 
+ = \left[\begin{array}{cc} 10 & 19\\7 & 13\end{array}\right]$$
+$$BA = \left[\begin{array}{cc}2 & 5\\
+3 & 6 \\
+4 & 7\end{array}\right] \left[\begin{array}{ccc}1 & 0 & 2\\0 & 1 & 1\end{array}\right] 
+ = \left[\begin{array}{ccc} 2 & 5 & 9\\3 & 6 & 12\\ 4 & 7 & 15\end{array}\right]$$
+このように、$AB$ と、$BA$ は、そのサイズすら違う。たとえサイズが等しくても、殆どの場合、$AB\neq BA$ である。  
+\item ${\displaystyle A = 
+\left[\begin{array}{ccc}3 & 1 & 2\\1 & 1 & 1\\ 11 & 1 & 5\end{array}\right],\;
+\bx = 
+\left[\begin{array}{c}x_1\\
+x_2 \\
+x_3\end{array}\right]}$ とすると、
+$$A\bx = \left[\begin{array}{ccc}3 & 1 & 2\\1 & 1 & 1\\ 11 & 1 & 5\end{array}\right]\left[\begin{array}{c}x_1\\
+x_2 \\
+x_3\end{array}\right] = \left[\begin{array}{ccc}3x_1 + x_2 + 2x_3 \\ x_1 + x_2 + x_3 \\ 11x_1 - x_2 + 5x_3\end{array}\right]$$
+従って、${\displaystyle \bb = 
+\left[\begin{array}{c}4 \\1\\ 17\end{array}\right]}$ とすると最初に扱った方程式を $A\bx = \bb$ と書くことができる。これも積を、上のように定義した一つの理由である。
+\item 一般には、
+$$A = \left[\begin{array}{cccc}
+a_{11} & a_{12} & \cdots & a_{1n}\\
+a_{21} & a_{22} & \cdots & a_{2n} \\
+\multicolumn{4}{c}{\cdots\cdots\cdots}\\
+a_{m1} & a_{m2} & \cdots & a_{mn}
+\end{array}
+\right],\;\bx = \left[\begin{array}{c}
+x_1\\
+x_2\\
+\vdots\\
+x_n
+\end{array}
+\right],\;\bb = \left[\begin{array}{c}
+b_1\\
+b_2\\
+\vdots\\
+b_m
+\end{array}
+\right]$$
+とすると、$A\bx = \bb$ と書ける。その意味は、
+$$A\bx = \left[\begin{array}{c}
+a_{11}x_1 + a_{12}x_2 + \cdots + a_{1n}x_n \\
+a_{21}x_1 + a_{22}x_2 + \cdots + a_{2n}x_n \\
+\cdots\cdots\cdots \\
+a_{m1}x_1 + a_{m2}x_2 + \cdots + a_{mn}x_n 
+\end{array}\right] = 
+\left[\begin{array}{c}
+b_1\\
+b_2\\
+\vdots\\
+b_m
+\end{array}
+\right]$$
+が成り立つため事と、各成分が等しいこととが同値だからである。
+\end{enumerate}
+\end{eg}
+
+\note
+\begin{enumerate}
+\item ２つの行列に対して、積がいつも定義できるわけではないが、$A, B$ を共に、$n\times n$ 行列とすると、$AB$ も、$BA$ も共に定義することが出来、どちらも $n\times n$ 行列となる。この様に、行の数と、列の数が等しい行列はとくに重要である。これを $n$ 次正方行列、又は、単に 正方行列と言う。
+
+\item すべて成分が零の $m\times n$ 行列を 零行列と言い、$\bo = \bo_{m,n}$ と書く。
+$A$ を $m\times n$ 行列とすると、
+$$A + \bo_{m,n} = \bo_{m,n} + A = A, \;A\bo_{n,l} = \bo_{m,l}, \;\bo_{l,m}A = \bo_{l,n}$$
+が成り立つ。$\bo_{n,n}$ を簡単に $\bo_n$ と書くこともある。
+
+\item $i$ 行 $i$ 列の成分（$(i,i)$ 成分）を対角成分と言う。$n$ 次正方行列で、対角成分がすべて 1 他は、すべて 0 であるような行列を、単位行列と言い、$I = I_n$ とかく。（教科書によっては、$E = E_n$  を使っているものも多い。簡単に確かめられるように、$A$ を $m\times n$ 行列、$B$ を $n\times m$ 行列とすると、$AE = A$、$EB = B$。
+
+\end{enumerate}
+\smallskip
+
+\begin{prop}
+行列の演算に関して次の諸性質が成り立つ。
+\begin{itemize}
+\item[$(1)$] $A + B = B + A$ \hfill（加法に関する交換法則）
+\item[$(2)$] $A + (B + C) = (A + B) + C$ \hfill （加法に関する結合法則）
+\item[$(3)$] $A(BC) = (AB)C$ \hfill （乗法に関する結合法則）
+\item[$(4)$] $A(B+C) = AB + AC$、$(A+B)C = AC + BC$ \hfill （分配法則）
+\item[$(5)$] $cA = (cI)A$
+\end{itemize}
+\end{prop}
+
+\begin{definition}
+$m\times n$  行列$A = [a_{i,j}]$ に対して、$(i,j)$ 成分が、$a_{j,i}$（または、同じことだが $(j,i)$ 成分が、$a_{i,j}$）である $n\times m$ 行列を $A$ の転置行列と言い、$A^t$ と書く。すなわち、
+$$A = \left[\begin{array}{cccc}
+a_{11} & a_{12} & \cdots & a_{1n} \\
+a_{21} & a_{22} & \cdots & a_{2n} \\
+\vdots & \vdots &            & \vdots \\
+a_{m1} & a_{m2} & \cdots & a_{mn}\\
+\end{array}
+\right]\;\mbox{ のとき、}\;
+A^t = \left[\begin{array}{cccc}
+a_{11} & a_{21} & \cdots & a_{m1} \\
+a_{12} & a_{22} & \cdots & a_{m2} \\
+\vdots & \vdots &            & \vdots \\
+a_{1n} & a_{2n} & \cdots & a_{mn}\\
+\end{array}
+\right]$$
+（$A^t$ の代わりに、${}^tA$, $A^T$, ${}^TA$ 等を使う場合もある。ここでは、教科書にあわせて、$A^t$ を用いる。）
+\end{definition}
+
+
+\newpage
+\mysection{逆行列}
+連立一次方程式は、行列を用いて、$A\bx = \bb$ と言うように書けるのであった。ここで、
+$$A = \left[\begin{array}{cccc}
+a_{11} & a_{12} & \cdots & a_{1n}\\
+a_{21} & a_{22} & \cdots & a_{2n} \\
+\multicolumn{4}{c}{\cdots\cdots\cdots}\\
+a_{m1} & a_{m2} & \cdots & a_{mn}
+\end{array}
+\right],\;\bx = \left[\begin{array}{c}
+x_1\\
+x_2\\
+\vdots\\
+x_n
+\end{array}
+\right],\;\bb = \left[\begin{array}{c}
+b_1\\
+b_2\\
+\vdots\\
+b_m
+\end{array}
+\right].$$
+
+さて、この方程式を一次方程式 $ax = b$ を解くのに、$a$ で割るように、$A$ で割ると言うことを考えられないか。そのため、以下のような定義をする。
+
+\begin{definition}
+正方行列 $A$ について、$AB = BA = I$ を満たす正方行列 $B$ が存在するとき、$A$ は、{\gt 可逆}である（又は、可逆行列 (invertible matrix)  [{\gt 正則行列} (nonsingular matrix)] である）と言う。$B$ を $A$ の逆行列と言い $B = A^{-1}$ と書く。
+\end{definition}
+
+実際 $A$ が可逆で、$B = A^{-1}$ とすると、$A\bx = \bb$ の両辺に左から $B$ をかけると、
+$$B\bb = BA\bx = I\bx = \bx.$$
+逆に、$\bx = B\bb$ とすると、$A\bx = A(B\bb) = (AB)\bb = I\bb = \bb$。従って、$B\bb$ が解で、解は、$B\bb$ の形に限る。すなわち、$A\bx = \bb$ の解は、ただ一つである。
+
+\begin{eg}
+$2\times 2$ 行列の逆行列は簡単に求められる。
+$$A = \left[\begin{array}{cc}a & b\\ c & d \end{array}\right] \Rightarrow
+A^{-1} = \frac1{ad-bc}\left[\begin{array}{cc}d & -b\\ -c & a \end{array}\right]$$
+実際、
+$$AA^{-1} = \left[\begin{array}{cc}a & b\\ c & d \end{array}\right]
+\frac1{ad-bc}\left[\begin{array}{cc}d & -b\\ -c & a \end{array}\right] = 
+\frac1{ad-bc}\left[\begin{array}{cc}ad - bc & 0\\ 0 & ad - bc \end{array}\right] = I$$
+同様にして、
+$$A^{-1}A = \frac1{ad-bc}\left[\begin{array}{cc}d & -b\\ -c & a \end{array}\right]
+\left[\begin{array}{cc}a & b\\ c & d \end{array}\right] = 
+\frac1{ad-bc}\left[\begin{array}{cc}ad - bc & 0\\ 0 & ad - bc \end{array}\right] = I$$
+例えば、
+$$\left[\begin{array}{cc}2 & -5\\ -1 & 3 \end{array}\right]^{-1} = 
+\left[\begin{array}{cc}3 & 5\\ 1 & 2 \end{array}\right]$$
+従って、$ad-bc \neq 0$ ならば、逆行列を持つことがわかった。逆行列を持てば、いつでも、$ad-bc \neq 0$ だろうか。一つの方法は、行列式と言われるものを使う方法である。一般に、$2\times 2$ 行列
+$$A = \left[\begin{array}{cc}a_{11} & a_{12} \\ a_{21} & a_{22} \end{array}\right]$$
+について、$\det A = a_{11}a_{22} - a_{12}a_{21}$ と定義する。成分が $a, b, c, d$ の時は、$ad-bc$ となる。すると、
+$$B = \left[\begin{array}{cc}b_{11} & b_{12} \\ b_{21} & b_{22} \end{array}\right]$$
+とするとき、
+\begin{eqnarray*}
+\det(AB) &  =  & \det \left[\begin{array}{cc}a_{11}b_{11} + a_{12}b_{21} & a_{11}b_{12}+a_{12}b_{22} \\ a_{21}b_{11}+a_{22}b_{21} & a_{21}b_{12} + a_{22}b_{22} \end{array}\right]\\
+& = & (a_{11}b_{11} + a_{12}b_{21})(a_{21}b_{12} + a_{22}b_{22}) - (a_{11}b_{12}+a_{12}b_{22})(a_{21}b_{12} + a_{22}b_{22})\\
+& = & (a_{11}a_{22} - a_{12}a_{21})(b_{11}b_{22} - b_{12}b_{21})\\
+& = & \det A\det B
+\end{eqnarray*}
+であることに注意すると、$AB = I$  ならば、$\det I = 1$ だから、
+$$\det A\det B = \det I = 1$$
+となる。従って、$\det A = a_{11}a_{22} - a_{12}a_{21} \neq 0$ となる。
+以下に命題の形でまとめておく。
+\end{eg}
+
+\begin{prop} \label{prop:2by2}
+$2\times 2$ 行列 ${A = \displaystyle \left[\begin{array}{cc}a_{11} & a_{12} \\ a_{21} & a_{22} \end{array}\right]}$ に対して、$\det A = a_{11}a_{22} - a_{12}a_{21}$ と定義する。
+\begin{itemize}
+\item[$(1)$] $A,B$ を $2\times 2$ 行列とすると、$\det AB = \det A\det B$。
+\item[$(2)$] $A$ が可逆であることと、$\det A = a_{11}a_{22} - a_{12}a_{21} \neq 0$ とは、同値であり、そのとき、
+$$A^{-1} = \frac1{\det A}\left[\begin{array}{cc}a_{22} & -a_{12}\\ -a_{21} & a_{11} \end{array}\right]$$
+\end{itemize}
+\end{prop}
+
+それでは、行列が、$2\times 2$ よりも大きいときは、どうであろうか。大体、上の命題に対応する事が成り立つが、ここでは、まず、逆行列を求める一つの方法を定理の形で紹介する。
+
+\begin{thm} \label{thm:hakidashi}
+$A$ を $n$ 次正方行列、$I = I_n$ を $n$ 次単位行列とし、$C = [A, I]$ なる、$n\times 2n$ の行列を考える。この行列 $C$ に、行に関する基本変形を施し、既約ガウス行列に変形する。その結果を  $D$ とする。もし、$D = [I, B]$ の形になれば、$B = A^{-1}$ である。もし、$D$ の左半分が、$I$ で無ければ、$A$ は、逆行列を持たない。とくに、$A$ が逆行列を持つことと、$\rank A = n$ であることとは、同値である。
+\end{thm}
+
+上の定理の証明は、次回に回し、実際にこの方法で逆行列を求めてみよう。
+
+\begin{eg}
+$$A = \left[\begin{array}{ccc} 1 & 2 & 2 \\ 2 & 1 & 0 \\ 3 & 2 & 1 \end{array}\right] 
+\;\mbox{に対して、}\; 
+C = \left[\begin{array}{cccccc}1 & 2 & 2 & 1 & 0 & 0 \\ 2 & 1 & 0 & 0 & 1 & 0 \\ 3 & 2 & 1 & 0 & 0 & 1 \end{array}\right]$$
+とおき、行の基本変形を施す。
+
+\begin{eqnarray*}
+\left[\begin{array}{cccccc}1 & 2 & 2 & 1 & 0 & 0 \\ 2 & 1 & 0 & 0 & 1 & 0 \\ 3 & 2 & 1 & 0 & 0 & 1 \end{array}\right] & \longrightarrow &\left[\begin{array}{cccccc}1 & 2 & 2 & 1 & 0 & 0 \\ 0 & -3 & -4 & -2 & 1 & 0 \\ 3 & 2 & 1 & 0 & 0 & 1 \end{array}\right]\\
+\longrightarrow \left[\begin{array}{cccccc}1 & 2 & 2 & 1 & 0 & 0 \\ 0 & -3 & -4 & -2 & 1 & 0 \\ 0 & -4 & -5 & -3 & 0 & 1 \end{array}\right] & \longrightarrow & 
+\left[\begin{array}{cccccc}1 & 2 & 2 & 1 & 0 & 0 \\ 0 & 1 & 1 & 1 & 1 & -1 \\ 0 & -4 & -5 & -3 & 0 & 1 \end{array}\right] \\
+\longrightarrow 
+\left[\begin{array}{cccccc}1 & 0 & 0 & -1 & -2 & 2 \\ 0 & 1 & 1 & 1 & 1 & -1 \\ 0 & -4 & -5 & -3 & 0 & 1 \end{array}\right] & \longrightarrow &
+\left[\begin{array}{cccccc}1 & 0 & 0 & -1 & -2 & 2 \\ 0 & 1 & 1 & 1 & 1 & -1 \\ 0 & 0 & -1 & 1 & 4 & -3 \end{array}\right]\\
+\longrightarrow \left[\begin{array}{cccccc}1 & 0 & 0 & -1 & -2 & 2 \\ 0 & 1 & 1 & 1 & 1 & -1 \\ 0 & 0 & 1 & -1 & -4 & 3 \end{array}\right] & \longrightarrow & 
+\left[\begin{array}{cccccc}1 & 0 & 0 & -1 & -2 & 2 \\ 0 & 1 & 0 & 2 & 5 & -4 \\ 0 & 0 & 1 & -1 & -4 & 3 \end{array}\right]
+\end{eqnarray*}
+
+これより、$A$ は、可逆行列で、その逆行列は、
+$$A^{-1} = \left[\begin{array}{ccc} -1 & -2 & 2 \\  2 & 5 & -4 \\ -1 & -4 & 3 \end{array}\right]$$
+となる。
+\end{eg}
+
+\begin{eg}
+$$A = \left[\begin{array}{ccc} 5 & 1 & -1 \\ -5 & -1 & 1 \\ 2 & -1 & 0 \end{array}\right] 
+\;\mbox{に対して、}\; 
+C = \left[\begin{array}{cccccc}5 & 1 & -1 & 1 & 0 & 0 \\ -5 & -1 & 1 & 0 & 1 & 0 \\ 2 & -1 & 0 & 0 & 0 & 1 \end{array}\right]$$
+とおき、行の基本変形を施す。
+
+\begin{eqnarray*}
+\left[\begin{array}{cccccc}5 & 1 & -1 & 1 & 0 & 0 \\ -5 & -1 & 1 & 0 & 1 & 0 \\ 2 & -1 & 0 & 0 & 0 & 1 \end{array}\right] & \longrightarrow &\left[\begin{array}{cccccc}5 & 1 & -1 & 1 & 0 & 0 \\ 0 & 0 & 0 & 1 & 1 & 0 \\ 2 & -1 & 0 & 0 & 0 & 1 \end{array}\right]\\
+\longrightarrow \left[\begin{array}{cccccc}5 & 1 & -1 & 1 & 0 & 0  \\ 2 & -1 & 0 & 0 & 0 & 1 \\ 0 & 0 & 0 & 1 & 1 & 0\end{array}\right]& \longrightarrow & 
+\end{eqnarray*}
+
+これは、この後、いくら変形しても、この既約ガウス行列は、$[I, B]$ の形にならないことは、明らかである。実は、$\rank A = 2$ で（ここまでで分かるのは、$\rank A\leq 2$）$\rank A \neq 3$ なので、$A$ は、逆行列を持たない。
+\end{eg}
+
+上の例からも分かるように、可逆かどうかを判定するだけなら、$A$ をそのまま、変形して、$\rank A$ を求めれば良いことが分かった。それには、既約ガウス行列まで変形しなくても、ガウス行列まで変形すれば十分である。
+
+\begin{definition}
+次のような行列を{\gt (既約)ガウス行列}という。
+\begin{enumerate}
+\item もし、ある行が 0 以外の数を含めば、最初の 0 でない数は 1 である。（これを先頭の 1 という。）
+\item もし、すべての数が 0 であるような行が含まれていれば、それらの行は下の方によせて集められている。
+\item すべてが 0 ではない 2 つの行について、上の行の先頭の 1 は、下の行の先頭の 1 よりも前に存在する。
+\item (先頭の 1 を含む列の他の数は、すべて 0 である。)
+\end{enumerate}
+\end{definition}
+
+\newpage
+\mysection{連立一次方程式と可逆性}
+既約ガウス行列を求めるのに、行列の行に関する「基本変形」を用いたが、この基本変形について、もう少し考えてみる。
+
+まず、$I = I_m$ を $m$ 次単位行列とし、$E_{i,j}$ を $(i,j)$-成分のみが 1 で他はすべて零である行列とする。これを、「行列単位」と言う。
+
+$1\leq i\neq j\leq m$ とし、以下の行列を考える。
+$$P(i;c) = I + (c-1)E_{i,i}, \;P(i,j) = I - E_{i,i}-E_{j,j}+E_{i,j}+E_{j,i},\;P(i,j;c) = I + cE_{i,j}.$$
+ただし、$c$ は、零でない数とする。これら３種類の行列を{\gt 基本行列}と呼ぶ。
+
+\smallskip
+$A = [a_{i,j}]$ を $(i,j)$-成分が $a_{i,j}$ である $m\times n$ 行列とする。さて、行に関する基本変形とは以下のものであった。
+
+\begin{enumerate}
+\item ある行に０でない定数をかける。
+\item 2 つの行を交換する。
+\item ある行に、別の行を何倍かして加える。
+\end{enumerate}
+
+$P(i;c)$ を $A$ に左からかけると、
+$$P(i;c)A = \left[\begin{array}{cccc}a_{11} & a_{12} & \cdots & a_{1n} \\
+a_{21} & a_{22} & \cdots & a_{2n}\\
+\multicolumn{4}{c}{\cdots\cdots\cdots}\\
+ca_{i1} & ca_{i2} & \cdots & ca_{in}\\
+\multicolumn{4}{c}{\cdots\cdots\cdots}\\
+a_{m1} & a_{m2} & \cdots & a_{mn}
+\end{array}\right].$$
+すなわち、$P(i;c)$ を 行列 $A$ に左からかけることは、$A$ の第 $i$ 行を $c$ 倍する事である。
+
+\smallskip
+$P(i,j)$ を $A$ に左からかけると、$i<j$ とすると、
+$$P(i,j)A = \left[\begin{array}{cccc}a_{11} & a_{12} & \cdots & a_{1n} \\
+a_{21} & a_{22} & \cdots & a_{2n}\\
+\multicolumn{4}{c}{\cdots\cdots\cdots}\\
+a_{j1} & a_{j2} & \cdots & a_{jn}\\
+\multicolumn{4}{c}{\cdots\cdots\cdots}\\
+a_{i1} & a_{i2} & \cdots & a_{in}\\
+\multicolumn{4}{c}{\cdots\cdots\cdots}\\
+a_{m1} & a_{m2} & \cdots & a_{mn}
+\end{array}\right].$$
+すなわち、$P(i,j)$ を 行列 $A$ に左からかけることは、$A$ の第 $i$ 行と、第 $j$ 行を入れ替える事である。
+
+\smallskip
+$P(i,j;c)$ を $A$ に左からかけると、
+$$P(i,j;c)A = \left[\begin{array}{cccc}a_{11} & a_{12} & \cdots & a_{1n} \\
+\multicolumn{4}{c}{\cdots\cdots\cdots}\\
+a_{i-11} & a_{i-12} & \cdots & a_{i-1n}\\
+a_{i1}+ca_{j1} & a_{i2}+ca_{j2} & \cdots & a_{in}+ca_{jn}\\
+a_{i+11} & a_{i+12} & \cdots & a_{i+1n}\\
+\multicolumn{4}{c}{\cdots\cdots\cdots}\\
+a_{m1} & a_{m2} & \cdots & a_{mn}
+\end{array}\right].$$
+すなわち、$P(i,j;c)$ を 行列 $A$ に左からかけることは、$A$ の第 $j$ 行の $i$ 倍を第 $i$ 行に足す事である。
+
+\medskip
+このことを用いると、特に以下の事が分かる。
+\begin{enumerate}
+\item $P(i;c)P(i;1/c) = P(i;1/c)P(i;c) = I$。すなわち、$P(i;c)^{-1} = P(i;1/c)$。
+\item $P(i,j)P(i,j) = I$。すなわち、$P(i,j)^{-1} = P(i,j)$。
+\item $P(i,j;c)P(i,j;-c) = I$。すなわち、$P(i,j;c)^{-1} = P(i,j;-c)$。
+\end{enumerate}
+
+\bigskip
+さて、これを用いていくつかのことを考えてみよう。
+
+まずは、次の補題から。
+
+\begin{lemma} \label{lemma:inverse}
+$P$, $Q$ を 可逆な $n$ 次正方行列とすると、$P^{-1}$ も可逆で $(P^{-1})^{-1} = P$。また、積 $PQ$ も可逆で $(PQ)^{-1} = Q^{-1}P^{-1}$ である。さらに、$P_1, P_2, \ldots, P_{n-1}, P_n$ をすべて可逆な $n$ 次正方行列とすると、積 $P_nP_{n-1}\cdots P_2P_1$ も可逆で、
+$$(P_nP_{n-1}\cdots P_2P_1)^{-1} = P_1^{-1}P_2^{-1}\ldots P_{n-1}^{-1}P_n^{-1}.$$
+\end{lemma}
+\proof
+$Q^{-1}P^{-1}PQ = Q^{-1}Q = I,\;PQQ^{-1}P^{-1} = PP^{-1} = I$ より、$(PQ)^{-1} = Q^{-1}P^{-1}$。一般の場合も同様。
+\qed
+
+\begin{lemma} \label{lemma:elemP}
+$A$ を $m\times n$ 行列とし、$A$ に行に関する基本変形を行って、行列 $B$ が得られたとする。すると、$m$ 次可逆行列 $P$ で、$PA = B$ となるものがある。
+\end{lemma}
+\proof
+上で見たように、ある行列に行に関する基本変形を施すことは、それに対応する基本行列を左からかけることであった。$A$ に施した基本変形に対応する基本行列を、$P_1, P_2, \ldots, P_{n-1}, P_n$ とする。$P = P_nP_{n-1}\cdots P_2P_1$ とすると、
+$$B = P_nP_{n-1}\cdots P_2P_1A = PA.$$
+さらに $P_1, P_2, \ldots, P_{n-1}, P_n$ は、上で見たように可逆だから、補題~\ref{lemma:inverse} により、$P$ は、可逆である。
+\qed
+
+\medskip
+ここで、定理~\ref{thm:hakidashi} の証明する。まず、定理を再掲する。
+
+\begin{quote}
+$A$ を $n$ 次正方行列、$I = I_n$ を $n$ 次単位行列とし、$C = [A, I]$ なる、$n\times 2n$ の行列を考える。この行列 $C$ に、行に関する基本変形を施し、既約ガウス行列に変形する。その結果を  $D$ とする。もし、$D = [I, B]$ の形になれば、$B = A^{-1}$ である。もし、$D$ の左半分が、$I$ でなければ、$A$ は、逆行列を持たない。とくに、$A$ が逆行列を持つことと、$\rank A = n$ であることとは、同値である。
+\end{quote}
+
+$X$, $Y$ を $n$ 次正方行列とし、行列 $[X, Y]$ に行に関する基本変形を施し、その基本変形に対応する基本行列を $P$ とする。すると、行に関する基本変形を、$X$、$Y$ それぞれにすることと同じだから、結果は、$P[X, Y] = [PX, PY]$ である。このことを用いると、行列、$C = [A, I]$ に行に関する基本変形を施し、$D = [I, B]$  を得たとする。$C$ に施した基本変形に対応する基本行列を、$P_1, P_2, \ldots, P_{n-1}, P_n$ とする。$P = P_nP_{n-1}\cdots P_2P_1$ とすると、
+$$[I, B] = D = P_nP_{n-1}\cdots P_2P_1C = P[A, I] = [PA, P].$$
+従って、$PA = I$、$B = P$。$P$ は、可逆行列の積だったから $P$ も可逆。$PA = I$ より、
+$$P^{-1} = P^{-1}I = P^{-1}PA = A$$
+より、$B = P = A^{-1}$ である。
+
+さて、既約ガウス行列 $D$ の左半分を $L = PA$ とし、$L$ が $I$ でなければ、既約ガウス行列の定義から、$L$ の第 $m$ 行（一番下の行）はすべて $0$ である。即ち、$\rank L = r < n$。さて、定理~\ref{thm:homog} は次のようなものであった。
+
+\begin{quote}
+$n$  個の変数を持つ連立一次同次方程式の拡大係数行列の階数を $r$ とする。すると、これは係数行列の階数とも等しい。$n=r$ ならば、この連立一次同次方程式の解は、$x_1 = x_2 = \cdots = x_n = 0$ のみであり、$n>r$ ならば、$n-r$ 個のパラメターを用いて解を書くことができる。とくに解は、無限個ある。
+\end{quote}
+
+これにより、$n$ 次列ベクトル $\by \neq \bo$ で $L\by = \bo$ となるものが存在する。ここで、もし $A$ が可逆であるとすると、
+$L = PA$ も可逆だから、
+$$\bo = L^{-1}\bo = L^{-1}L\by = I\by = \by \neq \bo$$
+となり、これは矛盾。従って、$A$ は、可逆ではない。
+\qed
+
+\begin{cor} \label{cor:invertible:elematrix}
+$A,B$ を $n$ 次正方行列とする。このとき、$AB = I$ ならば、$A$ も $B$ も可逆行列で、$BA =  I$ である。可逆行列は、基本行列の積で書ける。
+\end{cor}
+\proof
+$B$ が可逆でないとすると、$n$ 次列ベクトル $\by\neq \bo$ で、$B\by = \bo$ となるものが存在する。すると、
+$$\bo = A\bo = AB\by = I\by  = \by \neq \bo$$
+となり、矛盾。従って、$B$ は、可逆である。これより、
+$$B^{-1} = IB^{-1} = ABB^{-1} = A$$
+となり、$BA = BB^{-1} = I$。最後の部分は、$A$ の行による基本変形で、階数が、$n$ より小さい既約ガウス行列が得られると、
+$n$ 次列ベクトル $\by\neq \bo$ で、$A\by = \bo$ となるものが存在するから、上と同様にして、矛盾が得られる。これから、結果が得られる。
+\qed
+
+\medskip
+連立一次方程式に戻る。
+$$A\bx = \bb$$
+と行列で表示する。拡大係数行列を、$[A, \bb]$ とし、これに基本変形を次々に施すと、それに対応する基本行列の積を $P$ として、$P[A, \bb] = [PA, P\bb]$ となる。これは、$PA\bx = P\bb$ に関する拡大係数行列である。$P$ は、可逆であることから、次のことが分かる。
+$$A\bx = \bb \Leftrightarrow PA\bx = P\bb.$$
+すなわち、$\bx$ が、$A\bx = \bb$ を満たせば、$PA\bx = P\bb$ を満たし、逆に、$\bx$ が、$PA\bx = P\bb$ を満たせば、 $A\bx = \bb$を満たす。従って、基本変形を行っても解は、変わらないのであった。
+
+\newpage
+\mysection{行列式}
+$2\times 2$ 行列について考えたとき、行列式 $\det A$ を使って可逆性の判定、逆行列の構成などをした。ここでは、$n\times n$ 行列、すなわち、$n$ 次正方行列の行列式をまず定義する。
+
+準備として、順列とその追い越し数をまず定義する。
+
+\begin{definition}
+\begin{enumerate}
+\item 自然数の集合 $N = \{1,2,\ldots,n\}$ を繰り返しも重複もなく並べたものを $N$ の{\gt 順列}という。順列を $(j_1, j_2,\ldots,j_n)$ などと書く。$N$ の順列全体をここでは、$P_n$ と書く。
+\item $\rho = (j_1,j_2,\ldots,j_n)\in P_n$ を順列とする。このとき、
+$$\ell(\rho) = |\{(r,s)\mid 1\leq r < s \leq n,\;j_r > j_s\}|$$
+を順列 $\rho$ の{\gt 追い越し数}と言う。（反転数、転位数などとも言う）
+\item $\rho$ を順列とするとき、$\sgn(\rho) = (-1)^{\ell(\rho)}$ を $\rho$ の{\gt 符号} (sign, signature) と言う。
+\end{enumerate}
+\end{definition}
+
+\begin{eg}
+順列
+\begin{enumerate}
+\item $n = 1$ の時、$P_1 = \{(1)\}$。
+\item $n = 2$ の時、$P_2 = \{(1,2),(2,1)\}$。$\{1,2\}$ の順列は、2 個。
+\item $n = 3$ の時、
+$$P_3 = \{(1,2,3),(1,3,2),(2,1,3),(2,3,1),(3,1,2),(3,2,1)\}。$$
+$\{1,2,3\}$ の順列は、6 個。
+\item $n = 4$ の時、
+\begin{eqnarray*}
+\lefteqn{P_4 = \{(1,2,3,4),(1,2,4,3),(1,3,2,4),(1,3,4,2),}\\
+& & (1,4,2,3),(1,4,3,2),(2,1,3,4),\cdots\}
+\end{eqnarray*}
+で、全部で、$24  = 4\cdot 3\cdot 2\cdot 1 = 4!$ 個ある。
+\item 最初が何になるかで、$n$ 通り、最初を固定したとき、2 番目は、1 番目の数字は使えないから $n-1$ 通り、3 番目は、$n-2$ 通り、・・・となっていく。集合 $S$ の元の数を $|S|$ と書くこともある。これを用いると、$\{1,2,\ldots,n\}$ の順列は、
+$$|P_n| = n\cdot (n-1)\cdot (n-2)\cdots 2\cdot 1 = n!$$
+個あることが分かる。集合 $S$ の元の数を $|S|$ と書くこともある。これを用いると、
+\end{enumerate}
+\end{eg}
+
+\begin{eg}
+追い越し数、符号
+\begin{enumerate}
+\item 追い越し数は、順列を左から見ていったとき、大きい小さいとなっている組の数のことである。例えば、$(3,4,1,5,2)$ の時は、$3$  から見ると、$(3,1),(3,2)$ がそのような組、$4$ から見ると、$(4,1), (4,2)$、$1$ から見ると、そのような組はなく、後は、$(5,2)$ がそのような組だから、全部で、$\ell(3,4,1,5,2) = 2+2+0+1 = 5$ である。
+\item 符号は、定義から追い越し数が偶数なら 1 奇数なら $-1$ である。特に上の例では、
+$$\sgn(3,4,1,5,2) = (-1)^5 = -1.$$
+\item 順列 $(1,2,3,\ldots,n)$ の時は、追い越し数は、$0$ だから 符号は、$1$。
+$i<j$ とし、$i$ と、$j$ を入れ替えた順列を、
+$$\rho = (1,2,\ldots, i-1, j, i+1, \ldots, j-1, i, j+1, \ldots, n)$$
+とすると、$\ell(\rho) = (j-i) + (j-i)-1 = 2(j-i)+1$ だから、$\sgn(\rho) = -1$。
+\item $P_1 = \{(1)\}$  については、$\ell(1) = 0$, $\sgn(1) = 1$。$P_2$、$P_3$ については、以下のようになる。
+$$\begin{array}{|c|cc|}
+\hline
+P_2 & (1,2) & (2,1)\\
+\hline
+\ell & 0 & 1\\
+\sgn & 1 & -1\\
+\hline
+\end{array}$$
+$$\begin{array}{|c|cccccc|}
+\hline
+P_3 & (1,2,3) & (1,3,2) & (2,1,3) & (2,3,1) & (3,1,2) & (3,2,1)\\
+\hline
+\ell & 0 & 1 & 1 & 2 & 2 & 3\\
+\sgn & 1 & -1 & -1 & 1 & 1 & -1\\
+\hline
+\end{array}$$
+\end{enumerate}
+\end{eg}
+
+\medskip
+さて、これらの言葉を使って、$n$ 次正方行列の行列式を定義する。
+
+\begin{definition}
+$A = [a_{ij}]$ を $n$ 次正方行列とする。このとき、
+$$\det A = \sum_{\rho = (j_1,j_2,\ldots,j_n)\in P_n} \sgn(\rho)a_{1,j_1}a_{2,j_2}\cdots a_{n,j_n}$$
+を $A$ の{\gt 行列式}と言う。これを、$|A|$ と書くこともある。
+\end{definition}
+
+行列式の定義は、わかりにくいが、まず、いくつかのことを見ていこう。
+\begin{enumerate}
+\item $\rho\in P_n$ がすべて動きそれについての和を取ったものである。すなわち、$n!$ 個の和である。$n=1, 2, 3, 4$ の時は、それぞれ、$1, 2, 6, 24$ 個の和である。
+\item 各項は、$\sgn(\rho)a_{1,j_1}a_{2,j_2}\cdots a_{n.j_n}$ の形をし、その項は、$\sgn(\rho)$ によって決まる $\pm 1$ の部分を別にすると、$A$ の成分の $n$ 個の積であり、その $n$ 個は、各行から 1 つずつ、各列から、1 つずつとった積である。
+\end{enumerate}
+
+以下に、$n = 1$ から順に、$\det A$ の式を決めていく。$A = [a_{ij}]$ とする。
+
+\begin{enumerate}
+\item $n = 1$ のときは、
+$$\det A = |a_{11}| = a_{11}.$$
+
+\item $n = 2$ の時は、
+\begin{eqnarray*}
+\det A  & = & \left|\begin{array}{cc}a_{11} & a_{12}\\ a_{21} & a_{22}\end{array}\right| \\
+& = & \sgn(1,2)a_{11}a_{22} + \sgn(2,1)a_{12}a_{21}\\
+& = & a_{11}a_{22} - a_{12}a_{21}
+\end{eqnarray*}
+
+\item $n =3$ の時は、
+\begin{eqnarray*}
+\lefteqn{\det A}\\
+& = & \left|\begin{array}{ccc}a_{11} & a_{12} & a_{13} \\ a_{21} & 
+a_{22} & a_{23} \\ a_{31} & a_{32} & a_{33}\end{array}\right| \\
+& = & \sgn(1,2,3)a_{11}a_{22}a_{33} + \sgn(1,3,2)a_{11}a_{23}a_{32} + 
+\sgn(2,1,3)a_{12}a_{21}a_{33}\\
+& & \mbox{ } + \sgn(2,3,1)a_{12}a_{23}a_{31} + \sgn(3,1,2)a_{13}a_{21}a_{32} + 
+\sgn(3,2,1)a_{13}a_{22}a_{31}\\
+& = & a_{11}a_{22}a_{33} - a_{11}a_{23}a_{32} - a_{12}a_{21}a_{33}\\
+& & \mbox{ } + a_{12}a_{23}a_{31} + a_{13}a_{21}a_{32} - a_{13}a_{22}a_{31}
+\end{eqnarray*}
+
+\item $n = 4$ の時は、24 個の和であることは分かる。具体的に調べてみること。
+しかし、この方法では、$n = 4$ 程度が限界で、定義から直接求めることは、難しい。しかし、この定義を理解することが行列式を理解し、計算する出発点である。
+\end{enumerate}
+
+\begin{eg}
+いくつかの行列式を具体的に計算してみよう。
+\begin{enumerate}
+\item $n=2$ の場合。
+$$\det\left[\begin{array}{cc}3 & -2 \\1 & 5\end{array}\right] = 
+\left|\begin{array}{cc}3 & -2 \\1 & 5\end{array}\right| = 
+3\cdot 5 - (-2)\cdot 1 = 17$$
+$$\left|\begin{array}{cc}a & b \\0 & d\end{array}\right| = ad.$$
+
+\item $n = 3$ の場合。
+\begin{eqnarray*}
+\det\left[\begin{array}{ccc}-1 & 2 & 1\\0 & 1 & 3\\ 1 & 2 & -1\end{array}\right]
+& = & \left|\begin{array}{ccc}-1 & 2 & 1\\0 & 1 & 3\\ 1 & 2 & -1\end{array}\right|\\
+& = & (-1)\times 1\times (-1) + 2\times 3\times 1 + 1\times 2 \times 0 \\
+& & \mbox{ }-3\times 2\times (-1) - (-1)\times 0 \times 2\\
+& = & 12
+\end{eqnarray*}
+$$\left|\begin{array}{ccc}a_{11} & a_{12} & a_{13}\\0 & a_{22} & a_{23}\\ 0 & 0 & a_{33}\end{array}\right| = a_{11}a_{22}a_{33}.$$
+
+\item $n=4$ の場合。
+$$\left|\begin{array}{cccc}-2 & 1 & 3 & 4 \\2 & 0 & -5 & 1\\ 1 & 4  & 2 & -7 \\ 2 & -4 & -9 & 3\end{array}\right| = ?$$
+答えは、110 です。最初の定義に戻って計算してみて下さい。4 個の数の積の 24 個の和（差）の計算です。
+\end{enumerate}
+\end{eg}
+
+上にも少し見たように、$n =2$ の場合をのぞいて、行列式の計算は大変です。$n=3$ の時は、公式のように覚えれば大したことはありません。でも、$n\geq 4$ となると、単純ではありません。しかし、上でも見たように特別な形の行列式は簡単に求められます。
+
+\begin{definition}
+$n$ 次正方行列 $A = [a_{ij}]$ において、$i>j$ なる $i,j$ について、いつでも $a_{ij} = 0$ である行列を、{\gt 上半三角行列}、$i<j$ なる $i,j$ について、いつでも $a_{ij} = 0$ である行列を、{\gt 下半三角行列}、$i\neq j$ なる $i,j$  について、いつでも $a_{ij} = 0$ すなわち対角成分以外は、すべて零の行列を{\gt 対角行列}と言う。
+\end{definition}
+
+\begin{prop}
+$A = [a_{ij}]$ を $n$ 次正方行列とする。$A$ が上半三角行列又は、下半三角行列ならば、
+$$\det A = a_{11}a_{22}\cdots a_{nn}$$
+すなわち対角成分の積となる。
+\end{prop}
+\proof
+行列が上半三角の場合だけ示す。下半三角の時も、是非考えてみて下さい。行列式の定義から、
+$$\det A = \sum_{\rho = (j_1,j_2,\ldots,j_n)\in P_n} \sgn(\rho)a_{1,j_1}a_{2,j_2}\cdots a_{n,j_n}$$
+$\sgn(\rho)a_{1,j_1}a_{2,j_2}\cdots a_{n,j_n} \neq 0$ となるためには、$a_{1,j_1}, a_{2,j_2}, \ldots, a_{n,j_n}$ がすべて零でない数でなければならない。$n$ 行目で $0$ でないのは、$a_{n,n}$ だけだから、$j_n = n$。$n-1$ 行目で $0$ でないのは、$a_{n-1,n-1}$ と、$a_{n-1,n}$ だが、$j_n = n$ だから、$j_{n-1}\neq n$ 従って、$j_{n-1} = n-1$。以下同様にして、$(j_1, j_2, \ldots, j_n) = (1,2,\ldots, n)$ の場合以外は、$0$ がどこかに現れることが分かる。$\sgn(1,2,\ldots, n) = 1$ であることに注意すれば、
+$$\det A = a_{11}a_{22}\cdots a_{nn}$$
+が得られる。
+\qed
+
+\newpage
+\mysection{行列式の計算}
+行列式の定義は、次のようなものであった。
+$$\det A = \sum_{\rho = (j_1,j_2,\ldots,j_n)\in P_n} \sgn(\rho)a_{1,j_1}a_{2,j_2}\cdots a_{n,j_n}$$
+
+行列式は、定義に戻って計算することは非常に大変である。ここでは、行列式を変形させて簡単に計算する方法を考える。最初のものは、前節ですでに示したものである。以下では、$A = [a_{ij}]$ を $n$ 次正方行列とする。
+
+\begin{enumerate}
+\item $A$ が上半三角行列又は、下半三角行列ならば、
+$$\det A = a_{11}a_{22}\cdots a_{nn}$$
+すなわち対角成分の積となる。
+
+\item \begin{enumerate}
+	\item ある行の各項をすべて $c$ 倍した行列の行列式の値は、$c$ 倍になる。
+	\item ある列の各項をすべて $c$ 倍した行列の行列式の値は、$c$ 倍になる。
+	\end{enumerate}
+	すなわち、{\small
+	$$\left|\begin{array}{cccc}a_{11} & a_{12} & \cdots & a_{1n} \\
+a_{21} & a_{22} & \cdots & a_{2n}\\
+\multicolumn{4}{c}{\cdots\cdots\cdots}\\
+ca_{i1} & ca_{i2} & \cdots & ca_{in}\\
+\multicolumn{4}{c}{\cdots\cdots\cdots}\\
+a_{n1} & a_{n2} & \cdots & a_{nn}
+\end{array}\right| = 
+c\cdot\left|\begin{array}{cccc}a_{11} & a_{12} & \cdots & a_{1n} \\
+a_{21} & a_{22} & \cdots & a_{2n}\\
+\multicolumn{4}{c}{\cdots\cdots\cdots}\\
+a_{i1} & a_{i2} & \cdots & a_{in}\\
+\multicolumn{4}{c}{\cdots\cdots\cdots}\\
+a_{n1} & a_{n2} & \cdots & a_{nn}
+\end{array}\right|$$
+$$ = \left|\begin{array}{cccccc}a_{11} & a_{12} & \cdots & ca_{1j} & \cdots & a_{1n} \\
+a_{21} & a_{22} &  \cdots & ca_{2j} & \cdots & a_{2n} \\
+\multicolumn{6}{c}{\cdots\cdots\cdots}\\
+a_{n1} & a_{n2} & \cdots & a_{nj} & \cdots & a_{nn}
+\end{array}\right|.$$
+}%
+	\proof
+	行列式は、$\sgn(\rho)a_{1,j_1}a_{2,j_2}\cdots a_{n,j_n}$ の形のものの和である。これは、各行一つずつ必ず現れるから、ある行がすべて $c$ 倍 ならば、各項の値は常に $c$ 倍 である。同様に、各列から一つずつとったものの積だからある列がすべて $c$ 倍  ならば、行列式の値は、$c$ 倍である。
+	\qed
+
+\smallskip
+これの特殊な場合として次を得る。
+	\begin{enumerate}
+	\item ある行がすべて 0 である行列の行列式の値は 0 である。
+	\item ある列がすべて 0 である行列の行列式の値は 0 である。
+	\end{enumerate}
+	\proof
+	すべてが 0  である行を 0 倍しても変わらないから、行列式の値は 0 である。
+	\qed
+
+\item 二つの行又は、二つの列を入れ替えると値は、$-1$ 倍になる。即ち、
+$$\left|\begin{array}{cccc}a_{11} & a_{12} & \cdots & a_{1n} \\
+\multicolumn{4}{c}{\cdots\cdots\cdots}\\
+a_{j1} & a_{j2} & \cdots & a_{jn}\\
+\multicolumn{4}{c}{\cdots\cdots\cdots}\\
+a_{i1} & a_{i2} & \cdots & a_{in}\\
+\multicolumn{4}{c}{\cdots\cdots\cdots}\\
+a_{n1} & a_{n2} & \cdots & a_{nn}
+\end{array}\right| = - 
+\left|\begin{array}{cccc}a_{11} & a_{12} & \cdots & a_{1n} \\
+\multicolumn{4}{c}{\cdots\cdots\cdots}\\
+a_{i1} & a_{i2} & \cdots & a_{in}\\
+\multicolumn{4}{c}{\cdots\cdots\cdots}\\
+a_{j1} & a_{j2} & \cdots & a_{jn}\\
+\multicolumn{4}{c}{\cdots\cdots\cdots}\\
+a_{n1} & a_{n2} & \cdots & a_{nn}
+\end{array}\right|.$$
+	\proof
+	行列式の各項は、$\sgn(\rho)a_{1,j_1}a_{2,j_2}\cdots a_{n,j_n}$ であった。$i$ 行と、$k$ 行を入れ替えると、
+	$$\sgn(\rho)a_{1,j_1}\cdots a_{i-1,j_{i-1}}a_{k,j_i}a_{i+1,j_{i+1}}\cdots a_{k-1,j_{k-1}}a_{i,j_k}a_{k+1,j_{k+1}}\cdots a_{n,j_n}$$
+	これと、元のものを比べる。$\sgn(\rho) = \sgn(j_1,j_2,\ldots, j_n)$ と、
+	$$\sgn(j_1,\cdots j_{i-1}, j_k, j_{i+1},\cdots, j_{k-1},j_i,j_{k+1},\cdots, j_n)$$ 
+	を比べると、$-1$ 倍であることが分かる。実際、追い越し数で変化するのは、$i$ 番目から、$k$ 番目の間だけだから、そのあいだだけ考えればよい。$i = 1, k=n$、$S = \{j_2,\ldots, j_{n-1}$ とすると、$j_1>j_n$ のとき、
+	\begin{eqnarray*}
+	\lefteqn{|\{l\in S\mid j_1>l\}| + |\{l\in S\mid l>j_{n}\}| + 1}\\
+	& = & |S| - |\{l\in S\mid l>j_1\}| + |S| - |\{l\in S \mid j_{n}>l\}| + 1\\
+	& = & 2|S| + 1 - (|\{l\in S \mid j_{n}>l\}| + |\{l\in S\mid l>j_1\}| )
+	\end{eqnarray*}
+	これより、結果を得る。
+	\qed
+
+これを用いると次のことが分かります。
+	\begin{enumerate}
+	\item ２つの行が同じ行列の行列式は等しい。
+	\item ２つの列が同じ行列の行列式は等しい。
+	\end{enumerate}
+	\proof 
+	２つの行を入れ替えれば、-1 倍になるはずであるが、入れ替える行が等しければ、変わらないはずである。従って、行列式の値を $d$ とすると、$d = -d$ を得、これより、$d = 0$ を得る。
+	\qed
+	
+\item \begin{enumerate}
+	\item ある行に別の行の何倍かを足しても行列式の値は変わらない。
+	\item ある列に別の列の何倍かを足しても行列式の値は変わらない。
+	\end{enumerate}
+	即ち、
+$$\left|\begin{array}{cccc}a_{11} & a_{12} & \cdots & a_{1n} \\
+\multicolumn{4}{c}{\cdots\cdots\cdots}\\
+a_{i-11} & a_{i-12} & \cdots & a_{i-1n}\\
+a_{i1}+ca_{j1} & a_{i2}+ca_{j2} & \cdots & a_{in}+ca_{jn}\\
+a_{i+11} & a_{i+12} & \cdots & a_{i+1n}\\
+\multicolumn{4}{c}{\cdots\cdots\cdots}\\
+a_{n1} & a_{n2} & \cdots & a_{nn}
+\end{array}\right| = 
+\left|\begin{array}{cccc}a_{11} & a_{12} & \cdots & a_{1n} \\
+\multicolumn{4}{c}{\cdots\cdots\cdots}\\
+a_{i-11} & a_{i-12} & \cdots & a_{i-1n}\\
+a_{i1} & a_{i2} & \cdots & a_{in}\\
+a_{i+11} & a_{i+12} & \cdots & a_{i+1n}\\
+\multicolumn{4}{c}{\cdots\cdots\cdots}\\
+a_{n1} & a_{n2} & \cdots & a_{nn}
+\end{array}\right|.$$
+
+\smallskip
+\proof
+まず、次のことを示す。
+$$\left|\begin{array}{cccc}a_{11} & a_{12} & \cdots & a_{1n} \\
+\multicolumn{4}{c}{\cdots\cdots\cdots}\\
+a_{i-11} & a_{i-12} & \cdots & a_{i-1n}\\
+a_{i1}+b_{i1} & a_{i2}+b_{j2} & \cdots & a_{in}+b_{jn}\\
+a_{i+11} & a_{i+12} & \cdots & a_{i+1n}\\
+\multicolumn{4}{c}{\cdots\cdots\cdots}\\
+a_{n1} & a_{n2} & \cdots & a_{nn}
+\end{array}\right| = 
+\left|\begin{array}{cccc}a_{11} & a_{12} & \cdots & a_{1n} \\
+\multicolumn{4}{c}{\cdots\cdots\cdots}\\
+a_{i-11} & a_{i-12} & \cdots & a_{i-1n}\\
+a_{i1} & a_{i2} & \cdots & a_{in}\\
+a_{i+11} & a_{i+12} & \cdots & a_{i+1n}\\
+\multicolumn{4}{c}{\cdots\cdots\cdots}\\
+a_{n1} & a_{n2} & \cdots & a_{nn}
+\end{array}\right| $$
+$$+ 
+\left|\begin{array}{cccc}a_{11} & a_{12} & \cdots & a_{1n} \\
+\multicolumn{4}{c}{\cdots\cdots\cdots}\\
+a_{i-11} & a_{i-12} & \cdots & a_{i-1n}\\
+b_{i1} & b_{i2} & \cdots & b_{in}\\
+a_{i+11} & a_{i+12} & \cdots & a_{i+1n}\\
+\multicolumn{4}{c}{\cdots\cdots\cdots}\\
+a_{n1} & a_{n2} & \cdots & a_{nn}
+\end{array}\right| $$
+これは、定義に戻って、
+\begin{eqnarray*}
+\lefteqn{\sum_{\rho = (j_1,j_2,\ldots,j_n)\in P_n} \sgn(\rho)a_{1,j_1}\cdots (a_{i,j_i} + b_{i,j_i}) \cdots a_{n,j_n}}\\
+& = & \sum_{\rho = (j_1,j_2,\ldots,j_n)\in P_n} \sgn(\rho)a_{1,j_1}\cdots a_{i,j_i} \cdots a_{n,j_n} + \\
+& = & \mbox{ } \sum_{\rho = (j_1,j_2,\ldots,j_n)\in P_n} \sgn(\rho)a_{1,j_1}\cdots b_{i,j_i} \cdots a_{n,j_n}
+\end{eqnarray*}
+さて、最初に戻ると、今示したことを用いいることにより、
+\begin{eqnarray*}
+\lefteqn{\left|\begin{array}{cccc}a_{11} & a_{12} & \cdots & a_{1n} \\
+\multicolumn{4}{c}{\cdots\cdots\cdots}\\
+a_{i1}+ca_{j1} & a_{i2}+ca_{j2} & \cdots & a_{in}+ca_{jn}\\
+\multicolumn{4}{c}{\cdots\cdots\cdots}\\
+a_{j1} & a_{j2} & \cdots & a_{jn} \\
+\multicolumn{4}{c}{\cdots\cdots\cdots}\\
+a_{n1} & a_{n2} & \cdots & a_{nn}
+\end{array}\right|}\\
+& = & 
+\left|\begin{array}{cccc}a_{11} & a_{12} & \cdots & a_{1n} \\
+\multicolumn{4}{c}{\cdots\cdots\cdots}\\
+a_{i1} & a_{i2} & \cdots & a_{in}\\
+\multicolumn{4}{c}{\cdots\cdots\cdots}\\
+a_{j1} & a_{j2} & \cdots & a_{jn} \\
+\multicolumn{4}{c}{\cdots\cdots\cdots}\\
+a_{n1} & a_{n2} & \cdots & a_{nn}
+\end{array}\right| + 
+c\cdot \left|\begin{array}{cccc}a_{11} & a_{12} & \cdots & a_{1n} \\
+\multicolumn{4}{c}{\cdots\cdots\cdots}\\
+a_{j1} & a_{j2} & \cdots & a_{jn}\\
+\multicolumn{4}{c}{\cdots\cdots\cdots}\\
+a_{j1} & a_{j2} & \cdots & a_{jn} \\
+\multicolumn{4}{c}{\cdots\cdots\cdots}\\
+a_{n1} & a_{n2} & \cdots & a_{nn}
+\end{array}\right|\\
+& = & \left|\begin{array}{cccc}a_{11} & a_{12} & \cdots & a_{1n} \\
+\multicolumn{4}{c}{\cdots\cdots\cdots}\\
+a_{i1} & a_{i2} & \cdots & a_{in}\\
+\multicolumn{4}{c}{\cdots\cdots\cdots}\\
+a_{j1} & a_{j2} & \cdots & a_{jn} \\
+\multicolumn{4}{c}{\cdots\cdots\cdots}\\
+a_{n1} & a_{n2} & \cdots & a_{nn}
+\end{array}\right|
+\end{eqnarray*}
+\end{enumerate}
+
+上で、色々な性質を見てきたがまとめると次のようになる。行の基本変形を行列に施すと、行列式の値は、次のようになる。
+\begin{enumerate}
+\item ある行に０でない定数 $c$ をかけると行列式の値は、$c$ 倍になる。
+\item 2 つの行を交換すると、行列式の値は、$-1$ 倍になる。
+\item ある行に、別の行を何倍かして加えても行列式の値は、変わらない。
+\end{enumerate}
+
+列に関する基本変形に付いても同様の結果が得られる。即ち、
+\begin{enumerate}
+\item ある列に０でない定数 $c$ をかけると行列式の値は、$c$ 倍になる。
+\item 2 つの列を交換すると、行列式の値は、$-1$ 倍になる。
+\item ある列に、別の列を何倍かして加えても行列式の値は、変わらない。
+\end{enumerate}
+
+\begin{eg}
+\begin{enumerate}
+\item $$\left|\begin{array}{cc}1 & 2\\ 2 & 3\end{array}\right| = 
+\left|\begin{array}{cc}1 & 2\\ 0 & -1\end{array}\right| = -1$$
+\item 大きな行列式についても考えてみる。
+\begin{eqnarray*}
+\lefteqn{\left|\begin{array}{ccccc}0 & 1 & 0 & 0 & 1 \\
+-1 & 1 & 0 & 1 & 0 \\2 & 2 & 1 & 1 & 1 \\2 & -1 & 0 & 0 & 0 \\1 & -1 & 1 & 0 & 1 
+\end{array}\right|}\\
+& = & - \left|\begin{array}{ccccc}1 & -1 & 1 & 0 & 1 \\
+-1 & 1 & 0 & 1 & 0 \\2 & 2 & 1 & 1 & 1 \\2 & -1 & 0 & 0 & 0 \\0 & 1 & 0 & 0 & 1 
+\end{array}\right| = 
+- \left|\begin{array}{ccccc}1 & -1 & 1 & 0 & 1 \\
+0 & 0 & 1 & 1 & 1 \\0 & 4 & -1 & 1 & -1 \\0 & 1 & -2 & 0 & -2 \\0 & 1 & 0 & 0 & 1 
+\end{array}\right|\\
+& = & \left|\begin{array}{ccccc}1 & -1 & 1 & 0 & 1 \\
+0 & 1 & 0 & 0 & 1 \\0 & 4 & -1 & 1 & -1 \\0 & 1 & -2 & 0 & -2 \\0 & 0 & 1 & 1 & 1 
+\end{array}\right| = 
+\left|\begin{array}{ccccc}1 & -1 & 1 & 0 & 1 \\
+0 & 1 & 0 & 0 & 1 \\0 & 0 & -1 & 1 & -3 \\0 & 0 & -2 & 0 & -3 \\0 & 0 & 1 & 1 & 1 
+\end{array}\right|\\
+& = & \left|\begin{array}{ccccc}1 & -1 & 1 & 0 & 1 \\
+0 & 1 & 0 & 0 & 1 \\0 & 0 & -1 & 1 & -3 \\0 & 0 & 0 & -2 & 3 \\0 & 0 & 0 & 2 & -2 
+\end{array}\right| = 
+\left|\begin{array}{ccccc}1 & -1 & 1 & 0 & 1 \\
+0 & 1 & 0 & 0 & 1 \\0 & 0 & -1 & 1 & -3 \\0 & 0 & 0 & -2 & 3 \\0 & 0 & 0 & 0 & 1
+\end{array}\right|\\
+& = & 6
+\end{eqnarray*}
+\item 次のような行列式も考えてみよう。
+$$\left|\begin{array}{ccccc}a & b & b & \cdots & b \\
+b & a & b & \cdots & b \\b & b & a & \cdots & b \\\multicolumn{5}{c}{\cdots\cdots\cdots} \\b & b & b & \cdots & a
+\end{array}\right|,\;
+\left|\begin{array}{ccccc}1 & x_1 & x_1^2 & \cdots & x_1^{n-1} \\
+1 & x_2 & x_2^2 & \cdots & x_2^{n-1}\\1 & x_3 & x_3^2 & \cdots & x_3^{n-1} \\\multicolumn{5}{c}{\cdots\cdots\cdots} \\1 & x_n & x_n^2 & \cdots & x_n^{n-1}
+\end{array}\right|$$
+\end{enumerate}
+\end{eg}
+
+\newpage
+\mysection{行列式の性質}
+この節では、行列式の非常に重要な性質について学ぶ。先ずは、転置行列の行列式についてである。
+
+\begin{thm} \label{thm:detoftranspose}
+$A$ を $n$ 次正方行列とする。このとき、$\det A = \det A^t$ が成り立つ。
+\end{thm}
+\proof
+行列式の定義は、次のようなものであった。
+$$\det A = \sum_{\rho = (j_1,j_2,\ldots,j_n)\in P_n} \sgn(\rho)a_{1,j_1}a_{2,j_2}\cdots a_{n,j_n}$$
+これを用いると、$A^t=[b_{ij}]$、$b_{ij}=a_{ji}$ とおくことにより、
+\begin{eqnarray*}
+\det A^t & = & \sum_{\rho = (j_1,j_2,\ldots,j_n)\in P_n} \sgn(\rho)b_{1,j_1}b_{2,j_2}\cdots b_{n,j_n}\\
+& = & \sum_{\rho = (j_1,j_2,\ldots,j_n)\in P_n} \sgn(\rho)a_{j_1,1}a_{j_2,2}\cdots a_{j_n,n}\\
+& = & \sum_{\rho' = (k_1,k_2,\ldots,k_n)\in P_n} \sgn(\rho')a_{1,k_1}a_{2,k_2}\cdots a_{n,k_n}\\
+& = & \det A
+\end{eqnarray*}
+２行目から３行目は、$\rho = (j_1,j_2,\ldots,j_n)$ も順列だから、
+$$a_{j_1,1}a_{j_2,2}\cdots a_{j_n,n}\;\mbox{ を、}\;a_{1,k_1}a_{2,k_2}\cdots a_{n,k_n}$$
+と書き直し、$\rho' =(k_1,k_2,\ldots,k_n)$ としている。一般にこのような変形により、$\ell(\rho) = \ell(\rho')$ であり、従って、$\sgn(\rho) = \sgn(\rho')$ である。
+
+例えば、$\rho = (j_1,j_2,j_3,j_4,j_5) = (2,5,1,4,3)$ とすると、
+$$a_{j_1,1}a_{j_2,2}\cdots a_{j_5,5} = a_{21}a_{52}a_{13}a_{44}a_{35} = a_{13}a_{21}a_{35}a_{44}a_{52}$$
+だから、$\rho' = (k_1,k_2,k_3,k_4.k_5) = (3,1,5,4,2)$ となり、$\ell(\rho) = \ell(\rho') = 5$、$\sgn(\rho) = \sgn(\rho') = -1$ となる。実は、順列 $rho$ を、$(1,2,3,4,5)\to(2,5,1,4,3)$ なる写像だと考えると、$rho' = (1,2,3,4,5)\to(3,1,5,4,2)$ は、逆写像になっています。一般の場合は考えてみて下さい。
+\qed
+
+\medskip
+前節でも、行に関する性質と、列に関する性質がでてきたが、上の定理を使うと、このことは簡単に分かる。例えば「行列 $A$ のある列に、別の列を何倍かして加えても行列式の値は、変わらない。」事を証明するときは、「行列 $B = A^t$ のある行に、別の行を何倍かして加えても行列式の値は、変わらない。」事を用いると、以下のように示すことが出来る。
+
+{\small
+\begin{eqnarray*}
+\lefteqn{\left|\begin{array}{ccccccc}
+a_{11} & \cdots & a_{1,i}+ca_{1,j} & \cdots & a_{1,j} & \cdots & a_{1,n}\\
+a_{21} & \cdots & a_{2,i}+ca_{2,j} & \cdots & a_{2,j} & \cdots & a_{2,n}\\
+\multicolumn{7}{c}{\cdots\cdots\cdots\cdots\cdots}\\
+a_{n1} & \cdots & a_{n,i}+ca_{n,j} & \cdots & a_{n,j} & \cdots & a_{n,n}
+\end{array}\right|}\\
+ & = & 
+\left|\begin{array}{cccc}a_{11} & a_{21} & \cdots & a_{n1} \\
+\multicolumn{4}{c}{\cdots\cdots\cdots}\\
+a_{1i}+ca_{ij} & a_{2i}+ca_{2j} & \cdots & a_{ni}+ca_{nj}\\
+\multicolumn{4}{c}{\cdots\cdots\cdots}\\
+a_{1j} & a_{2j} & \cdots & a_{nj} \\
+\multicolumn{4}{c}{\cdots\cdots\cdots}\\
+a_{1n} & a_{2n} & \cdots & a_{nn}
+\end{array}\right|\\
+ & =  &
+\left|\begin{array}{cccc}a_{11} & a_{21} & \cdots & a_{n1} \\
+\multicolumn{4}{c}{\cdots\cdots\cdots}\\
+a_{1i} & a_{2i} & \cdots & a_{ni}\\
+\multicolumn{4}{c}{\cdots\cdots\cdots}\\
+a_{1j} & a_{2j} & \cdots & a_{nj} \\
+\multicolumn{4}{c}{\cdots\cdots\cdots}\\
+a_{1n} & a_{2n} & \cdots & a_{nn}
+\end{array}\right|
+\; = \;
+\left|\begin{array}{ccccccc}
+a_{11} & \cdots & a_{1,i} & \cdots & a_{1,j} & \cdots & a_{1,n}\\
+a_{21} & \cdots & a_{2,i} & \cdots & a_{2,j} & \cdots & a_{2,n}\\
+\multicolumn{7}{c}{\cdots\cdots\cdots\cdots\cdots}\\
+a_{n1} & \cdots & a_{n,i} & \cdots & a_{n,j} & \cdots & a_{n,n}
+\end{array}\right|
+\end{eqnarray*}
+}
+
+\medskip
+$A$、$B$ を $2\times 2$ 行列とすると、$\det AB = \det A\cdot\det B$ が成り立った（命題~\ref{prop:2by2} $(2)$）。次の定理は、これが、一般の $n$ 次正方行列について成立することを示すものである。
+
+\begin{thm} \label{thm:detofprod}
+行列の積の行列式は、それぞれの行列の行列式の積に等しい。すなわち、$A$、$B$ をともに $n$ 次正方行列とするとき、次式が成り立つ。
+$$\det AB = \det A\cdot \det B.$$
+\end{thm}
+
+証明を考える前に、基本変形と、行列式の関係についてもう一度復習する。
+\begin{enumerate}
+\item ある行に０でない定数 $c$ をかけると行列式の値は、$c$ 倍になる。\\
+この変形は、行列に左から $P(i;c)$ をかけることによって得られる。
+\item 2 つの行を交換すると、行列式の値は、$-1$ 倍になる。\\
+この変形は、行列に左から $P(i,j)$ をかけることによって得られる。
+\item ある行に、別の行を何倍かして加えても行列式の値は、変わらない。\\
+この変形は、行列に左から $P(i,j;c)$ をかけることによって得られる。
+\end{enumerate}
+
+これらの基本変形を引き起こす行列の行列式を考えると、
+$$\det P(i;c) = c,\;\det P(i,j) = -1,\; \det P(i,j;c) = 1.$$
+これを上の基本変形による行列式の値の変化と比較すると、次の関係があることが分かる。
+
+\begin{eqnarray*}
+|P(i;c)A| & = & c|A| \; = \; |P(i;c)||A|\\
+|P(i,j)A| & = & -|A| \; = \; |P(i,j)||A|\\
+|P(i,j;c)A| & = & |A| \; = \; |P(i,j;c)||A|
+\end{eqnarray*}
+
+すなわち基本変形を引き起こす行列を左からかけることに関しては、定理が成り立つことが分かった。$P_1,P_1,\ldots, P_m$ を次々とかけて、すなわち $A$ に対応する基本変形をして、$B$ が得られたとする。$P = P_m\cdots P_2\cdot P_1$ とすると、
+$$|B| = |PA| = |P_m\cdots P_2\cdot P_1A| = |P_m|\cdots|P_2||P_1||A| = |P||A|$$
+
+\smallskip
+もう一つ。$A$ から基本変形を施して、既約ガウス行列 $B$ が得られたとする。上のことから、$B = PA$ となる基本行列の積である可逆行列 $P$ が存在する。$A$ は、正方行列だったから、既約ガウス行列 $B$ は、$I$ であるか、一番したの行がすべて 0 であるかのいずれかであることが分かる。$I$ であれば、$I = B = PA$ だから、$A = P^{-1}$ となり、$A$ は、可逆行列である。また、逆に $A$ が可逆行列ならば、系~\ref{cor:invertible:elematrix} によって、$B = I$ となるのであった。
+
+\smallskip
+特にこのことから次のことが分かる。
+
+\begin{cor}
+$n$ 次正方行列 $A$ が可逆であることと、$\det A\neq 0$ であることは同値である。
+\end{cor}
+\proof
+系~\ref{cor:invertible:elematrix} により、可逆行列は、基本行列の積 
+$$A = P_m\cdots P_2\cdot P_1$$
+でかける。基本行列の行列式はすべて 0 ではなくまた、上の考察から、
+$$|A| = |P_m\cdots P_2\cdot P_1| = |P_m|\cdots|P_2||P_1| \neq 0$$
+だから、可逆行列の行列式は 0 ではない。
+
+\smallskip
+可逆行列ではないとする。基本変形によって、既約ガウス行列 $B = PA$ が得られたとすると、明らかに、$B\neq I$。$B$ は、既約ガウス行列だから、$B$ の一番下の行は 0 のみからなる。すなわち、$|B| = 0$。$|B| = |PA| = |P||A|$ で、$|P|\neq 0$ であることに注意すると、$|A| = 0$ が得られる。
+\qed
+
+\medskip
+{\gt 定理~\ref{thm:detofprod} の証明 \quad}
+$A$ が可逆なときは、系~\ref{cor:invertible:elematrix} により基本行列の積でかけるから、
+$$|AB| = |PB| = |P||B| = |A||B|$$
+が成り立つから良い。$A$ が可逆でないときは、$A$ を基本変形により、既約ガウス行列に変形する。対応する基本行列の積を $P$ とすると、$PA$ の一番下の行は 0 のみからなるから、$PAB$ の一番下の行は 0 となる。従って、
+$$|AB|  =  |P|^{-1}|P||AB| =  |P|^{-1}|PAB| = 0 = |A||B|.$$
+この場合も定理は成り立つ。
+\qed
+
+\begin{cor} \label{cor:detofinverse}
+$A$ を可逆行列とする。このとき、
+$$\det A^{-1} = \frac 1{\det A}$$
+である。
+\end{cor}
+\proof
+$AA^{-1} = I$ だから、
+$$1 = \det I = \det AA^{-1} = \det A\cdot\det A^{-1}.$$
+これより、求める結果を得る。
+\qed
+
+\medskip
+実は、定理~\ref{thm:detofprod} を認めると、可逆行列の行列式の値が 0 でないことは明らかである。実際、
+$A$  が可逆であるとする。即ち、$n$ 次正方行列 $B$ で $AB = BA = I$ を満たすものがあったとする。すると、
+$$\det A\cdot\det B = \det AB = \det I = 1$$
+だから、$\det A\neq 0$ が得られる。
+
+\medskip
+他にも例えば、系~\ref{cor:invertible:elematrix} の前半部分、
+\begin{quote}
+$A,B$ を $n$ 次正方行列とする。このとき、$AB = I$ ならば、$A$ も $B$ も可逆行列で、$BA =  I$ である。可逆行列は、基本行列の積で書ける。
+\end{quote}
+も簡単に証明できる。なぜなら、$AB = I$ ならば、
+$$1 = \det I = \det AB = \det A\det B$$
+だから、$\det A$ も $\det B$ も 0 ではない。従って、$A$ も $B$ も可逆行列である。これが分かれば、
+$$BA = BABB^{-1} = BIB^{-1} = BB^{-1} = I$$
+だから、$B = A^{-1}$、$A = B^{-1}$ を得る。
+
+\begin{eg}
+次の行列式を Vandermonde の行列式という。
+$$\left|\begin{array}{ccccc}1 & x_1 & x_1^2 & \cdots & x_1^{n-1} \\
+1 & x_2 & x_2^2 & \cdots & x_2^{n-1}\\1 & x_3 & x_3^2 & \cdots & x_3^{n-1} \\\multicolumn{5}{c}{\cdots\cdots\cdots} \\1 & x_n & x_n^2 & \cdots & x_n^{n-1}
+\end{array}\right| = \prod_{i>j}(x_i - x_j) = \prod_{j = 1}^{n-1}\prod_{i = j+1}^{n}(x_i - x_j).$$
+これを $n$ に関する帰納法で証明する。次を仮定する。
+$$\left|\begin{array}{ccccc}1 & x_2 & x_2^2 & \cdots & x_2^{n-2} \\
+1 & x_3 & x_3^2 & \cdots & x_2^{n-2}\\1 & x_4 & x_4^2 & \cdots & x_4^{n-2} \\\multicolumn{5}{c}{\cdots\cdots\cdots} \\1 & x_n & x_n^2 & \cdots & x_n^{n-2}
+\end{array}\right| = \prod_{i>j}(x_i - x_j) = \prod_{j = 2}^{n-1}\prod_{i = j+1}^{n}(x_i - x_j).$$
+\begin{eqnarray*}
+\lefteqn{\left|\begin{array}{ccccc}1 & x_1 & x_1^2 & \cdots & x_1^{n-1} \\
+1 & x_2 & x_2^2 & \cdots & x_2^{n-1}\\ \multicolumn{5}{c}{\cdots\cdots\cdots} \\1 & x_n & x_n^2 & \cdots & x_n^{n-1} \end{array}\right|}\\
+ & = & 
+\left|\begin{array}{ccccc}1 & x_1 & x_1^2 & \cdots & x_1^{n-1} \\
+0 & x_2 - x_1& x_2^2 - x_1^2 & \cdots & x_2^{n-1} - x_1^{n-1} \\ \multicolumn{5}{c}{\cdots\cdots\cdots} \\0 & x_n - x_1 & x_n^2 - x_1^2& \cdots & x_n^{n-1} - x_1^{n-1}
+\end{array}\right|\\
+& = &\left|\begin{array}{cccc}
+x_2 - x_1& x_2^2 - x_1^2 & \cdots & x_2^{n-1} - x_1^{n-1} \\ 
+x_3 - x_1& x_3^2 - x_1^2 & \cdots & x_3^{n-1} - x_1^{n-1} \\\multicolumn{4}{c}{\cdots\cdots\cdots} \\x_n - x_1 & x_n^2 - x_1^2& \cdots & x_n^{n-1} - x_1^{n-1}
+\end{array}\right|\\
+ & = & 
+\left|\begin{array}{cccc}
+x_2 - x_1& x_2^2 - x_1^2 & \cdots & x_2^{n-1} - x_1x_2^{n-2} \\
+x_3 - x_1& x_3^2 - x_1^2 & \cdots & x_3^{n-1} - x_1x_3^{n-2} \\
+\multicolumn{4}{c}{\cdots\cdots\cdots} \\x_n - x_1 & x_n^2 - x_1^2& \cdots & x_n^{n-1} - x_1x_n^{n-2}
+\end{array}\right| \\
+& = & \left|\begin{array}{cccc}
+x_2 - x_1& x_2^2 - x_1x_2 & \cdots & x_2^{n-1} - x_1x_2^{n-2} \\
+x_3 - x_1& x_3^2 - x_1x_3 & \cdots & x_3^{n-1} - x_1x_3^{n-2} \\
+\multicolumn{4}{c}{\cdots\cdots\cdots} \\x_n - x_1 & x_n^2 - x_1x_n& \cdots & x_n^{n-1} - x_1x_n^{n-2}
+\end{array}\right|\\
+& = & (x_2-x_1)(x_3-x_1)\cdots(x_n-x_1)\cdot
+\left|\begin{array}{ccccc}1 & x_2 & x_2^2 & \cdots & x_2^{n-2} \\
+1 & x_3 & x_3^2 & \cdots & x_2^{n-2}\\1 & x_4 & x_4^2 & \cdots & x_4^{n-2} \\\multicolumn{5}{c}{\cdots\cdots\cdots} \\1 & x_n & x_n^2 & \cdots & x_n^{n-2}
+\end{array}\right| \\
+& = & \prod_{j = 1}^{n-1}\prod_{i = j+1}^{n}(x_i - x_j)  
+\end{eqnarray*}
+\end{eg}
+
+\newpage
+\mysection{Cramer の公式}
+以前に行列式の計算で、
+$$|A| = \left|\begin{array}{cc}a & \ast\\
+0 & {B}\end{array}\right| = a\cdot |B|$$
+であった。ここではこの式のの一般化から、行列式を用いた重要な定理をいくつか紹介する。
+
+\begin{definition}
+$n$ 次正方行列 $A$ の第 $i$ 行と第 $j$ 列を取り除いてできた $n-1$ 次正方行列を $M_{i,j}$ としたとき、$C_{i,j} = (-1)^{i+j}|M_{i,j}|$ を行列 $A$ の $(i,j)$ 余因子と言う。
+$(k,l)$ 成分が $C_{l,k}$ である行列（$C^t$）を $\widetilde{A}$ と書き、$A$ の余因子行列という。すなわち、$\widetilde{A} = [\tilde{a}_{i,j}]$ とすると、$\tilde{a}_{i,j} = (-1)^{i+j}|M_{j,i}|$、ここで、$M_{j,i}$ は $A$ の第 $j$ 行と第 $i$ 列を取り除いてできた $n-1$ 次正方行列。
+\end{definition}
+
+\begin{eg}
+次の３次正方行列を考える。
+$$A = \left[\begin{array}{ccc}1 & 2 & 4\\ 1 & 3 & 9\\ 1 & 4 & 16 \end{array}\right].$$
+すると、$A$ の余因子行列 $\widetilde{A}$ は次のようになる。
+\begin{eqnarray*}
+\widetilde{A} & = & 
+\left[\begin{array}{ccc}
+(-1)^{1+1}|M_{11}| & (-1)^{1+2}|M_{21}| & (-1)^{1+3}|M_{31}| \\
+(-1)^{2+1}|M_{12}| & (-1)^{2+2}|M_{22}| & (-1)^{2+3}|M_{32}| \\
+(-1)^{3+1}|M_{13}| & (-1)^{3+2}|M_{23}| & (-1)^{3+3}|M_{33}| 
+ \end{array}\right]\\
+& = & \left[\begin{array}{ccc}
++ \left|\begin{array}{cc} 3 & 9\\ 4 & 16 \end{array}\right|  &
+- \left|\begin{array}{cc} 2 & 4\\ 4 & 16 \end{array}\right| &
++ \left|\begin{array}{cc} 2 & 4\\ 3 & 9 \end{array}\right| \\
+- \left|\begin{array}{cc} 1 & 9\\ 1 & 16 \end{array}\right| &
++ \left|\begin{array}{cc} 1 & 4\\ 1 & 16 \end{array}\right| &
+- \left|\begin{array}{cc} 1 & 4\\ 1 & 9 \end{array}\right| \\
++ \left|\begin{array}{cc} 1 & 3\\ 1 & 4 \end{array}\right| &
+- \left|\begin{array}{cc} 1 & 2\\ 1 & 4 \end{array}\right| &
++ \left|\begin{array}{cc} 1 & 2\\ 1 & 3 \end{array}\right| 
+\end{array}\right]
+\end{eqnarray*}
+\end{eg}
+
+注意すべきことは、符号 $(-1)^{i+j}$ は、行も列も $+$、$-$ が互い違いに並んでおり、対角線の部分は、$(-1)^{i+i} = 1$ だからいつでも $+$ であること。転置を取っているところを忘れないようにすることである。４次の場合は次のようになる。
+
+$$\widetilde{A} = \left[\begin{array}{cccc}
++|M_{11}| & -|M_{21}| &+|M_{31}| & -|M_{4,1}| \\
+-|M_{12}| & +|M_{22}| & -|M_{32}| & +|M_{4,2}|\\
++|M_{13}| & -|M_{23}| & +|M_{33}| & -|M_{4,3}|\\
+-|M_{14}| & +|M_{24}| & -|M_{34}| & +|M_{4,4}|
+ \end{array}\right]$$
+ 
+２次の場合を考えると、次のようになっている。
+$$A = \left[\begin{array}{cc}a & b\\c & d\end{array}\right] \to
+\widetilde{A} = \left[\begin{array}{cc}d & -b\\-c & a\end{array}\right]$$
+$|A| = ad-bc$ が 0 でないときは、$\widetilde{A}$ を $\det A$ で割ったものが、$A$ の逆行列だった。すなわち、次が成り立つ。
+$$A\widetilde{A} = \widetilde{A}A = \det A\cdot I.$$
+実はこの式が一般の $n$ 次正方行列に対しても成り立つ。さらにつけ加えると、上の式は、２次の場合には簡単に確かめられるように、$\det A = 0$ の時も、両辺が 0 となり、成立する。
+
+\smallskip
+新しい記号を紹介する。$\delta_{i,j}$ は、クロネッカー(Kronecker) のデルタと言われるもので、$i = j$ の時 1、$i\neq j$ の時 0 を表すもの（正確には $i,j$ を変数とする関数（又は写像））とする。例えば、単位行列のことを $I = [\delta_{i,j}]$、すなわち単位行列は $(i,j)$ 成分が $\delta_{i,j}$ であるような行列と言ったりする。
+
+\begin{thm} \label{thm:ajointmat}
+$A = [a_{i,j}]$ を $n$ 次正方行列、$\widetilde{A} = [\tilde{a}_{i,j}]$ を $A$ の余因子行列とすると、以下が成り立つ。
+\begin{itemize}
+\item[$(1)$] 任意の $i,k$ について、${\displaystyle \sum_{j = 1}^na_{i,j}\tilde{a}_{j,k} = \delta_{i,k}\cdot\det A}$
+\item[$(2)$] 任意の $i,k$ について、${\displaystyle \sum_{j = 1}^n\tilde{a}_{i,j} a_{j,k}= \delta_{i,k}\cdot\det A}$
+\item[$(3)$] $A\widetilde{A} = \widetilde{A}A = \det A\cdot I$
+\item[$(4)$] $\det A\neq 0$ ならば、${\displaystyle A^{-1} = \frac{1}{\det A}\widetilde{A}}$ である。
+\end{itemize}
+\end{thm}
+
+証明は後に回して、定理の意味するところを説明する。
+
+\smallskip
+まず、$(3)$ から、$(4)$ が得られることは明らかである。
+
+上で用いた行列を用いる。
+$$A = \left[\begin{array}{ccc}1 & 2 & 4\\ 1 & 3 & 9\\ 1 & 4 & 16 \end{array}\right]$$
+の行列式は、Vandermonde の行列式だから、$(4-2)(4-3)(3-2) = 2\neq 0$。従って、$A$ は可逆で、
+\begin{eqnarray*}
+A^{-1} & = & \frac{1}{\det A}\widetilde{A} \\
+& = & \frac{1}{2}\left[\begin{array}{ccc}
++ \left|\begin{array}{cc} 3 & 9\\ 4 & 16 \end{array}\right|  &
+- \left|\begin{array}{cc} 2 & 4\\ 4 & 16 \end{array}\right| &
++ \left|\begin{array}{cc} 2 & 4\\ 3 & 9 \end{array}\right| \\
+- \left|\begin{array}{cc} 1 & 9\\ 1 & 16 \end{array}\right| &
++ \left|\begin{array}{cc} 1 & 4\\ 1 & 16 \end{array}\right| &
+- \left|\begin{array}{cc} 1 & 4\\ 1 & 9 \end{array}\right| \\
++ \left|\begin{array}{cc} 1 & 3\\ 1 & 4 \end{array}\right| &
+- \left|\begin{array}{cc} 1 & 2\\ 1 & 4 \end{array}\right| &
++ \left|\begin{array}{cc} 1 & 2\\ 1 & 3 \end{array}\right|
+\end{array}\right]\\
+& = & \frac12 \left[\begin{array}{ccc}
++ 12  &- 16 &+ 6\\
+- 7 &+ 12 &- 5\\
++ 1 &- 2&+ 1
+\end{array}\right]
+\end{eqnarray*}
+
+$(3)$ における $A\widetilde{A}$ の $i,k$ 成分は、$(1)$ の左辺、$\widetilde{A}A$ の $i,k$ 成分は、$(2)$ の左辺だから、$(1)$、$(2)$ より、$(3)$ が得られる。
+
+\smallskip
+$(1)$ において、$i = k$ とおき、
+$$\tilde{a}_{j,k} = \tilde{a}_{j,i} = (-1)^{i+j}|M_{i,j}|$$
+すなわち $(i,j)$ 余因子であることに注意すると、この式は、
+$$\det A = \sum_{j = 1}^na_{i,j}\tilde{a}_{j,i}
+ =  \sum_{j = 1}^n(-1)^{i+j}a_{i,j}|M_{i,j}|$$
+となる。これは、第$i$行の成分 $a_{i,j}$ を一つずつとり、それに $(i,j)$ 余因子をかけたものの和になっている。これを、行列式の第 $i$ 行に関する展開という。一方、$(2)$ で $i = k$ とおいたものは、
+$$\det A = \sum_{j = 1}^n\tilde{a}_{i,j}a_{j,i}
+= \sum_{j = 1}^n(-1)^{i+j}a_{j,i}|M_{j,i}|$$
+となるから、第 $i$ 列に関する展開という。
+
+\smallskip
+$$\left[\begin{array}{c}a_{1i}\\a_{2i}\\ \vdots \\a_{ni}\end{array}\right] = 
+\left[\begin{array}{c}a_{1i}\\0\\ \vdots \\0\end{array}\right] + 
+\left[\begin{array}{c}0\\a_{2i}\\ \vdots \\0\end{array}\right] + \cdots
+\left[\begin{array}{c}0\\0\\ \vdots \\a_{ni}\end{array}\right]$$
+であることに注意すると、
+\begin{eqnarray*}
+\det A & = & \left|\begin{array}{ccccc}a_{11} & \cdots & a_{1i} & \cdots & a_{1n}\\
+a_{21} & \cdots & a_{2i} & \cdots & a_{2n}\\
+\multicolumn{5}{c}{\cdots\cdots\cdots}\\
+a_{n1} & \cdots & a_{ni} & \cdots & a_{nn}
+\end{array}\right|\\
+& = & \sum_{j = 1}^n \left|\begin{array}{ccccc}
+a_{11} & \cdots & 0 & \cdots & a_{1n}\\
+\multicolumn{5}{c}{\cdots\cdots\cdots}\\
+a_{j1} & \cdots & a_{ji} & \cdots & a_{jn}\\
+\multicolumn{5}{c}{\cdots\cdots\cdots}\\
+a_{n1} & \cdots & 0 & \cdots & a_{nn}
+\end{array}\right|\\
+& = & \sum_{j = 1}^n \left|\begin{array}{cccccc}
+a_{ji} & a_{j1} & \cdots & \vdots & \cdots & a_{jn}\\
+0 & a_{11} & \cdots &\vdots & \cdots & a_{1n}\\
+\vdots & \multicolumn{5}{c}{\cdots\cdots\cdots}\\
+\multicolumn{6}{c}{\dotfill}\\
+\vdots & \multicolumn{5}{c}{\cdots\cdots\cdots}\\
+0 & a_{n1} & \cdots & 0 & \cdots & a_{nn}
+\end{array}\right|\\
+& = &  \sum_{j = 1}^n (-1)^{i+j}a_{ji}\cdot\left|\begin{array}{ccccc}
+a_{11} & \cdots & \vdots & \cdots & a_{1n}\\
+\multicolumn{5}{c}{\cdots\cdots\cdots}\\
+\multicolumn{5}{c}{\mbox{{\small omit row $i$ and column $j$ }}}\\
+\multicolumn{5}{c}{\cdots\cdots\cdots}\\
+a_{n1} & \cdots &\vdots & \cdots & a_{nn}
+\end{array}\right|\\
+& = & \sum_{j = 1}^n(-1)^{i+j}a_{j,i}|M_{j,i}|.
+\end{eqnarray*}
+
+他はそのままにして、第 $i$ 列を 第 $k$ 列と同じにしたものを考え、それを 第 $i$ 列について展開したものを考えると、上のことから、この行列式の $(i,i)$ 成分は $a_{j,k} = a_{j,i}$ だから、
+
+$$\sum_{j = 1}^n\tilde{a}_{i,j} a_{j,k}$$
+となっているが、第 $i$ 列を 第 $k$ 列と同じだから行列式の値は 0 である。従って、
+$$\sum_{j = 1}^n\tilde{a}_{i,j} a_{j,k}= \delta_{i,k}\cdot\det A$$
+を得る。
+
+$(1)$ についても同様であるので、ここでは省略する。
+
+\begin{eg}
+次の行列式の値を列の展開などを用いて求めてみよう。
+$$\left|\begin{array}{cccc}-2 & 1 & 3 & 4 \\ 2 & 0 & -5 & 1\\
+1 & 4 & 2 & -7\\ 2 & -4 & -9 & 3\end{array}\right| = 110.$$
+\end{eg}
+
+\smallskip
+行や、列に関する展開は、$0$ が多い行列の行列式の値の計算に有効である。ここでは、定理~\ref{thm:ajointmat} のもう一つの重要な応用として、Cramer の定理と呼ばれるものを紹介する。
+
+\begin{thm}[Cramer の定理] \label{thm:cramer}
+$A = [a_{i,j}]$  を可逆な $n$ 次正方行列、$A\bx = \bb$ を行列方程式とする。$A$ の第 $i$ 列を $\bb$ で置き換えた行列を $A_i$ と書くことにする。すると、次が成り立つ。
+$$x_i = \frac{|A_i|}{|A|}, \;i = 1,2,\ldots, n.$$
+\end{thm}
+\proof
+$\bx = A^{-1}\bb$ だから、定理~\ref{thm:ajointmat} を用いると、
+$$\bx = \frac{1}{|A|}\widetilde{A}\bb.$$
+従って、
+\begin{eqnarray*}
+x_i & = & \frac{1}{|A|}\sum_{j=1}^n\tilde{a}_{ij}b_j\\
+& = & \frac{1}{|A|}\sum_{j=1}^n\tilde{a}_{ij}b_j\\
+& = & \frac{1}{|A|}\sum_{j = 1}^n \left|\begin{array}{ccccc}
+a_{11} & \cdots & 0 & \cdots & a_{1n}\\
+\multicolumn{5}{c}{\cdots\cdots\cdots}\\
+0 & \cdots & b_i & \cdots & 0\\
+\multicolumn{5}{c}{\cdots\cdots\cdots}\\
+a_{n1} & \cdots & 0 & \cdots & a_{nn}
+\end{array}\right|\\
+& = & \frac{1}{|A|}\left|\begin{array}{ccccc}
+a_{11} & \cdots & b_1 & \cdots & a_{1n}\\
+\multicolumn{5}{c}{\cdots\cdots\cdots}\\
+a_{i1} & \cdots & b_i & \cdots & a_{in}\\
+\multicolumn{5}{c}{\cdots\cdots\cdots}\\
+a_{n1} & \cdots & b_n & \cdots & a_{nn}
+\end{array}\right|\\
+& = & \frac{|A_i|}{|A|}.
+\end{eqnarray*}
+\qed
+
+\begin{eg}
+$$\left[\begin{array}{ccc}1 & 2 & 4\\ 1 & 3 & 9\\ 1 & 4 & 16 \end{array}\right]
+\left[\begin{array}{c}x \\y \\ z\end{array}\right] = 
+\left[\begin{array}{c}5 \\8 \\ 10\end{array}\right]$$
+の解は、Cramer の公式を用いると、係数行列の行列式が 2 だったから、
+$$x = \frac12\left|\begin{array}{ccc}5 & 2 & 4\\ 8 & 3 & 9\\ 10 & 4 & 16\end{array}\right| = -4,\;y = \frac12\left|\begin{array}{ccc}1 & 5 & 4\\ 1 &8 & 9\\ 1 & 10 & 16\end{array}\right| = \frac{11}2,\;z = \frac12\left|\begin{array}{ccc}1 & 2 & 5\\ 1 & 3 & 8\\ 1 & 4 & 10\end{array}\right| = -\frac{1}{2}.$$
+\end{eg}
+
+
+\newpage
+\mysection{復習}
+まず、応用として次の命題をあげる。
+
+\begin{prop}
+$x_1,x_2,\ldots, x_n$ を相異なる実数、$y_1, y_2, \ldots, y_n$ を $n$ 個の実数とする。このとき、
+$$f(x_1) = y_1, \:f(x_2) = y_2, \;\ldots, \;f(x_n) = y_n$$
+を満たす多項式で次数が高々 $n-1$ のものがただ一つ存在する。
+\end{prop}
+\proof
+$n-1$ 次の多項式を $f(t) = c_0 + c_1t + \cdots + c_{n-1}x^{n-1}$ とし、この条件を書いてみる。
+$$\left\{\begin{array}{ccccccccc}
+c_0 & + & c_1x_1 & + & \cdots & + & c_{n-1}x_1^{n-1} & = & y_1\\
+c_0 & + & c_1x_2 & + & \cdots & + & c_{n-1}x_2^{n-1} & = & y_2\\
+\multicolumn{9}{c}{\cdots\cdots\cdots}\\
+c_0 & + & c_1x_n & + & \cdots & + & c_{n-1}x_n^{n-1} & = & y_n
+\end{array}\right.$$
+これは、$c_0, c_1, \ldots, c_{n-1}$ を未知数とする連立一次方程式とも考えることが出来る。
+$$A = \left[\begin{array}{ccccc}1 & x_1 & x_1^2 & \cdots & x_1^{n-1} \\
+1 & x_2 & x_2^2 & \cdots & x_2^{n-1}\\1 & x_3 & x_3^2 & \cdots & x_3^{n-1} \\\multicolumn{5}{c}{\cdots\cdots\cdots} \\1 & x_n & x_n^2 & \cdots & x_n^{n-1}
+\end{array}\right],\:\bx = \left[\begin{array}{c}c_0\\c_1\\ \vdots\\ c_{n-1}\end{array}\right],\:\bb = \left[\begin{array}{c}y_1\\y_2\\ \vdots\\ y_n\end{array}\right]$$
+とすると、$A\bx = \bb$ となる。ここで、$|A|$ は、Vandermonde の行列式だから、\\
+$x_1, x_2, \ldots, x_n$ が相異なることより、
+$$|A| = \prod_{j = 1}^{n-1}\prod_{i = j+1}^{n}(x_i - x_j) \neq 0$$
+を得る。従って、$A$ は可逆行列であり、任意の $\bb$ に対して、$A\bx = \bb$ を満たす $\bx$ がただ一つ存在し、それは、次数が $n-1$ 以下の多項式 $f(t)$ をただ一つ決定する。
+\qed
+
+\begin{eg}
+$f(2) = 5, \;f(3) = 8,\;f(4) = 10$ を満たす、２次多項式を求めてみよう。
+$$f(t) = c_0 + c_1t + c_2t^2$$
+とすると、得られる方程式は、
+$$\left[\begin{array}{ccc}1 & 2 & 4\\ 1 & 3 & 9\\ 1 & 4 & 16 \end{array}\right]
+\left[\begin{array}{c}c_0 \\c_1 \\ c_2\end{array}\right] = 
+\left[\begin{array}{c}5 \\8 \\ 10\end{array}\right]$$
+これは、前節の例で扱った方程式と一緒だから、
+$c_0 = -4, c_1 = 11/2, c_2 = -1/2$ すなわち、
+$$f(t) = -4 + \frac{11}{2}t - \frac12t^2$$
+を得る。
+\end{eg}
+
+次は部分的には今までにも登場してきたが応用範囲の広い命題なので、次に命題として証明抜きで書く。
+
+\begin{prop}
+$A_{i,j}$ を $l_i\times m_j$ 行列、$B_{j,k}$ を $m_j\times n_l$ 行列とし、
+$$A = \left[\begin{array}{cccc}A_{11} & A_{12} & \cdots & A_{1q}\\
+A_{21} & A_{22} & \cdots & A_{2q}\\
+\multicolumn{4}{c}{\cdots\cdots\cdots}\\
+A_{p1} & A_{p2} & \cdots & A_{pq}\end{array}\right],\;
+B = \left[\begin{array}{cccc}B_{11} & B_{12} & \cdots & B_{1r}\\
+B_{21} & B_{22} & \cdots & B_{2r}\\
+\multicolumn{4}{c}{\cdots\cdots\cdots}\\
+B_{q1} & B_{q2} & \cdots & B_{qr}\end{array}\right]$$
+とすると、
+$$AB = C = \left[\begin{array}{cccc}C_{11} & C_{12} & \cdots & C_{1r}\\
+C_{21} & C_{22} & \cdots & C_{2r}\\
+\multicolumn{4}{c}{\cdots\cdots\cdots}\\
+C_{p1} & C_{p2} & \cdots & C_{pr}\end{array}\right]$$
+と書くことができる。ここで、$C_{il}$ は、$l_i\times n_l$ 行列で、
+$$C_{ik} = \sum_{j = 1}^p A_{ij}B_{jk}$$
+によって定まるものである。すなわち行列の積はブロックを成分だと思って計算することができる。
+\end{prop}
+
+\medskip
+以下に連立一次方程式についてまとめる。
+
+\begin{enumerate}
+\item 連立一次方程式は行列方程式で表すことができる。
+$$\left\{\begin{array}{ccc}
+a_{11}x_1 + a_{12}x_2 + \cdots + a_{1n}x_n & = & b_1\\
+a_{21}x_1 + a_{22}x_2 + \cdots + a_{2n}x_n & = & b_2\\
+\multicolumn{3}{c}{\cdots\cdots\cdots} \\
+a_{m1}x_1 + a_{m2}x_2 + \cdots + a_{mn}x_n & = & b_m
+\end{array}\right.$$
+に対しては、
+$$A = \left[\begin{array}{cccc}
+a_{11} & a_{12} & \cdots & a_{1n}\\
+a_{21} & a_{22} & \cdots & a_{2n} \\
+\multicolumn{4}{c}{\cdots\cdots\cdots}\\
+a_{m1} & a_{m2} & \cdots & a_{mn}
+\end{array}
+\right],\;\bx = \left[\begin{array}{c}
+x_1\\
+x_2\\
+\vdots\\
+x_n
+\end{array}
+\right],\;\bb = \left[\begin{array}{c}
+b_1\\
+b_2\\
+\vdots\\
+b_m
+\end{array}
+\right]$$
+とすると、$A\bx = \bb$ と書ける。
+
+\item $\bx_0$ は、$A\bx_0 = \bb$ を満たす $n$ 次列ベクトルとする。$\bx$ が、$A\bx = \bb$ を満たすとすると、
+$$A(\bx - \bx_0) = A\bx - A\bx_0 = \bb - \bb = \bo$$
+だから、$\by = \bx - \bx_0$ とおくと、$\bx = \bx_0 + \by$ で、$\by$ は、$A\by = \bo$ を満たす $n$ 次列ベクトル、すなわち、$A$ を係数行列とする連立一次同次方程式の解である。逆に、$A\by = \bo$ を満たす $\by$ を取ると、$\bx = \bx_0 + \by$ は、$A\bx = \bb$ を満たす。
+$$A\bx = A(\bx_0 + \by) = A\bx_0 + A\by = \bb + \bo = \bb.$$
+この様に、$A\bx = \bb$ を満たす解一つと、$A\bx = \bo$ を満たす解すべてが分かれば $A\bx = \bb$ の解はすべて分かる。$\bx_0$ を{\gt 特殊解} と言い、$\bx = \bx_0 + \by$ の形のすべての解を表すものを{\gt 一般解}と言う。
+
+\smallskip
+例えば一番最初に考えた連立一次方程式、
+$$A\bx = \left[\begin{array}{ccc}3 & 1 & 2\\1 & 1 & 1\\ 11 & 1 & 5\end{array}\right]\left[\begin{array}{c}x_1\\
+x_2 \\
+x_3\end{array}\right] = 
+\left[\begin{array}{c}4 \\1\\ 17\end{array}\right]$$
+の場合、一般解は、
+$$\left[\begin{array}{r}
+x_1 \\ x_2 \\x_3 
+\end{array}\right] =
+t\cdot \left[\begin{array}{r}
+-\frac12 \\ -\frac12 \\ 1
+\end{array}\right]  + 
+\left[\begin{array}{r}
+\frac32 \\ -\frac12 \\ 0 
+\end{array}\right] $$
+と書くことができるが、特殊解は、いろいろとあり、例えば、
+${\displaystyle \left[\begin{array}{r}
+\frac32 \\ -\frac12 \\ 0 
+\end{array}\right] }$
+である。一方、
+${\displaystyle t\cdot \left[\begin{array}{r}
+-\frac12 \\ -\frac12 \\ 1
+\end{array}\right] }$ 
+は、$A\bx = \bo$ を満たす解の一般形であった。
+
+\item 一般解を求めたり、解の存在非存在を決定するのには、拡大係数行列を考えて、これに行に関する基本変形を施し、ガウス行列、又は、既約ガウス行列にすることによって求めることができる。
+	\begin{enumerate}
+	\item 行に関する基本変形は３種類 $P(i;c)$、$P(i,j)$、$P(i,j;c)$ の基本行列という可逆な行列を左からかけることによって実現した。これより、基本変形によって、解は変わらないことが示せた。すなわち、基本変形前の拡大係数行列に対応する解と、基本変形後の拡大係数行列に対応する解は、同じものである。
+	\item 係数行列の階数と、拡大係数行列の階数が等しいときは、解が存在し、それらが等しくないときは解は存在しない。
+	\item 解が存在する場合は、変数の数と、拡大係数行列の階数の差が、解を表すときの自由変数（パラメター）の数である。
+	\end{enumerate}
+	
+\item $A$ を $n$ 次正方行列とする。
+
+ 次は同値である。
+		\begin{enumerate}
+		\item $A$ は、可逆行列。
+		\item $A$ に行の基本変形を施すと、単位行列 $I$ になる。
+		\item $A$ の階数は $n$ である。
+		\item $A\bx = \bo$ はただ一つの解を持つ。
+		\item $A\bx = \bb$ は、$\bb$ を一つ決めるといつもただ一つの解を持つ。
+		\item $A$ は、基本行列のいくつかの積で書くことが出来る。
+		\item $\det A \neq 0$。
+		\end{enumerate}
+\end{enumerate}
+
+行列式の性質は断片的に出てきたので以下にまとめる。$A = [a_{i,j}]$、$B = [b_{i,j}]$ をともに $n$ 次正方行列とする。
+\begin{enumerate}
+\item 行列式の定義は以下のようである。２番目の式ははっきりとは示さなかったが、転置行列の行列式のところで用いた。
+\begin{eqnarray*}
+\det A & = & \sum_{\rho = (j_1,j_2,\ldots,j_n)\in P_n} \sgn(\rho)a_{1,j_1}a_{2,j_2}\cdots a_{n,j_n}\\
+& = & \sum_{\rho = (j_1,j_2,\ldots,j_n)\in P_n} \sgn(\rho)a_{j_1,1}a_{j_2,2}\cdots a_{j_n,n}
+\end{eqnarray*}
+ここで、$P_n$ は、$\{1,2,\ldots, n\}$ の順列全体のなす集合。$\sgn(\rho) = (-1)^{\ell(\rho)}$ で、$\ell(\rho)$ は、$\rho$ の追い越し数と言われるものであった。$A$ の行列式は、$|A|$ とも表す。
+
+\item $A$ が上半三角行列又は、下半三角行列ならば、
+$$\det A = a_{11}a_{22}\cdots a_{nn}$$
+すなわち対角成分の積となる。
+
+\item 行に関する基本変形によって行列式の値は次のように変化する。
+\begin{enumerate}
+\item ある行に０でない定数 $c$ をかけると行列式の値は、$c$ 倍になる。
+\item 2 つの行を交換すると、行列式の値は、$-1$ 倍になる。
+\item ある行に、別の行を何倍かして加えても行列式の値は、変わらない。
+\end{enumerate}
+列に関する基本変形に付いても同様の結果がある。
+\begin{enumerate}
+\item ある列に０でない定数 $c$ をかけると行列式の値は、$c$ 倍になる。
+\item 2 つの列を交換すると、行列式の値は、$-1$ 倍になる。
+\item ある列に、別の列を何倍かして加えても行列式の値は、変わらない。
+\end{enumerate}
+
+\item ある行、又は列がすべて 0 である行列の行列式の値は $0$ である。ある２行又は、ある２列が等しい行列の行列式の値は、0 である。
+
+\item $A = [\ba_1, \ba_2,\ldots, \ba_i,\ldots, \ba_n]$ と、列ベクトルで表すとする。$\ba_i = \ba_i' + \ba_i''$ ならば、
+\begin{eqnarray*}
+|A| & = & |\ba_1, \ba_2,\ldots, \ba_i' + \ba_i'',\ldots, \ba_n| \\
+&= & |\ba_1, \ba_2,\ldots, \ba_i',\ldots, \ba_n| + |\ba_1, \ba_2,\ldots, \ba_i'',\ldots, \ba_n|.
+\end{eqnarray*}
+同様のことが行についても成り立つ。即ち、
+${\displaystyle A =\left[\begin{array}{c}\ba_{1}\\ \ba_{2}\\ \vdots\\ \ba_{n}\end{array}\right]}$ と、行ベクトルで表すとき、$\ba_i = \ba_i' + \ba_i''$ ならば、
+$$|A| = \left|\begin{array}{c}\ba_{1}\\ \vdots\\ \ba_i' + \ba_i''\\ \vdots\\\ba_{n}\end{array}\right| = \left|\begin{array}{c}\ba_{1}\\ \vdots\\ \ba_i' \\ \vdots\\\ba_{n}\end{array}\right| + \left|\begin{array}{c}\ba_{1}\\ \vdots\\  \ba_i''\\ \vdots\\\ba_{n}\end{array}\right|.$$
+
+\item $\det A^t = \det A$。
+
+\item $\det AB = \det A\det B$。
+
+\item $A = [a_{i,j}]$ を $n$ 次正方行列、$\widetilde{A} = [\tilde{a}_{i,j}]$ を $A$ の余因子行列とすると、以下が成り立つ。
+\begin{enumerate}
+\item 任意の $i,k$ について、${\displaystyle \sum_{j = 1}^na_{i,j}\tilde{a}_{j,k} = \delta_{i,k}\cdot\det A}$
+\item 任意の $i,k$ について、${\displaystyle \sum_{j = 1}^n\tilde{a}_{i,j} a_{j,k}= \delta_{i,k}\cdot\det A}$
+\item $A\widetilde{A} = \widetilde{A}A = \det A\cdot I$
+\item $\det A\neq 0$ ならば、${\displaystyle A^{-1} = \frac{1}{\det A}\widetilde{A}}$ である。
+\end{enumerate}
+ここで、$\tilde{a}_{i,j} = (-1)^{i+j}|M_{j,i}|$ であり、$M_{j,i}$ は $A$ の第 $j$ 行と第 $i$ 列を取り除いてできた $n-1$ 次正方行列である。
+\end{enumerate}
+
+\begin{eg}
+$$\left|\begin{array}{ccccc}a & b & b & \cdots & b \\
+b & a & b & \cdots & b \\b & b & a & \cdots & b \\\multicolumn{5}{c}{\cdots\cdots\cdots} \\b & b & b & \cdots & a
+\end{array}\right| = (a+(n-1)b)(a-b)^{n-1}$$
+この行列の成分は、どの列の和も $a+(n-1)b$ になってる。従って、第２列、第３列・・・第 $n$ 列を第１列に足すと、第一列はすべて、$a+(n-1)b$ となる。
+\begin{eqnarray*}
+\left|\begin{array}{ccccc}a & b & b & \cdots & b \\
+b & a & b & \cdots & b \\b & b & a & \cdots & b \\\multicolumn{5}{c}{\cdots\cdots\cdots} \\b & b & b & \cdots & a
+\end{array}\right| & = & 
+\left|\begin{array}{ccccc}a+(n-1)b & b & b & \cdots & b \\
+a+(n-1)b & a & b & \cdots & b \\a+(n-1)b & b & a & \cdots & b \\\multicolumn{5}{c}{\cdots\cdots\cdots} \\a+(n-1)b & b & b & \cdots & a
+\end{array}\right| \\
+& = & 
+\left|\begin{array}{ccccc}a+(n-1)b & b & b & \cdots & b \\
+0 & a-b & 0 & \cdots & 0 \\0 & 0 & a-b & \cdots & 0 \\\multicolumn{5}{c}{\cdots\cdots\cdots} \\0 & 0 & 0 & \cdots & a-b
+\end{array}\right|\\
+& =  &(a+(n-1)b)(a-b)^{n-1}
+\end{eqnarray*}
+\end{eg}
+
+\newpage
+\mysection{お茶の時間}
+
+いま、$m$ 種類の本が $k$ 冊ずつある。$n$ 人の学生がこれらの本を借りだした。すべて借り出されたが一人の人が同じ本を２冊借りることはなかったとする。調べてみると、学生のどの二人も共通に選んだ本は丁度 $b$ 冊であったという。このとき次のことが分かる。ただし、$1<k<n$ であるとする。
+\begin{enumerate}
+\item どの学生もみな、同じ数 $a$ 冊の本を借り出している。
+\item $n\leq m$ である。
+\item $n = m$ ならば、どの本も同じ数の学生が選んだことになり、また、どの２冊を共通に選んだ学生の数も同じである。
+\item $n = m = 43$、$k = 7$、$b =1$ と言うことはない。（超難問）
+\end{enumerate}
+{\gt 略解：}\quad
+１番目の学生が借りている本を $a_1$ 冊とする。すると、このうちどの本を借りている学生も、この学生以外に $k-1$ 人いる。また、この学生以外のどの人をとってもこの $a_1$ 冊の内 $b$ 冊を借りているわけだから、
+$$a_1\cdot (k - 1) = (n-1)\cdot b$$
+が成り立つ。$a_1$ は、$k, n, b$ によって決まってしまうから、１番目の学生でなくてもこの数は等しい。これを $a$ とする。明らかに、$a\neq b$ である。
+$H = [h_{ij}]$ を $n\times m$ 行列とし、行は各学生を表し、列は本を表すものとする。$h_{ij}$ を学生 $i$ が本 $j$ を選んだときは $1$ そうでないときは $0$ と定める。すると、
+$HH^t$ は $n$ 次正方行列で、対角線が $a$ それ以外が $b$ であるようなものになる。$J$ を成分がすべて $1$ であるような $n$ 次正方行列とすると、
+$$HH^t = (a-b)I + bJ$$
+と表すことができる。この行列の行列式の値は、$(a+(n-1)b)(a-b)^{n-1}$ であった。$a\neq b$ だから、$HH^t$ は可逆である。これより、$H$ の階数は、$n$ であることが分かる。これより、$n\leq m$ である。（$n>m$ とすると、$H$ に行の基本変形をすると、$PH$ の一番下の行は 0 だから、$PHH^t$ は、可逆にはなり得ない。）$n = m$ ならば、$HH^t$ が可逆行列であることより、$H$ が可逆行列であることが分かる。$JH = kJ$ だから、$kJ = H^tJ$、また、$HJ = aJ$ より、$aJ = JH^t$ だから、$aJ(H^t)^{-1} = J$ を得る。これより、
+\begin{eqnarray*}
+H^tH & = & H^tHH^t(H^t)^{-1} = H^t((a-b)I + bJ)(H^t)^{-1} = (a-b)H^t(H^t)^{-1} + bH^tJ \\
+& =  & (a-b)I + bH^tJ(H^t)^{-1} = (a-b)I + bkJ(H^t)^{-1}\\
+& = & (a-b)I + \frac{bk}{a}J
+\end{eqnarray*}
+実は、$H$ の 1 の数を数えると、$nk = na$ だから、$a = k$ も得る。従って、どの２冊を選んだ学生も丁度、$b$ 人いる。
+\end{document}

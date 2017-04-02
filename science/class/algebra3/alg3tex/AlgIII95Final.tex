@@ -1,0 +1,92 @@
+%Algebra III Final : original February 23, 1996
+
+\documentstyle[12pt]{jarticle}
+
+%A4 Size Setting
+\topmargin = -0.5cm %default 0cm
+\oddsidemargin = 0cm \evensidemargin = 0cm
+\textheight = 23cm \textwidth = 15cm % default 16cm
+%A4 size Setting End
+
+\newcommand{\bZ}{\mbox{\boldmath $Z$}}
+\newcommand{\bQ}{\mbox{\boldmath $Q$}}
+\newcommand{\bR}{\mbox{\boldmath $R$}}
+\newcommand{\bC}{\mbox{\boldmath $C$}}
+\newcommand{\qed}{\hfill$\Box$}
+
+\newtheorem{thm}{定理}
+
+\pagestyle{empty}
+
+\begin{document}
+\begin{center}
+{\gt\LARGE Algebra III  Final}\\
+{\gt Winter AY1995}
+\end{center}
+
+\noindent
+ID 番号、氏名を、各解答用紙に、また、問題番号も忘れずに書いて下さい。
+
+\begin{enumerate}
+\item $L = K(\alpha)$  を、体 $K$ の、$\alpha$ による代数的単純拡大で、$\alpha$ の $K$ 上の最小多項式を $f(t)\in K[t]$ とする。このとき、次を示せ。
+	\begin{enumerate}
+	\item $M$ を、$L:K$ の中間体とし、$\alpha$ の、$M$ 上の最小多項式を 
+	$$g(t) = x^m + c_1x^{m-1} +\cdots + c_m \in M[t]$$	
+	とすると、$g(t)$ は、$f(t)$ を、$M[t]$ の元として、割り切る。
+	\item $K(c_1,\ldots,c_m) = M$ である。
+	\item $L:K$ の中間体の数は、有限個。
+	\item もし、$f(t)$ が、重根を持たなければ、$L:K$  は、分離的であることを示せ。\\
+	次の定理を用いても良い。
+	\begin{thm}
+	$M:K$ を有限正規拡大とし、$L$ をその中間体とする。このとき、$L$ から $M$ への $K$-単射準同型の数は、$[L:K]$ 以下である。また、$[L:K]$ と等しくなるのは、拡大 $L:K$ が、分離的であるときであり、かつその時に限る。
+	\end{thm}
+	\end{enumerate}
+\item $L:K$ を有限正規分離拡大とし、$G = \Gamma(L:K) = <\sigma>$ を位数 $n$ の巡回群とする。$\alpha\in L$ に対して、
+$${\rm Tr}(\alpha) = \sum_{\tau\in G}\tau(\alpha) = \alpha + \sigma(\alpha) + \cdots + \sigma^{n-1}(\alpha)$$
+としたとき、以下を示せ。
+	\begin{enumerate}
+	\item  ${\rm Tr}(\alpha)\in K$。
+	\item  $\alpha\in L$ に対して、$\beta = \alpha - \sigma(\alpha)$ とおくと、${\rm Tr}(\beta) = 0$ である。
+	\item  $L$ の元 $\gamma$ で、${\rm Tr}(\gamma)\neq 0$ となるものが存在する。
+	\item  $L$ の元 $\beta$ が、${\rm Tr}(\beta) = 0$ を満たせば、$L$ のある元 $\alpha$ で、$\beta = \alpha - \sigma(\alpha)$ となるものが、存在する。\\
+	次の定理とその証明を、ヒントとして記す。
+	\begin{thm}
+	$L:K$ を、有限正規分離拡大とし、$G = \Gamma(L:K) = <\sigma>$ を位数 $n$ の巡回群とする。$\alpha\in L$ に対して、
+$$N(\alpha) = \prod_{\tau\in G}\tau(\alpha) = \alpha\cdot\sigma(\alpha) \cdots\sigma^{n-1}(\alpha)$$
+とする。$\alpha\in L$ に対して、$N(\alpha)=1$ ならば、$L$ の元 $\beta\neq 0$ で、$\alpha = \beta/\sigma(\beta)$ となるものがある。
+	\end{thm}
+	{\it Proof.\quad} $N(\alpha) =1$ ならば、$\alpha\neq 0$ かつ、$1 = \sigma^0, \sigma^2\ldots\sigma^{n-1}$ は、$L$ 上一次独立だから、次を満たす、$\gamma\in L$ がある。
+	$$\alpha\sigma^0(\gamma) + \alpha\sigma(\alpha)\sigma(\gamma) + \cdots + \alpha\sigma(\alpha)\cdots\sigma^{n-1}(\alpha)\sigma^{n-1}(\gamma) = \beta \neq 0$$
+	このとき、$\sigma^n = 1$ に注意すると、
+	$\sigma(\beta) = \beta/\alpha$ が得られる。
+	\qed
+	\end{enumerate}
+\item $F$ を $729 = 3^6$ 個の元からなる体とする。このとき以下ことを示せ。
+     \begin{enumerate}
+     \item $F$ の元は全て、方程式 $t^{729}-t = 0$ の根である。
+     \item $\tau$ を、次のような写像とする。
+     $$\tau: F \longrightarrow F \; (x \longmapsto x^3)$$
+     このとき、$\tau$ は、体 $F$ の自己同型写像である。
+     \item 体 $F$ の自己同型群は、$\tau$ で生成される位数 $6$ の巡回群である。
+     \item $F$ の $0$ 以外の元のなす乗法群は、位数 $728$ の巡回群になるが（この部分は、示さなくて良い）、その生成元を $\zeta$ とする。$F$ の部分体をすべて求め、$F$  以外の、$F$ の部分体の、零以外の元を、$\zeta$ のべきを用いて表せ。
+     \end{enumerate}
+\item $\alpha = ^4\!\!\!\!\sqrt{3}$ (すなわち、$\alpha$ は、$4$ 乗すると $3$ になる、正の実数）とし、$K = \bQ(\alpha)$ とする。このとき、以下の問いに答えよ。
+     \begin{enumerate}
+     \item $K$ は、$\bQ$ 上正規拡大ではないことを示せ。
+     \item $K$ の $\bQ$ 上の正規閉包で $\bC$ に含まれるものを $L$ とする。このとき、$L$ の $\bQ$ 上のガロア群 $\Gamma(L:\bQ)$ の位数を求めよ。
+     \item 拡大 $L:\bQ$ の中間体 $M$ で、$[M:\bQ] = 2$ となるものはいくつあるか。
+     \item 上の条件を満たす中間体を全て求めよ。
+     \end{enumerate}
+
+\vspace{5ex}
+\noindent Algebra I, II, III を受講した感想、コメント、なんでも構いませんから書いて下さい。（これによって、成績に不利益を及ぼすことはありませんが、同時に、利益を受けることもありません。）
+
+\vspace{2ex}
+\noindent
+Midterm を 120 点満点、FINAL を 160 点満点とし、演習の点を 70 点満点、合計350 点満点で計算して、成績を出す予定です。
+	\end{enumerate}　	
+
+\begin{flushright}
+鈴木寛@国際基督教大学数学教室
+\end{flushright}
+\end{document}

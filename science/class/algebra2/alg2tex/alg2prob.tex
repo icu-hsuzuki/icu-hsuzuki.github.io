@@ -1,0 +1,238 @@
+%Algebra II List of Problems : original September 10,17, 1995
+%Original : October 2, 30, 1995
+%Revised : September 4, 1997
+
+\documentstyle[12pt]{jarticle}
+
+%A4 Size Setting
+\topmargin = 0cm
+\oddsidemargin = 0cm \evensidemargin = 0cm
+\textheight = 23cm \textwidth = 15cm % default 16cm
+%A4 size Setting End
+
+\newcommand{\bZ}{\mbox{\boldmath $Z$}}
+\newcommand{\bQ}{\mbox{\boldmath $Q$}}
+\newcommand{\bR}{\mbox{\boldmath $R$}}
+\newcommand{\bC}{\mbox{\boldmath $C$}}
+\newcommand{\bN}{\mbox{\boldmath $N$}}
+
+\def\labelenumi{\thesection.\theenumi}
+\begin{document}
+\begin{center}
+{\LARGE\gt Algebra II :  PROBLEMS}
+\end{center}
+
+\section{環、体、整域}
+\begin{enumerate}
+\item $p$ を素数とする。$\bZ_{(p)}$ により、有理数 $m/n$ で、$(m,n) = (p,n) = 1$ なるもの全体を表すものとする。（即ち既約分数として表したとき分母が $p$ で割れないもの全体。）このとき、$\bZ_{(p)}$ は整域となることを示せ。
+\item $(1)$　環 $R$ の正則元は、左（右）零因子ではないことを示せ。\\
+$(2)$　体は、整域であることを示せ。
+\item $\bZ_{12}$ の正則元と、零因子をすべて求めよ。
+\item $(1)$　$\bZ_n$ の零因子は、$\bar{a}$  $(\:(a,n)\neq 1)$ と書けることを示せ。\\
+$(2)$　$\bZ_n$ が整域であるのは、$n$ が素数の時で、またそのときに限ることを示せ。
+\item $K$ を体とするとき、$M(n,K)$ の左（右）零因子は、非正則行列であり、また逆に、非正則行列は、左（右）零因子であることを示せ。
+\item $(1)$　$R$ が整域ならば、$R$ を係数とする多項式環 $R[x_1,\ldots, x_n]$ も整域であることを示せ。\\
+$(2)$　$R$ を整域とするとき、$U(R[x_1,\ldots,x_n]) = U(R)$ であることを示せ。
+\item 有限個の元からなる整域は体であることを示せ。
+\item $(1)$　$R$ を整域とし、$0\neq f(x)\in R[x]$、$\deg f = n$ とすると、$f(x)$ の相異なる根の数は、$n$ 以下であることを示せ。\\
+$(2)$　$R$ を無限個の元を含む整域としたとき、$f,\:g\in R[x]$、$f\neq g$ ならば、$R$ の元 $\alpha$ で、$f(\alpha)\neq g(\alpha)$ となるものが存在することを示せ。
+\item $R$ を、無限個の元を含む整域とする。\\
+$(1)$　$f,\:g\in R[x_1,\ldots, x_n]$、$f\neq g$ とすると、$\alpha_1, \ldots, \alpha_n\in R$ で、$f(\alpha_1,\ldots, \alpha_n)\neq g(\alpha_1,\ldots,\alpha_n)$ となるものが存在することを示せ。\\
+$(2)$　$f,\: g_1,\ldots, g_r \in R[x_1,\ldots,x_n]$ とし、$g_1,\ldots,g_r$ は、すべては零でないとする。もし、$g_i(\alpha_1,\ldots,\alpha_n)\neq 0$ $(i=1,\ldots, r)$ を満たすすべての $\alpha_1,\ldots, \alpha_n\in R$ について、$f(\alpha_1,\ldots,\alpha_n)=0$ となっていれば、$f$ は、多項式として $f(x_1,\ldots,x_n) = 0$ であることを示せ。 
+\end{enumerate}
+
+\section{イデアルと剰余環}
+\begin{enumerate}
+\item $(1)$　環 $R$ の左（右、両側）イデアル $I, J$ に対して、$I\cap J$、$I+J$ は共に、左（右、両側）イデアルであることを示せ。\\
+$(2)$　$I, J$ が環 $R$ の両側イデアルならば、$IJ$ も、両側イデアルで、$IJ\subset I\cap J$ を満たすことを示せ。また、等号が成り立たない例をあげよ。
+\item $R$ を整域、$a, b\in R$ とするとき、次を示せ。
+$$(a) = (b) \Leftrightarrow b=au \mbox{　となる　} u\in U(R) \mbox{　が存在する。}$$
+\item $\{a+b\sqrt{-1}|a,b\in \bZ\}$ を、$\bZ[\sqrt{-1}]$ で表し、ガウスの整数環と呼ぶ。\\
+$(1)$　$\bZ[\sqrt{-1}]$ は、複素数体 $\bC$ の和と積に関して閉じており、整域となることを示せ。\\
+$(2)$　$\alpha = a + b\sqrt{-1}$ に対して、$N(\alpha) = a^2+b^2$ とすると、$N(\alpha\beta) = N(\alpha)N(\beta)$ が成り立つことを示せ。　\\
+$(3)$　$\bZ[\sqrt{-1}]$ の正則元について次が成り立つことを示せ。
+$$\alpha\in U(\bZ[\sqrt{-1}]) \Leftrightarrow N(\alpha) = 1 \Leftrightarrow \alpha\in \{\pm 1, \pm\sqrt{-1}\}.$$
+\item $\bZ[\sqrt{-1}]$ において、$\phi:\bZ[\sqrt{-1}]\rightarrow \{0\}\cup \bN$ $(\alpha\mapsto N(\alpha))$ をとると、$\bZ[\sqrt{-1}]$ は、ユークリッド整域となることを示せ。（Hint：$\alpha,\beta\in \bZ[\sqrt{-1}], \alpha\neq 0$ に対して、$\beta = \gamma\alpha+\epsilon$ $N(\epsilon)<N(\alpha)$ なる $\gamma, \epsilon\in \bZ[\sqrt{-1}]$ を見つけたい。$\beta/\alpha = r + s\sqrt{-1}$, $r,s\in \bQ$ とし、$|m-r|\leq 1/2$, $|n-s|\leq 1/2$ となる $m,n\in \bZ$ を取り、$\gamma = m+n\sqrt{-1}$ ととれ。）
+\item $R = K[x,y]$ を、体 $K$ 上の２変数多項式環とすると、$R$ は、単項イデアル整域ではないことを示せ。（Hint：例えば、$Rx + Ry$ は、単項ではないイデアルであることを示せ。）
+\item $R$ を単項イデアル整域とする。$a,b\in R$ において、$R$ の元 $c$ で、$b=ca$ を満たすものがあるとき、$a|b$ と書くものとする。$R$ の元 $a_1,\ldots, a_n$ に対して、$d|a_i$ $ (1\leq i\leq n)$ となる元 $d$ を、これらの元の公約元といい、$a_i|m$ $(1\leq i\leq n)$ となる元 $m$ を、これらの元の公倍元という。また、$R$ の元 $d$ が、次の条件を満たすとき、$d$ は、$a_1,\ldots, a_n$ の最大公約元（略して GCD）であるという。
+\begin{enumerate}
+\item $d$ は、$a_1,\ldots, a_n$ の公約元。
+\item $c$ が、$a_1,\ldots, a_n$ の公約元ならば $c|d$。
+\end{enumerate}
+また、$R$ の元 $l$ が、次の条件を満たすとき、$l$ は、$a_1,\ldots, a_n$ の最小公倍元（略して LCM）であるという。
+\begin{enumerate}
+\item $l$ は、$a_1,\ldots, a_n$ の公倍元。
+\item $m$ が、$a_1,\ldots, a_n$ の公倍元ならば $l|m$。
+\end{enumerate}
+このとき、　$(a_1) + \cdots +  (a_n) = (d)$、$(a_1)\cap \cdots \cap (a_n) = (l)$ であり特に、GCD、LCM は、それぞれ、正則元倍を除いて、一意的に決まることを示せ。 
+\end{enumerate}
+
+\newpage
+\section{準同型定理}
+\begin{enumerate}
+\item 部分環は環であることを示せ。
+\item $f:R\rightarrow R'$  を環準同型とするとき次を示せ。\\
+$(1)$ $\mbox{Ker}f$ は $R$ の両側イデアル。\\
+$(2)$ $\mbox{Im}f$ は $R'$ の部分環。
+\item $f:R\rightarrow R'$  を環の同型写像とする。このとき、$f^{-1}:R'\rightarrow R$ も環の同型写像であることを示せ。また、このことを用いて、環の間の $\simeq$（同型）は、同値関係であることを示せ。
+\item $f:R\rightarrow R'$  を環の準同型、$K$ をその核 (kernel) $S$ を $R$ の部分集合とする。このとき、$f^{-1}(f(S)) = S + K$ であることを示せ。
+\item $f:R\rightarrow R'$  を環の準同型とするとき、次を示せ。\\
+$(1)$ $I$ が $R$ のイデアルならば、$f(I)$ は、$\mbox{Im}f$ のイデアル。\\
+$(2)$ $I'$ が $R'$ のイデアルならば、$f^{-1}(I') = \{a\in R|f(a)\in I'\}$ は、$\mbox{Ker}f$ を含む $R$ のイデアルである。
+\item $f:R\rightarrow R'$  を環の全射準同型とする。\\
+${\cal{I}}:$ $R$ のイデアルで、$\mbox{Ker}f$ を含むもの全体。\\
+${\cal{I}}':$ $R'$ のイデアル全体。\\
+このとき、$\phi:{\cal{I}}\rightarrow {\cal{I}}'$ $(I\mapsto f(I))$、$\psi:{\cal{I}}'\rightarrow {\cal{I}}$ $(I'\mapsto f^{-1}(I'))$ は、${\cal{I}}$ と ${\cal{I}}'$ の間の全単射を与えることを示せ。
+\item $K$、$L$ を体。$K\subset L$ とし、$\alpha\in L$、 $\alpha$ の最小多項式 $p(x) \in K[x]$ の次数を $d$ とする。このとき、
+$$K[\alpha] = \{a_0 + a_1\alpha + \cdots + a_{d-1}\alpha^{d-1} | a_0,\ldots, a_{d-1}\in K\}$$
+で、$K[\alpha]$ は、$K$ 上の $d$ 次元ベクトル空間となることを示せ。
+\item 下記の $\bC$ の元について、$\bQ$ 上の最小多項式の次数を求めよ。\\
+$(1)$　$0$ \quad $(2)$　$2/3$ \quad $(3)$　$\sqrt{2}$ \quad $(4)$　$\sqrt{2}+\sqrt{3}$ \quad $(5)$　$^3\!\!\sqrt{-2}$
+\item $\bC \simeq {\displaystyle\left\{\left(\begin{array}{cc}a & b \\ -b & a \end{array} \right) \biggl | \biggr.  \:a, b \in \bR \right\}}$ であることを示せ。
+\item $R$ を可換環とするとき次の同型を示せ。
+$$R[x] \simeq R[x,y]/(y) \simeq R[x,y]/(x-y)$$
+\end{enumerate}
+
+\newpage
+\section{素イデアルと極大イデアル}　
+\begin{enumerate}
+\item $R$  を整域、$1$ を $R$ の単位元、$S = \{n\in \bN | n\cdot 1 = \overbrace{1+\cdots + 1}^{n\mbox{{\scriptsize 個}}}=0\}$ とする。$S\neq \emptyset$ のとき、$p = \min S$ とおくと、$p$ は、素数であることを示せ。
+
+{\gt 註}: $p$ を $R$ の標数(characteristic)といい、$p = \mbox{char}R$ とかく。$S=\emptyset$ のときは、$\mbox{char}R = 0$ とする。
+\item $R = \bZ[x]$ (有理整数環上の多項式環) とする。
+$$(2) = \{f(x)\cdot 2 | f(x)\in \bZ[x]\}$$
+は、素イデアルであるか、極大イデアルか。それぞれ判定せよ。
+\item $f(x)\in \bZ[x]$ が、$\bZ$ 上既約ならば、$\bQ$ 上既約であることを示せ。
+\item $\bQ[^3\!\!\sqrt{2}]$ は、体であることを示せ。
+\item $R$ を可換環、$I$、$J$ を $R$ のイデアルで、$I+J\neq R$ を満たすものとする。$f:R\rightarrow R/I\;(x\mapsto x+I)$ とする。このとき次を示せ。
+$$f(J):R/I \mbox{ の素イデアル } \Leftrightarrow\;I+J : R \mbox{ の素イデアル}$$
+\item $R$ を可換環、$I$ をそのイデアルとする。このとき、\\
+$\sqrt{I} = \{a\in R | \mbox{ ある自然数 } n \mbox{ について }a^n\in I\}$ とする。\\
+$(1)$　$\sqrt{I}$　は、イデアルである。\\
+$(2)$　$I$ が素イデアルならば、$I = \sqrt{I}$。
+\item $R$ を環、$I(\neq R)$ をその左イデアルとする。このとき、$I$  を含む $R$ の極大左イデアルが存在することを示せ。
+\item $\bZ[\sqrt{-1}]$ は、PID である。(2.3 参照)　この中で、単項イデアル、$(2)$、$(3)$、$(5)$ はそれぞれ極大イデアルかどうか判定せよ。また、極大イデアルでないときは、それを含む極大イデアルをすべて求めよ。
+\item $(\pi) \neq (0)$ を $\bZ[\sqrt{-1}]$ の素イデアルとする。このとき、$\bZ\cap (\pi) = 
+\bZ\cdot p$ ($p$ は素数) でかつ、$N(\pi) = p$ または、$p^2$ である。$N(\pi) = p^2$ のときは $(p)$ は素イデアル、$N(\pi) = p$  のときは、$(p)$ は素イデアルではない。
+\end{enumerate}
+
+\newpage
+\section{環の直和}
+\begin{enumerate}
+\item $R$ を可換環、$I_1, I_2, \ldots, I_n$ をどの２つも互いに素であるイデアルとする。このとき、
+$$R/\bigcap_{i=1}^n I_n\simeq R/I_1 \oplus \cdots \oplus R/I_n$$
+であることを示せ。
+\item $(1)$　3 で割ったら1 余り、10 で割ったら3余り、7 で割ったら0 余り、13 で割ったら11 余る整数を一つ見つけよ。\\
+$(2)$　上の条件を満たす整数をすべて見つけよ。
+\item $(1)$　$(x^2-2)$ と、$(x^3-2)$ は、$\bZ[x]$ のイデアルとして互いに素か。\\
+$(2)$　$(x^2-2)$ と、$(x^3-2)$ は、$\bR[x]$ のイデアルとして互いに素か。
+\item $R = R_1 \oplus R_2$ を環の直和とする。このとき次を示せ。\\
+$(1)$　$U(R) = U(R_1)\times U(R_2)$。\\
+$(2)$　$R_1$、$R_2$ が体であっても、$R$ は体ではない。
+\item 可換環  $R$ のイデアル $I_1, I_2, \ldots, I_n$ のどの２つも互いに素であれば、次が成立することを示せ。
+$$\bigcap_{i=1}^n I_i = I_1\cdot I_2 \cdots I_n$$
+\item $R$ を整域、$a\in R$ とするとき、次を示せ。
+$$f(x) \in R[x] \mbox{ が既約 } \Leftrightarrow f(x-a)\in R[x] \mbox{ が既約 }$$
+\item $p$  を素数とするとき、$x^{p-1} + x^{p-2} + \cdots + x+1 = (x^p-1)/(x-1)$ は、$\bZ[x]$ の元として既約であることを示せ。
+\item $R$ を環としたとき、$Z(R) = \{a\in R | xa = ax \:\mbox{ for all } x\in R\}$ を$R$ の中心と呼ぶ。\\
+$(1)$ $e\in Z(R)$ が、$e^2 = e \neq 0$ を満たすとき、$Re$ は、$R$ の両側イデアルで、$e$ を単位元とする環となることを示せ。\\
+$(2)$  $e_1, \ldots, e_n\in Z(R)$, $e_i^2=e_i,\:e_ie_j = 0\:(i\neq j),\:1=e_1+\cdots+e_n$ ならば、$R\simeq Re_1 \oplus \cdots \oplus Re_n$ であることを示せ。
+\item $R$ を可換環とすると、$Z(M_n(R)) = \{aI | a\in R\}$ であることを示せ。ここで、$I$  は、単位行列を表すものとする。
+\end{enumerate}
+
+\newpage
+\section{商環}
+\begin{enumerate}
+\item  商環の二元の和・積が、元の表し方によらずに定まることを示せ。
+\item $p$ を素数としたとき、$\bZ_{(p)}$ は、$\bZ$ の 素イデアル $pZ$ による局所化と同型であることを示せ。
+\item $S$ は可換環 $R$ の乗法的部分集合とし、$I$ は、$I\cap S = \emptyset $ を満たす $R$ のイデアルのうち極大なものとする。このとき、$I$ は素イデアルであることを示せ。
+\item $S$ を、可換環 $R$ の乗法的部分集合、$f:R\rightarrow R'$ を環準同型とする。$f(S) \subset U(R')$ ならば、環準同型 $g:S^{-1}R\rightarrow R'$ で $g\circ \phi_S = f$ を満たすものがただ一つ存在することを示せ。ここで、$\phi_S:R\rightarrow S^{-1}R\:(a\mapsto a/1)$ (自然な準同型)。
+\item $I,\:J$ を可換環 $R$ のイデアルとし、$S^{-1}I$ は、$\{ a/s | a\in I,\: s\in S\} \subset S^{-1}R$ を表すものとする。このとき、次を示せ。\\
+$(1)$　$S^{-1}(I+J) = S^{-1}I + S^{-1}J$\\
+$(2)$　$S^{-1}(IJ) = (S^{-1}I)(S^{-1}J)$\\
+$(3)$　$S^{-1}(I\cap J) = S^{-1}I \cap S^{-1}J$
+\item $(1)$　$\bZ$ の環としての自己同型（環準同型で全単射)は、恒等写像だけであることを示せ。\\
+$(2)$　$\bQ$ の環としての自己同型（環準同型で全単射)は、恒等写像だけであることを示せ。
+\item $(1)$　$R = \bZ_{12}$ としたとき、$R$ の乗法的部分集合をすべて求めよ。\\
+$(2)$　$(1)$ で求めた乗法的部分集合 $S$ について、$S^{-1}R$ が同型でないものはいくつあるか。
+\item $I$ を $S^{-1}R$ のイデアルとすると、$I=(\phi_S(R)\cap I)(S^{-1}R)$ であることを示せ。これを用いて、$R$ が PID ならば、$S^{-1}R$ も PID であることを示せ。
+\item $p$ を素数としたとき、$\bZ$ の $p\bZ$ による局所化を $\bZ_{(p)}$ と書く。その極大イデアルを ${\cal P}$ とするとき、次を示せ。\\
+$(1)$　${\cal P} = \{ pa/s | a, s\in \bZ,\: p \not | s \}$\\
+$(2)$　$Q(\bZ_{(p)}) = \bQ$\\
+$(3)$　$\bZ_{(p)}/{\cal P} \simeq \bZ_p (\simeq \bZ/p\bZ)$
+\item $(1)$　$\bZ_{(p)}$ のイデアル $I$ に対し、$I\cap \bZ$ は $\bZ$ のイデアルで、$i\cap \bZ = (n)$ とすれば、$I = n\bZ_{(p)}$ である。特に、$\bZ_{(p)}$ は、PID であることを示せ。\\
+$(2)$　$\bZ_{(p)}$ の自明でないイデアルは、$p^e\bZ_{(p)}\:(1\geq e)$ の形のもののみであることを示せ。
+\end{enumerate}
+
+\newpage
+\section{一意分解環}
+\begin{enumerate}
+\item $R$ を、UFD、${\cal P}$ を、$R$ の素元を、同伴の条件で類別した完全代表系とし、
+$$a = up_1^{e_1}\cdots p_r^{e_r},\:b = vp_1^{f_1}\cdots p_r^{f_r},\:u,v\in U(R),\:p_i\in{\cal P}, \: e_i, f_j\in \bN\cup\{0\}$$
+としたとき、次を示せ。\\
+$(1)$　$a|b \Leftrightarrow e_i\leq f_i\:(1\leq i\leq r)$。\\
+$(2)$　$a$ と $b$ の最大公約元を $d = p_1^{d_1}\cdots p_r^{d_r}$ とすると、$d_i = \min(e_i,f_i)$、最小公倍数を $l = p_1^{l_1}\cdots p_r^{l_r}$ とすると、$l_i = \max(e_i,f_i)$。
+\item $K, L$ を体、$K\subset L$ $f(x), g(x)\in K[x]$ とすると、$f(x), g(x)$ の $K[x]$ での最大公約元は、$L[x]$ での最大公約元でもある。特に、$L[x]$ で、$f(x) = g(x)h(x)$  $h(x)\in L[x])$ と分解すれば、$h(x)\in K[x]$。
+\item $R$ を UFD、$S$ を、積閉集合とする。このとき、以下のことを示せ。\\
+$(1)$　$S^{-1}R$ も UFD である。\\
+$(2)$　$S^{-1}R$ の素元は $R$ の素元 $p$ で、$(p)\cap S = \emptyset$ となるものと同伴である。
+\item $\bZ[\sqrt{3}] = \{a + b\sqrt{3} | a, b\in \bZ\}$ はユークリッド整域であることを示せ。
+\item $\bZ[\sqrt{d}] = \{a + b\sqrt{d} | a, b\in \bZ\}$ とする。次のそれぞれについて、$\bZ[\sqrt{d}]$ は、UFD ではないことを示せ。\\
+$(1)$　$d = -6$\quad $(2)$　$d = -10$\quad $(3)$　$d = -13$ \\
+$(4)$　$d = -14$\quad $(5)$　$d = -17$
+\item $\bZ[\sqrt{10}] = \{a + b\sqrt{10} | a, b\in \bZ\}$  とする。$\alpha = a+b\sqrt{10}\in \bZ[\sqrt{10}]$ について、$N(\alpha) = a^2-10b^2$ とすると、$N(\alpha) \neq \pm2, \pm 3$ であることを用いて、$\bZ[\sqrt{10}]$ は、UFD でないことを示せ。
+\item $\bZ[\sqrt{3}] = \{a + b\sqrt{3} | a, b\in \bZ\}$ において、$(1+2\sqrt{3})\alpha + (5+4\sqrt{3})\beta = 1$ となる、$\alpha, \beta\in \bZ[\sqrt{3}]$ を求めよ。
+\item $\bQ[\sqrt{3}] = \{a + b\sqrt{3} | a, b\in \bQ\}$ の元で、$x^2 + cx + d = 0$ $(c, d\in \bZ)$ の形の方程式の根となるものは、$\bZ[\sqrt{3}]$ に限ることを示せ。
+\item $\bQ[\sqrt{5}] = \{a + b\sqrt{5} | a, b\in \bQ\}$ の元で、$x^2 + cs + d = 0$ $(c, d\in \bZ)$ の形の方程式の根となるものをすべて求めよ。
+
+\end{enumerate}
+
+\newpage
+\section{$R$-加群と $R$-代数}
+\begin{enumerate}
+\item $M$ を $R$-左加群、$u$ を $M$ の元とするとき、
+$\mbox{Ann}(u) = \{ r\in R | ru = 0\}$ を $u$ の零化イデアルと呼ぶ。このとき以下を示せ。\\
+$(1)$　$\mbox{Ann}(u)$ は、実際、$R$ の左イデアルである。\\
+$(2)$　$N$ を、$u$ で生成された $M$ の部分加群、$Ru$ とすると、$R/\mbox{Ann}(u)\simeq N$ である。
+\item $R$-左加群、$M$ の $R$-部分加群の集合 $\{M_\lambda\}_{\lambda\in\Lambda}$ に対し、$M$ の任意の元 $m$ が、これらの部分加群に属する元の有限和として、$m = m_{\lambda_1}+\cdots + m_{\lambda_r}$ $(m_{\lambda_i}\in M_{\lambda_i})$ と表されるとき、$M$ は、$\{M_\lambda\}_{\lambda\in\Lambda}$ の和であるといって、$M=\sum_{\lambda\in\Lambda}M_\lambda$ と表す。また、$M$ の元が、上の形に、一意的に表されるとき、$M$ は、$\{M_\lambda\}_{\lambda\in\Lambda}$ の直和であるといい、$M = \oplus_{\lambda\in\Lambda}M_\lambda$ とかく。$M$ が、$U$ を基底とする $R$-自由加群であるための必要十分な条件は、$M = \oplus_{u\in U}Ru$、$R\simeq Ru$ となることであることを示せ。
+\item 任意の $R$-左加群 $M$ は、ある、$R$-自由加群の準同型像であることを示せ。
+
+\medskip $R$-左加群 $M_i$ と、$R$-準同型 $f_i:M_i\rightarrow M_{i+1}$ の列、
+$$\cdots \rightarrow M_{i-1} \stackrel{f_{i-1}}{\rightarrow} M_i \stackrel{f_{i}}{\rightarrow} M_{i+1} \rightarrow \cdots $$
+において、${\rm Im} f_{i-1} = {\rm Ker} f_i$ が、各 $i$ について成立しているとき、これは完全系列であるという。$M$ を、$R$-左加群とするとき、$0 \rightarrow M$ は、零加群からの、零写像、$M \rightarrow 0$ は、零加群への、零写像を表すものとし、特に、写像は書かない。
+\item $M$、$M'$、$N$ を、$R$-左加群とする。\\
+$(1)$　$0 \rightarrow N \stackrel{f}{\rightarrow} M$ が、完全系列であることと、$f$ が、単射であることは同値である。\\
+$(2)$　$M \stackrel{g}{\rightarrow} M' \rightarrow 0$ が、完全系列であることと、$g$ が、全射であることは同値である。\\
+$(3)$　$0 \rightarrow N \stackrel{f}{\rightarrow} M \stackrel{g}{\rightarrow} M' \rightarrow 0$ が完全系列であれば、$N\simeq f(N)$ かつ、$M/f(N)\simeq M'$ であることを示せ。
+\item $R$-左加群の完全系列、$M\stackrel{g}{\rightarrow} M' \rightarrow 0$ に対して、$R$-準同型、$h:M'\rightarrow M$ が存在して、$g\circ h = {\it id}_{M'}$ となるとき、この完全系列は分裂するという。このとき、$M = {\rm Ker} g \oplus {\rm Im} h$ であることを示せ。
+\item $R$-左加群 $M_1$、$M_2$ と、$R$-準同型 $f:M_1\rightarrow M_2$ にたいして、$i$ を埋め込み写像、${\rm Coker} f = M_2/{\rm Im} f$、$p$ を自然な準同型とすると、次は、完全系列であることを示せ。
+$$0 \rightarrow {\rm Ker}f \stackrel{i}{\rightarrow} M_1 \stackrel{f}{\rightarrow} M_2 \stackrel{p}{\rightarrow} {\rm Coker}f \rightarrow 0$$
+
+\end{enumerate}
+
+\newpage
+\section{鎖条件とHilbert の基定理}
+\begin{enumerate}
+\item $M$ を $R$-左加群、$N$ をその部分加群とするとき次を示せ。\\
+$(1)$　$M$ が、ネーター（アルチン）加群としたとき、$N$、$M/N$ は、ネーター（アルチン）加群であることを示せ。\\
+$(2)$　$U$、$V$ を共に、$M$ の部分加群で、$U\subset V$  を満たすものとする。このとき次を示せ。
+$$U = V \Leftrightarrow U+N = V+N \mbox{ and } U\cap N = V\cap N$$
+\item $M$ を $R$-左加群、$N$ をその部分加群とするとき次を示せ。\\
+$(1)$　$N$ と、$M/N$ がネーター（アルチン）加群ならば、$M$ も、ネーター（アルチン）加群である。\\
+$(2)$　$M$ が、部分加群、$M_1,\ldots, M_n$ の和、$M_1+\cdots+M_n$ である時、次の二つは同値であることを示せ。\\
+　$(i)$　$M$ は、ネーター（アルチン）加群。\\
+　$(ii)$　各 $M_i$ は、ネーター（アルチン）加群。
+\item  $R$ が、左ネーター（アルチン）環で、$M$ が、$R$-有限生成ならば、$M$ は、ネーター（アルチン）加群であることを示せ。
+\item  $(1)$　左ネーター（アルチン）環の剰余環は、また、左ネーター（アルチン）環であることを示せ。\\
+$(2)$　可換ネーター環 $R$ 上の、可換な代数 $A$ が、代数として有限生成ならば、$A$ は、ネーター環であることを示せ。ここで、代数として有限生成とは、$A$ に、有限個の元 $u_1, \ldots, u_n$ が存在して、$A$ の任意の元は、$u_1,\ldots,u_n$ の、$R$ 係数の多項式として書けることをいう。
+\item 体 $K$ 上の多項式環 $K[x]$ は、アルチン環ではないことを示せ。
+\item 体 $K$ 上の次元が有限である、$K$ 上の代数は、左ネーター環であり、かつ、左アルチン環であることを示せ。
+\item $R$ を、単項イデアル環とする。\\
+$(1)$ 　$R$ は、ネーター環であることを示せ。また、必ずしも、アルチン環ではないことを例証せよ。\\
+$(2)$　$(a)$ を、$a$ で生成された、$R$ のイデアルとする。このとき、$R/(a)$ は、左ネーター（アルチン）環であることを示せ。
+\end{enumerate}
+
+%\begin{flushright}
+%鈴木寛@国際基督教大学数学教室
+%\end{flushright}
+\end{document}

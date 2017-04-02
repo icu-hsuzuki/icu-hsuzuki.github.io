@@ -1,0 +1,87 @@
+%Algebra II Midterm : original  October 19, 20, 1997
+%revised : November 4, 1997 after the exam
+
+\documentstyle[12pt]{jarticle}
+
+%A4 Size Setting
+\topmargin = -0.5cm
+\oddsidemargin = 0cm \evensidemargin = 0cm
+\textheight = 24cm \textwidth = 16cm % default 16cm
+%A4 size Setting End
+
+\pagestyle{empty}
+
+\newtheorem{thm}{定理}
+\newcommand{\bZ}{\mbox{\boldmath $Z$}}
+\newcommand{\bQ}{\mbox{\boldmath $Q$}}
+\newcommand{\bR}{\mbox{\boldmath $R$}}
+\newcommand{\bC}{\mbox{\boldmath $C$}}
+\newcommand{\bigx}{{\large $\times$}}
+
+\begin{document}
+\begin{center}
+{\gt\LARGE Algebra II  Midterm}\\
+{\gt October 27, 1997, Autumn}
+\end{center}
+
+\noindent
+ID 番号、氏名を、各解答用紙に、また、問題番号も忘れずに書いて下さい。
+
+\begin{enumerate}
+\item 次のうち正しいものには $\bigcirc$、誤っているものには \bigx を記入せよ。(15pts)
+     \begin{enumerate}
+     \item $R$ が単項イデアル整域ならば、$R$ 上の多項式環 $R[x]$ は、単項イデアル整域である。
+     \item 体 $K$ のイデアルは、$K$ と、$\{0\}$ のみである。
+     \item $(0)$ が素イデアルである可換環は、整域。
+     \item $I, J$ を可換環 $R$ のイデアルとすると、
+     $$\{xy\mid x\in I, \:y\in J\}$$
+     は、$R$ のイデアルである。
+     \item $n$ を $2$ 以上の整数とするとき、$\bZ/n\bZ$ の元で正則元でないものは、すべて、零因子である。
+     \end{enumerate}
+
+\item $R$ を可換環とし、$R[x]$ を $R$ を係数とする多項式全体のなす環、$U(R)$ をその単数群（正則元全体のなす群）とするとき次を示せ。
+     \begin{enumerate}
+     \item $f(x), g(x)\in R[x]$ とするとき、
+     $$\deg f(x)g(x) \leq \deg f(x) + \deg g(x)$$
+     であり、特に、$R$ が整域であれば、等号が成り立つことを示せ。
+     \item $R$ が整域ならば $R[x]$ も整域であることを示せ。
+     \item $R[x,y]$ を $R[x]$ を係数とし、$y$ を変数とする多項式環とする。$R$ が整域ならば、$R[x,y]$ も整域であることを示せ。
+     \item $R$ を整域と仮定するとき、$U(R[x]) = U(R)$ であることを示せ。
+     \item $R$ を整域とは仮定しないとき、$U(R[x]) = U(R)$ か。正しければ証明し、正しくなければ、反例を上げよ。
+     \end{enumerate}
+ 
+\item $R$ を可換環、$P$ を $R$ の素イデアル、$S = R - P$、$R'$ を可換環、$f:R\to R'$ を環準同型とするとき、次を示せ。
+     \begin{enumerate}
+     \item $S$ は、乗法的部分集合であることを示せ。（0 を含まず、1 を含み、積に関して閉じている集合）
+     \item $I'$ を $R'$ のイデアルとすると、
+     $$I = f^{-1}(I') = \{x\in R\mid f(x)\in I'\}$$
+     は、$R$ のイデアルであることを示せ。
+     \item $R'$ が整域ならば、$\ker f$ は、素イデアルであることを示せ。
+     \item 上の $I$ と、$I'$ において、$I'$ が $R'$ の素イデアルならば、$I = f^{-1}(I')$ も素イデアルであることを示せ。
+     \item $R$ が単項イデアル整域ならば、$S^{-1}R$ も単項イデアル整域であることを示せ。
+          \end{enumerate}
+         
+\item $R = \bQ[x]$ を、有理数体上の多項式環とし、$p(x) = (x-1)(x+1)(x^{10 }-2)$ とする。このとき、以下を示せ。
+     \begin{enumerate}
+     \item $x^{10 }- 2$ は、$\bQ$ 上既約であることを示せ。
+     \item $R/(x^{10} - 2)$ は、体であることを示せ。ここで、$(x^{10} - 2)$ は、$x^{10}-2$ で生成されたイデアル、$R(x^{10}-2)$ を表すものとする。
+     \item $p(x)$ で生成されたイデアルを $I = (p(x))$ とする。$I$ は、素イデアルかどうか判定せよ。
+     \item $R$ の零でない素イデアルは、極大イデアルでもあることを示せ。
+     \item $I = (p(x))$ を含む $R$ の極大イデアルをすべて求めよ。
+     \end{enumerate}
+\end{enumerate}
+
+ 
+
+\vspace{5ex}
+\noindent Algebra II を受講した感想、コメント、アドヴァイス、なんでも構いませんから書いて下さい。（これによって、成績に不利益を及ぼすことはありませんが、同時に、利益を受けることもありません。）
+
+\vspace{2ex}
+\noindent
+Midterm を １００点、演習を ５０点、FINAL を １５０ 点満点として計算して、成績を出す予定です。
+         
+
+\begin{flushright}
+鈴木寛@国際基督教大学数学教室
+\end{flushright}
+\end{document}

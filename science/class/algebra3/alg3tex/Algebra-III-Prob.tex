@@ -1,0 +1,293 @@
+%Algebra III List of Problems : original started December 11, 1995
+%Original : revised No1, 2, Dec. 13
+%Original : No 3, 4, Dec. 26
+%Original : No 5, 6, Jan. 7-8, 1996
+%Revised : December 23, 1997
+
+\documentstyle[12pt]{jarticle}
+
+%A4 Size Setting
+\topmargin = 0cm
+\oddsidemargin = 0cm \evensidemargin = 0cm
+\textheight = 23cm \textwidth = 16cm % default 16cm
+%A4 size Setting End
+
+\newcommand{\bZ}{\mbox{\boldmath $Z$}}
+\newcommand{\bQ}{\mbox{\boldmath $Q$}}
+\newcommand{\bR}{\mbox{\boldmath $R$}}
+\newcommand{\bC}{\mbox{\boldmath $C$}}
+\newcommand{\bN}{\mbox{\boldmath $N$}}
+\newcommand{\bF}{\mbox{\boldmath $F$}}
+
+\def\labelenumi{\thesection.\theenumi}
+\begin{document}
+\begin{center}
+{\LARGE\gt Algebra III :  PROBLEMS}
+\end{center}
+
+\section{体の拡大}  %No. 1
+\begin{enumerate}
+\item $L:K$ を体の拡大とし、$S, T\subset L$ とする。このとき、$K(S\cup T) = K(S)(T)$ であることを示せ。特に、$L$ の元 $\alpha,\beta$ について、$K(\alpha)(\beta) = K(\alpha,\beta)$ である。
+\item $L:K$ を体の拡大、$\alpha\in L$ とし、$K[\alpha] = \{f(\alpha)\mid f(t)\in K[t]\}$ とする。この時、$K[\alpha] \subset K(\alpha)$ であり、かつ $K(\alpha) = \left\{f(\alpha)/g(\alpha)\mid f(t), g(t)\in K[t], \;g(\alpha)\neq 0\right\}$ であることを示せ。
+\item $L:K$ を体の拡大、$\alpha\in L$ とするとき、$K[\alpha] = K(\alpha)$ であることと、$\alpha$ が $K$ 上代数的であることは同値であることを示せ。
+\item $L:K$ を体の拡大とし、$\alpha_1, \alpha_2, \ldots, \alpha_n$ とする。\\
+$(1)$ $K(\alpha, \alpha_2, \ldots, \alpha_n) = \{f(\alpha_1,\alpha_2,\ldots, \alpha_n)/g(\alpha_1,\alpha_2,\ldots, \alpha_n)\mid f, g\in K[t_1,t_2,\ldots,t_n],\\
+g(\alpha_1,\alpha_2,\ldots, \alpha_n)\neq 0\}$.\\
+$(2)$ $K(\alpha_1, \alpha_2, \ldots, \alpha_n) = K[\alpha_1, \alpha_2, \ldots, \alpha_n]$ であることと、$\alpha_1, \alpha_2, \ldots, \alpha_n$ が $K$ 上代数的であることは同値であることを示せ。ここで、$K[\alpha_1, \alpha_2, \ldots, \alpha_n]$ は $K$ 上の $n$ 変数多項式環に $\alpha_1, \alpha_2,\ldots, \alpha_n$ を代入したものとする。
+\item 下のそれぞれの $\bC$ の元について、$K$ 上の最小多項式を求めよ。ただし、$i = \sqrt{-1}$ とする。
+$$\begin{array}{clclcl}
+(1) & i, \;K = \bQ \quad & (2) & i, \;K = \bR \quad & (3)  &  i, \; K = \bC\\
+(4) & \sqrt{2}, \; K = \bQ \; & (5) & (\sqrt{5}+1)/2,\; K = \bQ \; & (6) & (-1+\sqrt{-3})/2,\; K = \bQ
+\end{array}$$
+\item 次の体は、$\bQ$ の単純拡大であることを示せ。（$K=\bQ(\alpha)$ となる $\alpha$ を見つけよ。）\\
+$(1)$ $\bQ(\sqrt{3},\sqrt{5})$ \qquad $(2)$ $\bQ(\sqrt{2},\sqrt{3}, \sqrt{5})$ \qquad $(3)$ $\bQ(\root 5 \of 2, \sqrt{-1})$
+\item 実数体 $\bR$ は、有理数体 $\bQ$ の単純拡大ではないことを示せ。\\
+{\gt ヒント：}  可算濃度の体の単純拡大は、また可算濃度となることを示せ。
+\item $K = \bZ_2$ とする。$K$ 上の６次以下の既約多項式をすべて求めよ。
+\item $K = \bZ_3$ とする。$K$ 上の４次以下の既約多項式をすべて求めよ。
+\item $K = \bZ_p$ （$p$ は素数）、$m(t)$ を $K$ 上の $n$ 次の既約多項式とする。このとき、$K[t]/(m(t))$ は、$p^n$ 個の元からなる体であることを示せ。
+\item $(1)$ ４個の元からなる体の、和、積の表をつくれ。\\
+$(2)$ ８個の元からなる体の、和、積の表をつくれ。
+\item $\bC$ の元 $\alpha$ が、次のような最小多項式を持つとき、$\bQ(\alpha)$ を求めよ。\\
+例：$t^2-5 \Rightarrow \bQ(\sqrt{5}) = \{a+b\sqrt{5}\mid a, b\in \bQ\}$.\\
+$(1)$ $t^3+2$ \quad $(2)$ $t^4+t^3+t^2+t+1$ \quad $(3)$ $t^4-10t+1$ \quad $(4)$ $t^3-1$ 
+\item $\alpha\in\bC$ を、$t^3-t-1$ の根とし、$K = \bQ(\alpha)$ をする。このとき、$\alpha^{-1}$, $(\alpha+1)^{-1}$, $(\alpha^2+\alpha+1)^{-1}$ を、$\alpha$ の多項式として求めよ。
+\item $\omega = (-1+\sqrt{-3})/2$としたとき、$\bQ(^3\!\!\!\sqrt{2})$ から $\bQ(^3\!\!\!\sqrt{2}\omega)$ への、同型写像を具体的に一つ定めよ。
+\end{enumerate}
+
+\newpage
+\section{拡大の次数と作図問題}  %No. 2
+\begin{enumerate}
+\item 次の体の拡大の次数を求めよ。\\
+$(1)$ $\bC:\bQ$\quad  $(2)$ $\bR(\sqrt{5}):\bR$\quad  $(3)$ $\bQ(^3\!\!\!\sqrt{2}):\bQ$\quad  $(4)$ $\bQ(\sqrt{3},\sqrt{5}):\bQ$\quad 
+$(5)$ $\bQ(^7\!\!\!\sqrt{3}):\bQ$
+\item $\bQ(\sqrt{3},\sqrt{5})$ の各元は、$a+b\sqrt{3}+c\sqrt{5}+d\sqrt{15}$, $a, b, c, d\in \bQ$ の形に一意的に書き表せることを示せ。また、$(a,b,c,d)\neq (0,0,0,0)$ のとき、この元の逆元を具体的に求めよ。
+\item $[L:K]$ が素数ならば、$K\subset M\subset L$  なる $L$ の部分体は $K$ か $L$ のみ。
+\item $L:K$ を体の拡大とする。$L$ の元で $K$ 上代数的なもの全体の集合を $M$ とすると、$M$ は、体となることを示せ。$M$ を、$L$ の体 $K$ 上の代数閉包という。 
+\item $A$ を $\bQ$ 上代数的な $\bC$ の元全体とするとき、次を示せ。\\
+$(1)$ $A$ は体。\quad $(2)$ $[A:\bQ] = \infty$ \quad $(3)$ $[\bC:A] = \infty$\\
+$(4)$ $A$ の代数拡大は、$A$ のみである。
+\item $L:K$ を有限拡大、$p(t)$ を $K$ 上の既約多項式で、$\deg p(t)>1$ なるものとする。$([L:K], \deg p(t)) = 1$ ならば、$p(t)$ は、$L$ の中に根を持たないことを示せ。
+\item $(1)$ $L:K$、$M:L$ を共に代数拡大とすると、$M:K$ も代数拡大であることを示せ。\\
+$(2)$ $L:K$、$M:L$ を共に体の拡大、$M:K$ を代数拡大とすると、$M:L$、$L:K$ も代数拡大であることを示せ。
+\item $(0,0)$ と $(1,0)$ からは、定規とコンパスで正９角形は作図できないことを示せ。\\
+{\gt ヒント：} $(\cos(\pi/9),0)$ が作図出来ないことを示せばよい。$\beta = 2\cos(\pi/9)$ とし、$\cos(3\theta) = 4\cos^3\theta - 3\cos\theta$ を用い、$\beta^3-3\beta-1 = 0$ を示せ。
+\item 正５角形を作図せよ。\\
+{\gt ヒント：} $(\cos(2\pi/5),0)$ を $(0,0)$ と $(1,0)$ から作図できれば良い。$z = \cos(2\pi/5) +  \sqrt{-1}\sin(2\pi/5)$ は、$z^5 = 1 \neq z$ を満たすから、$t^4+t^3+t^2+t+1 = 0$ の根である。これを $u = t + 1/t$ を用いて表し、$\cos(2\pi/5)$ を求めよ。
+\item $(1)$ 定規とコンパスを用い、$\pi/4$ を３等分せよ\\
+$(2)$ 正 $n$ 角形、正 $m$ 角形 が作図できれば、正 $2^t\cdot l$ 角形も作図可能である。ここで、$t$ は任意の非負整数、$l$ は、$n$ と $m$ の最小公倍数である。
+\item  角 $\theta$ を定規とコンパスで３等分する事が出来るための必要十分条件は、多項式 $4t^3 - 3t - \cos\theta$ が、$\bQ(\cos\theta)$ 上で可約となることであることを示せ。
+
+\smallskip
+{\gt 註：} 角 $\theta$ が与えられたとき、その３等分を作図することは可能なときも、不可能なときもある。しかし、定規上の任意の位置の長さを測ることを許せば３等分も可能になる。その方法に興味のある人は、参考書のスチュアートの本参照。
+
+\item $(1,0)$, $(a,0)$ が与えられているとき、定規とコンパスで $(\sqrt{a},0)$ を作図せよ。
+\item $E:F$ を有限拡大とし、$M:F$ を任意の体の拡大、$E$, $M$ を体 $K$ の部分体のとする。$EM = E(M)$ とすると、$[EM:M]\leq [E:F]$ であることを示せ。\\
+{\gt ヒント：} $E = F(\alpha)$ の場合に、まず示し、帰納法を用いよ。
+\end{enumerate}
+
+
+\newpage
+\section{自己同型、不変体、分解体}  %No. ３
+\begin{enumerate}
+\item $L : K$ を体の拡大。$M$ を中間体とする。\\
+$(1)$ $\Gamma(L:K)$, $\Gamma(L:M)$ はともに群で、かつ $\Gamma(L:M)\leq \Gamma(L:K)$ であることを示せ。\\
+$(2)$ $H\leq \Gamma(L:K)$ ならば、$H^+ = \{a\in L\mid\sigma(a) = a\mbox{ for all } \sigma\in H\}$ は、拡大 $L:K$ の中間体であることを示せ。\\
+$(3)$ $M\subset (M^*)^+$ かつ、$H\subset (H^+)^*$ であることを示せ。
+\item 次の拡大 $L:K$  について $\Gamma(L:K)$ を求めよ。\\
+$(1)$ $\bQ(\sqrt{2}):\bQ$\qquad $(2)$ $\bQ(^5\!\!\sqrt{2}):\bQ$\qquad $(3)$ $\bQ(\sqrt{2},\sqrt{3}):\bQ$
+\item 前問のそれぞれの拡大の中間体を全て求めよ。
+\item $L$ を４個の元からなる体とする。（1.8 参照）$K = \{0,1\}\subset L$ とするとき、$\Gamma(L:K)$ を求めよ。また、$L:K$ の中間体を全て求めよ。
+\item 3.2, 3.4 の拡大において、$\phi:{\cal F}\rightarrow {\cal G}\;(M\mapsto M^*)$ と、$\psi:{\cal G}\rightarrow {\cal F}\;(H\mapsto H^+)$ が全単射となるのはどれか。ここで、${\cal F}$ は、拡大 $L:K$ の中間体全体、${\cal G}$ は、$\Gamma(L:K)$ の部分群全体を表すものとする。
+\item $K$ を体とするとき、$S = \{n\in \bN\mid n\cdot 1 = 0\}$ が、$S=\emptyset$  のときは、char$K = 0$、$S\neq \emptyset$ のときは、char$K = \min S$ とする。char$K$ を、体 $K$ の標数という。このとき、char$K$ は、0 又は、素数であることを示せ。
+\item 標数 0 の体 $L$ は、有理数体 $\bQ$ と同型な体 $K$ を含む。さらに、$L$ の自己同型はすべて、$\Gamma(L:K)$ の元である。
+\item $K$ を標数 $p>0$ の体とし、$L:K$ を体の拡大とする。$a\in K$  にたいし、$t^p-a$ のひとつの根を $\alpha\in L$ とする。このとき、$K(\alpha)$ は、$t^p-a$ の分解体であることを示せ。
+\item $(1)$ $K$ を体、$f\in K[t]$、$\Sigma$ を $K$ 上 $f$ の分解体、$\alpha_1,\ldots,\alpha_n$ を $\Sigma$ における $f$ の根とする。$\sigma\in \Gamma(\Sigma:K)$ とするとき、$\{\sigma(\alpha_1),\ldots,\sigma(\alpha_n)\} = \{\alpha_1,\ldots,\alpha_n\}$ すなわち、$f$ の根の置換を引き起こすことを示せ。\\
+$(2)$ $(1)$ の置換において、$\sigma(\alpha_i) = \alpha_i$ $(i = 1, 2, \ldots, n)$ ならば、$\sigma$ は、$\Sigma$ 上で恒等写像であることを示せ。
+\item 下記の多項式について、$\bQ$ 上の分解体を $\bC$ の部分体として求めよ。\\
+$(1)$ $t^3-1$\qquad $(2)$ $t^4+5t^2+6$\qquad $(3)$ $t^6-8$
+\item 前問で求めた分解体の $\bQ$ 上の拡大次数を求めよ。
+\item $\Sigma$ が、体 $K$ 上 $f$ の分解体で、$K\subset L\subset \Sigma$ であれば、$\Sigma$ は $L$  上 $f$ の分解体であることを示せ。
+\item $f$ は、体 $K$ 上の $n$ 次の多項式とし、$\Sigma$ を $f$  に対する分解体とするとき $[\Sigma:K]$ は、$n!$ の約数であることを示せ。　
+\item $L = K(\alpha)$ を $K$ の単純代数拡大とする。この時、$|\Gamma(L:K)|\leq [L:K]$ であることを示せ。$\alpha$ の $K$ 上の最小多項式を $f(x)$ とする。上で等号が成立すれば $L$ は、$K$ 上 $f(x)$ の分解体である。
+\end{enumerate}
+
+
+\newpage
+\section{正規性と分離性}  %No.　4
+\begin{enumerate}
+\item $f\in \bC[t]$ とする。$f$ は、$\bC$ で分解する（代数学の基本定理）ことを証明せよ。（例えば、整関数に関する Liouville の定理を用いよ。）
+\item $t$ を $\bQ$ 上超越的な元とする。このとき、$\bQ(t)$ の元で、$\bQ$ 上代数的な元は $\bQ$ の元に限ることを示せ。特に、$\bQ(t)$ は $\bQ$ 上正規。
+\item 下記の拡大のうちで正規拡大はどれか。\\
+$(1)$ $\bQ(\sqrt{-5}):\bQ$\qquad $(2)$ $\bQ(^7\!\!\sqrt{5}):\bQ$\qquad $(3)$ $\bQ(\sqrt{5},^7\!\!\sqrt{5}):\bQ(^7\!\!\sqrt{5})$\\
+$(4)$ $\bR(\sqrt{-7}):\bR$
+\item ２次の拡大は全て正規拡大であることを示せ。
+\item $F$ を有限体とすると、$F$ は、$\bZ_p$ と同型な部分体 $\bF_p$ を含む。ここで、$p = \mbox{char} F$ で、$p$ は素数である。$[F:\bF_p] = n$ とすると、$|F| = p^n$ かつ、$F$ は、$t^{p^n}-t$ の $\bF_p$ 上の分解体であることを示せ。
+\item $L:K$ を正規拡大。$L\supset M\supset K$ を中間体とすると、$L:M$ は正規拡大であることを示せ。また、$M:K$ は正規拡大とは限らない。$L:K$ は、正規拡大であるが、$M:K$ は、正規拡大ではない例をあげよ。
+\item $L:K$ を体の拡大。$|L|<\infty$ とする。このとき、$L:K$ は、正規かつ分離拡大であることを示せ。さらにある素数 $p$ について、$|L| = p^n$, $|K| = p^m$ で、かつ、$m\mid n$ となっていることを示せ。
+\item $t^4-2$  の $\bC$ の中での $\bQ$ 上の分解体を $L$ とする。このとき、$[L:\bQ]$ および、$\Gamma(L:\bQ)$ の元を全て求めよ。
+\item $\gamma = \sqrt{2+\sqrt{2}}$  とする。$\bQ(\gamma):\bQ$ は、正規拡大で、$\Gamma(\bQ(\gamma):\bQ)$  は、アーベル群であることを示せ。
+\item $p$ を素数、$K$ を標数が 0 または、$p$ と互いに素な体とする。$L$ を、$t^p-1$  の $K$ 上の分解体とする。このとき、$\Gamma(L:K)$ は、アーベル群であることを示せ。（$p$ は素数でなくても $\Gamma(L:K)$ は、アーベル群となる。このことを示せ。）
+\item $n$ を正の整数、$K$ を標数が 0 または、$n$ と互いに素な体とする。$t^n-1$ は、$K$ で分解しているとする。$a\in K$、$L$ を、$t^n-a$ の $K$ 上の分解体とするとき、$\Gamma(L:K)$ は、アーベル群であることを示せ。
+\item $K$ を無限個の元を含む体とする。任意の有限分離拡大 $L:K$ は単純拡大である。\\
+{\gt ヒント：}以下のステップを参考にして示しても良い。
+	\begin{enumerate}
+	\item ２元で生成される $L = K(\beta, \gamma)$ の場合に示せばい。
+	\item $g(x)$、$h(x)$ をそれぞれ $\beta$、 $\gamma$ の $K$ 上の最小多項式とする。$M$ を $g(x)h(x)$ の $L$ 上の分解体とすると、$g(x)$、$h(x)$ はどちらも $M$ において、重根を持たない。
+	\item $M$ における、$g(x)$、$h(x)$ の根をそれぞれ、$\beta_1 = \beta, \ldots, \beta_n$、$\gamma_1 = \gamma, \ldots, \gamma_m$ とし、$c$ を $(\beta-\beta_i)/(\gamma-\gamma_j)$、$(i = 2,\ldots, n,\: j = 2, \ldots, m)$ のいずれとも異なる $K$ の元とする。このような、$c$ をとることができる。$\alpha = \beta + c\gamma$ とする。この時、$h(x)$ と、$\bar{g}(x) = g(\alpha - cx)\in K(\alpha)[x]$ の共通根は、$\gamma$ のみである。
+	\item $\gamma$ の $K(\alpha)$ 上の最小多項式を $f(x)$ とする。すると、$f(x)$ は、$h(x)$ も $\bar{g}(x)$ も割りきる。このことより、$f(x) = x-\gamma$ を得る。従って、 $K(\alpha) = K(\beta,\gamma)$。
+	\end{enumerate}
+\end{enumerate}
+
+
+\newpage
+\section{次数と位数}  %No. 5
+\begin{enumerate}
+\item $L:K$ を有限正規拡大、$L\supset M \supset K$ を中間体とするとき次を示せ。\\
+$(1)$ $\tau:M\rightarrow L$ が、$K$-単射準同型 (i.e., 単射準同型で、$\tau_{|K} = id$) ならば、$\sigma_{|M} = \tau$ となる $\sigma\in \Gamma(L:K)$ が存在することを示せ。\\
+$(2)$ $p(t)\in K[t]$ を、$\alpha,\:\beta\in L$ に対して $p(\alpha) = p(\beta) = 0$ となる既約多項式とすると、$\sigma(\alpha) = \beta$ となる $\sigma\in\Gamma(L:K)$ が存在することを示せ。
+\item $F$ を ${\rm char} F = p$ なる体とする。このとき次を示せ。\\
+$(1)$ $\sigma:F\rightarrow F\;(x\mapsto x^p)$ とすると、$\sigma$ は単射準同型であることを示せ。特に、$|F|<\infty$  ならば、$\sigma$ は自己同型である。(Frobenius 自己同型と呼ばれる。)\\
+$(2)$ $|F| = p^n$、$K$ を $L$ の素体、すなわち $K = \{0,1,\ldots,p-1\}\subset L$ とすると、${\rm Aut}(F) = \Gamma(F:K) = <\sigma>$ であることを示せ。
+\item $K = \bQ(\omega)$、$\omega = {\rm e}^{2\pi i/7}\in\bC$ とするとき、$G = \Gamma(K:\bQ)$ の元を求めよ。$G^+ = \bQ$ であることを示せ。
+\item 前問の $G$ の部分群をすべて求め、それぞれについて不変体を求めよ。
+\item $L = K(\zeta)$、$\zeta$ は、１の $n$ 乗根 (すなわち、$\zeta^n = 1$) とする。このとき、$\bZ^*_n\rightarrow \Gamma(L:K)$ なる全準同型があることを示せ。特に、$\Gamma(L:K)$ はアーベル群である。
+\item $K = \bQ(\sqrt{2},\sqrt{3})$ とし、$G=\Gamma(K:\bQ)$ のすべての部分群について、不変体を求めよ。
+\item $p$ を素数、$n$ を自然数、$q=p^n$ とする。$F$ を $K = \bZ_p$ 上 $t^q-t$  の分解体とする。このとき、$|F| = q$ であることを示せ。\\
+{\gt ヒント：}  $F$ の中で、$t^q-t$ の根全体が体になることを示せ。
+\item $K = \bQ(\gamma)$、$\gamma = \sqrt{2+\sqrt{2}}$ とする。$\Gamma(\bQ(\gamma):\bQ)$ の部分群をすべて求め、それぞれについて不変体を求めよ。 
+\item $L:K$ を有限拡大、$N$ を $L$ を含む $K$ の正規拡大とする。また、$\alpha\in L$、$m(t)$ をその最小多項式とする。このとき、次を示せ。\\
+$(1)$ $K(\alpha)$ から $N$ の中への相異なる $K$ 単射準同型の数は、高々$\deg m(t)$ である。\\
+$(2)$ $K(\alpha)$ から $N$ の中への相異なる $K$ 単射準同型の数が $\deg m(t)$ であることと、$\alpha$ が、$K$ 上分離的であることとは同値である。\\
+$(3)$ $L$ から $N$ の中への相異なる $K$ 単射準同型の数は、高々$[L:K]$ である。また、この数が丁度 $[L:K]$ となるのは、$L:K$ が分離拡大の時、またその時に限る。
+\item $f(x) = g(x)h(x)\in K[x]$ とし、$L$ を $K$ 上 $f(x)$ の分解体、$M$、$N$ をそれぞれ $K$ 上 $g(x)$、$h(x)$ の分解体とする。この時、$\Gamma(L:K)$ は、$\Gamma(M:K)\times \Gamma(N:K)$ の部分群と同型であることを示せ。
+\item $K$ を標数 $p$ の体、$F$ を $K$ に含まれる素体（$F\simeq \bZ/p\bZ$）とし、$f(t) = t^p - t - c\in K[t]$ とする。また、$L$ を $K$ の拡大体とする。\\
+$(1)$ $\alpha\in L$ が、$f(t) = 0$ の根であれば、任意の $a\in F$ に対して $\alpha+a$ も根である。\\
+$(2)$ $f(t)$ は、$K$ 上既約であるかまたは、$K$ で分解しているかのいずれかである。\\
+$(3)$ $c\in F$ であれば、$f(t)$ は、$F$ 上既約である。\\
+$(4)$ $f(t)$ は、$K$ 上既約であるとし、$\alpha\in L$ をその根とする。この時、$\Gamma(K(\alpha):K)$ は、位数 $p$ の巡回群である。  
+\end{enumerate}
+
+
+\newpage
+\section{ガロワの定理}  %No. 6
+\begin{enumerate}
+\item $L:K$ を有限拡大とするとき、次を示せ。
+$$L:K \mbox{　正規かつ分離拡大　}\Leftrightarrow \;K\mbox{　は　}\Gamma(L:K)\mbox{　の不変体}$$
+\item ガロワ理論の基本定理 (1), (2), (3) を証明せよ。
+\item $L:K$ を有限正規分離拡大、$M$ をその中間体とする。このとき次を示せ。\\
+$(1)$ $\tau\in\Gamma(L:K)\Leftarrow (\tau(M))^* = \tau M^*\tau^{-1}$.\\
+$(2)$ ガロワ理論の基本定理 (4), (5) を証明せよ。
+\item $L:K$ を有限正規分離拡大（有限ガロア拡大）、$M$ をその中間体とする。$\Gamma(L:K)$ がアーベル群ならば、$M:K$ は、正規拡大であり、そのガロア群 $\Gamma(M:K)$ もアーベル群であることを示せ。
+\item 体 $K$ の標数が２でなければ、$[L:K] = 2$ であることと、$L$ がある既約多項式 $t^2-a\;(a\in K)$ の分解体を成すことは同値であることを示せ。またこのとき、$|\Gamma(L:K)| = 2$ である。
+\item $t^3-2$ の $\bQ$ 上の分解体について、そのガロワ群、部分体をすべて求めよ。
+\item $t^4-2t^2+9$  の $\bQ$ 上の分解体は、$\bQ(\sqrt{-1},\sqrt{2})$ であることを示し、その $\bQ$ 上のガロワ群、部分体をすべて求めよ。
+\item $t^4-2$ の $\bQ$ 上の分解体について、そのガロワ群、部分体をすべて求めよ。
+\item $L:K$ は、３次正規分離拡大 $L$  のある元 $\alpha$ に対して、$\sigma\in\Gamma(L:K)$ で、$\sigma(\alpha) = \alpha+1$ となるものがあるとする。このとき、$K$ の標数および $\alpha$ の最小多項式を求めよ。
+\item $L:K$ を３次正規分離拡大で $L$ のある元 $\alpha\neq 0$ に対して、$\sigma\in\Gamma(L:K)$ で $\sigma(\alpha) = 2\alpha$ となるものがあるとする。このとき、　$K$ の標数と $\alpha$ の最小多項式を求めよ。
+\item $\zeta_n = {\rm e}^{2\pi i/n}$ とする。次のそれぞれについて、ガロワ群 $\Gamma(\bQ(\zeta_n):\bQ)$ および、部分体を求めよ。　\\
+$(1)$ $n = 3$\qquad $(2)$ $n=4$\qquad $(3)$ $n = 5$\qquad $(4)$ $n = 6$ \\
+$(5)$ $n = 7$\qquad $(6)$ $n = 8$
+\item $L$ および $F$ を、体 $E$ の部分体とする。$L:K$ を有限正規分離拡大、$F:K$ を有限拡大とする。このとき、次を示せ。\\
+$(1)$ $LF:F$ は、有限正規分離拡大である。\\
+$(2)$ $\Gamma(LF:F)$ は、$\Gamma(L:L\cap F)$ と同型である。\\
+$(3)$ $[LF:F] = [L:L\cap F]$、かつ $[LF:L] = [F:L\cap F]$。
+\end{enumerate}
+
+
+\newpage
+\section{べき根による解の存在}  %No. 7
+\begin{enumerate}
+\item $G$ を群、$H$ を $G$ の部分群、$N$ を $G$ の正規部分群とする。このとき、次を示せ。\\
+$(1)$ $G$ が可解ならば、$H$ も可解である。\\
+$(2)$ $G$ が可解であることと、$N$ および $G/N$ が可解であることとは同値である。
+\item $n$ 次交代群 $A_n$ および $n$ 次対称群 $S_n$ は、$n\geq 5$ の時、可解群ではないことを示せ。(I-5-7 参照)
+\item $G$ を可解な有限群、$N$ をその極大正規部分群 ($N\lhd G \neq N$  かつ $N\subset H\lhd G\Rightarrow N=H \mbox{ or } G$) とする。このとき、$G/N$ は素数位数の巡回群であることを示せ。
+\item 群 $G$ の元 $g, h$ に対して、$[g,h] = g^{-1}h^{-1}gh$ を $g, h$ の交換子という。また、$G$ の交換子全体で生成された $G$ の部分群 $D(G) = [G,G] = <[g,h]\mid g^{-1}h^{-1}gh,\:g,h\in G>$ を $G$ の交換子群という。\\
+$(1)$ $gh = hg[g,h]$ であり、$D(G)\lhd G$\\
+$(2)$ $G/D(G)$ はアーベル群である。\\
+$(3)$ $N \lhd G$ に対して、次の２つの条件は同値。\\
+\indent\hspace{3em*}$(a)$ $N\lhd G$ かつ、$G/N$ は、アーベル群。\\
+\indent\hspace{3em*}$(b)$ $N \supset D(G)$。
+\item $G$ を群とし、$D_0(G) = G$、$D_{i+1}(G) = D(D_{i-1}(G))$ とする。特に、$D_1(G) = D(G)$ である。この時、ある $n$ について、$D_n(G) = 1$ であることと、$G$ が可解群であることは同値であることを示せ。
+\item $f(x)\in K[x]$、$f(x)$ の分解体における根を $X = \{\alpha_1, \ldots, \alpha_n\}$ とする。$f(x)$ のガロア群 $G$ が、$X$ 上の置換群
+として、可移であることと $f(x)$ が既約であることは同値であることを示せ。
+\item 次のそれぞれの $f$  について、$\bQ$ 上 $f$ のガロワ群の元を $f$ の根の置換で表せ。\\
+$(1)$　$f = (t^2-2)(t^2-3)$\qquad $(2)$　$f = t^3-2$\qquad $(3)$　$f=t^4-2$
+\item $p$ を素数とし、$G$ を対称群 $S_p$ の部分群で、その位数が $p$ で割り切れかつ $G$ は $S_p$ のある互換 $(i,j)$ を含むものとする。このとき、$G = S_p$ であることを示せ。
+\item $p$ を素数、$f$ を $\bQ$ 上既約な $p$ 次多項式とする。$f$ が  $\bC$ の中に丁度２個の虚根を持てば $f$ の $\bQ$ 上のガロワ群は $S_p$ と同型となることを示せ。\\
+{\gt ヒント：}  $\tau$ を複素共役とすると、$\tau$ は $f$ のガロワ群の元でかつ、$f$ の根の置換として、互換であることを示せ。
+\item 次のような $\bC$ の元を含む、$\bQ$ のべき根による拡大を求めよ。\\
+$(1)$ $(\sqrt{11}-{^7\!\!\sqrt{23}})/{^4\!\!\sqrt{5}}$\qquad\qquad  $(2)$ $(\sqrt{6}+2{^3\sqrt{5}})^4$\\
+$(3)$ $(2{^5\!\!\sqrt{5}}-4)/\sqrt{1+\sqrt{99}}$
+\item 次の $\bQ$ 上の多項式はべき根で解けないことを示せ。\\
+$(1)$ $t^5-6t+3$\qquad $(2)$ $t^5-4t+2$\qquad $(3)$ $t^5-4t^2+2$\\
+$(4)$ $t^5-6t^2+3$\qquad $(5)$ $t^7-10t^5+15t+5$
+\item $(1)$ ６次方程式 $t^6+2t^5-5t^4+9t^3-5t^2+2t+1 = 0$ をべき根で解け。\\
+$(2)$ $t^4+t^3+t^2+t+1=0$ をべき根で解け。
+\item 既約多項式のガロワ群は多項式の根の上の置換群として可移であることを示せ。
+\end{enumerate}
+
+
+\newpage
+\section{ガロワ群の可解性}  %No. 8
+\begin{enumerate}
+\item 任意の体 $K$ に対し、$t^3-3t+1$ は、$K$ 上既約であるか、または、$K$ で分解しているかのいずれかであることを示せ。
+\item $K$ を標数０の体とする。$L:K$ を有限正規拡大で、そのガロワ群を $G = \{\tau_1,\tau_2,\ldots,\tau_n\}$ とする。トレースを
+$$T = T_{L/K} : L \rightarrow L \qquad(a\mapsto \tau_1(a) + \tau_2(a) + \cdots + \tau_n(a))$$
+とする。このとき、$T$ は、$T(L) = K$ なる $K$-線形写像であることを示せ。
+\item 前問において、$G = <\tau>$ ならば、次が成立することを示せ。
+$$T(a) = 0 \quad\Longleftrightarrow \quad\exists b\in L \mbox{ such that } a = b-\tau(b)$$
+\item $L:M$、$M:K$ を共に有限ガロワ拡大とするとき次を示せ。\\
+$(1)$ $N_{M/K}N_{L/M} = N_{L/K}$ \qquad $(2)$ $T_{M/K}T_{L/M} = T_{L/K}$
+\item 以下の $\bQ$  上の多項式をべき根で解け。\\
+$(1)$ $t^3-7t+5$\qquad $(2)$　$t^3-7t+6$\qquad $(3)$　$t^4+5t^3-2t-1$\\
+$(4)$ $t^4+4t+2$
+\item $(1)$ 体 $K$ 上の３次方程式 $t^3 + c_2t^2 + c_1t + c_0 = 0$ は、$t$ を適当な $t-c$ で置き換えることにより、$t^3 + at + b = 0$ の形に変形できることを示せ。\\
+$(2)$ $t^3 + at + b = 0$ の根を $\alpha_1, \alpha_2, \alpha_3$ とする。$D = ((\alpha_1 - \alpha_2)(\alpha_2 - \alpha_3)(\alpha_3 - \alpha_1))^2$ とすると、$D = - 4a^3 - 27b^2$ である。\\
+$(3)$ $L = K(\alpha_1,\alpha_2,\alpha_3)$ とすると、$L = K(\alpha_1,\sqrt{D})$ であることを示せ。\\
+$(4)$ ${\displaystyle \delta = \frac{-b + \sqrt{-D/27}}2}$、${\displaystyle \alpha = \delta - \frac{a}{3\delta}}$ とすると、$\alpha$ は、$t^3 + at + b = 0$ の根であることを示せ。
+\item ４次方程式のべき根による解法を説明せよ。
+\item $P$ を点 $(0,0)$ および $(1,0)$ を含む $\bR^2$ の部分集合、$K$ を $P$ の点の座標により生成された $\bR$ の部分体とする。このとき、点 $(\alpha,\beta)$ が $P$ から、コンパスと定規で作図可能であることと、$\alpha,\beta$ を含む体 $K$ の拡大体 $L$ とその中間体の列、$K = K_0\subset K_1\subset \cdots \subset K_r = L$ で、$[K_{i}:K_{i-1}] = 2$ $(i = 1,2,\ldots, r-1)$ となるものが存在することとは同値であることを示せ。
+\item 正 $n$ 角形が定規とコンパスで作図可能であることと、$n = 2^rp_1\cdots p_s$ \quad$r,\:s$ 負でない整数で、$p_i$ は、$p_i = 2^{2^{r_i}}+1$ という形の奇素数、という形に書けることは同値であることを示せ。\\
+{\gt ヒント：}  Step 1. 素数べき位数の群は可解。\quad Step 2. $L:K$ 正規、$[L:K]$ ２べき、$\alpha,\beta\in L$ ならば、点 $(\alpha,\beta)$ は、$P$ から、定規とコンパスで作図可能である。ここで、$K$ は、前問のものとする。\quad Step 3. 正 $n$ 角形が作図可能ならば、 $n$ の任意の約数 $m$ について、正 $m$ 角形は作図可能である。\quad Step 4. $\zeta_n$ を１の原始 $n$ 乗根とすると、$[\bQ(\zeta_p):\bQ] = p-1$、$[\bQ(\zeta_{p^2}):\bQ] = p(p-1)$ が任意の素数 $p$ について成立する。
+\end{enumerate}
+
+
+\end{document}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%           standard picture               %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[h]
+\unitlength 24pt
+\begin{center}
+\begin{picture}(6,4)
+   \put(2,2){\circle{4}}
+   \put(-0.5,2){\line(1,0){7}}
+   \put(2,-0.5){\line(0,1){5}}
+   \put(2,2){\line(-1,2){0.9}}
+   \put(1.1,3.5){\line(5,-2){4}}
+\end{picture}
+\end{center}	
+%\caption{��
+% \label{��
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%\begin{flushright}
+%鈴木寛@国際基督教大学数学教室
+%\end{flushright}
+\end{document}
+
+\item $p_1, p_2, \ldots, p_n, q$ を相異なる素数とする。$K = \bQ(\sqrt{p_1},\ldots, \sqrt{p_n})$ とするとき次を示せ。
+	\begin{enumerate}
+	\item $K:\bQ$ は、正規拡大である。
+	\item $G = \Gamma(K:\bQ)$ とすると、$G$ の不変体は $\bQ$ である。
+	\item $\sqrt{q}\not\in K$ である。 
+	\end{enumerate}

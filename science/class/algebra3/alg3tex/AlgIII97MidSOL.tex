@@ -1,0 +1,199 @@
+% Algebra III Midterm Solution : original : January 20-21, 1998
+% Imported from AlgIII97MidTerm.tex
+
+\documentstyle[12pt]{jarticle}
+%\documentstyle{jarticle}
+%\documentstyle[11pt]{jarticle}
+
+%A4 Size Setting
+\topmargin = 0cm %default 0cm
+\oddsidemargin = -1cm \evensidemargin = 0cm
+\textheight = 23cm \textwidth = 16.5cm 
+%A4 size Setting End
+
+\newcommand{\bZ}{\mbox{\boldmath $Z$}}
+\newcommand{\bQ}{\mbox{\boldmath $Q$}}
+\newcommand{\bR}{\mbox{\boldmath $R$}}
+\newcommand{\bC}{\mbox{\boldmath $C$}}
+\newcommand{\sol}{{\gt 解答：}}
+\newcommand{\osol}{{\gt 別解：}}
+\newcommand{\note}{{\gt 注：}}
+\newcommand{\qed}{\hfill\hbox{\rule{6pt}{6pt}}}
+
+\pagestyle{empty}
+
+\begin{document}
+\begin{center}
+{\gt\LARGE Algebra III  Midterm Solutions + $\alpha$}\\
+{\gt Winter 1997-8}
+\end{center}
+
+\begin{enumerate}
+\item $f(t) = t^3 - 2t +3, \:g(t) = t^2 + t + 2\in \bQ[t]$ すなわち有理数を係数とする多項式とする。このとき、以下の問いに答えよ。
+     \begin{enumerate}
+     \item $f(t)$ は、$\bQ$ 上既約であることを示せ。
+     
+     \sol
+     ガウスの補題により $f(t)$ が $\bZ$ 上で既約であることを示せばよい。既約でないとすると、一次因子を含むが、最高次の係数が 1 だから、それは $t-a$ の形でないといけない。従って $a$ は 3 の約数となり、$a = \pm 1, \pm 3$。 しかし、これらが $f(t) =0$ の根でないことは明らかだから、$f(t)$ は $\bQ$ 上既約である。
+     \qed
+    
+     \osol
+     上と同じように、まず、ガウスの補題により $f(t)$ が $\bZ$ 上で既約であることを示せばよい。そこで、5 を法として考える。すると、$f(t)\equiv t^3 +3t + 3$。これは、$t \equiv 0, 1, 2, 3, 4$ を根として持たないから、$f(t)$ は、$\bZ_5[t]$ の多項式として既約。従って、$\bZ[t]$ の多項式としても既約である。なぜなら、$\bZ[t]$ のなかで、$f(t) = g(t)h(t)$ と分解していれば、5 を法としてそれぞれの多項式を考えれば、$\bZ_5[t]$ の多項式として分解している。このように有限体 $\bZ_p$ 上の多項式環の中で考えることは有効である。すなわち、$\bar{f}(t)\in \bZ_p[t]$ が既約なら、$f(t)\in\bZ[t]$ も既約。しかし、残念な（面白い？）ことに、$\bZ$ 上は既約であるが、すべての素数 $p$ に対して、$\bZ_p[t]$ では可約なものもあるので、この方法は万能ではない。
+     \qed
+     
+     \item $f(t)$ は、複素数体 $\bC$ の中で重根を持たないことを示せ。
+     
+     \sol  $\alpha$ を重根とし、$h(t)$ を その $\bQ$ 上の最小多項式とする。すると、$h(t)$ は、$f(t)$ 及びその微分 $Df(t) = 3t^2 - 2$ を割り切る。$f(t)$ は、$\bQ$ 上既約だったからこれは不可能。従って、$f(t)$ は、重根を持たない。((f) も参照)
+     \qed
+     
+     \smallskip
+     $f(t)$ の $\bC$ における根を $\alpha = \alpha_1, \alpha_2, \alpha_3$、$g(t)$ の $\bC$ における根を $\beta = \beta_1, \beta_2$ とする。
+     
+     \item $\bC$ の自己同型で、$\alpha$ を $g(t)$ の根 $\beta_1$ または $\beta_2$ に移すものは存在するか。存在すればそのような自己同型を一つあげ、存在しなければ、そのことを示せ。
+     
+     \sol
+     まず $f(\alpha) = 0$ で、$f(t)$ は $\bQ$  上既約だったから、$f(t)$ は $\bQ$ 上 $\alpha$ の最小多項式である。
+     $\sigma(\alpha) = \beta_1$ または $\beta_2$ とする。すると、$f(\alpha) = 0$ だから、この両辺を $\sigma$ で移すと、
+     $$0 = \sigma(0) = \sigma(f(\alpha)) = \sigma(\alpha)^3 - 2\sigma(\alpha) + 3 .$$
+     これは、$\sigma(\alpha)$ も $f(t)$ の根であることがわかる。$g(\sigma(\alpha) ) = 0$ だから、$f(t)$ が、$\sigma(\alpha)$ の最小多項式であることより、$f(t)$ は $g(t)$ を割り切る。次数を考えるとこれは不可能である。従って、このような自己同型は存在しない。
+     \qed
+     
+     \item $K = \bQ(\alpha)$ の元は、$\alpha$ の $\bQ$ を係数とした多項式で表せることを示せ。（すなわち、$\bQ(\alpha) = \bQ[\alpha]$。）
+     
+     \sol
+     $\bQ[\alpha] \simeq \bQ[t]/(f(t))$ で、$f(t)$ は $\bQ$ 上既約だから、$(f(t))$ は、極大イデアル。すなわち、$\bQ[\alpha]$ は体である。明らかに $\bQ[\alpha] \subset \bQ(\alpha)$ で、$\bQ[\alpha]$ は、$\bQ$ と $\alpha$ を含む体だったから、$\bQ[\alpha] = \bQ(\alpha)$ すなわち、$K = \bQ(\alpha)$ の元は $\alpha$ の $\bQ$ を係数とした多項式で表せる。
+     \qed
+     
+     \item $K = \bQ(\alpha)$ の元は、$\alpha$ の $\bQ$ を係数とした\underline{２次以下の}多項式で\underline{一意的に}表されることを示せ。すなわち、$1, \alpha, \alpha^2$ は $K = \bQ(\alpha)$ の $\bQ$ 上の基底であることを示せ。
+     
+     \sol
+     $\bQ[\alpha] \simeq \bQ[t]/(f(t))$  で、$f(t)$ は次数が $3$ の多項式だから、$\bQ[t]/(f(t))$ の剰余類の代表元として、2 次以下の多項式がとれる。従って、それに $\alpha$ を代入した多項式として、$\bQ[\alpha] = \bQ(\alpha)$ の元がすべて表される。また、$1, \alpha, \alpha^2$ が一次従属ならば、$\alpha$  を根とする 2次以下の多項式が存在することになり、$f(t)$ が $\alpha$ の最小多項式であることに矛盾する。従って、$1, \alpha, \alpha^2$ は $K = \bQ(\alpha)$ の $\bQ$ 上の基底である。
+     \qed
+     
+     \item  以下の元を $a_0 + a_1\alpha + a_2\alpha^2, \;(a_0, a_1, a_2\in \bQ)$ の形で表せ。\\
+     (1) $1/\alpha$
+     
+     \sol
+     $\alpha^3 - 2\alpha + 3 = 0$ だから、$\alpha(\alpha^2 - 2) = -3$。すなわち、$1/\alpha = (\alpha^2 - 2)/(-3)$。
+     
+      (2) $1/(1+\alpha)$.
+      
+      \sol
+      $t^3 -2t + 3 = (t+1)(t^2-t-1) + 4$ だから、これに $\alpha$ を代入すると、$(\alpha+1)(\alpha^2-\alpha-1)+4 = 0$。従って、$1/(\alpha+1) = (\alpha^2 - \alpha - 1)/(-4)$。
+      \qed
+      
+     \item $f(t)$ は、$K = \bQ(\alpha)$ で分解しているか。（$y = f(x)$ のグラフを考えよ。）
+     
+     \sol
+     $Df(t) = 3t^2 - 2$ だから、$t = \sqrt{2/3}$ で極小をとる。しかし、$f(\sqrt{2/3})>0$ だから、$f(t)$ は、実根をただ一つしか持たない。この実根を $\alpha'$ とする。すると、$\bQ(\alpha')\subset \bR$ だから、$f(t)$ の他の根は含まない。ここで、$K$ で分解しているとすると、
+     $$3 = [\bQ(\alpha):\bQ] = [K:\bQ] > [\bQ(\alpha'):\bQ] = 3.$$
+     これは矛盾。従って、$K$ で $f(t)$ は分解しない。
+     \qed
+     
+     \item $\Gamma(\bQ(\alpha):\bQ)$ を求めよ。
+     
+     \sol
+     $\sigma\in \Gamma(\bQ(\alpha):\bQ)$ とする。$\sigma(\alpha) \in \bQ(\alpha)$ かつ、$\sigma(\alpha)$ は $f(t)$ の根である。一方、根と係数の関係から $-\alpha_1\alpha_2\alpha_3 = 3$ だから、もし、$\sigma(\alpha)\neq \alpha$ ならば、$f(t)$ は、$\bQ(\alpha)$ で分解することになり、前問に矛盾する。従って、$\sigma(\alpha) = \alpha$。$\sigma$ は、$\bQ$  上で恒等写像だから、$\sigma$ は恒等写像 $id_K$ である。従って、$\Gamma(\bQ(\alpha):\bQ) = \{id_K\}$。
+     \qed
+    
+     \item 体 $\bQ(\alpha,\beta)$ の $\bQ$ 上の拡大次数、$[\bQ(\alpha,\beta):\bQ]$ を求めよ。
+     
+     \sol
+     $L = \bQ(\alpha,\beta)$、$\beta\in K = \bQ(\alpha)$ とする。$g(t)$ は明らかに $\bQ$ 上既約だから（ガウスの補題より $\bZ$ 上既約を見る。既約でなければ $2$ の約数 $\pm 1, \pm 2$ を根に持つ。これは起こらない。）
+     $$3 = [\bQ(\alpha):\bQ] = [K:\bQ] = [K:\bQ(\beta)][\bQ(\beta):\bQ] = [K:\bQ(\beta)]\cdot 2$$
+     これは矛盾。従って、$\beta\not\in K$。$2\leq [K(\beta):K] \leq \deg (t^2 + t + 2) = 2$ だから、$[K(\beta):K] = 2$。$K(\beta) = L$ だから、$[\bQ(\alpha,\beta):\bQ] = 6$。
+     \qed
+     
+     \item 体の拡大 $\bQ(\alpha,\beta):\bQ$ は、単純拡大か判定せよ。
+     
+     \sol
+     単純拡大。一般的証明は Exercise 4.12 を参照せよ。以下に、そこでの方法を用いた証明を書く。\\
+     まず、$\beta_1 - \beta_2 \in \{\pm \sqrt{-7}\}$ だから、$\alpha+\beta_1 - \beta_2$ は $f(t)$ の根ではない。なぜなら、これが、根だとすると、$\sqrt{-7}\in \bQ(\alpha)$ となり矛盾。（拡大次数を考えよ。）さて、$\beta = \beta_1$ とし、$h(t) = f(\alpha+\beta-t)\in \bQ(\alpha+\beta)[t]$ とする。$h(\beta) = 0$ しかし上で見たように $h(\beta_2)\neq 0$ だから、$h(t)$ と、$g(t)$ の $\bQ(\alpha+\beta)[t]$ における最大公約式は、$t-\beta$。従って、$\beta\in \bQ(\alpha+\beta$。これは、
+$\bQ(\alpha+\beta) = \bQ(\alpha,\beta)$ を意味するので、$\bQ(\alpha,\beta):\bQ$ は、単純拡大である。
+	\qed
+     \end{enumerate}
+     
+\item $K$ を ２個の元からなる体（$\simeq\bZ_2$）とし、$m(t) = t^3+t+1\in K[t]$ とする。このとき以下の問いに答えよ。
+     \begin{enumerate}
+     \item $K$ 上 ３次の、既約多項式をすべて求めよ。
+     
+     \sol
+     $K$ は、２個の元のみからなり、$1\neq 0$ だったから、$K = \{0,1\}$。ここで、$0$ は、零元（加法についての単位元）、$1$ は、単位元（乗法についての単位元）。$1+1 = 0$ となる。
+     $0, 1$ を根として含まないことから、係数の和は 1 でかつ定数項は 1 だから、$t^3 + t + 1, t^3 + t^2 + 1$ の二つ。
+     \qed
+     
+     \item $L = K[t]/(m(t))$ は、８個の元からなる体であることを示せ。
+     
+     \sol
+     拡大次数が、$3$ だから、$8$ 個の元からなる体。$\alpha = t+(m(t))$  とすると、
+     $$L = \{a_0 + a_1\alpha + a_2\alpha^2\mid a_0, a_1, a_2\in K\}.$$
+     \qed
+     
+     \item $L$ の元 $\alpha$ で、$L - \{0\} = \{1, \alpha, \alpha^2, \ldots, \alpha^{6}\}$ となるものが存在することを示せ。
+     
+     \sol
+     $G = L - \{0\}$ とすると、$G$ は位数が 7 の乗法群。したがって巡回群である。その生成元を $\alpha$ とすると、$L - \{0\} = \{1, \alpha, \alpha^2, \ldots, \alpha^{6}\}$。
+     また次の様にしてもよい。上で取ったように $\alpha = t+(m(t))$ とすると、
+     \begin{eqnarray*}
+     \alpha^2 & = & t^2 + (m(t)) = \alpha^2\\
+     \alpha^3 & = & t^3 + (m(t)) = t+1 + (m(t)) = 1 + \alpha\\
+     \alpha^4 & = & t(t+1) + (m(t)) = t^2 + t + (m(t)) = \alpha + \alpha^2\\
+     \alpha^5 & = & t(t^2 + t) + (m(t)) = t^3 + t^2 + (m(t)) = t^2 + t + 1 + (m(t)) = 1 + \alpha + \alpha^2\\
+     \alpha^6 & = & t(t^2+t+1) + (m(t)) = t^3 + t^2 + t + (m(t)) = t^2 + 1 + (m(t)) = 1 + \alpha^2\\
+     \alpha^7 & = & t^3 + t + (m(t)) = 1 + (m(t)) = 1
+     \end{eqnarray*}
+     
+     \item 前問の $\alpha$ を用いて加法に関する乗積表をつくれ。すなわち、
+     $$L = \{0,1,\alpha,\alpha^2,\alpha^3, \alpha^4, \alpha^5, \alpha^6\}$$
+     としたときの加法の結果を書いた表をつくれ。
+     
+     \sol
+     {\scriptsize \arraycolsep=3pt
+     $$\begin{array}{|l|llllllll|}
+     \hline
+     & 0 & 1 & \alpha & \alpha^2 & 1 + \alpha & \alpha+\alpha^2 & 1 + \alpha + \alpha^2 & 1 + \alpha^2\\
+     \hline
+     0 & 0 &1 & \alpha & \alpha^2 & 1 + \alpha & \alpha+\alpha^2 & 1 + \alpha + \alpha^2 & 1 + \alpha^2\\
+     1 & 1 & 0 & 1+\alpha & 1+\alpha^2 &  \alpha & 1+\alpha+\alpha^2 &  \alpha + \alpha^2 &  \alpha^2\\
+     \alpha & \alpha &1 +\alpha & 0 & \alpha + \alpha^2 & 1 & \alpha^2 & 1  + \alpha^2 & 1 + \alpha + \alpha^2\\
+     \alpha^2 & \alpha^2 & 1+\alpha^2 & \alpha+\alpha^2 & 0 & 1 + \alpha +\alpha^2 & \alpha & 1 + \alpha  & 1\\
+    1+\alpha & 1+\alpha & \alpha & 1  & 1 + \alpha + \alpha^2 & 0 & 1+\alpha^2 & \alpha^2 & \alpha + \alpha^2\\
+     \alpha+\alpha^2 & \alpha+\alpha^2  & 1+ \alpha+\alpha^2  & \alpha^2 & \alpha & 1 + \alpha^2 & 0 & 1 & 1 + \alpha\\
+    1 + \alpha + \alpha^2 & 1 + \alpha + \alpha^2 &  \alpha + \alpha^2 & 1 + \alpha^2 & 1+\alpha & \alpha^2 & 1 & 0 & \alpha\\
+     1 + \alpha^2 &  1+\alpha^2 &\alpha^2 & 1+\alpha + \alpha^2 & 1 & \alpha+\alpha^2 & 1+\alpha & \alpha  & 0\\
+     \hline
+     \end{array}.$$}
+     従って、
+     
+     $$\begin{array}{|c|llllllll|}
+     \hline
+     & 0 & \alpha^0 & \alpha^1 & \alpha^2 & \alpha^3 & \alpha^4 & \alpha^5 & \alpha^5\\
+     \hline
+     0 &0 &1 & \alpha & \alpha^2 & \alpha^3 & \alpha^4 & \alpha^5 & \alpha^5\\
+     \alpha^0 & 1 & 0 & \alpha^3 & \alpha^5 &  \alpha & \alpha^5 &  \alpha^4 &  \alpha^2\\
+     \alpha^1 & \alpha &\alpha^3 & 0 & \alpha^4 & 1 & \alpha^2 & \alpha^5 & \alpha^5\\
+     \alpha^2 & \alpha^2 & \alpha^5 & \alpha^4 & 0 & \alpha^5 & \alpha & \alpha^3  & 1\\
+     \alpha^3 & \alpha^3 & \alpha & 1  & \alpha^5 & 0 & \alpha^5 & \alpha^2 & \alpha^4\\
+     \alpha^4 & \alpha^4  & \alpha^5  & \alpha^2 & \alpha & \alpha^5 & 0 & 1 & \alpha^3\\
+     \alpha^5 & \alpha^5 &  \alpha^4 & \alpha^5 & \alpha^3 & \alpha^2 & 1 & 0 & \alpha\\
+     \alpha^6 &  \alpha^5 &\alpha^2 & \alpha^5 & 1 & \alpha^4 & \alpha^3 & \alpha  & 0\\
+     \hline
+     \end{array}.$$
+
+     
+     \item $L$ を、$K$ の拡大体と見たとき、この拡大は、正規拡大であることを示せ。
+     
+     \sol
+     $L$ は、$K$ 上 $t^8-t$ の分解体である。実際、上で見たように、0 以外の元 $x$ は $x^7 = 1$ を満たす。従って、すべての元は、$t^8 -t = 0$ の根になっている。$t^8-t = 0$ の根は高々８個だから、これらがすべての根であり、$L$ で分解する。従って、$L$ は、$K$ 上の分解体である。従って、$L$ は、$K$ 上正規拡大である。
+     
+     \osol
+     $m(t)$ は、$\alpha$, $\alpha^2$, $\alpha^4$ を根に持つ。これらは相異なり、すべて $K$ に属するから、$L$ は、$K$ 上 $m(t)$ の分解体であり正規拡大である。一般に、$K$ を標数 $p>0$ の体、$f(t)\in K[t]$ とする。$\alpha$ が $f(t) = 0$ の根ならば、$\alpha^p, \;\alpha^{p^2}, \;\alpha^{p^3}, \ldots $ は、すべて $f(t) = 0$ の根である。特に、$K$ が有限体、$f(t)$ が既約ならば、このようにしてすべての根が得られます。(Exercise 5.2 参照)
+     \qed
+     \end{enumerate}
+\end{enumerate}
+
+
+\begin{flushright}
+鈴木寛@国際基督教大学数学教室
+\end{flushright}
+\end{document}

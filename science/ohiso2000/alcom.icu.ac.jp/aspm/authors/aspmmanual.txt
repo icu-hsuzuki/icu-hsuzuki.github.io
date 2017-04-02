@@ -1,0 +1,255 @@
+Advanced Studies in Pure Mathematics (ASPM)
+Mathematical Society of Japan
+
+There are two ways to prepare an ASPM article in TeX:
+(I)  AmSLaTeX (with LaTeX2e) using aspmproc.sty (customized for to each volume),
+or
+(II) AmSTeX using aspm.sty (customized for each volume).
+A detailed explanation for each follows.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+(I) AmSLaTeX with LaTeX2e (Use aspmproc.sty customized for each volume)
+
+* The author's name should be spelled out in full at the beginning 
+  of the paper immediately after the title, while in running heads
+  the first name should be given in initial only. The following in
+  the input file will carry this out automatically.
+
+      \author[T. Deguchi]{Tetsuo Deguchi}
+
+* Here is an example of a paper with multiple authors:
+\documentclass[noamsfonts]{amsproc}
+\usepackage{aspmproc}
+
+\title[Title for running head]{The full title \\
+the second line of the title if any}
+
+\author[A. A. Last1 and J. Last2]{Alexander A. Last1 
+$^{1}$\footnote{$^{1}$ 
+The research was carried out while the author was
+visiting the University of xxx under 
+an yyy Visiting Fellowship.
+Partial support from zzz, grant u000 is also gratefully 
+acknowledged.}
+and Jan Last2}
+
+\address{
+{\rm Alexander A. Last1}\\
+Department of Mathematics\\
+the University of xxx \\
+location\\
+country
+\\
+{\rm Jan Last2}\\
+Department of Pure Mathematics and Mathematical Statistics\\
+yyy University\\
+location, country}
+
+\rcvdate{January 17, 1995}% to be supplied by the volume editor
+\rvsdate{October 23, 1995}% to be supplied by the volume editor
+
+\thanks{Partially supported by *****}
+
+\dedicatory{Dedicated to Professor ASPM}
+
+\setcounter{firstpage}{165} % to be supplied by the volume editor
+\setcounter{lastpage}{196}  % to be supplied by the folume editor
+
+\begin{document}
+
+\begin{abstract}
+abstract abstract abstract
+\end{abstract}
+
+\maketitle
+
+\section{Section1}
+ Body of Section 1
+
+\newpage
+
+\section{Section2}
+Body of Section 2
+
+\begin{thebibliography}{99}
+\bibitem{1}K. Iwasawa, Iwasawa Riron.
+\bibitem{2}K. Ito, Kakuritu Hennbibunn.
+\end{thebibliography}
+
+\end{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+(II) AmSTeX (Use aspm.sty customized for each volume)
+(cf. M. D. Spivak: The Joy of TeX, 
+American Mathematical Society, Providence, Rhode Island, 
+(2nd printing with corrections) 1986.
+(as for documentation see aspmsty.txt)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentstyle{aspm}
+%\input the author's own macro if any.
+\document
+
+%%%%%%%%%%%%%%%%%%%%
+\topmatter
+
+\title
+One Line Title
+\endtitle
+
+%%%%% Multiline title
+\title
+ First line\\
+ Second line \\
+ etc.
+\endtitle
+%%%%%%%%
+
+\subtitle
+|subtitle|
+\endsubtitle
+
+\author
+  Takeo Last
+\endauthor
+
+\dedication
+  Dedicated to Professor M. KKK on his 70th birthday
+\enddedication
+
+\address
+  Department of Mathematics
+  xxx University 
+  location
+  country
+\endaddress
+
+%%%%%% for each of the multiple authors
+\address
+\of |author|
+|address|
+\endaddress
+%%%%%%%
+
+\thanks
+{|thanks|}
+\endthanks
+
+\abstract
+{
+|abstract|
+}
+\endabstract
+
+\date{Received September 25, 1995} %to be supplied by the volume editor
+\date{Revised December 8, 1995}    %to be supplied by the volume editor
+
+\firstpage=276 %to be supplied by the volume editor
+\lastpage=284  %to be supplied by the volume editor
+ 
+\setheadline %for running heads
+{T. Last}  %the author's name for odd-numbered pages
+{One line title} %for even-numbered pages
+
+
+\endtopmatter
+%%%%%%%%%%%%%%
+
+Body of the paper
+
+%%%%%%%%%%%%%%%%%%
+%%%Automatically numbered sectioning commands:
+\chapter{First Chapter}
+\section{First section}
+\subsection{First subsection}
+%%%%%%%%%%%%%%%%%%
+%%%Manually numbered sectioning commands
+\Chapter{}{General Setting}
+\Section{\S A.}{Appendix}
+\Subsection{A-1.}{First matter}
+\Paragraph{1.1.} First, we recall elementary facts on...
+%%%%%%%%%%%%%%%%%%
+%%%Theorem, Proposition, Corollary, Lemma, etc.
+\proclaim{Theorem 1}
+This is a short theorem.
+\endproclaim
+%%%%%%%%%%%%%%%%%%
+%%%Remark
+\demo{Remark\/ $1.1$}
+This part is roman.
+\enddemo
+%%%%%%%%%%%%%%%%%%
+%%%Proof
+\Proof
+This is the proof.
+\QED
+%%%%%%%%%%%%%%%%%%
+%%%Space and caption for an automatically numbered figure
+\figure{5.0cm}
+{This is the first figure.}%caption
+%%%%%%%%%%%%%%%%%%
+%%%Space and caption for a manually numberd figure
+\Figure{5.0cm}{Figure 1}
+{This is the only one figure.}%caption
+%%%%%%%%%%%%%%%%%%
+The following and many other AmSTeX commands can be used as in amsppt.sty:
+\cite
+\roster
+etc., except \cdots, \ldots, which are as in plain TeX.
+%%%%%%%%%%%%%%%%%%
+References 
+The following commands are available (cf. Joy of TeX, Appendix B):
+\no, \key, \by, \manyby, \bysame, \paper, \paperinfo, 
+\jour, \vol, \issue, \yr, \toappear, \page, \pages, 
+\book, \inbook, \bookinfo, \publ, \publaddr, \finalinfo, 
+\moreref
+%%%%%%%%%%
+Examples:
+%%%References (numbered)
+\Refs
+%
+\ref
+\no 1
+\by First1 Last1
+\paper Title1
+\jour Adv.\ Studies of TeX
+\vol A-101 \issue No. 3 \yr 1989
+\pages 99--111
+\endref
+%
+\ref
+\no 2
+\by First2 Last2
+\paper Title2
+\jour Adv.\ Studies of TeX
+\vol A-101 \issue No. 3 \yr 1989
+\pages 99--111
+\endref
+%
+%%%%%%%%%%%%%%%%%%
+%%%References (keyed)
+\maxkey[L1-L2-La3]
+\Refs
+%
+\ref
+\key L1
+\by First1 Last1
+\paper Title1
+\jour Adv.\ Studies of TeX
+\vol A-101 \issue No. 3 \yr 1989
+\pages 99--111
+\endref
+%
+\ref
+\key L1-L2-La3
+\by First1 Last1, First2 Last2 and First3 Last3
+\paper Title2
+\jour Adv.\ Studies of TeX
+\vol A-101 \issue No. 3 \yr 1989
+\pages 99--111
+\endref
+%
+%%%%%%%%%%%%%%%%%%
+
+\enddocument
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

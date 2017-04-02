@@ -1,0 +1,978 @@
+%original format imported from CalI-text.tex on December 11, 1996
+%original : 「多変数関数の微分」December 11, 12, 13, 1996
+%original : 「合成関数の微分と高階導関数」December 14, 18, 1996
+%original : 「平均値の定理と、微分の応用」December 18, 21,1996
+%% revised January 9, 10, 1997
+%original : 「多変数関数の積分」January 13, 1997
+%% revised January 17, 1997
+%original : 「重積分の計算」January 22, 23, 1997
+%original : 「多変数関数の積分の応用」January 27, 28,1997
+%original : 「級数の収束と発散」February 2, 4, 5, 6, 1997
+%% revised February 13, 1997
+%original : 「整級数」February 6, 7, 1997
+%% revised March 6, 1997
+%% revised December 27, 1997
+%% revised January 8, 1998
+
+\documentstyle[12pt]{jarticle}
+%A4 Size Setting
+\topmargin = -0.5cm
+\oddsidemargin = 0cm \evensidemargin = 0cm
+\textheight = 23cm \textwidth = 15cm % default 16cm
+%A4 size Setting End
+
+\title{CALCULUS II}
+      
+\author{鈴木 寛 (Hiroshi SUZUKI\thanks{E-mail:hsuzuki@icu.ac.jp})\\ 
+国際基督教大学理学科数学教室}
+
+\renewcommand{\thepage}{%
+	\arabic{section}--\arabic{page}}
+\newcommand{\mysection}[1]{%
+	\newpage\section{#1}\setcounter{page}{1}}
+
+\newtheorem{thm}{定理}[section]
+\newtheorem{prop}[thm]{命題}
+\newtheorem{lemma}[thm]{補題}
+\newtheorem{cor}[thm]{系}
+\newtheorem{exercise}{練習問題}[section]
+\newtheorem{example}{例}[section]
+\newtheorem{problem}{問題}[section]
+\newtheorem{defin}{定義}[section]
+\newenvironment{definition}{\begin{defin} \rm}{\end{defin}}
+\newenvironment{ex}{\begin{exercise} \rm}{\end{exercise}}
+\newenvironment{eg}{\begin{example} \rm}{\end{example}}
+\newenvironment{prob}{\begin{problem} \rm}{\end{problem}}
+\newcommand{\remarks}{\vspace{2ex}\noindent{\bf Remarks.\quad}}
+\newcommand{\note}{\vspace{2ex}\noindent{\gt 注\quad}}
+\newcommand{\proof}{{\gt 証明\quad}}
+\newcommand{\qed}{\hfill\hbox{\rule{6pt}{6pt}}}
+\newcommand{\bZ}{\mbox{\boldmath $Z$}}
+\newcommand{\bR}{\mbox{\boldmath $R$}}
+\newcommand{\bC}{\mbox{\boldmath $C$}}
+\newcommand{\bQ}{\mbox{\boldmath $Q$}}
+\newcommand{\grad}{\mbox{grad}}
+
+\newcommand{\nroot}[2]{{}^{#1}\!\!\!\sqrt{#2}}
+
+\def\inkern{\mathchoice{\!\!\!}{\!\!}{\!\!}{\!\!}}
+\def\iint{\int\inkern\int} %double iterated integral
+\def\iiint{\int\inkern\int\inkern\int} %triple iterated integral
+
+\begin{document}
+\maketitle
+\mysection{多変数関数の微分}
+独立変数が、２個以上の関数の微分を考える。簡単のため、２変数の場合に話しを限ることも多いが、その殆どが、３変数以上の場合に拡張出来る。
+
+\subsection{極限と連続性}
+\begin{definition}
+$f(x,y)$ を 点 $A(a,b)$ に近い点では、いつも定義された関数とする。
+\begin{enumerate}
+\item 点 $P(x,y)$ が、点 $A(a,b)$ と一致することなく点 $A(a,b)$ に近づくとする。このとき、その近づき方によらず、関数 $f(x,y)$ が ある一つの値 $c$ に近づく時、$f(x,y)$ には、点 $A(a,b)$ において、極限が存在して、その極限値は、$c$  であるという。または、関数 $f(x,y)$ は、$c$ に収束するとも言う。このとき、$f(x,y) \to c\;(x\to a, \:y\to b)$ または、次のように書く。
+$$\lim_{x\to a,\:y\to b}f(x,y) = \lim_{(x,y)\to(a,b)}f(x,y) = \lim_{P\to A}f(x,y) = c.$$
+\item 関数 $f(x,y)$ が、次の条件を満たすとき、点 $A(a,b)$ で連続であると言う。
+	\begin{enumerate}
+	\item $f(a,b)$ が定義されている。
+	\item $\lim_{(x,y)\to(a,b)}f(x,y)$ が存在する。
+	\item $\lim_{(x,y)\to(a,b)}f(x,y) = f(a,b)$。
+	\end{enumerate}
+\end{enumerate}
+\end{definition}
+
+\note
+\begin{enumerate}
+\item 極限の定義では、関数が、その点と一致する事は、除いている。特に、その点で、関数が、定義されているかどうかは、問わない。
+\item 点の近づき方によって、近づく値が違うときは、極限は存在しない。
+\end{enumerate}
+
+\begin{eg}
+\begin{enumerate}
+\item 関数 $f(x,y)$ を次のように定義する。
+$$f(x,y) = \left\{\begin{array}{ll} \frac{xy}{x^2+y^2}& (x,y) \neq (0,0) \\ 0 & (x,y) = (0,0)\end{array} \right.$$
+この関数は、$x$-軸上でも、$y$-軸上でも、値が、$0$ であるが、$y = mx$ の直線上で、$x$ が、$0$  に近づくと、
+$$\lim_{x\to 0}f(x,mx) = \lim_{x\to 0}\frac{mx^2}{x^2 + m^2x^2} = \frac{m}{1+m^2} \neq f(0,0).$$
+例えば、$m = 0$ すなわち $x$ 軸上で、$(0,0)$ に近づくときの極限値は、$0$ で、それは、$m=1$ すなわち $y = x$ の直線上で、$(0,0)$ に近づくときの極限値 $1/2$ と異なるから、個の関数は、点 $(0,0)$ で極限値を持たない。特に、連続でもない。
+\end{enumerate}
+\end{eg}
+
+\subsection{偏微分}
+多変数関数の微分を考える。まず、簡単に考えられるのは、一つの変数のみ、変数と見て、他のものは、定数と見て、一変数の関数として、微分することである。
+
+\begin{definition}
+\begin{enumerate}
+\item ${\displaystyle \lim_{h\to 0}\frac{f(p+h,q)-f(p,q)}h,\;\mbox{ あるいは }\;\lim_{h\to 0}\frac{f(p,q+h)-f(p,q)}h}$
+が存在するとき、関数 $f(x,y)$ は、点 $(p,q)$  において、$x$ に関して偏微分可能、あるいは、$y$ に関して偏微分(partial derivative)可能と言い、それぞれ、以下のように書く。
+$$\frac{\partial f}{\partial x}(p,q) = f_x(p,q) = D_xf(p,q), \;\frac{\partial f}{\partial y}(p,q) = f_y(p,q) = D_yf(p,q)$$
+\item 関数 $f(x,y)$ が各点で偏微分可能であるとき、各点での偏微分を対応させる関数を偏導関数といい以下の様に書く。
+$$\frac{\partial f}{\partial x} = f_x= D_xf, \;\frac{\partial f}{\partial y}= f_y = D_yf$$
+\end{enumerate}
+\end{definition}
+
+偏導関数 $f_x$ を求めるには、単に $f(x,y)$ の $y$ を定数と思って $x$ に関して、微分すればよい。$y$ に関する偏導関数についても同じ。
+
+\begin{eg}
+\begin{enumerate}
+\item $f(x,y) = x^2y + e^x$ とすると、$f_x = 2xy + e^x$、$f_y = x^2$。
+\end{enumerate}
+\end{eg}
+
+\subsection{全微分}
+関数の極限のところでも見たように、一変数関数から、多変数関数に変わっても考え方は、余り変わらない。しかし、点の近づき方に様々な方向が可能であることから、複雑な面が現れる。その意味でも、多変数関数の動向を調べるため、偏微分（一つを残して、すべての変数を定数と見て微分をすること）では、不十分であることは明らかである。
+
+\begin{definition}
+\begin{enumerate}
+\item 点 $(p,q)$ の近傍で定義されている２変数関数 $f(x,y)$ に対して、定数 $a$, $b$ が存在して $\epsilon(x,y) = f(x,y) - f(p.q) - a(x-p) - b(y-q)$ が
+$$\lim_{(x,y)\to (p,q)}\frac{\epsilon(x,y)}{\sqrt{(x-p)^2+(y-q)^2}} = 0$$
+を満たすとき、$f(x,y)$ は、点 $(p,q)$ で全微分可能と言う。$(a,b)$ を点 $(p,q)$ における微分係数という。
+\item $z - f(p,q) = a(x-p) + b(y-q)$ のグラフを、点 $(p,q,f(p,q))$ における 接平面という。
+\item 関数 $f(x,y)$ が各点で全微分可能であるとき、
+$$df = \frac{\partial f}{\partial x}dx + \frac{\partial f}{\partial y}dy$$
+を $f(x,y)$ の全微分と言う。
+\end{enumerate}
+\end{definition}
+
+\begin{prop} \label{prop:totalderiv}
+\begin{itemize}
+\item[$(1)$] $f(x,y)$ が、点 $(p,q)$ で全微分可能ならば、偏微分可能で、微分係数は、
+$$(a,b) = \bigl(\frac{\partial f}{\partial x}(p,q),\frac{\partial f}{\partial x}(p,q)\bigr).$$
+\item[$(2)$] 逆に、点 $(p,q)$ の近くで、$f(x,y)$ が偏微分可能でかつその偏導関数が、連続ならば、$f(x,y)$ は、点 $(p,q)$ で全微分可能である。特に、$f(x,y)$ は、点 $(p,q)$ で連続である。
+\end{itemize}
+\end{prop}
+\proof
+証明略。
+\qed
+
+\subsection{ベクトル表示}
+多変数関数の場合、ベクトル表示を用いることにより、変数の数に無関係な表示を得ることもできる。
+点、変数をベクトル表示し、
+$$P = \left(\begin{array}{c}p_1\\p_2\\\vdots\\p_n\end{array}\right),\;X = \left(\begin{array}{c}x_1\\x_2\\\vdots\\x_n\end{array}\right)$$
+とする。関数も $f(X)$ の様に表す。
+
+関数 $f(X)$ が、点 $P$ で連続であるとは、次が成立することである。
+$$\lim_{X\to P}f(X) = f(P).$$
+
+関数 $f(X)$ が、点 $P$ で（全）微分可能であるとは、ある、ベクトル $A = (a_1, \ldots, a_n)$ が存在して、以下を満たすことである。
+$$\lim_{X\to P}\frac{\epsilon(X)}{\|X-P\|} = 0, \;\mbox{ただし } \epsilon(X) = f(X) - f(P) - A\cdot(X-P).$$
+
+接平面の方程式は、以下のようになる。
+$$z - f(P) = (\grad f)(P)\cdot (X-P), \;\mbox{ただし }\grad f(P) = \bigl(\frac{\partial f}{\partial x_1}(P),\ldots, \frac{\partial f}{\partial x_n}(P)\bigr).$$
+
+\smallskip
+このように、一変数の場合と、殆ど同じように記述することが出来る。その意味でも、全微分といわず、微分と呼んだ方が自然かも知れない。
+
+
+\mysection{合成関数の微分と高階導関数}
+\subsection{合成関数の微分}
+\begin{prop} \label{prop:composition}
+関数 $f(x,y)$ が全微分可能で、さらに、$x$、$y$ が $t$ の関数となっている場合を考える。$x = x(t)$、$y = y(t)$ それぞれが、$t$ に関して、微分可能ならば、$f(x(t),y(t))$ は、$t$ に関して、微分可能で、次の式が成り立つ。
+$$\frac{df}{dt} = \frac{\partial f}{\partial x}\frac{dx}{dt} + \frac{\partial f}{\partial y}\frac{dy}{dt}.$$
+\end{prop}
+\proof  各点 $t = p$ に対して、
+\begin{eqnarray*}
+x(t) & = & x(p) + x'(p)(t-p) + \epsilon(t)\\
+y(t) & = & y(p) + y'(p)(t-p) + \epsilon'(t)
+\end{eqnarray*}
+と置くと、$x(t)$、$y(t)$ はともに、$t$ に関して、微分可能だから、$t\to p$ のとき、
+$$\frac{\epsilon(t)}{(t-p)} \to 0,\;\frac{\epsilon'(t)}{(t-p)} \to 0$$
+である。ここで、
+\begin{eqnarray*}
+\lefteqn{f(x(t),y(t)) - f(x(p),y(p))}\\
+& = & \frac{\partial f}{\partial x}(x(p),y(p))(x(t) - x(p)) + \frac{\partial f}{\partial y}(x(p),y(p))(y(t) - y(p)) + \epsilon(x(t),y(t))
+\end{eqnarray*}
+とすると、$f(x,y)$ が全微分可能であることより、$(x(t),y(t))\to (x(p),y(p))$ のとき
+$$\frac{\epsilon(x(t),y(t))}{\sqrt{(x(t)-x(p))^2 + (y(t) - y(p))^2}} \to 0$$
+従って、
+\begin{eqnarray*}
+\lefteqn{\frac{f(x(t),y(t))-f(x(p),y(p))}{t-p}}\\
+& = & \frac{\partial f}{\partial x}(x(p),y(p))\bigl(x'(p) + \frac{\epsilon(t)}{t-p}\bigr) + \frac{\partial f}{\partial y}(x(p),y(p))\bigl(y'(p) + \frac{\epsilon'(t)}{t-p}\bigr) + \frac{\epsilon(x(t),y(t))}{t-p}
+\end{eqnarray*}
+ここで、最後の項は、
+\begin{eqnarray*}
+\lefteqn{\lim_{t\to p}\frac{\epsilon(x(t),y(t))}{|t-p|}}\\
+& = &
+\lim_{t\to p}\frac{\epsilon(x(t),y(t))}{\sqrt{(x(t) - x(p))^2 + (y(t) - y(p))^2}}\sqrt{\bigl(x'(p) + \frac{\epsilon(t)}{t-p}\bigr)^2 + \bigl(y'(p) + \frac{\epsilon'(t)}{t-p}\bigr)^2} \\
+& = &0
+\end{eqnarray*}
+これより、
+$$\frac{df}{dt}(x(p),y(p)) = \frac{\partial f}{\partial x}(x(p),y(p))x'(p) + \frac{\partial f}{\partial y}(x(p),y(p))y'(p)$$
+を得る。
+\qed
+
+\begin{thm} \label{thm:chainrule}
+関数 $f(x,y)$ が全微分可能で、$x = x(u,v)$、$y = y(u,v)$ が $u,v$ で偏微分可能ならば、
+$$\frac{\partial f}{\partial u} = \frac{\partial f}{\partial x}\frac{\partial x}{\partial u} + \frac{\partial f}{\partial y}\frac{\partial y}{\partial u}, \;
+\frac{\partial f}{\partial v} = \frac{\partial f}{\partial x}\frac{\partial x}{\partial v} + \frac{\partial f}{\partial y}\frac{\partial y}{\partial v}.$$
+\end{thm}
+\proof
+$v$ を固定すれば、$x$、$y$、$f$  すべて、$u$ の関数と見ることが出来るから、それぞれの、$u$ に関する微分を、偏微分に置き換えれば、結果は、命題~\ref{prop:composition} から得られる。
+\qed
+
+\medskip
+上の結果は、重要なので、一般の多変数関数の場合にも、結果だけ述べる。
+\begin{thm} \label{thm:chainrule:gen}
+関数 $f(x_1, \ldots, x_n)$ が全微分可能で、$x_i = x(u_1,\ldots, u_m)$ $(i = 1, \ldots, n)$ が 各 $u_j$  $(j = 1, \ldots, m)$ で偏微分可能ならば、
+$$\frac{\partial f}{\partial u_j} = \sum_{i=1}^n\frac{\partial f}{\partial x_i}\frac{\partial x_i}{\partial u_j}.$$
+\end{thm}
+
+これらの結果を、ベクトルと行列で書くこともできる。
+$$\bigl(\frac{\partial f}{\partial {u_1}},\ldots, \frac{\partial f}{\partial {u_m}}\bigr)= \bigl(\frac{\partial f}{\partial {x_1}},\ldots, \frac{\partial f}{\partial {x_n}}\bigr)\left(\begin{array}{ccc}
+\frac{\partial x_1}{\partial {u_1}} & \ldots & \frac{\partial x_1}{\partial {u_m}}\\
+\multicolumn{3}{c}{\dotfill}\\
+\frac{\partial x_n}{\partial {u_1}} & \ldots & \frac{\partial x_n}{\partial {u_m}}
+\end{array}\right)$$
+この最後の行列をヤコビ行列と言い、${\displaystyle \frac{\partial(x_1, \ldots, x_n)}{\partial(u_1,\ldots, u_m)}}$ とも書く。また、
+$$\grad(f) = \bigl(\frac{\partial f}{\partial {x_1}},\ldots, \frac{\partial f}{\partial {x_n}}\bigr)$$
+を勾配 (gradient) と言う。
+
+\begin{eg}
+\begin{enumerate}
+\item $f(x,y) = x^8 + x^5y^9$、$x(t) = 3t^2 - 4t$、$y(t) = 5t - 4$。$F(t) = f(x(t),y(t))$ の $t = 1$ における微分係数を考える。$x(1) = -1$、$y(1) = 1$ だから、
+\begin{eqnarray*}
+\frac{df}{dt} & = & \frac{\partial f}{\partial x}\frac{dx}{dt} + \frac{\partial f}{\partial y}\frac{dy}{dt}\\
+& = & (8x^7 + 5x^4y^9)(6t-4) + 9x^5y^8\cdot 5\\
+& = & (-8+5)\cdot 2 - 45 = -51
+\end{eqnarray*}
+\item $f(x,y) = \sqrt{x^2 + y^2}$、$x(u,v) = 2u+3v$、$y(u,v) = uv$。$(u,v) = (-1,1)$ での $u,v$ に関する勾配を考える。
+$$(\frac{1}{\sqrt{2}},-\frac{1}{\sqrt{2}})\left(\begin{array}{cc}2 & 3\\1 & -1\end{array}\right) = (\frac{1}{\sqrt{2}},2\sqrt{2})$$
+\item $z = f(x,y)$, $x = \rho\cos\theta$, $y = \rho\sin\theta$ の時、
+$$\bigl(\frac{\partial z}{\partial x}\bigr)^2 + \bigl(\frac{\partial z}{\partial y}\bigr)^2 = \bigl(\frac{\partial z}{\partial \rho}\bigr)^2 + \frac{1}{\rho^2}\bigl(\frac{\partial z}{\partial \theta}\bigr)^2.$$
+まず、それぞれの偏微分を求めると、
+\begin{eqnarray*}
+\frac{\partial z}{\partial\rho} & = & \frac{\partial z}{\partial x}\frac{\partial x}{\partial\rho} + \frac{\partial z}{\partial y}\frac{\partial y}{\partial\rho} = \frac{\partial z}{\partial x}\cos\theta + \frac{\partial z}{\partial y}\sin\theta\\
+\frac{\partial z}{\partial\theta} & = & \frac{\partial z}{\partial x}\frac{\partial x}{\partial\theta} + \frac{\partial z}{\partial y}\frac{\partial y}{\partial\theta} = \frac{\partial z}{\partial x}(-\rho\sin\theta) + \frac{\partial z}{\partial y}\rho\cos\theta
+\end{eqnarray*}
+従って、次を得る。
+\begin{eqnarray*}
+\lefteqn{\bigl(\frac{\partial z}{\partial \rho}\bigr)^2 + \frac{1}{\rho^2}\bigl(\frac{\partial z}{\partial \theta}\bigr)^2}\\
+& = &\bigl(\frac{\partial z}{\partial x}\cos\theta + \frac{\partial z}{\partial y}\sin\theta\bigr)^2 + \frac{1}{\rho^2}\bigl(\frac{\partial z}{\partial x}(-\rho\sin\theta) + \frac{\partial z}{\partial y}\rho\cos\theta\bigr)^2\\
+& = & \bigl(\frac{\partial z}{\partial x}\bigr)^2 + \bigl(\frac{\partial z}{\partial y}\bigr)^2.
+\end{eqnarray*}
+\end{enumerate}
+\end{eg}
+
+\subsection{高階導関数}
+$f(x,y)$ の偏導関数が、また偏微分可能なときは、その偏導関数が考えられる。これを続けていけば、高階偏導関数が得られる。これらを、次のように書く。
+$$\frac{\partial}{\partial y}\bigl(\frac{\partial}{\partial x}f\bigr) = \frac{\partial^2f}{\partial y\partial x} = f_{x,y},\; \frac{\partial}{\partial x}\bigl(\frac{\partial}{\partial x}f\bigr) = \frac{\partial^2f}{\partial x^2} = f_{x,x}.$$
+
+\medskip
+高階導関数について次の定理は、基本的である。
+\begin{thm}{\rm [Schwartz]} \label{thm:higherder}
+点 $(p,q)$ の近傍で、$f_x, \:f_y, \:f_{xy}$ が存在し、$f_{xy}$ が連続ならば、$f_{yx}$ も存在し、$f_{x,y}(p,q) = f_{y,x}(p,q)$。
+\end{thm}
+
+\begin{eg}
+$f(x,y) = \log\sqrt{x^2+y^2}$ とすると、
+$$\triangle f = \frac{\partial^2f}{\partial x^2} + \frac{\partial^2 f}{\partial y^2} = 0$$
+\end{eg}
+
+\mysection{平均値の定理と、微分の応用}
+\subsection{平均値の定理}
+\begin{prop}
+関数 $f(x,y)$ が偏微分可能ならば、
+$$f(a+h,b+k) = f(a,b) + hf_x(a+h\theta,b+k\theta) + kf_y(a+h\theta,b+k\theta)$$
+を満たす、$0<\theta<1$ がある。
+\end{prop}
+\proof
+$a, b, h, k$ を定数として、$F(t) = f(a+ht, b+kt)$ と置く。一変数の場合の平均値の定理より、
+$$F(1) - F(0) = F'(\theta)$$
+となる、$0 < \theta < 1$ がある。また、$x = x(t) = a+ht$、$y = y(t) = b+kt$ と置くと、
+\begin{eqnarray*}
+\frac{dF(t)}{dt} & = & \frac{\partial f}{\partial x}\frac{dx}{dt} + \frac{\partial f}{\partial y}\frac{dy}{dt}\\
+& = & hf_x(a+ht,b+kt) + kf_y(a+ht,b+kt)
+\end{eqnarray*}
+従って、$f(x,y)$ が偏微分可能ならば、$F(1) - F(0)$ の式から、
+$$f(a+h,b+k) - f(a,b) = hf_x(a+h\theta,b+k\theta) + kf_y(a+h\theta,b+k\theta).$$
+\qed
+
+\medskip
+上の平均値の定理の証明において、一変数のテーラーの定理を適用すると、２変数関数のテーラーの定理を得る。
+\begin{prop} \label{prop:taylor-mv}
+関数 $f(x,y)$ が $n$ 階まで、連続な偏微導関数を持ち、$n+1$ 階の偏微導関数を持てば、
+\begin{eqnarray*}
+f(a+h,b+k) &= &f(a,b) + \bigl(h\frac{\partial}{\partial x} + k\frac{\partial}{\partial y}\bigr)f(a,b) + \cdots\\
+& & \mbox{ }+\frac{1}{n!}\bigl(h\frac{\partial}{\partial x} + k\frac{\partial}{\partial y}\bigr)^nf(a,b) + R_n
+\end{eqnarray*}
+$$R_n = \frac{1}{(n+1)!}\bigl(h\frac{\partial}{\partial x} + k\frac{\partial}{\partial y}\bigr)^{n+1}f(a+\theta h,b+\theta k)$$
+を満たす、$0<\theta<1$ がある。
+\end{prop}
+
+\subsection{陰関数}
+$y = f(x)$ の様に、$x$ の値に、$y$ の値を対応させる具体的な表式が示されているとき、$y$ は $x$ の陽関数(explicit function)  といい、$F(x,y) = 0$ の様に関係式としてだけである時は、$y$ は、$x$ の陰関数(implicit function) であるという。多変数の場合にも、例えば、$F(x_1,\ldots, x_n,z) = 0$ である時、$z$ は、$x_1,\ldots, x_n$ の陰関数である。
+
+\medskip
+$F(x_1,\ldots, x_n,y) = 0$ の時は、もし、$y = f(x_1,\ldots, x_n)$ と書けるならば、両辺を $x_1$ で偏微分する。すると、$x_2, \ldots, x_n$ は、独立変数すなわち、$x_1$ で微分すると、$0$ だから、　
+$$\frac{\partial F}{\partial x_1} + \frac{\partial F}{\partial y}\frac{\partial F}{\partial x_1} = 0$$
+より、以下の式を得る。
+$$\frac{\partial y}{\partial x_1} = -\frac{F_{x_1}(x_1,\ldots,x_n,y)}{F_y(x_1,\ldots,x_n,y)}$$
+では、どのようなとき、$y = f(x_1,\ldots, x_n)$ の様に、陽関数に書け、また、上のような操作が可能なのか。
+
+\begin{thm} {\rm [陰関数定理]}\label{thm:implicit}
+関数 $F(x,y)$ は、点 $(p,q)$ の近傍で連続、かつ偏微分可能で、偏導関数 $F_x(x,y)$、$F_y(x,y)$ が連続とする。このとき、$F(p,q) = 0$、$F_y(p,q) \neq 0$ ならば、点 $x = p$ の近傍で微分可能な関数 $y = f(x)$ がただ一つ定まり
+\begin{itemize}
+\item[$(1)$] $F(x,f(x)) = 0$、$f(p) = q$。
+\item[$(2)$] ${\displaystyle \frac{\partial F}{\partial x}(x,f(x)) + \frac{\partial F}{\partial y}(x,f(x))f'(x) = 0}$
+\end{itemize}
+\end{thm}
+
+\begin{thm} {\rm [陰関数定理]}\label{thm:implicit3}
+関数 $F(x,y,z)$ は、点 $(p,q,r)$ の近傍で連続、かつ偏微分可能で、偏導関数 $F_x(x,y,z)$、$F_y(x,y,z)$、$F_z(x,y,z)$ が連続とする。このとき、$F(p,q,r) = 0$、$F_z(p,q,r) \neq 0$ ならば、点 $(p.q)$ の近傍で微分可能な関数 $z = f(x,y)$ がただ一つ定まり
+\begin{itemize}
+\item[$(1)$] $F(x,y,f(x,y)) = 0$、$f(p,q) = r$。
+\item[$(2)$] ${\displaystyle \frac{\partial z}{\partial x} = - \frac{F_x}{F_z}, \;\frac{\partial z}{\partial y} = - \frac{F_y}{F_z}}$
+\end{itemize}
+\end{thm}
+
+$n$ 変数のときは、どうであろうか。
+
+\subsection{極値}
+$2$ 変数関数 $z = f(x,y)$ と、点 $P(p,q)$ において、点 $P$ に十分近い任意の点 $Q(x,y)$ に対して、
+$$f(p,q) < f(x,y)$$ 
+が成り立つとき、関数 $z = f(x,y)$ は、点 $P$ で極小 (minimum) であると言い、点 $P$ を極小点、$f(p,q)$ の値を極小値という。逆に、
+$$f(p,q) > f(x,y)$$
+が成り立つとき、関数 $z = f(x,y)$ は、点 $P$ で極大 (maximum) であると言い、点 $P$ を極大点、$f(p,q)$ の値を極大値という。
+極小点、極大点を総称して、極点 (extremum point) と言い、極小値と、極大値を総称して、極値という。
+
+\smallskip
+$x$ 座標、$y$ 座標を固定して考えれば、一変数の場合の結果から、点 $P(p,q)$ が $z = f(x,y)$ の極点であれば、
+$$f_x(p,q) = f_y(p,q) = 0$$
+を満たすことが分かる。このように、$f_x(p,q) = f_y(p,q) = 0$ を満たす点を $f(x,y)$ の停留点 (stationary point) と言う。このことから、極値を調べるには、まず、停留点を調べれば良いことが分かる。
+
+\begin{thm}
+関数 $f(x,y)$ が偏微分可能で、点 $(p,q)$ は、停留点とする。
+$$A = f_{xx}(p,q), \;B = f_{xy}(p,q),\;C = f_{yy}(p,q)$$
+とおくとき、
+\begin{itemize}
+\item[$(1)$] $B^2 - AC<0$ ならば、点 $(p,q)$ は、極点であり、さらに、
+\begin{itemize}
+\item[$(a)$] $A>0$ のときは、$f(p,q)$ は、極小値
+\item[$(b)$] $A<0$ のときは、$f(p,q)$ は、極大値
+\end{itemize}
+である。
+\item[$(2)$] $B^2 -AC > 0$ ならば、点 $(p,q)$ は、極点ではない。
+\end{itemize}
+\end{thm}
+\proof
+命題~\ref{prop:taylor-mv} を $n = 1$ として、適用すると、
+\begin{eqnarray*}
+\lefteqn{f(p+h,q+k) - f(p,q)}\\
+& =  & hf_x(p,q) + kf_y(p,q) + \\
+& & \frac{1}{2}\left(h^2f_{xx}(p+\theta h,q+\theta k)+2hkf_{xy}(p+\theta h,q+\theta k)+k^2f_{yy}(p+\theta h,q+\theta k)\right)\\
+\lefteqn{\mbox{ここで、$f_x(p,q) = f_y(p,q) = 0$ だから、}}\\
+& = & \frac{1}{2}k^2\left(\frac{h^2}{k^2}f_{xx}(p+\theta h,q+\theta k)+2\frac{h}{k}f_{xy}(p+\theta h,q+\theta k)+f_{yy}(p+\theta h,q+\theta k)\right)
+\end{eqnarray*}
+最後の式は、$h/k$ の２次式と見ると、$h,k$ が小さいとき、判別式は、$B^2 - AC$ である。
+
+ここで、$B^2 - AC<0$ ならば、最後の式は、$0$ にならない。かつ、その符号は、$A$ の符号で決まる。従って、
+\begin{itemize}
+\item[(a)] $A>0$ のときは、$f(p+h,q+k) - f(p,q)>0$ すなわち、$f(p,q)$ は、極小値。
+\item[(b)] $A<0$ のときは、$f(p+h,q+k) - f(p,q)<0$ すなわち、$f(p,q)$ は、極大値。
+\end{itemize}
+$B^2 - AC>0$ ならば、$h/k$ は、任意の値をとりうるから、$f(p+h,q+k) - f(p,q)$ の符号は、定まらない。従って、点 $(p,q)$ は、極点ではない。
+\qed
+
+\medskip
+\note $B^2 -AC = 0$ のときは、極値であるかどうか判定できない。
+
+\begin{eg}
+$f(x,y) = 4xy - 2y^2 - x^4$ とする。すると、
+$$f_x = 4y - 4x^3,\;f_y = 4x - 4y,\;f_{xx} = -12x^2,\;f_{xy}= 4,\;f_{yy} = -4$$
+これより、$f_x(x,y) = f_y(x,y) = 0$ を満たすものは、$y = x$ を代入して、$x = -1,0,1$。
+$D = 48x^2 - 16 = 16(3x^2 - 1)$。従って、$(1,1),(-1,-1)$ で極大、$(0,0)$ では、極値を持たない。
+\end{eg}
+
+\mysection{多変数関数の積分}
+\begin{definition}
+$f(x,y)$ を領域 $D$ 上の有界 (bounded) 関数とする。$D$ の分割 
+$$\Delta = \{x_0,x_1,\ldots,x_m\}\times \{y_0,y_1,\ldots,y_n\}$$
+と、点 
+$$T_{ij} = (s_{ij},t_{ij})\in D_{ij} = [x_{i-1},x_i]\times[y_{j-1},y_j]$$
+に対し、リーマン和
+$$R_{\Delta,\{T_{ij}\}}(f) = \sum_{1\leq i\leq m,1\leq j\leq n}f(T_{ij})(x_i-x_{i-1})(y_j-y_{j-1})$$
+が、$|\Delta| = |x_i-x_{i-1}| + |y_j-y_{j-1}| \to 0$ のとき、一定の値に近づくなら、$f(x,y)$ は、$D$ 上積分可能であると言い、その極限値を、$f(x,y)$ の $D$ 上の重積分と言う。これを以下の様に書く。
+$$\int\!\!\!\int_Df(x,y)d(x,y) = \int\!\!\!\int_Dfdx = \int\!\!\!\int_D f = \int\!\!\!\int_Df(x,y)dxdy.$$
+\end{definition}
+
+上の定義で、領域 $D$ が、長方形ではないときは、$D$ を含む長方形領域を考え、$D$ の点でないときは、$0$ と言う値をとるとして、上の定義を当てはめればよい。
+
+\medskip
+以下の様なことが成り立つことが、分かる。
+
+\begin{prop} \label{prop:intint:basic}
+\begin{itemize}
+\item[$(1)$] ${\displaystyle \int\!\!\!\int_D (f(x,y) + g(x,y))dxdy = \int\!\!\!\int_D f(x,y)dxdy + \int\!\!\!\int_D g(x,y)dxdy}$.
+\item[$(2)$] ${\displaystyle \int\!\!\!\int_D kf(x,y)dxdy = k\int\!\!\!\int_D f(x,y)dxdy}$.
+\item[$(3)$] $D = D_1\cup D_2$、$D_1\cap D_2 = \emptyset$ ならば、
+$$\int\!\!\!\int_D f(x,y)dxdy = \int\!\!\!\int_{D_1} f(x,y)dxdy + \int\!\!\!\int_{D_2} f(x,y)dxdy.$$
+\end{itemize}
+\end{prop}
+
+\begin{prop} \label{prop:intint:bound}
+$f(x,y)$ が領域 $D$ 上で、重積分可能ならば、以下が成立する。
+\begin{itemize}
+\item[$(1)$] $f(x,y)\geq 0$ ならば、${\displaystyle \int\!\!\!\int_Df(x,y)dxdy\geq 0}$。
+\item[$(2)$] $S$ を領域の面積とすると、$m\leq f(x,y)\leq M$ ならば、
+$$mS \leq \int\!\!\!\int_D f(x,y)dxdy \leq MS.$$
+\item[$(3)$] ${\displaystyle \left|\int\!\!\!\int_Df(x,y)dxdy\right|\leq \int\!\!\!\int_D|f(x,y)|dxdy}$.
+\end{itemize}
+\end{prop}
+
+\begin{thm} \label{thm:intint:existence}
+関数 $f(x,y)$ が有界閉領域 $D$ で連続ならば、重積分が存在する。
+\end{thm}
+
+\begin{thm} \label{thm:doubleint}
+閉区間 $[a,b]$ 上の２つの関数 $g_1(x)$ と、$g_2(x)$ が、連続で、$g_1(x)\leq g_2(x)$ とする。領域、
+$$E = \{(x,y)\mid a\leq x\leq b,\;g_1(x)\leq y\leq g_2(x)\}$$
+において、２変数関数 $f(x,y)$ が、 $E$ 上で、連続ならば、
+$$\int\!\!\!\int_E f(x,y)dxdy = \int_a^b\left\{\int_{g_1(x)}^{g_2(x)}f(x,y)dy\right\}dx.$$
+\end{thm}
+
+\begin{eg}
+$D = \{(x,y)\mid 1\leq x\leq z,\;0\leq y\leq 1\}$ とすると、
+\begin{eqnarray*}
+\iint_D(x^2 + xy + y^2)dxdy & = & \int_1^2\left(\int_0^1 (x^2+xy+y^2)dy\right)dx\\
+& = & \left.\int_1^2(x^2y + \frac{1}{2}xy^2 + \frac{1}{3}y^3)\right|^1_0dx\\
+& = & \int^2_1(x^2 + \frac12x + \frac13)dx\\
+& = & \left.\left(\frac{x^3}{3} + \frac{x^2}{4} + \frac{x}{3}\right)\right|^2_1\\
+& = & \frac83 + 1 + \frac23 - \frac13 -\frac14 - \frac13\\
+& = & \frac{41}{12}.
+\end{eqnarray*}
+\end{eg}
+
+\begin{eg}
+$y = x^2$ と、$y = \sqrt{x}$  で囲まれた領域を $D$ とすると、
+\begin{eqnarray*}
+\int^1_0\left(\int_{x^2}^{\sqrt{x}}(xy+y^3)dy\right)dx & = & \int^1_0\left.\left(\frac{xy^2}2 + \frac{y^4}4\right)\right|^{\sqrt{x}}_{x^2}dx\\
+& = & \int^1_0\left(\frac{x^2}{2} + \frac{x^2}{4} - \frac{x^5}{2} - \frac{x^8}{4}\right)dx\\
+& = & \left.\frac{x^3}4 - \frac{x^6}{12} - \frac{x^9}{36}\right|^1_0\\
+& = & \frac14 - \frac1{12} - \frac1{36}\\
+& = & \frac{5}{36}
+\end{eqnarray*}
+\end{eg}
+
+\begin{eg}
+$x = \sin y$ と、$y$ 軸上の $0\leq y\leq \pi$ の区間。
+$$\int^1_0\left(\int^{\pi-\sin^{-1}x}_{\sin^{-1}x}f(x,y)dy\right)dx = 
+\int_0^\pi\left(\int_0^{\sin y}f(x,y)dx\right)dy.$$
+\end{eg}
+
+\mysection{重積分の計算}
+重積分における変数変換を考える。まず、一変数の場合は、
+\begin{eqnarray*}
+\lefteqn{\int_a^b f(x)dx,\;x = \phi(t),\;\phi(\alpha) = a,\;\phi(\beta) = b}\\
+& \Rightarrow & \int_\alpha^\beta f(\phi(t))\phi'(t)dt
+\end{eqnarray*}
+
+これは、リーマン和で書いたとき、$\Delta$ を、分割、
+$a = x_0,x_1,\ldots, x_n = b$、$|\Delta| = \max\{|x_i-x_{i-1}|\mid i = 1,\ldots, n\}$ とし、
+\begin{equation}
+\int_a^b f(x)dx = \lim_{|\Delta|\to 0}\sum_{1\leq i\leq m}f(u_i)(x_i-x_{i-1})
+\end{equation}
+の、$x_i - x_{i-1}$ が、
+$$x_i - x_{i-1} = \phi(t_i) - \phi(t_{i-1}) = \phi'(\xi_i)(t_i-t_{i-1}), \;t_{i-1}\leq \xi_i \leq t_i$$
+となることから、得られるのであった。
+
+重積分の時は、どうであろうか。
+重積分の値も、リーマン和の極限で定義した。すなわち、
+$$\iint_Df(x,y)dxdy = 
+\lim_{|\Delta|\to 0}\sum_{{1\leq i\leq m}\atop{1\leq j\leq n}}f(T_{ij})(x_i-x_{i-1})(y_j-y_{j-1})$$
+
+ここで、$x = x(u,v)$、$y = y(u,v)$ と置くとき、
+$(x_i-x_{i-1})(y_j-y_{j-1})$ というような量（この場合は、面積）が、変数変換をしたとき、
+$(u_i-u_{i-1})(v_i-v_{i-1})$ の何倍になるかが必要である。
+
+この様なことをふまえ、平行四辺形の面積、及び、平行六面体の体積を求める式を考える。
+
+\begin{lemma} \label{lemma:para}
+\begin{itemize}
+\item[$(1)$] $(0,0),(a,b),(c,d),(a+c,b+d)$ を頂点とする平行四辺形の面積は、
+$$ad - bc = \left|\begin{array}{cc} a & b\\ c & d \end{array}\right|$$
+の絶対値で与えられる。
+\item[$(2)$] $(0,0,0,),(a,b,c),(d,e,f),(g,h,i),(a+d,b+e,c+f),(a+g,b+h,c+i),(d+g,e+h,f+i),(a+d+g,b+e+h,c+f+i)$ を頂点とする、平行六面体の体積は、
+\begin{equation}
+aei + bfg + cdh - ceg-ahf-dbi
+= \left|\begin{array}{ccc} a & b & c\\ d & e & f \\ g & h & i\end{array}\right|
+\end{equation}
+の絶対値で与えられる。
+\end{itemize}
+\end{lemma}
+\proof
+$(1)$ のみ示す。面積を $S$ としたとき、
+$$S = 2(\frac12cd + \frac12(b+d)(a-c) - \frac12ab) = cd + ba - bc + da - dc - ab = ad - bc$$
+を得る。（正確には、どこに点があるかによって、場合分けが必要になってくる。ベクトルを用いると、統一的に表現できる。それが、行列式表示にもなっている。）
+\qed
+
+\medskip
+さて、頂点が、$(u_{i-1},v_{i-1}),(u_{i},v_{i-1}),(u_{i-1},v_i),(u_i,v_i)$ である、長方形の面積を用いて、頂点が、
+$$(x(u_{i-1},v_{i-1}),y(u_{i-1},v_{i-1})), (x(u_{i},v_{i-1}), y(u_{i},v_{i-1})),$$
+$$(x(u_{i-1},v_i),y(u_{i-1},v_i)),(x(u_i,v_i),y(u_i,v_i))$$ 
+である、平行四辺形の面積を表すと、例えば、$x(u,v_0)-x(u_0,v_0) = x_u(u',v_0)(u-u_0)$、$u'$ は、$u$ と、$u_0$ の間の点と表せるから、次の式を得る。
+\begin{eqnarray}
+\lefteqn{\left|\begin{array}{cc}
+x(u_i,v_{j-1})-x(u_{i-1},v_{j-1}) & x(u_{i-1},v_{j})-x(u_{i},v_{j-1})\\
+y(u_i,v_{j-1})-y(u_{i-1},v_{j-1}) & y(u_{i-1},v_{j})-y(u_{i},v_{j-1})
+\end{array}\right|} \\
+&=&
+\left|\begin{array}{cc}
+x_u(u_{i-1}',v_{j-1}) & x_v(u_{i-1},v_{j-1}')\\
+y_u(u_{i-1}'',v_{j-1}) & y_v(u_{i-1},v_{j-1}'')
+\end{array}\right|(u_i-u_{i-1})(v_j-v_{j-1})
+\end{eqnarray}
+
+これより、次の定理を得る。
+\begin{thm} \label{thm:int:change}
+一対一対応の変数変換 $x = \phi(u,v)$、$y= \psi(u,v)$ において、$uv$-平面上の領域を $E$ とする。$\phi(u,v)$、$\psi(u,v)$ は、$E$ 上連続な偏導関数を持ち $f(x,y)$ は、$E$ の像 $F(E)$ 上で連続ならば、以下の式が成り立つ。
+\begin{eqnarray}
+\iint_{F(E)}f(x,y)dxdy = \iint_Ef(\phi(u,v),\psi(u,v))\left|\frac{\partial(x,y)}{\partial(u,v)}\right|dudv\\
+\mbox{ここで、}\frac{\partial(x,y)}{\partial(u,v)} = 
+\left(\begin{array}{cc}\frac{\partial x}{\partial u} & \frac{\partial x}{\partial v}
+\\ \frac{\partial y}{\partial u} & \frac{\partial y}{\partial v}\end{array}\right)
+\end{eqnarray}
+\end{thm}
+
+３変数の時には、以下のようになる。
+\begin{thm} \label{thm:int3:change}
+一対一対応の変数変換 $x = \lambda(u,v,w)$、$y= \mu(u,v,w)$、$z = \nu(u,v,w)$ において、$uvw$-空間の領域を $E$ とする。$\lambda(u,v,w)$、$\mu(u,v,w)$、$\nu(u,v,w)$ は、$E$ 上連続な偏導関数を持ち $f(x,y,z)$ は、$E$ の像 $F(E)$ 上で連続ならば、以下の式が成り立つ。
+\begin{eqnarray*}
+\iiint_{F(E)}f(x,y,z)dxdydz = \iiint_Ef(\lambda(u,v,w),\mu(u,v,w),\nu(u,v,w))\left|\frac{\partial(x,y,z)}{\partial(u,v,w)}\right|dudv\\
+\mbox{ここで、}\frac{\partial(x,y,z)}{\partial(u,v,w)} = 
+\left(\begin{array}{ccc}\frac{\partial x}{\partial u} & \frac{\partial x}{\partial v} & \frac{\partial x}{\partial w}\\ 
+\frac{\partial y}{\partial u} & \frac{\partial y}{\partial v} & \frac{\partial y}{\partial w} \\
+\frac{\partial z}{\partial u} & \frac{\partial z}{\partial v} & \frac{\partial z}{\partial w}\end{array}\right)
+\end{eqnarray*}
+\end{thm}
+
+ここに現れる、$\frac{\partial(x,y)}{\partial(u,v)}$ や、$\frac{\partial(x,y,z)}{\partial(u,v,w)}$ の絶対値を通常 ヤコビ行列式とか、ヤコビアン (Jacobian) という。
+
+\begin{eg}
+$D = \{(x,y)\mid 0\leq x+y\leq 1, \;0\leq x-y\leq 1\}$ において、$u = x+y$、$v = x-y$ とおくと、$E = \{(u,v)\mid 0\leq u,v\leq 1\}$ かつ、$x = (u+v)/2$、$y = (u-v)/2$ だから、
+$$\left|\frac{\partial(x,y)}{\partial(u,v)}\right| = \left|\left|\begin{array}{cc}\frac{\partial x}{\partial u} & \frac{\partial x}{\partial v}\\ 
+\frac{\partial y}{\partial u} & \frac{\partial y}{\partial v}\end{array}\right|\right| = \left|\left|\begin{array}{cc}\frac{1}{2} & \frac{1}{2}\\ 
+\frac{1}{2} & -\frac{1}{2}\end{array}\right| \right| = |-\frac12| = \frac12$$
+\begin{eqnarray}
+\iint_D(x+y)e^{x+y}dxdy & = & \iint_E ue^v\left|\frac{\partial(x,y)}{\partial(u,v)}\right|dudv\\
+& = & \int_0^1\left(\int_0^1ue^v(\frac12)dv\right)du\\
+& = & \frac12\int_0^1udu\int_0^1e^vdv \\
+& = &  \frac12\cdot \left.\frac{u^2}{2}\right|^1_0\cdot \left. e^v\right|^1_0\\
+& = & \frac14(e-1)
+\end{eqnarray}
+\end{eg} 
+
+\begin{eg}
+\label{eg:polar2}
+（極座標の変数変換）
+$x = x(r,\theta) = r\cos\theta$、$y = y(r,\theta) = r\sin\theta$。まず、ヤコビアンを計算する。
+$$\left|\begin{array}{cc}\frac{\partial x}{\partial r} & \frac{\partial x}{\partial \theta}
+\\ \frac{\partial y}{\partial r} & \frac{\partial y}{\partial \theta}\end{array}\right|
+= \left|\begin{array}{cc}\cos\theta & -r\sin\theta
+\\ \sin\theta & r\cos\theta\end{array}\right| = r$$
+例えば、これを利用して、$D = \{(x,y)\mid 1\leq x^2+y^2 \leq 4\}$ 上での次の積分を考えると以下の様になる。
+\begin{eqnarray*}
+\lefteqn{\iint_D e^{x^2+y^2}dxdy}\\
+& = & \int_1^2\int_0^{2\pi}e^{r^2}rd\theta dr = \int_1^2\left(\int_0^{2\pi}re^{r^2}d\theta\right)dr\\
+& = & \int_1^2\left. re^{r^2}\theta\right|_0^{2\pi}dr = 2\pi\int_1^2re^{r^2}dr\\
+& = & 2\pi\left.\frac12e^{r^2}\right|_1^2 = \pi(e^4 - e).
+\end{eqnarray*}
+\end{eg}
+
+\begin{eg} 
+\label{eg:polar3}
+（球面座標）
+$x = r\sin\theta\cos\phi, \;y = r\sin\theta\sin\phi,\;z = r\cos\theta$, $0\leq \theta \leq\pi$, 
+$0\leq \phi \leq 2\pi$ によって、表すと、
+\begin{eqnarray*}
+\frac{\partial(x,y,z)}{\partial(u,v,w)}
+& = & \left|\begin{array}{ccc}
+\sin\theta\cos\phi & r\cos\theta\cos\phi & -r\sin\theta\sin\phi\\
+\sin\theta\sin\phi & r\cos\theta\sin\phi & r\sin\theta\cos\phi\\
+\cos\phi & -r\sin\theta & 0
+\end{array}\right|\\
+& = & \cos\theta(r^2\cos\theta\cos\phi\sin\theta\cos\phi + r^2\cos\theta\sin\theta\sin^2\phi)\\
+& & \mbox{ }+ r\sin\theta(\sin\theta\cos\phi r\sin\theta\cos\phi + \sin\theta\sin\phi r\sin\theta\sin\phi)\\
+& = & r^2\sin\theta(\cos^2\theta\cos^2\phi + \cos^2\theta\sin^2\phi + \sin^2\theta\cos^2\phi + \sin^2\theta\sin^2\phi)\\
+& = & r^2\sin\theta(\cos^2\phi+\sin^2\phi)\\
+& = & r^2\sin\theta \geq 0
+\end{eqnarray*}
+従って、この座標系を用いると、
+$$\iiint_{F(E)}f(x,y,z)dxdydz = \iiint_Ef(r\sin\theta\cos\phi,r\sin\theta\sin\phi,r\cos\phi)r^2\sin\theta  drd\theta d\phi.$$
+例えば、$D = \{(x,y,z)\mid 1\leq x^2+y^2 + z^2 \leq 4,\;x\geq 0, \;y\geq 0,\;z\geq 0\}$ とすると以下の積分の計算は、次のようになる。
+\begin{eqnarray*}
+\lefteqn{\iiint_D xyzdxdydz}\\
+& = & \int_1^4\left(\int_0^{\pi/2}\left(\int_0^{\pi/2} \left(r\sin\theta\cos\phi\cdot r\sin\theta\sin\phi\cdot r\cos\theta\cdot r^2\sin\theta\right)d\phi\right)d\theta\right)dr\\
+& = & \left(\int_1^4r^5dr\right)\left(\int_0^{\pi/2}\sin^3\theta d\theta\right)\left(\int_0^{\pi/2}\frac12\sin 2\phi d\phi\right)\\
+& = & \left[\frac{r^6}6\right]_1^4\left[\frac{1}{3}\cos^3\theta - \cos\theta\right]_0^{\pi/2}\left[-\frac14\cos2\phi\right]_0^{\pi/2}\\
+& = & \frac{455}{2}.
+\end{eqnarray*}
+\end{eg}
+
+\begin{thm}
+領域 $D$ 関数 $f(x,y)$ は、$D$ のある、近似増加列 $\{D_n\mid n = 1,\ldots \}$ に対し、
+$$\lim_{n\to\infty}\iint_{D_n}|f(x,y)|dxdy$$
+が存在するならば、$f(x,y)$ は、$D$ 上広義積分可能で、
+$$\iint_{D}|f(x,y)|dxdy = \lim_{n\to\infty}\iint_{D_n}|f(x,y)|dxdy$$
+である。このとき、
+$$\iint_{D}f(x,y)dxdy = \lim_{n\to\infty}\iint_{D_n}f(x,y)dxdy.$$
+\end{thm}
+
+\begin{eg}
+\begin{eqnarray*}
+\iint_{0\leq x\leq y\leq 1}\frac{1}{\sqrt{x^2+y^2}}dxdy & = & 
+\lim_{n\to\infty}\int_{1/2^n}^1\left(\int_0^y\frac{1}{\sqrt{x^2+y^2}}dx\right)dy\\
+& = & \lim_{n\to\infty}\int_{1/2^n}^1\left.\log(x+\sqrt{x^2+y^2})\right|_0^ydy\\
+& = & \lim_{n\to\infty}\int_{1/2^n}^1(\log(1+\sqrt{2})y - \log y)dy\\
+& = & \lim_{n\to\infty}\int_{1/2^n}^1\log(1+\sqrt{2})dy\\
+& = & \lim_{n\to\infty}\left(1-\frac1{2^n}\right)\log(1+\sqrt{2})
+\end{eqnarray*}
+\end{eg}
+
+\mysection{多変数関数の積分の応用}
+\subsection{質量、重心、慣性モーメント}
+ある領域 $R$ に密度 $f(x,y,z)$ で質量が分布している時、全質量、重心 $(X,Y,Z)$、慣性モーメント $I_x,I_y,I_z$ は、それぞれ次の式で与えられる。
+\begin{eqnarray}
+M & = & \iiint_R f(x,y,z)dxdydz\\
+X & = & \frac{1}{M}\iiint_R xf(x,y,z)dxdydz\\
+Y & = & \frac{1}{M}\iiint_R yf(x,y,z)dxdydz\\
+Z & = & \frac{1}{M}\iiint_R zf(x,y,z)dxdydz\\
+I_x & = & \iiint_R(y^2+z^2)f(x,y,z)dxdydz\\
+I_y & = & \iiint_R(x^2+z^2)f(x,y,z)dxdydz\\
+I_z & = & \iiint_R(x^2+y^2)f(x,y,z)dxdydz
+\end{eqnarray}
+
+\subsection{体積の計算}
+\begin{eg}
+平面 $x+ (y/3) + (z/2) = 1$　と各座標平面とで囲まれた部分　$V$ の体積。
+
+一般に、平面の方程式 $ax+by+cz = d$ が与えられると、$x$-切片は、$d/a$、$y$-切片は、$d/b$、$z$-切片は、$d/c$。従って、この例の場合は、それぞれ、$1,3,2$。従って、
+$$\iiint_V dxdydz = \int_0^1\int_0^{3-3x}(2-2x -\frac23y)dydx = \frac{3\cdot 2}{2\cdot 3}.$$
+\end{eg}
+
+\begin{eg}
+円柱 $x^2+y^2\leq 4$  と、$0\leq z\leq x$ で囲まれた部分 $V$ の体積。
+
+\begin{eqnarray}
+\iiint_Vdxdydz & = & \int_{-2}^2\left(\int_0^{\sqrt{4-y^2}}xdx\right)dy\\
+& = & \int_{-2}^2\left.\frac12x^2\right|_0^{\sqrt{4-y^2}}dy\\
+& = & \int_{-2}^2\frac12(4-y^2)dy\\
+& = & \left.2y - \frac16y^3\right|_2^2\\
+& = & 4 - \frac86 + 4 - \frac86 = \frac{16}3.
+\end{eqnarray}
+極座標を使うことも出来る。$x = r\cos\theta$、$y = r\sin\theta$。
+\begin{eqnarray}
+\iiint_Vdxdydz & = &\int_{-\pi/2}^{\pi/2}\left(
+\int_0^2 r\cos\theta\cdot rdr\right)d\theta\\
+& = & \int_{-\pi/2}^{\pi/2}\left.\cos\theta\frac13r^3\right|_0^2d\theta\\
+& = & \left.\frac83\sin\theta\right|_{-\pi/2}^{\pi/2} = \frac{16}{3}
+\end{eqnarray}
+\end{eg}
+
+\begin{eg}
+$x^2+y^2+z^2\leq 9$、$z^2\geq x^2+y^2$、$x\geq 0$、$y\geq 0$、$z\geq 0$ で囲まれた部分 $V$ の体積。$\sqrt{x^2+y^2}\leq z\leq \sqrt{9-x^2-y^2}$。
+\begin{eqnarray}
+\iiint_Vdxdydz & = & \int_0^{\frac{3}{\sqrt{2}}}\left(\int_0^{\sqrt{(9/2)-x^2}}\sqrt{9-x^2-y^2} - \sqrt{x^2+y^2}dy\right)dx\\
+& = & \int_0^{\pi/2}\int_0^{\pi/4}\int_0^3r^2\sin\theta drd\theta d\phi
+\end{eqnarray}
+\end{eg}
+
+\subsection{曲面積}
+\begin{prop} \label{prop:surface}
+領域 $D$ 上で定義された関数 $z=f(x,y)$ で与えられる曲面積は、次の式で与えられる。
+$$\iint_D\sqrt{1+\Bigl(\frac{\partial f}{\partial x}\Bigr)^2 + \Bigl(\frac{\partial f}{\partial y}\Bigr)^2}dxdy$$
+\end{prop}
+
+\begin{eg}
+平面 $z = ax + by + c$ 上の $0\leq x\leq \Delta x$、$0\leq y\leq \Delta y$ の部分の面積。
+$$\int_0^{\Delta x}\int_0^{\Delta y}\sqrt{1 + a^2 + b^2}dydx = \sqrt{1+a^2+b^2}\Delta x\Delta y.$$
+\end{eg}
+
+前の例は、$(0,0,0)$、$(\Delta x,0,z_x\Delta x)$、$(0,\Delta y,z_y\Delta y)$ で定義される平行四辺形の面積が、$\sqrt{1 +(z_x)^2 + (z_y)^2}\Delta x\Delta y$ であることを示している。これを初等的に証明し、それを用いて、命題~\ref{prop:surface} を証明してみよう。
+
+\begin{prop} \label{prop:surface:cylinder}
+領域 $D$ 上で定義され、極座標で表示された、関数 $z=f(r,\theta)$ で与えられる曲面積は、次の式で与えられる。
+$$\iint_D\sqrt{1+\Bigl(\frac{\partial z}{\partial r}\Bigr)^2 + \Bigl(\frac{1}{r}\frac{\partial z}{\partial \theta}\Bigr)^2}rdrd\theta$$
+\end{prop}
+
+\begin{eg}
+曲面 $z = xy$ の、$x^2 + y^2 \leq 1$ の部分の図形の曲面積。
+$$\int_{-1}^{1}\int_{-\sqrt{1-x^2}}^{\sqrt{1-x^2}}\sqrt{1+y^2+x^2}dydx$$
+これを、円柱座標で計算する。$x = r\cos\theta, \;y = r\sin\theta$。すると、$z = (r^2/2)\sin2\theta$。従って、
+$$\frac{\partial z}{\partial r} = r\sin2\theta,\;\frac{\partial z}{\partial \theta} = r^2\cos2\theta$$
+\begin{eqnarray}
+\lefteqn{\int_0^{2\pi}\int_0^1\sqrt{1+r^2\sin^22\theta + r^2\cos^22\theta}rdrd\theta}\\
+& = & \int_0^{2\pi}\int_0^1\sqrt{1+r^2}rdrd\theta\\
+& = & \pi\left.\frac{2}{3}(1+r^2)^{3/2}\right|_0^1\\
+& = & \frac23\pi(2\sqrt{2} - 1)
+\end{eqnarray}
+\end{eg} 
+
+\begin{prop} \label{prop:surface:sphere}
+領域 $D$ 上で定義され、球面座標（$x = r\cos\theta\cos\phi$、$y = r\sin\theta\sin\phi$、$z = r\cos\theta$）で表示された、関数 $r=f(\theta,\phi)$ で与えられる曲面積は、次の式で与えられる。
+$$\iint_D\sqrt{\Bigl(r^2 + \bigl(\frac{\partial r}{\partial \theta}\bigr)^2\Bigr)\sin^2\theta + \Bigl(\frac{\partial r}{\partial \phi}\Bigr)^2}rd\theta d\phi$$
+\end{prop}
+
+\begin{eg}
+球面 $x^2+y^2 + z^2 = 2^2$ の $x^2+y^2\leq 2x$、$z\geq 0$ の部分の曲面積。
+\end{eg}
+
+%\subsection{線積分}
+
+\mysection{級数の収束と発散}
+数列 $a_0, a_1, a_2, \ldots$ に対して、
+$$\sum_{n=0}^\infty a_n = a_0 + a_1 + \cdots + a_n + \cdots$$
+を級数 (series) という。
+$$s_n = \sum_{i = 0}^n a_i$$
+とし、$\{s_n\mid n = 0, 1, \cdots \}$ （これを、$\{s_n\}$ とも書く）が、$s$ に収束するとき、級数 $\sum a_n$ は収束すると言い
+$$s = \sum_{i = 0}^\infty a_i$$
+と書く。級数が収束すれば 
+$$|a_n| = |s_n - s_{n-1}| = |s_n - s + s - s_{n-1}| = |s_n-s| + |s_{n-1} - s| \to 0$$ 
+だから、$a_n$ は、$0$ に収束しなければならない。しかし、これは必要条件である。
+
+\begin{eg}
+等比級数。
+$$\sum_{k=0}^\infty \frac12\bigl(\frac34\bigr)^k = \frac12 + \frac12\frac34 + 
+\frac12\bigl(\frac34\bigr)^2 + \cdots $$
+一般に
+$$\sum_{k=0}^\infty a_0 r^k \to s_n = \frac{a_0(1-r^{n+1})}{1-r} \to \lim_{n\to \infty} = \frac{a_0}{1-r},\mbox{ if } |r|<1$$
+$|r| > 1$ の時は、発散、$r = 1$ の時は、無限大、$r = -1$ の時は、発散。
+従って、上の場合は、
+$$s_n = \frac{\frac12\Bigl(1 - \bigl(\frac34\bigr)^{n+1}\Bigr)}{1-\frac34} = 2\Bigl(1 - \bigl(\frac34\bigr)^{n+1}\Bigr) \to 2$$
+\end{eg}
+
+収束する二つの級数 $\sum a_n$、$\sum b_n$ と、$k\in \bR$ に対して
+$$\sum_{n=0}^\infty(a_n + b_n) = \sum_{n=0}^\infty a_n + \sum_{n=0}^\infty b_n,\;\sum_{n=0}^\infty ka_n = k\sum_{n=0}^\infty a_n$$
+が成り立つ。
+
+\begin{definition}
+各項が負でない実数 $a_n\geq 0$ の級数を正項級数という。級数 $\sum a_n$ の各項の絶対値を項とする、正項級数 $\sum |a_n|$ が収束するとき級数 $\sum a_n$ は絶対収束するという。
+\end{definition}
+
+\begin{thm} \label{thm:abs-conv}
+絶対収束する級数 $\sum a_n$ は収束する。すなわち、
+$\sum_k |a_k|$ が収束すれば、$\sum_k a_k$ も収束する。
+\end{thm}
+
+\begin{thm} \label{thm:conv:cond}
+正項級数 $\sum a_n$ において、次が成立する。
+\begin{itemize}
+\item[$(1)$] ${\displaystyle s_n = \sum_{k=0}^n a_k}$ としたとき、$\{s_n\}$ が有界（すなわち、ある、定数 $M$ について、$s_n < M$）であれば、$\sum a_n$ は、収束する。
+\item[$(2)$] ある定数 $C>0$ に関して、$a_n \leq Cb_n$ がすべての $n$ について、成立するとする。このとき、$\sum b_n$ が収束すれば、$\sum a_n$ も収束する。
+\item[$(3)$] すべての $n\geq N$ にたいして、$a_n > 0$、$b_n>0$ で、
+$$\frac{a_{n+1}}{a_n} \leq \frac{b_{n+1}}{b_n}$$
+が成立するとする。このとき、$\sum b_n$ が収束すれば、$\sum a_n$ も収束する。
+\end{itemize}
+\end{thm}
+
+\begin{thm}[コーシー (Cauchy) の判定法] \label{thm:cauchy:criterion}
+数列 ${a_n}$ に対して、${\displaystyle \lim_{n\to\infty}{}^n\!\!\sqrt{|a_n|} = A}$ とする。このとき、次が成立する。
+\begin{itemize}
+\item[$(1)$] $0\leq A < 1$ ならば、級数 $\sum_{n=0}^\infty a_n$ は、絶対収束する。
+\item[$(2)$] $A > 1$ ならば、級数 $\sum_{n=0}^\infty a_n$ は、発散する。
+\end{itemize}
+\end{thm}
+\proof
+ある自然数 $N$ が存在して、$n>N$ の時は、いつでも、$\root n\of{|a_n|} < r < 1$ となっているとする。このとき、
+$$\sum_{k=0}^\infty |a_k|\leq \sum_{k=0}^N|a_k| + \sum_{k=N+1}^\infty r^k \leq 
+\sum_{k=0}^N|a_k|  + \frac{r^{N+1}}{1-r} < \infty.$$
+従って、$(1)$ の場合は、収束する。
+$(2)$ の時、発散することは明らか。
+\qed
+
+\begin{thm}[ダランベール (d'Alembert) の判定法] \label{thm:dalembert:criterion}
+数列 ${a_n}$ に対して、$b_n\neq 0$、
+$$\lim_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right| = B$$
+ とする。このとき、次が成立する。
+\begin{itemize}
+\item[$(1)$] $0\leq B < 1$ ならば、級数 $\sum_{n=0}^\infty a_n$ は、絶対収束する。
+\item[$(2)$] $B > 1$ ならば、級数 $\sum_{n=0}^\infty a_n$ は、発散する。
+\end{itemize}
+\end{thm}
+\proof
+ある自然数 $N$ が存在して、$n>N$ の時は、いつでも、$|a_{n+1}/a_n| < r < 1$ となっているとする。このとき、$|a_n| < r^{n-N-1}|a_{N+1}|$ だから、
+$$\sum_{k=0}^\infty |a_k|\leq \sum_{k=0}^N|a_k| + \sum_{k=N+1}^\infty r^{k-N-1}|a_{N+1}| \leq 
+\sum_{k=0}^N|a_k|  + \frac{|a_{N+1}|}{1-r} < \infty.$$
+従って、$(1)$ の場合は、収束する。
+$(2)$ の時、発散することは明らか。
+\qed
+
+\medskip
+上の二つの定理において、$A = 1$、$B = 1$ の時は、収束、発散は決定できない。
+
+\begin{prop} \label{prop:1/np}
+級数 ${\displaystyle \sum_{n = 1}^\infty \frac{1}{n^p}}$ は、$p > 1$ の時、収束、$p\leq 1$ の時発散する。
+\end{prop}
+\proof
+以下の式より、$p > 1$ の時は、収束。
+$$\sum_{n = 1}^\infty \frac{1}{n^p} < 1 + \int_1^\infty \frac{1}{x^p}dx = \left.\frac{x^{-p+1}}{-p+1}\right|_1^\infty < \infty$$
+よく知られているように、$p = 1$ の時、発散するから、$p\leq 1$ の時は常に発散する。
+\qed
+
+\begin{eg}
+$0<a<1$ ならば、${\displaystyle \sum_{n=1}^\infty a^n\sin^2 n}$ は、収束する。
+
+\smallskip
+$0\leq a^n\sin^2 n\leq a^n$ だから、
+$$s_N = \sum_{n=1}^Na^n\sin^2 n\leq \sum_{n=1}^N a_n < \sum_{n=1}^\infty a_n = \frac{a}{1-a} < \infty.$$
+従って、定理~\ref{thm:conv:cond} $(1),\:(2)$ より、級数は収束する。
+\end{eg}
+
+\begin{eg}
+$a_n>0$ ならば、${\displaystyle \sum_{n=1}^\infty a_n}$ が収束すれば、${\displaystyle \sum_{n=1}^\infty a_n^2}$は、収束する。
+
+\smallskip
+$\sum a_n$ が収束するから、$n>N$ ならば、いつでも、$a_n<1$ となるような 自然数 $N$ が存在する。このときは、$a_n^2 < a_n < 1$。従って、
+\begin{eqnarray*}
+\sum_{n=0}^M a_n^2 & = & \sum_{n=0}^N a_n^2 + \sum_{n=N+1}^M a_n^2\\
+& < & \sum_{n=0}^N a_n^2 + \sum_{n=N+1}^M a_n\\
+& < & \sum_{n=0}^N a_n^2 + \sum_{n=0}^M a_n\\
+& < & \infty
+\end{eqnarray*}
+従って、定理~\ref{thm:conv:cond} $(1)$ より、級数は収束する。
+\end{eg}
+ 
+\begin{eg}
+${\displaystyle \sum_{n=1}^\infty (\root{n}\of{n}-1)^n}$.
+
+\smallskip
+$$\root{n}\of{(\root{n}\of{n}-1)^n} = \root{n}\of{n} -1 \to 0$$
+$m = \root{n}\of{n}$ とすると、$\log m = \frac{1}{n}\log n$ であるから、
+$$\lim_{x\to \infty}\frac{\log x}{x} = \lim_{x\to \infty}\frac{1}{1-x} = 0$$
+より、$n\to \infty$ のとき、$\root{n}\of{n} \to 1$ となる。
+\end{eg}
+
+\begin{eg}
+${\displaystyle \sum_{n=1}^\infty \Bigl(\frac{4n-7}{3n+5}\Bigr)^n}$.
+
+\smallskip
+${\displaystyle a_n = \Bigl(\frac{4n-7}{3n+5}\Bigr)^n}$ とする。
+$$A = \sqrt{a_n} = \left|\frac{4n-7}{3n+5}\right| = \left|\frac{4-\frac7n}{3+\frac5n}\right| = \frac43 > 1$$
+従って、この級数は、コーシーの判定条件より発散する。ダランベール商は
+$$B = \left.\Bigl(\frac{4(n+1)-7}{3(n+1)+5}\Bigr)^{n+1}\right/\Bigl(\frac{4n-7}{3n+5}\Bigr)^n = \Bigl(\frac{4n-3}{3n+8}\frac{3n+5}{4n-7}\Bigr)^n\frac{4n-3}{3n+8}\to \frac43$$
+従って、この級数は、発散する。
+\end{eg}
+
+\begin{eg}
+${\displaystyle a_n = \frac{n^n}{n!}}$
+
+\smallskip
+このときは、
+$$\frac{a_{n+1}}{a_n} = \frac{(n+1)^n(n+1)}{n^n(n+1)} = \Bigl(\frac{n+1}{n}\Bigr)^n = \Bigl(1+\frac1n\Bigr)^n \to e > 1$$
+従って、級数は発散する。
+\end{eg}
+
+\begin{eg}
+${\displaystyle a_n = \frac{(1.0001)^n}{n^5}}$
+
+\smallskip
+$$\root{n}\of{a_n} = \frac{1.0001}{\root{n}\of{n^5}} \to 1.0001$$
+だから、級数は発散。$\lim_{n\to \infty}\root{n}\of{n} = 1$。
+\end{eg}
+
+\begin{eg}
+${\displaystyle a_n = \frac{1}{n\sqrt{n}}}$
+
+\smallskip
+$$\frac{a_n}{a_{n+1}} = \frac{(n+1)\sqrt{n+1}}{n\sqrt{n}} = \Bigl(1+\frac1n\Bigr)\sqrt{1+\frac1n} \to 1, \;(n\to \infty).$$
+従って、これだけでは判定出来ないが、
+$$\sum_{n\to\infty}\frac{1}{n\sqrt{n}} > \sum_{n\to\infty}\frac{1}{n} \geq \infty$$
+\end{eg}
+
+以下の事は、有用である。
+\begin{center}\large
+\fbox{$\log x < cx^{\frac1k}\quad e^x > cx^k$}
+\end{center}
+
+
+\mysection{整級数}
+\begin{definition}
+数列 $a_0, a_1, a_2, \ldots $ に対して、
+$$\sum_{n=0}^\infty a_nx_n = a_0 + a_1a + \cdots + a_nx^n + \cdots$$
+を、点 $0$ を中心とする整級数または、巾級数という。このとき $\sum_{n=0}^\infty a_nx^n$ が収束するような実数 $x$ の範囲を収束域という。
+\end{definition}
+
+\begin{prop} [Abel]
+整級数 $\sum_{n=0}^\infty a_nx^n$ に対して、
+
+$|x|<r$ ならば、$\sum_{n=0}^\infty |a_nx^n|$ と、$\sum_{n=0}^\infty a_nx^n$ は、共に収束し、
+
+$|x|>r$ ならば、$\sum_{n=0}^\infty |a_nx^n|$ と、$\sum_{n=0}^\infty a_nx^n$ が発散するような $0\leq r\leq \infty$ が存在する。この $r$ を整級数 $\sum_{n=0}^\infty a_nx^n$ の収束半径という。
+\end{prop}
+
+\note $\sum_{n=0}^\infty a_n(x-a)^n$ を、点 $a$ を中心とした整級数とよぶ。
+
+\medskip
+巾級数 $\sum_{n=0}^\infty a_nx^n$ の収束を考えるために、$b_n = a_nx^n$ として、考えると、
+$$A = \lim_{n\to\infty}\root{n}\of{|b_n|} = \lim_{n\to\infty}\root{n}\of{|a_n|}|x|$$
+ここで、$1/r = \lim_{n\to\infty}\root{n}\of{|a_n|}$ とすると、
+$$0\leq A <1 \Leftrightarrow 0\leq \frac{|x|}r < 1 \Leftrightarrow 0\leq |x| < r$$
+従って、以下の結果を得る。
+
+\begin{prop}
+整級数 $\sum_{n=0}^\infty a_nx^n$ において、
+$$\frac1r = \lim_{n\to\infty}\root{n}\of{|a_n|} \mbox{　または、}\left(\frac1r = \lim_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|\right)$$
+ならば、収束半径は $r$ である。ただし、$1/r = \infty$ の時は、$r = 0$、$1/r = 0$ の時は、$r = \infty$ とする。
+\end{prop}
+
+\begin{eg}
+$\sum_{n=0}^\infty nx^n$ とすると、
+$$\frac1r = \lim_{n\to\infty}\root n\of n = 1$$
+だから、収束半径 $r = 1$。
+\end{eg}
+
+\begin{eg}
+${\displaystyle \sum_{n=0}^\infty\frac{2^n}{(2n+1)!}x^n}$ とすると、
+\begin{eqnarray*}
+\frac{1}r & = & \lim_{n\to\infty}\root n\of{\frac{2^n}{(2n+1)!}} = \lim_{n\to\infty}\frac{2}{\root n\of{(2n+1)!}}\\
+&\leq & \lim_{n\to\infty}\frac{2}{\root n\of{n^n}} \\
+& \leq & \lim_{n\to\infty}\frac{2}{n} = 0
+\end{eqnarray*}
+または、
+\begin{eqnarray*}
+\frac{1}r & = & \lim_{n\to\infty}\frac{2^{n+1}}{(2n+3)!}\frac{(2n+1)!}{2^n}\\
+& = & \lim_{n\to\infty}\frac{2}{(2n+3)(2n+2)} = 0
+\end{eqnarray*}
+従って、収束半径は、$r = \infty$ である。
+\end{eg}
+
+\begin{thm} \label{thm:termwise}
+整級数 ${\displaystyle f(x) = \sum_{n=0}^\infty a_nx^n}$ の収束半径を $r$（$0<r\leq \infty$）とする。このとき、次が成立する。
+\begin{itemize}
+\item[$(1)$] $|x| < r$ の範囲で、項別微分可能である。
+$$\left(\sum_{n=0}^\infty a_nx^n\right)' = \sum_{n=1}^\infty na_nx^{n-1}.$$
+\item[$(2)$] $|x| < r$ の範囲で、項別積分可能である。
+$$\int\left(\sum_{n=0}^\infty a_nx^n\right)dx = \sum_{n=1}^\infty \frac{a_n}{n+1}x^{n+1}.$$
+\item[$(3)$] $a_n$ は、一意的に定まり、
+$$a_n = \frac{f^{(n)}(0)}{n!}.$$
+\end{itemize}
+\end{thm}
+
+\begin{eg}
+$y' - y = -x^3/6$ で、$y(0) = 1$ を満たす関数。
+
+\smallskip
+$y = \sum_{n=0}^\infty a_nx^n$ とおき、ある、収束半径で収束するとする。
+$$\sum_{n=1}^\infty na_nx^{n-1} - \sum_{n=0}^\infty a_nx^n = \sum_{n=0}^\infty((n+1)a_{n+1} - a_n)x^n = -\frac{x^3}6$$
+これより、$a_1 - a_0 = 0$、$2a_2 - a_1 = 0$、$3a_3 - a_2 = 0$、$4a_4 - a_3 = -\frac16$、$(n+1)a_{n+1} - a_n = 0,\;(n>4)$ を得る。$y(0) = a_0 = 1$ だから、$a_1 = 1$、$a_2 = 1/2$、$a_3 = 1/6$、$a_n = 0,\;(n>3)$ を得る。すなわち、
+$$y = 1+x + \frac{x^2}{2} + \frac{x^3}6$$
+が、解であることが分かる。この整級数は、多項式で、収束半径は $\infty$ である。
+\end{eg}
+
+\begin{eg}
+関数の整級数展開。
+$$e^x = \sum_{n=0}^\infty \frac{x^n}{n!}$$
+まず、右辺の整級数 $y = f(x)$ の収束半径を求めてみよう。すると、
+$$\frac1r = \lim_{n\to\infty}\frac{n!}{(n+1)!} = \lim_{n\to\infty}\frac{1}{n+1} = 0$$
+これは、収束半径 $r$ が、$\infty$ であることを示している。かつ、項別微分の定理を用いると、その範囲で、$f'(x) = f(x)$ が成り立っていることが簡単に分かる。
+$$\frac{dy}{dx} = y,\;\frac{dy}{y} = dx,\; \log y = x + c,\;y = Ae^x$$
+となる。$f(0) = 1$ であることから、$f(x) = e^x$ を得る。上記の微分方程式は、変数分離型と呼ばれるが、次のようにも考えられる。
+$$x = \int dx = \int\frac{f'(x)}{f(x)}dx = \log |f(x)| + c.$$
+\end{eg}
+
+\begin{eg}
+$\arctan x$ の整級数展開。
+$$\arctan x = \tan^{-1}x = \sum_{n=0}^\infty (-1)^n\frac{x^{2n+1}}{2n+1},\;(|x|<1)$$
+これは、マクローリン展開、定理~\ref{thm:termwise} を用い、漸化式を用いいることによっても求められるが、複雑である。項別微分定理を用いると、簡単である。
+$$\frac{1}{1+x^2} = \sum_{n=0}^\infty (-1)^n{x^{2n}}$$
+は、$|x|<1$ の範囲で、絶対収束する事、$r = 1$ が収束半径であることから、この範囲で項別積分をすると、$1/(1+x^2)$ の不定積分が、$\arctan x$ であることより、
+$$\arctan x = \int_0^x \frac{dt}{1+t^2} = \sum_{n=0}^\infty (-1)^n\frac{x^{2n+1}}{2n+1}$$
+が成り立つ。
+\end{eg}
+\end{document}

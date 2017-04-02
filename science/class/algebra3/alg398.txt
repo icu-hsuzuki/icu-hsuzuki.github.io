@@ -1,0 +1,19 @@
+Algebra III   0342-5  NSMA332J, S-312, 4/M, 4/W 1998 Winter
+１．予定表
+  
+The final will be on the term exam week.
+２．参考書
+Algebra (代数学：群、環、体、加群、代数）の教科書
+○永尾汎　”代数学”　朝倉書店 （第４章が範囲ですが、全ては、出来ません）
+○Serge Lang  "Undergraduate Algebra" second edition, Springer-Verlag
+　Serge Lang   "Algebra"  third edition,  Addison-Wesley
+　服部昭　”現代代数学”、”現代代数学演習”　朝倉書店
+　van der Waerden  "Modern Algebra", Springer  
+　（銀林訳　”現代代数学”、”演習現代代数学”　東京書籍）
+○スチュアート　”ガロアの理論”　共立全書（問題が多く自習にも適する）
+   永田雅宜　”可換体論”　裳華房（授業でカバー出来ない範囲も充実している）
+　アルチン　”ガロア理論入門”　東京図書（線形代数のみで、証明が初等的）
+　高木貞治　”代数学講義”　共立出版
+
+数学の中でも最も美しい理論の一つです。楽しみましょう。　　　鈴木寛
+hsuzuki@icu.ac.jp HomePage:http://torch.icu.ac.jp/~hsuzuki/index-j.html
