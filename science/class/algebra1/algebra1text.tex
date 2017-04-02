@@ -1,14 +1,14 @@
 %original format is imported from AlgIII-text.tex on April 12, 1997
-%original : $B!V72$NDj5A$HNc!W(B1997.4.13 - 14
-%original : $B!VItJ,72!W(B1997. 4. 14
-%original : $B!V>jM>N`!W(B1997. 4. 24, 25, 26
-%original : $B!V=d2s72!W(B1997. 4. 26, 27
-%original : $B!V@55,ItJ,72$H>jM>72!W(B1997.5.10, 11, 14
-%original : $B!VF17?$H=`F17?!W(B1997. 5. 19.
-%original : $B!VF17?DjM}!W(B1997. 5. 23, 24, 30
-%original : $B!V72$N:nMQ!W(B1997. 5. 30
-%original : $B!V%"!<%Y%k72$N4pK\DjM}!W(B1997. 5. 31
-%original : $B!V%7%m!<$NDjM}!W(B1997. 6. 2, 3
+%original : 「群の定義と例」1997.4.13 - 14
+%original : 「部分群」1997. 4. 14
+%original : 「剰余類」1997. 4. 24, 25, 26
+%original : 「巡回群」1997. 4. 26, 27
+%original : 「正規部分群と剰余群」1997.5.10, 11, 14
+%original : 「同型と準同型」1997. 5. 19.
+%original : 「同型定理」1997. 5. 23, 24, 30
+%original : 「群の作用」1997. 5. 30
+%original : 「アーベル群の基本定理」1997. 5. 31
+%original : 「シローの定理」1997. 6. 2, 3
 
 \documentstyle[12pt]{jarticle}
 %A4 Size Setting
@@ -29,21 +29,21 @@
         Department of Mathematics \\ 
         International Christian University}
 
-\newtheorem{thm}{$BDjM}(B}[section]
-\newtheorem{prop}[thm]{$BL?Bj(B}
-\newtheorem{lemma}[thm]{$BJdBj(B}
-\newtheorem{cor}[thm]{$B7O(B}
-\newtheorem{exercise}{$BN}=,LdBj(B}[section]
-\newtheorem{example}{$BNc(B}[section]
-\newtheorem{problem}{$BLdBj(B}[section]
-\newtheorem{defin}{$BDj5A(B}[section]
+\newtheorem{thm}{定理}[section]
+\newtheorem{prop}[thm]{命題}
+\newtheorem{lemma}[thm]{補題}
+\newtheorem{cor}[thm]{系}
+\newtheorem{exercise}{練習問題}[section]
+\newtheorem{example}{例}[section]
+\newtheorem{problem}{問題}[section]
+\newtheorem{defin}{定義}[section]
 \newenvironment{definition}{\begin{defin} \rm}{\end{defin}}
 \newenvironment{ex}{\begin{exercise} \rm}{\end{exercise}}
 \newenvironment{eg}{\begin{example} \rm}{\end{example}}
 \newenvironment{prob}{\begin{problem} \rm}{\end{problem}}
 \newcommand{\remarks}{\vspace{2ex}\noindent{\bf Remarks.\quad}}
-\newcommand{\note}{\vspace{2ex}\noindent{\gt $BCm(B\quad}}
-\newcommand{\proof}{{\gt $B>ZL@(B\quad}}
+\newcommand{\note}{\vspace{2ex}\noindent{\gt 注\quad}}
+\newcommand{\proof}{{\gt 証明\quad}}
 \newcommand{\qed}{\hfill\hbox{\rule{6pt}{6pt}}}
 \newcommand{\bZ}{\mbox{\boldmath $Z$}}
 \newcommand{\bN}{\mbox{\boldmath $N$}}
@@ -64,176 +64,176 @@
 \maketitle
 
 \newpage
-\mysection{$B72$NDj5A$HNc(B}
+\mysection{群の定義と例}
 \begin{definition}
-$B1i;;(B $\circ$ $B$,Dj5A$5$l$F$$$k=89g$r(B $G$ $B$H$9$k!#(B
+演算 $\circ$ が定義されている集合を $G$ とする。
 \begin{itemize}
-\item[$G1$] $G$  $B$NG$0U$N85(B $a, b, c$ $B$KBP$7$F!"(B$(a\circ b)\circ c = a\circ(b\circ c)$ $B$,@.$jN)$D!#!J7k9gN'!K(B
-\item[$G2$] $G$ $B$N$"$k85(B $e$ $B$KBP$7$F!"(B$e\circ a = a\circ e = a$ $B$,(B $G$ $B$NG$0U$N85(B $a$ $B$K$D$$$F!"@.$jN)$D!#!JC10L85$NB8:_!K(B
-\item[$G3$] $G$ $B$N3F85(B $a$ $B$KBP$7(B $a\circ b = b\circ a = e$ $B$H$J$k(B $G$ $B$N85(B $b$ $B$,B8:_$9$k!#!J5U85$NB8:_!K(B
-\item[$G4$] $G$ $B$NG$0U$N85(B $a, b$ $B$KBP$7$F!"(B$a\circ b = b\circ a$ $B$,!"@.$jN)$D!#!J8r49N'!K(B
+\item[$G1$] $G$  の任意の元 $a, b, c$ に対して、$(a\circ b)\circ c = a\circ(b\circ c)$ が成り立つ。（結合律）
+\item[$G2$] $G$ のある元 $e$ に対して、$e\circ a = a\circ e = a$ が $G$ の任意の元 $a$ について、成り立つ。（単位元の存在）
+\item[$G3$] $G$ の各元 $a$ に対し $a\circ b = b\circ a = e$ となる $G$ の元 $b$ が存在する。（逆元の存在）
+\item[$G4$] $G$ の任意の元 $a, b$ に対して、$a\circ b = b\circ a$ が、成り立つ。（交換律）
 \end{itemize}
-$G1$ $B$,@.N)$9$k$H$-!"H>72(B (semigroup)$B!"(B$G1$$B!"(B$G2$ $B$,@.N)$9$k$H$-!"%b%N%$%I(B (monoid)  $G1$$B!"(B$G2$$B!"(B$G3$ $B$,@.N)$9$k$H$-!"72(B (group) $B$H$$$&!#$5$i$K(B $G4$ $B$,@.N)$9$k$b$N$r$=$l$>$l!"2D49H>72!"2D49%b%N%$%I!"2D4972$H$$$&!#2D4972$r%"!<%Y%k72(B (abelian group) $B$H$b$$$&!#(B
+$G1$ が成立するとき、半群 (semigroup)、$G1$、$G2$ が成立するとき、モノイド (monoid)  $G1$、$G2$、$G3$ が成立するとき、群 (group) という。さらに $G4$ が成立するものをそれぞれ、可換半群、可換モノイド、可換群という。可換群をアーベル群 (abelian group) ともいう。
 \end{definition}
 
 \note
-$B$3$3$G!"=89g(B $G$ $B$K1i;;(B $\circ$ $B$,Dj5A$5$l$F$$$k$H$O!"(B
+ここで、集合 $G$ に演算 $\circ$ が定義されているとは、
 $$f:G \times G \to G\;((a, b)\mapsto a\circ b)$$
-$B$,<LA|$G$"$k$3$H$r$$$&!#(B
+が写像であることをいう。
 
 \begin{eg}
-$(\bZ, +)$$B!"(B$(\bQ, +)$$B!"(B$(\bR, +)$$B!"(B$(\bC, +)$ $B$O!"2D4972$G$"$k!#$3$l$KBP$7$F!"(B$(\bZ, \cdot)$$B!"(B$(\bQ, \cdot)$$B!"(B$(\bR, \cdot)$$B!"(B$(\bC, \cdot)$ $B$O!"%b%N%$%I$G$"$k!#8e$N#3$D$O!"(B$0$ $B0J30$N85$O!"5U85$r;}$D!#$=$3$G!"(B$\#$ $B$r$D$1$?$H$-$O!"(B$0$ $B0J30$N85$rI=$9$H$9$k!#$3$N$H$-!"(B$(\bQ^{\#}, \cdot)$$B!"(B$(\bR^{\#}, \cdot)$$B!"(B$(\bC^{\#}, \cdot)$ $B$b2D4972$K$J$k!#(B
+$(\bZ, +)$、$(\bQ, +)$、$(\bR, +)$、$(\bC, +)$ は、可換群である。これに対して、$(\bZ, \cdot)$、$(\bQ, \cdot)$、$(\bR, \cdot)$、$(\bC, \cdot)$ は、モノイドである。後の３つは、$0$ 以外の元は、逆元を持つ。そこで、$\#$ をつけたときは、$0$ 以外の元を表すとする。このとき、$(\bQ^{\#}, \cdot)$、$(\bR^{\#}, \cdot)$、$(\bC^{\#}, \cdot)$ も可換群になる。
 \end{eg}
 
 \begin{eg}
-$\mat(n,\bR)$ $B$G!"(B$n$ $B<!@5J}9TNsA4BN$rI=$7!"(B$\gl(n,\bR)$ $B$G!"(B$n$ $B<!@5B'9TNsA4BN$rI=$9$b$N$H$9$k!#$3$N$H$-!"(B$(\mat(n,\bR), +)$ $B$O!"72!"(B$(\mat(n,\bR), \cdot)$ $B$O!"%b%N%$%I$G$"$k$,!"(B$(\gl(n,\bR), \cdot)$ $B$O!"72$H$J$k!#$3$l$O!"2D4972$G$O$J$$!#(B
+$\mat(n,\bR)$ で、$n$ 次正方行列全体を表し、$\gl(n,\bR)$ で、$n$ 次正則行列全体を表すものとする。このとき、$(\mat(n,\bR), +)$ は、群、$(\mat(n,\bR), \cdot)$ は、モノイドであるが、$(\gl(n,\bR), \cdot)$ は、群となる。これは、可換群ではない。
 \end{eg}
 
-$B4pK\E*@-<A(B
+基本的性質
 \begin{enumerate}
-\item $(G,\circ)$ $B$rH>72$H$9$k!#(B $a_1, a_2, \ldots, a_n\in G$ $B$KBP$7$F!"(B
+\item $(G,\circ)$ を半群とする。 $a_1, a_2, \ldots, a_n\in G$ に対して、
 $$a_1\circ a_2\circ \cdots \circ a_n = (\cdots ((a_1\circ a_2)\circ a_3)\circ \cdots )\circ a_n$$
-$B$G!"Dj5A$9$k!#$3$N$H$-!"9`$NA08e$rF~$lBX$($J$1$l$P!"3g8L$NIU$1J}$K$h$i$:1i;;$N7k2L$OF1$8$G$"$k!#(B
+で、定義する。このとき、項の前後を入れ替えなければ、括弧の付け方によらず演算の結果は同じである。
 
-$BNc$($P!"#48D$N>l9g$O#5DL$j$N3g8L$NIU$1J}$,$"$j!"$=$l$i$O!"0J2<$N$h$&$K$J$k!#(B
+例えば、４個の場合は５通りの括弧の付け方があり、それらは、以下のようになる。
 \begin{eqnarray*}
 ((a_1\circ a_2)\circ a_3)\circ a_4 & = & (a_1\circ a_2)\circ (a_3\circ a_4) = a_1\circ(a_2\circ(a_3\circ a_4))\\
 & = & a_1\circ((a_2\circ a_3)\circ a_4) = (a_1\circ(a_2\circ a_3))\circ a_4.
 \end{eqnarray*}
-$B0lHL$N;~$O$I$&$G$"$m$&$+!#(B
+一般の時はどうであろうか。
 
-\item $(G, \circ)$ $B$,%b%N%$%I$N;~$O!"C10L85$O!"$?$@0l$D!#(B
+\item $(G, \circ)$ がモノイドの時は、単位元は、ただ一つ。
 
-$e, e'\in G$ $B$,(B $a\circ e = e\circ a = a$$B!"(B$a\circ e' = e'\circ a = a$ $B$rG$0U$N85(B $a\in G$ $B$K$D$$$FK~$?$9$H$9$k!#(B
+$e, e'\in G$ が $a\circ e = e\circ a = a$、$a\circ e' = e'\circ a = a$ を任意の元 $a\in G$ について満たすとする。
 $$e = e\circ e' = e'.$$
 
-\item $(G, \circ)$ $B%b%N%$%I$K$*$$$F!"(B$u\in G$ $B$KBP$7$F!"(B$u\circ v = v\circ u = 1$ $B$J$k(B $v\in G$ $B$,B8:_$9$k$H$-!"(B$u$ $B$r@5B'85(B $v$ $B$r(B $u$ $B$N5U85$H$$$&!#%b%N%$%I$N@5B'85(B $u$ $B$N5U85$O$?$@0l$D!#(B$v$ $B$H(B $w$ $B$r(B $u$ $B$N5U85$H$9$k!#(B
+\item $(G, \circ)$ モノイドにおいて、$u\in G$ に対して、$u\circ v = v\circ u = 1$ なる $v\in G$ が存在するとき、$u$ を正則元 $v$ を $u$ の逆元という。モノイドの正則元 $u$ の逆元はただ一つ。$v$ と $w$ を $u$ の逆元とする。
 $$v = v\circ e = v\circ (u\circ w) = (v\circ u)\circ w = e\circ w = w.$$
 \end{enumerate}
 .
-$B0J8e!"(B$a\circ b$ $B$r(B $ab$$B!"(B$e$ $B$r(B $1$$B!"@5B'85(B $u$  $B$N5U85$r(B $u^{-1}$ $B$H!"@QI=<($9$k!#$^$?!"(B$x$ $B$N(B $n$ $B8D$N@Q$r!"(B$x\cdot x\cdots x = x^n$$B!"(B$x^{-1}$ $B$N(B $n$ $B8D$N@Q$r!"(B$x^{-1}\cdot x^{-1}\cdots x^{-1} = x^{-n}$ $B$H$+$/!#$3$l$K$h$j!"G$0U$N@0?t(B $n$ $B$K4X$7$F!"(B$x^n$ $B$,Dj5A$5$l$?!#(B
+以後、$a\circ b$ を $ab$、$e$ を $1$、正則元 $u$  の逆元を $u^{-1}$ と、積表示する。また、$x$ の $n$ 個の積を、$x\cdot x\cdots x = x^n$、$x^{-1}$ の $n$ 個の積を、$x^{-1}\cdot x^{-1}\cdots x^{-1} = x^{-n}$ とかく。これにより、任意の整数 $n$ に関して、$x^n$ が定義された。
 
 \begin{prop} \label{prop:x2=1}
-$B72(B $G$ $B$NG$0U$N85(B $x$ $B$KBP$7$F!"(B$x^2 = 1$ $B$,@.$jN)$F$P(B $G$ $B$O!"2D4972!J%"!<%Y%k72!K$G$"$k!#(B
+群 $G$ の任意の元 $x$ に対して、$x^2 = 1$ が成り立てば $G$ は、可換群（アーベル群）である。
 \end{prop}
 \proof
-$a, b\in G$ $B$H$9$k!#$3$N$H$-!"(B
+$a, b\in G$ とする。このとき、
 $$ab = ab(ba)^2 = abbaba = ba.$$
-$B=>$C$F!"(B$G$ $B$O!"8r49N'(B $G4$ $B$rK~$?$9!#(B
+従って、$G$ は、交換律 $G4$ を満たす。
 \qed
 
 \medskip
 \note
-$B>e$N>ZL@$G!"0EL[$NFb$K!"0lHL7k9gN'$rMQ$$$F$$$k!#(B
+上の証明で、暗黙の内に、一般結合律を用いている。
 
 \begin{prop} \label{prop:unitgroup}
-$B%b%N%$%I(B $G$ $B$N@5B'85A4BN(B $U(G)$  $B$O!"(B$G$ $B$N1i;;$K4X$7$F!"72$K$J$k!#(B
+モノイド $G$ の正則元全体 $U(G)$  は、$G$ の演算に関して、群になる。
 \end{prop}
 \proof
-$B$^$:!"1i;;$,Dj5A$G$-$k$3$H!"$9$J$o$A!"(B$G$ $B$N1i;;$K4X$7$F!"(B$U(G)$ $B$,JD$8$F$$$k$3$H$r<($9!#(B$a, b\in U(G)$ $B$H$9$k!#(B
-$abb^{-1}a^{-1} = 1$ $B$h$j!"(B$ab$ $B$O!"@5B'85!"=>$C$F!"(B$ab\in U(G)$$B!#$^$?!"(B$1\cdot 1 = 1$ $B$h$j!"(B$1\in U(G)$$B!#(B$a^{-1} a = aa^{-1} = 1$  $B$h$j!"(B$a^{-1}$ $B$O!"(B$a$ $B$r5U85$K;}$D$+$i!"(B$a^{-1}\in U(G)$$B!#$3$l$i$K$h$j!"(B$U(G)$  $B$O!"(B$G$ $B$N1i;;$K4X$7$F!"72$H$J$k!#(B
+まず、演算が定義できること、すなわち、$G$ の演算に関して、$U(G)$ が閉じていることを示す。$a, b\in U(G)$ とする。
+$abb^{-1}a^{-1} = 1$ より、$ab$ は、正則元、従って、$ab\in U(G)$。また、$1\cdot 1 = 1$ より、$1\in U(G)$。$a^{-1} a = aa^{-1} = 1$  より、$a^{-1}$ は、$a$ を逆元に持つから、$a^{-1}\in U(G)$。これらにより、$U(G)$  は、$G$ の演算に関して、群となる。
 \qed
 
 \begin{eg}
-$\bZ$ $B$r(B $B>hK!$K4X$9$k%b%N%$%I$H$9$k$H!"(B$U(\bZ) = \{\pm 1\}$ $B$H$J$j!"$3$l$O!"@Q$K4X$7$F!"72$H$J$k!#F1MM$K!"(B$U(\bQ) = \bQ^{\#}$$B!"(B$U(\bR) = \bR^{\#}$$B!"(B$U(\bC) = \bC^{\#}$ $B$J$I$b!"$3$l$+$i!"72$K$J$k!#(B$U(\mat(n,\bR)) = \gl(n,\bR)$$B!#$3$N72$r0lHL@~7A72$H$$$&!#(B
+$\bZ$ を 乗法に関するモノイドとすると、$U(\bZ) = \{\pm 1\}$ となり、これは、積に関して、群となる。同様に、$U(\bQ) = \bQ^{\#}$、$U(\bR) = \bR^{\#}$、$U(\bC) = \bC^{\#}$ なども、これから、群になる。$U(\mat(n,\bR)) = \gl(n,\bR)$。この群を一般線形群という。
 \end{eg}
 
 \newpage
-\mysection{$BItJ,72(B}
+\mysection{部分群}
 \begin{definition}
-$B72(B $G$  $B$NItJ,=89g(B $H$ $B$,(B $G$ $B$N1i;;$K4X$7$F72$K$J$k$H$-!"(B$H$ $B$r(B $G$ $B$NItJ,72$G$"$k$H$$$$!"(B$H \leq G$ $B$H=q$/!#(B
+群 $G$  の部分集合 $H$ が $G$ の演算に関して群になるとき、$H$ を $G$ の部分群であるといい、$H \leq G$ と書く。
 \end{definition}
 
 \begin{prop} \label{prop:subgroup}
-$G$ $B$r72$H$9$k!#$3$N$H$-!"<!$O!"F1CM!#(B
+$G$ を群とする。このとき、次は、同値。
 \begin{itemize}
-\item[$(1)$] $H \leq G$$B!#(B
-\item[$(2)$] $(i)$ $\emptyset \neq H \subset G$$B!"(B$(ii)$ $a, b\in H \to ab\in H$$B!"(B$(iii)$ $a\in H\to a^{-1}\in H$$B!#(B
+\item[$(1)$] $H \leq G$。
+\item[$(2)$] $(i)$ $\emptyset \neq H \subset G$、$(ii)$ $a, b\in H \to ab\in H$、$(iii)$ $a\in H\to a^{-1}\in H$。
 \end{itemize}
 \end{prop}
 \proof
-$(1)\Rightarrow (2)$ $BL@$i$+!#(B
+$(1)\Rightarrow (2)$ 明らか。
 
-$(2)\Rightarrow (1)$ $(ii)$ $B$h$j!"1i;;$K4X$7$FJD$8$F$$$k!#(B$(i)$ $B$h$j!"(B$a\in H$ $B$H$9$k$H!"(B$(iii)$$B!"(B$(ii)$ $B$h$j!"(B$a^{-1}\in H$$B!"=>$C$F!"(B$1 = aa^{-1}\in H$$B!#7k9gN'$O!"(B$G$ $B$G@.N)$7$F$$$k$+$i!"(B$H$ $B$G$b@.N)!#=>$C$F!"(B$H$ $B$O!"(B$G$ $B$N1i;;$K4X$7$F!"72$H$J$k!#(B
+$(2)\Rightarrow (1)$ $(ii)$ より、演算に関して閉じている。$(i)$ より、$a\in H$ とすると、$(iii)$、$(ii)$ より、$a^{-1}\in H$、従って、$1 = aa^{-1}\in H$。結合律は、$G$ で成立しているから、$H$ でも成立。従って、$H$ は、$G$ の演算に関して、群となる。
 \qed
 
 \medskip
-$A, B\subset G$ $B$H$9$k!#$3$N$H$-!"(B
+$A, B\subset G$ とする。このとき、
 $$AB = \{ab\mid a\in A, \;b\in B\}, \; A^{-1} = \{a^{-1}\mid a\in A\}$$
-$B$H=q$/!#FC$K!"(B$B = \{b\}$ $B$N;~!"(B$AB = Ab$$B!"(B$BA = bA$ $B$H$b$+$/!#(B
+と書く。特に、$B = \{b\}$ の時、$AB = Ab$、$BA = bA$ ともかく。
 
 \medskip
-$B$3$N5-K!$rMQ$$$k$H!"(B
+この記法を用いると、
 $$H \leq G \Leftrightarrow \emptyset \neq H \subset G,\; HH\subset H, \;H^{-1} \subset H.$$
 
 \medskip
-$B>o$K!"(B$G\leq G$$B!"(B$\{1\}\leq G$ $B$G$"$k!#$3$l$i$r<+L@$JItJ,72$H8F$S!"FC$K!"(B$\{1\}$ $B$r(B $1$ $B$H$b=q$/!#(B
+常に、$G\leq G$、$\{1\}\leq G$ である。これらを自明な部分群と呼び、特に、$\{1\}$ を $1$ とも書く。
 
 \medskip
-$S \subset G$ $B$N$H$-!"(B
+$S \subset G$ のとき、
 $$<S> = \{a_1^{n_1}\cdot a_2^{n_2}\cdots a_r^{n_r}\mid a_1, a_2, \ldots, a_r\in S, \;n_1, n_2, \ldots, n_r\in \bZ\}$$
-$B$r(B $S$ $B$G@8@.$5$l$kItJ,72$H$$$&!#$3$l$O!"<B:]!"(B$G$ $B$NItJ,72$H$J$k!#(B
+を $S$ で生成される部分群という。これは、実際、$G$ の部分群となる。
 
 \smallskip
-$BFC$K!"0l$D$N85(B $a$ $B$G@8@.$5$l$kItJ,72!"(B
+特に、一つの元 $a$ で生成される部分群、
 $$<a> = \{ a^n \mid n\in \bZ\}$$
-$B$r(B $a$ $B$G@8@.$5$l$?=d2s72$H$$$$!"(B$a$ $B$r@8@.85$H$$$&!#(B
+を $a$ で生成された巡回群といい、$a$ を生成元という。
 
 \medskip
-$B72(B $G$ $B$N85$N?t$r(B $B0L?t(B (order) $B$H$$$$!"(B$|G|$ $B$H=q$-(B $o(a) = |<a>|$ $B$r(B $B85(B $a$ $B$N0L?t$H8F$V!#(B
+群 $G$ の元の数を 位数 (order) といい、$|G|$ と書き $o(a) = |<a>|$ を 元 $a$ の位数と呼ぶ。
 
 \begin{prop} \label{prop:order_a}
-$B=d2s72(B $<a>$ $B$K$D$$$F!"(B$S = \{n\in \bN\mid a^n = 1\}$ $B$H$9$k!#(B
+巡回群 $<a>$ について、$S = \{n\in \bN\mid a^n = 1\}$ とする。
 \begin{itemize}
-\item[$(1)$] $S =\emptyset$ $B$N;~!"(B$\min S = n$  $B$H$9$k!#$3$N$H$-!"(B$o(a) = |<a>| = n$ $B$G!"<!$,@.N)!#(B
+\item[$(1)$] $S =\emptyset$ の時、$\min S = n$  とする。このとき、$o(a) = |<a>| = n$ で、次が成立。
 
-$(i)$ $a^m = 1 \Leftrightarrow n\mid m$$B!"(B$(ii)$ $<a> = \{1, a, a^2, \ldots, a^{n-1}\}$$B!#(B
-\item[$(2)$] $S \neq \emptyset$ $B$N$H$-!"(B$<a>$ $B$O!"L58B=d2s72$G!"(B$\ldots, a^{-2}, a^{-1}, 1, a, a^2, \ldots $  $B$O!"$9$Y$F0[$J$k!#(B
+$(i)$ $a^m = 1 \Leftrightarrow n\mid m$、$(ii)$ $<a> = \{1, a, a^2, \ldots, a^{n-1}\}$。
+\item[$(2)$] $S \neq \emptyset$ のとき、$<a>$ は、無限巡回群で、$\ldots, a^{-2}, a^{-1}, 1, a, a^2, \ldots $  は、すべて異なる。
 \end{itemize}
 \end{prop}
 \proof
-$(1)$ $m = nq + r$$B!"(B$q, r\in \bZ$$B!"(B$0\leq r < n$ $B$H$9$k!#(B$a^n = 1$ $B$h$j!"(B
+$(1)$ $m = nq + r$、$q, r\in \bZ$、$0\leq r < n$ とする。$a^n = 1$ より、
 $$a^m = a^{nq + r} = (a^n)^q\cdot a^r = a^r$$
-$B$G!"(B$r<n$ $B$@$+$i!"(B
+で、$r<n$ だから、
 $$a^m = 1 \Leftrightarrow r = 0 \Leftrightarrow n\mid m.$$
-$B=>$C$F!"(B$<a> \subset \{1,a, a^2, \ldots, a^{n-1}\} \subset <a>$$B!#$5$i$K!"(B
+従って、$<a> \subset \{1,a, a^2, \ldots, a^{n-1}\} \subset <a>$。さらに、
 $$a^i = a^j \to a^{i-j} = 1 \to n\mid i-j, \;0\leq i, j\leq n-1$$
-$B$h$j!"(B$i = j$$B!"=>$C$F!"(B$1, a, \ldots, a^{n-1}$ $B$O!"$9$Y$F0[$J$j!"(B$o(a) = n$$B!#(B
+より、$i = j$、従って、$1, a, \ldots, a^{n-1}$ は、すべて異なり、$o(a) = n$。
 
-$(2)$ $a^i = a^j$$B!"(B$i>j$  $B$H$9$k$H!"(B$a^{i-j} = 1$$B!"(B$i-j\in \bN$ $B$h$j!"(B$S = \emptyset$ $B$KL7=b!#=>$C$F!"(B$a^i$ $B$O!"$9$Y$F0[$J$j!"(B$<a>$ $B$O!"L58B=d2s72!#(B
+$(2)$ $a^i = a^j$、$i>j$  とすると、$a^{i-j} = 1$、$i-j\in \bN$ より、$S = \emptyset$ に矛盾。従って、$a^i$ は、すべて異なり、$<a>$ は、無限巡回群。
 \qed
 
 \begin{eg}
-$(\bZ,+)$ $BL58B=d2s72!#(B$a^i$ $B$O!"$3$N>l9g$O!"(B$ia$ $B$N$3$H!#(B
+$(\bZ,+)$ 無限巡回群。$a^i$ は、この場合は、$ia$ のこと。
 
-$(\bZ_n,+)$$B!"(B$\bZ_n = \{\bar{0}, \bar{1}, \ldots, \overline{n-1}\}$ $B$K$*$$$F!"1i;;$r(B
-$$\bar{i} + \bar{j} = \overline{i + j \mbox{ $B$N(B $n$  $B$K$h$k>jM>(B}}$$
-$B$H$9$k$H!"(B$\bZ_n$ $B$O!"0L?t(B $n$  $B$N=d2s72$K$J$k!#(B
+$(\bZ_n,+)$、$\bZ_n = \{\bar{0}, \bar{1}, \ldots, \overline{n-1}\}$ において、演算を
+$$\bar{i} + \bar{j} = \overline{i + j \mbox{ の $n$  による剰余}}$$
+とすると、$\bZ_n$ は、位数 $n$  の巡回群になる。
 \end{eg}
 
 \begin{eg}
-$X$ $B$r=89g$H$7$?$H$-!"(B$X^X$ $B$G(B $X$ $B$+$i(B $X$ $B<+?H$X$N<LA|A4BN$N=89g$rI=$9$b$N$H$9$k!#(B$\sigma\in X^X$ $B$N$H$-!"(B$a\in X$ $B$N(B $\sigma$ $B$K$h$kA|$r!"(B$a^{\sigma}$ $B$H=q$/$3$H$K$9$k!#(B$\sigma, \tau\in X^X$ $B$KBP$7$F!"(B$\sigma\cdot\tau : a\mapsto (a^{\sigma})^{\tau}$ $B$H$9$k$H!"(B$\sigma\cdot\tau\in X^X$ $B$H$J$j!"(B$X^X$ $B$O!"%b%N%$%I$K$J$k!#$3$N@5B'85$NA4BN(B $S^X = U(X^X)$ $B$O!"(B$X$ $B$+$i!"(B$X$ $B$X$NA4C1<MA4BN$H$J$k$,!"$3$l$r!"(B$X$ $B>e$NBP>N72$H$$$&!#(B$X = \{1, 2, \ldots, n\}$  $B$N$H$-$O!"(B$S^X$ $B$r(B $S_n$ $B$H=q$-!"(B$n$ $B<!BP>N72$H$$$&!#(B$\sigma\in S_n$ $B$N$H$-!"(B
+$X$ を集合としたとき、$X^X$ で $X$ から $X$ 自身への写像全体の集合を表すものとする。$\sigma\in X^X$ のとき、$a\in X$ の $\sigma$ による像を、$a^{\sigma}$ と書くことにする。$\sigma, \tau\in X^X$ に対して、$\sigma\cdot\tau : a\mapsto (a^{\sigma})^{\tau}$ とすると、$\sigma\cdot\tau\in X^X$ となり、$X^X$ は、モノイドになる。この正則元の全体 $S^X = U(X^X)$ は、$X$ から、$X$ への全単射全体となるが、これを、$X$ 上の対称群という。$X = \{1, 2, \ldots, n\}$  のときは、$S^X$ を $S_n$ と書き、$n$ 次対称群という。$\sigma\in S_n$ のとき、
 $$\sigma = {i\choose i^{\sigma}} = \left(\begin{array}{cccc}1 & 2 & \cdots & n\\ 1^{\sigma} & 2^{\sigma} & \cdots & n^{\sigma}\end{array}\right)$$
-$B$GI=$9!#$^$?!"(B$(i_1, i_2, \ldots, i_r)$ $B$G!"(B$i^{\sigma}_j = i_{j+1}$$B!"(B$(j = 1, \ldots, r-1)$$B!"(B$i_r^{\sigma} = i_1$ $B$=$l0J30$N!"(B$i$ $B$K$D$$$F$O!"(B$i^{\sigma} = i$ $B$G$"$kCV49$rI=$7!"(B$r$ $B<!$N=d2sCV49$H$$$&!##2<!$N=d2sCV49$r8_49$H$$$&!#(B
+で表す。また、$(i_1, i_2, \ldots, i_r)$ で、$i^{\sigma}_j = i_{j+1}$、$(j = 1, \ldots, r-1)$、$i_r^{\sigma} = i_1$ それ以外の、$i$ については、$i^{\sigma} = i$ である置換を表し、$r$ 次の巡回置換という。２次の巡回置換を互換という。
 \end{eg}
 
 \newpage
-\mysection{$B>jM>N`(B}
-$B$^$:!"F1CM4X78!"F1CMN`!"N`JL(B $B$K$D$$$FI|=,$7!"72$K1~MQ$9$k!#(B
+\mysection{剰余類}
+まず、同値関係、同値類、類別 について復習し、群に応用する。
 
 \begin{definition}
-$B=89g(B $A$ $B$K$*$1$k4X78(B $\sim$ $B$,!"#3$D$N>r7o(B
+集合 $A$ における関係 $\sim$ が、３つの条件
 
 \smallskip
-$(i)$ $a\sim a$\quad $(ii)$ $a\sim b \to b\sim a$\quad $(iii)$ $a\sim b, \;b\sim c\to a\sim c$$B!#(B
+$(i)$ $a\sim a$\quad $(ii)$ $a\sim b \to b\sim a$\quad $(iii)$ $a\sim b, \;b\sim c\to a\sim c$。
 
 \smallskip\noindent
-$B$rK~$?$9$H$-!"(B$\sim$ $B$rF1CM4X78(B(equiavelence relation)$B$H$$$&!#$3$N$H$-!"(B
-$C_a = \{b\in A\mid a\sim b\}$ $B!J(B$a$ $B$HF1CM$J85A4BN!K$r!"(B$a$  $B$r4^$`F1CMN`$H$$$&!#(B
+を満たすとき、$\sim$ を同値関係(equiavelence relation)という。このとき、
+$C_a = \{b\in A\mid a\sim b\}$ （$a$ と同値な元全体）を、$a$  を含む同値類という。
 \end{definition}
 
 \begin{lemma}
-$BF1CMN`$K$D$$$F<!$,@.N)!#(B
+同値類について次が成立。
 \begin{itemize}
 \item[$(1)$] $a\in C_a$
 \item[$(2)$] $b\in C_a \Leftrightarrow C_a = C_b$
@@ -241,192 +241,192 @@ $C_a = \{b\in A\mid a\sim b\}$ $B!J(B$a$ $B$HF1CM$J85A4BN!K$r!"(B$a$  $B$r4
 \end{itemize}
 \end{lemma}
 \proof
-$(1)$ $BF1CM4X78$N(B $(i)$ $B$h$jL@$i$+!#(B
+$(1)$ 同値関係の $(i)$ より明らか。
 
-$(2)$ $(ii)$ $B$K$h$C$F!"(B$b\in C_a \Leftrightarrow a\in C_b$$B!#=>$C$F!"(B$C_a\subset C_b$ $B$r<($;$P$h$$!#(B$c\in C_a$ $B$H$9$k$H!"(B$a\sim c, a\sim b$ $B$h$j!"(B$b\sim c$$B!#$3$l$O!"(B$c\in C_b$ $B$r0UL#$9$k!#(B
+$(2)$ $(ii)$ によって、$b\in C_a \Leftrightarrow a\in C_b$。従って、$C_a\subset C_b$ を示せばよい。$c\in C_a$ とすると、$a\sim c, a\sim b$ より、$b\sim c$。これは、$c\in C_b$ を意味する。
 
-$(3)$ $c\in C_a\cap C_b$ $B$H$9$k$H!"(B$(2)$ $B$h$j!"(B$C_a = C_c = C_b$ $B=>$C$F!"(B$(3)$ $B$,@.N)$9$k!#(B
+$(3)$ $c\in C_a\cap C_b$ とすると、$(2)$ より、$C_a = C_c = C_b$ 従って、$(3)$ が成立する。
 \qed
 
 \medskip
-$\{C_\lambda\mid \lambda\in \Lambda\}$ $B$r0[$J$kF1CMN`$H$7$?$H$-!"(B
+$\{C_\lambda\mid \lambda\in \Lambda\}$ を異なる同値類としたとき、
 $$A = \cup_{\lambda\in \Lambda} C_{\lambda}\; \mbox{ (disjoint union) }$$
-$B$rN`JL!"(B$a_\lambda\in C_\lambda$ $B$rBeI=85(B $\{a_\lambda\mid \lambda\in \Lambda\}$ $B$r40A4BeI=7O$H$$$&!#(B
+を類別、$a_\lambda\in C_\lambda$ を代表元 $\{a_\lambda\mid \lambda\in \Lambda\}$ を完全代表系という。
 
 \smallskip
-$B?t3X$K$*$$$F$O!"3F=j$G!"F1CM4X78$rDj5A$7!"$=$l$K$h$C$F!"N`JL$9$k$H$$$&$3$H$r$h$/MQ$$$k$,!"72$K$*$$$F$O!"MM!9$J7A$G!"F1CM4X78$,!"<+A3$KDj5A$5$l$k!#$^$:$O!"ItJ,72$,M?$($i$l$?$H$-$N$$$/$D$+$NF1CM4X78$NDj5A!"$=$l$K$h$kN`JL$H$=$N1~MQ$r=R$Y$k!#(B
+数学においては、各所で、同値関係を定義し、それによって、類別するということをよく用いるが、群においては、様々な形で、同値関係が、自然に定義される。まずは、部分群が与えられたときのいくつかの同値関係の定義、それによる類別とその応用を述べる。
 
 \medskip
-$H\leq G$ $B$N$H$-!"1&9gF1(B $\equiv_r$ $B$r!"<!$N$h$&$KDj5A$9$k!#(B
-$$a, b\in G \mbox{ $B$K$D$$$F!"(B}\;a\equiv_r b\:(\mod H) \Leftrightarrow ab^{-1}\in H.$$
-$B$3$N$H$-!"(B$\equiv_r$ $B$O!"F1CM4X78$K$J$k!#(B$a$ $B$r4^$`F1CMN`$O(B $\{b\in G\mid a\equiv_r  b\:(\mod H)\} = Ha$  $B$H$J$k!#$3$l$r1&>jM>N`$H$$$&!#$7$?$,$C$F!"(B$Ha = Hb \Leftrightarrow ab^{-1}\in H$ $B$G$"$k!#(B$G$ $B$K$*$1$k(B $H$ $B$N0[$J$k1&>jM>N`$N=89g(B $\{Ha_i\mid i\in I\}$ $B$r!"(B$H\backslash G$ $B$H=q$-!"(B$G$ $B$N1&>jM>N`$X$NJ,2r$r!"(B$G$ $B$N(B $H$ $B$K$h$k1&J,2r$H$$$&!#(B
-$$G = \sum_{i\in I}Ha_i = Ha_1 + Ha_2 + \cdots + Ha_n \;\mbox{ $B!JM-8B$N;~!K(B }$$
-$B$H$b=q$/!#(B$\{a_i \mid i\in I\}$ $B$r(B $H\backslash G$ $B$N40A4BeI=7O$H$$$&!#1&>jM>N`$N8D?t(B $|H\backslash G|$ $B$r(B $H$ $B$N(B $G$ $B$K$*$1$k;X?t(B(index) $B$H8F$S!"(B$|G:H|$ $B$H=q$/!#(B
+$H\leq G$ のとき、右合同 $\equiv_r$ を、次のように定義する。
+$$a, b\in G \mbox{ について、}\;a\equiv_r b\:(\mod H) \Leftrightarrow ab^{-1}\in H.$$
+このとき、$\equiv_r$ は、同値関係になる。$a$ を含む同値類は $\{b\in G\mid a\equiv_r  b\:(\mod H)\} = Ha$  となる。これを右剰余類という。したがって、$Ha = Hb \Leftrightarrow ab^{-1}\in H$ である。$G$ における $H$ の異なる右剰余類の集合 $\{Ha_i\mid i\in I\}$ を、$H\backslash G$ と書き、$G$ の右剰余類への分解を、$G$ の $H$ による右分解という。
+$$G = \sum_{i\in I}Ha_i = Ha_1 + Ha_2 + \cdots + Ha_n \;\mbox{ （有限の時） }$$
+とも書く。$\{a_i \mid i\in I\}$ を $H\backslash G$ の完全代表系という。右剰余類の個数 $|H\backslash G|$ を $H$ の $G$ における指数(index) と呼び、$|G:H|$ と書く。
 
 \medskip
-$B:89gF1(B $\equiv_l$ $B$r!"<!$N$h$&$KDj5A$9$k!#(B
-$$a, b\in G \mbox{ $B$K$D$$$F!"(B}a\equiv_l b\:(\mod H) \Leftrightarrow a^{-1}b\in H.$$
-$B$9$k$H!"1&9gF1$N;~$HF1MM$K!"(B$\equiv_l$ $B$O!"F1CM4X78$K$J$k!#(B$a$ $B$r4^$`F1CMN`$O(B $\{b\in G\mid a\equiv_l \:(\mod H)\} = Ha$  $B$H$J$k!#$3$l$r:8>jM>N`$H$$$$!#:8J,2r$J$I$bF1MM$KDj5A$5$l$k!#(B
+左合同 $\equiv_l$ を、次のように定義する。
+$$a, b\in G \mbox{ について、}a\equiv_l b\:(\mod H) \Leftrightarrow a^{-1}b\in H.$$
+すると、右合同の時と同様に、$\equiv_l$ は、同値関係になる。$a$ を含む同値類は $\{b\in G\mid a\equiv_l \:(\mod H)\} = Ha$  となる。これを左剰余類といい。左分解なども同様に定義される。
 
 \medskip
 $$H\backslash G = \{Ha_i\mid i\in I\}\ni Ha \leftrightarrow a^{-1}H\in \{a_i^{-1}H\mid i\in I\} = G/H$$
-$B$J$kBP1~$K$h$j!"1&>jM>N`$H!":8>jM>N`$O#1BP#1$KBP1~$9$k!#FC$K!"(B
+なる対応により、右剰余類と、左剰余類は１対１に対応する。特に、
 $$|H\backslash G| = |G/H| = |G:H|.$$
 
 \begin{thm} {\rm (Lagrange 1736--1813)}
-$G$ $B$rM-8B72(B $H$ $B$r(B $G$ $B$NItJ,72$H$9$k$H!"(B
+$G$ を有限群 $H$ を $G$ の部分群とすると、
 $$|G| = |G:H||H|.$$
-$BFC$K!"(B$H$ $B$N0L?t$b!";X?t$b6&$K(B $G$ $B$N0L?t$NLs?t$G$"$k!#(B
+特に、$H$ の位数も、指数も共に $G$ の位数の約数である。
 \end{thm}
 \proof
-$B$^$:(B $BG$0U$N(B $a\in G$ $B$KBP$7$F(B $|H| = |Ha|$ $B$G$"$k!#$3$N$3$H$O!"Nc$($P!"(B
+まず 任意の $a\in G$ に対して $|H| = |Ha|$ である。このことは、例えば、
 $$r_a : H \to Ha \;(h\mapsto ha)$$
-$B$,A4C1<M$G$"$k$3$H$+$iJ,$+$k!#=>$C$F!"(B
+が全単射であることから分かる。従って、
 $$G = \sum_{i=1}^n Ha_i$$
-$B$r(B $H$ $B$K$h$k(B $G$ $B$N1&J,2r$H$9$k$H!"(B$n = |G:H|$$B!"(B$Ha_i\cap Ha_j = \emptyset \;(i\neq j)$$B!#$3$l$h$j!"(B
+を $H$ による $G$ の右分解とすると、$n = |G:H|$、$Ha_i\cap Ha_j = \emptyset \;(i\neq j)$。これより、
 $$|G| = \left|\sum_{i=1}^n Ha_i\right| = \sum_{i = 1}^n|Ha_i| = \sum_{i=1}^n |H| = n|H| = |G:H||H|.$$
-$B$3$l$h$j!"DjM}$N<gD%$,F@$i$l$k!#(B
+これより、定理の主張が得られる。
 \qed
 
 \begin{cor} \label{cor:euler}
-$G$ $B$rM-8B72!"(B$a\in G$ $B$H$9$k!#$3$N$H$-!"(B$o(a)$ $B$O!"(B$|G|$ $B$NLs?t$G$"$k!#FC$K!"(B$a^{|G|} = 1$$B!#(B
+$G$ を有限群、$a\in G$ とする。このとき、$o(a)$ は、$|G|$ の約数である。特に、$a^{|G|} = 1$。
 \end{cor}
 \proof
-$o(a) = |<a>|$ $B$@$C$?$+$i!"(B$o(a)$ $B$bItJ,72$N0L?t$G$"$j!"(B$|G|$ $B$r3d$j@Z$k!#(B
+$o(a) = |<a>|$ だったから、$o(a)$ も部分群の位数であり、$|G|$ を割り切る。
 \qed
 
 \begin{cor} \label{cor:prime_order}
-$B0L?t(B $|G|$ $B$,AG?t$N72(B $G$ $B$O!"=d2s72$G$"$k!#(B
+位数 $|G|$ が素数の群 $G$ は、巡回群である。
 \end{cor}
 \proof
-$|G|\neq 1$ $B$@$+$i!"(B$1\neq a\in G$ $B$r<h$k!#(B$o(a)\neq 1$ $B$G!"$+$D!"(B$o(a)$ $B$O!"(B$|G|$ $B$NLs?t$G$"$k!#2>Dj$+$i!"(B$o(a) = |G|$ $B$H$J$j!"(B$|<a>| = |G|$ $B$@$+$i!"(B$G = <a>$ $B$rF@$k!#(B
+$|G|\neq 1$ だから、$1\neq a\in G$ を取る。$o(a)\neq 1$ で、かつ、$o(a)$ は、$|G|$ の約数である。仮定から、$o(a) = |G|$ となり、$|<a>| = |G|$ だから、$G = <a>$ を得る。
 \qed
 
 \begin{eg}
-$S_3 = \{1, (12), (13), (23), (123), (132)\}$ $B$N#68D$N85$N0L?t$O!"$=$l$>$l!"(B1, 2, 2, 2, 3, 3 $B$G$"$k!#(B$|S_3| = 6$ $B$@$+$i!"(B$S_3$ $B$NItJ,72$N0L?t$O!"(B1, 2, 3, 6 $B$N$$$:$l$+$G$"$k!#0L?t$,!"(B1 $B$N>l9g$O!"C10L85(B $1$ $B$@$1$+$i$J$j!"(B6 $B$N>l9g$O!"(B$S_3$ $B$H$J$k$3$H$OL@$i$+$G$"$k!#(B2 $BKt$O!"(B3  $B$N$H$-$O!"6&$KAG?t$@$+$i!"7O(B~\ref{cor:prime_order} $B$h$j!"=d2s72!"$9$Y$F!"$=$l$>$l!"0L?t$,!"(B2$B!"(B3 $B$N85$G@8@.$5$l$k$3$H$,J,$+$k!#=>$C$F!"(B$<(123)> = <(132)> = \{1,(123), (132)\}$  $B$G$"$k$3$H$KCm0U$9$k$H!"0L?t$,!"#2$NItJ,72$O!"(B$<(12)>, <(13)>, <(23)>$ $B$N#3<oN`!"0L?t$,!"(B3 $B$N$b$N$O!"(B$<(123)>$ $B$N0l$D$@$1$G$"$k$3$H$,J,$+$k!#$3$NMM$K!"(B$S_3$ $B$K$O!"A4It$G!"#68D$NItJ,72$,$"$k!#(B
+$S_3 = \{1, (12), (13), (23), (123), (132)\}$ の６個の元の位数は、それぞれ、1, 2, 2, 2, 3, 3 である。$|S_3| = 6$ だから、$S_3$ の部分群の位数は、1, 2, 3, 6 のいずれかである。位数が、1 の場合は、単位元 $1$ だけからなり、6 の場合は、$S_3$ となることは明らかである。2 又は、3  のときは、共に素数だから、系~\ref{cor:prime_order} より、巡回群、すべて、それぞれ、位数が、2、3 の元で生成されることが分かる。従って、$<(123)> = <(132)> = \{1,(123), (132)\}$  であることに注意すると、位数が、２の部分群は、$<(12)>, <(13)>, <(23)>$ の３種類、位数が、3 のものは、$<(123)>$ の一つだけであることが分かる。この様に、$S_3$ には、全部で、６個の部分群がある。
 \end{eg}
 
 \medskip
-$H$$B!"(B$K$ $B$r72(B $G$ $B$NItJ,72$H$9$k!#(B$a, b\in G$ $B$K$D$$$F!"(B
+$H$、$K$ を群 $G$ の部分群とする。$a, b\in G$ について、
 $$a\equiv b\; (\mod (H,K)) \Leftrightarrow b = hak \;\mbox{ for some }\;h\in H, k\in K$$
-$B$H$9$k$H!"$3$l$OF1CM4X78$K$J$k!#(B$a$ $B$r4^$`F1CMN`$O!"L@$i$+$K!"(B$HaK$ $B$H$J$j!"(B$(H,K)$ $B$N(B $G$ $B$K$*$1$kN>B&>jM>N`$H8F$P$l$k!#(B$G$ $B$K$*$1$k(B $(H,K)$ $B$N0[$J$kN>B&>jM>N`$N=89g(B $\{Ha_iK\mid i\in I\}$ $B$r(B $H\backslash G/K$ $B$H=q$-!"(B
+とすると、これは同値関係になる。$a$ を含む同値類は、明らかに、$HaK$ となり、$(H,K)$ の $G$ における両側剰余類と呼ばれる。$G$ における $(H,K)$ の異なる両側剰余類の集合 $\{Ha_iK\mid i\in I\}$ を $H\backslash G/K$ と書き、
 $$G = \sum_{i\in I}Ha_iK$$
-$B$r(B $G$ $B$N(B $(H,K)$ $B$K$h$kN>B&J,2r$H$$$&!#(B
+を $G$ の $(H,K)$ による両側分解という。
 
 \begin{prop} \label{prop:double-coset}
-$H, K\leq G$$B!"(B$a\in G$ $B$H$9$k!#(B$K$ $B$N(B $K\cap a^{-1}Ha$  $B$K$h$k1&J,2r$r(B
+$H, K\leq G$、$a\in G$ とする。$K$ の $K\cap a^{-1}Ha$  による右分解を
 $$K = \sum_{j\in J}(K\cap a^{-1}Ha)k_j$$
-$B$H$9$l$P!"(B$\{Hak_j\mid j\in J\}$ $B$O!"(B$HaK$ $B$K4^$^$l$k(B $H$ $B$N0[$J$k1&>jM>N`A4BN$H0lCW$9$k!#FC$K!"(B$G$ $B$,M-8B72$N;~$O!"(B
+とすれば、$\{Hak_j\mid j\in J\}$ は、$HaK$ に含まれる $H$ の異なる右剰余類全体と一致する。特に、$G$ が有限群の時は、
 $$|HaK| = |H||K:K\cap a^{-1}Ha|.$$
-$B$5$i$K!"(B$G = \sum_{i\in I}Ha_iK$ $B!J$9$J$o$A!"(B$\{a_i\mid i\in I\}$ $B$rN>B&>jM>N`$N40A4BeI=7O!K$H$9$k$H!"(B
+さらに、$G = \sum_{i\in I}Ha_iK$ （すなわち、$\{a_i\mid i\in I\}$ を両側剰余類の完全代表系）とすると、
 $$|G:H| = \sum_{i\in I}|K:K\cap a^{-1}Ha_i.$$
 \end{prop}
 \proof
-$k, k'\in K$ $B$KBP$7$F!"(B
+$k, k'\in K$ に対して、
 \begin{eqnarray*}
 Hak = Hak' & \Leftrightarrow & akk'^{-1}a^{-1}\in H\\
 	&\Leftrightarrow& kk'^{-1}\in K\cap a^{-1}Ha\\
 	&\Leftrightarrow& (K\cap a^{-1}Ha)k = (K\cap a^{-1}Ha)k'
 \end{eqnarray*}
-$B$3$l$h$j$9$Y$F$N<gD%$r$&$k!#(B
+これよりすべての主張をうる。
 \qed
 
 \begin{cor}
 $|HK| = |H||K:K\cap H| = |H||K|/|K\cap H|$.
 \end{cor}
 \proof
-$B>e$NL?Bj$K$*$$$F!"(B$a = 1$ $B$HCV$/!#(B
+上の命題において、$a = 1$ と置く。
 \qed
 
 \newpage
-\mysection{$B=d2s72(B}
-$G$ $B$,=d2s72(B (cyclic group) $B$G$"$k$H$O!"(B$G$ $B$N85(B $a$ $B$G!"(B
+\mysection{巡回群}
+$G$ が巡回群 (cyclic group) であるとは、$G$ の元 $a$ で、
 $$G = <a> = \{a^n\mid n\in bZ\}$$
-$B$H$J$k$b$N$,B8:_$9$k;v$G$"$C$?!#$3$N!"(B$a$ $B$r=d2s72(B $G$ $B$N@8@.85$H8@$&!#(B
+となるものが存在する事であった。この、$a$ を巡回群 $G$ の生成元と言う。
 
 \begin{thm} \label{thm:cyclic:subgroup}
-$G = <a>$  $B$r=d2s72$H$9$k!#$3$N$H$-!"0J2<$,@.$jN)$D!#(B
+$G = <a>$  を巡回群とする。このとき、以下が成り立つ。
 \begin{itemize}
-\item[$(1)$] $1 \neq H\leq G$  $B$H$7!"(B$h = \min\{i\in \bN\mid a^i\in H\}$ $B$H$9$k$H!"(B$H = <a^h>$$B!#FC$K=d2s72$NItJ,72$O!"=d2s72!#(B
-\item[$(2)$] $|G| = n = ml$ $B$H$9$k$H!"(B$<a^l>$ $B$O(B $G$ $B$N0L?t(B $m$ $B$N$?$@0l$D$NItJ,72$G$"$k!#(B
+\item[$(1)$] $1 \neq H\leq G$  とし、$h = \min\{i\in \bN\mid a^i\in H\}$ とすると、$H = <a^h>$。特に巡回群の部分群は、巡回群。
+\item[$(2)$] $|G| = n = ml$ とすると、$<a^l>$ は $G$ の位数 $m$ のただ一つの部分群である。
 \end{itemize}
 \end{thm}
 \proof
-$(1)$ $1\neq a^i\in H$ $B$H$9$k!#(B$a^{-i} = (a^i)^{-1}\in H$ $B$@$+$i!"(B$\{i\in\bN\mid a^i\in H\}\neq \emptyset$$B!#$=$3$G!"(B$h = \min\{i\in \bN \mid a^i\in H\}$ $B$H$9$k!#(B$a^h\in H$ $B$@$+$i(B
+$(1)$ $1\neq a^i\in H$ とする。$a^{-i} = (a^i)^{-1}\in H$ だから、$\{i\in\bN\mid a^i\in H\}\neq \emptyset$。そこで、$h = \min\{i\in \bN \mid a^i\in H\}$ とする。$a^h\in H$ だから
 $$<a^h> = \{(a^h)^i\mid i\in\bZ\}\subset H.$$
-$B0lJ}!"(B$a^i\in H$$B!"(B$i = hq + r,\;q,r\in \bZ,\;0\leq r<h$ $B$H$9$k$H!"(B
+一方、$a^i\in H$、$i = hq + r,\;q,r\in \bZ,\;0\leq r<h$ とすると、
 $$a^r = a^{i-hq} = (a^i)(a^h)^{-q}\in HH\subset H.$$
-$h$ $B$N<h$jJ}$+$i(B $r = 0$$B!#=>$C$F!"(B$a^i = a^{hq} \in <a^h>$$B!#(B
+$h$ の取り方から $r = 0$。従って、$a^i = a^{hq} \in <a^h>$。
 
-$(2)$ $G = <a> = \{1, a, a^2, \ldots, a^{n-1}\}$$B!"$=$7$F!"L?Bj(B~\ref{prop:order_a} $B$K$h$C$F!"$3$N(B $n$ $B8D$N85$O$9$Y$F0[$J$k!#(B$n = ml$ $B$H$9$k!#$3$N$H$-!"(B$m$ $B$,!"(B$(a^l)^m = 1$ $B$H$J$k!":G>.$N<+A3?t$@$+$i!"L?Bj(B~\ref{prop:order_a} $B$K$h$C$F(B
+$(2)$ $G = <a> = \{1, a, a^2, \ldots, a^{n-1}\}$、そして、命題~\ref{prop:order_a} によって、この $n$ 個の元はすべて異なる。$n = ml$ とする。このとき、$m$ が、$(a^l)^m = 1$ となる、最小の自然数だから、命題~\ref{prop:order_a} によって
 $$<a^l> = \{1,a^l,a^{2l},\ldots,a^{(m-1)l}\},\;(a^{ml} = 1)$$
-$B$O!"(B$G$ $B$N0L?t(B $m$ $B$NItJ,72$G$"$k!#0lJ}!"(B$H\leq G$$B!"(B$|H| = m$ $B$H$7!"(B$h$ $B$r(B $(1)$ $B$NMM$K<h$k$H!"(B$H = <a^h>$$B!#(B$a^n = 1\in H$ $B$@$+$i!"(B$n$ $B$O!"(B$h$ $B$NG\?t$G$"$k!#=>$C$F!"(B$(1)$ $B$h$j!"(B
-$|H| = n/h = m$$B!#$3$l$h$j!"(B$h = l$ $B$rF@$k!#(B
+は、$G$ の位数 $m$ の部分群である。一方、$H\leq G$、$|H| = m$ とし、$h$ を $(1)$ の様に取ると、$H = <a^h>$。$a^n = 1\in H$ だから、$n$ は、$h$ の倍数である。従って、$(1)$ より、
+$|H| = n/h = m$。これより、$h = l$ を得る。
 \qed
 
 \begin{prop} \label{prop:gcd}
-$(\bZ,+)$ $B$O!"(B$1$ $B$G@8@.$5$l$k=d2s72$G$"$k!#(B$a_1,a_2,\ldots,a_r\in\bZ$ $B$N:GBg8xLs?t$r(B $d$ $B$H$9$k$H!"(B
+$(\bZ,+)$ は、$1$ で生成される巡回群である。$a_1,a_2,\ldots,a_r\in\bZ$ の最大公約数を $d$ とすると、
 $$<a_1, a_2, \ldots, a_r> = <d>.$$
-$B=>$C$F!"(B$a_1x_1 + a_2x_2 + \cdots + a_rx_r = d$ $B$H$J$k!"@0?t(B $x_1, x_2, \ldots, x_r$ $B$H$J$k@0?t!"(B$x_1, x_2, \ldots, x_r$ $B$,B8:_$9$k!#(B
+従って、$a_1x_1 + a_2x_2 + \cdots + a_rx_r = d$ となる、整数 $x_1, x_2, \ldots, x_r$ となる整数、$x_1, x_2, \ldots, x_r$ が存在する。
 \end{prop}
 \proof
-$H = <a_1,a_2, \ldots, a_r> = \{a_1x_1 + a_2x_2 + \cdots + a_rx_r \mid x_1, x_2, \ldots, x_r\in\bZ\}$ $B$G$"$k!#(B$\bZ$ $B$O!"=d2s72$@$+$i!"L?Bj(B~\ref{thm:cyclic:subgroup} $B$h$j!"$=$NItJ,72$b=d2s72!#$=$3$G!"(B$H = <c> = \{cx\mid x\in \bZ\}$ $B$H$9$k$H!"(B$a_i\in H$ $B$h$j!"(B$c$ $B$O!"(B$a_i$ $B$NLs?t!"=>$C$F!"(B$c$ $B$O!"(B$d$ $B$NLs?t$G$"$k!#$^$?!"(B$c = a_1x_1 + a_2x_2 + \cdots + a_rx_r$  $B$G$"$k$3$H$h$j!"(B$d$ $B$O!"(B$c$ $B$NLs?t$G$"$k!#=>$C$F!"(B$c = \pm d$$B!#=>$C$F!"(B$<c> = <d>$$B!#(B
+$H = <a_1,a_2, \ldots, a_r> = \{a_1x_1 + a_2x_2 + \cdots + a_rx_r \mid x_1, x_2, \ldots, x_r\in\bZ\}$ である。$\bZ$ は、巡回群だから、命題~\ref{thm:cyclic:subgroup} より、その部分群も巡回群。そこで、$H = <c> = \{cx\mid x\in \bZ\}$ とすると、$a_i\in H$ より、$c$ は、$a_i$ の約数、従って、$c$ は、$d$ の約数である。また、$c = a_1x_1 + a_2x_2 + \cdots + a_rx_r$  であることより、$d$ は、$c$ の約数である。従って、$c = \pm d$。従って、$<c> = <d>$。
 \qed
 
 \medskip
-$BFs$D$N@0?t(B $m, n$  $B$N:GBg8xLs?t$r(B $(m,n)$ $B$GI=$9!#(B
+二つの整数 $m, n$  の最大公約数を $(m,n)$ で表す。
 
 \begin{prop}
-$G = <a>$ $B$r0L?t(B $n$ $B$NM-8B=d2s72$H$9$k!#$3$N$H$-!"(B
+$G = <a>$ を位数 $n$ の有限巡回群とする。このとき、
 $$<a^r> = <a^{(n,r)}>, \; o(a^r) = n/(n,r).$$
 \end{prop}
 \proof
-$d = (n,r)$ $B$H$9$k!#(B$d\mid r$ $B$h$j!"(B$<a^r>\subset <a^d>$$B!#$^$?!"L?Bj(B~\ref{prop:gcd} $B$h$j!"(B$d = nx + ry$ $B$H$J$k!"(B$x,y\in\bZ$ $B$,B8:_$9$k!#=>$C$F!"(B
+$d = (n,r)$ とする。$d\mid r$ より、$<a^r>\subset <a^d>$。また、命題~\ref{prop:gcd} より、$d = nx + ry$ となる、$x,y\in\bZ$ が存在する。従って、
 $$a^d = (a^n)^x(a^r)^y = (a^r)^y\in <a^r>.$$
-$B$9$J$o$A!"(B$<a^d>\subset <a^r>$ $B$rF@$k!#$^$?!"DjM}(B~\ref{thm:cyclic:subgroup} $B$h$j!"(B$o(a^d) = n/d$$B!#(B
+すなわち、$<a^d>\subset <a^r>$ を得る。また、定理~\ref{thm:cyclic:subgroup} より、$o(a^d) = n/d$。
 \qed
 
 \begin{eg}
-$(\bZ_n,+)$ $B$r9M$($k!#(B$\bZ_n = \{\bar{0},\bar{1},\ldots,\overline{n-1}\}$ $B$G!"(B
-$$\bar{a} + \bar{b} = \overline{a+b \mbox{ $B$r(B $n$ $B$G3d$C$?M>$j(B}}$$
-$B$G$"$C$?!#>e$G3X$s$@$3$H$h$j!"Nc$($P!"(B$\bZ_6$ $B$NItJ,72$O!"0J2<$N#4$D$G$"$k$3$H$,J,$+$k!#(B
+$(\bZ_n,+)$ を考える。$\bZ_n = \{\bar{0},\bar{1},\ldots,\overline{n-1}\}$ で、
+$$\bar{a} + \bar{b} = \overline{a+b \mbox{ を $n$ で割った余り}}$$
+であった。上で学んだことより、例えば、$\bZ_6$ の部分群は、以下の４つであることが分かる。
 $$<\bar{0}> = \{0\},\;<\bar{1}> = <\bar{5}> = \bZ_6,\;<\bar{2}> = <\bar{4}> = \{\bar{0},\bar{2},\bar{4}\},\;<\bar{3}> = \{\bar{0},\bar{3}\}.$$
 \end{eg}
 
 \begin{eg}
-$(\bZ_n,\cdot)$ $B$O!"%b%N%$%I$G$"$C$?!#1i;;$O!"(B
-$$\bar{a}\cdot\bar{b} = \overline{a\cdot b \mbox{ $B$r(B $n$ $B$G3d$C$?M>$j(B}}.$$
-$B$3$N!"@5B'85A4BN(B $\bZ^*_n = U(\bZ_n,\cdot)$ $B$O!"72$H$J$k$,!"$3$l$r4{Ls>jM>N`72$H8F$V!#$^$?!"$=$N0L?t(B $|\bZ^*_n|$ $B$r(B $\phi(n)$ $B$H=q$/!#(B$\phi$ $B$O!"%*%$%i!<4X?t(B(Euler function) $B$H8F$P$l$k!#(B
+$(\bZ_n,\cdot)$ は、モノイドであった。演算は、
+$$\bar{a}\cdot\bar{b} = \overline{a\cdot b \mbox{ を $n$ で割った余り}}.$$
+この、正則元全体 $\bZ^*_n = U(\bZ_n,\cdot)$ は、群となるが、これを既約剰余類群と呼ぶ。また、その位数 $|\bZ^*_n|$ を $\phi(n)$ と書く。$\phi$ は、オイラー関数(Euler function) と呼ばれる。
 \begin{eqnarray*}
 \bar{a}\in \bZ_n^* & \Leftrightarrow & \bar{a}\bar{b} = \bar{1} \mbox{ for some } \bar{b}\in \bZ^*_n\\
 & \Leftrightarrow & ab + qn = 1 \mbox{ for some }b,q\in \bZ\\
 & \Leftrightarrow & (a,n) = 1
 \end{eqnarray*}
-$B$3$N$3$H$+$i!"(B$\bZ^*_6 = \{\bar{1},\bar{5}\}$ $B$O!"0L?t(B $\phi(6) = 2$ $B$N=d2s72$G$"$k$3$H!"(B $\bZ^*_5 = \{\bar{1},\bar{2},\bar{3},\bar{4}\}$ $B$O!"0L?t(B $\phi(5) = 4$ $B$N=d2s72$G$"$k$3$H$,J,$+$k!#(B$p$ $B$rAG?t$H$9$k$H!"(B$\phi(p) = p-1$ $B$G$"$k$,!"(B$\bZ^*_p$  $B$O!"=d2s72$G$"$k$3$H$,J,$+$k!#$7$+$7!"0lHLE*$K$O!"(B$\bZ^*_n$ $B$O!"=d2s72$G$"$k$3$H$b!"$=$&$G$J$$$3$H$b$"$k!#(B 
-$B$^$?!"7O(B~\ref{cor:euler} $B$h$j0J2<$,@.$jN)$D$3$H$bJ,$+$k!#(B
-$(a,6) = 1 \to a^2 \equiv 1 \;(\mod 6)$$B!"$^$?!"(B$(a,5) = 1 \to a^4 \equiv 1 \;(\mod 5)$$B!#(B
-$B$h$j0lHL$K$O!"(B$(a,n) = 1\to a^{\phi(n)}\equiv 1 \;(\mod n)$$B!#(B$n$ $B$,AG?t$N;~$O!"%U%'%k%^!<$N>.DjM}$H8F$P$l!"0lHL$N>l9g$O!"%*%$%i!<$NDjM}$H8F$P$l$k!#(B
+このことから、$\bZ^*_6 = \{\bar{1},\bar{5}\}$ は、位数 $\phi(6) = 2$ の巡回群であること、 $\bZ^*_5 = \{\bar{1},\bar{2},\bar{3},\bar{4}\}$ は、位数 $\phi(5) = 4$ の巡回群であることが分かる。$p$ を素数とすると、$\phi(p) = p-1$ であるが、$\bZ^*_p$  は、巡回群であることが分かる。しかし、一般的には、$\bZ^*_n$ は、巡回群であることも、そうでないこともある。 
+また、系~\ref{cor:euler} より以下が成り立つことも分かる。
+$(a,6) = 1 \to a^2 \equiv 1 \;(\mod 6)$、また、$(a,5) = 1 \to a^4 \equiv 1 \;(\mod 5)$。
+より一般には、$(a,n) = 1\to a^{\phi(n)}\equiv 1 \;(\mod n)$。$n$ が素数の時は、フェルマーの小定理と呼ばれ、一般の場合は、オイラーの定理と呼ばれる。
 \end{eg}
 
 \newpage
-\mysection{$B@55,ItJ,72$H>jM>72(B}
+\mysection{正規部分群と剰余群}
 \begin{definition}
-$G$ $B$NItJ,72(B $N$ $B$,!"(B$G$ $B$N$9$Y$F$N85(B $a\in G$ $B$K$D$$$F(B $a^{-1}Na = N$ $B$,@.$jN)$D$H$-!"(B$N$ $B$r(B $G$ $B$N@55,ItJ,72$G$"$k$H8@$$!"(B$N\lhd G$ $B$H=q$/!#$3$N>r7o$O!"(B$Na = aN$ $B$H$b=q$/$3$H$,=PMh$k!#(B
+$G$ の部分群 $N$ が、$G$ のすべての元 $a\in G$ について $a^{-1}Na = N$ が成り立つとき、$N$ を $G$ の正規部分群であると言い、$N\lhd G$ と書く。この条件は、$Na = aN$ とも書くことが出来る。
 \end{definition}
 
-$B%"!<%Y%k72$NItJ,72$O!"$9$Y$F@55,ItJ,72$G$"$k!#>r7o$O!"(B$G$ $B$N85(B $a$ $B$H!"(B$N$ $B$N85$H$,8r492DG=$H8@$C$F$$$k$N$G$O$J$$!#(B$aN$ $B$H!"(B$Na$ $B$,!"=89g$H$7$FF1$8$@$H8@$&$3$H$G$"$k!#(B
+アーベル群の部分群は、すべて正規部分群である。条件は、$G$ の元 $a$ と、$N$ の元とが交換可能と言っているのではない。$aN$ と、$Na$ が、集合として同じだと言うことである。
 
 \begin{lemma} \label{lemma:factorgp}
-$G$ $B$NItJ,72(B $N$ $B$K$D$$$F<!$OF1CM!#(B
+$G$ の部分群 $N$ について次は同値。
 $$N \lhd G \Leftrightarrow (aN)(bN) = abN \;\mbox{ for all }a,b\in G.$$
 \end{lemma}
 \proof
 $(\Rightarrow)\quad$
-$aNbN = abNN = abN$$B!#(B$H\leq G \Rightarrow HH = H$ $B$G$"$k$3$H$KCm0U!#(B
+$aNbN = abNN = abN$。$H\leq G \Rightarrow HH = H$ であることに注意。
 
 \smallskip
 $(\Leftarrow)\quad$
-$a^{-1}\to a$$B!"(B$a\to b$$B!"$^$?!"(B$a \to a$$B!"(B$a^{-1}\to b$ $B$H$7$F!"E,MQ$9$k$3$H$K$h$C$F!"(B
+$a^{-1}\to a$、$a\to b$、また、$a \to a$、$a^{-1}\to b$ として、適用することによって、
 \begin{eqnarray*}
 a^{-1}Na & \subset & a^{-1}NaN = a^{-1}aN = N \\
 	& = & a^{-1}aNa^{-1}a \subset a^{-1}aNa^{-1}Na = a^{-1}Na
@@ -434,81 +434,81 @@ a^{-1}Na & \subset & a^{-1}NaN = a^{-1}aN = N \\
 \qed
 
 \medskip
-$N\lhd G$ $B$H$9$k!#(B$aN, bN\in G/N$ $B$H$9$k$H$-!"JdBj(B~\ref{lemma:factorgp} $B$K$h$j!"(B
+$N\lhd G$ とする。$aN, bN\in G/N$ とするとき、補題~\ref{lemma:factorgp} により、
 $$aNbN = abN \in G/N.$$
-$B=>$C$F!"$3$l$K$h$j(B $G/N$ $B$K1i;;$,Dj5A$G$-$k!#$3$N1i;;$K$h$j(B $G/N$ $B$O72$K$J$k!#$3$l$r(B $G$ $B$N(B $N$ $B$K$h$k>jM>72(B (factor group) $B$H8F$V!#$3$3$G!"(B
+従って、これにより $G/N$ に演算が定義できる。この演算により $G/N$ は群になる。これを $G$ の $N$ による剰余群 (factor group) と呼ぶ。ここで、
 $$1_{G/N} = N = 1N,\;(aN)^{-1} = a^{-1}N.$$
 
 \begin{eg}
-$\bZ$ $B$O%"!<%Y%k72$G$"$k$+$i!"(B$n\bZ \lhd \bZ$$B!#$3$3$G!"(B
+$\bZ$ はアーベル群であるから、$n\bZ \lhd \bZ$。ここで、
 $$a \equiv_r b\;(\mod\; n\bZ) \Leftrightarrow a\equiv b\;(\mod\; n).$$
-$\bZ/n\bZ = \{n\bZ, 1 + n\bZ, \ldots, n-1+n\bZ\}$  $B$G!"1i;;$O!"(B
+$\bZ/n\bZ = \{n\bZ, 1 + n\bZ, \ldots, n-1+n\bZ\}$  で、演算は、
 $$(a + n\bZ) + (b + b\bZ) = (a+b)+n\bZ  = \overline{a+b} + n\bZ$$
-$B=>$C$F!"(B$\bZ/n\bZ$ $B$O!"K\<AE*$K(B $\bZ_n$ $B$HF1$8$G$"$k!#!J$3$N$3$H$rF17?$H$$$&!#!K(B
+従って、$\bZ/n\bZ$ は、本質的に $\bZ_n$ と同じである。（このことを同型という。）
 \end{eg}
 
 \begin{lemma} \label{lemma:index2}
-$B72(B $G$ $B$N;X?t(B $2$ $B$NItJ,72$O!"@55,ItJ,72$G$"$k!#(B
+群 $G$ の指数 $2$ の部分群は、正規部分群である。
 \end{lemma}
 \proof
-$a\in H$ $B$H$9$k$H!"(B$Ha = H = aH$$B!#0lJ}!"(B$a\not\in H$ $B$H$9$k$H!"(B$aH \neq H \neq Ha$ $B$@$+$i!"(B$|G:H| = 2$ $B$@$+$i!"(B$G$ $B$N(B $H$ $B$K$h$k1&J,2r$b:8J,2r$b(B
+$a\in H$ とすると、$Ha = H = aH$。一方、$a\not\in H$ とすると、$aH \neq H \neq Ha$ だから、$|G:H| = 2$ だから、$G$ の $H$ による右分解も左分解も
 $$G = H + Ha = H + aH$$
-$B$H$J$k!#=>$C$F!"(B$aH = G - H = Ha$$B!#$3$l$O!">e$G<($7$?$3$H$H$"$o$;$k$H!"(B$G$ $B$N$9$Y$F$N85(B $a$ $B$K$D$$$F!"(B$aH = Ha$ $B$,@.$jN)$D!#$9$J$o$A(B $H\lhd G$$B!#(B
+となる。従って、$aH = G - H = Ha$。これは、上で示したこととあわせると、$G$ のすべての元 $a$ について、$aH = Ha$ が成り立つ。すなわち $H\lhd G$。
 \qed
 
 \begin{eg} \label{eg:ansn}
-$|S_n:A_n| = 2$ $B!J(BExercise 3.5 $B;2>H(B) $B$@$+$i!"(B$A_n\lhd S_n$$B!#$5$i$K!"(B
-$S_n/A_n = \{A_n, (12)A_n\}$ $B$O!"0L?t(B $2$ $B$N=d2s72$G$"$k!#$3$l$O!"K\<AE*$K!"(B$\bZ_2$$B!"(B$(\{\pm 1\},\cdot)$  $B$HF1$8!JF17?!K$G$"$k!#(B
+$|S_n:A_n| = 2$ （Exercise 3.5 参照) だから、$A_n\lhd S_n$。さらに、
+$S_n/A_n = \{A_n, (12)A_n\}$ は、位数 $2$ の巡回群である。これは、本質的に、$\bZ_2$、$(\{\pm 1\},\cdot)$  と同じ（同型）である。
 \end{eg}
 
 \begin{definition}
-$G$  $B$r72!"(B$S\subset G$ $B$H$9$k!#$3$N$H$-!"(B
+$G$  を群、$S\subset G$ とする。このとき、
 \begin{enumerate}
-\item $N_G(S) = \{x\in G\mid x^{-1}Sx = S\}$ $B$r(B $S$ $B$N@55,2=72(B (normalizer) $B$H$$$&!#(B
-\item $C_G(S) = \{x\in G\mid x^{-1}sx = s, \;\mbox{ for all }s\in S\}$ $B$r(B $S$ $B$NCf?42=72(B (centralizer) $B$H$$$&!#(B
-\item $Z(G) = C_G(G)$ $B$r(B $G$ $B$NCf?4$H$$$&!#(B
-\item $S = \{a\}$ $B$N$H$-$O!"(B$N_G(S) = C_G(S)$ $B$G$"$j!"$3$l$r!"(B$C_G(a)$ $B$H$b=q$/!#(B
+\item $N_G(S) = \{x\in G\mid x^{-1}Sx = S\}$ を $S$ の正規化群 (normalizer) という。
+\item $C_G(S) = \{x\in G\mid x^{-1}sx = s, \;\mbox{ for all }s\in S\}$ を $S$ の中心化群 (centralizer) という。
+\item $Z(G) = C_G(G)$ を $G$ の中心という。
+\item $S = \{a\}$ のときは、$N_G(S) = C_G(S)$ であり、これを、$C_G(a)$ とも書く。
 \end{enumerate}
 \end{definition}
 
-$B4JC1$KDj5A$+$iJ,$+$k$h$&$K!"(B$H\leq G$ $B$H$9$k$H!"(B
+簡単に定義から分かるように、$H\leq G$ とすると、
 $$H\lhd G \Leftrightarrow N_G(H) = G.$$
 
 \begin{eg}
-$G = S_3$$B!"(B$H = <(123)> = \{1,(123),(132)\} = A_3$$B!"(B$C_G(H) = H$$B!"(B$N_G(H) = G$$B!#(B
-$(12)^{-1}(123)(12) = (132)$ $B$G$"$k$3$H$KCm0U!#(B
+$G = S_3$、$H = <(123)> = \{1,(123),(132)\} = A_3$、$C_G(H) = H$、$N_G(H) = G$。
+$(12)^{-1}(123)(12) = (132)$ であることに注意。
 \end{eg}
 
-$S \subset G$$B!"(B$x\in G$ $B$N$H$-!"(B$x^{-1}Sx = \{x^{-1}sx\mid s\in S\}$ $B$r!"(B$S^x$ $B$H$b=q$-!"(B$S$ $B$N(B $x$ $B$K$h$k6&Lr(B (conjugate) $B$H8@$&!#(B$S, T\subset G$ $B$K$D$$$F!"(B$T = S^x$ $B$H$J$k(B$x\in G$ $B$,B8:_$9$k$H$-!"(B$T$ $B$H(B $S$ $B$O!"6&Lr$G$"$k$H8@$$!"(B$T\sim_G S$ $B$H=q$/!#(B$\sim_G$ $B$O!"(B${\cal P}(G) = 2^G$ $B>e$NF1CM4X78!#$^$?!"(B$G$ $B$N85$O!"(B$a\sim_G b$ ($B$9$J$o$A(B $\{a\}\sim_G \{b\}$) $B$G$"$k;~!"(B$a$ $B$H(B $b$ $B$O!"6&Lr$G$"$k$H$$$&!#$=$NF1CMN`$r6&LrN`$H$$$&!#(B
-$B$9$J$o$A(B 
+$S \subset G$、$x\in G$ のとき、$x^{-1}Sx = \{x^{-1}sx\mid s\in S\}$ を、$S^x$ とも書き、$S$ の $x$ による共役 (conjugate) と言う。$S, T\subset G$ について、$T = S^x$ となる$x\in G$ が存在するとき、$T$ と $S$ は、共役であると言い、$T\sim_G S$ と書く。$\sim_G$ は、${\cal P}(G) = 2^G$ 上の同値関係。また、$G$ の元は、$a\sim_G b$ (すなわち $\{a\}\sim_G \{b\}$) である時、$a$ と $b$ は、共役であるという。その同値類を共役類という。
+すなわち 
 $$a\sim_G b\Leftrightarrow b = g^{-1}ag\;\mbox{ for some }g\in G.$$
 
-$N\lhd G$ $B$H$9$k$H!"(B$a\in N$ $B$KBP$7(B $g^{-1}ag \in g^{-1}Ng = N$$B!#$h$C$F!"(B$N$ $B$O!"(B$G$ $B$N6&LrN`$NOB=89g$G$"$k!#$3$N$3$H$rMQ$$$k$H!"@55,ItJ,72$r7hDj$9$k$3$H$,3Z$K$J$k$3$H$,B?$$!#(B
+$N\lhd G$ とすると、$a\in N$ に対し $g^{-1}ag \in g^{-1}Ng = N$。よって、$N$ は、$G$ の共役類の和集合である。このことを用いると、正規部分群を決定することが楽になることが多い。
 
 \begin{eg}
-$S_3$ $B$N6&LrN`$O!"(B$\{1\}, \;\{(12),(13),(23)\}, \;\{(123),(132)\}$ $B$G!"ItJ,72$N0L?t$O!"72$N0L?t$NLs?t$@$+$i!"(B$S_3$ $B$N@55,ItJ,72$O!"(B$1,\;A_3, \;S_3$ $B$N$_$G$"$k!#(B
+$S_3$ の共役類は、$\{1\}, \;\{(12),(13),(23)\}, \;\{(123),(132)\}$ で、部分群の位数は、群の位数の約数だから、$S_3$ の正規部分群は、$1,\;A_3, \;S_3$ のみである。
 
 \smallskip
-$B$h$j0lHL$K(B
-$$\tau = {i \choose i^{\tau}},\;\sigma = {i\choose i^{\sigma}} \;\mbox{ $B$H$9$k$H!"(B}\tau^{-1} = {i^{\tau} \choose i}$$
-$B$3$l$h$j!"0J2<$rF@$k!#(B
+より一般に
+$$\tau = {i \choose i^{\tau}},\;\sigma = {i\choose i^{\sigma}} \;\mbox{ とすると、}\tau^{-1} = {i^{\tau} \choose i}$$
+これより、以下を得る。
 $$\tau^{-1}\sigma\tau = {i^{\tau} \choose i}{i\choose i^{\sigma}}{i \choose i^{\tau}} = {i^{\tau}\choose i^{\sigma\tau}}.$$
-$BNc$($P!"(B
+例えば、
 $$\tau = \left(\begin{array}{ccccc}1 & 2 & 3 & 4 & 5 \\ 5 & 1 & 2 & 4 & 3\end{array}\right), 
 \sigma = (123)(45) \to \tau^{-1}\sigma\tau = (512)(43).$$
-$B=>$C$F!"=d2sCV49$X$NJ,2r$N7?$O!"J]$?$l!"5U$K!"7?$,F1$8$b$N$O!"6&Lr$G$"$k$3$H$bJ,$+$k!#(B(Exersise 5.8 $B;2>H(B)
+従って、巡回置換への分解の型は、保たれ、逆に、型が同じものは、共役であることも分かる。(Exersise 5.8 参照)
 \end{eg}
 
 \newpage
-\mysection{$BF17?$H=`F17?(B}
-$B72(B $G$ $B$+$i(B $B72(B $G'$ $B$X$NA4C1<M(B $f:G\to G'$ $B$,$"$C$F!"(B
+\mysection{同型と準同型}
+群 $G$ から 群 $G'$ への全単射 $f:G\to G'$ があって、
 $$f(ab) = f(a)f(b)\;(\mbox{for all }a,b\in G)$$
-$B$rK~$?$9$H$-!"(B$G$ $B$H(B $G'$ $B$OF17?$G$"$k$H8@$$!"(B$G\simeq G'$ $B$HI=$9!#$3$N$H$-!"(B$f$ $B$r(B $G$ $B$+$i(B $G'$ $B$X$NF17?<LA|$H$$$&!#(B
+を満たすとき、$G$ と $G'$ は同型であると言い、$G\simeq G'$ と表す。このとき、$f$ を $G$ から $G'$ への同型写像という。
 
 \smallskip
-$BF17?$H$O(B $B$"$k#1BP#1BP1~$N$b$H$G!">h@QI=$,F1$8$H8@$&$3$H$G$"$k!#(B
+同型とは ある１対１対応のもとで、乗積表が同じと言うことである。
 
-\begin{eg} $\omega = (-1+\sqrt{-3})/2$ $B$H$9$k!#(B$\omega$ $B$O!"(B1 $B$N86;O(B 3 $B>h:,$G$"$k!#(B
+\begin{eg} $\omega = (-1+\sqrt{-3})/2$ とする。$\omega$ は、1 の原始 3 乗根である。
 $$\begin{array}{|c||c|c|c|}\multicolumn{4}{c}{\bZ_3}\\
 \hline + & \bar{0} & \bar{1} & \bar{2}\\
 \hline\hline \bar{0} & \bar{0} & \bar{1} & \bar{2}\\
@@ -535,142 +535,142 @@ $$\begin{array}{|c||c|c|c|}\multicolumn{4}{c}{\bZ_3}\\
 \end{eg}
 
 \begin{eg}
-$G = <a> = \{a^n\mid n\in \bZ\}$ $B$rL58B=d2s72$H$9$k!#(B$\bZ$ $B$GM-M}@0?t$N2CK!72$rI=$9!#(B
+$G = <a> = \{a^n\mid n\in \bZ\}$ を無限巡回群とする。$\bZ$ で有理整数の加法群を表す。
 $$f : \bZ \to <a> = \{a^n\mid n\in \bZ\}\;(n\mapsto a^n)$$
-$B$H$9$k$H!"$3$l$O!"F17?<LA|$G$"$k!#<B:]!"A4C1<M$O(B $BL?Bj(B~\ref{prop:order_a} $B$h$jL@$i$+!#$^$?!"(B
+とすると、これは、同型写像である。実際、全単射は 命題~\ref{prop:order_a} より明らか。また、
 $$f(i + j) = a^{i+j} = a^ia^j = f(i)f(j)$$
-$B$rK~$?$9!#(B$\bZ$ $B$N1i;;$r(B $+$ $B$G!"(B$G$ $B$N1i;;$r@Q$G=q$$$F$$$k$3$H$KCm0U!#(B
+を満たす。$\bZ$ の演算を $+$ で、$G$ の演算を積で書いていることに注意。
 \end{eg}
 
 \begin{eg}
-$G = <a> = \{1, a, a^2, \ldots, a^{n-1}\}$ $B$r0L?t(B $n$ $B$N=d2s72$H$9$k!#(B
+$G = <a> = \{1, a, a^2, \ldots, a^{n-1}\}$ を位数 $n$ の巡回群とする。
 $$f:\bZ/n\bZ \to <a> = \{1, a, a^2, \ldots, a^{n-1}\} \;(i + n\bZ \mapsto a^i)$$
-$B$H$9$k!#$^$:!"(B$f$ $B$O<LA|$H$J$k$3$H$r3NG'$9$k!#(B
+とする。まず、$f$ は写像となることを確認する。
 $$i + n\bZ = j + n\bZ \Leftrightarrow i - j \in n\bZ \Leftrightarrow n\mid i-j \Leftrightarrow a^i = a^j.$$
-$B$3$l$O!"(B$i + n\bZ$ $B$rB>$NI=$7J}(B $j + n\bZ$ $B$HI=$7$F$b>jM>N`$H$7$FF1$8$J$i$P!"(B$a^i = a^j$ $B$G$"$k;v$r8@$C$F$$$k!#=>$C$F!"(B$\bZ/n\bZ$ $B$N85$KBP$7$F!"(B$<a>$ $B$N85$,0l$DDj$^$k!#$9$J$o$A(B $f$ $B$O!"<LA|$G$"$k!#$3$N$3$H$r(B $f$ $B$r(B ($B<LA|$H$7$F(B) well-defined $B$G$"$k$H$$$&!#$^$?!"$3$N<LA|$,A4C1<M$G$"$k$3$H$O!"L@$i$+!#(B
+これは、$i + n\bZ$ を他の表し方 $j + n\bZ$ と表しても剰余類として同じならば、$a^i = a^j$ である事を言っている。従って、$\bZ/n\bZ$ の元に対して、$<a>$ の元が一つ定まる。すなわち $f$ は、写像である。このことを $f$ を (写像として) well-defined であるという。また、この写像が全単射であることは、明らか。
 $$f((i+n\bZ) + (j+n\bZ)) = f(i+j + n\bZ) = a^{i+j} = a^ia^j = f(i+n\bZ)f(j+n\bZ)$$
-$B=>$C$F!"(B$f$ $B$OF17?<LA|$G!"(B$G$$B!JG$0U$N0L?t(B $n$ $B$N=d2s72!K$O!"(B$\bZ/n\bZ$ $B$HF17?$G$"$k!#(B
-$B!J>e$G!"(B$f(i+j + n\bZ) = a^{i+j}$ $B$H=PMh$?$N$O!"0lHL$K(B $i + n\bZ$ $B$NBP1~@h$r(B $a^i$ $B$H$7!"$3$l$,(B well-defined $B$G$"$k$3$H$r<($7$F$"$k$+$i$G$"$k!#$b$7!"(B$i + n\bZ$ $B$N(B $i$ $B$rNc$($P!"(B$0,1,\ldots, n-1$  $B$K8BDj$9$l$P!"<LA|$NDj5A$OLdBj$J$$$,!"(B$f(i+j + n\bZ) = a^{i+j}$ $B$O!"L@$i$+$G$O$J$$!#0J2<$K8=$l$k=`F17?DjM}$N>ZL@$HHf$Y$h!#!K(B
+従って、$f$ は同型写像で、$G$（任意の位数 $n$ の巡回群）は、$\bZ/n\bZ$ と同型である。
+（上で、$f(i+j + n\bZ) = a^{i+j}$ と出来たのは、一般に $i + n\bZ$ の対応先を $a^i$ とし、これが well-defined であることを示してあるからである。もし、$i + n\bZ$ の $i$ を例えば、$0,1,\ldots, n-1$  に限定すれば、写像の定義は問題ないが、$f(i+j + n\bZ) = a^{i+j}$ は、明らかではない。以下に現れる準同型定理の証明と比べよ。）
 \end{eg}
 
 \begin{eg}
-$\bR$ $B$G!"<B?tA4BN$+$i$J$k2CK!72$rI=$7!"(B$\bR^+$ $B$G!"@5$N<B?t$+$i$J$k>hK!72$rI=$9$b$N$H$9$k!#$3$l$i$O!"0J2<$NBP1~$K$h$C$FF17?$G$"$k!#(B
+$\bR$ で、実数全体からなる加法群を表し、$\bR^+$ で、正の実数からなる乗法群を表すものとする。これらは、以下の対応によって同型である。
 $$f : \bR \to \bR^+\;(a\mapsto e^a).$$
-$B<B:](B $f(a+b) = e^{a+b} = e^ae^b = f(a)f(b)$ $B$rK~$?$9!#(B$f$ $B$,A4C1<M$G$"$k$3$H$r<($9$N$O!"D>@\$K$b=PMh$k$,!"(B$g : \bR^+ \to \bR\;(a\mapsto \log a)$ $B$,!"(B$fg = id_{\bR^+}$$B!"(B$gf = id_{\bR}$ $B$rK~$?$9$3$H$+$i$b8@$($k!#(B
+実際 $f(a+b) = e^{a+b} = e^ae^b = f(a)f(b)$ を満たす。$f$ が全単射であることを示すのは、直接にも出来るが、$g : \bR^+ \to \bR\;(a\mapsto \log a)$ が、$fg = id_{\bR^+}$、$gf = id_{\bR}$ を満たすことからも言える。
 
 \smallskip
-$B0lHL$K!"<LA|(B $f:X\to Y$$B!"(B$g:Y\to X$ $B$,M?$($i$l$?$H$-!"(B$gf = id_X$ $B$J$i$P!"(B$f$ $B$,C1<M!"(B$g$ $B$,A4<M$rK~$?$9!#(B
+一般に、写像 $f:X\to Y$、$g:Y\to X$ が与えられたとき、$gf = id_X$ ならば、$f$ が単射、$g$ が全射を満たす。
 \end{eg}
 
 \begin{definition}
-$G$$B!"(B$G'$ $B$r72$H$9$k!#<LA|(B $f:G\to G'$ $B$,(B
+$G$、$G'$ を群とする。写像 $f:G\to G'$ が
 $$f(ab) = f(a)f(b)\;(\mbox{for all }a,b\in G)$$
-$B$rK~$?$9$H$-!"(B$f$ $B$r(B $B=`F17?!J<LA|!K(B(homomorphism) $B$H8@$&!#A4C1<M=`F17?$r!"F17?<LA|$H8@$&!#(B
+を満たすとき、$f$ を 準同型（写像）(homomorphism) と言う。全単射準同型を、同型写像と言う。
 \end{definition}
 
 \begin{prop} \label{prop:ker+im}
-$f:G\to G'$ $B$r(B $B=`F17?$H$9$k!#$3$N$H$-!"<!$,@.N)$9$k!#(B
+$f:G\to G'$ を 準同型とする。このとき、次が成立する。
 \begin{itemize}
-\item[$(1)$] $f(1_G) = 1_{G'}$$B!#(B
-\item[$(2)$] $G$ $B$NG$0U$N85(B $a$ $B$K$D$$$F!"(B$f(a^{-1}) = f(a)^{-1}$$B!#(B
-\item[$(3)$] $\im f = \{f(a)\mid \in G\}\leq G'$$B!"B($A!"(B$f$ $B$NA|$O(B $G'$ $B$NItJ,72$G$"$k!#(B
-\item[$(4)$] $\ker f = f^{-1}(1_{G'}) = \{a\in G\mid f(a) = 1_{G'}\}\lhd G$$B!"B($A!"(B$f$ $B$N3K$O(B $G$ $B$N@55,ItJ,72$G$"$k!#(B
+\item[$(1)$] $f(1_G) = 1_{G'}$。
+\item[$(2)$] $G$ の任意の元 $a$ について、$f(a^{-1}) = f(a)^{-1}$。
+\item[$(3)$] $\im f = \{f(a)\mid \in G\}\leq G'$、即ち、$f$ の像は $G'$ の部分群である。
+\item[$(4)$] $\ker f = f^{-1}(1_{G'}) = \{a\in G\mid f(a) = 1_{G'}\}\lhd G$、即ち、$f$ の核は $G$ の正規部分群である。
 \end{itemize}
 \end{prop}
 \proof
-$(1)$ $f(1) = f(1\cdot 1) = f(1)f(1)$ $B$G$"$k!#$3$NN>JU$K(B $f(1)^{-1}$ $B$r$+$1$k$H!"(B$1 = f(1)$ $B$rF@$k!#(B
+$(1)$ $f(1) = f(1\cdot 1) = f(1)f(1)$ である。この両辺に $f(1)^{-1}$ をかけると、$1 = f(1)$ を得る。
 
-$(2)$ $1 = f(1) = f(aa^{-1}) = f(a)f(a^{-1})$ $B$G$"$k!#$3$NN>JU$K(B $f(a)^{-1}$ $B$r:8$+$i$+$1$k$H!"(B$f(a)^{-1} = f(a^{-1})$ $B$rF@$k!#(B
+$(2)$ $1 = f(1) = f(aa^{-1}) = f(a)f(a^{-1})$ である。この両辺に $f(a)^{-1}$ を左からかけると、$f(a)^{-1} = f(a^{-1})$ を得る。
 
-$(3)$ $f(a)f(b) = f(ab)\in \im f$$B!"(B$f(a)^{-1} = f(a^{-1})\in \im f$ $B$G$"$k$+$i!"(B$\im\leq G'$ $B$G$"$k!#(B
+$(3)$ $f(a)f(b) = f(ab)\in \im f$、$f(a)^{-1} = f(a^{-1})\in \im f$ であるから、$\im\leq G'$ である。
 
-$(4)$ $a, b\in\ker f$ $B$H$9$k$H!"(B$f(a) = f(b) = 1$$B!#(B$f(ab) = f(a)f(b) = 1$$B!"(B$f(a^{-1}) = f(a)^{-1} = 1$ $B$G$"$k$+$i!"(B$ab\in \ker f$$B!"(B$a^{-1}\in \ker f$$B!#=>$C$F(B $\ker f\leq G$$B!#$5$i$K!"(B$x\in G$ $B$H$9$k$H!"(B
+$(4)$ $a, b\in\ker f$ とすると、$f(a) = f(b) = 1$。$f(ab) = f(a)f(b) = 1$、$f(a^{-1}) = f(a)^{-1} = 1$ であるから、$ab\in \ker f$、$a^{-1}\in \ker f$。従って $\ker f\leq G$。さらに、$x\in G$ とすると、
 $$f(x^{-1}ax) = f(x^{-1})f(a)f(x) = f(x^{-1})f(x) = f(1) = 1$$
-$B$h$j!"(B$x^{-1}ax\in \ker f$ $B$rF@$k!#=>$C$F(B $\ker f\lhd G$ $B$G$"$k!#(B
+より、$x^{-1}ax\in \ker f$ を得る。従って $\ker f\lhd G$ である。
 \qed
 
 \begin{eg}
-$N$ $B$r72(B $G$ $B$N@55,ItJ,72$H$9$k!#(B
+$N$ を群 $G$ の正規部分群とする。
 $$f: G\to G/N\;(a\mapsto aN)$$
-$B$r<+A3$J=`F17?(B (cannonical homomorphism) $B$H$$$&!#<B:]!"(B
+を自然な準同型 (cannonical homomorphism) という。実際、
 $$f(ab) = abN = aNbN = f(a)f(b)$$
-$B$h$j!"(B$f$ $B$O=`F17?<LA|$H$J$k!#(B
+より、$f$ は準同型写像となる。
 \end{eg}
 
 \newpage
-\mysection{$BF17?DjM}(B}
-\begin{thm} {\rm $B!J=`F17?DjM}!K(B} \label{thm:homo_thm}
-$G$$B!"(B$G'$ $B$r72$H$7!"(B$f:G\to G'$ $B$r=`F17?$H$9$k!#$3$N$H$-!"(B
+\mysection{同型定理}
+\begin{thm} {\rm （準同型定理）} \label{thm:homo_thm}
+$G$、$G'$ を群とし、$f:G\to G'$ を準同型とする。このとき、
 $$G/\ker f \simeq \im f.$$
 \end{thm}
 \proof
-$K = \ker f$ $B$H$9$k$H!"L?Bj(B~\ref{prop:ker+im} $B$K$h$C$F(B $K\lhd G$$B!#(B$a,b\in G$ $B$KBP$7$F!"(B
+$K = \ker f$ とすると、命題~\ref{prop:ker+im} によって $K\lhd G$。$a,b\in G$ に対して、
 $$f(a) = f(b) \Leftrightarrow f(a)f(b)^{-1} = f(ab^{-1}) = 1 \Leftrightarrow ab^{-1}\in K \Leftrightarrow Ka = Kb$$
-$B$3$3$G!"(B$\bar{f}(Ka) = f(a)$ $B$H$9$k$H0J2<$N$3$H$,J,$+$k!#(B
+ここで、$\bar{f}(Ka) = f(a)$ とすると以下のことが分かる。
 \begin{itemize}
-\item $\bar{f}$ $B$O!"(Bwell-defined$B!J>jM>N`(B $Ka$ $B$NBeI=85(B $a$ $B$N<h$jJ}$K$h$i$:0lDj!K!#(B
-\item $\bar{f}$ $B$O!"C1<M!J(B$\bar{f}(Ka) = \bar{f}(Kb) \to Ka = Kb$$B!K!#(B
-\item $\bar{f}$ $B$O!"=`F17?!#$J$<$J$i!"(B
+\item $\bar{f}$ は、well-defined（剰余類 $Ka$ の代表元 $a$ の取り方によらず一定）。
+\item $\bar{f}$ は、単射（$\bar{f}(Ka) = \bar{f}(Kb) \to Ka = Kb$）。
+\item $\bar{f}$ は、準同型。なぜなら、
 $$\bar{f}(KaKb) = \bar{f}(Kab) = f(ab) = f(a)f(b) = \bar{f}(Ka)\bar{f}(Kb).$$
-\item $\im \bar{f} = \im f$$B!#(B
+\item $\im \bar{f} = \im f$。
 \end{itemize}
-$B=>$C$F!"(B$\bar{f}:G/K \to \im f$ $B$O!"F17?<LA|!#$3$l$h$j(B $G/K\simeq \im f$$B!#(B
+従って、$\bar{f}:G/K \to \im f$ は、同型写像。これより $G/K\simeq \im f$。
 \qed
 
-\begin{thm} {\rm $B!JF17?DjM}!K(B} \label{thm:isom_thm}
+\begin{thm} {\rm （同型定理）} \label{thm:isom_thm}
 \begin{itemize}
 \item[$(1)$] $H\leq G, \;N\lhd G \Rightarrow NH/N \simeq H/H\cap N$.
-\item[$(2)$] $f:G\to G'$ $B$rA4<M=`F17?(B $H'\lhd G'$$B!"(B$H = f^{-1}(H')$ $B$H$9$k$H!"(B$H\lhd G$ $B$+$D!"(B$G/H \simeq G'/H'$$B!#(B
+\item[$(2)$] $f:G\to G'$ を全射準同型 $H'\lhd G'$、$H = f^{-1}(H')$ とすると、$H\lhd G$ かつ、$G/H \simeq G'/H'$。
 \end{itemize}
 \end{thm}
 \proof
-$(1)$ $f:H \to G/N\;(h\mapsto Nh)$  $B$H$9$k$H!"(B$f$ $B$O=`F17?$G$+$D(B
+$(1)$ $f:H \to G/N\;(h\mapsto Nh)$  とすると、$f$ は準同型でかつ
 $$\im f = f(H) = NH/N,\;\ker f = H\cap N$$
-$B=>$C$F!"DjM}(B~\ref{thm:homo_thm} $B$K$h$C$F(B $H/H\cap N\simeq NH/N$$B!#(B
+従って、定理~\ref{thm:homo_thm} によって $H/H\cap N\simeq NH/N$。
 
 \smallskip
-$(2)$ $g: G \stackrel{f}{\to} G' \to G'/H,\;a\to f(a) \to H'f(a)$ $B$OA4<M=`F17?$G$"$k!#(B
+$(2)$ $g: G \stackrel{f}{\to} G' \to G'/H,\;a\to f(a) \to H'f(a)$ は全射準同型である。
 $$\ker g = \{a\in G\mid H'f(a) = H'\} = \{a\in G\mid f(a)\in H'\} = f^{-1}(H')$$
-$B=>$C$F!"DjM}(B~\ref{thm:homo_thm} $B$K$h$C$F(B $G/H\simeq G'/H'$ $B$G$"$k!#(B
+従って、定理~\ref{thm:homo_thm} によって $G/H\simeq G'/H'$ である。
 \qed
 
-\begin{cor} $H,\;N\lhd G$$B!"(B$N\subset H$ $B$J$i$P(B $G/H \simeq (G/N)\mbox{\large$/$}(H/N)$$B!#(B
+\begin{cor} $H,\;N\lhd G$、$N\subset H$ ならば $G/H \simeq (G/N)\mbox{\large$/$}(H/N)$。
 \end{cor}
 \proof
-$f:G\to G/N$ $B$r<+A3$J=`F17?$H$9$k!#(B$f^{-1}(H/N) = H$ $B$G$"$k$+$i!"DjM}(B~\ref{thm:isom_thm} $(2)$ $B$K$h$j<gD%$,F@$i$l$k!#(B
+$f:G\to G/N$ を自然な準同型とする。$f^{-1}(H/N) = H$ であるから、定理~\ref{thm:isom_thm} $(2)$ により主張が得られる。
 \qed
 
 \medskip
-$B0J2<$K!"=`F17?DjM}!"F17?DjM}$N1~MQNc$r$"$2$k!#(B
+以下に、準同型定理、同型定理の応用例をあげる。
 
 \begin{eg}
-$G = <a>$ $B$r=d2s72$H$9$k!#(B$f:\bZ \to G = <a> = \{a^n\mid n\in\bZ\}\;(i\mapsto a^i)$ $B$O!"A4<M=`F17?$G$"$k!#<B:](B
+$G = <a>$ を巡回群とする。$f:\bZ \to G = <a> = \{a^n\mid n\in\bZ\}\;(i\mapsto a^i)$ は、全射準同型である。実際
 $$f(i+j) = a^{i+j} = a^ia^j = f(i)f(j).$$
-$B=>$C$F!"DjM}(B~\ref{thm:homo_thm} $B$K$h$C$F(B $\bZ/\ker f\simeq <a>$$B!#(B$\ker f$ $B$O!"=d2s72(B $\bZ$ $B$NItJ,72$@$+$i(B $BDjM}(B~\ref{thm:cyclic:subgroup} $B$K$h$C$F!"(B$\ker f$ $B$b=d2sItJ,72$G(B $\ker f \simeq n\bZ$ $B$H=q$1$k!#(B$n = 0$ $B$N;~!"(B$G$  $B$O!"L58B=d2s72$G$"$j!"(B$<a>\simeq \bZ/\{0\}\simeq \bZ$$B!#$^$?!"(B$n\neq 0$ $B$N;~$O!"(B$G$  $B$O!"0L?t(B $n$ $B$N=d2s72$G$"$j!"$=$N$h$&$J72$O!"(B$\bZ/n\bZ$ $B$HF17?$G$"$k!#(B
+従って、定理~\ref{thm:homo_thm} によって $\bZ/\ker f\simeq <a>$。$\ker f$ は、巡回群 $\bZ$ の部分群だから 定理~\ref{thm:cyclic:subgroup} によって、$\ker f$ も巡回部分群で $\ker f \simeq n\bZ$ と書ける。$n = 0$ の時、$G$  は、無限巡回群であり、$<a>\simeq \bZ/\{0\}\simeq \bZ$。また、$n\neq 0$ の時は、$G$  は、位数 $n$ の巡回群であり、そのような群は、$\bZ/n\bZ$ と同型である。
 \end{eg}
 
 \begin{eg}
-$f:\bR \to \bC\;(a\mapsto e^{2\pi ai})$ $B$H$9$k$H!"(B$\im f = \{z\in\bC\mid |z| = 1\}$$B!"(B$\ker f = \{a\in\bR\mid e^{2\pi ai} = 1\} = \bZ$$B!#=>$C$F=`F17?DjM}$K$h$j(B $\bR/\bZ \simeq S^1$$B!#(B
+$f:\bR \to \bC\;(a\mapsto e^{2\pi ai})$ とすると、$\im f = \{z\in\bC\mid |z| = 1\}$、$\ker f = \{a\in\bR\mid e^{2\pi ai} = 1\} = \bZ$。従って準同型定理により $\bR/\bZ \simeq S^1$。
 \end{eg}
 
-\begin{eg} $\gl(n,\bR)$ $B$G(B $n$ $B<!@5B'9TNsA4BN$+$i$J$k(B $n$ $B<!0lHL@~7A72$rI=$9$b$N$H$9$k!#$3$N$H$-!"(B
+\begin{eg} $\gl(n,\bR)$ で $n$ 次正則行列全体からなる $n$ 次一般線形群を表すものとする。このとき、
 $$f:G = \left\{\left.\left(\begin{array}{cc} A & O\\ B & C\end{array}\right)\right| A\in \gl(r,\bR),\:C\in \gl(s,\bR)\right\} \to \gl(r,\bR)\;\left(\left(\begin{array}{cc} A & O\\ B & C\end{array}\right)\mapsto A\right).$$
-$B$H$9$k$H!"$3$l$O!"A4<M$G$+$D!"(B
+とすると、これは、全射でかつ、
 $$\ker f = \left\{\left.\left(\begin{array}{cc} I & O \\ B & C \end{array}\right)\right| C\in\gl(s,\bR)\right\}\lhd G.$$
-$B$3$3$G!"(B$I$ $B$O!"(B$r$ $B<!$NC10L9TNs$rI=$9$b$N$H$9$k!#DjM}(B~\ref{thm:homo_thm} $B$K$h$C$F(B $G/\ker f \simeq \gl(r,\bR)$ $B$G$"$k!#(B
+ここで、$I$ は、$r$ 次の単位行列を表すものとする。定理~\ref{thm:homo_thm} によって $G/\ker f \simeq \gl(r,\bR)$ である。
 \end{eg}
 
-$G\rhd N$$B!"(B$G\geq H\geq N$ $B$H$9$k!#(B$f:G \to G/N\;(a\mapsto aN)$ $B$r<+A3$J=`F17?$H$9$k!#$3$N$H$-!"(B
+$G\rhd N$、$G\geq H\geq N$ とする。$f:G \to G/N\;(a\mapsto aN)$ を自然な準同型とする。このとき、
 $$f(H) = \{hN\mid h\in N\} = HN/N\leq G/N$$
-$B5U$K!"(B$\bar{H}\leq G/N$ $B$H$9$k$H!"(B
+逆に、$\bar{H}\leq G/N$ とすると、
 $$H = f^{-1}(\bar{H}) = \{h\in G\mid hN \in \bar{H}\}$$
-$B$H$9$k$H!"(B$N\lhd H\lhd G$ $B$+$D!"(B$f(H) = H/N = \bar{H}$ $B$G$"$k!#=>$C$F!"(B
-$${\cal S}(G,N) = \{H\lhd G\mid N\subset H\}\;\mbox{$B!'(B$G$ $B$NItJ,72$G(B $N$ $B$r4^$`$b$NA4BN(B}$$
-$${\cal S}(G/N, 1) = \{\bar{H}\mid \bar{H}\leq G/N\}\;\mbox{$B!'(B$G/N$ $B$NItJ,72A4BN(B}$$
-$B$3$N$H$-!"(B${\cal S}(G,N)$ $B$N85!"(B$H$ $B$KBP$7!"(B$f(H) = H/N$ $B$O!"(B${\cal S}(G/N, 1)$ $B$N85$G$"$j!"(B${\cal S}(G/N, 1)$ $B$N85(B $\bar{H}$ $B$KBP$7$F!"(B$f^{-1}(\bar{H})$ $B$O!"(B${\cal S}(G,N)$ $B$N85$K$J$C$F$$$k!#$3$NBP1~$O!"#1BP#1BP1~$G$"$k!#(B
+とすると、$N\lhd H\lhd G$ かつ、$f(H) = H/N = \bar{H}$ である。従って、
+$${\cal S}(G,N) = \{H\lhd G\mid N\subset H\}\;\mbox{：$G$ の部分群で $N$ を含むもの全体}$$
+$${\cal S}(G/N, 1) = \{\bar{H}\mid \bar{H}\leq G/N\}\;\mbox{：$G/N$ の部分群全体}$$
+このとき、${\cal S}(G,N)$ の元、$H$ に対し、$f(H) = H/N$ は、${\cal S}(G/N, 1)$ の元であり、${\cal S}(G/N, 1)$ の元 $\bar{H}$ に対して、$f^{-1}(\bar{H})$ は、${\cal S}(G,N)$ の元になっている。この対応は、１対１対応である。
 
 \begin{eg}
-$\bZ \to \bZ/12\bZ$ $B$r<+A3$J=`F17?!#$3$N$H$-!"(B
+$\bZ \to \bZ/12\bZ$ を自然な準同型。このとき、
 \begin{eqnarray*}
 {\cal S}(\bZ,12\bZ) & = & \{n\bZ\mid 12\bZ \subset n\bZ,\;n\mid 12\}\\
 & = &\{12\bZ,6\bZ,4\bZ,3\bZ,2\bZ,\bZ\}\\
@@ -680,245 +680,245 @@ $\bZ \to \bZ/12\bZ$ $B$r<+A3$J=`F17?!#$3$N$H$-!"(B
 \end{eg}
 
 \newpage
-\mysection{$B72$N:nMQ(B}
+\mysection{群の作用}
 \begin{definition}
-$G$ $B$r72!"(B$X$ $B$r=89g$H$9$k!#(B
+$G$ を群、$X$ を集合とする。
 $$f:X\times G \to X,\; ((\alpha,a)\in X\times G \mapsto f(\alpha,a) = \alpha^a)$$
-$B$,!"<!$N#2>r7o(B
+が、次の２条件
 $$\alpha^1 = \alpha,\; \alpha^{ab} = (\alpha^a)^b$$
-$B$rK~$?$9$H$-!"72(B $G$ $B$O!"=89g(B $X$ $B$K:nMQ$7$F$$$k$H$$$$!"(B$X$ $B$O!"(B$G$-$B=89g$G$"$k$H$$$&!#(B
+を満たすとき、群 $G$ は、集合 $X$ に作用しているといい、$X$ は、$G$-集合であるという。
 \end{definition}
 
-$X$ $B$r(B $G$-$B=89g!"(B$\alpha,\beta\in X$ $B$N$H$-!"(B
+$X$ を $G$-集合、$\alpha,\beta\in X$ のとき、
 $$\alpha\sim_G \beta \Leftrightarrow \alpha^a = \beta\;\mbox{ for some } a\in G$$
-$B$H$9$k$H!"(B$\sim_G$ $B$O!"F1CM4X78$K$J$k!#$3$NF1CMN`$r(B $G$-$B50F;(B ($G$-orbit) $B$H$$$&!#$3$N$H$-!"(B$\alpha$  $B$r4^$`(B $G$-$B50F;(B $\{\alpha^a\mid a\in G\}$ $B$r!"(B$\alpha^G$ $B$H$b$+$/!#$^$?!"(B$|\alpha^G|$ $B$r!!50F;$ND9$5$H$$$&!#(B
+とすると、$\sim_G$ は、同値関係になる。この同値類を $G$-軌道 ($G$-orbit) という。このとき、$\alpha$  を含む $G$-軌道 $\{\alpha^a\mid a\in G\}$ を、$\alpha^G$ ともかく。また、$|\alpha^G|$ を　軌道の長さという。
 
-$G$-$B50F;$,$?$@0l$D$G$"$k$H$-!"$9$J$o$A(B $X = \alpha^G$ $B$G$"$k$H$-!"2D0\!J2DA+$H$b8@$&!#(Btransitive$B!K$H$$$&!#(B
+$G$-軌道がただ一つであるとき、すなわち $X = \alpha^G$ であるとき、可移（可遷とも言う。transitive）という。
 
-$G_\alpha = \{a\in G\mid \alpha^a = \alpha\}$ $B$H$9$k$H!"(B$G_\alpha\leq G$ $B$G$"$k!#(B$\beta = \alpha^a$ $B$J$i$P!"(B$x\in G_{\alpha}$ $B$H$7$?$H$-!"(B$G_\beta = a^{-1}G_{\alpha}a$ $B$G$"$k!#<B:]!"(B
+$G_\alpha = \{a\in G\mid \alpha^a = \alpha\}$ とすると、$G_\alpha\leq G$ である。$\beta = \alpha^a$ ならば、$x\in G_{\alpha}$ としたとき、$G_\beta = a^{-1}G_{\alpha}a$ である。実際、
 $$\beta^{a^{-1}xa} = \alpha^{aa^{-1}xa} = \alpha^{xa} = \alpha^a = \beta$$
-$B$@$+$i!"(B$G_\beta \subset a^{-1}G_{\alpha}a$$B!"$^$?!"(B$\alpha = \beta^{a^{-1}}$ $B$@$+$i!"(B$G_\alpha \subset aG_{\beta}a^{-1}$ $B$G$"$k!#$3$l$O!"(B$a^{-1}G_{\alpha}a\subset G_{\beta}$ $B$r0UL#$9$k!#(B
+だから、$G_\beta \subset a^{-1}G_{\alpha}a$、また、$\alpha = \beta^{a^{-1}}$ だから、$G_\alpha \subset aG_{\beta}a^{-1}$ である。これは、$a^{-1}G_{\alpha}a\subset G_{\beta}$ を意味する。
 
-$G_{\alpha}$ $B$r(B $\alpha$ $B$N(B $G$ $B$K$*$1$k0BDjItJ,72$H8F$V!#(B
+$G_{\alpha}$ を $\alpha$ の $G$ における安定部分群と呼ぶ。
 
 \begin{thm} \label{thm:orbit_length}
 $|\alpha^G| = |G:G_{\alpha}|$
 \end{thm}
 \proof
-$a,b\in G$ $B$KBP$7$F!"(B
+$a,b\in G$ に対して、
 $$\alpha^a = \alpha^b\Leftrightarrow \alpha^{ab^{-1}} = \alpha \Leftrightarrow ab^{-1}\in G_\alpha \Leftrightarrow G_{\alpha}a = G_{\alpha}b$$
-$B=>$C$F!"(B$\phi : G_{\alpha}\backslash G \to \alpha^G\;(G_{\alpha}a\mapsto \alpha^a)$ $B$O!"A4C1<M$G$"$k!#(B
+従って、$\phi : G_{\alpha}\backslash G \to \alpha^G\;(G_{\alpha}a\mapsto \alpha^a)$ は、全単射である。
 \qed
 
 \medskip
-$X$ $B$r(B $G$-$B=89g$H$9$k!#(B$a\in G$ $B$KBP$7$F!"(B$\sigma(a) : X\to X\;(\alpha\mapsto \alpha^a)$ $B$H$9$k$H!"(B$\sigma(a)$ $B$O!"(B$X$ $B>e$NA4C1<M$G$"$k!#$5$i$K!"(B
+$X$ を $G$-集合とする。$a\in G$ に対して、$\sigma(a) : X\to X\;(\alpha\mapsto \alpha^a)$ とすると、$\sigma(a)$ は、$X$ 上の全単射である。さらに、
 $$\sigma : G \to S^X\;(a\mapsto \sigma(a))$$
-$B$O!"=`F17?$K$J$k!#$3$N(B $\sigma$ $B$N3K!J(B$\ker \sigma$$B!K$r(B $\ker(X,G)$ $B$H=q$-(B $G$ $B$N(B $X$ $B>e$N:nMQ$N3K$H$$$&!#!J3NG'$;$h!#!K(B
+は、準同型になる。この $\sigma$ の核（$\ker \sigma$）を $\ker(X,G)$ と書き $G$ の $X$ 上の作用の核という。（確認せよ。）
 
-$B5U$K(B $\sigma: G\to S^X$ $B$r=`F17?$H$9$k$H!"(B$X\times G\to X\;((\alpha,a)\mapsto \alpha^{\sigma(a)})$ $B$K$h$j!"(B$X$ $B$O!"(B$G$-$B=89g$H$J$k!#$3$N=`F17?$r(B $G$ $B$NCV49I=8=$H$$$&!#(B
+逆に $\sigma: G\to S^X$ を準同型とすると、$X\times G\to X\;((\alpha,a)\mapsto \alpha^{\sigma(a)})$ により、$X$ は、$G$-集合となる。この準同型を $G$ の置換表現という。
 
 \note
-$B72(B $G$ $B$+$i!"0lHL@~7A72(B $\gl(n,\bC)$ $B$X$N=`F17?$r@~7AI=8=$H$$$&!#(B$G$ $B$rM-8B72$H$9$k$H!"I,$:@~7AI=8=$,$"$k$3$H$,CN$i$l$F$$$k$,!"0J2<$K8+$k$h$&$K!"CV49I=8=$O$$$D$G$bB8:_$7!"$5$i$K!"3K$,(B 1 $B$H$J$k!J$3$l$rCi<B$JI=8=$H$$$&!KCV49I=8=$,$"$k!#(B
+群 $G$ から、一般線形群 $\gl(n,\bC)$ への準同型を線形表現という。$G$ を有限群とすると、必ず線形表現があることが知られているが、以下に見るように、置換表現はいつでも存在し、さらに、核が 1 となる（これを忠実な表現という）置換表現がある。
 
 \begin{eg}
-$H\leq S^X$ $B$H$9$k$H!"(B$\sigma : H \to S^X$ $B$rKd$a9~$_$H$9$k$H!"L@$i$+$KCV49I=8=$H$J$k$+$i!":nMQ$,Dj5A$G$-$k!#<B:]!"(B$X\times H\to X,\;((\alpha,h)\mapsto \alpha^h)$ $B$K$h$j!"(B$X$ $B$O!"(B$H$ $B=89g$K$J$k!#FC$K!"(B$S_n$ $B$NItJ,72$O!"(B$\{1,2,\ldots, n\}$ $B$K<+A3$K:nMQ$9$k!#(B
-$B!J(B$H\leq S^X$ $B$r(B $X$ $B>e$NCV4972!"(B$H\leq S_n$ $B$r(B $n$ $B<!CV4972$H$$$&!#!K(B
+$H\leq S^X$ とすると、$\sigma : H \to S^X$ を埋め込みとすると、明らかに置換表現となるから、作用が定義できる。実際、$X\times H\to X,\;((\alpha,h)\mapsto \alpha^h)$ により、$X$ は、$H$ 集合になる。特に、$S_n$ の部分群は、$\{1,2,\ldots, n\}$ に自然に作用する。
+（$H\leq S^X$ を $X$ 上の置換群、$H\leq S_n$ を $n$ 次置換群という。）
 \end{eg}
 
 \begin{eg}
-$H\leq G$ $B$H$9$k!#(B
+$H\leq G$ とする。
 $$f : H\backslash G \times G \to H\backslash G,\;((Hx,a)\mapsto Hxa)$$
-$B$K$h$j!"(B$G$ $B$O!"(B$H\backslash G$ $B$K:nMQ$9$k!#<B:]!"(B
+により、$G$ は、$H\backslash G$ に作用する。実際、
 $$(Hx)^1 = Hx1 = Hx,\;(Hx)^{ab} = Hxab = (Hxa)^b = (Hxa)^b = ((Hx)^a)^b$$
-$B$3$N:nMQ$OL@$i$+$K2D0\$G$"$k!#(B
+この作用は明らかに可移である。
 \begin{eqnarray*}
 \ker(H\backslash G,G) & = & \{a\in G\mid Hxa = Hx\;\mbox{ for all }x\in G\}\\
 & = & \bigcap_{x\in G}x^{-x}Hx \lhd G
 \end{eqnarray*}
-$BFC$K!"(B$H = 1$ $B$N$H$-!"1&@5B'I=8=$H$$$&!#(B$\ker(G,G) = 1$$B!#(B$\sigma:G \to S^G$ $B$O!"C1<M$G$"$k!#=>$C$F!"(B$G$ $B$O!"(B$S^G$ $B$NItJ,72$HF17?$G$"$k!#(B
+特に、$H = 1$ のとき、右正則表現という。$\ker(G,G) = 1$。$\sigma:G \to S^G$ は、単射である。従って、$G$ は、$S^G$ の部分群と同型である。
 \end{eg}
 
 \begin{eg}
-$X = G$ $B$H$7!"(B
+$X = G$ とし、
 $$G\times G \to G \;((x,a)\mapsto a^{-1}xa = x^a)$$
-$B$H$9$k$H!"$3$N:nMQ$K$h$j!"(B$G$ $B$O!"(B$G$-$B=89g$K$J$k!#$3$N>l9g$O!"(B
+とすると、この作用により、$G$ は、$G$-集合になる。この場合は、
 $$G_x = \{a\in G\mid x^a = x = \{a\in G\mid a^{-1}xa = x\} = C_G(x)$$
-$B$H$J$k!"(B$x^G$ $B$O!"(B$x$ $B$N6&LrN`$H$J$j!"DjM}(B~\ref{thm:orbit_length} $B$+$i!"(B
+となる、$x^G$ は、$x$ の共役類となり、定理~\ref{thm:orbit_length} から、
 $$|x^G| = |G:C_G(x)|$$
-$B$G$"$k!#FC$K!"6&LrN`$N85$N?t$O!"(B$|G|$ $B$NLs?t$G$"$k!#(B
+である。特に、共役類の元の数は、$|G|$ の約数である。
 $$\ker(G,G) = \{a\in G\mid x^a = x,\;x\in G\mbox{ for all }x\in G\} = Z(G)\lhd G$$
-$B$^$?!"(B
+また、
 $$|x^G| = 1 \Leftrightarrow |G:C_G(a)| = 1 \Leftrightarrow x\in Z(G).$$
 \end{eg}
 
 
 
 \newpage
-\mysection{$B%"!<%Y%k72$N4pK\DjM}(B}
-$B0J2<$G=R$Y$kM-8B@8@.%"!<%Y%k72$N4pK\DjM}$O!"?t3X$NMM!9$J$H$3$m$GMQ$$$i$l$k4pK\E*$JDjM}$G$"$k!#=d2s72$O!"72$NCf$G9=B$$,0lHV$o$+$j$d$9$$$b$N$G$"$k$,!"=d2s72$ND>@Q$,%"!<%Y%k72$G$"$k$3$H$O4JC1$KJ,$+$k!#4pK\DjM}$O!"@8@.85$N?t$,M-8B8D$N%"!<%Y%k72$O!"=d2s72$ND>@Q$G$"$k$3$H$r<gD%$7$F$$$k!#$^$?!"$3$NDjM}$K$h$C$F!"M-8B@8@.%"!<%Y%k72$NF17?N`$r40A4$K5-=R$9$k$3$H$,=PMh$k!#M-8B@8@.$G$J$$%"!<%Y%k72$K$D$$$F$O!"L$2r7h$JLdBj$bB?$$!#(B
+\mysection{アーベル群の基本定理}
+以下で述べる有限生成アーベル群の基本定理は、数学の様々なところで用いられる基本的な定理である。巡回群は、群の中で構造が一番わかりやすいものであるが、巡回群の直積がアーベル群であることは簡単に分かる。基本定理は、生成元の数が有限個のアーベル群は、巡回群の直積であることを主張している。また、この定理によって、有限生成アーベル群の同型類を完全に記述することが出来る。有限生成でないアーベル群については、未解決な問題も多い。
 
 \begin{thm} \label{thm:fin_gen_abelian}
-$BM-8B@8@.$N%"!<%Y%k72(B $G$ $B$O!"=d2s72$ND>@Q$G$"$k!#$5$i$K!"(B
+有限生成のアーベル群 $G$ は、巡回群の直積である。さらに、
 $$G = E_1\times E_2 \times \cdots \times E_m \times I_1 \times I_2 \times \cdots \times I_r,$$
-$E_i\simeq \bZ_{e_i}$$B!"(B$e_i>1$$B!"(B$i = 1, 2, \ldots, m$$B!"(B$e_i\mid e_{i+1}$$B!"(B$i = 1, 2, \ldots, m-1$$B!"(B$I_j\simeq \bZ$$B!"(B$j = 1, 2, \ldots, r-1$ $B$H$J$k!#$3$NMM$JD>@QJ,2r$K$*$$$F!"(B$(e_1,e_2,\ldots, e_m;r)$ $B$O!"(B $G$ $B$K$h$j0l0UE*$KDj$^$k!#!J$3$l$rITJQ7O$H$$$&!#!K(B
+$E_i\simeq \bZ_{e_i}$、$e_i>1$、$i = 1, 2, \ldots, m$、$e_i\mid e_{i+1}$、$i = 1, 2, \ldots, m-1$、$I_j\simeq \bZ$、$j = 1, 2, \ldots, r-1$ となる。この様な直積分解において、$(e_1,e_2,\ldots, e_m;r)$ は、 $G$ により一意的に定まる。（これを不変系という。）
 \end{thm}
 
 \begin{lemma} \label{lemma:reduction}
-$BM-8B@8@.$N%"!<%Y%k72(B $G = <x_1,x_2,\ldots, x_n>$ $B$N85!"(B
-$y_1 = x^{a_1}x^{a_2}\cdots x^{a_n}$$B!"(B$a_i\in \bZ$$B!"(B$(i = 1,2,\ldots, n)$$B!"(B$(a_1,a_2,\ldots, a_n) = 1$ $B$H$9$k$H!"(B$G = <y_1,y_2,\ldots, y_n>$ $B$H$J$k(B $y_2, \ldots, y_n$ $B$,B8:_$9$k!#(B
+有限生成のアーベル群 $G = <x_1,x_2,\ldots, x_n>$ の元、
+$y_1 = x^{a_1}x^{a_2}\cdots x^{a_n}$、$a_i\in \bZ$、$(i = 1,2,\ldots, n)$、$(a_1,a_2,\ldots, a_n) = 1$ とすると、$G = <y_1,y_2,\ldots, y_n>$ となる $y_2, \ldots, y_n$ が存在する。
 \end{lemma}
 \proof
-$m = |a_1| + |a_2| + \cdots + |a_n|$ $B$K$h$k5"G<K!$G<($9!#(B
+$m = |a_1| + |a_2| + \cdots + |a_n|$ による帰納法で示す。
 
-$m = 1$ $B$H$9$k!#$3$l$O!"$"$k(B $i$ $B$K$D$$$F(B $a_i = \pm 1$ $B$r0UL#$9$k$+$i(B $y_1 = x_i^{\pm 1}$ $B$3$l$h$j!"$3$N>l9g$OL@$i$+!#(B
+$m = 1$ とする。これは、ある $i$ について $a_i = \pm 1$ を意味するから $y_1 = x_i^{\pm 1}$ これより、この場合は明らか。
 
-$m > 1$ $B$H$9$k!#(B$(a_1,a_2,\ldots, a_n) = 1$ $B$h$j(B $|a_i| \geq |a_j| > 0$ $B$H$J$k(B $a_i, a_j$ $B$,B8:_$9$k!#$3$N$H$-!"(B$|a_i - \epsilon a_j| < |a_i|$ $B$H$J$k$h$&$K!"(B$\epsilon = \pm 1$ $B$r<h$k$3$H$,=PMh$k!#$9$k$H!"(B
+$m > 1$ とする。$(a_1,a_2,\ldots, a_n) = 1$ より $|a_i| \geq |a_j| > 0$ となる $a_i, a_j$ が存在する。このとき、$|a_i - \epsilon a_j| < |a_i|$ となるように、$\epsilon = \pm 1$ を取ることが出来る。すると、
 $$y_1 = x_1^{a_1}\cdots x_i^{a_i-\epsilon a_j}\cdots (x_jx_i^{\epsilon})^{a_j}\cdots x_n^{a_n}$$
-$B$@$+$i!"$3$3$G!"(B$b_k = a_k$ $(k\neq i)$$B!"(B$b_i = a_i-\epsilon a_j$$B!"(B$z_l = x_l$$B!"(B$(l\neq j)$$B!"(B$z_j = x_jx_i^{\epsilon}$ $B$H$*$1$P!"(B
+だから、ここで、$b_k = a_k$ $(k\neq i)$、$b_i = a_i-\epsilon a_j$、$z_l = x_l$、$(l\neq j)$、$z_j = x_jx_i^{\epsilon}$ とおけば、
 $$(b_1,b_2,\ldots, b_n) = (a_1,\ldots, a_{i-1},a_i-\epsilon a_j,a_{i+1},\ldots, a_n) = (a_1,\ldots, a_n) = 1$$ 
-$B$,@.$jN)$A!"$+$D!"(B
+が成り立ち、かつ、
 $$G = <x_1,\ldots, x_n> = <x_1,\ldots, x_{j-1},x_jx_i^{\epsilon},x_{j+1},\ldots, x_n> =<z_1,z_2,\ldots, z_n>.$$
-$B$3$3$G!"(B$y_1 = z_1^{b_1}\cdots z_n^{b_n}$$B!"$7$+$7!"(B$|b_1| + \cdots + |b_n| < m$  $B$@$+$i!"5"G<K!$K$h$C$F(B $y_2, \ldots, y_n$ $B$G!"(B$G = <y_1,\ldots, y_n>$ $B$H$J$k$b$N$,B8:_$9$k!#(B
+ここで、$y_1 = z_1^{b_1}\cdots z_n^{b_n}$、しかし、$|b_1| + \cdots + |b_n| < m$  だから、帰納法によって $y_2, \ldots, y_n$ で、$G = <y_1,\ldots, y_n>$ となるものが存在する。
 \qed
 
 \medskip
 {\em Proof of Theorem~\ref{thm:fin_gen_abelian}\quad}
-$G$ $B$N85(B $x_1,\ldots, x_n$ $B$r<!$N>r7o$rK~$?$9$h$&$K<h$k!#(B
+$G$ の元 $x_1,\ldots, x_n$ を次の条件を満たすように取る。
 \begin{enumerate}
-\item $G = <x_1,\ldots, x_n>$ $B$G(B $n$ $B$O!":G>.!#(B
-\item $G = <x_1,\ldots, x_{i-1},y_i,\ldots, y_n>$ $B$J$i$P!"(B$x_i$ $B$N0L?t$O!"9b!9(B $y_i$ $B$N0L?t$KEy$7$$!#(B
+\item $G = <x_1,\ldots, x_n>$ で $n$ は、最小。
+\item $G = <x_1,\ldots, x_{i-1},y_i,\ldots, y_n>$ ならば、$x_i$ の位数は、高々 $y_i$ の位数に等しい。
 \end{enumerate}
-($x_1$ $B$r(B 1 $B$rK~$?$9!"$9$Y$F2DG=$JAH$NCf$G:G>.0L?t$K<h$j!"(B$x_{i-1}$ $B$^$G<h$C$?$H$-!"(B$x_i$ $B$r(B $x_1,\ldots, x_{i-1}$ $B$r8GDj$7$?$H$-!"$9$Y$F2DG=$J(B $y_i$ $B$NCf$G:G>.0L?t$K<h$l$P$h$$!#(B)
+($x_1$ を 1 を満たす、すべて可能な組の中で最小位数に取り、$x_{i-1}$ まで取ったとき、$x_i$ を $x_1,\ldots, x_{i-1}$ を固定したとき、すべて可能な $y_i$ の中で最小位数に取ればよい。)
 
-$<x_i> = E_i$$B!"(B$|E_i| = e_i$ $B$HCV$/!#!J(B$\infty$ $B$b4^$a$k!#!K(B
-$B$3$N$H$-!"(B$G = E_1\times \cdots \times E_n$ $B$+$D!"(B$e_i\mid e_{i+1}$ $B$r<($9!#(B
+$<x_i> = E_i$、$|E_i| = e_i$ と置く。（$\infty$ も含める。）
+このとき、$G = E_1\times \cdots \times E_n$ かつ、$e_i\mid e_{i+1}$ を示す。
 $$\phi : E_1 \times \cdots \times E_n \to G,\;((x_1^{a_1},\ldots,x_n^{a_n})\mapsto xx_1^{a_1}\cdots x_n^{a_n})$$
-$B$O!"=`F17?$G!"$+$D>r7o#1$h$j!"A4<M$G$"$k!#(B
+は、準同型で、かつ条件１より、全射である。
 
-$x_i^{a_i}\cdots x_j^{a_j} = 1$ $B$H$7!"E:;z$O=g$KBg$-$/$J$k$h$&$K<h$k!#$3$3$K8=$l$k$b$N$K$D$$$F!"(B$0 < |a_k| \leq e_k$ $B$H$7$F$h$$!#(B$d = (a_i,\ldots, a_j)$ $B$H$7!"(B$a_k = db_k$ $B$H=q$/!#$9$k$H!"(B$(b_i,\ldots, b_j) = 1$ $B$G$"$k!#=>$C$F!"JdBj(B~\ref{lemma:reduction} $B$K$h$j!"(B
-$y_i = x_i^{b_i}\cdots x_j^{b_j}, \;y_{i+1},\ldots, y_n$ $B$,$"$C$F!"(B
-$<x_i,\ldots,x_n> = <y_i,\ldots, y_n>$$B!#(B$y_i$ $B$NDj5A$K$h$j!"(B
+$x_i^{a_i}\cdots x_j^{a_j} = 1$ とし、添字は順に大きくなるように取る。ここに現れるものについて、$0 < |a_k| \leq e_k$ としてよい。$d = (a_i,\ldots, a_j)$ とし、$a_k = db_k$ と書く。すると、$(b_i,\ldots, b_j) = 1$ である。従って、補題~\ref{lemma:reduction} により、
+$y_i = x_i^{b_i}\cdots x_j^{b_j}, \;y_{i+1},\ldots, y_n$ があって、
+$<x_i,\ldots,x_n> = <y_i,\ldots, y_n>$。$y_i$ の定義により、
 $$y_i^d = x_i^{db_i}\cdots x_j^{db_j} = x_i^{a_i}\cdots x_j^{a_j} = 1.$$
-$B=>$C$F!"(B$y_i$ $B$N0L?t$O!"9b!9(B $d$$B!#0lJ}!"(B$x_i$ $B$N<h$jJ}$+$i!"(B
+従って、$y_i$ の位数は、高々 $d$。一方、$x_i$ の取り方から、
 $$e_i\leq o(y_i) \leq d \leq |a_i| \leq e_i.$$
-$B=>$C$F!"(B$e_i = d = |a_i|$$B!#$9$J$o$A(B $x_i^{a_i} = 1$$B!#=>$C$F!"(B$\phi$ $B$O!"F17?$G$"$k;v$,$o$+$k!#$5$i$K!"(B$x_i^{e_i}x_{i+1}^{e_{i+1}} = 1$ $B$@$+$i!"(B$d = (e_i,e_{i+1})$ $B$H$9$k$H!">e$G<($7$?$3$H$h$j!"(B$e_i = d$ $B$G$"$k!#=>$C$F!"(B$e_i\mid e_{i+1}$$B!#(B$e_1,\ldots, e_m$ $B$,!"M-8B$G(B $e_{m+1}$ $B$+$i$5$-$,!"L58B$J$i!"(B
+従って、$e_i = d = |a_i|$。すなわち $x_i^{a_i} = 1$。従って、$\phi$ は、同型である事がわかる。さらに、$x_i^{e_i}x_{i+1}^{e_{i+1}} = 1$ だから、$d = (e_i,e_{i+1})$ とすると、上で示したことより、$e_i = d$ である。従って、$e_i\mid e_{i+1}$。$e_1,\ldots, e_m$ が、有限で $e_{m+1}$ からさきが、無限なら、
 $$G = E_1 \times \cdots \times E_m \times I_1 \times \cdots \times I_r$$
-$E_i \simeq \bZ_{e_i}$$B!"(B$I_j \simeq \bZ$$B!"(B$e_i\mid e_{i+1}$$B!"(B$1 < e_i$ $B$,F@$i$l$k!#(B
+$E_i \simeq \bZ_{e_i}$、$I_j \simeq \bZ$、$e_i\mid e_{i+1}$、$1 < e_i$ が得られる。
 
 \smallskip
-$B!J0l0U@-!K(B\quad
+（一意性）\quad
 \begin{eqnarray*}
 G & = & E_1 \times \cdots \times E_m\times I_1 \times \cdots \times I_r\\
 & = & E'_1 \times \cdots \times E'_{m'} \times I'_1 \times \cdots \times I'_{r'}
 \end{eqnarray*}
-$E_i = <x_i>$$B!"(B$I_j = <z_j>$$B!"(B$I'_j = <w_j>$$B!"(B$E'_i = <y_i>$$B!"(B$e_i = |E_i|$$B!"(B$e'_i = |E'_i|$ $B$H$9$k!#(B$T(G)$ $B$r(B $G$ $B$N0L?t$,M-8B$J$b$NA4BN$H$9$k!#$9$k$H!"(B
+$E_i = <x_i>$、$I_j = <z_j>$、$I'_j = <w_j>$、$E'_i = <y_i>$、$e_i = |E_i|$、$e'_i = |E'_i|$ とする。$T(G)$ を $G$ の位数が有限なもの全体とする。すると、
 $$T(G) = E_1 \times \cdots \times E_m = E'_1 \times \cdots \times E'_m$$
-$p$ $B$r(B $e_1$ $B$N0l$D$NAG0x;R$H$7!"(B$p$ $B$O!"(B$e'_{i+1}$ $B0J9_$r3d$j@Z$k$H$9$k!#$9$k$H!"(B
+$p$ を $e_1$ の一つの素因子とし、$p$ は、$e'_{i+1}$ 以降を割り切るとする。すると、
 $$T(G)_p = \{x\in T(G)\mid x^p = 1\} = <x_1^{e_1/p},\ldots, x_m^{e_m/p}> = <y_{i+1}^{e'_{i+1}/p},\ldots,y_{m'}^{e'_{m'}/p}>$$
-$B$@$+$i!"0L?t$r9M$($k$H!"(B$|T(G)_p| = p^m = p^{m'-i}$ $B$H$J$j!"(B$m\leq m'$ $B$rF@$k!#F1MM$K$7$F!"(B$m'\leq m$ $B$rF@$k$+$i!"(B$m = m'$$B!"(B$p\mid e'_1$ $B$rF@$k!#$3$3$G!"(B
+だから、位数を考えると、$|T(G)_p| = p^m = p^{m'-i}$ となり、$m\leq m'$ を得る。同様にして、$m'\leq m$ を得るから、$m = m'$、$p\mid e'_1$ を得る。ここで、
 $$T(G)^p = \{x^p\mid x\in T(G)\} = <x_1^{p},\ldots, x_m^{p}> = <y_{1}^{p},\ldots,y_{m}^{p}>$$
-$B$@$+$i!"$=$l$>$l$N!"D>@Q0x;R$N0L?t$O!"(B$e_1/p,\ldots, e_m/p$ $B$*$h$S!"(B$e'_1/p,\ldots, e'_m/p$ $B$H$J$j!"?t3XE*5"G<K!$K$h$j!"$3$l$i$O!"Ey$7$/$J$k!#=>$C$F!"(B$e_i = e'_i$ $B$rF@$k!#(B
+だから、それぞれの、直積因子の位数は、$e_1/p,\ldots, e_m/p$ および、$e'_1/p,\ldots, e'_m/p$ となり、数学的帰納法により、これらは、等しくなる。従って、$e_i = e'_i$ を得る。
 
-$B$3$3$G$5$i$K!"(B$e = e_m$ $B$H$7$F!"(B
+ここでさらに、$e = e_m$ として、
 $$G^e = \{x^e\mid x\in G\} = <z_1^{e},\ldots, z_r^{e}> = <w_{1}^{e},\ldots,w_{r'}^{e}>$$
 $$G^{2e} = \{x^{2e}\mid x\in G\} = <z_1^{2e},\ldots, z_r^{2e}> = <w_{1}^{2e},\ldots,w_{r'}^{2e}>$$
-$B$@$+$i!"(B$G^e/G^{2e}$ $B$N0L?t$r9M$($k$H!"(B$2^r = 2^{r'}$ $B$rF@$k$+$i!"(B$r = r'$ $B$H$J$k!#(B
+だから、$G^e/G^{2e}$ の位数を考えると、$2^r = 2^{r'}$ を得るから、$r = r'$ となる。
 \qed
 
 \begin{eg}
-$G$ $B$r(B $B0L?t(B 12 $B$N%"!<%Y%k72$H$9$k!#(B$12 = e_1e_2\cdots e_r$$B!"(B$e_1\mid e_2,\;e_2\mid e_3 \ldots e_{r-1}\mid e_r$ $B$@$+$i!"(B$e^{r}\mid 12$$B!#$3$l$i$O!"(B
-$(12), (2,6)$ $B$N$$$:$l$+$7$+$J$$$3$H$,J,$+$k!#(B
-$B$9$J$o$A!"(B$G$ $B$O!"(B$\bZ_{12}$$B!J0L?t(B 12 $B$N=d2s72!KKt$O!"(B$\bZ_2\times \bZ_6$ $B$N$$$:$l$+$KF17?$G$"$k$3$H$,J,$+$k!#(B
+$G$ を 位数 12 のアーベル群とする。$12 = e_1e_2\cdots e_r$、$e_1\mid e_2,\;e_2\mid e_3 \ldots e_{r-1}\mid e_r$ だから、$e^{r}\mid 12$。これらは、
+$(12), (2,6)$ のいずれかしかないことが分かる。
+すなわち、$G$ は、$\bZ_{12}$（位数 12 の巡回群）又は、$\bZ_2\times \bZ_6$ のいずれかに同型であることが分かる。
 \end{eg} 
 
 \newpage
-\mysection{$B%7%m!<$NDjM}(B}
-$B$3$N@a$G$O!"(B$G$ $B$O!"M-8B72$rI=$9$b$N$H$9$k!#(B
+\mysection{シローの定理}
+この節では、$G$ は、有限群を表すものとする。
 
 \begin{definition}
-$p$ $B$rAG?t$H$9$k$H$-!"(B$G$ $B$,(B $p$--$B72$G$"$k$H$O!"(B$|G|$ $B$,(B $p$--$B$Y$-(B $(|G| = p^r)$ $B$G$"$k$3$H$G$"$k!#(B$|G| = p^ng',\;(p,g') = 1$ $B$H$7$?$H$-!J(B$p^n$ $B$r(B $|G|$ $B$r3d$j@Z$k:GBg$Y$-!K(B$P$ $B$,(B $G$ $B$N%7%m!<(B $p$-$BItJ,72(B (Sylow-$p$-group) $B$G$"$k$H$O!"(B$P\leq G$  $B$+$D!"(B$|P| = p^n$$B!#(B
+$p$ を素数とするとき、$G$ が $p$--群であるとは、$|G|$ が $p$--べき $(|G| = p^r)$ であることである。$|G| = p^ng',\;(p,g') = 1$ としたとき（$p^n$ を $|G|$ を割り切る最大べき）$P$ が $G$ のシロー $p$-部分群 (Sylow-$p$-group) であるとは、$P\leq G$  かつ、$|P| = p^n$。
 \end{definition}
 
-$B$3$3$G$^$:LdBj$H$J$k$N$O!"0J2<$N;v$G$"$k!#(B
+ここでまず問題となるのは、以下の事である。
 \begin{enumerate}
-\item $BG$0U$NM-8B72$HG$0U$NAG?t(B $p$ $B$K$D$$$F!"%7%m!<(B $p$--$BItJ,72$OB8:_$9$k$+!#(B
-\item $B%7%m!<(B $p$--$BItJ,72$K$D$$$F2?$,8@$($k$+!#J#?t8D$N(B $B%7%m!<(B $p$--$BItJ,72$,$"$C$?$H$-!"$=$l$i$O!"F17?$@$m$&$+!"6&Lr$@$m$&$+!"$$$/$D$"$k$@$m$&$+!#(B
+\item 任意の有限群と任意の素数 $p$ について、シロー $p$--部分群は存在するか。
+\item シロー $p$--部分群について何が言えるか。複数個の シロー $p$--部分群があったとき、それらは、同型だろうか、共役だろうか、いくつあるだろうか。
 \end{enumerate}
 
-$BFs$D$NJdBj$r=`Hw$9$k!#(B
+二つの補題を準備する。
 \begin{lemma} \label{lemma:p-ele_in_abelian}
-$p$ $B$rAG?t$H$7!"(B$G$ $B$O!"$=$N0L?t(B $|G|$ $B$,(B $p$ $B$G3d$j@Z$l$k%"!<%Y%k72$H$9$k!#$3$N$H$-!"(B$G$ $B$K0L?t(B $p$ $B$N85$,B8:_$9$k!#(B
+$p$ を素数とし、$G$ は、その位数 $|G|$ が $p$ で割り切れるアーベル群とする。このとき、$G$ に位数 $p$ の元が存在する。
 \end{lemma}
 \proof
-$BDjM}(B~\ref{thm:fin_gen_abelian} $B$h$jL@$i$+!#(B
+定理~\ref{thm:fin_gen_abelian} より明らか。
 \qed
 
 \begin{lemma} \label{lemma:nontrivial_center}
-$G\neq 1$ $B$H$7!"(B$G$ $B$NG$0U$N??ItJ,72$KBP$7$F!"(B$p\mid |G:H|$ $B$,@.$jN)$D$H$9$k!#$3$N$H$-!"(B$p\mid |Z(G)|$ $B$G$"$k!#FC$K!"(B$Z(G)\neq 1$$B!#(B
+$G\neq 1$ とし、$G$ の任意の真部分群に対して、$p\mid |G:H|$ が成り立つとする。このとき、$p\mid |Z(G)|$ である。特に、$Z(G)\neq 1$。
 \end{lemma}
 \proof
-Exercise 8.2 $B;2>H!#(B
+Exercise 8.2 参照。
 \qed
 
 \begin{thm} \label{thm:sylow:existence}
-$B$"$kAG?t(B $p$ $B$KBP$7$F!"(B$p^r \mid |G|$ $B$J$i$P(B $G$ $B$K0L?t(B $p^r$ $B$NItJ,72$,B8:_$9$k!#FC$K!"(B$G$ $B$N%7%m!<(B $p$--$BItJ,72$,B8:_$9$k!#(B
+ある素数 $p$ に対して、$p^r \mid |G|$ ならば $G$ に位数 $p^r$ の部分群が存在する。特に、$G$ のシロー $p$--部分群が存在する。
 \end{thm}
 \proof
-$G$ $B$N0L?t$K4X$9$k5"G<K!$G>ZL@$9$k!#L@$i$+$K!"(B$G\neq 1$ $B$H$7$F$h$$!#(B
+$G$ の位数に関する帰納法で証明する。明らかに、$G\neq 1$ としてよい。
 
-{\em Case 1.\quad} $G$ $B$N??ItJ,72(B $H$ $B$G!"(B$(|G:H|,p) = 1$ $B$H$J$k$b$N$,B8:_$9$k$H$-!#(B
+{\em Case 1.\quad} $G$ の真部分群 $H$ で、$(|G:H|,p) = 1$ となるものが存在するとき。
 
-$B$3$N$H$-$O!"(B$p^r\mid |G| = |G:H||H|$ $B$@$+$i!"(B$p^r\mid |H|$ $B$G$"$k!#=>$C$F!"5"G<K!$N2>Dj$h$j!"(B$H$ $B$NItJ,72(B $P$ $B$G!"0L?t$,(B $p^r$ $B$N$b$N$,B8:_$9$k!#(B$P\leq G$ $B$@$+$i!"DjM}$N<gD%$,@.$jN)$D!#(B
+このときは、$p^r\mid |G| = |G:H||H|$ だから、$p^r\mid |H|$ である。従って、帰納法の仮定より、$H$ の部分群 $P$ で、位数が $p^r$ のものが存在する。$P\leq G$ だから、定理の主張が成り立つ。
 
 \smallskip
-{\em Case 2. \quad} $G$ $B$NG$0U$N??ItJ,72$KBP$7$F(B $p\mid |G:H|$ $B$,@.N)$9$k$H$-!#(B
+{\em Case 2. \quad} $G$ の任意の真部分群に対して $p\mid |G:H|$ が成立するとき。
 
-$B$3$N$H$-$O!"JdBj(B~\ref{lemma:nontrivial_center} $B$K$h$j(B $p\mid |Z(G)|$ $B$G$"$k!#(B$Z(G)$ $B$O!"%"!<%Y%k72$@$+$i!"JdBj(B~\ref{lemma:p-ele_in_abelian} $B$h$j!"(B$Z(G)$ $B$K0L?t(B $p$ $B$N85(B $x$ $B$,$"$k$3$H$,J,$+$k!#(B$A = <x>$ $B$H$9$k!#(B$|A| = |<x>| = o(x) = p$$B!#(B$A\leq Z(G)$ $B$@$+$i!"(B$A\lhd G$$B!#>jM>72(B $G/A$ $B$r9M$($k$H!"(B
+このときは、補題~\ref{lemma:nontrivial_center} により $p\mid |Z(G)|$ である。$Z(G)$ は、アーベル群だから、補題~\ref{lemma:p-ele_in_abelian} より、$Z(G)$ に位数 $p$ の元 $x$ があることが分かる。$A = <x>$ とする。$|A| = |<x>| = o(x) = p$。$A\leq Z(G)$ だから、$A\lhd G$。剰余群 $G/A$ を考えると、
 $$p^r \mid |G| = |G:A||A| = p|G/A|$$
-$B$@$+$i!"(B$p^{r-1}\mid |G/A|$ $B$H$J$k!#=>$C$F!"5"G<K!$N2>Dj$K$h$j!"(B$G/A$ $B$O!"0L?t$,!"(B$p^{r-1}$ $B$NItJ,72(B $P_1$ $B$r;}$D!#(B$\pi:G \to G/A$ $B$r<+A3$J=`F17?$H$7!"(B$P = \pi^{-1}(P_1)$ $B$H$9$k$H!"(B$A \leq P$ $B$@$+$i!"(B$P/A\simeq P_1$$B!"=>$C$F!"(B$|P| = p^r$ $B$rF@$k!#(B
+だから、$p^{r-1}\mid |G/A|$ となる。従って、帰納法の仮定により、$G/A$ は、位数が、$p^{r-1}$ の部分群 $P_1$ を持つ。$\pi:G \to G/A$ を自然な準同型とし、$P = \pi^{-1}(P_1)$ とすると、$A \leq P$ だから、$P/A\simeq P_1$、従って、$|P| = p^r$ を得る。
 \qed
 
 \medskip
-$\syl_p(G)$ $B$K$h$C$F!"(B$G$ $B$N%7%m!<(B $p$--$BItJ,72A4BN$rI=$9$b$N$H$9$k!#(B
+$\syl_p(G)$ によって、$G$ のシロー $p$--部分群全体を表すものとする。
 \begin{thm} \label{thm:sylow:conjugate}
-$G$ $B$rM-8B72!"(B$p$ $B$rAG?t$H$9$k!#(B
+$G$ を有限群、$p$ を素数とする。
 \begin{itemize}
-\item[$(1)$] $H$ $B$r(B $G$ $B$N(B $p$--$BItJ,72$H$9$k$H!"(B$G$ $B$N(B $p$--$B%7%m!<ItJ,72(B $P$ $B$G(B $H$ $B$r4^$`$b$N$,B8:_$9$k!#(B
-\item[$(2)$] $P, Q$ $B$r(B $G$ $B$N%7%m!<(B $p$--$BItJ,72$H$9$k$H!"(B$Q = g^{-1}Pg$ $B$H$J$k(B $G$ $B$N85(B $g$ $B$,B8:_$9$k!#(B
-\item[$(3)$] $|\syl_p(G)|\equiv 1\;(\mod\:p)$$B!"$9$J$o$A!"%7%m!<(B $p$--$BItJ,72$N8D?t$O!"(B$kp + 1$$B!"(B$(k\in\bZ)$ $B$H=q$1$k!#(B
+\item[$(1)$] $H$ を $G$ の $p$--部分群とすると、$G$ の $p$--シロー部分群 $P$ で $H$ を含むものが存在する。
+\item[$(2)$] $P, Q$ を $G$ のシロー $p$--部分群とすると、$Q = g^{-1}Pg$ となる $G$ の元 $g$ が存在する。
+\item[$(3)$] $|\syl_p(G)|\equiv 1\;(\mod\:p)$、すなわち、シロー $p$--部分群の個数は、$kp + 1$、$(k\in\bZ)$ と書ける。
 \end{itemize}
 \end{thm}
 \proof
-$(1)$ $P\in \syl_p(G)$$B!"(B$H$ $B$r(B $G$ $B$N(B $p$--$BItJ,72$H$9$k!#(B$(P,H)$ $B$K$h$k(B $G$ $B$NN>B&J,2r$r(B
+$(1)$ $P\in \syl_p(G)$、$H$ を $G$ の $p$--部分群とする。$(P,H)$ による $G$ の両側分解を
 $$G = Pa_1H + Pa_2H + \cdots + Pa_rH$$
-$B$H$9$k$H!"L?Bj(B~\ref{prop:double-coset} $B$K$h$C$F!"(B
+とすると、命題~\ref{prop:double-coset} によって、
 $$|G:P| = \sum_{i=1}^r |H:H\cap a^{-1}_iPa_i|$$
-$B$,@.$jN)$D!#(B$P$ $B$O!"(B$G$ $B$N%7%m!<(B $p$--$BItJ,72$@$+$i!":8JU$O(B $p$ $B$HAG$G$"$k!#=>$C$F!"1&JU$N$"$k9`$O!"(B$p$ $B$H8_$$$KAG$G$"$k$3$H$,J,$+$k!#(B$(|H:H\cap a^{-1}_iPa_i|, p) = 1$ $B$H$9$k!#(B$H$ $B$O!"(B$p$ $B72$@$+$i!"(B
+が成り立つ。$P$ は、$G$ のシロー $p$--部分群だから、左辺は $p$ と素である。従って、右辺のある項は、$p$ と互いに素であることが分かる。$(|H:H\cap a^{-1}_iPa_i|, p) = 1$ とする。$H$ は、$p$ 群だから、
 $$|H| = |H:H\cap a^{-1}_iPa_i||H\cap a^{-1}_iPa_i|$$
-$B$r9M$($k$H!"(B$|H:H\cap a^{-1}_iPa_i| = 1$ $B$9$J$o$A(B $H = H\cap a^{-1}_iPa_i$ $B$G$"$k!#=>$C$F!"(B$H\subset a^{-1}_iPa_i$ $B$G$"$k!#(B$a^{-1}_iPa_i$ $B$O!"(B$P$ $B$HF1$80L?t$N(B $G$ $B$NItJ,72$@$+$i(B $a^{-1}_iPa_i$ $B$O!"(B$G$  $B$N(B $B%7%m!<(B $p$--$BItJ,72!"=>$C$F!"(B$H$ $B$r4^$`(B $G$ $B$N%7%m!<(B $p$--$BItJ,72$,B8:_$9$k!#(B
+を考えると、$|H:H\cap a^{-1}_iPa_i| = 1$ すなわち $H = H\cap a^{-1}_iPa_i$ である。従って、$H\subset a^{-1}_iPa_i$ である。$a^{-1}_iPa_i$ は、$P$ と同じ位数の $G$ の部分群だから $a^{-1}_iPa_i$ は、$G$  の シロー $p$--部分群、従って、$H$ を含む $G$ のシロー $p$--部分群が存在する。
 
-$(2)$ $Q = H$ $B$HCV$/$H!"(B$(1)$ $B$N>ZL@$h$j(B $G$ $B$N85(B $g = a_i$ $B$K$h$C$F!"(B$Q\subset g^{-1}Pg$ $B$H$J$k!#(B$|Q| = |P| = |g^{-1}Pg|$ $B$@$+$i!"(B$Q = g^{-1}Pg$ $B$,@.$jN)$D!#(B
+$(2)$ $Q = H$ と置くと、$(1)$ の証明より $G$ の元 $g = a_i$ によって、$Q\subset g^{-1}Pg$ となる。$|Q| = |P| = |g^{-1}Pg|$ だから、$Q = g^{-1}Pg$ が成り立つ。
 
-$(3)$ $\syl_p(G)\times G \to \syl_p(G),\;((P,a)\mapsto a^{-1}Pa)$ $B$H$9$k$H!J(B$a^{-1}Pa\in \syl_p(G)$ $B$KCm0U!K!"(B$\syl_p(G)$ $B$O!"(B$G$-$B=89g$H$J$j!"(B$(2)$ $B$K$h$j!"$3$N:nMQ$O2D0\$G$"$k!#$3$N:nMQ$K4X$9$k(B $P\in\syl_p(G)$ $B$N0BDjItJ,72$r!"(B$N$ $B$H$9$k$H!"(B
+$(3)$ $\syl_p(G)\times G \to \syl_p(G),\;((P,a)\mapsto a^{-1}Pa)$ とすると（$a^{-1}Pa\in \syl_p(G)$ に注意）、$\syl_p(G)$ は、$G$-集合となり、$(2)$ により、この作用は可移である。この作用に関する $P\in\syl_p(G)$ の安定部分群を、$N$ とすると、
 $$N = \{a\in G\mid P^a = P\} = \{a\in G\mid a^{-1}Pa = P\} = N_G(P)$$
-$B$G$"$k!#DjM}(B~\ref{thm:orbit_length} $B$K$h$j!"(B
+である。定理~\ref{thm:orbit_length} により、
 $$|\syl_p(G) = P^G = |G:N| = |G:N_G(P)|$$
-$B$H$J$k!#$3$3$G!"(B$G$ $B$N(B $(N,P)$ $B$K$h$kN>B&J,2r$r(B
+となる。ここで、$G$ の $(N,P)$ による両側分解を
 $$G = Nb_1P + Nb_2P + \cdots + Nb_rP$$
-$B$?$@$7!"(B$b_1 = 1$ $B$H$9$k!#L?Bj(B~\ref{prop:double-coset} $B$K$h$C$F(B
+ただし、$b_1 = 1$ とする。命題~\ref{prop:double-coset} によって
 $$|G:N| = \sum_{i=1}^r|P:P\cap b_i^{-1}Nb_i|$$
-$B$H$J$k!#(B$P\subset N_G(P) = N$ $B$@$+$i!"(B$|G:N|\mid |G:P|$ $B$G!"(B$|G:N|$ $B$O!"(B$p$ $B$H8_$$$KAG$G$"$k!#=>$C$F!"1&JU$K$b(B $p$ $B$H8_$$$KAG$J9`$,$"$k$3$H$K$J$k$,!"(B
+となる。$P\subset N_G(P) = N$ だから、$|G:N|\mid |G:P|$ で、$|G:N|$ は、$p$ と互いに素である。従って、右辺にも $p$ と互いに素な項があることになるが、
 \begin{eqnarray*}
 |P:P\cap b_i^{-1}Nb_i| = 1 & \Leftrightarrow & P = P\cap b_i^{-1}Nb_i \;\Leftrightarrow \; P \subset b_i^{-1}Nb_i\\
-&\Leftrightarrow & b_iPb_i^{-1} \subset N \;\mbox{ $B$9$J$o$A(B } b_iPb_i^{-1}\in \syl_p(N)\\
-& \Leftrightarrow & b_iPb_i^{-1} = n^{-1}Pn = P\;\mbox{ $B$H$J$k(B }n\in N \;\mbox{ $B$,B8:_$9$k!#(B}\\
+&\Leftrightarrow & b_iPb_i^{-1} \subset N \;\mbox{ すなわち } b_iPb_i^{-1}\in \syl_p(N)\\
+& \Leftrightarrow & b_iPb_i^{-1} = n^{-1}Pn = P\;\mbox{ となる }n\in N \;\mbox{ が存在する。}\\
 & \Leftrightarrow & b_i\in N = N_G(P) \\
 & \Leftrightarrow & Nb_iP = N1P (= N) \\
 & \Leftrightarrow & b_i = b_1
 \end{eqnarray*}
-$B$9$J$o$A!"$3$NMM$J(B $b_i$ $B$O!"$?$@0l$D$G$"$j!"B>$N(B $|P:P\cap b_i^{-1}Nb_i|$ $B$O!"$9$Y$F(B $p$ $B$G3d$j@Z$l$k!#(B$|P:P\cap b_1^{-1}Nb_1| = |P:P\cap N| = |P:P| = 1$ $B$@$+$i!"(B
+すなわち、この様な $b_i$ は、ただ一つであり、他の $|P:P\cap b_i^{-1}Nb_i|$ は、すべて $p$ で割り切れる。$|P:P\cap b_1^{-1}Nb_1| = |P:P\cap N| = |P:P| = 1$ だから、
 $$|\syl_p(G)| = |G:N_G(P)| = kp+1$$
-$B$H=q$1$k!#(B
+と書ける。
 \qed
 
 \end{document} 
