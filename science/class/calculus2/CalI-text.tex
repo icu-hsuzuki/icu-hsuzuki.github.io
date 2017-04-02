@@ -1,6 +1,6 @@
 %original : April 17,  24, 1996
 %original : May 1, 8, 1996
-%original : (Ï•ªjMay 22, 29, 1996
+%original : (ç©åˆ†ï¼‰May 22, 29, 1996
 %original : June 5, 6, 1996
 %%revised : April 16, 17, 23, 24, 30, 1997
 %%revised : May 14, 1997
@@ -23,21 +23,21 @@
 \newcommand{\mysection}[1]{%
 	\section{#1}\setcounter{page}{1}}
 
-\newtheorem{thm}{’è—}[section]
-\newtheorem{prop}[thm]{–½‘è}
-\newtheorem{lemma}[thm]{•â‘è}
-\newtheorem{cor}[thm]{Œn}
-\newtheorem{exercise}{—ûK–â‘è}[section]
-\newtheorem{example}{—á}[section]
-\newtheorem{problem}{–â‘è}[section]
-\newtheorem{defin}{’è‹`}[section]
+\newtheorem{thm}{å®šç†}[section]
+\newtheorem{prop}[thm]{å‘½é¡Œ}
+\newtheorem{lemma}[thm]{è£œé¡Œ}
+\newtheorem{cor}[thm]{ç³»}
+\newtheorem{exercise}{ç·´ç¿’å•é¡Œ}[section]
+\newtheorem{example}{ä¾‹}[section]
+\newtheorem{problem}{å•é¡Œ}[section]
+\newtheorem{defin}{å®šç¾©}[section]
 \newenvironment{definition}{\begin{defin} \rm}{\end{defin}}
 \newenvironment{ex}{\begin{exercise} \rm}{\end{exercise}}
 \newenvironment{eg}{\begin{example} \rm}{\end{example}}
 \newenvironment{prob}{\begin{problem} \rm}{\end{problem}}
 \newcommand{\remarks}{\vspace{2ex}\noindent{\bf Remarks.\quad}}
-\newcommand{\note}{\vspace{2ex}\noindent{\gt ’\quad}}
-\newcommand{\proof}{{\gt Ø–¾\quad}}
+\newcommand{\note}{\vspace{2ex}\noindent{\gt æ³¨\quad}}
+\newcommand{\proof}{{\gt è¨¼æ˜\quad}}
 \newcommand{\qed}{\hfill\hbox{\rule{6pt}{6pt}}}
 \newcommand{\bZ}{\mbox{\boldmath $Z$}}
 \newcommand{\bR}{\mbox{\boldmath $R$}}
@@ -48,407 +48,407 @@
 \setcounter{page}{0}
 \maketitle
 \newpage
-\mysection{ŠÖ”‚Ì‹ÉŒÀ‚Æ˜A‘±}
+\mysection{é–¢æ•°ã®æ¥µé™ã¨é€£ç¶š}
 \begin{definition}
-“_ $x = a$ ‚Ì‹ß‚­‚Å’è‹`‚³‚ê‚Ä‚¢‚éŠÖ” $y = f(x)$ ‚É‚¨‚¢‚ÄAŸ‚Ì‚R‚Â‚ÌğŒ‚ª¬‚è—§‚Â‚Æ‚«A$y = f(x)$ ‚ÍA$x = a$  ‚ÅA˜A‘±‚Å‚ ‚é (continuous) ‚Æ‚¢‚¤B
+ç‚¹ $x = a$ ã®è¿‘ãã§å®šç¾©ã•ã‚Œã¦ã„ã‚‹é–¢æ•° $y = f(x)$ ã«ãŠã„ã¦ã€æ¬¡ã®ï¼“ã¤ã®æ¡ä»¶ãŒæˆã‚Šç«‹ã¤ã¨ãã€$y = f(x)$ ã¯ã€$x = a$  ã§ã€é€£ç¶šã§ã‚ã‚‹ (continuous) ã¨ã„ã†ã€‚
 \begin{itemize}
-\item[$(1)$] $f(a)$ ‚ªA’è‹`‚³‚ê‚Ä‚¢‚éB
-\item[$(2)$] ${\displaystyle\lim_{x\rightarrow a}f(x)}$  ‚ªA‘¶İ‚·‚éB
-\item[$(3)$] ${\displaystyle\lim_{x\rightarrow a}f(x) = f(a)}$B
+\item[$(1)$] $f(a)$ ãŒã€å®šç¾©ã•ã‚Œã¦ã„ã‚‹ã€‚
+\item[$(2)$] ${\displaystyle\lim_{x\rightarrow a}f(x)}$  ãŒã€å­˜åœ¨ã™ã‚‹ã€‚
+\item[$(3)$] ${\displaystyle\lim_{x\rightarrow a}f(x) = f(a)}$ã€‚
 \end{itemize}
-‚Ü‚½A‚ ‚é‹æŠÔ‚ÌŠe“_‚ÅA˜A‘±‚ÈŠÖ”‚ğA˜A‘±ŠÖ”‚Æ‚¢‚¤B
+ã¾ãŸã€ã‚ã‚‹åŒºé–“ã®å„ç‚¹ã§ã€é€£ç¶šãªé–¢æ•°ã‚’ã€é€£ç¶šé–¢æ•°ã¨ã„ã†ã€‚
 \end{definition}
 
 \begin{eg}
-$x = 0$ ‚É‚¨‚¢‚ÄAŸ‚Ì‚S‚Â‚ÌŠÖ”‚ğl‚¦‚éB
+$x = 0$ ã«ãŠã„ã¦ã€æ¬¡ã®ï¼”ã¤ã®é–¢æ•°ã‚’è€ƒãˆã‚‹ã€‚
 $$\begin{array}{ll}
 (a)\;f(x) = \left\{\begin{array}{ll}1/x & x\neq 0\\ 0 & x = 0 \end{array}\right. &
 (b)\;g(x) = \left\{\begin{array}{ll}\sin(1/x)& x\neq 0\\ 0 & x = 0 \end{array}\right.\\
-(c)\;h(x) = \left\{\begin{array}{ll}x\sin(1/x) & x\neq 0\\ 0 & x = 0 \end{array}\right. & (d)\;l(x) = \left\{\begin{array}{ll}x & x\mbox{ –³—”}\\ 0 & x\mbox{ —L—”} \end{array}\right.
+(c)\;h(x) = \left\{\begin{array}{ll}x\sin(1/x) & x\neq 0\\ 0 & x = 0 \end{array}\right. & (d)\;l(x) = \left\{\begin{array}{ll}x & x\mbox{ ç„¡ç†æ•°}\\ 0 & x\mbox{ æœ‰ç†æ•°} \end{array}\right.
 \end{array}$$
-$(a)$A$(b)$ ‚ÍA$x = 0$ ‚É‚¨‚¢‚ÄA˜A‘±‚Å‚Í‚È‚¢B$(c)$A$(d)$ ‚ÍA˜A‘±‚Å‚ ‚éB‚µ‚©‚µA$(d)$ ‚ÍA$x = 0$ ˆÈŠO‚ÌŠe“_‚Å•s˜A‘±‚Å‚ ‚éB
+$(a)$ã€$(b)$ ã¯ã€$x = 0$ ã«ãŠã„ã¦ã€é€£ç¶šã§ã¯ãªã„ã€‚$(c)$ã€$(d)$ ã¯ã€é€£ç¶šã§ã‚ã‚‹ã€‚ã—ã‹ã—ã€$(d)$ ã¯ã€$x = 0$ ä»¥å¤–ã®å„ç‚¹ã§ä¸é€£ç¶šã§ã‚ã‚‹ã€‚
 \end{eg}
 
 \begin{eg}
-’è”ŠÖ” $c$A‘½€®A$\sin x$A$\cos x$A$e^x$ ‚ÍAŠe“_‚Å˜A‘±A‚Ü‚½A˜A‘±ŠÖ”‚Ì˜aA·A’è””{AÏ‚àA˜A‘±ŠÖ”B¤‚àA•ª•ê‚ª—ë‚É‚È‚ç‚È‚¢”ÍˆÍ‚Å˜A‘±ŠÖ”‚Å‚ ‚éB
+å®šæ•°é–¢æ•° $c$ã€å¤šé …å¼ã€$\sin x$ã€$\cos x$ã€$e^x$ ã¯ã€å„ç‚¹ã§é€£ç¶šã€ã¾ãŸã€é€£ç¶šé–¢æ•°ã®å’Œã€å·®ã€å®šæ•°å€ã€ç©ã‚‚ã€é€£ç¶šé–¢æ•°ã€‚å•†ã‚‚ã€åˆ†æ¯ãŒé›¶ã«ãªã‚‰ãªã„ç¯„å›²ã§é€£ç¶šé–¢æ•°ã§ã‚ã‚‹ã€‚
 \end{eg}
 
 \begin{prop}   \label{prop:inter}
-•Â‹æŠÔ $[a,b]$ ã‚Å˜A‘±‚ÈŠÖ” $f(x)$ ‚É‚¨‚¢‚ÄA$C$ ‚ğA$f(a)$ ‚ÆA$f(b)$ ‚ÌŠÔ‚Ì’l‚Æ‚·‚é‚ÆA$f(c) = C$ ‚Æ‚È‚é“_ $c$ ‚ªA‹æŠÔ $[a,b]$ “à‚É‚ ‚éB
+é–‰åŒºé–“ $[a,b]$ ä¸Šã§é€£ç¶šãªé–¢æ•° $f(x)$ ã«ãŠã„ã¦ã€$C$ ã‚’ã€$f(a)$ ã¨ã€$f(b)$ ã®é–“ã®å€¤ã¨ã™ã‚‹ã¨ã€$f(c) = C$ ã¨ãªã‚‹ç‚¹ $c$ ãŒã€åŒºé–“ $[a,b]$ å†…ã«ã‚ã‚‹ã€‚
 \end{prop}
 
 \begin{eg}
-$f(x) = 4x^5 - 10x^4 - 20x^3 + 4x^2 + 16x - 15$ ‚Æ‚·‚éB$f(-2) = -15$A$f(-1) = 15$A$f(0) = -15$A$f(1) = 15$A$f(2) = -15$A$f(3) = 15$B]‚Á‚ÄA‚T‚Â‚Ì‹æŠÔ $[-2,-1]$A$[-1,0]$A$[0,1]$A$[1,2]$A$[2,3]$ ‚Ì“à•”‚ÅA$f(x) = 0$ ‚Æ‚È‚é“_A‚·‚È‚í‚¿ª‚ğ­‚È‚­‚Æ‚àˆê‚Â‚¸‚Â‚ÂB$f(x)$ ‚ÍA‚TŸ‘½€®‚¾‚©‚çA‚X‚TŒÂ‚ÌÀª‚ğ‚ÂB‚·‚È‚í‚¿A‚±‚Ì‚TŒÂˆÈŠO‚É‚ÍAª‚ğ‚½‚¸A‚±‚ê‚ç‚Ì‹æŠÔ‚É’š“xˆê‚Â‚¸‚Â‚ ‚é‚±‚Æ‚à‰ğ‚è‚Ü‚·Bi‚È‚º‚Å‚µ‚å‚¤Bj
+$f(x) = 4x^5 - 10x^4 - 20x^3 + 4x^2 + 16x - 15$ ã¨ã™ã‚‹ã€‚$f(-2) = -15$ã€$f(-1) = 15$ã€$f(0) = -15$ã€$f(1) = 15$ã€$f(2) = -15$ã€$f(3) = 15$ã€‚å¾“ã£ã¦ã€ï¼•ã¤ã®åŒºé–“ $[-2,-1]$ã€$[-1,0]$ã€$[0,1]$ã€$[1,2]$ã€$[2,3]$ ã®å†…éƒ¨ã§ã€$f(x) = 0$ ã¨ãªã‚‹ç‚¹ã€ã™ãªã‚ã¡æ ¹ã‚’å°‘ãªãã¨ã‚‚ä¸€ã¤ãšã¤æŒã¤ã€‚$f(x)$ ã¯ã€ï¼•æ¬¡å¤šé …å¼ã ã‹ã‚‰ã€é«˜ã€…ï¼•å€‹ã®å®Ÿæ ¹ã‚’æŒã¤ã€‚ã™ãªã‚ã¡ã€ã“ã®ï¼•å€‹ä»¥å¤–ã«ã¯ã€æ ¹ã‚’æŒãŸãšã€ã“ã‚Œã‚‰ã®åŒºé–“ã«ä¸åº¦ä¸€ã¤ãšã¤ã‚ã‚‹ã“ã¨ã‚‚è§£ã‚Šã¾ã™ã€‚ï¼ˆãªãœã§ã—ã‚‡ã†ã€‚ï¼‰
 \end{eg}
 
 \begin{prop}  \label{prop:maxmin}
-•Â‹æŠÔ $[a,b]$ ã‚Å˜A‘±‚ÈŠÖ” $f(x)$ ‚ÍA$[a,b]$ ã‚ÌÅ‘åEÅ¬‚ğ‚Æ‚éB
+é–‰åŒºé–“ $[a,b]$ ä¸Šã§é€£ç¶šãªé–¢æ•° $f(x)$ ã¯ã€$[a,b]$ ä¸Šã®æœ€å¤§ãƒ»æœ€å°ã‚’ã¨ã‚‹ã€‚
 \end{prop}
 
-\note ã‚Ì–½‘è‚ÅA•Â‹æŠÔ‚Å‚È‚¢ê‡‚ÍA•K‚¸‚µ‚àAÅ‘åEÅ¬‚ğ‚Â‚Æ‚ÍŒÀ‚ç‚È‚¢B
+\note ä¸Šã®å‘½é¡Œã§ã€é–‰åŒºé–“ã§ãªã„å ´åˆã¯ã€å¿…ãšã—ã‚‚ã€æœ€å¤§ãƒ»æœ€å°ã‚’æŒã¤ã¨ã¯é™ã‚‰ãªã„ã€‚
 
-—á‚¦‚ÎA$f(x) = -x^2 + 2x + 1$A$(0 < x < 2)$ ‚Æ‚·‚é‚ÆA$1 < f(x) \leq 2 = f(1)$ ‚¾‚©‚çA‹æŠÔ $(0,2)$ ‚ÅÅ‘å’l‚Íæ‚é‚ªAÅ¬’l‚Íæ‚ç‚È‚¢B
+ä¾‹ãˆã°ã€$f(x) = -x^2 + 2x + 1$ã€$(0 < x < 2)$ ã¨ã™ã‚‹ã¨ã€$1 < f(x) \leq 2 = f(1)$ ã ã‹ã‚‰ã€åŒºé–“ $(0,2)$ ã§æœ€å¤§å€¤ã¯å–ã‚‹ãŒã€æœ€å°å€¤ã¯å–ã‚‰ãªã„ã€‚
 
 \newpage
-\mysection{”÷•ªŒW”‚Æ“±ŠÖ”}
+\mysection{å¾®åˆ†ä¿‚æ•°ã¨å°é–¢æ•°}
 \begin{definition}
-ŠÖ” $f(x)$ ‚ªA“_ $x = a$ ‹y‚Ñ‚»‚Ì‹ß‚­‚Å’è‹`‚³‚ê‚Ä‚¢‚ÄA‚©‚Â
+é–¢æ•° $f(x)$ ãŒã€ç‚¹ $x = a$ åŠã³ãã®è¿‘ãã§å®šç¾©ã•ã‚Œã¦ã„ã¦ã€ã‹ã¤
 $$\lim_{x\rightarrow a}\frac{f(x)-f(a)}{x-a}$$
-‚ª‘¶İ‚·‚é‚Æ‚«A‚±‚Ì’l‚ğ $f(x)$ ‚Ì“_ $a$ ‚É‚¨‚¯‚é”÷•ªŒW”‚ÆŒ¾‚¢A$f'(a)$ ‚Æ‘‚­BŠÖ” $f(x)$ ‚ªAŠe“_ $a$ ‚Å”÷•ª‰Â”\‚Å‚ ‚é‚Æ‚«A$a$ ‚É $f'(a)$ ‚ğ‘Î‰‚³‚¹‚éŠÖ”‚ğ $f(x)$ ‚Ì“±ŠÖ”‚ÆŒ¾‚¢A$f'(x)$A$df/dx$A$Df$ ‚Å•\‚·BŠÖ” $f(x)$ ‚©‚çA‚»‚Ì“±ŠÖ” $f'(x)$ ‚ğ‹‚ß‚é‚±‚Æ‚ğA”÷•ª‚·‚é‚Æ‚¢‚¤B
+ãŒå­˜åœ¨ã™ã‚‹ã¨ãã€ã“ã®å€¤ã‚’ $f(x)$ ã®ç‚¹ $a$ ã«ãŠã‘ã‚‹å¾®åˆ†ä¿‚æ•°ã¨è¨€ã„ã€$f'(a)$ ã¨æ›¸ãã€‚é–¢æ•° $f(x)$ ãŒã€å„ç‚¹ $a$ ã§å¾®åˆ†å¯èƒ½ã§ã‚ã‚‹ã¨ãã€$a$ ã« $f'(a)$ ã‚’å¯¾å¿œã•ã›ã‚‹é–¢æ•°ã‚’ $f(x)$ ã®å°é–¢æ•°ã¨è¨€ã„ã€$f'(x)$ã€$df/dx$ã€$Df$ ã§è¡¨ã™ã€‚é–¢æ•° $f(x)$ ã‹ã‚‰ã€ãã®å°é–¢æ•° $f'(x)$ ã‚’æ±‚ã‚ã‚‹ã“ã¨ã‚’ã€å¾®åˆ†ã™ã‚‹ã¨ã„ã†ã€‚
 \end{definition}
 
 \begin{eg} 
-$f, g$  ‚ğ”÷•ª‰Â”\‚ÈŠÖ”A$c$ ‚ğ’è”‚Æ‚·‚é‚ÆˆÈ‰º‚ª¬‚è—§‚ÂB
+$f, g$  ã‚’å¾®åˆ†å¯èƒ½ãªé–¢æ•°ã€$c$ ã‚’å®šæ•°ã¨ã™ã‚‹ã¨ä»¥ä¸‹ãŒæˆã‚Šç«‹ã¤ã€‚
 $$(f + g)' = f' + g'\quad (cf)' = cf'\quad (fg)' = f'g + fg'\quad \left(\frac{f}{g}\right) = \frac{f'g - fg'}{g^2}$$
 \end{eg}
 
 \begin{prop}
-ŠÖ” $f(x)$ ‚ªA“_ $a$ ‚Å”÷•ª‰Â”\‚È‚ç‚ÎA“_ $a$ ‚ÅA˜A‘±‚Å‚ ‚éB
+é–¢æ•° $f(x)$ ãŒã€ç‚¹ $a$ ã§å¾®åˆ†å¯èƒ½ãªã‚‰ã°ã€ç‚¹ $a$ ã§ã€é€£ç¶šã§ã‚ã‚‹ã€‚
 \end{prop}
 \proof
-ŠÖ” $a(x)$ ‚ğŸ‚Ì‚æ‚¤‚É’è‹`‚·‚éB
+é–¢æ•° $a(x)$ ã‚’æ¬¡ã®ã‚ˆã†ã«å®šç¾©ã™ã‚‹ã€‚
 $$a(x) = \left\{\begin{array}{ll}
 \displaystyle{\frac{f(x)-f(a)}{x-a}} & x\neq a\\ f'(a) & x = a
 \end{array}\right.$$
-‚·‚é‚ÆA$a(x)$ ‚ÍA’è‹`‚©‚çA“_ $a$ ‚Å˜A‘±B]‚Á‚ÄA
+ã™ã‚‹ã¨ã€$a(x)$ ã¯ã€å®šç¾©ã‹ã‚‰ã€ç‚¹ $a$ ã§é€£ç¶šã€‚å¾“ã£ã¦ã€
 $$f(x) = a(x)(x-a) + f(a)$$
-‚àA“_ $a$ ‚Å˜A‘±B
+ã‚‚ã€ç‚¹ $a$ ã§é€£ç¶šã€‚
 \qed
 
 \medskip
-\note ã‚Ì–½‘è‚É‚¨‚¢‚ÄA‹t‚Í•K‚¸‚µ‚à¬‚è—§‚½‚È‚¢B‚·‚È‚í‚¿A˜A‘±‚Å‚àA”÷•ª‰Â”\‚Æ‚ÍŒ¾‚¦‚È‚¢B—á‚¦‚ÎA$f(x) = |x|$A$g(x) = x\sin (1/x)$ ‚ÍA‚Æ‚à‚É $x = 0$ ‚Å˜A‘±‚¾‚ªA”÷•ª‰Â”\‚Å‚Í‚È‚¢BWeierstrass (1872) ‚ÍA‚ ‚é‹æŠÔ‚ÌŠe“_‚Å”÷•ª‰Â”\‚Å‚È‚¢˜A‘±ŠÖ”‚ÌÀ—á‚ğì‚Á‚ÄA“–‚Ì”Šw‰ï‚ÉÕŒ‚‚ğ—^‚¦‚½‚Æ‚Ì–‚Å‚ ‚éB‚±‚ê‚ÍAWeierstrass ŠÖ”‚Æ‚¢‚í‚ê‚éBƒtƒ‰ƒNƒ^ƒ‹}Œ`‚àŠ‚éŠ”÷•ª•s‰Â”\‚È‹Èü‚Å‚ ‚éB
+\note ä¸Šã®å‘½é¡Œã«ãŠã„ã¦ã€é€†ã¯å¿…ãšã—ã‚‚æˆã‚Šç«‹ãŸãªã„ã€‚ã™ãªã‚ã¡ã€é€£ç¶šã§ã‚‚ã€å¾®åˆ†å¯èƒ½ã¨ã¯è¨€ãˆãªã„ã€‚ä¾‹ãˆã°ã€$f(x) = |x|$ã€$g(x) = x\sin (1/x)$ ã¯ã€ã¨ã‚‚ã« $x = 0$ ã§é€£ç¶šã ãŒã€å¾®åˆ†å¯èƒ½ã§ã¯ãªã„ã€‚Weierstrass (1872) ã¯ã€ã‚ã‚‹åŒºé–“ã®å„ç‚¹ã§å¾®åˆ†å¯èƒ½ã§ãªã„é€£ç¶šé–¢æ•°ã®å®Ÿä¾‹ã‚’ä½œã£ã¦ã€å½“æ™‚ã®æ•°å­¦ä¼šã«è¡æ’ƒã‚’ä¸ãˆãŸã¨ã®äº‹ã§ã‚ã‚‹ã€‚ã“ã‚Œã¯ã€Weierstrass é–¢æ•°ã¨ã„ã‚ã‚Œã‚‹ã€‚ãƒ•ãƒ©ã‚¯ã‚¿ãƒ«å›³å½¢ã‚‚è‡³ã‚‹æ‰€å¾®åˆ†ä¸å¯èƒ½ãªæ›²ç·šã§ã‚ã‚‹ã€‚
 
 \begin{eg}
 \begin{enumerate}
-\item i‘½€®‚Ì”÷•ªj$f(x) = x^n$ ‚ÌA$x = a$ ‚É‚¨‚¯‚éA”÷•ªŒW”‚Æ“±ŠÖ”B
+\item ï¼ˆå¤šé …å¼ã®å¾®åˆ†ï¼‰$f(x) = x^n$ ã®ã€$x = a$ ã«ãŠã‘ã‚‹ã€å¾®åˆ†ä¿‚æ•°ã¨å°é–¢æ•°ã€‚
 \begin{eqnarray*}
 \lefteqn{\lim_{x\rightarrow a}\frac{x^n - a^n}{x-a}}\\
 & = & \lim_{x\rightarrow a}\frac{(x-a)(x^{n-1} + ax^{n-2} + \cdots + a^{n-2}x + a^{n-1})}{x-a}\\
 & = & \lim_{x\rightarrow a} (x^{n-1} + ax^{n-2} + \cdots + a^{n-2}x + a^{n-1}) \\
 & = & na^{n-1}
 \end{eqnarray*}
-]‚Á‚ÄA$f(x) = x^n$  ‚Ì“±ŠÖ”‚ÍA$f'(x) = nx^{n-1}$B
+å¾“ã£ã¦ã€$f(x) = x^n$  ã®å°é–¢æ•°ã¯ã€$f'(x) = nx^{n-1}$ã€‚
 
-\item iOŠpŠÖ”‚Ì”÷•ªj$f(x) = \sin x$ ‚ÌA$x = a$ ‚É‚¨‚¯‚éA”÷•ªŒW”‚Æ“±ŠÖ”B
+\item ï¼ˆä¸‰è§’é–¢æ•°ã®å¾®åˆ†ï¼‰$f(x) = \sin x$ ã®ã€$x = a$ ã«ãŠã‘ã‚‹ã€å¾®åˆ†ä¿‚æ•°ã¨å°é–¢æ•°ã€‚
 \begin{eqnarray*}
 \lefteqn{\lim_{x\rightarrow a}\frac{\sin x - \sin a}{x-a}}\\
-\lefteqn{x = a+h \mbox{ ‚Æ’u‚­‚ÆA}}\\
+\lefteqn{x = a+h \mbox{ ã¨ç½®ãã¨ã€}}\\
 & = & \lim_{h\rightarrow 0}\frac{\sin(a+h) - \sin a}{h}\\
 & = & \lim_{h\rightarrow 0}\frac{\cos(a + h/2)\sin(h/2)}{h/2}\\
 & = & \lim_{h\rightarrow 0}{\cos(a + h/2)}\cdot 
 \lim_{h\rightarrow 0}\frac{\sin(h/2)}{h/2}\\
 & = & \cos a
 \end{eqnarray*}
-]‚Á‚ÄA$f(x) = \sin x$ ‚Ì“±ŠÖ”‚ÍA$f'(x) = \cos x$B
-‚±‚±‚ÅAˆÈ‰º‚ÌŒö®‚ğ—p‚¢‚Ä‚¢‚éB
+å¾“ã£ã¦ã€$f(x) = \sin x$ ã®å°é–¢æ•°ã¯ã€$f'(x) = \cos x$ã€‚
+ã“ã“ã§ã€ä»¥ä¸‹ã®å…¬å¼ã‚’ç”¨ã„ã¦ã„ã‚‹ã€‚
 $$\lim_{\theta\rightarrow 0}\frac{\sin\theta}{\theta} = 1$$
-‚±‚ê‚ÍA’PˆÊ‰~‚ÌîŒ`‚ÆA‚»‚ê‚ğ‹²‚ŞAOŠpŒ`‚Ì–ÊÏ‚ğ—p‚¢‚½Ÿ‚Ì•s“™®‚©‚ç“¾‚ç‚ê‚éB
+ã“ã‚Œã¯ã€å˜ä½å††ã®æ‰‡å½¢ã¨ã€ãã‚Œã‚’æŒŸã‚€ã€ä¸‰è§’å½¢ã®é¢ç©ã‚’ç”¨ã„ãŸæ¬¡ã®ä¸ç­‰å¼ã‹ã‚‰å¾—ã‚‰ã‚Œã‚‹ã€‚
 $$\frac12\sin\theta \leq \pi\cdot\frac{\theta}{2\pi} \leq \frac12\tan\theta, \quad 1\leq \frac{\theta}{\sin \theta} \leq \frac{1}{\cos\theta}$$
 
-\item iw”ŠÖ”‚Ì”÷•ªj$(e^x)' = e^x$B‚±‚±‚ÅA
+\item ï¼ˆæŒ‡æ•°é–¢æ•°ã®å¾®åˆ†ï¼‰$(e^x)' = e^x$ã€‚ã“ã“ã§ã€
 $$e = \lim_{n\to \infty}\left(1 + \frac1n\right)^n.$$
-‚Æ‚·‚éB$e = 2.71828182845904523\ldots$ ‚ÍA–³—”‚Ì‚È‚©‚Å‚àA“Á‚ÉA’´‰z”‚ÆŒÄ‚Î‚êA‚Ç‚ñ‚È—L—”ŒW”‚Ì‘½€®‚Ìª‚É‚à‚È‚Á‚Ä‚¢‚È‚¢‚±‚Æ‚ª’m‚ç‚ê‚Ä‚¢‚éB
+ã¨ã™ã‚‹ã€‚$e = 2.71828182845904523\ldots$ ã¯ã€ç„¡ç†æ•°ã®ãªã‹ã§ã‚‚ã€ç‰¹ã«ã€è¶…è¶Šæ•°ã¨å‘¼ã°ã‚Œã€ã©ã‚“ãªæœ‰ç†æ•°ä¿‚æ•°ã®å¤šé …å¼ã®æ ¹ã«ã‚‚ãªã£ã¦ã„ãªã„ã“ã¨ãŒçŸ¥ã‚‰ã‚Œã¦ã„ã‚‹ã€‚
 $$\lim_{x\to a}\frac{e^x - e^a}{x-a} = \lim_{h\to 0}\frac{e^{a+h} - e^a}{h} = e^a\lim_{h\to 0}\frac{e^h - 1}{h}$$
-]‚Á‚ÄA$\lim_{h\to 0}\frac{e^h - 1}{h} = 1$ ‚ğ¦‚¹‚Î‚æ‚¢B
+å¾“ã£ã¦ã€$\lim_{h\to 0}\frac{e^h - 1}{h} = 1$ ã‚’ç¤ºã›ã°ã‚ˆã„ã€‚
 
-$e^h = 1 + 1/t$ ‚Æ‚¨‚­B$h = \log(1 + 1/t)$ ‚¾‚©‚çA
+$e^h = 1 + 1/t$ ã¨ãŠãã€‚$h = \log(1 + 1/t)$ ã ã‹ã‚‰ã€
 $$\frac{e^h - 1}{h} = \frac{1/t}{\log(1+1/t)} = \frac{1}{\log(1+1/t)^t}$$
-]‚Á‚ÄAŒ‹‹ÇA$h\to 0$ ‚Ì‚Æ‚«A$e^h \to 0$ ‚Ì‚Æ‚«A]‚Á‚ÄA$t\to \infty$ ‚ÅA$(1 + 1/t)^t \to 0$ ‚ğŒ¾‚¦‚Î‚æ‚¢BÀ‚ÍA‚±‚ê‚Íã‚ÌA©‘R‘Î” $e$ ‚Ì’è‹`‚©‚ç“¾‚ç‚ê‚éB
+å¾“ã£ã¦ã€çµå±€ã€$h\to 0$ ã®ã¨ãã€$e^h \to 0$ ã®ã¨ãã€å¾“ã£ã¦ã€$t\to \infty$ ã§ã€$(1 + 1/t)^t \to 0$ ã‚’è¨€ãˆã°ã‚ˆã„ã€‚å®Ÿã¯ã€ã“ã‚Œã¯ä¸Šã®ã€è‡ªç„¶å¯¾æ•° $e$ ã®å®šç¾©ã‹ã‚‰å¾—ã‚‰ã‚Œã‚‹ã€‚
 \end{enumerate}
 \end{eg}
 
 \note
 \begin{itemize}
-\item $f(x) = a^x$ $(a > 0)$ ‚Æ‚µ‚½‚Æ‚«A$f(x)$ ‚Ì“±ŠÖ”‚ÍA‚Ç‚¤‚È‚é‚Å‚µ‚å‚¤‚©B‚±‚Ì—l‚Èw”ŠÖ”‚ÍAu³Šm‚É‚Ív‚Ç‚Ì‚æ‚¤‚É’è‹`‚µ‚½‚ç‚æ‚¢‚Å‚µ‚å‚¤‚©B‚±‚ê‚ç‚Ì’è‹`‚É‚ÍAÀ”‚Ì˜A‘±«‚ª[‚­‚©‚©‚í‚Á‚½AŸ‚Ì–‚ªd—v‚Å‚·Bu—LŠE‚È’P’²”—ñ‚Íû‘©‚·‚éBv‚±‚Ì—l‚ÈA”Šw“I‚ÉŒµ–§‚É‹c˜_‚·‚é‚±‚Æ‚É‚Í‚±‚±‚Å‚Í\•ª—§‚¿“ü‚ê‚Ü‚¹‚ñBQl‘‚É‚ ‚°‚½A‚–Ø’å¡’˜u‰ğÍŠT˜_v‚È‚Ç‚É’§í‚µ‚Ä‰º‚³‚¢B
-\item $(\log x)' = 1/x$ ‚ğ’è‹`‚É]‚Á‚ÄA¦‚µ‚Ä‚İ‚Ü‚µ‚å‚¤B
-\item Å‰‚Éq‚×‚½A$e$ ‚Ì’è‹`A‚É‚æ‚Á‚ÄA‚ ‚é”‚ª’è‚Ü‚é‚±‚Æ‚ğŠm‚©‚ß‚Ä‰º‚³‚¢B‚±‚±‚Å‚àA
-u—LŠE‚È’P’²”—ñ‚Íû‘©‚·‚éBv‚ªd—v‚Å‚·B
-\item ‚±‚ê‚ç‚ÌAÀ”‚Ì˜A‘±«‚ª[‚­‚©‚©‚í‚Á‚½–‚É‚Â‚¢‚Ä‚ÍA”Šw’Ê˜_ I (BCMM I) ‚ÅŠw‚Ñ‚Ü‚·B
+\item $f(x) = a^x$ $(a > 0)$ ã¨ã—ãŸã¨ãã€$f(x)$ ã®å°é–¢æ•°ã¯ã€ã©ã†ãªã‚‹ã§ã—ã‚‡ã†ã‹ã€‚ã“ã®æ§˜ãªæŒ‡æ•°é–¢æ•°ã¯ã€ã€Œæ­£ç¢ºã«ã¯ã€ã©ã®ã‚ˆã†ã«å®šç¾©ã—ãŸã‚‰ã‚ˆã„ã§ã—ã‚‡ã†ã‹ã€‚ã“ã‚Œã‚‰ã®å®šç¾©ã«ã¯ã€å®Ÿæ•°ã®é€£ç¶šæ€§ãŒæ·±ãã‹ã‹ã‚ã£ãŸã€æ¬¡ã®äº‹ãŒé‡è¦ã§ã™ã€‚ã€Œæœ‰ç•Œãªå˜èª¿æ•°åˆ—ã¯åæŸã™ã‚‹ã€‚ã€ã“ã®æ§˜ãªã€æ•°å­¦çš„ã«å³å¯†ã«è­°è«–ã™ã‚‹ã“ã¨ã«ã¯ã“ã“ã§ã¯ååˆ†ç«‹ã¡å…¥ã‚Œã¾ã›ã‚“ã€‚å‚è€ƒæ›¸ã«ã‚ã’ãŸã€é«˜æœ¨è²æ²»è‘—ã€Œè§£ææ¦‚è«–ã€ãªã©ã«æŒ‘æˆ¦ã—ã¦ä¸‹ã•ã„ã€‚
+\item $(\log x)' = 1/x$ ã‚’å®šç¾©ã«å¾“ã£ã¦ã€ç¤ºã—ã¦ã¿ã¾ã—ã‚‡ã†ã€‚
+\item æœ€åˆã«è¿°ã¹ãŸã€$e$ ã®å®šç¾©ã€ã«ã‚ˆã£ã¦ã€ã‚ã‚‹æ•°ãŒå®šã¾ã‚‹ã“ã¨ã‚’ç¢ºã‹ã‚ã¦ä¸‹ã•ã„ã€‚ã“ã“ã§ã‚‚ã€
+ã€Œæœ‰ç•Œãªå˜èª¿æ•°åˆ—ã¯åæŸã™ã‚‹ã€‚ã€ãŒé‡è¦ã§ã™ã€‚
+\item ã“ã‚Œã‚‰ã®ã€å®Ÿæ•°ã®é€£ç¶šæ€§ãŒæ·±ãã‹ã‹ã‚ã£ãŸäº‹ã«ã¤ã„ã¦ã¯ã€æ•°å­¦é€šè«– I (BCMM I) ã§å­¦ã³ã¾ã™ã€‚
 \end{itemize}
 
 
 
 \newpage
-\mysection{”÷•ª–@}
-$A$. ‡¬ŠÖ”‚Ì”÷•ª
+\mysection{å¾®åˆ†æ³•}
+$A$. åˆæˆé–¢æ•°ã®å¾®åˆ†
 \begin{prop}
-$g(x)$ ‚ÍA“_ $a$ ‚Å”÷•ª‰Â”\A$f(x)$ ‚ÍA“_ $g(a)$ ‚Å”÷•ª‰Â”\‚Æ‚·‚éB‚±‚Ì‚Æ‚«A
+$g(x)$ ã¯ã€ç‚¹ $a$ ã§å¾®åˆ†å¯èƒ½ã€$f(x)$ ã¯ã€ç‚¹ $g(a)$ ã§å¾®åˆ†å¯èƒ½ã¨ã™ã‚‹ã€‚ã“ã®ã¨ãã€
 $$\frac{d}{dx}f(g(a)) = f'(g(a))g'(a)$$
 \end{prop}
 \proof
-$F(x) = f(g(x))$ ‚Æ‚¨‚­B‚·‚é‚ÆA
+$F(x) = f(g(x))$ ã¨ãŠãã€‚ã™ã‚‹ã¨ã€
 \begin{eqnarray*}
 F'(a) & = & \lim_{x\rightarrow a}\frac{f(g(x)) - f(g(a))}{x-a}\\
         & = & \lim_{x\rightarrow a}\frac{f(g(x)) - f(g(a))}{g(x) - g(a)}\lim_{x\rightarrow a}\frac{g(x) - g(a)}{x-a}\\
         & = & f'(g(a))g'(a)
 \end{eqnarray*}
-$g(x)$ ‚ÍA“_ $x = a$ ‚Å”÷•ª‰Â”\‚¾‚©‚çA˜A‘±A‚·‚È‚í‚¿A$x$ ‚ªA$a$ ‚É‹ß‚Ã‚­‚Æ‚«A$g(x)$  ‚ÍA$g(a)$ ‚É‹ß‚Ã‚­B
+$g(x)$ ã¯ã€ç‚¹ $x = a$ ã§å¾®åˆ†å¯èƒ½ã ã‹ã‚‰ã€é€£ç¶šã€ã™ãªã‚ã¡ã€$x$ ãŒã€$a$ ã«è¿‘ã¥ãã¨ãã€$g(x)$  ã¯ã€$g(a)$ ã«è¿‘ã¥ãã€‚
 \qed
 
 \begin{eg}
-$f(x) = e^{-x^2}$ ‚Æ‚·‚éB‚±‚Ì‚Æ‚«A$f'(x) = -2x\cdot e^{-x^2}$B$f''(x) = (-2 + 4x^2)\cdot e^{-x^2}$B$f(x)$ ‚ğ $n$ ‰ñ”÷•ª‚µ‚½‚à‚Ì‚ğ $f(x)$ ‚Ì $n$ ŠK“±ŠÖ”‚ÆŒ¾‚¢ $f^{(n)}(x)$ ‚Æ‘‚­BÀ‚ÍA$n$ Ÿ‘½€® $H_n(x)$ ‚ÅA$f^{(n)} = (-1)^nH_n(x)e^{-x^2}$ ‚Æ‚È‚é‚à‚Ì‚ª‚ ‚éB‚±‚ÌA$H_n(x)$ ‚ğ $n$ ŸƒGƒ‹ƒ~[ƒg(Hermite) ‘½€®‚Æ‚¢‚¤B$H_0(x) = 1$A$H_1(x) = 2x$A$H_2(x) = 4x^2 -2$B
+$f(x) = e^{-x^2}$ ã¨ã™ã‚‹ã€‚ã“ã®ã¨ãã€$f'(x) = -2x\cdot e^{-x^2}$ã€‚$f''(x) = (-2 + 4x^2)\cdot e^{-x^2}$ã€‚$f(x)$ ã‚’ $n$ å›å¾®åˆ†ã—ãŸã‚‚ã®ã‚’ $f(x)$ ã® $n$ éšå°é–¢æ•°ã¨è¨€ã„ $f^{(n)}(x)$ ã¨æ›¸ãã€‚å®Ÿã¯ã€$n$ æ¬¡å¤šé …å¼ $H_n(x)$ ã§ã€$f^{(n)} = (-1)^nH_n(x)e^{-x^2}$ ã¨ãªã‚‹ã‚‚ã®ãŒã‚ã‚‹ã€‚ã“ã®ã€$H_n(x)$ ã‚’ $n$ æ¬¡ã‚¨ãƒ«ãƒŸãƒ¼ãƒˆ(Hermite) å¤šé …å¼ã¨ã„ã†ã€‚$H_0(x) = 1$ã€$H_1(x) = 2x$ã€$H_2(x) = 4x^2 -2$ã€‚
 \end{eg}
 
 \begin{ex}
-$H_n(x)$ ‚ğ ã‚Ì—á‚Å’è‹`‚³‚ê‚½ $n$ ŸƒGƒ‹ƒ~[ƒg(Hermite) ‘½€®‚Æ‚·‚é‚Æ‚«ˆÈ‰º‚ğ¦‚¹B
+$H_n(x)$ ã‚’ ä¸Šã®ä¾‹ã§å®šç¾©ã•ã‚ŒãŸ $n$ æ¬¡ã‚¨ãƒ«ãƒŸãƒ¼ãƒˆ(Hermite) å¤šé …å¼ã¨ã™ã‚‹ã¨ãä»¥ä¸‹ã‚’ç¤ºã›ã€‚
 \begin{enumerate}
-\item $H_n(x)$ ‚ÍÀÛ $n$ Ÿ‘½€®‚Å‚ ‚éB
-\item $H_{n+1}(x) = 2xH_n(x) - 2nH_{n-1}(x)$B
-\item $H'_n(x) = 2nH_{n-1}(x)$B
-\item $y = H_n(x)$ ‚Æ‚¨‚­‚ÆA$y$ ‚ÍAŸ‚Ì”÷•ª•û’ö®‚ğ–‚½‚·B
+\item $H_n(x)$ ã¯å®Ÿéš› $n$ æ¬¡å¤šé …å¼ã§ã‚ã‚‹ã€‚
+\item $H_{n+1}(x) = 2xH_n(x) - 2nH_{n-1}(x)$ã€‚
+\item $H'_n(x) = 2nH_{n-1}(x)$ã€‚
+\item $y = H_n(x)$ ã¨ãŠãã¨ã€$y$ ã¯ã€æ¬¡ã®å¾®åˆ†æ–¹ç¨‹å¼ã‚’æº€ãŸã™ã€‚
 $$y'' - 2xy' + 2ny = 0.$$
 \end{enumerate}
 \end{ex}
 
 \medskip
-$B$. ‹tŠÖ”‚Ì”÷•ª
+$B$. é€†é–¢æ•°ã®å¾®åˆ†
 
-Ê‘œ $f: X \to Y$ ‚ÍA $f(X) = Y$ ‚·‚È‚í‚¿A$Y$ ‚Ì‚Ç‚ñ‚ÈŒ³i—v‘fj$y$ ‚É‘Î‚µ‚Ä‚àA$f(x) = y$ ‚Æ‚È‚é $x\in X$ ‚ª‘¶İ‚·‚é‚Æ‚«A‘SË‚Å‚ ‚é‚Æ‚¢‚¤B‚Ü‚½A
+å†™åƒ $f: X \to Y$ ã¯ã€ $f(X) = Y$ ã™ãªã‚ã¡ã€$Y$ ã®ã©ã‚“ãªå…ƒï¼ˆè¦ç´ ï¼‰$y$ ã«å¯¾ã—ã¦ã‚‚ã€$f(x) = y$ ã¨ãªã‚‹ $x\in X$ ãŒå­˜åœ¨ã™ã‚‹ã¨ãã€å…¨å°„ã§ã‚ã‚‹ã¨ã„ã†ã€‚ã¾ãŸã€
 $$x_1\neq x_2 \to f(x_1)\neq f(x_2) \Leftrightarrow f(x_1) = f(x_2) \to x_1 = x_2$$
-‚ª¬‚è—§‚Â‚Æ‚«’PË‚Å‚ ‚é‚Æ‚¢‚¤B‘SË‚©‚Â’PË‚Å‚ ‚é‚Æ‚«A‘S’PË–”‚ÍA‚P‘Î‚P‘Î‰‚Å‚ ‚é‚Æ‚¢‚¤B‚±‚Ì‚Æ‚«‚ÍA$y\in Y$ ‚É‘Î‚µ‚ÄA$f(x) = y$ ‚Æ‚È‚é $x\in X$ ‚ª‚½‚¾ˆê‚Â‚É’è‚Ü‚é‚Ì‚ÅA $y$ ‚É‚±‚Ì $x$ ‚ğ‘Î‰‚³‚¹‚éÊ‘œ‚ğ $f$ ‚Ì‹tÊ‘œ‚Æ‚¢‚¤B’è‹`‚©‚çA$g(f(x)) = x$A$f(g(y)) = y$ ‚ª¬‚è—§‚ÂB‹t‚ÉA$f(x)$ ‚¨‚æ‚ÑA$g(y)$ ‚ªA‚ ‚é‹æŠÔ‚ÅŒİ‚¢‚É‹tÊ‘œ $g(f(x)) = x, \;f(g(y)) = y$ ‚Æ‚¢‚¤ğŒ‚ğ–‚½‚µ‚Ä‚¢‚é‚ÆA$f(x)$A$g(y)$ ‚ÍA‘S’PË‚É‚È‚Á‚Ä‚¢‚éB
+ãŒæˆã‚Šç«‹ã¤ã¨ãå˜å°„ã§ã‚ã‚‹ã¨ã„ã†ã€‚å…¨å°„ã‹ã¤å˜å°„ã§ã‚ã‚‹ã¨ãã€å…¨å˜å°„åˆã¯ã€ï¼‘å¯¾ï¼‘å¯¾å¿œã§ã‚ã‚‹ã¨ã„ã†ã€‚ã“ã®ã¨ãã¯ã€$y\in Y$ ã«å¯¾ã—ã¦ã€$f(x) = y$ ã¨ãªã‚‹ $x\in X$ ãŒãŸã ä¸€ã¤ã«å®šã¾ã‚‹ã®ã§ã€ $y$ ã«ã“ã® $x$ ã‚’å¯¾å¿œã•ã›ã‚‹å†™åƒã‚’ $f$ ã®é€†å†™åƒã¨ã„ã†ã€‚å®šç¾©ã‹ã‚‰ã€$g(f(x)) = x$ã€$f(g(y)) = y$ ãŒæˆã‚Šç«‹ã¤ã€‚é€†ã«ã€$f(x)$ ãŠã‚ˆã³ã€$g(y)$ ãŒã€ã‚ã‚‹åŒºé–“ã§äº’ã„ã«é€†å†™åƒ $g(f(x)) = x, \;f(g(y)) = y$ ã¨ã„ã†æ¡ä»¶ã‚’æº€ãŸã—ã¦ã„ã‚‹ã¨ã€$f(x)$ã€$g(y)$ ã¯ã€å…¨å˜å°„ã«ãªã£ã¦ã„ã‚‹ã€‚
 
 
 \begin{eg}
 \begin{enumerate}
-\item $y = f(x) = 2x -1$ ‚ÍA$\bR$ ‚©‚çA$\bR$ ‚Ö‚Ì‘S’PË‚Å‚ ‚éB‚±‚ê‚Ì‹tÊ‘œ‚ğ $x = g(y)$ ‚Å•\‚·‚ÆA$g(y) = (1/2)(y+1)$ ‚Æ‚È‚éB‹tÊ‘œ‚ª‚ ‚éA‚·‚È‚í‚¿A‘S’PË‚Å‚ ‚é‚Æ‚ÍAŠÈ’P‚ÉŒ¾‚¤‚ÆAŠe $y$ ‚É‘Î‚µ‚ÄA$f(x) = y$ ‚Æ‚È‚éA$x$ ‚ªA‚¢‚Â‚Å‚à‚½‚¾ˆê‚Â‚É’è‚Ü‚é‚Æ‚¢‚¤‚±‚Æ‚Å‚ ‚éB
-\item $y = f(x) = x^2$ ‚ÍA$\bR$ ‚©‚çA$\bR$ ‚Ö‚ÌÊ‘œi”‚ÌW‡‚©‚ç”‚ÌW‡‚Ö‚ÌÊ‘œ‚ğŠÖ”‚Æ‚àŒ¾‚¤j‚Å‚Í‚ ‚é‚ªA‚±‚ê‚ÍA‘SË‚Å‚à’PË‚Å‚à‚È‚¢B‚Ü‚¸A’lˆæ‚ğ •‰‚Å‚È‚¢”‘S‘ÌA$\bR^+ = \{y\geq 0\mid y\in \bR\}$ ‚Æ‚·‚é‚ÆA$f:\bR \to \bR^+$ ‚ÍA‘SË‚Å‚ ‚éB‚µ‚©‚µA$f(-1) = f(1)$ ‚©‚ç‚à•ª‚©‚é‚æ‚¤‚É ’PË‚Å‚Í‚È‚¢B‚±‚ê‚©‚ç‘S’PË‚ğ“¾‚é‚½‚ß‚É‚ÍA‚±‚ÌA’è‹`ˆæ‚ğ§ŒÀ‚µ‚ÄA—á‚¦‚ÎA$f:\bR^+\to\bR^+$ ‚É§ŒÀ‚·‚ê‚ÎA‚±‚ê‚ÍA‘S’PË‚Å‚ ‚éB‚±‚Ì‹tÊ‘œ‚ÍA$g(y) = \sqrt{y}$B’lˆæ‚ğ ³‚Å‚È‚¢”‘S‘Ì $\bR^-$ ‚É§ŒÀ‚µ‚½‚Æ‚«‚ÍA‹tÊ‘œ $h(y)$ ‚ÍA$-\sqrt{y}$ ‚Å‚ ‚é‚±‚Æ‚É’ˆÓB
+\item $y = f(x) = 2x -1$ ã¯ã€$\bR$ ã‹ã‚‰ã€$\bR$ ã¸ã®å…¨å˜å°„ã§ã‚ã‚‹ã€‚ã“ã‚Œã®é€†å†™åƒã‚’ $x = g(y)$ ã§è¡¨ã™ã¨ã€$g(y) = (1/2)(y+1)$ ã¨ãªã‚‹ã€‚é€†å†™åƒãŒã‚ã‚‹ã€ã™ãªã‚ã¡ã€å…¨å˜å°„ã§ã‚ã‚‹ã¨ã¯ã€ç°¡å˜ã«è¨€ã†ã¨ã€å„ $y$ ã«å¯¾ã—ã¦ã€$f(x) = y$ ã¨ãªã‚‹ã€$x$ ãŒã€ã„ã¤ã§ã‚‚ãŸã ä¸€ã¤ã«å®šã¾ã‚‹ã¨ã„ã†ã“ã¨ã§ã‚ã‚‹ã€‚
+\item $y = f(x) = x^2$ ã¯ã€$\bR$ ã‹ã‚‰ã€$\bR$ ã¸ã®å†™åƒï¼ˆæ•°ã®é›†åˆã‹ã‚‰æ•°ã®é›†åˆã¸ã®å†™åƒã‚’é–¢æ•°ã¨ã‚‚è¨€ã†ï¼‰ã§ã¯ã‚ã‚‹ãŒã€ã“ã‚Œã¯ã€å…¨å°„ã§ã‚‚å˜å°„ã§ã‚‚ãªã„ã€‚ã¾ãšã€å€¤åŸŸã‚’ è² ã§ãªã„æ•°å…¨ä½“ã€$\bR^+ = \{y\geq 0\mid y\in \bR\}$ ã¨ã™ã‚‹ã¨ã€$f:\bR \to \bR^+$ ã¯ã€å…¨å°„ã§ã‚ã‚‹ã€‚ã—ã‹ã—ã€$f(-1) = f(1)$ ã‹ã‚‰ã‚‚åˆ†ã‹ã‚‹ã‚ˆã†ã« å˜å°„ã§ã¯ãªã„ã€‚ã“ã‚Œã‹ã‚‰å…¨å˜å°„ã‚’å¾—ã‚‹ãŸã‚ã«ã¯ã€ã“ã®ã€å®šç¾©åŸŸã‚’åˆ¶é™ã—ã¦ã€ä¾‹ãˆã°ã€$f:\bR^+\to\bR^+$ ã«åˆ¶é™ã™ã‚Œã°ã€ã“ã‚Œã¯ã€å…¨å˜å°„ã§ã‚ã‚‹ã€‚ã“ã®é€†å†™åƒã¯ã€$g(y) = \sqrt{y}$ã€‚å€¤åŸŸã‚’ æ­£ã§ãªã„æ•°å…¨ä½“ $\bR^-$ ã«åˆ¶é™ã—ãŸã¨ãã¯ã€é€†å†™åƒ $h(y)$ ã¯ã€$-\sqrt{y}$ ã§ã‚ã‚‹ã“ã¨ã«æ³¨æ„ã€‚
 \end{enumerate}
 \end{eg}
 
 \begin{prop}
-$f(s)$ ‚¨‚æ‚ÑA$g(t)$ ‚ªA‚ ‚é‹æŠÔ‚ÅŒİ‚¢‚É‹tŠÖ” $(g(f(s)) = s, \;f(g(t)) = t)$ ‚È‚ç‚ÎA
+$f(s)$ ãŠã‚ˆã³ã€$g(t)$ ãŒã€ã‚ã‚‹åŒºé–“ã§äº’ã„ã«é€†é–¢æ•° $(g(f(s)) = s, \;f(g(t)) = t)$ ãªã‚‰ã°ã€
 $$\frac{dg}{dt} = \frac{1}{(\frac{df}{ds})}.$$
 \end{prop}
 \proof
-$f(g(t)) = t$ ‚ğ‡¬ŠÖ”‚Ì”÷•ª‚ğ—p‚¢‚ÄA—¼•Ó”÷•ª‚·‚é‚ÆA$f'(g(t))g'(t) = 1$B‚½‚¾‚µA$f'(g(t))$ ‚ÍA$s$ ‚ÌŠÖ”‚Æ‚µ‚Ä‚Ì”÷•ª‚Å‚ ‚éB
+$f(g(t)) = t$ ã‚’åˆæˆé–¢æ•°ã®å¾®åˆ†ã‚’ç”¨ã„ã¦ã€ä¸¡è¾ºå¾®åˆ†ã™ã‚‹ã¨ã€$f'(g(t))g'(t) = 1$ã€‚ãŸã ã—ã€$f'(g(t))$ ã¯ã€$s$ ã®é–¢æ•°ã¨ã—ã¦ã®å¾®åˆ†ã§ã‚ã‚‹ã€‚
 \qed
 
 \begin{eg}
 \begin{enumerate}
-\item $\sin x$ ‚Ì‹tŠÖ”‚Ì”÷•ªB
+\item $\sin x$ ã®é€†é–¢æ•°ã®å¾®åˆ†ã€‚
 $$y = f(x) = \sin^{-1} x = \arcsin x, \; (-\pi/2 \leq y \leq \pi/2).$$
-$x = \sin y$ ‚¾‚©‚çA
+$x = \sin y$ ã ã‹ã‚‰ã€
 $$\frac{dy}{dx} = \frac{1}{\cos y} = \frac{1}{\sqrt{1-x^2}}.$$
-‚±‚±‚ÅA$y$ ‚Ì”ÍˆÍ‚ğ $-\pi/2 \leq y \leq \pi/2$ ‚Ì—l‚Éİ’è‚µ‚½‚½‚ßA$\cos y\geq 0$ ‚Å‚ ‚é‚±‚Æ‚É’ˆÓB
-\item $\cos x$ ‚Ì‹tŠÖ”‚Ì”÷•ªB
+ã“ã“ã§ã€$y$ ã®ç¯„å›²ã‚’ $-\pi/2 \leq y \leq \pi/2$ ã®æ§˜ã«è¨­å®šã—ãŸãŸã‚ã€$\cos y\geq 0$ ã§ã‚ã‚‹ã“ã¨ã«æ³¨æ„ã€‚
+\item $\cos x$ ã®é€†é–¢æ•°ã®å¾®åˆ†ã€‚
 $$y = f(x) = \cos^{-1} x = \arccos x, \; (0 \leq y \leq \pi).$$
-$x = \cos y$ ‚¾‚©‚çA
+$x = \cos y$ ã ã‹ã‚‰ã€
 $$\frac{dy}{dx} = \frac{-1}{\sin y} = \frac{-1}{\sqrt{1-x^2}}.$$
-\item $\tan x$ ‚Ì‹tŠÖ”‚Ì”÷•ªB
+\item $\tan x$ ã®é€†é–¢æ•°ã®å¾®åˆ†ã€‚
 $$y = f(x) = \tan^{-1} x = \arctan x, \; (-\pi/2 < y < \pi/2).$$
-$x = \tan y$ ‚¾‚©‚çA
+$x = \tan y$ ã ã‹ã‚‰ã€
 $$\frac{dy}{dx} = \frac{1}{\sec^2 y} = \frac{1}{1+x^2}.$$
-\item $e^x$ ‚Ì‹tŠÖ” $y = \log x$ ‚Ì”÷•ªB
-$x = e^x$ ‚¾‚©‚çA
+\item $e^x$ ã®é€†é–¢æ•° $y = \log x$ ã®å¾®åˆ†ã€‚
+$x = e^x$ ã ã‹ã‚‰ã€
 $$\frac{dy}{dx} = \frac{1}{e^y} = \frac{1}{x}.$$
 \end{enumerate}
 \end{eg}
 
 \medskip
-$C$. ‘Î””÷•ª–@
+$C$. å¯¾æ•°å¾®åˆ†æ³•
 
-ÏA¤‚ª‘½‚­ŠÜ‚Ü‚ê‚éŠÖ”Aw”ŠÖ”‚É‚ÍA‚Ü‚¸A$\log$ ‚ğæ‚Á‚Ä‚©‚çA”÷•ª‚ğ‚·‚é‘Î””÷•ª–@‚ª—LŒø‚Å‚ ‚éB$y = f(x)$ ‚Ì‚Æ‚«A$\log y = \log f(x)$ ‚ğ”÷•ª‚·‚é‚ÆA
+ç©ã€å•†ãŒå¤šãå«ã¾ã‚Œã‚‹é–¢æ•°ã€æŒ‡æ•°é–¢æ•°ã«ã¯ã€ã¾ãšã€$\log$ ã‚’å–ã£ã¦ã‹ã‚‰ã€å¾®åˆ†ã‚’ã™ã‚‹å¯¾æ•°å¾®åˆ†æ³•ãŒæœ‰åŠ¹ã§ã‚ã‚‹ã€‚$y = f(x)$ ã®ã¨ãã€$\log y = \log f(x)$ ã‚’å¾®åˆ†ã™ã‚‹ã¨ã€
 $$\frac{d}{dx}\log f(x) = \frac{f'(x)}{f(x)}.$$
-‚Å‚ ‚Á‚½B
+ã§ã‚ã£ãŸã€‚
 
 \begin{eg}
 \begin{enumerate}
-\item ${\displaystyle y = \frac{(2x+1)^4}{(x^2-1)^3(4x+3)^2}}$ ‚Æ‚·‚é‚ÆA
+\item ${\displaystyle y = \frac{(2x+1)^4}{(x^2-1)^3(4x+3)^2}}$ ã¨ã™ã‚‹ã¨ã€
 $$\log y = 4\log(2x+1) - 3\log(x^2-1) - 2\log(4x+3)$$
-‚Æ‚È‚é‚©‚çA‚±‚ê‚æ‚èAŸ‚ğ“¾‚éB
+ã¨ãªã‚‹ã‹ã‚‰ã€ã“ã‚Œã‚ˆã‚Šã€æ¬¡ã‚’å¾—ã‚‹ã€‚
 $$\frac{y'}{y} = \frac{4\cdot2}{2x+1} - \frac{3\cdot2x}{x^2 -1} - \frac{2\cdot4}{4x+3}.$$
-\item $y = (1+2x)^{1/x}$ ‚Æ‚·‚é‚ÆA$\log y = \frac{1}{x}\log(1+2x)$B‚±‚ê‚æ‚èA
+\item $y = (1+2x)^{1/x}$ ã¨ã™ã‚‹ã¨ã€$\log y = \frac{1}{x}\log(1+2x)$ã€‚ã“ã‚Œã‚ˆã‚Šã€
 $$\frac{y'}{y} = -\frac{1}{x^2}\log(1+2x) + \frac1x\cdot\frac{2}{2x+1}.$$
-\item $u = u(x), v = v(x), w = w(x)$ ‚Æ‚·‚é‚ÆA$(uvw)' = u'vw + uv'w + uvw'$ ‚¾‚ªA‘Î””÷•ª–@‚ğg‚¤‚±‚Æ‚É‚æ‚èA$u(x)v(x)w(x) \neq 0$ ‚Ì”ÍˆÍ‚ÅA
+\item $u = u(x), v = v(x), w = w(x)$ ã¨ã™ã‚‹ã¨ã€$(uvw)' = u'vw + uv'w + uvw'$ ã ãŒã€å¯¾æ•°å¾®åˆ†æ³•ã‚’ä½¿ã†ã“ã¨ã«ã‚ˆã‚Šã€$u(x)v(x)w(x) \neq 0$ ã®ç¯„å›²ã§ã€
 $$\frac{(uvw)'}{uvw} = \frac{u'}{u} + \frac{v'}{v} + \frac{w'}{w}$$
-‚Å‚ ‚é‚±‚Æ‚ª•ª‚©‚éB‚±‚Ì—l‚È•\¦‚ª—LŒø‚È‚Æ‚«‚à‚æ‚­‚ ‚éB
+ã§ã‚ã‚‹ã“ã¨ãŒåˆ†ã‹ã‚‹ã€‚ã“ã®æ§˜ãªè¡¨ç¤ºãŒæœ‰åŠ¹ãªã¨ãã‚‚ã‚ˆãã‚ã‚‹ã€‚
 \end{enumerate}
 \end{eg}
 
 \medskip
-$D$. ƒ‰ƒCƒvƒjƒbƒc(Leibniz)‚ÌŒö®
+$D$. ãƒ©ã‚¤ãƒ—ãƒ‹ãƒƒãƒ„(Leibniz)ã®å…¬å¼
 $$(f\cdot g)^{(n)} = \sum_{k=0}^n {}_nC_k f^{(n-k)}\cdot g^{(k)}.$$
-‚½‚¾‚µA$f^{(0)} = f$B${}_nC_k$ ‚ÍA${n \choose k}$ ‚Æ•\‚·‚±‚Æ‚ª‘½‚¢B
+ãŸã ã—ã€$f^{(0)} = f$ã€‚${}_nC_k$ ã¯ã€${n \choose k}$ ã¨è¡¨ã™ã“ã¨ãŒå¤šã„ã€‚
 
 \begin{eg}
 \begin{enumerate}
-\item ${\displaystyle (\sin x)^{(k)} = \sin\bigl(x+\frac{k\pi}{2}\bigr)}$ ‚É’ˆÓ‚·‚éB‚·‚é‚ÆA
+\item ${\displaystyle (\sin x)^{(k)} = \sin\bigl(x+\frac{k\pi}{2}\bigr)}$ ã«æ³¨æ„ã™ã‚‹ã€‚ã™ã‚‹ã¨ã€
 \begin{eqnarray*}
 (e^x\sin x)^{(n)} & =  & \sum_{k=0}^n {n\choose k}e^x(\sin x)^{(k)}\\
 & = & \sum_{k=0}^n {n\choose k}e^x\sin\bigl(x+\frac{k\pi}{2}\bigr)
 \end{eqnarray*}
-\item $f(x) = \tan^{-1}x$ ‚Æ‚·‚éB‚±‚Ì‚Æ‚«A‹tŠÖ”‚Ì”÷•ª‚Ål‚¦‚½‚æ‚¤‚ÉA$f'(x) = 1/(1+x^2)$ ‚Å‚ ‚Á‚½B‚±‚ê‚æ‚èA$1 = (1+x^2)f'(x)$ ‚ğ“¾‚éB‚±‚ê‚ÉAƒ‰ƒCƒvƒjƒbƒc‚ÌŒö®‚ğ“K‰‚·‚é‚ÆA$1+x^2$ ‚ÍA‚R‰ñ”÷•ª‚·‚é‚Æ $0$ ‚Æ‚È‚é‚±‚Æ‚©‚çA$k\geq 1$ ‚Ì‚Æ‚«A
+\item $f(x) = \tan^{-1}x$ ã¨ã™ã‚‹ã€‚ã“ã®ã¨ãã€é€†é–¢æ•°ã®å¾®åˆ†ã§è€ƒãˆãŸã‚ˆã†ã«ã€$f'(x) = 1/(1+x^2)$ ã§ã‚ã£ãŸã€‚ã“ã‚Œã‚ˆã‚Šã€$1 = (1+x^2)f'(x)$ ã‚’å¾—ã‚‹ã€‚ã“ã‚Œã«ã€ãƒ©ã‚¤ãƒ—ãƒ‹ãƒƒãƒ„ã®å…¬å¼ã‚’é©å¿œã™ã‚‹ã¨ã€$1+x^2$ ã¯ã€ï¼“å›å¾®åˆ†ã™ã‚‹ã¨ $0$ ã¨ãªã‚‹ã“ã¨ã‹ã‚‰ã€$k\geq 1$ ã®ã¨ãã€
 \begin{eqnarray*}
 0 & = & \sum_{i = 0}^k {k\choose i} (1+x^2)^{(i)}(f'(x))^{(k-i)}\\
    & = & \sum_{i = 0}^2 {k\choose i} (1+x^2)^{(i)}(f^{(k-i+1)}(x))\\
    & = & (1+x^2)f^{(k+1)}(x) + k2xf^{(k)}(x) + \frac{k(k-1)}2\cdot 2f^{(k-1)}(x)\\
    & = &  (1+x^2)f^{(k+1)}(x) + 2kxf^{(k)}(x) + {k(k-1)}f^{(k-1)}(x)
 \end{eqnarray*}
-‚ğ“¾‚éB—á‚¦‚ÎA$x = 0$ ‚Æ‚¨‚­‚ÆA$k\geq 0$ ‚ÅA
+ã‚’å¾—ã‚‹ã€‚ä¾‹ãˆã°ã€$x = 0$ ã¨ãŠãã¨ã€$k\geq 0$ ã§ã€
 $$f^{(k+1)}(0) + k(k-1)f^{(k-1)}(0) = 0$$
-‚ğ“¾‚é‚©‚çA$f^{(0)}(0) = f(0) = 0$A$f^{(1)}(0) = 1$ ‚É’ˆÓ‚·‚é‚ÆA
+ã‚’å¾—ã‚‹ã‹ã‚‰ã€$f^{(0)}(0) = f(0) = 0$ã€$f^{(1)}(0) = 1$ ã«æ³¨æ„ã™ã‚‹ã¨ã€
 $$f^{(0)}(0) = f^{(2)}(0) = f^{(4)}(0) = \cdots = f^{(2i)}(0) = 0, \ldots$$
-‚Ü‚½AŠï”‚Ì‚ÍA
+ã¾ãŸã€å¥‡æ•°ã®æ™‚ã¯ã€
 $$f^{(1)}(0) = 1, f^{(3)}(0) = -2, f^{(5)}(0) = 3! , \ldots, f^{(2i-1)}(0) = (-1)^{i-1}i!, \ldots$$
-‚ğ“¾‚éB‚±‚Ì—l‚Èg‚¢•û‚à‚ ‚éB
+ã‚’å¾—ã‚‹ã€‚ã“ã®æ§˜ãªä½¿ã„æ–¹ã‚‚ã‚ã‚‹ã€‚
 \end{enumerate}
 \end{eg}
 
 \newpage
-\mysection{•½‹Ï’l‚Ì’è—}
-\begin{prop}iRoll ‚Ì’è—j\quad \label{prop:roll}
-ŠÖ” $f(x)$ ‚ªA•Â‹æŠÔ $[a,b]$ ‚ÅA˜A‘±AŠJ‹æŠÔ $(a,b)$ ‚ÅA”÷•ª‰Â”\‚Å‚ ‚èA$f(a) = f(b)$ ‚È‚ç‚ÎAŠJ‹æŠÔ $(a,b)$ ‚Ì“_ $c$ ‚ÅA$f'(c) = 0$ ‚ğ–‚½‚·‚à‚Ì‚ª‚ ‚éB
+\mysection{å¹³å‡å€¤ã®å®šç†}
+\begin{prop}ï¼ˆRoll ã®å®šç†ï¼‰\quad \label{prop:roll}
+é–¢æ•° $f(x)$ ãŒã€é–‰åŒºé–“ $[a,b]$ ã§ã€é€£ç¶šã€é–‹åŒºé–“ $(a,b)$ ã§ã€å¾®åˆ†å¯èƒ½ã§ã‚ã‚Šã€$f(a) = f(b)$ ãªã‚‰ã°ã€é–‹åŒºé–“ $(a,b)$ ã®ç‚¹ $c$ ã§ã€$f'(c) = 0$ ã‚’æº€ãŸã™ã‚‚ã®ãŒã‚ã‚‹ã€‚
 \end{prop}
 \proof
-$f(x) = f(a) = f(b)$ ‚ªí‚É¬‚è—§‚Ä‚ÎA$f'(x) = 0$ ‚¾‚©‚çA‚±‚Ìê‡‚ÍA—Ç‚¢B
-$f(x) > f(a) = f(b)$ ‚Æ‚È‚é“_A$x$ ‚ª‚ ‚é‚Æ‚·‚éB$f(x)$ ‚ÍA˜A‘±‚¾‚©‚çA–½‘è \ref{prop:maxmin} ‚É‚æ‚Á‚ÄA‹æŠÔ“à‚Ì‚ ‚é“_A$c$ ‚ÅAÅ‘å’l $f(c)$ ‚ğ‚Æ‚éB‚±‚Ì‚Æ‚«A
+$f(x) = f(a) = f(b)$ ãŒå¸¸ã«æˆã‚Šç«‹ã¦ã°ã€$f'(x) = 0$ ã ã‹ã‚‰ã€ã“ã®å ´åˆã¯ã€è‰¯ã„ã€‚
+$f(x) > f(a) = f(b)$ ã¨ãªã‚‹ç‚¹ã€$x$ ãŒã‚ã‚‹ã¨ã™ã‚‹ã€‚$f(x)$ ã¯ã€é€£ç¶šã ã‹ã‚‰ã€å‘½é¡Œ \ref{prop:maxmin} ã«ã‚ˆã£ã¦ã€åŒºé–“å†…ã®ã‚ã‚‹ç‚¹ã€$c$ ã§ã€æœ€å¤§å€¤ $f(c)$ ã‚’ã¨ã‚‹ã€‚ã“ã®ã¨ãã€
 $$f'(c) = \lim_{x\rightarrow c}\frac{f(x) - f(c)}{x-c} $$
-‚©‚ÂA
-$$\frac{f(x) - f(c)}{x-c} = \left\{\begin{array}{ll}\mbox{•‰–”‚Í‚O} & x< c \\
-\mbox{³–”‚Í‚O} & x>c \end{array} \right.$$
-]‚Á‚ÄA$f'(c) = 0$B
+ã‹ã¤ã€
+$$\frac{f(x) - f(c)}{x-c} = \left\{\begin{array}{ll}\mbox{è² åˆã¯ï¼} & x< c \\
+\mbox{æ­£åˆã¯ï¼} & x>c \end{array} \right.$$
+å¾“ã£ã¦ã€$f'(c) = 0$ã€‚
 
-$f(x) < f(a) = f(b)$ ‚Æ‚È‚é“_A$x$ ‚ª‚ ‚éê‡‚à“¯—lB
+$f(x) < f(a) = f(b)$ ã¨ãªã‚‹ç‚¹ã€$x$ ãŒã‚ã‚‹å ´åˆã‚‚åŒæ§˜ã€‚
 \qed
 
-\begin{thm} i•½‹Ï’l‚Ì’è—j\quad  \label{thm:mvt}
-ŠÖ” $f(x)$ ‚ªA•Â‹æŠÔ $[a,b]$ ‚ÅA˜A‘±AŠJ‹æŠÔ $(a,b)$ ‚ÅA”÷•ª‰Â”\‚È‚ç‚ÎAŠJ‹æŠÔ $(a,b)$ ‚Ì“_ $c$ ‚ÅAŸ‚ğ–‚½‚·‚à‚Ì‚ª‚ ‚éB
+\begin{thm} ï¼ˆå¹³å‡å€¤ã®å®šç†ï¼‰\quad  \label{thm:mvt}
+é–¢æ•° $f(x)$ ãŒã€é–‰åŒºé–“ $[a,b]$ ã§ã€é€£ç¶šã€é–‹åŒºé–“ $(a,b)$ ã§ã€å¾®åˆ†å¯èƒ½ãªã‚‰ã°ã€é–‹åŒºé–“ $(a,b)$ ã®ç‚¹ $c$ ã§ã€æ¬¡ã‚’æº€ãŸã™ã‚‚ã®ãŒã‚ã‚‹ã€‚
 $$f'(c) = \frac{f(b) - f(a)}{b-a}.$$
 \end{thm}
 \proof
-$F(x) = f(x) - {\displaystyle \frac{f(b) - f(a)}{b-a}}x$ ‚Æ‚·‚é‚ÆA
+$F(x) = f(x) - {\displaystyle \frac{f(b) - f(a)}{b-a}}x$ ã¨ã™ã‚‹ã¨ã€
 $$F(a) = f(a) - \frac{f(b) - f(a)}{b-a}a = \frac{bf(a) - af(b)}{b-a} = 
 f(b) - \frac{f(b) - f(a)}{b-a}b = F(b)$$
-]‚Á‚ÄA–½‘è \ref{prop:roll} ‚É‚æ‚Á‚ÄA$F'(c) = 0$  ‚Æ‚È‚éA“_ $c$ ‚ª‚ ‚éB‚±‚ê‚ÍA
+å¾“ã£ã¦ã€å‘½é¡Œ \ref{prop:roll} ã«ã‚ˆã£ã¦ã€$F'(c) = 0$  ã¨ãªã‚‹ã€ç‚¹ $c$ ãŒã‚ã‚‹ã€‚ã“ã‚Œã¯ã€
 $$f'(c) = \frac{f(b) - f(a)}{b-a}$$
-‚ğˆÓ–¡‚·‚éB
+ã‚’æ„å‘³ã™ã‚‹ã€‚
 \qed
 
-\newpage\mysection{ŠÖ”‚ÆƒOƒ‰ƒt}
+\newpage\mysection{é–¢æ•°ã¨ã‚°ãƒ©ãƒ•}
 \begin{definition}
-“_ $x$ ‚ªA“_ $a$ ‚É\•ª‹ß‚¢‚Æ‚«‚ÍAí‚ÉA
-$f(a) > f(x)$ ‚ª¬‚è—§‚Â‚Æ‚«A$f(x)$ ‚ÍA$x = a$ ‚ÅA‹É‘å‚É‚È‚é‚Æ‚¢‚¢A$f(a)$ ‚ğ‚»‚Ì‹É‘å’lA“_ $a$ ‚ğA‹É‘å“_‚Æ‚¢‚¤B“¯—l‚É‚µ‚ÄA“_ $x$ ‚ªA“_ $a$ ‚É\•ª‹ß‚¢‚Æ‚«‚ÍAí‚ÉA
-$f(a) < f(x)$ ‚ª¬‚è—§‚Â‚Æ‚«A$f(x)$ ‚ÍA$x = a$ ‚ÅA‹É¬‚É‚È‚é‚Æ‚¢‚¢A$f(a)$ ‚ğ‚»‚Ì‹É¬’lA“_ $a$ ‚ğA‹É¬“_‚Æ‚¢‚¤B‹É‘å’l‚Æ‹É¬’l‚ğ‡‚í‚¹‚Ä‹É’l‚Æ‚¢‚¤B
+ç‚¹ $x$ ãŒã€ç‚¹ $a$ ã«ååˆ†è¿‘ã„ã¨ãã¯ã€å¸¸ã«ã€
+$f(a) > f(x)$ ãŒæˆã‚Šç«‹ã¤ã¨ãã€$f(x)$ ã¯ã€$x = a$ ã§ã€æ¥µå¤§ã«ãªã‚‹ã¨ã„ã„ã€$f(a)$ ã‚’ãã®æ¥µå¤§å€¤ã€ç‚¹ $a$ ã‚’ã€æ¥µå¤§ç‚¹ã¨ã„ã†ã€‚åŒæ§˜ã«ã—ã¦ã€ç‚¹ $x$ ãŒã€ç‚¹ $a$ ã«ååˆ†è¿‘ã„ã¨ãã¯ã€å¸¸ã«ã€
+$f(a) < f(x)$ ãŒæˆã‚Šç«‹ã¤ã¨ãã€$f(x)$ ã¯ã€$x = a$ ã§ã€æ¥µå°ã«ãªã‚‹ã¨ã„ã„ã€$f(a)$ ã‚’ãã®æ¥µå°å€¤ã€ç‚¹ $a$ ã‚’ã€æ¥µå°ç‚¹ã¨ã„ã†ã€‚æ¥µå¤§å€¤ã¨æ¥µå°å€¤ã‚’åˆã‚ã›ã¦æ¥µå€¤ã¨ã„ã†ã€‚
 \end{definition}
 
 \begin{prop} \label{prop:1stderiv-test}
-$f(x)$ ‚ğA•Â‹æŠÔ $[a,b]$ ã˜A‘±AŠJ‹æŠÔ $(a,b)$  ã”÷•ª‰Â”\‚Æ‚·‚éB‚±‚Ì‚Æ‚«Ÿ‚ª¬—§‚·‚éB
+$f(x)$ ã‚’ã€é–‰åŒºé–“ $[a,b]$ ä¸Šé€£ç¶šã€é–‹åŒºé–“ $(a,b)$  ä¸Šå¾®åˆ†å¯èƒ½ã¨ã™ã‚‹ã€‚ã“ã®ã¨ãæ¬¡ãŒæˆç«‹ã™ã‚‹ã€‚
 \begin{itemize}
-\item[$(1)$] $(a,b)$ “à‚Ì“_ $c$ ‚Å‹É’l‚ğ‚Ä‚ÎA$f'(c) = 0$B
-\item[$(2)$] $(a,b)$ ã‚ÅAí‚É $f'(x)>0$ ‚È‚ç‚ÎA$f(x)$  ‚ÍA$[a,b]$ ã‚Å^‚É‘‰ÁB
-\item[$(3)$] $(a,b)$ ã‚ÅAí‚É $f'(x)<0$ ‚È‚ç‚ÎA$f(x)$  ‚ÍA$[a,b]$ ã‚Å^‚ÉŒ¸­B
-\item[$(4)$] $(a,b)$ ã‚ÅAí‚É $f'(x)=0$ ‚È‚ç‚ÎA$f(x)$  ‚ÍA$[a,b]$ ã‚Å’è”ŠÖ”B
+\item[$(1)$] $(a,b)$ å†…ã®ç‚¹ $c$ ã§æ¥µå€¤ã‚’æŒã¦ã°ã€$f'(c) = 0$ã€‚
+\item[$(2)$] $(a,b)$ ä¸Šã§ã€å¸¸ã« $f'(x)>0$ ãªã‚‰ã°ã€$f(x)$  ã¯ã€$[a,b]$ ä¸Šã§çœŸã«å¢—åŠ ã€‚
+\item[$(3)$] $(a,b)$ ä¸Šã§ã€å¸¸ã« $f'(x)<0$ ãªã‚‰ã°ã€$f(x)$  ã¯ã€$[a,b]$ ä¸Šã§çœŸã«æ¸›å°‘ã€‚
+\item[$(4)$] $(a,b)$ ä¸Šã§ã€å¸¸ã« $f'(x)=0$ ãªã‚‰ã°ã€$f(x)$  ã¯ã€$[a,b]$ ä¸Šã§å®šæ•°é–¢æ•°ã€‚
 \end{itemize}
 \end{prop}
 \proof
-•½‹Ï’l‚Ì’è— \ref{thm:mvt} ‚É‚æ‚Á‚ÄA
-$$\frac{f(x) - f(c)}{x-c} = f'(d) \;\mbox{ ‚Æ‚È‚é“_ } d \mbox{ ‚ªA$x$ ‚Æ $c$ ‚ÌŠÔ‚É‚ ‚éB}$$
+å¹³å‡å€¤ã®å®šç† \ref{thm:mvt} ã«ã‚ˆã£ã¦ã€
+$$\frac{f(x) - f(c)}{x-c} = f'(d) \;\mbox{ ã¨ãªã‚‹ç‚¹ } d \mbox{ ãŒã€$x$ ã¨ $c$ ã®é–“ã«ã‚ã‚‹ã€‚}$$
 \begin{itemize}
-\item[$(1)$] $f(c) > f(x)$ ‚Ì‚ÍAã‚Ì’l‚ÍA$x < c$ ‚Ì‚Æ‚«A³A$x>c$ ‚Ì‚Æ‚«A•‰‚¾‚©‚çA$x$ ‚ªA$c$ ‚É‹ß‚Ã‚­‚ÆA‚Â‚Ü‚èA$f'(c)$ ‚ÍA$0$ ‚É‚È‚ç‚´‚é‚ğ“¾‚È‚¢B
-$f(c) < f(x)$ ‚Ì‚Æ‚«‚à“¯—lB
-\item[$(2)$] $f(x) - f(c)$ ‚ÍA$x<c$ ‚Ì‚Æ‚«A•‰A$x>c$ ‚Ì‚Æ‚«A³‚¾‚©‚çA^‚É‘‰ÁB
-\item[$(3)$] “¯—lB
-\item[$(4)$] –¾‚ç‚©B\qed
+\item[$(1)$] $f(c) > f(x)$ ã®æ™‚ã¯ã€ä¸Šã®å€¤ã¯ã€$x < c$ ã®ã¨ãã€æ­£ã€$x>c$ ã®ã¨ãã€è² ã ã‹ã‚‰ã€$x$ ãŒã€$c$ ã«è¿‘ã¥ãã¨ã€ã¤ã¾ã‚Šã€$f'(c)$ ã¯ã€$0$ ã«ãªã‚‰ã–ã‚‹ã‚’å¾—ãªã„ã€‚
+$f(c) < f(x)$ ã®ã¨ãã‚‚åŒæ§˜ã€‚
+\item[$(2)$] $f(x) - f(c)$ ã¯ã€$x<c$ ã®ã¨ãã€è² ã€$x>c$ ã®ã¨ãã€æ­£ã ã‹ã‚‰ã€çœŸã«å¢—åŠ ã€‚
+\item[$(3)$] åŒæ§˜ã€‚
+\item[$(4)$] æ˜ã‚‰ã‹ã€‚\qed
 \end{itemize}
 
-$f'(x)$ ‚Ì‘‰ÁAŒ¸­‚ÍA$f''(x)$ ‚É‚æ‚Á‚Ä•ª‚©‚é‚±‚Æ‚ğl‚¦‚ê‚ÎAŸ‚ğ“¾‚éB
+$f'(x)$ ã®å¢—åŠ ã€æ¸›å°‘ã¯ã€$f''(x)$ ã«ã‚ˆã£ã¦åˆ†ã‹ã‚‹ã“ã¨ã‚’è€ƒãˆã‚Œã°ã€æ¬¡ã‚’å¾—ã‚‹ã€‚
 \begin{prop}
-$f(x)$ ‚ğA•Â‹æŠÔ $[a,b]$ ã˜A‘±AŠJ‹æŠÔ $(a,b)$  ã‚Q‰ñ”÷•ª‰Â”\‚Æ‚·‚éB‚±‚Ì‚Æ‚«Ÿ‚ª¬—§‚·‚éB
+$f(x)$ ã‚’ã€é–‰åŒºé–“ $[a,b]$ ä¸Šé€£ç¶šã€é–‹åŒºé–“ $(a,b)$  ä¸Šï¼’å›å¾®åˆ†å¯èƒ½ã¨ã™ã‚‹ã€‚ã“ã®ã¨ãæ¬¡ãŒæˆç«‹ã™ã‚‹ã€‚
 \begin{itemize}
-\item[$(1)$] $f'(c) = 0$A$f''(c) < 0$ ‚È‚ç‚ÎAŠÖ” $f(x)$ ‚ÍA$c$ ‚Å‹É‘å’l $f(c)$ ‚ğ‚ÂB
-\item[$(2)$] $f'(c) = 0$A$f''(c) > 0$ ‚È‚ç‚ÎAŠÖ” $f(x)$ ‚ÍA$c$ ‚Å‹É¬’l $f(c)$ ‚ğ‚ÂB
+\item[$(1)$] $f'(c) = 0$ã€$f''(c) < 0$ ãªã‚‰ã°ã€é–¢æ•° $f(x)$ ã¯ã€$c$ ã§æ¥µå¤§å€¤ $f(c)$ ã‚’æŒã¤ã€‚
+\item[$(2)$] $f'(c) = 0$ã€$f''(c) > 0$ ãªã‚‰ã°ã€é–¢æ•° $f(x)$ ã¯ã€$c$ ã§æ¥µå°å€¤ $f(c)$ ã‚’æŒã¤ã€‚
 \end{itemize}
 \end{prop}
 
 \begin{definition}
-ŠÖ” $f(x)$ ‚ªA“_ $c$ ‚É‚¨‚¢‚ÄAÚü‚ğ‚¿A$c$ ‚Ì‚²‚­‹ß‚­‚ÅA$f(x)$ ‚ÌƒOƒ‰ƒt‚ªAÚü‚Ìã‚É‚ ‚ê‚ÎA$f(x)$ ‚ÍA“_ $c$ ‚É‚¨‚¢‚ÄA‰º‚É“ÊAÚü‚Ì‰º‚É‚ ‚ê‚ÎAã‚É“Ê‚Æ‚¢‚¤B$f(x)$ ‚ÌƒOƒ‰ƒt‚ªAÚü‚Ìã‚©‚ç‰ºA–”‚ÍA‰º‚©‚çã‚ÉˆÚ‚é‚Æ‚«A‚±‚Ì“_‚ğA•Ï‹È“_‚Æ‚¢‚¤B
+é–¢æ•° $f(x)$ ãŒã€ç‚¹ $c$ ã«ãŠã„ã¦ã€æ¥ç·šã‚’æŒã¡ã€$c$ ã®ã”ãè¿‘ãã§ã€$f(x)$ ã®ã‚°ãƒ©ãƒ•ãŒã€æ¥ç·šã®ä¸Šã«ã‚ã‚Œã°ã€$f(x)$ ã¯ã€ç‚¹ $c$ ã«ãŠã„ã¦ã€ä¸‹ã«å‡¸ã€æ¥ç·šã®ä¸‹ã«ã‚ã‚Œã°ã€ä¸Šã«å‡¸ã¨ã„ã†ã€‚$f(x)$ ã®ã‚°ãƒ©ãƒ•ãŒã€æ¥ç·šã®ä¸Šã‹ã‚‰ä¸‹ã€åˆã¯ã€ä¸‹ã‹ã‚‰ä¸Šã«ç§»ã‚‹ã¨ãã€ã“ã®ç‚¹ã‚’ã€å¤‰æ›²ç‚¹ã¨ã„ã†ã€‚
 \end{definition}
 
-ã‚Ì’è‹`‚ÌğŒ‚ğ®‚Å‘‚¢‚Ä‚İ‚éB“_ $c$ ‚Å‚ÌÚü‚Ì•û’ö®‚ÍA$y = f(c) + f'(c) (x-c)$ ‚¾‚©‚çA$f(x)\geq f(c) + f'(c)(x-c)$ ‚Æ‚È‚éB$a, b$ ‚ğ $a < c < b$  ‚Å‚ ‚éA$c$ ‚Ì‚²‚­‹ß‚­‚Ì“_‚Æ‚·‚é‚ÆA
+ä¸Šã®å®šç¾©ã®æ¡ä»¶ã‚’å¼ã§æ›¸ã„ã¦ã¿ã‚‹ã€‚ç‚¹ $c$ ã§ã®æ¥ç·šã®æ–¹ç¨‹å¼ã¯ã€$y = f(c) + f'(c) (x-c)$ ã ã‹ã‚‰ã€$f(x)\geq f(c) + f'(c)(x-c)$ ã¨ãªã‚‹ã€‚$a, b$ ã‚’ $a < c < b$  ã§ã‚ã‚‹ã€$c$ ã®ã”ãè¿‘ãã®ç‚¹ã¨ã™ã‚‹ã¨ã€
 $$\frac{f(c) - f(a)}{c-a} \leq f'(c) \leq \frac{f(b) - f(c)}{b-c}$$
-‚¾‚©‚çA$f'(x)$ ‚ª ”÷•ª‰Â”\‚Æ‚·‚é‚ÆA$c$ ‚Ì‹ß‚­‚ÅA$f'(x)$ ‚ª‘‰Á‚µ‚Ä‚¢‚é‚±‚Æ‚ª•ª‚©‚éB‹t‚ÉA$f'(x)$ ‚ª $c$ ‚Ì‹ß‚­‚ÅA‘‰Á‚µ‚Ä‚¢‚ê‚ÎAã‚Ì®‚©‚çA$c$ ‚Ì‚²‚­‹ß‚­‚ÅA$f(x)$ ‚ÌƒOƒ‰ƒt‚ªAÚü‚Ìã‚É‚ ‚é‚±‚Æ‚ª•ª‚©‚é‚©‚çAŠÖ” $f(x)$ ‚ªA“_ $c$ ‚ÅA‰º‚É“Ê‚Å‚ ‚é‚½‚ß‚Ì•K—v\•ªğŒ‚ÍA$f(x)$ ‚ªA$c$ ‚Ì‹ß‚­‚ÅA‘‰Á‚µ‚Ä‚¢‚é‚±‚Æ‚Å‚ ‚é‚±‚Æ‚ª•ª‚©‚éBi‚½‚¾‚µA$f''(c)>0$ ‚ğˆÓ–¡‚µ‚Ä‚¢‚é‚í‚¯‚Å‚Í‚È‚¢Bj‚±‚Ì‚±‚Æ‚æ‚èAŸ‚ª“¾‚ç‚ê‚éB
+ã ã‹ã‚‰ã€$f'(x)$ ãŒ å¾®åˆ†å¯èƒ½ã¨ã™ã‚‹ã¨ã€$c$ ã®è¿‘ãã§ã€$f'(x)$ ãŒå¢—åŠ ã—ã¦ã„ã‚‹ã“ã¨ãŒåˆ†ã‹ã‚‹ã€‚é€†ã«ã€$f'(x)$ ãŒ $c$ ã®è¿‘ãã§ã€å¢—åŠ ã—ã¦ã„ã‚Œã°ã€ä¸Šã®å¼ã‹ã‚‰ã€$c$ ã®ã”ãè¿‘ãã§ã€$f(x)$ ã®ã‚°ãƒ©ãƒ•ãŒã€æ¥ç·šã®ä¸Šã«ã‚ã‚‹ã“ã¨ãŒåˆ†ã‹ã‚‹ã‹ã‚‰ã€é–¢æ•° $f(x)$ ãŒã€ç‚¹ $c$ ã§ã€ä¸‹ã«å‡¸ã§ã‚ã‚‹ãŸã‚ã®å¿…è¦ååˆ†æ¡ä»¶ã¯ã€$f(x)$ ãŒã€$c$ ã®è¿‘ãã§ã€å¢—åŠ ã—ã¦ã„ã‚‹ã“ã¨ã§ã‚ã‚‹ã“ã¨ãŒåˆ†ã‹ã‚‹ã€‚ï¼ˆãŸã ã—ã€$f''(c)>0$ ã‚’æ„å‘³ã—ã¦ã„ã‚‹ã‚ã‘ã§ã¯ãªã„ã€‚ï¼‰ã“ã®ã“ã¨ã‚ˆã‚Šã€æ¬¡ãŒå¾—ã‚‰ã‚Œã‚‹ã€‚
 
 \begin{prop}
-$f(x)$ ‚ªAŠJ‹æŠÔ $(a,b)$ ‚É‚¨‚¢‚ÄA‚QŠK“±ŠÖ” $f''(x)$ ‚ğ‚Ä‚ÎAŸ‚ª¬—§B
+$f(x)$ ãŒã€é–‹åŒºé–“ $(a,b)$ ã«ãŠã„ã¦ã€ï¼’éšå°é–¢æ•° $f''(x)$ ã‚’æŒã¦ã°ã€æ¬¡ãŒæˆç«‹ã€‚
 \begin{itemize}
-\item[$(1)$]  $f''(x)>0$ ‚È‚ç‚ÎA$f(x)$ ‚ÍAŠJ‹æŠÔ $(a,b)$ ‚ÅA‰º‚É“ÊB
-\item[$(2)$]  $f''(x)<0$ ‚È‚ç‚ÎA$f(x)$ ‚ÍAŠJ‹æŠÔ $(a,b)$ ‚ÅAã‚É“ÊB
-\item[$(3)$]  $f''(c) = 0$ ‚©‚ÂA$f''(x)$ ‚Ì•„†i³‚Å‚ ‚é‚©A•‰‚Å‚ ‚é‚©j‚ª“_ $c$ ‚Å•Ï‚í‚ê‚ÎA$x = c$ ‚ÍA•Ï‹È“_B
+\item[$(1)$]  $f''(x)>0$ ãªã‚‰ã°ã€$f(x)$ ã¯ã€é–‹åŒºé–“ $(a,b)$ ã§ã€ä¸‹ã«å‡¸ã€‚
+\item[$(2)$]  $f''(x)<0$ ãªã‚‰ã°ã€$f(x)$ ã¯ã€é–‹åŒºé–“ $(a,b)$ ã§ã€ä¸Šã«å‡¸ã€‚
+\item[$(3)$]  $f''(c) = 0$ ã‹ã¤ã€$f''(x)$ ã®ç¬¦å·ï¼ˆæ­£ã§ã‚ã‚‹ã‹ã€è² ã§ã‚ã‚‹ã‹ï¼‰ãŒç‚¹ $c$ ã§å¤‰ã‚ã‚Œã°ã€$x = c$ ã¯ã€å¤‰æ›²ç‚¹ã€‚
 \end{itemize}
 \end{prop}
 
 \begin{eg}
-‹æŠÔ $[0,2\pi]$ ã‚ÅAŠÖ” $f(x) = \sin x(1 + \cos x)$ l‚¦‚éB
+åŒºé–“ $[0,2\pi]$ ä¸Šã§ã€é–¢æ•° $f(x) = \sin x(1 + \cos x)$ è€ƒãˆã‚‹ã€‚
 \begin{eqnarray*}
 f'(x) & = & \cos x(1+ \cos x) + \sin x(-\sin x)\\
         & = & \cos x + \cos^2 x - \sin^2 x\\
         & = & 2\cos^2 x + \cos x - 1\\
         & = & (2\cos x -1)(\cos x+ 1)
 \end{eqnarray*}
-]‚Á‚ÄA@$f'(x) = 0$ ‚È‚ç‚ÎA$\cos x = -1$ ‚Ü‚½‚ÍA$1/2$B—^‚¦‚ç‚ê‚½‹æŠÔ‚Ì’†‚Å‚ÍA$x = \pi/3, \pi, 5\pi/3$B‚Ü‚½A
+å¾“ã£ã¦ã€ã€€$f'(x) = 0$ ãªã‚‰ã°ã€$\cos x = -1$ ã¾ãŸã¯ã€$1/2$ã€‚ä¸ãˆã‚‰ã‚ŒãŸåŒºé–“ã®ä¸­ã§ã¯ã€$x = \pi/3, \pi, 5\pi/3$ã€‚ã¾ãŸã€
 $$f''(x) = -2\sin x(\cos x +1) - \sin x(2\cos x -1) = -\sin x(4\cos x +1)$$
-‚æ‚èA$f''(x) = 0$ ‚Æ‚È‚é‚Ì‚ÍA$x = 0, \pi, 2\pi$ ‚¨‚æ‚ÑA$\cos x$ ‚ªA$-1/4$ ‚Æ‚È‚é‚Æ‚±‚ëB$x_1 = \arccos (-1/4)$ ‚Æ‚·‚é‚ÆA‚»‚Ì‚æ‚¤‚È“_‚ÍA$x_1$ ‚ÆA$2\pi - x_1$B
+ã‚ˆã‚Šã€$f''(x) = 0$ ã¨ãªã‚‹ã®ã¯ã€$x = 0, \pi, 2\pi$ ãŠã‚ˆã³ã€$\cos x$ ãŒã€$-1/4$ ã¨ãªã‚‹ã¨ã“ã‚ã€‚$x_1 = \arccos (-1/4)$ ã¨ã™ã‚‹ã¨ã€ãã®ã‚ˆã†ãªç‚¹ã¯ã€$x_1$ ã¨ã€$2\pi - x_1$ã€‚
 $$\begin{array}{c|ccccccccccccc}
 x & 0 &  & \pi/3 & & x_1 & & \pi & & 2\pi-x_1 & & 5\pi/3 & & 2\pi\\
 \hline 
-f(x) & & \nearrow & \mbox{“Ê} & \searrow &  \searrow & \searrow & & \searrow & \searrow & \searrow & \mbox{‰š} & \nearrow & \\
+f(x) & & \nearrow & \mbox{å‡¸} & \searrow &  \searrow & \searrow & & \searrow & \searrow & \searrow & \mbox{å‡¹} & \nearrow & \\
 f'(x) & + & + & 0 & - & - & - & 0 & - & - & - & 0 & + & + \\
 f''(x) & 0 & - & - & - & 0 & + & 0 & - & 0 & + & + & + & 0 
 \end{array}$$
 \end{eg}
 
 \begin{eg}
-$p>1$ $\frac{1}{p} + \frac{1}{q} = 1$ ‚Ì‚Æ‚«A”CˆÓ‚Ì $\alpha$, $\beta$ ‚É‘Î‚µ‚ÄA
+$p>1$ $\frac{1}{p} + \frac{1}{q} = 1$ ã®ã¨ãã€ä»»æ„ã® $\alpha$, $\beta$ ã«å¯¾ã—ã¦ã€
 $$\frac{1}{p}|\alpha|^p + \frac{1}{q}|\beta|^q \geq |\alpha||\beta|.$$
 \proof
-$\beta$ ‚ğŒÅ’è‚µ‚ÄA
+$\beta$ ã‚’å›ºå®šã—ã¦ã€
 $$f(x) = \frac{1}{p}x^p + \frac{1}{q}|\beta|^q - |\beta|x\quad(x\geq 0)$$
-‚Æ‚¨‚­B$f(x)\geq 0$ ‚Å‚ ‚é‚±‚Æ‚ğ¦‚¹‚Î‚æ‚¢B$f'(x) = x^{p-1} - |\beta|$ ‚¾‚©‚çA$x\geq 0$  ‚É‚¨‚¢‚ÄAŸ‚Ì‚æ‚¤‚É‚È‚éB
+ã¨ãŠãã€‚$f(x)\geq 0$ ã§ã‚ã‚‹ã“ã¨ã‚’ç¤ºã›ã°ã‚ˆã„ã€‚$f'(x) = x^{p-1} - |\beta|$ ã ã‹ã‚‰ã€$x\geq 0$  ã«ãŠã„ã¦ã€æ¬¡ã®ã‚ˆã†ã«ãªã‚‹ã€‚
 $$\begin{array}{c|cccc}
 x & 0 &  & |\beta|^{1/(p-1)} & \\
 \hline 
 f'(x) & & - & 0 & + \\
-f(x) & & \searrow & \mbox{‹É¬} & \nearrow 
+f(x) & & \searrow & \mbox{æ¥µå°} & \nearrow 
 \end{array}$$
-‚µ‚½‚ª‚Á‚ÄA$f(x)\geq f(|\beta|^{1/(p-1)})$ ‚Æ‚È‚éB‚Æ‚±‚ë‚ªA
+ã—ãŸãŒã£ã¦ã€$f(x)\geq f(|\beta|^{1/(p-1)})$ ã¨ãªã‚‹ã€‚ã¨ã“ã‚ãŒã€
 $$f(|\beta|^{1/(p-1)}) = \frac{1}{p}|\beta|^{p/(p-1)} + \frac{1}{q}|\beta|^{q} - |\beta|^{p/(p-1)} = 0.$$
-‚±‚ê‚æ‚èA$f(x)\geq 0$ ‚ğ“¾‚éB
+ã“ã‚Œã‚ˆã‚Šã€$f(x)\geq 0$ ã‚’å¾—ã‚‹ã€‚
 \qed
 \end{eg}
 
-\newpage\mysection{”÷•ª‚Ì‰—pAƒeƒCƒ‰[“WŠJ}
-\begin{thm} iCauchy ‚Ì•½‹Ï’l‚Ì’è—j\label{thm:cauchy-mvt}
-•Â‹æŠÔ $[a,b]$ ‚É‚¨‚¢‚ÄA$f(x)$A$g(x)$ ‚ÍA˜A‘±AŠJ‹æŠÔ $(a,b)$ ‚É‚¨‚¢‚ÄA”÷•ª‰Â”\‚Æ‚·‚éB‚à‚µA$g(a)\neq g(b)$  ‚©‚ÂA$f'(t)$A$g'(t)$  ‚ªA“¯‚É $0$ ‚É‚È‚ç‚È‚¯‚ê‚ÎA$(a,b)$ ‚Ì‚ ‚é“_A$c$ ‚É‚¨‚¢‚ÄA Ÿ‚ª¬‚è—§‚ÂB
+\newpage\mysection{å¾®åˆ†ã®å¿œç”¨ã€ãƒ†ã‚¤ãƒ©ãƒ¼å±•é–‹}
+\begin{thm} ï¼ˆCauchy ã®å¹³å‡å€¤ã®å®šç†ï¼‰\label{thm:cauchy-mvt}
+é–‰åŒºé–“ $[a,b]$ ã«ãŠã„ã¦ã€$f(x)$ã€$g(x)$ ã¯ã€é€£ç¶šã€é–‹åŒºé–“ $(a,b)$ ã«ãŠã„ã¦ã€å¾®åˆ†å¯èƒ½ã¨ã™ã‚‹ã€‚ã‚‚ã—ã€$g(a)\neq g(b)$  ã‹ã¤ã€$f'(t)$ã€$g'(t)$  ãŒã€åŒæ™‚ã« $0$ ã«ãªã‚‰ãªã‘ã‚Œã°ã€$(a,b)$ ã®ã‚ã‚‹ç‚¹ã€$c$ ã«ãŠã„ã¦ã€ æ¬¡ãŒæˆã‚Šç«‹ã¤ã€‚
 $$\frac{f(b) - f(a)}{g(b) - g(a)} = \frac{f'(c)}{g'(c)}$$
 \end{thm}
 \proof
-$F(x) = (g(b) - g(a))f(x) - (f(b) - f(a))g(x)$  ‚Æ‚¨‚­‚ÆA$F(a) = F(b)$ ‚¾‚©‚çARoll ‚Ì’è—‚ªAg‚¦‚éB
+$F(x) = (g(b) - g(a))f(x) - (f(b) - f(a))g(x)$  ã¨ãŠãã¨ã€$F(a) = F(b)$ ã ã‹ã‚‰ã€Roll ã®å®šç†ãŒã€ä½¿ãˆã‚‹ã€‚
 \qed
 
 \note
-ã‹L‚Ì’è—‚É‚æ‚èAŸ‚ÌA‰E•Ó‚Ì‹ÉŒÀ‚ª‚ ‚ê‚ÎA¶•Ó‚Ì‹ÉŒÀ‚à‘¶İ‚µA“™‚µ‚­‚È‚éB
+ä¸Šè¨˜ã®å®šç†ã«ã‚ˆã‚Šã€æ¬¡ã®ã€å³è¾ºã®æ¥µé™ãŒã‚ã‚Œã°ã€å·¦è¾ºã®æ¥µé™ã‚‚å­˜åœ¨ã—ã€ç­‰ã—ããªã‚‹ã€‚
 $$\lim_{x\rightarrow a}\frac{f(x) - f(a)}{g(x) - g(a)} = 
 \lim_{c\rightarrow a}\frac{f'(c)}{g'(c)}$$
-“Á‚ÉA$f(a) = g(a) = 0$ ‚Ì‚Æ‚«‚È‚Ç‚É—˜—p‚Å‚«A
+ç‰¹ã«ã€$f(a) = g(a) = 0$ ã®ã¨ããªã©ã«åˆ©ç”¨ã§ãã€
 $$\lim_{x\rightarrow a}\frac{f(x)}{g(x)} = 
 \lim_{x\rightarrow a}\frac{f'(x)}{g'(x)}$$
-‚ª“¾‚ç‚ê‚éB
-Ø–¾‚ğA­‚µH•v‚·‚é‚ÆA$\lim_{x\rightarrow a} f(x) = \pm\infty$A
-$\lim_{x\rightarrow a} g(x) = \pm\infty$ ‚Ìê‡‚àA“¯—l‚Ì‚±‚Æ‚ªŒ¾‚¦‚éB
-‚±‚Ì—l‚ÉA‹ÉŒÀ‚ªA$0/0$ –”‚ÍA$\pm\infty/\pm\infty$ ‚Æ‚È‚é‚à‚Ì‚ğ{\gt •s’èŒ`}‚Æ‚¢‚¤B
+ãŒå¾—ã‚‰ã‚Œã‚‹ã€‚
+è¨¼æ˜ã‚’ã€å°‘ã—å·¥å¤«ã™ã‚‹ã¨ã€$\lim_{x\rightarrow a} f(x) = \pm\infty$ã€
+$\lim_{x\rightarrow a} g(x) = \pm\infty$ ã®å ´åˆã‚‚ã€åŒæ§˜ã®ã“ã¨ãŒè¨€ãˆã‚‹ã€‚
+ã“ã®æ§˜ã«ã€æ¥µé™ãŒã€$0/0$ åˆã¯ã€$\pm\infty/\pm\infty$ ã¨ãªã‚‹ã‚‚ã®ã‚’{\gt ä¸å®šå½¢}ã¨ã„ã†ã€‚
 
 \smallskip
-ˆÈã‚ğ‚Ü‚Æ‚ß‚é‚ÆŸ‚Ì‚æ‚¤‚É‚È‚éB
+ä»¥ä¸Šã‚’ã¾ã¨ã‚ã‚‹ã¨æ¬¡ã®ã‚ˆã†ã«ãªã‚‹ã€‚
 
-\begin{thm} [L'Hospital ‚Ì’è—]
+\begin{thm} [L'Hospital ã®å®šç†]
 \begin{itemize}
-\item[$(1)$] ŠÖ” $f(x)$A$g(x)$ ‚ªA$(a,b)$ ‚Å”÷•ª‰Â”\‚Å $g'(x) \neq 0$ ‚Æ‚µA
+\item[$(1)$] é–¢æ•° $f(x)$ã€$g(x)$ ãŒã€$(a,b)$ ã§å¾®åˆ†å¯èƒ½ã§ $g'(x) \neq 0$ ã¨ã—ã€
 $$\lim_{x\to a}f(x) = 0,\;\lim_{x\to a}g(x) = 0$$
-‚Æ‚·‚éB‚±‚Ì‚Æ‚«A$\lim_{x\to a}\frac{f'(x)}{g'(x)}$ ‚ª‘¶İ‚·‚ê‚Îi$\pm\infty$ ‚àŠÜ‚ß‚ÄjA
+ã¨ã™ã‚‹ã€‚ã“ã®ã¨ãã€$\lim_{x\to a}\frac{f'(x)}{g'(x)}$ ãŒå­˜åœ¨ã™ã‚Œã°ï¼ˆ$\pm\infty$ ã‚‚å«ã‚ã¦ï¼‰ã€
 $$\lim_{x\to a}\frac{f(x)}{g(x)} = \lim_{x\to a}\frac{f'(x)}{g'(x)}.$$
-\item[$(2)$] ŠÖ” $f(x)$A$g(x)$ ‚ªA$(a,b)$ ‚Å”÷•ª‰Â”\‚Å $g'(x)$ ‚ÍA’è•„†‚Æ‚µA
+\item[$(2)$] é–¢æ•° $f(x)$ã€$g(x)$ ãŒã€$(a,b)$ ã§å¾®åˆ†å¯èƒ½ã§ $g'(x)$ ã¯ã€å®šç¬¦å·ã¨ã—ã€
 $$\lim_{x\to a}f(x) = \pm\infty,\;\lim_{x\to a}g(x) = \pm\infty$$
-‚Æ‚·‚éB‚±‚Ì‚Æ‚«A$\lim_{x\to a}\frac{f'(x)}{g'(x)}$ ‚ª‘¶İ‚·‚ê‚Îi$\pm\infty$ ‚àŠÜ‚ß‚ÄjA
+ã¨ã™ã‚‹ã€‚ã“ã®ã¨ãã€$\lim_{x\to a}\frac{f'(x)}{g'(x)}$ ãŒå­˜åœ¨ã™ã‚Œã°ï¼ˆ$\pm\infty$ ã‚‚å«ã‚ã¦ï¼‰ã€
 $$\lim_{x\to a}\frac{f(x)}{g(x)} = \lim_{x\to a}\frac{f'(x)}{g'(x)}.$$
 \end{itemize}
 \end{thm}
@@ -465,85 +465,85 @@ $$\lim_{x\to a}\frac{f(x)}{g(x)} = \lim_{x\to a}\frac{f'(x)}{g'(x)}.$$
 \end{enumerate}
 \end{eg}
 
-•½‹Ï’l‚Ì’è—‚ÍAŸ‚Ì‚æ‚¤‚É‚à‹Lq‚Å‚«‚éB
+å¹³å‡å€¤ã®å®šç†ã¯ã€æ¬¡ã®ã‚ˆã†ã«ã‚‚è¨˜è¿°ã§ãã‚‹ã€‚
 $$f(x) = f(a) + f'(c)(x-a)$$
-‚½‚¾‚µA$c$ ‚ÍA$x$ ‚ÆA$a$ ‚ÌŠÔ‚Ì“_B$f(x)$  ‚ªA‚ŠK“±ŠÖ”‚ğ‚Â‚Æ‚«‚ÍA‚±‚Ì•\¦‚ğˆê”Ê‰»o—ˆ‚éB
+ãŸã ã—ã€$c$ ã¯ã€$x$ ã¨ã€$a$ ã®é–“ã®ç‚¹ã€‚$f(x)$  ãŒã€é«˜éšå°é–¢æ•°ã‚’æŒã¤ã¨ãã¯ã€ã“ã®è¡¨ç¤ºã‚’ä¸€èˆ¬åŒ–å‡ºæ¥ã‚‹ã€‚
 
 \begin{prop}
-ŠÖ” $f(x)$ ‚ªA$[a,b]$ ã‚Å˜A‘±A$(a,b)$ ã‚Å $n$ ‰ñ”÷•ª‰Â”\‚È‚ç‚ÎA‹æŠÔ
-$(a,b)$ “à‚Ì“_ $c$ ‚ÅAŸ‚ÌğŒ‚ğ–‚½‚·‚à‚Ì‚ª‘¶İ‚·‚éB
+é–¢æ•° $f(x)$ ãŒã€$[a,b]$ ä¸Šã§é€£ç¶šã€$(a,b)$ ä¸Šã§ $n$ å›å¾®åˆ†å¯èƒ½ãªã‚‰ã°ã€åŒºé–“
+$(a,b)$ å†…ã®ç‚¹ $c$ ã§ã€æ¬¡ã®æ¡ä»¶ã‚’æº€ãŸã™ã‚‚ã®ãŒå­˜åœ¨ã™ã‚‹ã€‚
 $$f(b) = f(a) + \frac{f'(a)}{1!}(b-a) + \frac{f''(a)}{2!}(b-a)^2 + \cdots + \frac{f^{(n-1)}(a)}{(n-1)!}(b-a)^{n-1} + R_n$$
 $$R_n = \frac{f^{(n)}(c)}{n!}(b-a)^n$$
-“Á‚ÉA$|f^{(n)}(x)|\leq M$ ‚ªA‹æŠÔ“à‚Å¬‚è—§‚Ä‚ÎA
+ç‰¹ã«ã€$|f^{(n)}(x)|\leq M$ ãŒã€åŒºé–“å†…ã§æˆã‚Šç«‹ã¦ã°ã€
 $$|R_n| \leq \frac{M}{n!}|b-a|^n$$
-‚±‚Ì‚Æ‚«A
+ã“ã®ã¨ãã€
 $$f(x) = f(a) + \frac{f'(a)}{1!}(x-a) + \frac{f''(a)}{2!}(x-a)^2 + \cdots + \frac{f^{(n-1)}(a)}{(n-1)!}(x-a)^{n-1} + \frac{f^{(n)}(c)}{n!}(x-a)^n$$
-‚Ì—l‚É•\‚·‚±‚Æ‚ğA$f(x)$ ‚Ì $x = a$ ‚ğ’†S‚Æ‚·‚é Taylor “WŠJ‚Æ‚¢‚¤B“Á‚ÉA$a = 0$ ‚Ì‚Æ‚«‚ÍAMaclaughrin “WŠJ‚Æ‚¢‚¤B$c = a + \theta(x-a)$ $0<\theta < 1$ ‚Æ•\‚·‚±‚Æ‚à‚ ‚éB
+ã®æ§˜ã«è¡¨ã™ã“ã¨ã‚’ã€$f(x)$ ã® $x = a$ ã‚’ä¸­å¿ƒã¨ã™ã‚‹ Taylor å±•é–‹ã¨ã„ã†ã€‚ç‰¹ã«ã€$a = 0$ ã®ã¨ãã¯ã€Maclaughrin å±•é–‹ã¨ã„ã†ã€‚$c = a + \theta(x-a)$ $0<\theta < 1$ ã¨è¡¨ã™ã“ã¨ã‚‚ã‚ã‚‹ã€‚
 \end{prop}
 \proof
-$F(x)$ ‚ğŸ‚Ì‚æ‚¤‚É‚µ‚Ä’è‹`‚·‚éB
+$F(x)$ ã‚’æ¬¡ã®ã‚ˆã†ã«ã—ã¦å®šç¾©ã™ã‚‹ã€‚
 \begin{eqnarray*}
 F(x) & =  & -f(b) + f(x) + f'(x)(b-x) + \frac{1}{2!}f''(x)(b-x)^2 + \cdots + \\
   & & \frac{1}{(n-1)!}f^{(n-1)}(x)(b-x)^{n-1} + K(b-x)^n\\
 K & = &  \frac{1}{(b-a)^n}\bigl(f(b) - \bigl(f(a) + f'(a)(b-a) + \frac{1}{2!}f''(x)(b-a)^2 + \cdots +\\
 & & \frac{1}{(n-1)!}f^{(n-1)}(a)(b-a)^{n-1}\bigr)\bigr)
 \end{eqnarray*}
-‚Æ‚¨‚­‚ÆA$F(a) = F(b) = 0$ ‚æ‚èARoll ‚Ì’è—‚ªg‚¦‚éB
+ã¨ãŠãã¨ã€$F(a) = F(b) = 0$ ã‚ˆã‚Šã€Roll ã®å®šç†ãŒä½¿ãˆã‚‹ã€‚
 \qed
 
 \begin{eg}
 \begin{enumerate}
-\item $f(x) = \sin x$ ‚Ìƒ}ƒNƒ[ƒŠƒ““WŠJ
+\item $f(x) = \sin x$ ã®ãƒã‚¯ãƒ­ãƒ¼ãƒªãƒ³å±•é–‹
 $$f(0) = 0, \;f'(0) = \cos 0 = 1,\; f''(0) = -\sin 0 = 0,\;f'''(0) = -\cos 0 = -1$$
-‚¾‚©‚çAˆÈ‰º‚Ì‚æ‚¤‚É‚È‚Á‚Ä‚¢‚éB
-$$f^{(n)}(0) = \left\{\begin{array}{ll}0 & n = 2m\\ (-1)^m & n = 2m+1 \end{array}\right. \mbox{ Ÿ‚Ì‚æ‚¤‚É‚à‘‚¯‚é} f^{(n)}(x) = \sin\Bigl(x + \frac{n\pi}{2}\Bigr).$$
-]‚Á‚ÄA
+ã ã‹ã‚‰ã€ä»¥ä¸‹ã®ã‚ˆã†ã«ãªã£ã¦ã„ã‚‹ã€‚
+$$f^{(n)}(0) = \left\{\begin{array}{ll}0 & n = 2m\\ (-1)^m & n = 2m+1 \end{array}\right. \mbox{ æ¬¡ã®ã‚ˆã†ã«ã‚‚æ›¸ã‘ã‚‹} f^{(n)}(x) = \sin\Bigl(x + \frac{n\pi}{2}\Bigr).$$
+å¾“ã£ã¦ã€
 $$\sin x = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + \cdots + (-1)^m\frac{x^{2m+1}}{(2m+1)!} + \cdots .$$
-—á‚¦‚ÎA‚±‚ê‚ğ—p‚¢‚ÄA‹ß—®‚à“¾‚ç‚ê‚éB$f^{(5)}(x) = \cos x$ ‚Å‚ ‚é‚±‚Æ‚É’ˆÓ‚·‚é‚ÆA
+ä¾‹ãˆã°ã€ã“ã‚Œã‚’ç”¨ã„ã¦ã€è¿‘ä¼¼å¼ã‚‚å¾—ã‚‰ã‚Œã‚‹ã€‚$f^{(5)}(x) = \cos x$ ã§ã‚ã‚‹ã“ã¨ã«æ³¨æ„ã™ã‚‹ã¨ã€
 $$\sin x = x - \frac{x^3}{3!} + \frac{f^{(5)}(\theta x)x^5}{5!}, \;(0<\theta<1)$$
-‚Æ‘‚¯‚é‚©‚çA—á‚¦‚ÎA$-\pi/2\leq x\leq \pi/2$ ‚Ì”ÍˆÍ“à‚Å‚ÍA
+ã¨æ›¸ã‘ã‚‹ã‹ã‚‰ã€ä¾‹ãˆã°ã€$-\pi/2\leq x\leq \pi/2$ ã®ç¯„å›²å†…ã§ã¯ã€
 $$\left|\sin x - \left(x - \frac{x^3}{3!}\right)\right| = \left|\frac{\cos(\theta x)x^5}{5!}\right| \leq \frac{|x|^5}{5!} \leq \frac{\pi^5}{120\cdot 32}\sim 0.08.$$
-$-\pi/4\leq x\leq \pi/4$ ‚Ì”ÍˆÍ“à‚Å‚ÍAã‚Ì’l‚ÍA$0.0025$ ‚É‚È‚éB‚±‚ÌˆÓ–¡‚ÅA“Á‚ÉA$0$ ‚Ì‹ß‚­‚Å‚ÍA$\sin x$  ‚ÍA$x - \frac{x^3}{3!}$ ‚É”ñí‚É‹ß‚¢B‚±‚ê‚Í‚Ü‚½A
+$-\pi/4\leq x\leq \pi/4$ ã®ç¯„å›²å†…ã§ã¯ã€ä¸Šã®å€¤ã¯ã€$0.0025$ ã«ãªã‚‹ã€‚ã“ã®æ„å‘³ã§ã€ç‰¹ã«ã€$0$ ã®è¿‘ãã§ã¯ã€$\sin x$  ã¯ã€$x - \frac{x^3}{3!}$ ã«éå¸¸ã«è¿‘ã„ã€‚ã“ã‚Œã¯ã¾ãŸã€
 $$\lim_{x\rightarrow 0}\frac{x - \sin x}{x^3} = \lim_{x\rightarrow 0}\left(\frac{x^3}{6} - \frac{x^5}{5!}\cos(\theta x)\right)\Big/x^3 = \lim_{x\rightarrow 0}\left(\frac16 -\frac{x^2}{5!}\cos(\theta x)\right) = \frac{1}{6}.$$
-‚±‚Ì‚±‚Æ‚©‚çA$O(f(x))$A$o(f(x))$ ‚ğŸ‚Ì‚æ‚¤‚É’è‹`‚µ‚ÄAg‚¤‚±‚Æ‚à‚ ‚éB
+ã“ã®ã“ã¨ã‹ã‚‰ã€$O(f(x))$ã€$o(f(x))$ ã‚’æ¬¡ã®ã‚ˆã†ã«å®šç¾©ã—ã¦ã€ä½¿ã†ã“ã¨ã‚‚ã‚ã‚‹ã€‚
 $$\lim_{x\rightarrow 0}\frac{O(f(x))}{f(x)} = C \mbox{ a constant, } 
  \lim_{x\rightarrow 0}\frac{o(f(x))}{f(x)} = 0$$
- ã‚Ìê‡‚ÍA—á‚¦‚ÎA
+ ä¸Šã®å ´åˆã¯ã€ä¾‹ãˆã°ã€
 $$\sin x = x - \frac{x^3}{3!} + O(x^5)$$
-\item $f(x) = e^x$ ‚Ìƒ}ƒNƒ[ƒŠƒ““WŠJB
+\item $f(x) = e^x$ ã®ãƒã‚¯ãƒ­ãƒ¼ãƒªãƒ³å±•é–‹ã€‚
 $$e^x = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \cdots + \frac{x^n}{n!} + e^{\theta x}\frac{x^{n+1}}{(n+1)!}$$
-\item $f(x) = \cos x$ ‚Ìƒ}ƒNƒ[ƒŠƒ““WŠJB
+\item $f(x) = \cos x$ ã®ãƒã‚¯ãƒ­ãƒ¼ãƒªãƒ³å±•é–‹ã€‚
 $$\cos x = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} + \cdots + (-1)^n\frac{x^{2n}}{(2n)!} + (-1)^{n+1}\cos(\theta x)\frac{x^{2n+2}}{(2n+2)!}$$
-\item $f(x) = \log(1+x)$ ‚Ìƒ}ƒNƒ[ƒŠƒ““WŠJB
+\item $f(x) = \log(1+x)$ ã®ãƒã‚¯ãƒ­ãƒ¼ãƒªãƒ³å±•é–‹ã€‚
 $$\log(1+x) = x - \frac{x^2}{2} + \frac{x^3}{3} + \cdots + (-1)^{n-1}\frac{x^n}{n} + (-1)^n\frac{x^{n+1}}{n+1}\left(\frac{1}{1+\theta x}\right)^{n+1}$$
-\item $f(x) = (1+x)^\alpha$ ‚Ìƒ}ƒNƒ[ƒŠƒ““WŠJ ($\alpha$ ‚ÍA”CˆÓ‚ÌÀ”)B
+\item $f(x) = (1+x)^\alpha$ ã®ãƒã‚¯ãƒ­ãƒ¼ãƒªãƒ³å±•é–‹ ($\alpha$ ã¯ã€ä»»æ„ã®å®Ÿæ•°)ã€‚
 $$(1+x)^\alpha = 1 + \alpha x + \frac{\alpha(\alpha-1)x^2}{2!} + \cdots + \frac{\alpha(\alpha-1)\cdots (\alpha - n + 1)x^n}{n!} + R_{n+1},$$
 $$\mbox{where }R_{n+1} = \frac{\alpha(\alpha-1)\cdots(\alpha-n)(1+\theta x)^{\alpha -n - 1}x^{n+1}}{(n+1)!}$$
-$\alpha$ ‚ªA®”‚È‚ç‚ÎA$n = \alpha$ ‚Ì‚Æ‚«AÅŒã‚Ì€‚ªA$0$ ‚Æ‚È‚èA‚Q€’è—‚ğ“¾‚éB
-\item $f(x) = \arctan x$ ‚Ìƒ}ƒNƒ[ƒŠƒ““WŠJB‚Ü‚¸A$f'(x) = 1/(1+x^2)$ ‚¾‚©‚çA$(1+x^2)f'(x) = 1$Bƒ‰ƒCƒvƒjƒbƒc‚ÌŒö®‚ğg‚¤‚ÆA
+$\alpha$ ãŒã€æ•´æ•°ãªã‚‰ã°ã€$n = \alpha$ ã®ã¨ãã€æœ€å¾Œã®é …ãŒã€$0$ ã¨ãªã‚Šã€ï¼’é …å®šç†ã‚’å¾—ã‚‹ã€‚
+\item $f(x) = \arctan x$ ã®ãƒã‚¯ãƒ­ãƒ¼ãƒªãƒ³å±•é–‹ã€‚ã¾ãšã€$f'(x) = 1/(1+x^2)$ ã ã‹ã‚‰ã€$(1+x^2)f'(x) = 1$ã€‚ãƒ©ã‚¤ãƒ—ãƒ‹ãƒƒãƒ„ã®å…¬å¼ã‚’ä½¿ã†ã¨ã€
 $$(1+x^2)f^{(n+1)}(x) + n2xf^{(n)}(x) + \frac{n(n-1)}{2}2f^{(n-1)}(x) = 0$$
-$x = 0$ ‚Æ’u‚­‚ÆA$f^{(n+1)}(0) + n(n-1)f^{(n-1)}(0) = 0$, $f'(0) = 1$, $f''(0) = 0$ ‚¾‚©‚çA$f^{(2m)}(0) = 0$ ‚©‚ÂA$f^{(2m+1)}(0) = (-1)^m(2m)!$B]‚Á‚ÄA
+$x = 0$ ã¨ç½®ãã¨ã€$f^{(n+1)}(0) + n(n-1)f^{(n-1)}(0) = 0$, $f'(0) = 1$, $f''(0) = 0$ ã ã‹ã‚‰ã€$f^{(2m)}(0) = 0$ ã‹ã¤ã€$f^{(2m+1)}(0) = (-1)^m(2m)!$ã€‚å¾“ã£ã¦ã€
 $$\arctan x = x - \frac{x^3}{3} + \frac{x^5}{5} +\cdots + (-1)^n\frac{x^{2n+1}}{2n+1} + \cdots.$$
 
-‚±‚ê‚©‚çA$\arctan 1 = \pi/4$ ‚Å‚ ‚é‚±‚Æ‚ğ—p‚¢‚é‚ÆA$\pi$ ‚ªAŒvZ‚Å‚«‚éB
+ã“ã‚Œã‹ã‚‰ã€$\arctan 1 = \pi/4$ ã§ã‚ã‚‹ã“ã¨ã‚’ç”¨ã„ã‚‹ã¨ã€$\pi$ ãŒã€è¨ˆç®—ã§ãã‚‹ã€‚
 \end{enumerate}
 \end{eg}
 
-•½‹Ï’l‚Ì’è—‚âATaylor ‚Ì’è—‚ÍAŠÖ”‚ÌƒOƒ‰ƒt‚Ì–â‘è‚É‚à—lX‚É‰—p‚³‚ê‚éB—á‚¦‚ÎA$f(x)$ ‚ğ‚Q‰ñ”÷•ª‰Â”\ŠÖ”‚Æ‚·‚é‚ÆA
+å¹³å‡å€¤ã®å®šç†ã‚„ã€Taylor ã®å®šç†ã¯ã€é–¢æ•°ã®ã‚°ãƒ©ãƒ•ã®å•é¡Œã«ã‚‚æ§˜ã€…ã«å¿œç”¨ã•ã‚Œã‚‹ã€‚ä¾‹ãˆã°ã€$f(x)$ ã‚’ï¼’å›å¾®åˆ†å¯èƒ½é–¢æ•°ã¨ã™ã‚‹ã¨ã€
 $$f(x) - f(a) - f'(a)(x - a) = \frac{1}{2}f''(c)(x-a)^2$$
-‚Æ‚È‚éA$x$ ‚ÆA$a$ ‚ÌŠÔ‚Ì“_ $c$ ‚ª‘¶İ‚·‚éB‚à‚µA$f''(c) > 0$  ‚Æ‚·‚é‚ÆA
+ã¨ãªã‚‹ã€$x$ ã¨ã€$a$ ã®é–“ã®ç‚¹ $c$ ãŒå­˜åœ¨ã™ã‚‹ã€‚ã‚‚ã—ã€$f''(c) > 0$  ã¨ã™ã‚‹ã¨ã€
 $$f(x) > f(a) + f'(a)(x-a)$$
-‚¾‚©‚çA$f(x)$ ‚ÌƒOƒ‰ƒt‚ÍA$a$ ‚Å‚ÌÚü‚ÌƒOƒ‰ƒt‚æ‚èAã‚É‚ ‚éB
+ã ã‹ã‚‰ã€$f(x)$ ã®ã‚°ãƒ©ãƒ•ã¯ã€$a$ ã§ã®æ¥ç·šã®ã‚°ãƒ©ãƒ•ã‚ˆã‚Šã€ä¸Šã«ã‚ã‚‹ã€‚
 
 
-\newpage\mysection{•s’èÏ•ª}
+\newpage\mysection{ä¸å®šç©åˆ†}
 \begin{definition}
-ŠÖ” $F(x)$ ‚Ì“±ŠÖ”‚ªA$f(x)$ ‚É“™‚µ‚¢‚Æ‚«A‚·‚È‚í‚¿A$F'(x) = f(x)$ ‚ª¬‚è—§‚Â‚Æ‚«A$F(x)$ ‚ğA$f(x)$ ‚ÌŒ´nŠÖ”‚ÆŒ¾‚¤B
+é–¢æ•° $F(x)$ ã®å°é–¢æ•°ãŒã€$f(x)$ ã«ç­‰ã—ã„ã¨ãã€ã™ãªã‚ã¡ã€$F'(x) = f(x)$ ãŒæˆã‚Šç«‹ã¤ã¨ãã€$F(x)$ ã‚’ã€$f(x)$ ã®åŸå§‹é–¢æ•°ã¨è¨€ã†ã€‚
 \end{definition}
 
-$F(x)$A$G(x)$ ‚ğ‹¤‚ÉA$f(x)$ ‚ÌŒ´nŠÖ”‚Æ‚·‚éB‚·‚é‚ÆA$F'(x) = G'(x) = f(x)$ ‚Å‚ ‚é‚©‚çA$(F(x) - G(x))' = 0$  ‚Æ‚È‚éB“±ŠÖ”‚ªAí‚ÉA$0$ ‚Æ‚È‚éŠÖ”‚ÍA–½‘è \ref{prop:1stderiv-test} (4) ‚É‚æ‚Á‚ÄA’è”‚Æ‚È‚éB]‚Á‚ÄA$G(x) = F(x) + C$ ‚È‚é’è” $C$ ‚ª‘¶İ‚·‚éB‹t‚ÉA$G(x) = F(x) + C$ ‚Æ•\‚¹‚éŠÖ”‚ÍA$f(x)$ ‚ÌŒ´nŠÖ”‚Å‚ ‚éB‚±‚Ì‚±‚Æ‚ğ‚Ó‚Ü‚¦AŒ´nŠÖ”‚Ì‘ã•\‚Æ‚¢‚¤ˆÓ–¡‚ÅA$f(x)$ ‚Ì•s’èÏ•ª‚ÆŒÄ‚ÑAŸ‚Ì‚æ‚¤‚É‘‚­B
+$F(x)$ã€$G(x)$ ã‚’å…±ã«ã€$f(x)$ ã®åŸå§‹é–¢æ•°ã¨ã™ã‚‹ã€‚ã™ã‚‹ã¨ã€$F'(x) = G'(x) = f(x)$ ã§ã‚ã‚‹ã‹ã‚‰ã€$(F(x) - G(x))' = 0$  ã¨ãªã‚‹ã€‚å°é–¢æ•°ãŒã€å¸¸ã«ã€$0$ ã¨ãªã‚‹é–¢æ•°ã¯ã€å‘½é¡Œ \ref{prop:1stderiv-test} (4) ã«ã‚ˆã£ã¦ã€å®šæ•°ã¨ãªã‚‹ã€‚å¾“ã£ã¦ã€$G(x) = F(x) + C$ ãªã‚‹å®šæ•° $C$ ãŒå­˜åœ¨ã™ã‚‹ã€‚é€†ã«ã€$G(x) = F(x) + C$ ã¨è¡¨ã›ã‚‹é–¢æ•°ã¯ã€$f(x)$ ã®åŸå§‹é–¢æ•°ã§ã‚ã‚‹ã€‚ã“ã®ã“ã¨ã‚’ãµã¾ãˆã€åŸå§‹é–¢æ•°ã®ä»£è¡¨ã¨ã„ã†æ„å‘³ã§ã€$f(x)$ ã®ä¸å®šç©åˆ†ã¨å‘¼ã³ã€æ¬¡ã®ã‚ˆã†ã«æ›¸ãã€‚
 $$\int f(x)dx = F(x) + C$$
-‚±‚±‚ÅA$C$ ‚ğÏ•ª’è”‚ÆŒ¾‚¤B‚½‚¾‚µA$C$ ‚ğÈ—ª‚µ‚Ä‘‚­‚±‚Æ‚à—Ç‚­‚ ‚éB
+ã“ã“ã§ã€$C$ ã‚’ç©åˆ†å®šæ•°ã¨è¨€ã†ã€‚ãŸã ã—ã€$C$ ã‚’çœç•¥ã—ã¦æ›¸ãã“ã¨ã‚‚è‰¯ãã‚ã‚‹ã€‚
 
 \begin{eg}
 \begin{enumerate}
@@ -562,20 +562,20 @@ ${\displaystyle \int a^x dx = \frac{a^x}{\log a} + C,\;(a>0, a\neq 1)}$
 \end{eg}
 
 \begin{eg}
-${\displaystyle \frac{d}{dx}\arccos x = \frac{d}{dx}\cos^{-1}x = \frac{-1}{\sqrt{1-x^2}}}$ ‚Å‚ ‚Á‚½‚©‚çA$\arcsin x + \arccos x$ ‚ÍA’è”‚Ì‚Í‚¸‚Å‚ ‚éB‚±‚Ì’è”‚ğŒˆ’è‚¹‚æB\hfill ($\frac{\pi}2$)
+${\displaystyle \frac{d}{dx}\arccos x = \frac{d}{dx}\cos^{-1}x = \frac{-1}{\sqrt{1-x^2}}}$ ã§ã‚ã£ãŸã‹ã‚‰ã€$\arcsin x + \arccos x$ ã¯ã€å®šæ•°ã®ã¯ãšã§ã‚ã‚‹ã€‚ã“ã®å®šæ•°ã‚’æ±ºå®šã›ã‚ˆã€‚\hfill ($\frac{\pi}2$)
 \end{eg}
 
-\newpage\mysection{•s’èÏ•ª‚ÌŒvZ}
-A. {\gt ’uŠ·Ï•ª}\quad $F'(x) = f(x)$ ‚Å‚ ‚é‚Æ‚·‚é‚ÆA
+\newpage\mysection{ä¸å®šç©åˆ†ã®è¨ˆç®—}
+A. {\gt ç½®æ›ç©åˆ†}\quad $F'(x) = f(x)$ ã§ã‚ã‚‹ã¨ã™ã‚‹ã¨ã€
 $$\frac{d}{dt} F(\phi(t)) = f(\phi(t))\phi'(t)$$
-‚Å‚ ‚é‚©‚çA$x = \phi(t)$ ‚Æ‚¨‚¢‚½‚Æ‚«‚ÍA
+ã§ã‚ã‚‹ã‹ã‚‰ã€$x = \phi(t)$ ã¨ãŠã„ãŸã¨ãã¯ã€
 $$\int f(x)dx = \int f(\phi(t))\phi'(t)dt$$
-‚Æ‚È‚éB
+ã¨ãªã‚‹ã€‚
 
 \medskip
-B. {\gt •”•ªÏ•ª}\quad $(fg)' = f'g + fg'$  ‚¾‚©‚çA—¼•Ó‚ğÏ•ª‚·‚é‚ÆA
+B. {\gt éƒ¨åˆ†ç©åˆ†}\quad $(fg)' = f'g + fg'$  ã ã‹ã‚‰ã€ä¸¡è¾ºã‚’ç©åˆ†ã™ã‚‹ã¨ã€
 $$\int f(x)g'(x)dx = f(x)g(x) - \int f'(x)g(x)dx$$
-‚ğ“¾‚éB
+ã‚’å¾—ã‚‹ã€‚
 
 \begin{eg}
 \begin{enumerate}
@@ -606,18 +606,18 @@ $$\int f(x)g'(x)dx = f(x)g(x) - \int f'(x)g(x)dx$$
 \end{enumerate}
 \end{eg}
 
-\newpage\mysection{—L—ŠÖ”‚ÌÏ•ª}
-{\gt •œK }
+\newpage\mysection{æœ‰ç†é–¢æ•°ã®ç©åˆ†}
+{\gt å¾©ç¿’ }
 \begin{enumerate}
 \item ${\displaystyle \int \frac{dx}{(x-a)^n} = \frac{1}{(-n+1)(x-a)^{n-1}}, \; (n\neq 1)}$\\
 ${\displaystyle \int \frac{dx}{x-a} = \log|x-a| + C}$
 \item ${\displaystyle \int \frac{2x}{(x^2+a^2)^n} dx = \frac{1}{(-n+1)(x^2+a^2)^{n-1}},\;(n\neq 1)}$
 \item ${\displaystyle \int \frac{2x}{x^2+a^2} dx = \log(x^2+a^2)}$
-\item $a\neq 0$, $n\geq 1$ ‚ÌA${\displaystyle I_n = \int\frac{dx}{(x^2+a^2)^n}}$ ‚Æ‚¨‚­‚ÆA
+\item $a\neq 0$, $n\geq 1$ ã®æ™‚ã€${\displaystyle I_n = \int\frac{dx}{(x^2+a^2)^n}}$ ã¨ãŠãã¨ã€
 $$ a^2I_n(x) = \frac{1}{2n-2}\frac{x}{(x^2+a^2)^{n-1}} + \frac{2n-3}{2n-2}I_{n-1}(x),\;(n\geq 2)$$
 $$ I_1(x) = \frac{1}{a}\arctan\frac{x}{a}$$
 \proof
-—¼•Ó‚ğ”÷•ª‚·‚é‚ÆA
+ä¸¡è¾ºã‚’å¾®åˆ†ã™ã‚‹ã¨ã€
 \begin{eqnarray*}
 LHS & = & \frac{a^2}{(x^2+a^2)^{n}}\\
 RHS & = & \frac{1}{(2n-2)(x^2+a^2)^{n-1}} 
@@ -626,8 +626,8 @@ RHS & = & \frac{1}{(2n-2)(x^2+a^2)^{n-1}}
 \\
 & = & \frac{a^2}{(x^2+a^2)^{n}}
 \end{eqnarray*}
-]‚Á‚ÄA—¼•Ó‚Ì·‚ÍA’è”B‚·‚È‚í‚¿A$I_n$ ‚É’è”•”•ª‚Ì·ˆÙ‚ğŠÜ‚ßAã‹L‚Ì“™®‚ª¬‚è—§‚ÂB
-‚Ü‚½‚ÍA•”•ªÏ•ª‚ğ—p‚¢‚é‚±‚Æ‚ào—ˆ‚éB
+å¾“ã£ã¦ã€ä¸¡è¾ºã®å·®ã¯ã€å®šæ•°ã€‚ã™ãªã‚ã¡ã€$I_n$ ã«å®šæ•°éƒ¨åˆ†ã®å·®ç•°ã‚’å«ã‚ã€ä¸Šè¨˜ã®ç­‰å¼ãŒæˆã‚Šç«‹ã¤ã€‚
+ã¾ãŸã¯ã€éƒ¨åˆ†ç©åˆ†ã‚’ç”¨ã„ã‚‹ã“ã¨ã‚‚å‡ºæ¥ã‚‹ã€‚
 \begin{eqnarray*}
 I_{n-1} & = & \int\frac{1dx}{(x^2+a^2)^{n-1}} \\
 	& = & \frac{x}{(x^2+a^2)^{n-1}} - \int \frac{x\cdot (-(n-1)2)
@@ -636,27 +636,27 @@ I_{n-1} & = & \int\frac{1dx}{(x^2+a^2)^{n-1}} \\
 	2(n-1)\int\frac{a^2}{(x^2+a^2)^{n}}dx\\
 	& = &  \frac{x}{(x^2+a^2)^{n-1}} + 2(n-1)I_{n-1} - 2(n-1)I_n
 \end{eqnarray*}
-‚±‚ê‚æ‚èAã‚ÌŒö®‚ğ“¾‚éB
+ã“ã‚Œã‚ˆã‚Šã€ä¸Šã®å…¬å¼ã‚’å¾—ã‚‹ã€‚
 \end{enumerate}
 
-‘½€®‚ÆA‘½€®‚Ì¤‚Æ‚µ‚Ä•\‚³‚ê‚éŠÖ”‚ğ{\gt —L—ŠÖ”}‚Æ‚¢‚¤B—L—ŠÖ”‚ÍAã‹L‚ÌÏ•ª‚ÆA•”•ª•ª”•ª‰ğ‚ÆŒ¾‚í‚ê‚é•û–@‚ğ‘g‚İ‡‚í‚¹‚é‚ÆA‰“™ŠÖ”‚Ì”ÍˆÍ‚Å•s’èÏ•ª‚Å‚«‚éB
+å¤šé …å¼ã¨ã€å¤šé …å¼ã®å•†ã¨ã—ã¦è¡¨ã•ã‚Œã‚‹é–¢æ•°ã‚’{\gt æœ‰ç†é–¢æ•°}ã¨ã„ã†ã€‚æœ‰ç†é–¢æ•°ã¯ã€ä¸Šè¨˜ã®ç©åˆ†ã¨ã€éƒ¨åˆ†åˆ†æ•°åˆ†è§£ã¨è¨€ã‚ã‚Œã‚‹æ–¹æ³•ã‚’çµ„ã¿åˆã‚ã›ã‚‹ã¨ã€åˆç­‰é–¢æ•°ã®ç¯„å›²ã§ä¸å®šç©åˆ†ã§ãã‚‹ã€‚
 
 \begin{lemma}
-—L—ŠÖ” $f(x)/g(x)$ ‚ÍA‘½€®‚¨‚æ‚ÑA
+æœ‰ç†é–¢æ•° $f(x)/g(x)$ ã¯ã€å¤šé …å¼ãŠã‚ˆã³ã€
 $$\frac{A}{(x-a)^k},\;\frac{Bx+C}{((x-\alpha)^2+\beta^2)^k}, \;(k\geq 1)$$
-‚Ì—LŒÀŒÂ‚Ì˜a‚Å•\‚³‚ê‚éB‚±‚±‚ÅA$k$ ‚ÍA$g(x)$ ‚ÉŒ»‚ê‚éAˆö” $x-a$, $(x-\alpha)^2+
-\beta^2$ ‚ÌÅ‘å‚×‚«‚ğ‰z‚³‚È‚¢B
+ã®æœ‰é™å€‹ã®å’Œã§è¡¨ã•ã‚Œã‚‹ã€‚ã“ã“ã§ã€$k$ ã¯ã€$g(x)$ ã«ç¾ã‚Œã‚‹ã€å› æ•° $x-a$, $(x-\alpha)^2+
+\beta^2$ ã®æœ€å¤§ã¹ãã‚’è¶Šã•ãªã„ã€‚
 \end{lemma}
 
 \begin{eg}
-$g(x) = (x-1)^3(x-2)(x^2+2x+3)^2(x^2+4)$ ‚Å‚ ‚ê‚ÎA‚Ç‚ñ‚È‘½€® $f(x)$ ‚É‘Î‚µ‚Ä‚àA‚ ‚é‘½€® $h(x)$ ‚ÆA’è”‚ªA‚Æ‚ê‚ÄA
+$g(x) = (x-1)^3(x-2)(x^2+2x+3)^2(x^2+4)$ ã§ã‚ã‚Œã°ã€ã©ã‚“ãªå¤šé …å¼ $f(x)$ ã«å¯¾ã—ã¦ã‚‚ã€ã‚ã‚‹å¤šé …å¼ $h(x)$ ã¨ã€å®šæ•°ãŒã€ã¨ã‚Œã¦ã€
 \begin{eqnarray*}
 \frac{f(x)}{g(x)} & = & h(x) + \frac{A}{(x-1)^3} + \frac{B}{(x-1)^2} + \frac{C}{x-1}\\
 & & + \frac{D}{x-2} \\
 & & + \frac{Ex + F}{((x+1)^2+(\sqrt{2})^2)^2} + \frac{Gx + H}{(x+1)^2+(\sqrt{2})^2}\\
 & & + \frac{Ix+J}{x^2+2^2}
 \end{eqnarray*}
-‚Æ•\‚³‚ê‚éB$h(x)$ ‚ÍA‚Ü‚¸A$f(x)$ ‚Ì $g(x)$ ‚É‚æ‚é¤‚Å‚ ‚éB
+ã¨è¡¨ã•ã‚Œã‚‹ã€‚$h(x)$ ã¯ã€ã¾ãšã€$f(x)$ ã® $g(x)$ ã«ã‚ˆã‚‹å•†ã§ã‚ã‚‹ã€‚
 \end{eg}
 
 \begin{eg}
@@ -685,10 +685,10 @@ $$ = \int\left(\frac{1}{x-1} - \frac{1}{(x-1)^2} + \frac{3}{(x-1)^3}\right)dx = 
 \end{enumerate}
 \end{eg}
 
-\newpage\mysection{—L—ŠÖ”‚ÌÏ•ª‚Ì‰—p}
-A. {\gt OŠpŠÖ”‚ÌÏ•ª}
+\newpage\mysection{æœ‰ç†é–¢æ•°ã®ç©åˆ†ã®å¿œç”¨}
+A. {\gt ä¸‰è§’é–¢æ•°ã®ç©åˆ†}
 
-$t = \tan\frac{x}2$, ‚Æ‚¨‚­‚ÆA$\sin x = \frac{2t}{1+t^2}$, $\cos x = \frac{1-t^2}{1+t^2}$, $dx = \frac{2}{1+t^2}dt$ ‚Æ‚È‚é‚Ì‚ÅAOŠpŠÖ”‚Ì—L—ŠÖ”‚ÌÏ•ª‚ÍA—L—ŠÖ”‚ÌÏ•ª‚É‹A’…‚Å‚«‚éB
+$t = \tan\frac{x}2$, ã¨ãŠãã¨ã€$\sin x = \frac{2t}{1+t^2}$, $\cos x = \frac{1-t^2}{1+t^2}$, $dx = \frac{2}{1+t^2}dt$ ã¨ãªã‚‹ã®ã§ã€ä¸‰è§’é–¢æ•°ã®æœ‰ç†é–¢æ•°ã®ç©åˆ†ã¯ã€æœ‰ç†é–¢æ•°ã®ç©åˆ†ã«å¸°ç€ã§ãã‚‹ã€‚
 
 \begin{eg}
 \begin{enumerate}
@@ -706,17 +706,17 @@ $t = \tan\frac{x}2$, ‚Æ‚¨‚­‚ÆA$\sin x = \frac{2t}{1+t^2}$, $\cos x = \frac{1-t^
 \end{eg}
 
 \medskip
-B. {\gt –³—ŠÖ”‚ÌÏ•ª}
+B. {\gt ç„¡ç†é–¢æ•°ã®ç©åˆ†}
 
-$x, f(x)$ ‚ÉŠÖ‚·‚éA—L—ŠÖ”‚ğA$R(x,f(x))$ ‚Æ•\‚·‚ÆA
+$x, f(x)$ ã«é–¢ã™ã‚‹ã€æœ‰ç†é–¢æ•°ã‚’ã€$R(x,f(x))$ ã¨è¡¨ã™ã¨ã€
 $$I = \int R(x,^n\!\!\sqrt{\frac{ax+b}{cx+d}})dx,\; ad-bc\neq 0, \;n\neq 0, \;n\in \bZ$$
-‚Ì‚ÍAŸ‚Ì‚æ‚¤‚É‚¨‚¯‚Î‚æ‚¢B
+ã®æ™‚ã¯ã€æ¬¡ã®ã‚ˆã†ã«ãŠã‘ã°ã‚ˆã„ã€‚
 $$t = ^n\!\!\sqrt{\frac{ax+b}{cx+d}}, \; x = \frac{-dt^n+b}{ct^n-a},\; dx = \frac{n(ad-bc)t^{n-1}}{ct^n-a)^2}dt$$
-‚±‚ê‚æ‚èAŸ‚Ì‚æ‚¤‚É—L—ŠÖ”‚ÌÏ•ª‚É‹A’…‚Å‚«‚éB
+ã“ã‚Œã‚ˆã‚Šã€æ¬¡ã®ã‚ˆã†ã«æœ‰ç†é–¢æ•°ã®ç©åˆ†ã«å¸°ç€ã§ãã‚‹ã€‚
 $$I = n(ad-bc)\int R(\frac{-dt^n+b}{ct^n-a}, t)\frac{t^{n-1}}{ct^n-a)^2}dt$$
 
 \medskip
-C.{\gt ‚»‚Ì‘¼A—L—ŠÖ”‚ÌÏ•ª‚É‹A’…‚Å‚«‚é‚à‚Ì}
+C.{\gt ãã®ä»–ã€æœ‰ç†é–¢æ•°ã®ç©åˆ†ã«å¸°ç€ã§ãã‚‹ã‚‚ã®}
 \begin{eg}
 \begin{enumerate}
 \item ${\displaystyle \int\frac{1}{e^x+5e^{-x}+6}dx}$
@@ -731,143 +731,143 @@ C.{\gt ‚»‚Ì‘¼A—L—ŠÖ”‚ÌÏ•ª‚É‹A’…‚Å‚«‚é‚à‚Ì}
 \end{enumerate}
 \end{eg}
 
-\newpage\mysection{’èÏ•ª‚ÆA”÷Ï•ªŠw‚ÌŠî–{’è—}
+\newpage\mysection{å®šç©åˆ†ã¨ã€å¾®ç©åˆ†å­¦ã®åŸºæœ¬å®šç†}
 \begin{definition}
-ŠÖ” $f(x)$ ‚ªA‹æŠÔ $[a,b]$ ã—LŠE‚Æ‚·‚éBi‚±‚Ì‹æŠÔ‚Å’è‹`‚³‚ê‚Ä‚¨‚èA‚Ü‚½A–³ŒÀ‘å‚É‚È‚Á‚½‚è‚Í‚µ‚È‚¢Bj•ªŠ„ $\Delta = \{a = x_0<x_1<\cdots < x_n = b\}$ ‚ÆÀ” $t_i\in [x_{i-1},x_i]$ ‚ÌW‡ $\{t_1,t_2,\ldots,t_n\}$ ‚É‘Î‚µ‚ÄA
+é–¢æ•° $f(x)$ ãŒã€åŒºé–“ $[a,b]$ ä¸Šæœ‰ç•Œã¨ã™ã‚‹ã€‚ï¼ˆã“ã®åŒºé–“ã§å®šç¾©ã•ã‚Œã¦ãŠã‚Šã€ã¾ãŸã€ç„¡é™å¤§ã«ãªã£ãŸã‚Šã¯ã—ãªã„ã€‚ï¼‰åˆ†å‰² $\Delta = \{a = x_0<x_1<\cdots < x_n = b\}$ ã¨å®Ÿæ•° $t_i\in [x_{i-1},x_i]$ ã®é›†åˆ $\{t_1,t_2,\ldots,t_n\}$ ã«å¯¾ã—ã¦ã€
 $$R_{\Delta,\{t_i\}}(f) = \sum_{i=1}^n f(t_i)(x_i-x_{i-1})$$
-‚ğAƒŠ[ƒ}ƒ“˜a–”‚ÍAÏ˜a‚Æ‚¢‚¤B•ªŠ„ $\Delta$ ‚ğŒÀ‚è‚È‚­×‚©‚­‚µ‚Ä‚¢‚­‚Æ‚«Ai‚·‚È‚í‚¿A
+ã‚’ã€ãƒªãƒ¼ãƒãƒ³å’Œåˆã¯ã€ç©å’Œã¨ã„ã†ã€‚åˆ†å‰² $\Delta$ ã‚’é™ã‚Šãªãç´°ã‹ãã—ã¦ã„ãã¨ãã€ï¼ˆã™ãªã‚ã¡ã€
 $$|\Delta| = \max\{|x_i-x_{i-1}|\mid i = 1, 2, \ldots\}$$
- ‚ªA$0$ ‚É‹ß‚Ã‚­‚æ‚¤‚É‚Æ‚Á‚Ä‚¢‚­‚Æ‚«j$R_{\Delta,\{t_i\}}(f)$ ‚ªA$\{t_i\}$ ‚Ìæ‚è•û‚ÉŠÖŒW‚È‚­ˆê’è‚ÌÀ” $I$ ‚É‹ß‚Ã‚­‚È‚ç‚ÎA$f(x)$ ‚ÍA$[a,b]$ ã‚ÅAi’èjÏ•ª‰Â”\‚Æ‚¢‚¤B‚±‚Ì $I$ ‚ğ $[a,b]$ ã $f(x)$ ‚Ì’èÏ•ª‚ÆŒ¾‚¢A
+ ãŒã€$0$ ã«è¿‘ã¥ãã‚ˆã†ã«ã¨ã£ã¦ã„ãã¨ãï¼‰$R_{\Delta,\{t_i\}}(f)$ ãŒã€$\{t_i\}$ ã®å–ã‚Šæ–¹ã«é–¢ä¿‚ãªãä¸€å®šã®å®Ÿæ•° $I$ ã«è¿‘ã¥ããªã‚‰ã°ã€$f(x)$ ã¯ã€$[a,b]$ ä¸Šã§ã€ï¼ˆå®šï¼‰ç©åˆ†å¯èƒ½ã¨ã„ã†ã€‚ã“ã® $I$ ã‚’ $[a,b]$ ä¸Š $f(x)$ ã®å®šç©åˆ†ã¨è¨€ã„ã€
 $$\int_a^b f(x)dx$$
-‚Æ‘‚­B‚±‚Ì‚±‚Æ‚ğ‹L†“I‚ÉAŸ‚Ì‚æ‚¤‚É‚à‘‚­B
+ã¨æ›¸ãã€‚ã“ã®ã“ã¨ã‚’è¨˜å·çš„ã«ã€æ¬¡ã®ã‚ˆã†ã«ã‚‚æ›¸ãã€‚
 $$\int_a^b f(x)dx = \lim_{|\Delta|\to 0}\sum_{i=1}^n f(t_i)(x_i-x_{i-1})$$
 \end{definition}
 
 \begin{prop}
-—LŒÀŒÂ‚Ì“_‚ğœ‚¢‚Ä˜A‘±‚Å—LŠE‚ÈŠÖ”‚ÍAÏ•ª‰Â”\‚Å‚ ‚éB
+æœ‰é™å€‹ã®ç‚¹ã‚’é™¤ã„ã¦é€£ç¶šã§æœ‰ç•Œãªé–¢æ•°ã¯ã€ç©åˆ†å¯èƒ½ã§ã‚ã‚‹ã€‚
 \end{prop}
 
 \begin{prop}
-ŠÖ” $f(x)$ ‚Æ $g(x)$ ‚ÍA‹æŠÔ $[a,b]$ ‚ÅÏ•ª‰Â”\‚Æ‚·‚éB‚±‚Ì‚Æ‚«AŸ‚ª¬‚è—§‚ÂB
+é–¢æ•° $f(x)$ ã¨ $g(x)$ ã¯ã€åŒºé–“ $[a,b]$ ã§ç©åˆ†å¯èƒ½ã¨ã™ã‚‹ã€‚ã“ã®ã¨ãã€æ¬¡ãŒæˆã‚Šç«‹ã¤ã€‚
 \begin{itemize}
-\item[$(1)$] ${\displaystyle \int_a^b (f(x) \pm g(x))dx  = \int_a^b f(x)dx \pm \int_a^b g(x)dx}$B
-\item[$(2)$] ${\displaystyle \int_a^b k\cdot f(x)dx = k\int_a^b f(x)dx}$Ai$k$ ‚ÍA’è”Bj
-\item[$(3)$] $a\leq x\leq b$ ‚ÅA$f(x)\geq g(x)$ ‚È‚ç‚ÎA${\displaystyle \int_a^b f(x)dx \geq \int_a^b g(x)dx}$B
+\item[$(1)$] ${\displaystyle \int_a^b (f(x) \pm g(x))dx  = \int_a^b f(x)dx \pm \int_a^b g(x)dx}$ã€‚
+\item[$(2)$] ${\displaystyle \int_a^b k\cdot f(x)dx = k\int_a^b f(x)dx}$ã€ï¼ˆ$k$ ã¯ã€å®šæ•°ã€‚ï¼‰
+\item[$(3)$] $a\leq x\leq b$ ã§ã€$f(x)\geq g(x)$ ãªã‚‰ã°ã€${\displaystyle \int_a^b f(x)dx \geq \int_a^b g(x)dx}$ã€‚
 \end{itemize}
 \end{prop}
 
-\begin{prop} {\rm (Ï•ª‚Ì•½‹Ï’l‚Ì’è—)}
-ŠÖ” $f(x)$ ‚ªA•Â‹æŠÔ $[a,b]$ ã‚Å˜A‘±‚È‚ç‚ÎA‚ ‚éA$c\in (a,b)$  ‚ÅA
+\begin{prop} {\rm (ç©åˆ†ã®å¹³å‡å€¤ã®å®šç†)}
+é–¢æ•° $f(x)$ ãŒã€é–‰åŒºé–“ $[a,b]$ ä¸Šã§é€£ç¶šãªã‚‰ã°ã€ã‚ã‚‹ã€$c\in (a,b)$  ã§ã€
 $$\int_a^b f(x)dx = (b-a)f(c)$$
-‚ğ–‚½‚·‚à‚Ì‚ª‚ ‚éB
+ã‚’æº€ãŸã™ã‚‚ã®ãŒã‚ã‚‹ã€‚
 \end{prop}
 \proof
-ŠÖ” $f(x)$ ‚ÍA•Â‹æŠÔ $[a,b]$ ‚Å˜A‘±‚¾‚©‚çAÅ‘åAÅ¬‚ğ‚Æ‚éBÅ‘å’l‚ğ $M$ Å¬’l‚ğ $m$ ‚Æ‚·‚é‚ÆAƒŠ[ƒ}ƒ“˜a‚Ì’è‹`‚©‚çA
+é–¢æ•° $f(x)$ ã¯ã€é–‰åŒºé–“ $[a,b]$ ã§é€£ç¶šã ã‹ã‚‰ã€æœ€å¤§ã€æœ€å°ã‚’ã¨ã‚‹ã€‚æœ€å¤§å€¤ã‚’ $M$ æœ€å°å€¤ã‚’ $m$ ã¨ã™ã‚‹ã¨ã€ãƒªãƒ¼ãƒãƒ³å’Œã®å®šç¾©ã‹ã‚‰ã€
 $$m(b-a) \leq \int_a^b f(x)dx \leq M(b-a)$$
-‚±‚ê‚æ‚èA$m$ ‚ÆA$M$ ‚ÌŠÔ‚Ì‚ ‚é’l $A$ ‚ÅA
+ã“ã‚Œã‚ˆã‚Šã€$m$ ã¨ã€$M$ ã®é–“ã®ã‚ã‚‹å€¤ $A$ ã§ã€
 $$m(b-a) \leq A = \int_a^b f(x)dx \leq M(b-a)$$
-‚Æ‚È‚éB$f(x)$ ‚ÍA˜A‘±‚¾‚©‚çA’†ŠÔ’l‚Ì’è—‚É‚æ‚èA$m$ ‚ÆA$M$ ‚ÌŠÔ‚Ì’l‚Í‘S‚Ä‚Æ‚éB]‚Á‚ÄA$f(c) = A$ ‚ğ–‚½‚· $a < c < b$ ‚ğ–‚½‚· $c$ ‚ª‘¶İ‚·‚éB‚±‚ê‚ÍA–½‘è‚ÌAğŒ‚ğ–‚½‚·‚à‚Ì‚Å‚ ‚éB
+ã¨ãªã‚‹ã€‚$f(x)$ ã¯ã€é€£ç¶šã ã‹ã‚‰ã€ä¸­é–“å€¤ã®å®šç†ã«ã‚ˆã‚Šã€$m$ ã¨ã€$M$ ã®é–“ã®å€¤ã¯å…¨ã¦ã¨ã‚‹ã€‚å¾“ã£ã¦ã€$f(c) = A$ ã‚’æº€ãŸã™ $a < c < b$ ã‚’æº€ãŸã™ $c$ ãŒå­˜åœ¨ã™ã‚‹ã€‚ã“ã‚Œã¯ã€å‘½é¡Œã®ã€æ¡ä»¶ã‚’æº€ãŸã™ã‚‚ã®ã§ã‚ã‚‹ã€‚
 \qed
 
 \medskip
-$a < b$ ‚Ì‚Æ‚«A
+$a < b$ ã®ã¨ãã€
 $$\int_b^a f(x)dx = -\int_a^b f(x)dx, \; \int_a^a f(x)dx = 0$$
-‚Æ’è‹`‚·‚éB‚±‚¤’è‹`‚·‚é‚ÆA$b$ ‚ğ•Ï”‚Æ‚İ‚È‚µ‚ÄAŠÖ”
+ã¨å®šç¾©ã™ã‚‹ã€‚ã“ã†å®šç¾©ã™ã‚‹ã¨ã€$b$ ã‚’å¤‰æ•°ã¨ã¿ãªã—ã¦ã€é–¢æ•°
 $$F(x) = \int_a^x f(x)dx$$
-‚ª’è‹`‚Å‚«‚éBÀ‚ÍA‚±‚¤‚·‚é‚ÆA$x = a$ ‚ÅA$F(x)$ ‚ªA˜A‘±‚Å‚ ‚é‚±‚Æ‚ª•ª‚©‚éB‚³‚ç‚ÉAŸ‚ª¬‚è—§‚ÂB
+ãŒå®šç¾©ã§ãã‚‹ã€‚å®Ÿã¯ã€ã“ã†ã™ã‚‹ã¨ã€$x = a$ ã§ã€$F(x)$ ãŒã€é€£ç¶šã§ã‚ã‚‹ã“ã¨ãŒåˆ†ã‹ã‚‹ã€‚ã•ã‚‰ã«ã€æ¬¡ãŒæˆã‚Šç«‹ã¤ã€‚
 $$\int_a^x f(x)dx = \int_a^c f(x)dx + \int_c^x f(x)dx$$
 
-\begin{thm} {\rm (”÷Ï•ªŠw‚ÌŠî–{’è—)}
-ŠÖ” $f(x)$ ‚ªA•Â‹æŠÔ $[a,b]$ ‚Å˜A‘±‚Å‚ ‚é‚Æ‚·‚éB
+\begin{thm} {\rm (å¾®ç©åˆ†å­¦ã®åŸºæœ¬å®šç†)}
+é–¢æ•° $f(x)$ ãŒã€é–‰åŒºé–“ $[a,b]$ ã§é€£ç¶šã§ã‚ã‚‹ã¨ã™ã‚‹ã€‚
 $$F(x) = \int_a^x f(x)dx$$
-‚Æ‚·‚é‚ÆA$F(x)$ ‚ÍAŠJ‹æŠÔ $(a,b)$ ‚ÅA”÷•ª‰Â”\‚Å‚ ‚èA$F'(x) = f(x)$ ‚ª¬—§‚·‚éB
+ã¨ã™ã‚‹ã¨ã€$F(x)$ ã¯ã€é–‹åŒºé–“ $(a,b)$ ã§ã€å¾®åˆ†å¯èƒ½ã§ã‚ã‚Šã€$F'(x) = f(x)$ ãŒæˆç«‹ã™ã‚‹ã€‚
 \end{thm}
 \proof
-$a < c < b$ ‚Æ‚·‚éB
+$a < c < b$ ã¨ã™ã‚‹ã€‚
 \begin{eqnarray*}
 \frac{F(x) - F(c)}{x-c} & = & \frac{{\displaystyle \int_a^x f(x)dx - \int_a^c f(x)dx}}{x-c}\\
 & = & \frac{{\displaystyle \int_c^x f(x)}}{x-c}\\
 & = & f(d(x))
 \end{eqnarray*}
-‚ğ–‚½‚·A“_A$d(x)$ ‚ªA$x$ ‚Æ $c$ ‚ÌŠÔ‚É‚ ‚éB]‚Á‚ÄA$f(x)$ ‚ªA˜A‘±‚È‚±‚Æ‚ğl‚¦‚é‚ÆA
+ã‚’æº€ãŸã™ã€ç‚¹ã€$d(x)$ ãŒã€$x$ ã¨ $c$ ã®é–“ã«ã‚ã‚‹ã€‚å¾“ã£ã¦ã€$f(x)$ ãŒã€é€£ç¶šãªã“ã¨ã‚’è€ƒãˆã‚‹ã¨ã€
 $$F'(c) = \lim_{x\to c}\frac{F(x) - F(c)}{x-c} = \lim_{x\to c}f(d(x)) = f(c)$$
-‚±‚ê‚æ‚èA$F'(x) = f(x)$ ‚ğ“¾‚éB
+ã“ã‚Œã‚ˆã‚Šã€$F'(x) = f(x)$ ã‚’å¾—ã‚‹ã€‚
 \qed
 
 \medskip
-‚³‚ÄAˆê”Ê‚ÉA$F(x)$ ‚ğ ŠÖ” $f(x)$ ‚ÌŒ´nŠÖ”B‚·‚È‚í‚¿A$F'(x) = f(x)$ ‚ğ–‚½‚·‚à‚Ì‚Æ‚·‚éB‚·‚é‚ÆA”÷•ªÏ•ªŠw‚ÌŠî–{’è—‚æ‚èA$\int_a^x f(x)dx$ ‚à $f(x)$ ‚Ìˆê‚Â‚ÌŒ´nŠÖ”‚¾‚©‚çA‚ ‚éA’è” $C$ ‚ªA‘¶İ‚µ‚ÄA
+ã•ã¦ã€ä¸€èˆ¬ã«ã€$F(x)$ ã‚’ é–¢æ•° $f(x)$ ã®åŸå§‹é–¢æ•°ã€‚ã™ãªã‚ã¡ã€$F'(x) = f(x)$ ã‚’æº€ãŸã™ã‚‚ã®ã¨ã™ã‚‹ã€‚ã™ã‚‹ã¨ã€å¾®åˆ†ç©åˆ†å­¦ã®åŸºæœ¬å®šç†ã‚ˆã‚Šã€$\int_a^x f(x)dx$ ã‚‚ $f(x)$ ã®ä¸€ã¤ã®åŸå§‹é–¢æ•°ã ã‹ã‚‰ã€ã‚ã‚‹ã€å®šæ•° $C$ ãŒã€å­˜åœ¨ã—ã¦ã€
 $$F(x) = \int_a^x f(x)dx  + C$$ 
-‚Æ‘‚¯‚éB$x = a$ ‚Æ‚¨‚­‚ÆA$F(a) = C$ ‚ğ“¾‚é‚©‚çA$x = b$ ‚Æ‚¨‚­‚ÆA
+ã¨æ›¸ã‘ã‚‹ã€‚$x = a$ ã¨ãŠãã¨ã€$F(a) = C$ ã‚’å¾—ã‚‹ã‹ã‚‰ã€$x = b$ ã¨ãŠãã¨ã€
 $$F(x) - F(a) = \int_a^x f(x)dx$$
-“Á‚ÉA
-$$\int_a^x f(x)dx@F(b) - F(a)$$
-‚ğ“¾‚éB‚±‚ê‚ğA
-$$\int_a^x f(x)dx@F(b) - F(a) = [F(x)]_a^b = F(x)\mid^b_a$$
-‚Æ‚à‚©‚­B
+ç‰¹ã«ã€
+$$\int_a^x f(x)dxã€€ï¼F(b) - F(a)$$
+ã‚’å¾—ã‚‹ã€‚ã“ã‚Œã‚’ã€
+$$\int_a^x f(x)dxã€€ï¼F(b) - F(a) = [F(x)]_a^b = F(x)\mid^b_a$$
+ã¨ã‚‚ã‹ãã€‚
 
 \begin{eg}
 \begin{enumerate}
-\item ${\displaystyle \int_0^1\frac{dx}{1+x^2} = \arctan x\mid^1_0 = \arctan 1 - \arctan 0 = \frac{\pi}4}$B‚±‚ê‚æ‚èAƒŠ[ƒ}ƒ“˜a‚Ì’è‹`‚É–ß‚é‚ÆA
+\item ${\displaystyle \int_0^1\frac{dx}{1+x^2} = \arctan x\mid^1_0 = \arctan 1 - \arctan 0 = \frac{\pi}4}$ã€‚ã“ã‚Œã‚ˆã‚Šã€ãƒªãƒ¼ãƒãƒ³å’Œã®å®šç¾©ã«æˆ»ã‚‹ã¨ã€
 \begin{eqnarray*}
 \frac{pi}4 & = & \int_0^1\frac{dx}{1+x^2}\\
 & = &  \lim_{n\to\infty}\sum_{k=1}^n\frac{1}{1+(\frac{k}{n})^2}\cdot\frac{1}{n}\\
 & = &  \lim_{n\to\infty}\sum_{k=1}^n\frac{n}{n^2 + k^2}
 \end{eqnarray*}
-\item $x = \phi(t)$ ‚Æ‚¨‚­‚ÆA
+\item $x = \phi(t)$ ã¨ãŠãã¨ã€
 $$\int_a^bf(x)dx = \int_{phi(a)}^{\phi(b)}f(\phi(t))\phi'(t)dt$$
 \end{enumerate}
 \end{eg}
 
-\newpage\mysection{L‹`Ï•ª}
+\newpage\mysection{åºƒç¾©ç©åˆ†}
 \begin{definition}
-ŠÖ” $f(x)$ ‚ğA$[a,b)$ ã˜A‘±A‚©‚ÂA
+é–¢æ•° $f(x)$ ã‚’ã€$[a,b)$ ä¸Šé€£ç¶šã€ã‹ã¤ã€
 $$\int_a^bf(x)dx = \lim_{t\to b-0}\int^t_af(x)dx$$
-‚Æ‚·‚éB‚±‚Ì‚Æ‚«A‰E•Ó‚Ì‹ÉŒÀ’l‚ª‘¶İ‚·‚ê‚ÎAL‹`Ï•ª
+ã¨ã™ã‚‹ã€‚ã“ã®ã¨ãã€å³è¾ºã®æ¥µé™å€¤ãŒå­˜åœ¨ã™ã‚Œã°ã€åºƒç¾©ç©åˆ†
 $$\int_a^bf(x)dx$$
-‚ÍAû‘©‚·‚é‚Æ‚¢‚¤B$(a,b]$ ã‚ÅA˜A‘±‚ÈŠÖ”‚âA$b = \infty$A$a = -\infty$ ‚Ì‚à“¯—lB
+ã¯ã€åæŸã™ã‚‹ã¨ã„ã†ã€‚$(a,b]$ ä¸Šã§ã€é€£ç¶šãªé–¢æ•°ã‚„ã€$b = \infty$ã€$a = -\infty$ ã®æ™‚ã‚‚åŒæ§˜ã€‚
 \end{definition}
 
 \begin{eg}
 \begin{enumerate}
 \item ${\displaystyle \int_1^\infty\frac{1}{1+x^2}dx }$
 $$= \lim_{t\to\infty}\int^t_1\frac{1}{1+x^2}dx = \lim_{t\to\infty}(\arctan t - \frac{\pi}{4}) = \frac{\pi}{2} - \frac{\pi}{4} = \frac{\pi}{4}$$
-\item Ÿ‚ª¬‚è—§‚ÂB
+\item æ¬¡ãŒæˆã‚Šç«‹ã¤ã€‚
 $$\int_0^k\frac{1}{x^r}dx = \left\{\begin{array}{lll}
-\frac{k^{1-r}}{1-r} & (r<1) & \mbox{û‘©}\\
-\infty & (r\geq 1) & \mbox{”­U}\end{array}
+\frac{k^{1-r}}{1-r} & (r<1) & \mbox{åæŸ}\\
+\infty & (r\geq 1) & \mbox{ç™ºæ•£}\end{array}
 \right.$$
 $$\int_k^\infty\frac{1}{x^r}dx = \left\{\begin{array}{lll}
-\frac{1}{(r-1)k^{r-1}} & (r>1) & \mbox{û‘©}\\
-\infty & (r\leq 1) & \mbox{”­U}\end{array}
+\frac{1}{(r-1)k^{r-1}} & (r>1) & \mbox{åæŸ}\\
+\infty & (r\leq 1) & \mbox{ç™ºæ•£}\end{array}
 \right.$$
 \end{enumerate}
 \end{eg}
 
-\mysection{”’lÏ•ª}
-‹³‰È‘‚É—Ç‚¢à–¾‚ª‚ ‚è‚Ü‚·‚Ì‚Åi‚S|‚UßjÈ—ª‚µ‚Ü‚·B
+\mysection{æ•°å€¤ç©åˆ†}
+æ•™ç§‘æ›¸ã«è‰¯ã„èª¬æ˜ãŒã‚ã‚Šã¾ã™ã®ã§ï¼ˆï¼”âˆ’ï¼–ç¯€ï¼‰çœç•¥ã—ã¾ã™ã€‚
 
-\newpage\mysection{Ï•ª‚Ì‰—p}
-A. –ÊÏ
+\newpage\mysection{ç©åˆ†ã®å¿œç”¨}
+A. é¢ç©
 
-ŠÖ” $f(x)$A$g(x)$A$x = a$, $x = b$ ‚ÅAˆÍ‚Ü‚ê‚½•”•ª‚Ì–ÊÏ‚ÍA
+é–¢æ•° $f(x)$ã€$g(x)$ã€$x = a$, $x = b$ ã§ã€å›²ã¾ã‚ŒãŸéƒ¨åˆ†ã®é¢ç©ã¯ã€
 $$S = \int_a^b |f(x) - g(x)|dx$$
-‚ÅA—^‚¦‚ç‚ê‚éB
+ã§ã€ä¸ãˆã‚‰ã‚Œã‚‹ã€‚
 
 \bigskip
-B. ‹ÉÀ•W‚Æ–ÊÏ
+B. æ¥µåº§æ¨™ã¨é¢ç©
 
-$r = f(\theta)$A$\theta = \alpha$A$\theta = \beta$ ‚ÅˆÍ‚Ü‚ê‚é•”•ª‚Ì–ÊÏ‚ğl‚¦‚éB
-‚Ü‚¸A”¼Œa‚ª $r$AŠp‚ªA$\theta$ ‚Å‚ ‚éAîŒ`‚ÌA–ÊÏ‚Í $r\theta^2/2$ ‚Å‚ ‚é‚±‚Æ‚É’ˆÓ‚·‚éB$\alpha$ ‚©‚çA$\theta$ ‚Ü‚Å‚ÌA–ÊÏ‚ğ $S(\theta)$ ‚Å•\‚·‚ÆA$0\leq \epsilon(\Delta\theta)\leq \Delta\theta$ ‚È‚éA$\epsilon(\Delta\theta)$ ‚É‚¨‚¢‚ÄA
+$r = f(\theta)$ã€$\theta = \alpha$ã€$\theta = \beta$ ã§å›²ã¾ã‚Œã‚‹éƒ¨åˆ†ã®é¢ç©ã‚’è€ƒãˆã‚‹ã€‚
+ã¾ãšã€åŠå¾„ãŒ $r$ã€è§’ãŒã€$\theta$ ã§ã‚ã‚‹ã€æ‰‡å½¢ã®ã€é¢ç©ã¯ $r\theta^2/2$ ã§ã‚ã‚‹ã“ã¨ã«æ³¨æ„ã™ã‚‹ã€‚$\alpha$ ã‹ã‚‰ã€$\theta$ ã¾ã§ã®ã€é¢ç©ã‚’ $S(\theta)$ ã§è¡¨ã™ã¨ã€$0\leq \epsilon(\Delta\theta)\leq \Delta\theta$ ãªã‚‹ã€$\epsilon(\Delta\theta)$ ã«ãŠã„ã¦ã€
 $$S(\theta+\Delta\theta) - S(\theta) = \frac{1}{2}(f(\theta + \epsilon(\Delta\theta))^2\Delta\theta$$
-‚Æ‚È‚éB‚±‚ê‚æ‚èA
+ã¨ãªã‚‹ã€‚ã“ã‚Œã‚ˆã‚Šã€
 $$\lim_{\Delta\theta\to 0}\frac{S(\theta+\Delta\theta) - S(\theta)}{\Delta\theta} = \frac12\lim_{\Delta\theta\to 0}(f(\theta + \epsilon(\Delta\theta))^2 = \frac12(f(\theta))^2$$
-”÷•ª‚Ì’è‹`‚æ‚èA$S'(\theta) = \frac12(f(\theta))^2$B‚±‚ê‚æ‚èA‹‚ß‚é–ÊÏ‚ÍA
+å¾®åˆ†ã®å®šç¾©ã‚ˆã‚Šã€$S'(\theta) = \frac12(f(\theta))^2$ã€‚ã“ã‚Œã‚ˆã‚Šã€æ±‚ã‚ã‚‹é¢ç©ã¯ã€
 $$S = \frac12\int_{\alpha}^{\beta}(f(\theta))^2d\theta$$
-‚Æ‚È‚éB
+ã¨ãªã‚‹ã€‚
 
 \begin{eg}
 \begin{enumerate}
-\item $r = a(1+\cos\theta)$ iƒJ[ƒfƒBƒIƒCƒhj‚ÅˆÍ‚Ü‚ê‚é•”•ª‚Ì–ÊÏB
+\item $r = a(1+\cos\theta)$ ï¼ˆã‚«ãƒ¼ãƒ‡ã‚£ã‚ªã‚¤ãƒ‰ï¼‰ã§å›²ã¾ã‚Œã‚‹éƒ¨åˆ†ã®é¢ç©ã€‚
 \begin{eqnarray*}
 S & = & 2\cdot \frac12\int_0^\pi (a(1+\cos\theta))^2d\theta\\
    & = & 4a^2\int^\pi_0\cos^4\frac\theta2d\theta\\
@@ -875,16 +875,16 @@ S & = & 2\cdot \frac12\int_0^\pi (a(1+\cos\theta))^2d\theta\\
    & = & 8a^2\cdot \frac34\cdot\frac12\cdot\frac\pi2\\
    & = & \frac32\pi a^2
 \end{eqnarray*}
-ÅŒã‚Ì‚Æ‚±‚ë‚ÍAŸ‚ğAg‚Á‚½B‚·‚È‚í‚¿A$n\geq 2$ ‚Æ‚·‚é‚ÆA
+æœ€å¾Œã®ã¨ã“ã‚ã¯ã€æ¬¡ã‚’ã€ä½¿ã£ãŸã€‚ã™ãªã‚ã¡ã€$n\geq 2$ ã¨ã™ã‚‹ã¨ã€
 \begin{eqnarray*}
 I_n & =  & \int_0^{\pi/2}\cos^nxdx\\
      & = & \int_0^{\pi/2}\cos x\cos^{n-1}xdx\\
      & = & [\sin x\cos^{n-1}x]^{\pi/2}_0 + (n-1)\int_0^{\pi/2}\sin^2x\cos^{n-2}xdx\\
      & = & (n-1)\int_0^{\pi/2}(1-\cos^2 x)\cos^{n-2}xdx\\
-     & = & (n-1)I_{n-2} - (n-1)I_n, \;\mbox{ ]‚Á‚ÄA}\\
+     & = & (n-1)I_{n-2} - (n-1)I_n, \;\mbox{ å¾“ã£ã¦ã€}\\
 I_n & = & \frac{n-1}{n} I_{n-2}
 \end{eqnarray*}
-$I_0 = \pi/2$A$I_1 = 1$ ‚É’ˆÓ‚·‚é‚ÆA
+$I_0 = \pi/2$ã€$I_1 = 1$ ã«æ³¨æ„ã™ã‚‹ã¨ã€
 \begin{eqnarray*}
 I_{2n} & = & \frac{(2n-1)\cdot(2n-3)\cdots1}{(2n)\cdot(2n-2)\cdots2}\cdot\frac\pi2\\
 I_{2n+1} & = & \frac{(2n)\cdot(2n-2)\cdots2}{(2n+1)\cdot(2n-1)\cdots3}
@@ -893,52 +893,52 @@ I_{2n+1} & = & \frac{(2n)\cdot(2n-2)\cdots2}{(2n+1)\cdot(2n-1)\cdots3}
 \end{eg}
 
 \bigskip
-C. •½–Êã‚Ì‹Èü‚Ì’·‚³
+C. å¹³é¢ä¸Šã®æ›²ç·šã®é•·ã•
 
-‹Èü $y = f(x)$ ‚Ì $x$ ‚ªA$a$ ‚©‚çA$b$ ‚Ü‚ÅA•Ï‰»‚·‚éA•”•ª‚Ì’·‚³ $L$ ‚ğl‚¦‚éB$a\leq x\leq b$ ‚Å‚ ‚éA”CˆÓ‚Ì $x$ ‚É‘Î‚µ‚ÄA$a$ ‚©‚çA$x$ ‚Ü‚Å‚ÌA•”•ª‚Ì’·‚³‚ğ $L(x)$ ‚Æ‚¨‚­B$x$ ‚ğA$\Delta x$ ‚¾‚¯•Ï‰»‚³‚¹‚½‚Æ‚«‚Ì‹Èü‚Ì’·‚³‚ÍA$\Delta x$A$\Delta y$ ‚ğ‚Q•Ó‚Æ‚·‚éA’¼ŠpOŠpŒ`‚ÌÎ•Ó‚Ì’·‚³‚Æ‚İ‚È‚³‚ê‚éB‚±‚ê‚æ‚èA
+æ›²ç·š $y = f(x)$ ã® $x$ ãŒã€$a$ ã‹ã‚‰ã€$b$ ã¾ã§ã€å¤‰åŒ–ã™ã‚‹ã€éƒ¨åˆ†ã®é•·ã• $L$ ã‚’è€ƒãˆã‚‹ã€‚$a\leq x\leq b$ ã§ã‚ã‚‹ã€ä»»æ„ã® $x$ ã«å¯¾ã—ã¦ã€$a$ ã‹ã‚‰ã€$x$ ã¾ã§ã®ã€éƒ¨åˆ†ã®é•·ã•ã‚’ $L(x)$ ã¨ãŠãã€‚$x$ ã‚’ã€$\Delta x$ ã ã‘å¤‰åŒ–ã•ã›ãŸã¨ãã®æ›²ç·šã®é•·ã•ã¯ã€$\Delta x$ã€$\Delta y$ ã‚’ï¼’è¾ºã¨ã™ã‚‹ã€ç›´è§’ä¸‰è§’å½¢ã®æ–œè¾ºã®é•·ã•ã¨ã¿ãªã•ã‚Œã‚‹ã€‚ã“ã‚Œã‚ˆã‚Šã€
 $$\lim_{\Delta x\to 0}\frac{L(x + \Delta x) - L(x)}{\Delta x} = \lim_{\Delta x\to 0}\frac{\sqrt{(\Delta x)^2 + (\Delta y)^2}}{\Delta x} = \lim_{\Delta x\to 0}\sqrt{1 + \left(\frac{\Delta y}{\Delta x}\right)^2} = \sqrt{1+(y')^2}$$
-”÷•ª‚Ì’è‹`‚æ‚èA$L'(x) = \sqrt{1+(y')^2}$BÏ•ª‚Ì’è‹`‚æ‚èA‹‚ß‚é’·‚³‚ÍA
+å¾®åˆ†ã®å®šç¾©ã‚ˆã‚Šã€$L'(x) = \sqrt{1+(y')^2}$ã€‚ç©åˆ†ã®å®šç¾©ã‚ˆã‚Šã€æ±‚ã‚ã‚‹é•·ã•ã¯ã€
 $$L = \int_a^b\sqrt{1+(y')^2}dx$$
-‚Æ‚È‚éB
+ã¨ãªã‚‹ã€‚
 
 \begin{eg}
 \begin{enumerate}
-\item ”¼Œa $a$ ‚Ì‰~ü‚Ì’·‚³B‰~‚ğ $x^2 + y^2 = a^2$ ‚Æ‚·‚é‚ÆAã”¼‰~‚Í $y = \sqrt{a^2-x^2}$ ‚¾‚©‚çA
+\item åŠå¾„ $a$ ã®å††å‘¨ã®é•·ã•ã€‚å††ã‚’ $x^2 + y^2 = a^2$ ã¨ã™ã‚‹ã¨ã€ä¸ŠåŠå††ã¯ $y = \sqrt{a^2-x^2}$ ã ã‹ã‚‰ã€
 $$y' = \frac{-x}{\sqrt{a^2-x^2}}, \; 1+(y')^2 = \frac{a^2}{a^2 - x^2}$$
-‚±‚ê‚æ‚èA’·‚³‚ğ $L$ ‚Æ‚·‚é‚ÆA
+ã“ã‚Œã‚ˆã‚Šã€é•·ã•ã‚’ $L$ ã¨ã™ã‚‹ã¨ã€
 $$L = 4\int_0^a\sqrt{1+(y')^2}dx = 4\int_0^1\sqrt{\frac{a^2}{a^2-x^2}}dx = 4a\left[\arcsin\frac{x}{a}\right]_0^a = 2\pi a$$
 \end{enumerate}
 \end{eg}
 
-D. ‹ÉÀ•W‚Æ‹Èü‚Ì’·‚³
+D. æ¥µåº§æ¨™ã¨æ›²ç·šã®é•·ã•
 
-$r = f(\theta)$ ‚ªA$\theta = \alpha$ ‚©‚çA$\theta = \beta$ ‚Ü‚Å•Ï‰»‚·‚é•”•ª‚Ì’·‚³‚ğl‚¦‚éB
-‚Ü‚¸A”¼Œa‚ª $r$AŠp‚ªA$\theta$ ‚Å‚ ‚éAîŒ`‚ÌŒÊ‚Ì’·‚³‚Í $r\theta$ ‚Å‚ ‚é‚±‚Æ‚É’ˆÓ‚·‚éB$\alpha$ ‚©‚çA$\theta$ ‚Ü‚Å‚ÌAŒÊ‚Ì’·‚³‚ğ $L(\theta)$ ‚Å•\‚·B$L(\theta + \Delta\theta) - L(\theta)$  ‚ğA’¼ŠpOŠpŒ`‚ÌÎ•Ó‚Æ‚µ‚Ä‹ß—‚·‚é‚ÆA
+$r = f(\theta)$ ãŒã€$\theta = \alpha$ ã‹ã‚‰ã€$\theta = \beta$ ã¾ã§å¤‰åŒ–ã™ã‚‹éƒ¨åˆ†ã®é•·ã•ã‚’è€ƒãˆã‚‹ã€‚
+ã¾ãšã€åŠå¾„ãŒ $r$ã€è§’ãŒã€$\theta$ ã§ã‚ã‚‹ã€æ‰‡å½¢ã®å¼§ã®é•·ã•ã¯ $r\theta$ ã§ã‚ã‚‹ã“ã¨ã«æ³¨æ„ã™ã‚‹ã€‚$\alpha$ ã‹ã‚‰ã€$\theta$ ã¾ã§ã®ã€å¼§ã®é•·ã•ã‚’ $L(\theta)$ ã§è¡¨ã™ã€‚$L(\theta + \Delta\theta) - L(\theta)$  ã‚’ã€ç›´è§’ä¸‰è§’å½¢ã®æ–œè¾ºã¨ã—ã¦è¿‘ä¼¼ã™ã‚‹ã¨ã€
 $$L(\theta+\Delta\theta) - L(\theta) = \sqrt{(r\Delta\theta)^2 + (\Delta r)^2}$$
-‚±‚ê‚æ‚èA
+ã“ã‚Œã‚ˆã‚Šã€
 $$\lim_{\Delta\theta\to 0}\frac{L(\theta+\Delta\theta) - L(\theta)}{\Delta\theta} = \lim_{\Delta\theta\to 0}\sqrt{r^2 + \left(\frac{\Delta r}{\Delta\theta}\right)^2} = \sqrt{r^2 + \left(\frac{dr}{d\theta}\right)^2}$$
-”÷•ª‚Ì’è‹`‚æ‚èA
+å¾®åˆ†ã®å®šç¾©ã‚ˆã‚Šã€
 $$L'(\theta) = \sqrt{r^2 + \left(\frac{dr}{d\theta}\right)^2}$$
-‚±‚ê‚æ‚èA‹‚ß‚é’·‚³‚ÍA
+ã“ã‚Œã‚ˆã‚Šã€æ±‚ã‚ã‚‹é•·ã•ã¯ã€
 $$L = \int_\alpha^\beta\sqrt{r^2 + \left(\frac{dr}{d\theta}\right)^2}d\theta$$
-‚Æ‚È‚éB
+ã¨ãªã‚‹ã€‚
 
 \begin{eg}
 \begin{enumerate}
-\item ”¼Œa $a$ ‚Ì‰~ü‚Ì’·‚³B‰~‚ğ $r = r(\theta) = a$ ‚Æ‚·‚é‚ÆA
+\item åŠå¾„ $a$ ã®å††å‘¨ã®é•·ã•ã€‚å††ã‚’ $r = r(\theta) = a$ ã¨ã™ã‚‹ã¨ã€
 $$\frac{dr}{d\theta} = 0, \; r^2 + \left(\frac{dr}{d\theta}\right)^2 = a^2$$
-‚±‚ê‚æ‚èA’·‚³‚ğ $L$ ‚Æ‚·‚é‚ÆA
+ã“ã‚Œã‚ˆã‚Šã€é•·ã•ã‚’ $L$ ã¨ã™ã‚‹ã¨ã€
 $$L = \int_0^{2\pi}\sqrt{r^2 + \left(\frac{dr}{d\theta}\right)^2}d\theta = \int_0^{2\pi}a d\theta = [a\theta]_0^{2\pi} = 2\pi a$$
 \end{enumerate}
 \end{eg}
 
-E. ‰ñ“]‘Ì‚Ì‘ÌÏ
+E. å›è»¢ä½“ã®ä½“ç©
 
-$y = f(x)$ ‚ÆA$x = a$A$x = b$ ‚ÅˆÍ‚Ü‚ê‚é•”•ª‚ğ $x$ ²‚Ìü‚è‚É‰ñ“]‚³‚¹‚Äo—ˆ‚é‰ñ“]‘Ì‚Ì‘ÌÏ‚ğl‚¦‚éB$a\leq x\leq b$ ‚È‚éA”CˆÓ‚Ì $x$ ‚É‘Î‚µ‚ÄA$a$ ‚©‚çA$x$ ‚Ì•”•ª‚Ì‘ÌÏ‚ğ $V(x)$ ‚Æ•\‚·‚ÆA‚ ‚éA$0<\theta<1$ ‚ÅA
+$y = f(x)$ ã¨ã€$x = a$ã€$x = b$ ã§å›²ã¾ã‚Œã‚‹éƒ¨åˆ†ã‚’ $x$ è»¸ã®å‘¨ã‚Šã«å›è»¢ã•ã›ã¦å‡ºæ¥ã‚‹å›è»¢ä½“ã®ä½“ç©ã‚’è€ƒãˆã‚‹ã€‚$a\leq x\leq b$ ãªã‚‹ã€ä»»æ„ã® $x$ ã«å¯¾ã—ã¦ã€$a$ ã‹ã‚‰ã€$x$ ã®éƒ¨åˆ†ã®ä½“ç©ã‚’ $V(x)$ ã¨è¡¨ã™ã¨ã€ã‚ã‚‹ã€$0<\theta<1$ ã§ã€
 $$V(x+\Delta x) - V(x) = \pi(f(x+\theta\Delta x))^2\Delta x$$
-]‚Á‚ÄA”÷•ª‚Ì’è‹`‚æ‚èA
+å¾“ã£ã¦ã€å¾®åˆ†ã®å®šç¾©ã‚ˆã‚Šã€
 $$V'(x) = \lim_{\Delta x\to 0}\frac{V(x+\Delta x) - V(x)}{\Delta x} = \pi\lim_{\Delta x\to 0}(f(x+\theta\Delta x))^2 = \pi(f(x))^2$$
-‚±‚ê‚æ‚èAÏ•ª‚Ì’è‹`‚ğ—p‚¢‚é‚ÆA
+ã“ã‚Œã‚ˆã‚Šã€ç©åˆ†ã®å®šç¾©ã‚’ç”¨ã„ã‚‹ã¨ã€
 $$V = \pi\int_1^b(f(x))^2dx$$
 
 

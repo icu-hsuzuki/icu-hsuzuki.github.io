@@ -1,17 +1,17 @@
 <HTML>
 <HEAD>
-<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="TEXT/HTML; CHARSET=x-sjis">
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 <TITLE>NSI PROBLEM</TITLE>
 </HEAD>
 <BODY BGCOLOR = "#C8F9D9">
 <A NAME = "top"></A>
 <DIV ALIGN = RIGHT><I>Last Update : September 23, 2000</I></DIV>
 <HR><H3>
-GE : NS I ���w�̍\��</H3>
-<H2>����</H2>
+GE : NS I 数学の構造</H3>
+<H2>問題編</H2>
 	<UL>
-	<LI><A HREF = "#one-one">�P�΂P�Ή�</A>
-	<LI><A HREF = "#induction">���w�I�A�[�@</A>
+	<LI><A HREF = "#one-one">１対１対応</A>
+	<LI><A HREF = "#induction">数学的帰納法</A>
 	</UL>
 
 <A NAME = "one-one"></A>
@@ -22,35 +22,35 @@ GE : NS I ���w�̍\��</H3>
 </TR>
 </TABLE>
 <HR>
-<H3>�P�΂P�Ή�</H3>
-�����F�����グ
+<H3>１対１対応</H3>
+導入：数え上げ
 <UL> 
-<LI>�R�̖؂̖{�����ɂ���Đ�����B
-<LI>�g�[�i�����g�ɂ����鎎���̐��B
+<LI>山の木の本数を縄によって数える。
+<LI>トーナメントにおける試合の数。
 </UL>
 <P>
 
-<I>X</I> �𐔂���������ǐ����ɂ������̂̏W���Ƃ����Ƃ��A�����₷�����̂���Ȃ邠��W�� <I>Y</I> �ƁA<I>X</I> ���� <I>Y</I> �ւ́A�P�΂P�Ή���������B����ƁA<I>X</I> �̌��i�v�f�j�̐��ƁA<I>Y</I> �̌��̐��͓���������A����ɂ���āA<I>X</I> �̌��̐����킩��B
+<I>X</I> を数えたいけれど数えにくいものの集合としたとき、数えやすいものからなるある集合 <I>Y</I> と、<I>X</I> から <I>Y</I> への、１対１対応を見つける。すると、<I>X</I> の元（要素）の数と、<I>Y</I> の元の数は等しいから、それによって、<I>X</I> の元の数がわかる。
 <P>
-�Ⴆ�΁A��̍ŏ��̗�ł́A<I>X</I> �́A�R�̖؁A<I>Y</I> �́A��Ƃ������ƂŁA���̗�ł́A<I>X</I> �́A�g�i�����g�̎����ŁA<I>Y</I>  �́A�g�[�i�����g�ɂ���ĕ�����`�[���Ƃ������ƂɂȂ�܂��B
+例えば、上の最初の例では、<I>X</I> は、山の木、<I>Y</I> は、縄ということで、次の例では、<I>X</I> は、トナメントの試合で、<I>Y</I>  は、トーナメントによって負けるチームということになります。
 <P>
 
 <OL>
-<LI>�g�[�i�����g�ŁA�s�ҕ����킪����Ƃ��́A�ǂ��ł��傤���B�ʏ�A�s�ҕ������g�ޑg�ݕ��́A�F�X�Ƃ���܂����A�Q�s�����玸�i�B�Ƃ��Ă����܂��傤�B��`�[���̂Ƃ��́A�Q�������A�R�����ł��ˁB�R�`�[���̂Ƃ��́A�ǂ��ł��傤���B�S�X�`�[���̂Ƃ��́A�ǂ��ł��傤���B
+<LI>トーナメントで、敗者復活戦があるときは、どうでしょうか。通常、敗者復活戦を組む組み方は、色々とありますが、２敗したら失格。としておきましょう。二チームのときは、２試合か、３試合ですね。３チームのときは、どうでしょうか。４９チームのときは、どうでしょうか。
 <P>
 
-<LI> �P�Q����̃L�����������ꔠ�����āA��A��A�]�A��q�A�x�q�́A�T�l�̌Z��ɕ��������B���ꂼ�ꂪ�Œ�P�͂��炦��悤�ɂ���ƁA���ʂ�̕�����������ł��傤���B
+<LI> １２個入りのキャラメルを一箱買って、守、悟、望、喜子、悦子の、５人の兄弟に分けたい。それぞれが最低１個はもらえるようにすると、何通りの分け方があるでしょうか。
 <P>
 
-<LI> �P�Q����̃L�����������ꔠ�����āA��A��A�]�A��q�A�x�q�́A�T�l�̌Z��ɕ��������B���ʂ�̕�����������ł��傤���B����ǂ́A������炦�Ȃ��q�ǂ������Ă��ǂ��Ƃ��܂��B
+<LI> １２個入りのキャラメルを一箱買って、守、悟、望、喜子、悦子の、５人の兄弟に分けたい。何通りの分け方があるでしょうか。こんどは、一つももらえない子どもがいても良いとします。
 <P>
 
-<LI> ���R�� <I>n</I> �� <I>m</I> �̎��R���̘a�Ƃ��ĕ\���Ƃ��A�����鐔�̏������l���ɓ���ĉ��ʂ�̕\����������ł��傤���B
+<LI> 自然数 <I>n</I> を <I>m</I> 個の自然数の和として表すとき、加える数の順序も考慮に入れて何通りの表し方があるでしょうか。
 <P>
 
-<LI> 0 < a < b < c < d < 12 �ł���悤�Ȏ��R���̑g (a,b,c,d) �͑S���ŉ��ʂ肠��ł��傤���B<P>
+<LI> 0 < a < b < c < d < 12 であるような自然数の組 (a,b,c,d) は全部で何通りあるでしょうか。<P>
 
-<LI> ���x�́Aa �� b �ȉ��Ab �� c �ȉ��Ac �� d �ȉ��Ad �� �P�U�ȉ��Ƃ��܂��B���̂悤�Ȏ��R���̑g (a,b,c,d) �͑S���ŉ��ʂ肠��ł��傤���B<P>
+<LI> 今度は、a は b 以下、b は c 以下、c は d 以下、d は １６以下とします。このような自然数の組 (a,b,c,d) は全部で何通りあるでしょうか。<P>
 
 </OL>
 <P>
@@ -62,14 +62,14 @@ GE : NS I ���w�̍\��</H3>
 </TR>
 </TABLE>
 <HR>
-<H3>���w�I�A�[�@</H3>
+<H3>数学的帰納法</H3>
 
 <BLOCKQUOTE>
 <B>THEOREM</B> [Mathematical Induction]<BR>
-P(n)  �́A���R�� n �Ɋւ��邠�閽���\�����̂Ƃ���B���̂Ƃ��A(I)�A(II) ����������Ƃ���B<BR>
-(I)  P(n<SUB>0</SUB>) �́A�������B<BR>
-(II) n<SUB>0</SUB> �ȏ�� k �ɂ��āAP(k) ���������Ɖ���̂��Ƃł́AP(k+1) �͐������B<BR>
-���̂Ƃ��An<SUB>0</SUB> �ȏ�̂��ׂĂ� n �ɂ��āAP(n) �͐������B 
+P(n)  は、自然数 n に関するある命題を表すものとする。このとき、(I)、(II) が成立するとする。<BR>
+(I)  P(n<SUB>0</SUB>) は、正しい。<BR>
+(II) n<SUB>0</SUB> 以上の k について、P(k) が正しいと仮定のもとでは、P(k+1) は正しい。<BR>
+このとき、n<SUB>0</SUB> 以上のすべての n について、P(n) は正しい。 
 <P>
 <B>PROOF</B><BR>
 Let S = {n > n<SUB>0</SUB>-1 : P(n) is false}. We want to show that S is empty. Suppose not. Let m = min S. By (I), m is not equal to n<SUB>0</SUB>. Hence m > n_0. By the minimality of m, P(m-1) is true. Now by (II), P(m) is true as well, which contradicts m being in S. Therefore, S is empty.
@@ -77,11 +77,11 @@ Q.E.D.
 </BLOCKQUOTE>
 
 <OL>
-<LI>n ��񕉐����Ƃ���B���̂Ƃ��A11<SUP>n+2</SUP> + 12<SUP>2n+1</SUP> �́A133  �Ŋ���؂��B
+<LI>n を非負整数とする。このとき、11<SUP>n+2</SUP> + 12<SUP>2n+1</SUP> は、133  で割り切れる。
 
-<LI>n ��񕉐����Ƃ���B���̂Ƃ��A�Q<SUP>n</SUP>�~ + �Q<SUP>n</SUP> �[ �P �́A�R �Ŋ���؂��B
+<LI>n を非負整数とする。このとき、２<SUP>n</SUP>× + ２<SUP>n</SUP> ー １ は、３ で割り切れる。
 
-<LI>�T�C�Y �Q<SUP>n</SUP>�~ + �Q<SUP>n</SUP> �̃`�F�X�Ղ����܂��𔲂���������̂� B<SUB>n</SUB> �ƌĂԂ��Ƃɂ���ƁA���ׂẮA�@B<SUB>n</SUB> �́AB<SUB>1</SUB> �ŕ~���l�߂邱�Ƃ��o����B
+<LI>サイズ ２<SUP>n</SUP>× + ２<SUP>n</SUP> のチェス盤から一ますを抜き取ったものを B<SUB>n</SUB> と呼ぶことにすると、すべての、　B<SUB>n</SUB> は、B<SUB>1</SUB> で敷き詰めることが出来る。
 </OL>
 
 <TABLE BORDER = 3 ALIGN = RIGHT BGCOLOR = "#FFFFFF"><TR>

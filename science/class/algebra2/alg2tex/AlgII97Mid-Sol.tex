@@ -12,14 +12,14 @@
 
 \pagestyle{empty}
 
-\newtheorem{thm}{�藝}
+\newtheorem{thm}{定理}
 \newcommand{\bZ}{\mbox{\boldmath $Z$}}
 \newcommand{\bQ}{\mbox{\boldmath $Q$}}
 \newcommand{\bR}{\mbox{\boldmath $R$}}
 \newcommand{\bC}{\mbox{\boldmath $C$}}
 \newcommand{\bigx}{{\large $\times$}}
 \newcommand{\qed}{\hfill\hbox{\rule{6pt}{6pt}}}
-\newcommand{\sol}{{\gt \mbox{���D}\quad}}
+\newcommand{\sol}{{\gt \mbox{解．}\quad}}
 
 \begin{document}
 \begin{center}
@@ -28,126 +28,126 @@
 \end{center}
 
 \begin{enumerate}
-\item ���̂������������̂ɂ� $\bigcirc$�A����Ă�����̂ɂ� \bigx ���L������B
+\item 次のうち正しいものには $\bigcirc$、誤っているものには \bigx を記入せよ。
      \begin{enumerate}
-     \item $R$ ���P���C�f�A������Ȃ�΁A$R$ ��̑������� $R[x]$ �́A�P���C�f�A������ł���B\hfill (\bigx)
-     \item �� $K$ �̃C�f�A���́A$K$ �ƁA$\{0\}$ �݂̂ł���B\hfill($\bigcirc$)
-     \item $(0)$ ���f�C�f�A���ł�����́A����ł���B\hfill($\bigcirc$)
-     \item $I, J$ ������ $R$ �̃C�f�A���Ƃ���ƁA
+     \item $R$ が単項イデアル整域ならば、$R$ 上の多項式環 $R[x]$ は、単項イデアル整域である。\hfill (\bigx)
+     \item 体 $K$ のイデアルは、$K$ と、$\{0\}$ のみである。\hfill($\bigcirc$)
+     \item $(0)$ が素イデアルである可換環は、整域である。\hfill($\bigcirc$)
+     \item $I, J$ を可換環 $R$ のイデアルとすると、
      $$\{xy\mid x\in I, \:y\in J\}$$
-     �́A$R$ �̃C�f�A���ł���B\hfill (\bigx)
-     \item $n$ �� $2$ �ȏ�̐����Ƃ���Ƃ��A$\bZ/n\bZ$ �̌��Ő������łȂ����̂́A���ׂāA����q�ł���B\hfill($\bigcirc$)
+     は、$R$ のイデアルである。\hfill (\bigx)
+     \item $n$ を $2$ 以上の整数とするとき、$\bZ/n\bZ$ の元で正則元でないものは、すべて、零因子である。\hfill($\bigcirc$)
      \end{enumerate}
 
-\item $R$ �����Ƃ��A$R[x]$ �� $R$ ���W���Ƃ��鑽�����S�̂̂Ȃ��A$U(R)$ �����̒P���Q�i�������S�̂̂Ȃ��Q�j�Ƃ���Ƃ����������B
+\item $R$ を可換環とし、$R[x]$ を $R$ を係数とする多項式全体のなす環、$U(R)$ をその単数群（正則元全体のなす群）とするとき次を示せ。
      \begin{enumerate}
-     \item $f(x), g(x)\in R[x]$ �Ƃ���Ƃ��A
+     \item $f(x), g(x)\in R[x]$ とするとき、
      $$\deg f(x)g(x) \leq \deg f(x) + \deg g(x)$$
-     �ł���A���ɁA$R$ ������ł���΁A���������藧���Ƃ������B\\
+     であり、特に、$R$ が整域であれば、等号が成り立つことを示せ。\\
      \sol
-     $f(x) = a_nx^n + \cdots + a_1x + a_0$�A$g(x) = b_mx^m + \cdots + b_1x + b_0$�A$a_n\neq 0 \neq b_m$ �Ƃ���B$n = \deg f(x)$�A$m = \deg g(x)$�B$x^t, \;(t>n+m)$ �̌W���� 0 �ŁA$x^{n+m}$ �̌W���́A$a_nb_m$�B�]���āA$f(x)g(x)$ �̎����́A$n+m$ �ȉ��B�܂��A����Ȃ�΁A$a_nb_m\neq 0$ ������A�����́A$n+m$ �ł���B
+     $f(x) = a_nx^n + \cdots + a_1x + a_0$、$g(x) = b_mx^m + \cdots + b_1x + b_0$、$a_n\neq 0 \neq b_m$ とする。$n = \deg f(x)$、$m = \deg g(x)$。$x^t, \;(t>n+m)$ の係数は 0 で、$x^{n+m}$ の係数は、$a_nb_m$。従って、$f(x)g(x)$ の次数は、$n+m$ 以下。また、整域ならば、$a_nb_m\neq 0$ だから、次数は、$n+m$ である。
      \qed
      
-     \item $R$ ������Ȃ�� $R[x]$ ������ł��邱�Ƃ������B\\
+     \item $R$ が整域ならば $R[x]$ も整域であることを示せ。\\
      \sol
-     $f(x), g(x)\in R[x]$ �Ƃ��A$\deg f(x)g(x) = 0$ �Ƃ���ƁA�O����A
+     $f(x), g(x)\in R[x]$ とし、$\deg f(x)g(x) = 0$ とすると、前問より、
      $$-\infty = \deg 0 = \deg f(x)g(x) = \deg f(x) + \deg g(x)$$
-     ������A$\deg f(x) = -\infty$ �܂��́A$\deg g(x) = -\infty$�B������A$f(x) = 0$ �܂��́A$g(x) = 0$ �𓾂�B�]���āA$R[x]$ �͐���ł���B
+     だから、$\deg f(x) = -\infty$ または、$\deg g(x) = -\infty$。これより、$f(x) = 0$ または、$g(x) = 0$ を得る。従って、$R[x]$ は整域である。
      \qed
      
-     \item $R[x,y]$ �� $R[x]$ ���W���Ƃ��A$y$ ��ϐ��Ƃ��鑽�����Ƃ���B$R$ ������Ȃ�΁A$R[x,y]$ ������ł��邱�Ƃ������B\\
+     \item $R[x,y]$ を $R[x]$ を係数とし、$y$ を変数とする多項式環とする。$R$ が整域ならば、$R[x,y]$ も整域であることを示せ。\\
      \sol
-     $R$ ������Ȃ�A$R[x]$ �͐���A�]���āA$R[x]$ ���W���Ƃ��鑽������ $R[x,y] = (R[x])[y]$ ������ł���B
+     $R$ が整域なら、$R[x]$ は整域、従って、$R[x]$ を係数とする多項式環 $R[x,y] = (R[x])[y]$ も整域である。
      \qed
      
-     \item $R$ �𐮈�Ɖ��肷��Ƃ��A$U(R[x]) = U(R)$ �ł��邱�Ƃ������B\\
+     \item $R$ を整域と仮定するとき、$U(R[x]) = U(R)$ であることを示せ。\\
      \sol
-     $f(x), g(x)\in R[x]$ �Ƃ��A$\deg f(x)g(x) = 1$ �Ƃ���ƁA
+     $f(x), g(x)\in R[x]$ とし、$\deg f(x)g(x) = 1$ とすると、
      $$0 = \deg 1 = \deg f(x)g(x) = \deg f(x) + \deg g(x)$$
-     ������A$\deg f(x) = \deg g(x) = 0$�B������A$f(x), g(x) \in R$ �𓾂�B�]���āA$U(R[x])\subset U(R)$�B$U(R)\subset U(R[x])$ �͖��炩������ $U(R[x]) = U(R)$ �𓾂�B
+     だから、$\deg f(x) = \deg g(x) = 0$。これより、$f(x), g(x) \in R$ を得る。従って、$U(R[x])\subset U(R)$。$U(R)\subset U(R[x])$ は明らかだから $U(R[x]) = U(R)$ を得る。
      \qed
      
-     \item $R$ �𐮈�Ƃ͉��肵�Ȃ��Ƃ��A$U(R[x]) = U(R)$ ���B��������Ώؖ����A�������Ȃ���΁A������グ��B\\
+     \item $R$ を整域とは仮定しないとき、$U(R[x]) = U(R)$ か。正しければ証明し、正しくなければ、反例を上げよ。\\
      \sol
-     $R = \bZ_4$�A$f(x) = 2x+1$ �Ƃ���B
+     $R = \bZ_4$、$f(x) = 2x+1$ とする。
      $$(f(x))^2 = (2x+1)(2x+1) = 4x^2 + 4x + 1 = 1$$
-     ������A$2x+1\in U(R[x])$�B�������A$2x+1\not\in R$ ������A$U(R[x]) \neq U(R)$ ������ $2x+1\not\in R$�B
+     だから、$2x+1\in U(R[x])$。しかし、$2x+1\not\in R$ だから、$U(R[x]) \neq U(R)$ しかし $2x+1\not\in R$。
      \qed
      \end{enumerate}
  
-\item $R$ �����A$P$ �� $R$ �̑f�C�f�A���A$S = R - P$�A$R'$ �����A$f:R\to R'$ �������^�Ƃ���Ƃ��A���������B
+\item $R$ を可換環、$P$ を $R$ の素イデアル、$S = R - P$、$R'$ を可換環、$f:R\to R'$ を環準同型とするとき、次を示せ。
      \begin{enumerate}
-     \item $S$ �́A��@�I�����W���ł��邱�Ƃ������B�i0 ���܂܂��A1 ���܂݁A�ςɊւ��ĕ��Ă���W���j\\
+     \item $S$ は、乗法的部分集合であることを示せ。（0 を含まず、1 を含み、積に関して閉じている集合）\\
      \sol
-     $1\not\in P$ ������A$1\in S$�B$0\in P$ ������A$0\not\in S$�B$x,y\in S$ �Ƃ���ƁA$x,y\not\in P$ ���� $P$ �͑f�C�f�A��������A$xy\not\in P$�B�]���āA$xy\in S$�B����́A$S$ ����@�I�����W���ł��邱�Ƃ������B
+     $1\not\in P$ だから、$1\in S$。$0\in P$ だから、$0\not\in S$。$x,y\in S$ とすると、$x,y\not\in P$ かつ $P$ は素イデアルだから、$xy\not\in P$。従って、$xy\in S$。これは、$S$ が乗法的部分集合であることを示す。
      \qed
      
-     \item $I'$ �� $R'$ �̃C�f�A���Ƃ���ƁA
+     \item $I'$ を $R'$ のイデアルとすると、
      $$I = f^{-1}(I') = \{x\in R\mid f(x)\in I'\}$$
-     �́A$R$ �̃C�f�A���ł��邱�Ƃ������B\\
+     は、$R$ のイデアルであることを示せ。\\
      \sol
-     $x,y\in I$ �Ƃ���B������A$f(x), f(y)\in I'$ �ŁA$I'$ �́A�C�f�A��������A
+     $x,y\in I$ とする。仮定より、$f(x), f(y)\in I'$ で、$I'$ は、イデアルだから、
      $$I'\ni f(x) + f(y) = f(x+y).$$
-     ����́A$x+y\in I$ �������B�܂��A$r\in R$ �Ƃ���ƁA$f(rx) = rf(x)\in I'$ ������A$rx\in I$ �������A$I$ �� $R$ �̃C�f�A���ł��邱�Ƃ�������B
+     これは、$x+y\in I$ を示す。また、$r\in R$ とすると、$f(rx) = rf(x)\in I'$ だから、$rx\in I$ がえられ、$I$ が $R$ のイデアルであることが分かる。
      \qed
      
-     \item $R'$ ������Ȃ�΁A$\ker f$ �́A�f�C�f�A���ł��邱�Ƃ������B\\
+     \item $R'$ が整域ならば、$\ker f$ は、素イデアルであることを示せ。\\
      \sol
-     �̏����^�藝�ɂ���āA$R/\ker f\simeq f(R) \subset R'$�B$f(R)$ �́A���� $R'$ �̕���������A����q���܂܂Ȃ��B�]���āA$f(R)$ �܂�����Ɠ��^�� $R/\ker f$ ������ł���B������A$\ker f$ �́A�f�C�f�A���ł���B
+     環の準同型定理によって、$R/\ker f\simeq f(R) \subset R'$。$f(R)$ は、整域 $R'$ の部分環だから、零因子を含まない。従って、$f(R)$ またそれと同型な $R/\ker f$ も整域である。これより、$\ker f$ は、素イデアルである。
      \qed
      
-     \item ��� $I$ �ƁA$I'$ �ɂ����āA$I'$ �� $R'$ �̑f�C�f�A���Ȃ�΁A$I = f^{-1}(I')$ ���f�C�f�A���ł��邱�Ƃ������B\\
+     \item 上の $I$ と、$I'$ において、$I'$ が $R'$ の素イデアルならば、$I = f^{-1}(I')$ も素イデアルであることを示せ。\\
      \sol
-     $I'$ �� $R'$ �̑f�C�f�A��������A$R'/I'$ �͐���ł���B�����ŁA$g = \pi\circ f$�A$\pi$ �́A$R'\to R'/I'$ �Ȃ鎩�R�ȏ����^�Ƃ���B
+     $I'$ は $R'$ の素イデアルだから、$R'/I'$ は整域である。ここで、$g = \pi\circ f$、$\pi$ は、$R'\to R'/I'$ なる自然な準同型とする。
      $$\ker g = f^{-1}(\ker \pi) = f^{-1}(I') = I$$
-     ������O����A$I$ �́A$R$ �̑f�C�f�A���ł���B
+     だから前問より、$I$ は、$R$ の素イデアルである。
      \qed\\
-     {\gt �ʉ��D}\quad
-     (b) ��� $I$ �̓C�f�A���B$x,y\in R$ �ŁA$xy\in I$ �Ƃ���B$I'\ni f(xy) = f(x)f(y)$ �ŁA$I'$ ���f�C�f�A��������A$f(x)\in I'$ �܂��́A$f(y)\in I'$�B�]���āA$x\in I$ ���́A$y\in I$�B������A$I$ ���f�C�f�A���ł��邱�Ƃ�������B���̋c�_�� (a) �̏ؖ��ɂ����l�ɗp������B
+     {\gt 別解．}\quad
+     (b) より $I$ はイデアル。$x,y\in R$ で、$xy\in I$ とする。$I'\ni f(xy) = f(x)f(y)$ で、$I'$ が素イデアルだから、$f(x)\in I'$ または、$f(y)\in I'$。従って、$x\in I$ 又は、$y\in I$。これより、$I$ が素イデアルであることが分かる。この議論は (a) の証明にも同様に用いられる。
      \qed
      
-     \item $R$ ���P���C�f�A������Ȃ�΁A$S^{-1}R$ ���P���C�f�A������ł��邱�Ƃ������B
+     \item $R$ が単項イデアル整域ならば、$S^{-1}R$ も単項イデアル整域であることを示せ。
      \sol
-     $I'$ �� $S^{-1}R$ �̃C�f�A���Ƃ���B$f:R\to S^{-1}R$ �����R�ȏ����^�Ƃ���ƁA$I = f^{-1}(I')$ �� (b) ���P���C�f�A������ $R$ �̃C�f�A��������A$I = (a)$ �Ƃ�����B�����ŁA$I' = S^{-1}Rf(a)$ �ł��邱�Ƃ������΂悢�B$f(a)\in I'$ ������A$I' \supset S^{-1}Rf(a)$ �ł��邱�Ƃ͖����B$x/s\in I'$ �Ƃ���B$f(x) = x/1 = sx/s \in I'$ ������A$x\in I$�B$x = ra$�A$r\in R$ �Ƃ���ƁA
+     $I'$ を $S^{-1}R$ のイデアルとする。$f:R\to S^{-1}R$ を自然な準同型とすると、$I = f^{-1}(I')$ は (b) より単項イデアル整域 $R$ のイデアルだから、$I = (a)$ とかける。ここで、$I' = S^{-1}Rf(a)$ であることを示せばよい。$f(a)\in I'$ だから、$I' \supset S^{-1}Rf(a)$ であることは明か。$x/s\in I'$ とする。$f(x) = x/1 = sx/s \in I'$ だから、$x\in I$。$x = ra$、$r\in R$ とすると、
      $$x/s = ra/s = r/s(a/1) = r/sf(a)\in S^{-1}Rf(a)$$
-     ������ $I' \subset S^{-1}Rf(a)$ �����藧���A$I'$ �͒P���C�f�A���ƂȂ�B
+     だから $I' \subset S^{-1}Rf(a)$ も成り立ち、$I'$ は単項イデアルとなる。
      \qed
           \end{enumerate}
          
-\item $R = \bQ[x]$ ���A�L�����̏�̑������Ƃ��A$p(x) = (x-1)(x+1)(x^{10 }-2)$ �Ƃ���B���̂Ƃ��A�ȉ��������B
+\item $R = \bQ[x]$ を、有理数体上の多項式環とし、$p(x) = (x-1)(x+1)(x^{10 }-2)$ とする。このとき、以下を示せ。
      \begin{enumerate}
-     \item $x^{10 }- 2$ �́A$\bQ$ �����ł��邱�Ƃ������B\\
+     \item $x^{10 }- 2$ は、$\bQ$ 上既約であることを示せ。\\
      \sol
-     $p = 2$ �Ƃ��āAEisenstein �̊��񐫔���@��p������ƁA�ō����̌W���́A1 ������ $2$ �Ŋ���؂ꂸ�A����ȊO�́A$2$ �Ŋ���؂�A�萔���́A4 �Ŋ���Ȃ�����A$x^{10}-2$ �͊���ł���B
+     $p = 2$ として、Eisenstein の既約性判定法を用いいると、最高次の係数は、1 だから $2$ で割り切れず、それ以外は、$2$ で割り切れ、定数項は、4 で割れないから、$x^{10}-2$ は既約である。
      \qed
      
      \smallskip
-     �ȉ��̖��ɂ����ẮA$R = \bQ[x]$ �����[�N���b�h���悾����P���C�f�A������ł���Ƃ����������d�v�ł��B���̂��Ƃ́A�ǂ̒��x�̒藝��p���邩�ɂ���ĉ𓚂��ς���Ă��܂��B��������Ƃ����������o���Ă���Β藝�����p���Ă��A���ڏؖ����Ă��\���܂���B���ڏؖ����Ă�����قǑ�ςł͂���܂���B����p����ƊȒP�ł��B
+     以下の問題においては、$R = \bQ[x]$ がユークリッド整域だから単項イデアル整域であるという事実が重要です。このあとは、どの程度の定理を用いるかによって解答が変わってきます。しっかりとした理解が出来ていれば定理を引用しても、直接証明しても構いません。直接証明してもそれほど大変ではありません。次を用いると簡単です。
      
-     $R$ �̗�łȂ��C�f�A�����A$(f(x))$ �Ƃ���ƁA
-     $$(f(x))\mbox{�F�ɑ�C�f�A��} \Leftrightarrow (f(x))\mbox{�F�f�C�f�A��}\Leftrightarrow f(x)\mbox{�F����}$$
-     �ؖ��̓N���X�ł��łɂ��Ă���̂ŏȂ��܂��B
+     $R$ の零でないイデアルを、$(f(x))$ とすると、
+     $$(f(x))\mbox{：極大イデアル} \Leftrightarrow (f(x))\mbox{：素イデアル}\Leftrightarrow f(x)\mbox{：既約}$$
+     証明はクラスですでにしているので省きます。
      
-     \item $R/(x^{10} - 2)$ �́A�̂ł��邱�Ƃ������B�����ŁA$(x^{10} - 2)$ �́A$x^{10}-2$ �Ő������ꂽ�C�f�A���A$R(x^{10}-2)$ ��\�����̂Ƃ���B\\
+     \item $R/(x^{10} - 2)$ は、体であることを示せ。ここで、$(x^{10} - 2)$ は、$x^{10}-2$ で生成されたイデアル、$R(x^{10}-2)$ を表すものとする。\\
      \sol
-     $\bQ[x]$ �ɂ����ẮA���񑽍����Ő������ꂽ�C�f�A���́A�ɑ�C�f�A�������� $(x^{10}-2)$ �́A�ɑ�C�f�A���B�]���āA$R/(x^{10} - 2)$ �́A�̂ł���B
+     $\bQ[x]$ においては、既約多項式で生成されたイデアルは、極大イデアルだから $(x^{10}-2)$ は、極大イデアル。従って、$R/(x^{10} - 2)$ は、体である。
      \qed
      
-     \item $p(x)$ �Ő������ꂽ�C�f�A���� $I = (p(x))$ �Ƃ���B$I$ �́A�f�C�f�A�����ǂ������肹��B\\
+     \item $p(x)$ で生成されたイデアルを $I = (p(x))$ とする。$I$ は、素イデアルかどうか判定せよ。\\
      \sol
-     $\bQ[x]$ �ɂ����ẮA$(p(x))$ ���f�C�f�A���ł��邱�ƂƁA���ꂪ�ɑ�C�f�A���ł��邱�ƂƁA$p(x)$  ������ł��邱�Ƃ͓��l�ł���B�������A$p(x)$ �͖��炩�Ɋ���ł͂Ȃ�����f�C�f�A���ł͂Ȃ��B\\
-     {\gt �ʉ��D}\quad
-     $(x-1)(x+1)$ �ƁA$x^{10}-2$ ��������� $p(x)$ �ɂȂ邩��A$I$ �ɓ���B�������A�ǂ���� $p(x)$ �ł͊���؂�Ȃ����� $(p(x))$ �ɂ͓���Ȃ��B�]���āA$(p(x))$ �͑f�C�f�A���ł͂Ȃ��B
+     $\bQ[x]$ においては、$(p(x))$ が素イデアルであることと、それが極大イデアルであることと、$p(x)$  が既約であることは同値である。しかし、$p(x)$ は明らかに既約ではないから素イデアルではない。\\
+     {\gt 別解．}\quad
+     $(x-1)(x+1)$ と、$x^{10}-2$ をかけると $p(x)$ になるから、$I$ に入る。しかし、どちらも $p(x)$ では割り切れないから $(p(x))$ には入らない。従って、$(p(x))$ は素イデアルではない。
      \qed
      
-     \item $R$ �� $(0)$ �ȊO�̑f�C�f�A���́A�ɑ�C�f�A���ł����邱�Ƃ������B\\
+     \item $R$ の $(0)$ 以外の素イデアルは、極大イデアルでもあることを示せ。\\
      \sol
-     $R$ �͒P���C�f�A�����悾����A$(0)$ �ȊO�̑f�C�f�A���͋ɑ�C�f�A���ł���B
+     $R$ は単項イデアル整域だから、$(0)$ 以外の素イデアルは極大イデアルである。
      \qed
      
-     \item $I = (p(x))$ ���܂� $R$ �̋ɑ�C�f�A�������ׂċ��߂�B\\
+     \item $I = (p(x))$ を含む $R$ の極大イデアルをすべて求めよ。\\
      \sol
-     $(x+1)$�A$(x-1)$�A$(x^{10}-2)$�B
+     $(x+1)$、$(x-1)$、$(x^{10}-2)$。
      \qed
      
      \end{enumerate}
@@ -155,9 +155,9 @@
 
 \vspace{2ex}
 \noindent
-Midterm �� �P�O�O�_�A���K�� �T�O�_�AFINAL �� �P�T�O �_���_�Ƃ��Čv�Z���āA���т��o���\��ł��B
+Midterm を １００点、演習を ５０点、FINAL を １５０ 点満点として計算して、成績を出す予定です。
 
 \begin{flushright}
-��؊�@���ۊ����w���w����
+鈴木寛@国際基督教大学数学教室
 \end{flushright}
 \end{document}

@@ -1,12 +1,12 @@
-%original : $B!V4D!&BN!&@00h!W!!(BSeptember 10, 11, 1996
-%original : $B!V%$%G%"%k$H>jM>4D!W(B September 16, 20, 1996
-%original : $B!V=`F17?DjM}!W(BSeptember 23, 1996
-%original : $B!VAG%$%G%"%k$H6KBg%$%G%"%k!W(BSeptember 6, 1997
-%original : $B!V4D$ND>OB!W(BSeptember 7, 1997
-%original : $B!V>&4D!W(BSeptember 7, 1997
-%original : $B!V0l0UJ,2r@00h!W(BSeptember 8, 11, 12, 1997
-%original : $B!V2C72!W(BSeptember 13,1997
-%original : $B!V%R%k%Y%k%H$N4pDjM}!W(BSeptember 14, 1997
+%original : 「環・体・整域」　September 10, 11, 1996
+%original : 「イデアルと剰余環」 September 16, 20, 1996
+%original : 「準同型定理」September 23, 1996
+%original : 「素イデアルと極大イデアル」September 6, 1997
+%original : 「環の直和」September 7, 1997
+%original : 「商環」September 7, 1997
+%original : 「一意分解整域」September 8, 11, 12, 1997
+%original : 「加群」September 13,1997
+%original : 「ヒルベルトの基定理」September 14, 1997
 %%revised : 1997.9.11, 15
 
 
@@ -23,21 +23,21 @@
         Department of Mathematics \\ 
         International Christian University}
 
-\newtheorem{thm}{$BDjM}(B}[section]
-\newtheorem{prop}[thm]{$BL?Bj(B}
-\newtheorem{lemma}[thm]{$BJdBj(B}
-\newtheorem{cor}[thm]{$B7O(B}
-\newtheorem{exercise}{$BN}=,LdBj(B}[section]
-\newtheorem{example}{$BNc(B}[section]
-\newtheorem{problem}{$BLdBj(B}[section]
-\newtheorem{defin}{$BDj5A(B}[section]
+\newtheorem{thm}{定理}[section]
+\newtheorem{prop}[thm]{命題}
+\newtheorem{lemma}[thm]{補題}
+\newtheorem{cor}[thm]{系}
+\newtheorem{exercise}{練習問題}[section]
+\newtheorem{example}{例}[section]
+\newtheorem{problem}{問題}[section]
+\newtheorem{defin}{定義}[section]
 \newenvironment{definition}{\begin{defin} \rm}{\end{defin}}
 \newenvironment{ex}{\begin{exercise} \rm}{\end{exercise}}
 \newenvironment{eg}{\begin{example} \rm}{\end{example}}
 \newenvironment{prob}{\begin{problem} \rm}{\end{problem}}
 \newcommand{\remarks}{\vspace{2ex}\noindent{\bf Remarks.\quad}}
-\newcommand{\note}{\vspace{2ex}\noindent{\gt $BCm(B\quad}}
-\newcommand{\proof}{{\gt $B>ZL@(B\quad}}
+\newcommand{\note}{\vspace{2ex}\noindent{\gt 注\quad}}
+\newcommand{\proof}{{\gt 証明\quad}}
 \newcommand{\pf}{({\it Pf.})\quad}
 \newcommand{\qed}{\hfill\hbox{\rule{6pt}{6pt}}}
 \newcommand{\bZ}{\mbox{\boldmath $Z$}}
@@ -58,868 +58,868 @@
 \maketitle
 
 \newpage
-\section{$B4D!&BN!&@00h(B}
+\section{環・体・整域}
 \begin{definition}
-$B2CK!$H>hK!$H$$$&Fs$D$N1i;;$,Dj5A$5$l$?=89g(B $R$ $B$,4D(B (ring) $B$G$"$k$H$O!"<!$N(B R1 $\sim$ R4 $B$rK~$?$9$3$H$G$"$k!#(B
+加法と乗法という二つの演算が定義された集合 $R$ が環 (ring) であるとは、次の R1 $\sim$ R4 を満たすことである。
 \begin{itemize}
-\item[R1] $R$ $B$O2CK!$K4X$7$F2C72(B (commutative [abelian] group)$B!#(B
-\item[R2]  $BG$0U$N(B $a, b, c\in R$ $B$KBP$7$F!"(B$(ab)c = a(bc)$$B!#!J7k9gN'(B (associative law)$B!K(B
-\item[R3]  $BG$0U$N(B $a, b, c\in R$ $B$KBP$7$F!"(B$a(b+c) = ab + ac, \;(a+b)c = ac + bc$$B!#!JJ,G[N'(B (distributive law))
-\item[R4] $R$ $B$N(B $0$ $B!J(B$R$ $B$N2CK!$NC10L85!K$H0[$J$k85(B $1$ $B$G!"(B$1x = x1 = x$ $B$rG$0U$N(B $x\in R$ $B$KBP$7$FK~$?$9$b$N$,$"$k!#!J>hK!$NC10L85!K(B
+\item[R1] $R$ は加法に関して加群 (commutative [abelian] group)。
+\item[R2]  任意の $a, b, c\in R$ に対して、$(ab)c = a(bc)$。（結合律 (associative law)）
+\item[R3]  任意の $a, b, c\in R$ に対して、$a(b+c) = ab + ac, \;(a+b)c = ac + bc$。（分配律 (distributive law))
+\item[R4] $R$ の $0$ （$R$ の加法の単位元）と異なる元 $1$ で、$1x = x1 = x$ を任意の $x\in R$ に対して満たすものがある。（乗法の単位元）
 
-$B$5$i$K<!$N(B R5 $B$rK~$?$9$H$-!"2D494D(B (commutative ring) $B$H$$$&!#(B
-\item[R5] $ab = ba$ for all $a, b\in R$$B!#(B
+さらに次の R5 を満たすとき、可換環 (commutative ring) という。
+\item[R5] $ab = ba$ for all $a, b\in R$。
 \end{itemize}
 \end{definition}
 
 \note 
 \begin{itemize}
-\item R1 $\sim$ R3 $B$N$_$rK~$?$9$b$N$r4D$H8F$S(B R4 $B$rK~$?$9$b$N$r!VC10L85$r;}$D4D(B (unital ring)$B!W$H8F$S6hJL$9$k$3$H$bB?$$!#(B
-\item $B4D(B $R$ $B$O>hK!$K4X$7$F(B R2$B!"(BR4 $B$rK~$?$9$+$i!"%b%N%$%I$G$"$k!#=>$C$F$=$N@5B'85A4BN(B $U(R)$ $B$O72$H$J$k!#$3$l$rC1?t72$H$$$&!#(B 
-\item $0x = x0 = 0\;(\neq 1)$ $B$@$+$i!"(B$0$ $B$O@5B'85$G$O$J$$!#$9$J$o$A!"(B$U(R)\subset R-\{0\}$$B!#(B$R-\{0\}$ $B$r(B $R^{\#}$ $B$H$b=q$/!#(B\\
-\pf  $0 = 0x + (-0x) = (0+0)x + (-0x) = 0x + 0x + (-0x) = 0x + 0 = 0x$$B!#(B
+\item R1 $\sim$ R3 のみを満たすものを環と呼び R4 を満たすものを「単位元を持つ環 (unital ring)」と呼び区別することも多い。
+\item 環 $R$ は乗法に関して R2、R4 を満たすから、モノイドである。従ってその正則元全体 $U(R)$ は群となる。これを単数群という。 
+\item $0x = x0 = 0\;(\neq 1)$ だから、$0$ は正則元ではない。すなわち、$U(R)\subset R-\{0\}$。$R-\{0\}$ を $R^{\#}$ とも書く。\\
+\pf  $0 = 0x + (-0x) = (0+0)x + (-0x) = 0x + 0x + (-0x) = 0x + 0 = 0x$。
 \end{itemize}
 
 \begin{definition}
-$U(R) = R - \{0\} = R^{\#}$ $B$H$J$k4D$r<PBN(B (skew field) $B!"2D49$J!J$9$J$o$A(B R5 $B$rK~$?$9!K<PBN$r!"BN(B (field) $B$H$$$&!#(B
+$U(R) = R - \{0\} = R^{\#}$ となる環を斜体 (skew field) 、可換な（すなわち R5 を満たす）斜体を、体 (field) という。
 \end{definition}
 
 \begin{definition}
-$B4D(B $R$ $B$N85(B $a$ $B$KBP$7!"(B$b\neq 0$ $B$G(B $ab = 0$ [$ba = 0$] $B$H$J$k$b$N$,B8:_$9$k$H$-!"(B$a$ $B$O:8Nm0x;R(B (left zero divisor) [$B1&Nm0x;R(B (right zero divisor)] $B$H$$$&!#2D494D$N;~$OC1$KNm0x;R(B (zero divisor) $B$H$$$&!#(B$0$  $B0J30$KNm0x;R$N$J$$2D494D$r@00h$H$$$&!#$9$J$o$A!"(B
+環 $R$ の元 $a$ に対し、$b\neq 0$ で $ab = 0$ [$ba = 0$] となるものが存在するとき、$a$ は左零因子 (left zero divisor) [右零因子 (right zero divisor)] という。可換環の時は単に零因子 (zero divisor) という。$0$  以外に零因子のない可換環を整域という。すなわち、
 \begin{itemize}
-\item[R6] $ab = 0 \longrightarrow a = 0 \mbox{ or } b = 0$$B!#(B
+\item[R6] $ab = 0 \longrightarrow a = 0 \mbox{ or } b = 0$。
 \end{itemize}
-$B$rK~$?$92D494D!"$^$?$O(B R1 $\sim$ R6 $B$rK~$?$9$b$N!#(B
+を満たす可換環、または R1 $\sim$ R6 を満たすもの。
 \end{definition}
 
-\note $BBN$O!"@00h$G$"$k!#(B
+\note 体は、整域である。
 
 \begin{eg}
 \begin{enumerate}
-\item $BM-M}@0?t4D(B $\bZ$ $B$O!"@00h$G$"$k!#(B
-\item $BM-M}?tBN(B $\bQ$$B!"<B?tBN(B $\bR$$B!"J#AG?tBN(B $\bC$ $B$O!"$$$:$l$b2D49BN$G$"$k!#(B
-\item $R$ $B$r4D$H$9$k$H$-!"(B$R$ $B>e$NA49TNs4D!"(B$\mat_n(R)$ $B$O!"Hs2D49$J4D$G$"$k!#(B
-\item $n$ $B$r<+A3?t$H$7$?$H$-!"(B$\bZ_n = \bZ/n\bZ = \{\bar{0}, \bar{1}, \ldots, \overline{n-1}\}$ $B$K!"DL>o$NOB!"@Q$N(B $n$ $B$K$h$k>jM>$K$h$C$F1i;;$rDj5A$9$k$H!"85$N?t$,(B $n$ $B$G$"$k2D494D$K$J$k!#(B
+\item 有理整数環 $\bZ$ は、整域である。
+\item 有理数体 $\bQ$、実数体 $\bR$、複素数体 $\bC$ は、いずれも可換体である。
+\item $R$ を環とするとき、$R$ 上の全行列環、$\mat_n(R)$ は、非可換な環である。
+\item $n$ を自然数としたとき、$\bZ_n = \bZ/n\bZ = \{\bar{0}, \bar{1}, \ldots, \overline{n-1}\}$ に、通常の和、積の $n$ による剰余によって演算を定義すると、元の数が $n$ である可換環になる。
 \end{enumerate}
 \end{eg}
 
-$B0J2<$G$O!"M-M}@0?t4D(B $\bZ$ $B$H$H$b$K!"Hs>o$K=EMW$J2D494D$G$"$kB?9`<04D$K$D$$$F4pK\;v9`$r3X$V!#(B
+以下では、有理整数環 $\bZ$ とともに、非常に重要な可換環である多項式環について基本事項を学ぶ。
 
-$B2D494D(B $R$ $B$N85$r78?t$H$9$kJ8;z(B $x$ $B$N@0<0(B
+可換環 $R$ の元を係数とする文字 $x$ の整式
 $$f(x) = a_0 + a_1x + \cdots + a_nx^n, \;a_i\in R \mbox{ for } i = 0,1,\ldots, n$$
-$B$r(B $x$ $B$rITDj85$H$9$k(B $R$ $B$NB?9`<0$H$$$$!"(B$x$ $B$rITDj85$H$$$&!#$^$?!"(B$R[x]$ $B$G!"(B$x$ $B$rITDj85$H$9$k(B $R$ $B>e$NB?9`<0A4BN$rI=$9$b$N$H$9$k!#(B
+を $x$ を不定元とする $R$ の多項式といい、$x$ を不定元という。また、$R[x]$ で、$x$ を不定元とする $R$ 上の多項式全体を表すものとする。
 $$f = f(x) = a_0 + a_1x + \cdots + a_nx^n, \;g = g(x) = b_0 + b_1x + \cdots + b_mx^m$$
-$B$r(B $R[x]$ $B$N85$H$9$k$H$-!"OB$*$h$S@Q$r0J2<$N$h$&$KDj5A$9$k!#(B
+を $R[x]$ の元とするとき、和および積を以下のように定義する。
 \begin{eqnarray*}
 f + g  & = & \sum_i (a_i + b_i)x^i\\
 fg & = & \sum_i\Bigl(\sum_ja_jb_{i-j}\Bigr)x^i
 \end{eqnarray*}
-$B$3$N1i;;$K4X$7$F(B $R[x]$ $B$O4D$K$J$k!#$3$l$r!"(B$R$ $B>e$NB?9`<04D$H$$$&!#(B
+この演算に関して $R[x]$ は環になる。これを、$R$ 上の多項式環という。
 
 \smallskip
-$f = f(x) = a_0 + a_1x + \cdots + a_nx^n \in R[x], \;a_n\neq 0$ $B$N;~!"(B$n = \deg f$ $B$H=q$-(B $f$ $B$N<!?t$H$$$&!#(B$f(x) = 0$ $B$N;~$O!"(B$\deg f = \deg 0 = -\infty$ $B$H$9$k!#(B
+$f = f(x) = a_0 + a_1x + \cdots + a_nx^n \in R[x], \;a_n\neq 0$ の時、$n = \deg f$ と書き $f$ の次数という。$f(x) = 0$ の時は、$\deg f = \deg 0 = -\infty$ とする。
 
 \begin{prop}
-$R$ $B$r@00h!"(B$f, g\in R[x]$ $B$H$9$k!#$3$N$H$-!"<!$,@.N)$9$k!#(B
+$R$ を整域、$f, g\in R[x]$ とする。このとき、次が成立する。
 \begin{itemize}
-\item[$(1)$] $\deg(f+g) \leq \max(\deg f, \deg g)$$B!#(B
-\item[$(2)$] $\deg(fg) = \deg f + \deg g$$B!#FC$K!"@00h(B $R$ $B>e$NB?9`<04D$O!"$^$?@00h$G$"$k!#(B
+\item[$(1)$] $\deg(f+g) \leq \max(\deg f, \deg g)$。
+\item[$(2)$] $\deg(fg) = \deg f + \deg g$。特に、整域 $R$ 上の多項式環は、また整域である。
 \end{itemize}
 \end{prop}
 \proof
-(1) (2) $B$H$b$KL@$i$+!#(B$fg = 0$ $B$H$9$k!#(B(2) $B$rMQ$$$k$H!"(B
+(1) (2) ともに明らか。$fg = 0$ とする。(2) を用いると、
 $$-\infty = \deg fg = \deg f + \deg g.$$
-$B=>$C$F!"(B$\deg f = -\infty$ $B$^$?$O(B $\deg g = -\infty$$B!#$9$J$o$A!"(B$f = 0$ $B$^$?$O(B $g = 0$ $B$rF@$k!#(B
+従って、$\deg f = -\infty$ または $\deg g = -\infty$。すなわち、$f = 0$ または $g = 0$ を得る。
 \qed
 
 \begin{thm} \label{thm:poly-euclid}
-$R$ $B$r2D494D!#(B$f, g\in R[x]$ $B$H$7!"(B$g$ $B$N:G9b<!$N78?t$O!"(B$R$ $B$N@5B'85$@$H$9$k!#$3$N$H$-!"(B$q, r\in R[x]$$B!"(B$\deg r < \deg g$ $B$G!"(B$f = gq + r$ $B$H$J$k$b$N$,B8:_$9$k!#$5$i$K!"(B$R$ $B$,@00h$J$i$P!"$3$NMM$J(B $q, r\in R[x]$ $B$O!"$?$@0l$D$K7h$^$k!#(B
+$R$ を可換環。$f, g\in R[x]$ とし、$g$ の最高次の係数は、$R$ の正則元だとする。このとき、$q, r\in R[x]$、$\deg r < \deg g$ で、$f = gq + r$ となるものが存在する。さらに、$R$ が整域ならば、この様な $q, r\in R[x]$ は、ただ一つに決まる。
 \end{thm}
 \proof
-$f = a_nx^n + \cdots + a_1x + a_0$$B!"(B$a_n\neq 0$$B!"(B$g = b_mx^m + \cdots + b_1x + b_0$ $B$H$9$k!#$^$:!"(B$n<m$ $B$N;~$O!"(B$q = 0$$B!"(B$r = f$ $B$H$9$l$PNI$$!#(B
+$f = a_nx^n + \cdots + a_1x + a_0$、$a_n\neq 0$、$g = b_mx^m + \cdots + b_1x + b_0$ とする。まず、$n<m$ の時は、$q = 0$、$r = f$ とすれば良い。
 
-$n\geq m$ $B$H2>Dj$7!"(B$n = \deg f$ $B$K4X$9$k5"G<K!$G>ZL@$9$k!#(B$b_m$ $B$O!"2>Dj$h$j@5B'85$@$+$i!"5U85$,B8:_$9$k!#(B$h = f - (a_nb_m^{-1})x^{n-m}g$ $B$H$9$l$P!"(B$f$ $B$N:G9b<!$N78?t$,>C$($k$+$i!"(B$\deg h < n$$B!#=>$C$F!"5"G<K!$N2>Dj$h$j!"(B$R[x]$ $B$N85(B $q_1, r$ $B$G!"(B$\deg r < \deg g$ $B$+$D!"(B$h = gq_1 + r$ $B$H$J$k$b$N$,$"$k!#=>$C$F(B
+$n\geq m$ と仮定し、$n = \deg f$ に関する帰納法で証明する。$b_m$ は、仮定より正則元だから、逆元が存在する。$h = f - (a_nb_m^{-1})x^{n-m}g$ とすれば、$f$ の最高次の係数が消えるから、$\deg h < n$。従って、帰納法の仮定より、$R[x]$ の元 $q_1, r$ で、$\deg r < \deg g$ かつ、$h = gq_1 + r$ となるものがある。従って
 $$f = g(q_1 + (a_nb_m^{-1})x^{n-m}) + r$$
-$B$HI=$5$l$k!#$h$C$F!"(B$q = q_1 + (a_nb_m^{-1})x^{n-m}$  $B$HCV$1$P$h$$!#(B
+と表される。よって、$q = q_1 + (a_nb_m^{-1})x^{n-m}$  と置けばよい。
 
-$R$ $B$r@00h$H$7!"0l0U@-$r<($9!#(B
+$R$ を整域とし、一意性を示す。
 $$f = gq + r = gq' + r', \; \deg r, \deg r' < \deg g$$
-$B$H$9$k!#$9$k$H!"(B$g(q - q') = r' - r$$B!#$3$3$G!"<!?t$rHf$Y$k$H!"(B
+とする。すると、$g(q - q') = r' - r$。ここで、次数を比べると、
 $$\deg g + \deg(q - q') = \deg(g(q-q')) = \deg(r' -r) \leq \max(\deg r', \deg r) < \deg g.$$
-$g\neq 0$ $B$h$j!"(B$q - q' = 0$$B!#=>$C$F!"(B$r' - r = 0$$B!#$9$J$o$A!"(B$q = q'$$B!"(B$r = r'$ $B$rF@$k!#(B
+$g\neq 0$ より、$q - q' = 0$。従って、$r' - r = 0$。すなわち、$q = q'$、$r = r'$ を得る。
 \qed
 
 \medskip
-$n$ $BJQ?tB?9`<04D$O!"5"G<E*$K!"(B$R[x_1,\ldots, x_n] = (R[x_1,\ldots, x_{n-1}])[x_n]$ $B$K$h$C$FDj5A$9$k!#$3$N85$O!"0lHL$K$O!"<!$N$h$&$K=q$1$k!#(B
+$n$ 変数多項式環は、帰納的に、$R[x_1,\ldots, x_n] = (R[x_1,\ldots, x_{n-1}])[x_n]$ によって定義する。この元は、一般には、次のように書ける。
 $$\sum_{i_1, \ldots, i_n}a_{i_1,\ldots, i_n}x_1^{i_1}\cdots x_n^{i_n}, \; a_{i_1,\ldots, i_n}\in R.$$
-$B$^$?!"(B$R[x,y] = (R[x])[y] = (R[y])[x]$ $B$H8+$k$3$H$b=PMh$k!#(B
+また、$R[x,y] = (R[x])[y] = (R[y])[x]$ と見ることも出来る。
 
 \newpage
-\section{$B%$%G%"%k$H>jM>4D(B}
-$R$ $B$r4D$H$9$k$H!"2CK!$K4X$7$F$O!"2C72$@$+$i!"2CK!$K4X$9$kItJ,72(B $I$ $B$O!"$9$Y$F!"@55,ItJ,72$G$"$k!#=>$C$F!"(B$R/I$ $B$O2C72$H$J$k!#$I$N$h$&$J>r7o$N$b$H$G!"(B$R/I$ $B$,4D$K$J$k$G$"$m$&$+!#(B
+\section{イデアルと剰余環}
+$R$ を環とすると、加法に関しては、加群だから、加法に関する部分群 $I$ は、すべて、正規部分群である。従って、$R/I$ は加群となる。どのような条件のもとで、$R/I$ が環になるであろうか。
 
-$xy \in (x+I)(y+I)$ $B$@$+$i!"@Q$,<+A3$KDj5A$G$-$k$?$a$K$O!"(B
+$xy \in (x+I)(y+I)$ だから、積が自然に定義できるためには、
 $$(x+I)(y+I) \subset xy + I$$
-$B$G$"$k$3$H$,I,MW$G$"$k!#5U$K!">e$N>r7o$rK~$?$;$P!"@Q$,Dj5A$G$-$k!#$3$3$G!"(B$x = 0$ $B$^$?$O!"(B$y = 0$ $B$H$*$/$3$H$K$h$C$F!"(B$xI\subset I$$B!"(B$Iy\subset I$ $B$rK~$?$9$3$H$,I,MW$G$"$k$3$H$,J,$+$k!#(B
+であることが必要である。逆に、上の条件を満たせば、積が定義できる。ここで、$x = 0$ または、$y = 0$ とおくことによって、$xI\subset I$、$Iy\subset I$ を満たすことが必要であることが分かる。
 
 \begin{definition}
-$B4D(B $R$ $B$NItJ,=89g(B $I\neq \emptyset$ $B$,!"<!$NFs$D$N>r7o!"(B
+環 $R$ の部分集合 $I\neq \emptyset$ が、次の二つの条件、
 \begin{itemize}
 \item $a, b\in I\longrightarrow a+b\in I$
 \item $a\in I, \;r\in R \longrightarrow ra\in I,\;[ar\in I]$.
 \end{itemize}
-$B$rK~$?$9$H$-!"(B$I$ $B$r(B $R$ $B$N:8%$%G%"%k(B [$B1&%$%G%"%k(B] $B$H8F$S!":81&%$%G%"%k$rN>B&%$%G%"%k$H8F$V!#(B
+を満たすとき、$I$ を $R$ の左イデアル [右イデアル] と呼び、左右イデアルを両側イデアルと呼ぶ。
 \end{definition}
 
-$A$$B!"(B$B$ $B$r4D(B $R$ $B$NItJ,=89g$H$9$k$H$-!"$3$l$i$NOB$*$h$S@Q$r<!$N$h$&$KDj5A$9$k!#FC$K!"@Q$NDj5A$KCm0U!#(B
+$A$、$B$ を環 $R$ の部分集合とするとき、これらの和および積を次のように定義する。特に、積の定義に注意。
 \begin{itemize}
 \item $A + B = \{a + b\mid a\in A, b\in B\}$.
 \item $AB = \{\sum_ia_ib_i \mid a_i\in A, \;b\in B\}$.
 \end{itemize}
 
-\begin{ex} $B0J2<$r<($;!#(B
+\begin{ex} 以下を示せ。
 \begin{enumerate}
-\item $B4D(B $R$ $B$N:8!J1&!"N>B&!K%$%G%"%k(B $I, J$ $B$KBP$7$F!"(B$I\cap J$$B!"(B$I+J$ $B$O6&$K!":8!J1&!"N>B&!K%$%G%"%k$G$"$k!#(B
-\item $I, J$ $B$,4D(B $R$ $B$NN>B&%$%G%"%k$J$i$P!"(B$IJ$ $B$bN>B&%$%G%"%k$G!"(B$IJ\subset I\cap J$ $B$rK~$?$9!#$^$?!"Ey9f$,@.$jN)$?$J$$Nc$r$"$2$h!#(B
+\item 環 $R$ の左（右、両側）イデアル $I, J$ に対して、$I\cap J$、$I+J$ は共に、左（右、両側）イデアルである。
+\item $I, J$ が環 $R$ の両側イデアルならば、$IJ$ も両側イデアルで、$IJ\subset I\cap J$ を満たす。また、等号が成り立たない例をあげよ。
 \end{enumerate}
 \end{ex}
 
-$B$3$N@a$N;O$a$K8+$?$h$&$K!"(B$I$ $B$r4D(B $R$ $B$NN>B&%$%G%"%k$G(B $I\neq R$ $B$H$9$k$H!"(B$R/I$ $B$O!"(B
+この節の始めに見たように、$I$ を環 $R$ の両側イデアルで $I\neq R$ とすると、$R/I$ は、
 $$(a + I) + (b + I) = (a+b) + I, \; (a + I)\cdot (b + I) = (ab) + I$$
-$B$H!"OB$H@Q$rDj5A$9$k;v$K$h$j!"(B$R/I$ $B$O4D$K$J$k!#$3$N4D$r>jM>4D(B (quotient ring) $B$H8@$&!#(B
+と、和と積を定義する事により、$R/I$ は環になる。この環を剰余環 (quotient ring) と言う。
 
 \begin{itemize}
-\item $a\in R$ $B$N$H$-!"(B$Ra$ [$aR$] $B$O!":8%$%G%"%k(B [$B1&%$%G%"%k(B] $B$K$J$k$,!"$3$l$rC19`(B (principal) $B:8(B [$B1&(B] $B%$%G%"%k$H8@$&!#(B$R$ $B$,2D494D$N;~$O!"(B$Ra = aR$ $B$r(B $(a)$ $B$H$b$+$/!#(B
-\item $0 = \{0\}$$B!"(B$R$ $B$O!"(B$R$ $B$NN>B&%$%G%"%k$G$"$k$,!"$3$l$i$r!"(B$R$ $B$N<+L@$J%$%G%"%k$H$$$&!#(B
-\item $I$ $B$r(B $R$ $B$N:8(B [$B1&(B] $B%$%G%"%k$H$9$k!#$3$N$H$-!"(B
+\item $a\in R$ のとき、$Ra$ [$aR$] は、左イデアル [右イデアル] になるが、これを単項 (principal) 左 [右] イデアルと言う。$R$ が可換環の時は、$Ra = aR$ を $(a)$ ともかく。
+\item $0 = \{0\}$、$R$ は、$R$ の両側イデアルであるが、これらを、$R$ の自明なイデアルという。
+\item $I$ を $R$ の左 [右] イデアルとする。このとき、
 $$I = R \Leftrightarrow U(R)\cap I \neq \emptyset.$$
-\pf $I = R$ $B$H$9$k$H!"(B$1\in I\cap U(R)$ $B$h$j!"(B$U(R)\cap I \neq \emptyset$$B!#5U$K!"(B$u\in U(R)\cap I$ $B$H$9$k!#$3$N$H$-!"(B$r\in R$ $B$H$9$H!"(B
+\pf $I = R$ とすると、$1\in I\cap U(R)$ より、$U(R)\cap I \neq \emptyset$。逆に、$u\in U(R)\cap I$ とする。このとき、$r\in R$ とすと、
 $$r = r(u^{-1}u) = (ru^{-1})u \in RI \subset I.$$
-$B=>$C$F!"(B$R \subset I$$B!#$h$C$F!"(B$I = R$$B!#(B
+従って、$R \subset I$。よって、$I = R$。
 \end{itemize}
 
 \begin{prop}\label{prop:field}
-$R$ $B$r4D$H$7$?$H$-!"<!$O!"F1CM!#(B\\
-$R$ $B$O!"<PBN(B $\Leftrightarrow$ $R$ $B$N:8(B {\rm [$B1&(B]} $B%$%G%"%k$O!"(B$0$ $B$H(B $R$ $B$N$_!#(B
+$R$ を環としたとき、次は、同値。\\
+$R$ は、斜体 $\Leftrightarrow$ $R$ の左 {\rm [右]} イデアルは、$0$ と $R$ のみ。
 \end{prop}
 \proof
-($\Rightarrow$)  $I$ $B$r(B $0$ $B$H$O0[$J$k(B $R$ $B$N:8%$%G%"%k$H$9$k!#(B$a\in I - \{0\}$ $B$H$9$k$H!"(B$a\in U(R)$$B!#=>$C$F!">e$NCm$h$j(B $I = R$$B!#(B
+($\Rightarrow$)  $I$ を $0$ とは異なる $R$ の左イデアルとする。$a\in I - \{0\}$ とすると、$a\in U(R)$。従って、上の注より $I = R$。
 
-($\Leftarrow$) $a\neq 0$ $B$H$9$k$H!"(B$a\in Ra$ $B$h$j!"(B$Ra$ $B$O(B $0$ $B$G$J$$:8%$%G%"%k$@$+$i!"2>Dj$h$j(B $1\in R = Ra$$B!#=>$C$F!"(B$R$ $B$N85(B $b$ $B$G!"(B$ba = 1$ $B$H$J$k$b$N$,$"$k!#FC$K!"(B$b\neq 0$ $B$@$+$i!"F1MM$K$7$F!"(B$R = Rb$$B!#FC$K!"(B$R$ $B$N85(B $c$ $B$G!"(B$cb = 1$ $B$H$J$k$b$N$,$"$k!#$9$k$H!"(B
+($\Leftarrow$) $a\neq 0$ とすると、$a\in Ra$ より、$Ra$ は $0$ でない左イデアルだから、仮定より $1\in R = Ra$。従って、$R$ の元 $b$ で、$ba = 1$ となるものがある。特に、$b\neq 0$ だから、同様にして、$R = Rb$。特に、$R$ の元 $c$ で、$cb = 1$ となるものがある。すると、
 $$c = c1 = c(ba) = (cb)a = 1a = a$$
-$B$@$+$i!"(B$ab = ba = 1$$B!#$h$C$F!"(B$R$ $B$N(B $0$ $B0J30$N85$O!"$9$Y$F!"C185$G$"$k!#=>$C$F!"(B$R$ $B$O<PBN$G$"$k!#(B
+だから、$ab = ba = 1$。よって、$R$ の $0$ 以外の元は、すべて、単元である。従って、$R$ は斜体である。
 \qed
 
 \medskip
-$B=g=x=89g(B $X$ $B$,!"G$0U$N6u$G$J$$ItJ,=89g$K:G>.85$r;}$D$H$-!"@0Ns=89g(B (well-ordered set) $B$H$$$&!#(B
+順序集合 $X$ が、任意の空でない部分集合に最小元を持つとき、整列集合 (well-ordered set) という。
 
 \begin{definition}
 \begin{enumerate}
-\item $BG$0U$N%$%G%"%k$,!"C19`$G$"$k@00h$rC19`%$%G%"%k@00h(B (PID : principal ideal domain) $B$H8@$&!#(B
-\item $B@00h(B $R$ $B$+$i!"@0Ns=89g(B (well-ordered set) $X$ $B$X$N<LA|(B $\rho : R \rightarrow X$ $B$,$"$C$F!"<!$NFs$D$N>r7o$rK~$?$9$H$-!"(B$R$ $B$O%f!<%/%j%C%I@00h(B (Euclidean domain) $B$G$"$k$H8@$&!#(B
+\item 任意のイデアルが、単項である整域を単項イデアル整域 (PID : principal ideal domain) と言う。
+\item 整域 $R$ から、整列集合 (well-ordered set) $X$ への写像 $\rho : R \rightarrow X$ があって、次の二つの条件を満たすとき、$R$ はユークリッド整域 (Euclidean domain) であると言う。
 	\begin{enumerate}
 	\item $0\neq a\in R \Rightarrow \rho(0) < \rho(a)$.
-	\item $a, b\in R$ $(a\neq 0)\Rightarrow  b = aq + r,\;\rho(r) < \rho(a)$ $B$H$J$k(B $q, r\in R$ $B$,$"$k!#(B
+	\item $a, b\in R$ $(a\neq 0)\Rightarrow  b = aq + r,\;\rho(r) < \rho(a)$ となる $q, r\in R$ がある。
 	\end{enumerate}
 \end{enumerate}
 \end{definition}
 
 \begin{thm} \label{thm:euclid-pid}
-$B%f!<%/%j%C%I@00h$O!"C19`%$%G%"%k@00h$G$"$k!#(B
+ユークリッド整域は、単項イデアル整域である。
 \end{thm}
 \proof
-$R$ $B$r%f!<%/%j%C%I@00h!"(B$I$ $B$r(B $R$ $B$N(B $B%$%G%"%k$H$9$k!#(B$I = 0$ $B$J$i$P!"L@$i$+$K!"C19`%$%G%"%k$@$+$i!"(B$I\neq 0$ $B$H$9$k!#(B
+$R$ をユークリッド整域、$I$ を $R$ の イデアルとする。$I = 0$ ならば、明らかに、単項イデアルだから、$I\neq 0$ とする。
 $$\emptyset \neq \{\rho(x)\mid 0\neq x\in I\}\subset X$$
-$B$N:G>.85$r!"(B$\rho(a)$ $a\in I$ $B$H$9$k!#$3$3$G!"(B$b\in I$ $B$H$9$k$H!"(B$b = aq + r$$B!"(B$\rho(r) < \rho(a)$ $B$H$J$k!"(B$q, r\in R$ $B$,$"$k!#(B$r = b - aq \in I$ $B$@$+$i!"(B$a$ $B$N<h$jJ}$+$i!"(B$r = 0$ $B$rF@!"(B$b\in Ra$$B!#(B$b$ $B$OG$0U$@$+$i!"(B$I = Ra$$B!"$9$J$o$A!"$9$Y$F$N%$%G%"%k$OC19`$G$"$k!#(B
+の最小元を、$\rho(a)$ $a\in I$ とする。ここで、$b\in I$ とすると、$b = aq + r$、$\rho(r) < \rho(a)$ となる、$q, r\in R$ がある。$r = b - aq \in I$ だから、$a$ の取り方から、$r = 0$ を得、$b\in Ra$。$b$ は任意だから、$I = Ra$、すなわち、すべてのイデアルは単項である。
 \qed
 
 \begin{eg}
 \begin{enumerate}
-\item $\rho : \bZ \rightarrow \{0\}\cup \bN$ $B$r(B $\rho(a) = |a|$ $B$K$h$C$FDj5A$9$k$H!"(B$\bZ$ $B$O%f!<%/%j%C%I@00h$K$J$k!#FC$K!"DjM}(B~\ref{thm:euclid-pid} $B$h$j!"(B$\bZ$ $B$O!"C19`%$%G%"%k@00h$G$"$k!#<B$O!"(B$\bZ$ $B$K$*$$$F$O!"%$%G%"%k$G$"$k$3$H$H!"ItJ,2C72$G$"$k$3$H$OF1$8$G$"$k$+$i!"C19`%$%G%"%k@00h$G$"$k$3$H$O!"C1$K!"(B$\bZ$ $B$NItJ,72$,=d2s72$G$"$k$3$H$r<gD%$7$F$$$k$K2a$.$J$$!#(B
-\item $K$ $B$rBN$H$9$k!#(B$\rho : K[x] \rightarrow \{-\infty, 0\}\cup \bN$ $B$r(B $\rho(f) = \deg f$ $B$K$h$C$FDj5A$9$k$H!"DjM}(B~\ref{thm:poly-euclid} $B$K$h$j!"(B$K[x]$ $B$O%f!<%/%j%C%I@00h$K$J$k!#FC$K!"DjM}(B~\ref{thm:euclid-pid} $B$h$j!"(B$K[x]$ $B$OC19`%$%G%"%k@00h$G$"$k!#(B
+\item $\rho : \bZ \rightarrow \{0\}\cup \bN$ を $\rho(a) = |a|$ によって定義すると、$\bZ$ はユークリッド整域になる。特に、定理~\ref{thm:euclid-pid} より、$\bZ$ は、単項イデアル整域である。実は、$\bZ$ においては、イデアルであることと、部分加群であることは同じであるから、単項イデアル整域であることは、単に、$\bZ$ の部分群が巡回群であることを主張しているに過ぎない。
+\item $K$ を体とする。$\rho : K[x] \rightarrow \{-\infty, 0\}\cup \bN$ を $\rho(f) = \deg f$ によって定義すると、定理~\ref{thm:poly-euclid} により、$K[x]$ はユークリッド整域になる。特に、定理~\ref{thm:euclid-pid} より、$K[x]$ は単項イデアル整域である。
 \end{enumerate}
 \end{eg}
 
 \newpage
-\section{$B=`F17?DjM}(B}
+\section{準同型定理}
 \begin{definition}
-$B4D(B $R$ $B$+$i!"(B$R'$ $B$X$N<LA|(B $f : R\rightarrow R'$ $B$,!"(B
+環 $R$ から、$R'$ への写像 $f : R\rightarrow R'$ が、
 $$f(a + b) = f(a) + f(b), \; f(ab) = f(a)f(b), \; f(1_R) = f_{R'}$$
-$B$rK~$?$9$H$-!"(B$f$ $B$r(B $R$ $B$+$i!"(B$R'$ $B$X$N!J4D!K=`F17?(B ((ring) homomorophism) $B$H8@$&!#(B$f$ $B$,A4C1<M$N;~F17?$H8@$$!"(B$R\simeq R'$ $B$H=q$/!#(B
+を満たすとき、$f$ を $R$ から、$R'$ への（環）準同型 ((ring) homomorophism) と言う。$f$ が全単射の時同型と言い、$R\simeq R'$ と書く。
 \end{definition}
 
 \begin{eg}
-$I$  $B$r!"4D(B $R$ $B$NN>B&%$%G%"%k$G!"(B$(R\neq I)$ $B$H$9$k$H$-!"(B
+$I$  を、環 $R$ の両側イデアルで、$(R\neq I)$ とするとき、
 $$f : R \longrightarrow R/I, \; (a\mapsto a + I)$$
-$B$O!"4D=`F17?$G!"A4<M$G$"$k!#(B
+は、環準同型で、全射である。
 \end{eg}
 
 \begin{definition}
-$B4D(B $R$ $B$NItJ,=89g(B $S$ $B$,<!$N>r7o(B
+環 $R$ の部分集合 $S$ が次の条件
 $$a, b\in S \Rightarrow a - b\in S, \; ab\in S, \; 1_R\in S$$
-$B$rK~$?$9$H$-!"(B$S$ $B$O!"(B$R$ $B$NItJ,4D(B (subring) $B$G$"$k$H$$$&!#$^$?!"(B$R$ $B$O!"(B$S$ $B$N3HBg4D(B (extension ring) $B$G$"$k$H$$$&!#(B
+を満たすとき、$S$ は、$R$ の部分環 (subring) であるという。また、$R$ は、$S$ の拡大環 (extension ring) であるという。
 \end{definition}
 
 \begin{ex}
-$BItJ,4D$O!"4D$G$"$k!#(B
+部分環は、環である。
 \end{ex}
 
 \begin{prop} \label{prop:ringhomo}
-$f : R \rightarrow R'$ $B$r4D=`F17?$H$9$k!#(B
+$f : R \rightarrow R'$ を環準同型とする。
 \begin{itemize}
-\item[$(1)$] $\ker f = \{a\in R\mid f(a) = 0\}$ $B$O!"N>B&%$%G%"%k!#(B
-\item[$(2)$] $\im f = \{f(a) \mid a\in R\}$ $B$O!"(B$R'$ $B$NItJ,4D!#(B
+\item[$(1)$] $\ker f = \{a\in R\mid f(a) = 0\}$ は、両側イデアル。
+\item[$(2)$] $\im f = \{f(a) \mid a\in R\}$ は、$R'$ の部分環。
 \end{itemize}
 \end{prop}
 \proof
-$BN}=,LdBj(B 3.2.
+練習問題 3.2.
 \qed
 
-\begin{thm} $B!J=`F17?DjM}!K(B
-$R$$B!"(B$R'$ $B$r4D!"(B$f: R \rightarrow R'$ $B$r4D=`F17?$H$9$k$H!"(B
+\begin{thm} （準同型定理）
+$R$、$R'$ を環、$f: R \rightarrow R'$ を環準同型とすると、
 $$R/\ker f \simeq \im f.$$
 \end{thm}
 \proof
-$BL?Bj(B~\ref{prop:ringhomo} $B$h$j!"(B$R/\ker f$ $B$b!"(B$\im f$ $B$b!"4D!#72$N=`F17?DjM}$h$j!"(B
+命題~\ref{prop:ringhomo} より、$R/\ker f$ も、$\im f$ も、環。群の準同型定理より、
 $$\bar{f} : R/\ker f \rightarrow \im f,\; (a + \ker f \mapsto f(a))$$
-$B$O!"(Bwell-defined $B$G!"2C72$H$7$F$NF17?<LA|!#(B
+は、well-defined で、加群としての同型写像。
 $$\bar{f}((a+\ker f)(b+\ker f)) = \bar{f}(ab + \ker f) = f(ab) = f(a)f(b) = \bar{f}(a+\ker f)\bar{f}(b+\ker f)$$
 $$\bar{f}(1_{R/{\sker} f}) = \bar{f}(1+\ker f) = f(1_R) = 1_{R'}.$$
-$B$h$C$F!"(B$\bar{f}$ $B$O!"4D$H$7$FF17?!#(B
+よって、$\bar{f}$ は、環として同型。
 \qed
 
 \medskip
-$B>e$N>ZL@$G!"72$N=`F17?DjM}$rMQ$$$?$,!"$=$3$G$N80$O!"0J2<$NF1CM$G$"$C$?!#(B
+上の証明で、群の準同型定理を用いたが、そこでの鍵は、以下の同値であった。
 $$f(a) = f(b) \Leftrightarrow f(a-b) = 0 \Leftrightarrow a-b\in \ker f \Leftrightarrow a+\ker f = b + \ker f$$
-$B$3$l$O!">e$GDj5A$5$l$?(B $\bar{f}$ $B$,!"(Bwell-defined $B$+$DA4C1<M$G$"$k$3$H$r<($7$F$$$k!#(B
+これは、上で定義された $\bar{f}$ が、well-defined かつ全単射であることを示している。
 
 \begin{eg}
-$K\subset L$  $B$rBN!"(B$\alpha\in L$ $B$H$9$k!#(B$\phi:K[x] \to L \;(f(x) \mapsto f(\alpha))$ $B$r4D=`F17?$H$9$k!#(B$\im\phi$  $B$r(B $K[\alpha]$ $B$H=q$/!#$9$J$o$A!"(B$K[\alpha] = \{f(\alpha)\mid f(x)\in K[x]\}$$B!#$9$k$H!"=`F17?DjM}$K$h$j!"(B$K[x]/\ker\phi\simeq K[\alpha]$ $B$H$J$k$,!"(B$\ker\phi$  $B$O!"C19`%$%G%"%k@00h(B $K[x]$ $B$N%$%G%"%k$@$+$i!"$"$k(B $p(x)\in K[x]$ $B$K$h$C$F!"(B$\ker\phi = K[x]p(x) = (p(x))$ $B$H=q$1$k!#(B$p(x) = 0$ $B$9$J$o$A(B $\ker\phi = 0$ $B$N;~!"(B$\alpha$ $B$r(B $K$ $B>eD61[E*$J85$H8F$V!#(B$p(x)\neq 0$ $B$N;~$O!"(B$p(x)$ $B$H$7$F!"%b%K%C%/!J:G9b<!$N78?t$,(B $1$ $B$N$b$N!K$r$H$k;v$,=PMh$k!#<B$O!"(B$p(x)$ $B$O!"(B$\ker\phi$ $B$N(B $0$ $B$G$J$$B?9`<0$NFb$G!"<!?t$,:G>.$G!"%b%K%C%/$J$b$N$H$7$F!"0l0UE*$K7h$^$k!#DjM}(B~\ref{thm:euclid-pid} $B$N>ZL@;2>H!#$3$N$H$-!"(B$\alpha$ $B$r(B $K$ $B>eBe?tE*$J85!"(B$p(x)$ $B$r(B $\alpha$ $B$N(B $K$ $B>e$N:G>.B?9`<0$H$$$&!#(B
+$K\subset L$  を体、$\alpha\in L$ とする。$\phi:K[x] \to L \;(f(x) \mapsto f(\alpha))$ を環準同型とする。$\im\phi$  を $K[\alpha]$ と書く。すなわち、$K[\alpha] = \{f(\alpha)\mid f(x)\in K[x]\}$。すると、準同型定理により、$K[x]/\ker\phi\simeq K[\alpha]$ となるが、$\ker\phi$  は、単項イデアル整域 $K[x]$ のイデアルだから、ある $p(x)\in K[x]$ によって、$\ker\phi = K[x]p(x) = (p(x))$ と書ける。$p(x) = 0$ すなわち $\ker\phi = 0$ の時、$\alpha$ を $K$ 上超越的な元と呼ぶ。$p(x)\neq 0$ の時は、$p(x)$ として、モニック（最高次の係数が $1$ のもの）をとる事が出来る。実は、$p(x)$ は、$\ker\phi$ の $0$ でない多項式の内で、次数が最小で、モニックなものとして、一意的に決まる。定理~\ref{thm:euclid-pid} の証明参照。このとき、$\alpha$ を $K$ 上代数的な元、$p(x)$ を $\alpha$ の $K$ 上の最小多項式という。
 
-$B0J2<(B $K = \bQ$$B!"(B$L = \bC$ $B$H$9$k!#(B$\mbox{e}$$B!"(B$\pi$ $B$O!"(B$\bQ$ $B>eD61[E*$J85$G$"$k!#!J(B$\bQ$ $B>eD61[E*$J85$rD61[?t(B (transcendental number) $B$H8F$V!#0lHLE*$K$O!"D61[?t$G$"$k$3$H$r>ZL@$9$k$3$H$O!"$H$F$bFq$7$$!#(B
+以下 $K = \bQ$、$L = \bC$ とする。$\mbox{e}$、$\pi$ は、$\bQ$ 上超越的な元である。（$\bQ$ 上超越的な元を超越数 (transcendental number) と呼ぶ。一般的には、超越数であることを証明することは、とても難しい。
 
-$\alpha = \sqrt{-1}$ $B$H$9$k$H!"(B$\ker\phi = (x^2 + 1)$ $B$G$"$j!"(B$\bQ[\sqrt{-1}] = \{a + b\sqrt{-1}\mid a,b\in \bQ\}$ $B$,4D$G$"$k$3$H$b$3$l$h$jJ,$+$C$?!#<!2s$K$O!"$3$l$,BN$K$J$k$3$H$bJ,$+$k!#(B
+$\alpha = \sqrt{-1}$ とすると、$\ker\phi = (x^2 + 1)$ であり、$\bQ[\sqrt{-1}] = \{a + b\sqrt{-1}\mid a,b\in \bQ\}$ が環であることもこれより分かった。次回には、これが体になることも分かる。
 
-$\alpha = {}^3\!\!\sqrt{2}$ $B$H$9$k$H!"(B$\ker\phi = (x^3 -2)$ $B$G$"$j!"(B$\bQ[{}^3\!\!\sqrt{2}] = \{a + b{}^3\!\!\sqrt{2} + c({}^3\!\!\sqrt{2})^2\mid a,b\in\bQ\}$ $B$H$J$k!#(B
+$\alpha = {}^3\!\!\sqrt{2}$ とすると、$\ker\phi = (x^3 -2)$ であり、$\bQ[{}^3\!\!\sqrt{2}] = \{a + b{}^3\!\!\sqrt{2} + c({}^3\!\!\sqrt{2})^2\mid a,b\in\bQ\}$ となる。
 \end{eg}
 
 \begin{eg}
-$A\in\mat_n(\bC)$$B!"(B$\psi:\bC[x]\to \mat_n(\bC)\;(f(x)\mapsto f(A))$ $B$H$9$k!#(BHamilton-Cayley $B$NDjM}$K$h$j!"(B$\ker\psi\supset (\det(xI - A))\neq 0$$B!#$h$C$F!"(Bmonic $B$JB?9`<0$K$h$C$F!"(B$\ker\psi = p_A(x)$ $B$H=q$1$k!#$3$N(B $p_A(x)$ $B$r:G>.B?9`<0$H$$$&!#>e$N;v$+$i(B $p_A\mid \det(xI - A)$ $B$G$"$k!#Nc$($P!"(B
+$A\in\mat_n(\bC)$、$\psi:\bC[x]\to \mat_n(\bC)\;(f(x)\mapsto f(A))$ とする。Hamilton-Cayley の定理により、$\ker\psi\supset (\det(xI - A))\neq 0$。よって、monic な多項式によって、$\ker\psi = p_A(x)$ と書ける。この $p_A(x)$ を最小多項式という。上の事から $p_A\mid \det(xI - A)$ である。例えば、
 $$A = \left(\begin{array}{cc} 1 & 0 \\ 0 & -2\end{array}\right),\; B = \left(\begin{array}{cc} 0 & 1 \\ -4 & 4\end{array}\right),\;C = \left(\begin{array}{cc} 2 & 0 \\ 0 & 2\end{array}\right)$$
-$B$H$7$?$H$-!"$=$l$>$l$N:G>.B?9`<0$O!"(B
+としたとき、それぞれの最小多項式は、
 $$p_A(x) = (x-1)(x+2), \; p_B(x) = (x-2)^2,\;p_C(x) = x-2$$
-$B$G$"$k!#(B
+である。
 \end{eg}
 
 \newpage
-\section{$BAG%$%G%"%k$H6KBg%$%G%"%k(B}
-$R$ $B$r2D494D!"(B$I$ $B$r%$%G%"%k$H$9$k!#$3$N$H$-!">jM>4D(B $R/I$ $B$,!"@00h$dBN$H$J$k%$%G%"%k(B $I$ $B$NK~$?$9$Y$->r7o$r9M$($k!#(B
+\section{素イデアルと極大イデアル}
+$R$ を可換環、$I$ をイデアルとする。このとき、剰余環 $R/I$ が、整域や体となるイデアル $I$ の満たすべき条件を考える。
 
 \begin{definition}
 \begin{itemize}
-\item[$(1)$] $B2D494D(B $R$ $B$N%$%G%"%k(B $I (\neq R)$ $B$K$D$$$F!"(B
-$$ab\in I \longrightarrow a\in I \mbox{ $B$^$?$O(B } b\in I$$
-$B$,@.N)$9$k$H$-!"(B$I$ $B$rAG%$%G%"%k(B (prime ideal) $B$H$$$&!#(B
-\item[$(2)$] $B2D494D(B $R$ $B$N%$%G%"%k(B $I (\neq R)$ $B$K$D$$$F!"(B
-$$I \subset J : \mbox{ $R$ $B$N%$%G%"%k(B} \longrightarrow I = J \mbox{ $B$^$?$O(B } J = R$$
-$B$,@.N)$9$k$H$-!"(B$I$ $B$r6KBg%$%G%"%k(B (maximal ideal) $B$H$$$&!#(B
+\item[$(1)$] 可換環 $R$ のイデアル $I (\neq R)$ について、
+$$ab\in I \longrightarrow a\in I \mbox{ または } b\in I$$
+が成立するとき、$I$ を素イデアル (prime ideal) という。
+\item[$(2)$] 可換環 $R$ のイデアル $I (\neq R)$ について、
+$$I \subset J : \mbox{ $R$ のイデアル} \longrightarrow I = J \mbox{ または } J = R$$
+が成立するとき、$I$ を極大イデアル (maximal ideal) という。
 \end{itemize}
 \end{definition}
 
 \begin{thm} \label{thm:R/I}
-$R$ $B$r2D494D!"(B$I$ $B$r$=$N%$%G%"%k$H$9$k!#(B
+$R$ を可換環、$I$ をそのイデアルとする。
 \begin{itemize}
-\item[$(1)$] $R/I$ $B$O@00h(B $\Leftrightarrow$ $I$ $B$OAG%$%G%"%k!#(B
-\item[$(2)$] $R/I$ $B$OBN(B $\Leftrightarrow$ $I$ $B$O6KBg%$%G%"%k!#(B
-\item[$(3)$] $B6KBg%$%G%"%k$O!"AG%$%G%"%k!#(B
+\item[$(1)$] $R/I$ は整域 $\Leftrightarrow$ $I$ は素イデアル。
+\item[$(2)$] $R/I$ は体 $\Leftrightarrow$ $I$ は極大イデアル。
+\item[$(3)$] 極大イデアルは、素イデアル。
 \end{itemize}
 \end{thm}
 \proof
-$(1)$ $R/I$ $B$,@00h$G$"$k$3$H$O!"0J2<$N$3$H$HF1CM$G$"$k!#(B
+$(1)$ $R/I$ が整域であることは、以下のことと同値である。
 \begin{eqnarray*}
-\lefteqn{\bar{a}, \bar{b}\in R/I, \;\bar{a}\bar{b} = \bar{0} \rightarrow \bar{a} = \bar{0}\mbox{ $B$^$?$O(B }\bar{b} = \bar{0}}\\
-&\Leftrightarrow& a,b\in R,\; (a+I)(b+I) = ab+I = I \rightarrow a+I = I \mbox{ $B$^$?$O(B }b+I = I\\
-&\Leftrightarrow& a,b\in R,\; ab\in I \rightarrow a\in I \mbox{ $B$^$?$O(B }b\in I\\
-& & (x+ I = y+I \leftrightarrow x-y\in I\mbox{ $B$KCm0U(B})
+\lefteqn{\bar{a}, \bar{b}\in R/I, \;\bar{a}\bar{b} = \bar{0} \rightarrow \bar{a} = \bar{0}\mbox{ または }\bar{b} = \bar{0}}\\
+&\Leftrightarrow& a,b\in R,\; (a+I)(b+I) = ab+I = I \rightarrow a+I = I \mbox{ または }b+I = I\\
+&\Leftrightarrow& a,b\in R,\; ab\in I \rightarrow a\in I \mbox{ または }b\in I\\
+& & (x+ I = y+I \leftrightarrow x-y\in I\mbox{ に注意})
 \end{eqnarray*}
 
-$(2)$ $BL?Bj(B~\ref{prop:field} $B$K$h$j!"(B$R/I$ $B$,BN$G$"$k$3$H$H!"(B$R/I$ $B$N(B $0$ $B$G$J$$%$%G%"%k$O!"(B$R/I$ $B$N$_$G$"$k$3$H$OF1CM$G$"$k!#$3$l$O!"8@$$49$($k$H!"(B$R$ $B$N%$%G%"%k(B $J$ $B$G(B $I$ $B$r??$K4^$`$b$N$O!"(B$R$ $B$K8B$i$l$k$H$$$&$3$H$HF1CM$G$"$k$+$i!JN}=,LdBj;2>H!K!"(B$I$ $B$,(B $R$ $B$N6KBg%$%G%"%k$G$"$k$3$H$HF1CM$G$"$k!#(B
+$(2)$ 命題~\ref{prop:field} により、$R/I$ が体であることと、$R/I$ の $0$ でないイデアルは、$R/I$ のみであることは同値である。これは、言い換えると、$R$ のイデアル $J$ で $I$ を真に含むものは、$R$ に限られるということと同値であるから（練習問題参照）、$I$ が $R$ の極大イデアルであることと同値である。
 
-$(3)$ $I$$B!'6KBg%$%G%"%k(B $\Leftrightarrow$ $R/I$$B!'BN(B $\Rightarrow$ $R/I$$B!'@00h(B $\Leftrightarrow$ $I$$B!'AG%$%G%"%k!#(B
+$(3)$ $I$：極大イデアル $\Leftrightarrow$ $R/I$：体 $\Rightarrow$ $R/I$：整域 $\Leftrightarrow$ $I$：素イデアル。
 \qed
 
 \medskip
 \note
-$R$ $B$r2D494D$H$9$k$H!">e$NDjM}$+$i!"Nm%$%G%"%k(B $(0)$ $B$,AG%$%G%"%k$G$"$k$3$H$H!"(B$R$ $B$,@00h$G$"$k$3$H$,F1CM$G$"$j!"$^$?!"(B$(0)$ $B$,6KBg%$%G%"%k$G$"$k$3$H$H!"(B$R$ $B$,BN$G$"$k$3$H$,F1CM$G$"$k!#(B
+$R$ を可換環とすると、上の定理から、零イデアル $(0)$ が素イデアルであることと、$R$ が整域であることが同値であり、また、$(0)$ が極大イデアルであることと、$R$ が体であることが同値である。
 
 \begin{prop} \label{prop:pid}
-$R$ $B$rC19`%$%G%"%k@00h(B {\rm (PID)}$B!"(B$I$ $B$r(B $R$ $B$N%$%G%"%k$G(B $I\neq (0)$ $B$J$k$b$N$H$9$k!#$3$N$H$-!"<!$OF1CM!#(B
-$$I\mbox{$B!'AG%$%G%"%k(B} \Leftrightarrow I\mbox{$B!'6KBg%$%G%"%k(B}$$
+$R$ を単項イデアル整域 {\rm (PID)}、$I$ を $R$ のイデアルで $I\neq (0)$ なるものとする。このとき、次は同値。
+$$I\mbox{：素イデアル} \Leftrightarrow I\mbox{：極大イデアル}$$
 \end{prop}
 \proof
-$BDjM}(B~\ref{thm:R/I} $B$K$h$j!"6KBg%$%G%"%k$O!">o$KAG%$%G%"%k$@$+$i!"(B$I = (a) \neq (0)$ $B$rAG%$%G%"%k$H$7$F!"(B$I$ $B$,6KBg%$%G%"%k$G$"$k$3$H$r<($9!#(B$J$ $B$r(B $I$ $B$r??$K4^$`(B $R$ $B$N%$%G%"%k$H$9$k!#(B$R$ $B$O!"C19`%$%G%"%k@00h$@$+$i!"(B$J = (b)$ $B$H$*$1$k!#(B$a\in (a) = I \subset J = (b)$ $B$@$+$i!"(B$a = bc$ $B$H$J$k(B $c\in R$ $B$,B8:_$9$k!#(B$I = (a)$ $B$O!"AG%$%G%"%k$@$+$i(B $b\in I$ $B$^$?$O(B $c\in I$$B!#(B$b\in I$ $B$H$9$k$H!"(B$J = (b) \subset (a) = I$ $B$H$J$j(B $J$ $B$,(B $I$  $B$r??$K4^$`%$%G%"%k$G$"$k$3$H$KH?$9$k$+$i!"(B$c\in I = (a)$$B!#$9$J$o$A!"(B$c = ad$ $B$H$J$k(B$d\in R$ $B$,B8:_$9$k!#$3$l$h$j!"(B$$a = bc = bad = abd\rightarrow a(bd - 1) = 0$$
-$B$rF@$k!#(B$a\neq 0$ $B$@$C$?$+$i(B $bd = 1$ $B$9$J$o$A(B $R = (1) \subset (b) = J$ $B$H$J$j(B $J = R$ $B$H$J$k$+$i!"(B$I$ $B$O6KBg%$%G%"%k$G$"$k!#(B
+定理~\ref{thm:R/I} により、極大イデアルは、常に素イデアルだから、$I = (a) \neq (0)$ を素イデアルとして、$I$ が極大イデアルであることを示す。$J$ を $I$ を真に含む $R$ のイデアルとする。$R$ は、単項イデアル整域だから、$J = (b)$ とおける。$a\in (a) = I \subset J = (b)$ だから、$a = bc$ となる $c\in R$ が存在する。$I = (a)$ は、素イデアルだから $b\in I$ または $c\in I$。$b\in I$ とすると、$J = (b) \subset (a) = I$ となり $J$ が $I$  を真に含むイデアルであることに反するから、$c\in I = (a)$。すなわち、$c = ad$ となる$d\in R$ が存在する。これより、$$a = bc = bad = abd\rightarrow a(bd - 1) = 0$$
+を得る。$a\neq 0$ だったから $bd = 1$ すなわち $R = (1) \subset (b) = J$ となり $J = R$ となるから、$I$ は極大イデアルである。
 \qed
 
 \begin{prop} \label{prop:integer}
-$n$ $B$rM-M}@0?t4D(B $\bZ$ $B$NNm$G$J$$85$H$9$k!#$3$H$N$-!"<!$OF1CM!#(B
-$$(n)\mbox{$B!'6KBg%$%G%"%k(B} \Leftrightarrow (n)\mbox{$B!'AG%$%G%"%k(B}\Leftrightarrow n\mbox{ $B$OAG?t(B}$$
+$n$ を有理整数環 $\bZ$ の零でない元とする。ことのき、次は同値。
+$$(n)\mbox{：極大イデアル} \Leftrightarrow (n)\mbox{：素イデアル}\Leftrightarrow n\mbox{ は素数}$$
 \end{prop}
 \proof
-$B$^$:!"(B$(n) \subset (m)$ $B$O!"(B$m\mid n$ $B$HF1CM$G$"$k$3$H$KCm0U$9$k!#$3$l$h$j!"(B$(m) = (n)$ $B$G$"$k$3$H$H!"(B$m = \pm n$ $B$OF1CM$G$"$k$3$H$,J,$+$k!#$5$F!"!V(B$(m)$ $B$,6KBg$G$"$k$3$H!W$H!"!V(B$(m)\subset (n)$ $B$J$i$P!"(B$(n) = (m)$ $B$^$?$O(B $(n) = (1)$ $B$G$"$k$3$H!W$H$O!"F1CM$G$"$k!#$3$l$h$j!"(B$n$ $B$NLs?t$O!"(B$\pm n$ $B$G$"$k$+!"$^$?$O(B $\pm 1$ $B$G$"$k$+$N$I$A$i$+$G$"$k$3$H$rF@$k!#6KBg%$%G%"%k$O!"(B$(1) = \bZ$ $B$H$O0[$J$k$+$i!"(B
-$$(n)\mbox{$B!'6KBg%$%G%"%k(B} \Leftrightarrow  n\mbox{ $B$OAG?t(B}$$
-$\bZ$ $B$O!"C19`%$%G%"%k@00h$G$"$k$+$i!"L?Bj(B~\ref{prop:pid} $B$h$j!"Nm$G$J$$%$%G%"%k$,6KBg%$%G%"%k$G$"$k$3$H$H!"AG%$%G%"%k$G$"$k$3$H$O!"F1CM$G$"$k$3$H$,J,$+$k!#(B
+まず、$(n) \subset (m)$ は、$m\mid n$ と同値であることに注意する。これより、$(m) = (n)$ であることと、$m = \pm n$ は同値であることが分かる。さて、「$(m)$ が極大であること」と、「$(m)\subset (n)$ ならば、$(n) = (m)$ または $(n) = (1)$ であること」とは、同値である。これより、$n$ の約数は、$\pm n$ であるか、または $\pm 1$ であるかのどちらかであることを得る。極大イデアルは、$(1) = \bZ$ とは異なるから、
+$$(n)\mbox{：極大イデアル} \Leftrightarrow  n\mbox{ は素数}$$
+$\bZ$ は、単項イデアル整域であるから、命題~\ref{prop:pid} より、零でないイデアルが極大イデアルであることと、素イデアルであることは、同値であることが分かる。
 \qed
 
 \medskip
 \note
-$B$3$NL?Bj$K$h$j!"(B$\bZ_n = \bZ/(n)$ $B$,BN$G$"$k$3$H$H!"@00h$G$"$k$3$H$H!"(B$n$ $B$,AG?t$G$"$k$3$H$O!"A4$FF1CM$G$"$k$3$H$b$o$+$C$?!#(B
+この命題により、$\bZ_n = \bZ/(n)$ が体であることと、整域であることと、$n$ が素数であることは、全て同値であることもわかった。
 
 \begin{definition}
-$B@00h(B $R$ $B>e$N<!?t$,(B $1$ $B0J>e$NB?9`<0(B $f(x)$ $B$O!"(B$R[x]$ $B$K$*$$$F!"(B$f(x) = g(x)h(x)$ $\deg g>0$$B!"(B$\deg h>0$ $B$HJ,2r$5$l$k$H$-!J(B$R$ $B>e!K2DLs!"$=$&$G$J$$$H$-!"!J(B$R$ $B>e!K4{Ls$G$"$k$H$$$&!#(B
+整域 $R$ 上の次数が $1$ 以上の多項式 $f(x)$ は、$R[x]$ において、$f(x) = g(x)h(x)$ $\deg g>0$、$\deg h>0$ と分解されるとき（$R$ 上）可約、そうでないとき、（$R$ 上）既約であるという。
 \end{definition}
 
 \begin{prop}\label{prop:poly}
-$K$ $B$rBN$H$7!"(B$f(x)\in K[x]$ $B$rNm$G$J$$B?9`<0$H$9$k!#$3$N$H$-!"<!$OF1CM!#(B
-$$(f(x))\mbox{$B!'6KBg%$%G%"%k(B} \Leftrightarrow (f(x))\mbox{$B!'AG%$%G%"%k(B}\Leftrightarrow f(x)\mbox{ $B$O4{Ls(B}$$
+$K$ を体とし、$f(x)\in K[x]$ を零でない多項式とする。このとき、次は同値。
+$$(f(x))\mbox{：極大イデアル} \Leftrightarrow (f(x))\mbox{：素イデアル}\Leftrightarrow f(x)\mbox{ は既約}$$
 \end{prop}
 \proof
-$f(x)$ $B$,Dj?t$N;~$O!">e$N#3$D$N$I$N>r7o$bK~$?$5$J$$$+$i9M$($J$/$FNI$$!#$=$3$G!"(B$\deg f(x)\geq 1$ $B$H$9$k!#(B$K[x]$ $B$O!"C19`%$%G%"%k@00h$G$"$k$+$i!"(B$(f(x))$ $B$,6KBg%$%G%"%k$G$"$k$3$H$H!"AG%$%G%"%k$G$"$k$3$H$O!"F1CM$G$"$k!#$3$N$3$H$H!"(B$f(x)$ $B$,4{Ls$G$"$k$3$H$,F1CM$G$"$k$3$H$r<($9!#(B
+$f(x)$ が定数の時は、上の３つのどの条件も満たさないから考えなくて良い。そこで、$\deg f(x)\geq 1$ とする。$K[x]$ は、単項イデアル整域であるから、$(f(x))$ が極大イデアルであることと、素イデアルであることは、同値である。このことと、$f(x)$ が既約であることが同値であることを示す。
 
-$f(x)$ $B$r2DLs$H$9$k!#$9$J$o$A!"(B$f(x) = g(x)h(x)$$B!"(B$\deg g(x)>1$$B!"(B$\deg h(x)>1$ $B$H$9$k!#$9$k$H!"(B
+$f(x)$ を可約とする。すなわち、$f(x) = g(x)h(x)$、$\deg g(x)>1$、$\deg h(x)>1$ とする。すると、
 $$(f(x)) \subset (g(x)) \subset K[x]$$
-$B$G$I$A$i$bEy9f$O@.$jN)$?$J$$!#(B$U(K[x]) = U(K) = K^*$ $B$@$+$i!"N}=,LdBj$h$j0J2<$,F1CM$G$"$k$3$H$+$iL@$+!#(B
+でどちらも等号は成り立たない。$U(K[x]) = U(K) = K^*$ だから、練習問題より以下が同値であることから明か。
 $$(f_1(x)) = (f_2(x)) \Leftrightarrow f_1(x) = cf_2(x)\;(c\in K^*).$$
 
-$B5U$K!"(B$(f(x))$ $B$O6KBg%$%G%"%k$G$O$J$$$H$9$k!#(B$(g(x))$ $B$r(B $(f(x))$ $B$r??$K4^$_$+$D(B $K[x]$ $B$H$O0[$J$k%$%G%"%k$H$9$k!#$9$k$H!"(B$f(x) = g(x)h(x)$ $B$H$+$1!">r7o$+$i!"(B$f(x)$ $B$O!"2DLs$G$"$k$3$H$,J,$+$k!#(B
+逆に、$(f(x))$ は極大イデアルではないとする。$(g(x))$ を $(f(x))$ を真に含みかつ $K[x]$ とは異なるイデアルとする。すると、$f(x) = g(x)h(x)$ とかけ、条件から、$f(x)$ は、可約であることが分かる。
 \qed
 
 \begin{eg}
-$x^2+1$$B!"(B$x^2-2$ $B$,(B $\bQ$ $B>e4{Ls$G$"$k$3$H$O4JC1$K3N$+$a$i$l$k$+$i!"(B$(x^2+1)$$B!"(B$(x^2-2)$ $B$O!"(B$\bQ[x]$ $B$N6KBg%$%G%"%k$G$"$j!"=>$C$F!"(B$\bQ[\sqrt{-1}]\simeq \bQ[x]/(x^2+1)$$B!"(B$\bQ[\sqrt{2}]\simeq \bQ[x]/(x^2-2)$ $B$O!"BN$G$"$k$3$H$,J,$+$k!#(B
+$x^2+1$、$x^2-2$ が $\bQ$ 上既約であることは簡単に確かめられるから、$(x^2+1)$、$(x^2-2)$ は、$\bQ[x]$ の極大イデアルであり、従って、$\bQ[\sqrt{-1}]\simeq \bQ[x]/(x^2+1)$、$\bQ[\sqrt{2}]\simeq \bQ[x]/(x^2-2)$ は、体であることが分かる。
 \end{eg}
 
-$B<!?t$N9b$$B?9`<0$K$D$$$F!"4{Ls$+$I$&$+$O$I$N$h$&$KH=Dj$9$l$P$h$$$N$@$m$&$+!#<B$O!"0lHL$K$OHs>o$KFq$7$$!#$7$+$7!"<!$NH=DjK!$OM-8z$G$"$k!#(B
+次数の高い多項式について、既約かどうかはどのように判定すればよいのだろうか。実は、一般には非常に難しい。しかし、次の判定法は有効である。
 
-\begin{prop}{\rm [Eisenstein $B$N4{Ls@-H=DjK!(B]}\label{prop:eisenstein}
-$p$ $B$rAG?t!"(B$f(x) = a_nx^n + \cdots + a_1x + a_0\in \bZ[x]$ $B$G0J2<$N>r7o$rK~$?$9$H$9$k!#(B
+\begin{prop}{\rm [Eisenstein の既約性判定法]}\label{prop:eisenstein}
+$p$ を素数、$f(x) = a_nx^n + \cdots + a_1x + a_0\in \bZ[x]$ で以下の条件を満たすとする。
 $$a_n\not\equiv 0 \;(\mod p),\;a_{n-1}\equiv \cdots \equiv a_1 \equiv a_0 \equiv 0\;(\mod p),\;a_0 \not\equiv 0\;(\mod p^2)$$
-$B$3$N$H$-!"(B$f(x)$ $B$O!"(B$\bZ$ $B>e4{Ls$G$"$k!#(B
+このとき、$f(x)$ は、$\bZ$ 上既約である。
 \end{prop}
 \proof
-$B2DLs$H$7$FL7=b$rF3$/!#(B
+可約として矛盾を導く。
 $$f(x) = g(x)h(x),\;r = \deg g>0,\;s = \deg h>0,$$
 $$g(x) = b_rx^r + \cdots + b_0,\;h(x) = c_sx^s + \cdots + c_0$$
-$B$H$9$k!#(B$a_0 = b_0c_0$ $B$O2>Dj$h$j(B $p$ $B$G3d$j@Z$l$k$,!"(B$p^2$ $B$G$O3d$j@Z$l$J$$!#=>$C$F!"(B$p$ $B$O!"(B$b_0$ $B$O3d$i$J$$$,!"(B$c_0$ $B$O3d$k$H2>Dj$9$k!#0lJ}!"(B$a_n = b_rc_s$ $B$O2>Dj$+$i(B $p$ $B$G3d$l$J$$$+$i!"(B$c_s$ $B$b(B $p$ $B$G3d$l$J$$!#(B$c_0$ $B$O(B $p$ $B$G3d$l$k$H$7$F$$$k$+$i!":#(B $i$ $B$r(B $c_i$ $B$,(B $p$ $B$G3d$j@Z$l$J$$:G>.$N@0?t$H$9$k!#=>$C$F!"(B
+とする。$a_0 = b_0c_0$ は仮定より $p$ で割り切れるが、$p^2$ では割り切れない。従って、$p$ は、$b_0$ は割らないが、$c_0$ は割ると仮定する。一方、$a_n = b_rc_s$ は仮定から $p$ で割れないから、$c_s$ も $p$ で割れない。$c_0$ は $p$ で割れるとしているから、今 $i$ を $c_i$ が $p$ で割り切れない最小の整数とする。従って、
 $$c_0 \equiv c_1 \equiv \cdots \equiv c_{i-1} \equiv 0 \not\equiv c_i\;(\mod p).$$
-$B$9$k$H!"(B
+すると、
 $$a_i = b_0c_i + b_1c_{i-1} + \cdots + b_ic_0\equiv b_0c_i \not\equiv 0\;(\mod p).$$
-$B$G$"$k!#2>Dj$+$i(B $n = i < s = \deg h$ $B$H$J$j!"$3$l$O!"L7=b$G$"$k!#=>$C$F!"(B$f(x)$ $B$O4{Ls$G$"$k!#(B
+である。仮定から $n = i < s = \deg h$ となり、これは、矛盾である。従って、$f(x)$ は既約である。
 \qed
 
 \medskip
 \note 
-$B$3$NL?Bj$O!"(B$\bZ$ $B>e4{Ls$+$I$&$+$NH=DjK!$G$"$k$,!"<B$O!"N}=,LdBj$K$b$"$k$h$&$K!"%,%&%9$NJdBj!JL?Bj(B~\ref{prop:gauss'lemma}$B!K$H$$$o$l$k$b$N$K$h$j(B $\bQ$ $B>e4{Ls$G$"$k$3$H$bJ,$+$k!#(B
+この命題は、$\bZ$ 上既約かどうかの判定法であるが、実は、練習問題にもあるように、ガウスの補題（命題~\ref{prop:gauss'lemma}）といわれるものにより $\bQ$ 上既約であることも分かる。
 
-$BNc$($P!"(B$x^n - 2$$B!"(B$x^3 - 3x^2 - 9x -6$ $B$O!"(B$\bZ$ $B>e!J$=$7$F!"(B$\bQ$ $B>e!K4{Ls$G$"$k!#(B
+例えば、$x^n - 2$、$x^3 - 3x^2 - 9x -6$ は、$\bZ$ 上（そして、$\bQ$ 上）既約である。
 
 \newpage
-\section{$B4D$ND>OB(B}
+\section{環の直和}
 \begin{definition}
-$B4D(B $R_1, R_2, \ldots, R_n$ $B$,M?$($i$l$?$H$-!"D>@Q(B
+環 $R_1, R_2, \ldots, R_n$ が与えられたとき、直積
 $$R = R_1\times R_2 \times \cdots \times R_n = \{(a_1,a_2,\ldots, a_n)\mid a_i\in R_i,\;i = 1,\ldots, n\}$$
-$B$K2CK!$H>hK!$r<!$N$h$&$KDj5A$9$k!#(B
+に加法と乗法を次のように定義する。
 \begin{itemize}
-\item[$B2CK!!'(B] $(a_1,\ldots, a_n) + (b_1,\ldots,b_n) = (a_1 + b_1,\ldots, a_n+b_n)$
-\item[$B>hK!!'(B] $(a_1,\ldots, a_n) \cdot (b_1,\ldots,b_n) = (a_1\cdot b_1,\ldots, a_n\cdot b_n)$
+\item[加法：] $(a_1,\ldots, a_n) + (b_1,\ldots,b_n) = (a_1 + b_1,\ldots, a_n+b_n)$
+\item[乗法：] $(a_1,\ldots, a_n) \cdot (b_1,\ldots,b_n) = (a_1\cdot b_1,\ldots, a_n\cdot b_n)$
 \end{itemize}
-$B$3$N$H$-!"(B$R$ $B$O4D$K$J$k!#(B$R$ $B$r(B $R_1,\ldots, R_n$ $B$ND>OB$H$$$$!"0J2<$N$h$&$K=q$/!#(B
+このとき、$R$ は環になる。$R$ を $R_1,\ldots, R_n$ の直和といい、以下のように書く。
 $$R = R_1\oplus R_2 \oplus \cdots \oplus R_n.$$
 \end{definition}
 
 \note
-$1_R = (1_{R_1},1_{R_2},\ldots, 1_{R_n})$$B!"(B$0_R = (0_{R_1},0_{R_2},\ldots, 0_{R_n})$ $B$G$"$k!#(B
+$1_R = (1_{R_1},1_{R_2},\ldots, 1_{R_n})$、$0_R = (0_{R_1},0_{R_2},\ldots, 0_{R_n})$ である。
 
-$B$^$?!"(B$R_i^* = \{(0,\ldots, 0,a,0,\ldots, 0)\mid a\in R_i\}$ $B!JBh(B $i$ $B@.J,0J30$O!"(B$0$$B!K$H$9$k$H!"(B$R_i^*$  $B$O!"(B$R$ $B$NN>B&%$%G%"%k$G$"$k!#(B
-
-\medskip
-$B2D494D(B $R$ $B$NFs$D$N%$%G%"%k(B $I,J$ $B$,(B $I+J = R$ $B$rK~$?$9$H$-!"(B$I$ $B$O(B $J$ $B$H8_$$$KAG$G$"$k$H$$$&!#$9$J$o$A<!$NF1CM>r7o$rK~$?$9$3$H$G$"$k!#(B
-$$I+J = R\Leftrightarrow x+y = 1\mbox{ $B$H$J$k(B }x\in I, \;y\in J \mbox{ $B$,B8:_$9$k!#(B}$$
+また、$R_i^* = \{(0,\ldots, 0,a,0,\ldots, 0)\mid a\in R_i\}$ （第 $i$ 成分以外は、$0$）とすると、$R_i^*$  は、$R$ の両側イデアルである。
 
 \medskip
-$\bZ$ $B$K$*$$$F$O!"(B$(m)$ $B$H(B $(n)$  $B$,8_$$$KAG$J;v$H!"(B$(m,n) = 1$ $B$9$J$o$A!"(B$m$ $B$H(B $n$ $B$N:GBg8xLs?t$,(B $1$ $B$G$"$k$3$H$OF1CM$G$"$k!#<B:]!"(B$x+y = 1$ $B$H$J$k(B $x\in (m), \;y\in (n)$  $B$,B8:_$9$k$H$$$&$3$H$O!"(B$am+bn = 1$ $B$H$J$k(B $a,b\in\bZ$ $B$,B8:_$9$k$3$H$G$"$j!"$3$N$3$H$O!"(B$(m,n) = 1$  $B$HF1CM$G$"$k$+$i$G$"$k!#(B
+可換環 $R$ の二つのイデアル $I,J$ が $I+J = R$ を満たすとき、$I$ は $J$ と互いに素であるという。すなわち次の同値条件を満たすことである。
+$$I+J = R\Leftrightarrow x+y = 1\mbox{ となる }x\in I, \;y\in J \mbox{ が存在する。}$$
 
 \medskip
-$B!V(B3 $B$G3d$C$F(B 1 $BM>$j!"(B10 $B$G3d$C$F(B 3 $BM>$j!"(B7 $B$G$O3d$j@Z$l!"(B13 $B$G3d$k$H(B 11 $BM>$k$h$&$J?t$O$"$k$@$m$&$+!#$^$?$"$k$J$i$P$=$l$r$9$Y$F5a$a$k$3$H$,=PMh$k$+!#!W$H$$$&<oN`$NLdBj$O!"8E$/$+$i$$$m$$$m$H9M$($i$l$F$$$?$h$&$GB9;R$N!VJ<K!!W$K73Bb$NJT@.$NLdBj$+$i5DO@$5$l$F$$$k$3$H$J$I$+$i!"$3$NLdBj$r<h$j07$C$?<!$NDjM}$OCf9q>jM>DjM}(B (Chinise Remainer's Theorem) $B$H8F$P$l$F$$$k$H$N$3$H$G$"$k!#(B
+$\bZ$ においては、$(m)$ と $(n)$  が互いに素な事と、$(m,n) = 1$ すなわち、$m$ と $n$ の最大公約数が $1$ であることは同値である。実際、$x+y = 1$ となる $x\in (m), \;y\in (n)$  が存在するということは、$am+bn = 1$ となる $a,b\in\bZ$ が存在することであり、このことは、$(m,n) = 1$  と同値であるからである。
 
-\begin{thm} {\rm [$BCf9q>jM>DjM}(B]}\label{thm:crt}
-$R$ $B$r2D494D!"(B$I_1, I_2, \ldots, I_n$ $B$r$I$NFs$D$b8_$$$KAG$J%$%G%"%k!J$9$J$o$A!"(B$i\neq j$  $B$N$H$-!"(B$I_i + I_j = R$$B!K$H$9$k!#(B$a_1, a_2, \ldots, a_n\in R$  $B$rG$0U$N85$H$9$k$H$-!"(B$x\equiv a_i\;(\mod I_i)$ $B$,$9$Y$F$N(B $i = 1, 2, \ldots, n$ $B$KBP$7$F!"@.$jN)$D85(B $x\in R$ $B$,B8:_$9$k!#(B
+\medskip
+「3 で割って 1 余り、10 で割って 3 余り、7 では割り切れ、13 で割ると 11 余るような数はあるだろうか。またあるならばそれをすべて求めることが出来るか。」という種類の問題は、古くからいろいろと考えられていたようで孫子の「兵法」に軍隊の編成の問題から議論されていることなどから、この問題を取り扱った次の定理は中国剰余定理 (Chinise Remainer's Theorem) と呼ばれているとのことである。
+
+\begin{thm} {\rm [中国剰余定理]}\label{thm:crt}
+$R$ を可換環、$I_1, I_2, \ldots, I_n$ をどの二つも互いに素なイデアル（すなわち、$i\neq j$  のとき、$I_i + I_j = R$）とする。$a_1, a_2, \ldots, a_n\in R$  を任意の元とするとき、$x\equiv a_i\;(\mod I_i)$ がすべての $i = 1, 2, \ldots, n$ に対して、成り立つ元 $x\in R$ が存在する。
 \end{thm}
 \proof
-\underline{$n = 2$ $B$N$H$-(B}\quad $B2>Dj$h$j!"(B$1 = c_1 + c_2$ $B$H$J$k(B $c_1\in I_1,\;c_2\in I_2$ $B$,$"$k!#$=$3$G!"(B$x = a_1c_2 + a_2c_1$ $B$H$*$/$H!"(B$(\mod I_1)$ $B$G!"(B
+\underline{$n = 2$ のとき}\quad 仮定より、$1 = c_1 + c_2$ となる $c_1\in I_1,\;c_2\in I_2$ がある。そこで、$x = a_1c_2 + a_2c_1$ とおくと、$(\mod I_1)$ で、
 $$x\equiv a_1c_2 + a_2c_1 \equiv a_1c_2 \equiv a_1(1-c_1) \equiv a_1 - a_1c_1 \equiv a_1$$
-$B$H$J$k!#(B$x \equiv a_2 \;(\mod I_2)$ $B$bF1MM$K$7$FF@$k!#(B
+となる。$x \equiv a_2 \;(\mod I_2)$ も同様にして得る。
 
-\underline{$n > 2$ $B$N$H$-(B}\quad $B$^$:!"3F(B $i$ $B$K$D$$$F!"<!$N@-<A$rK~$?$9(B $x_i\in R$ $B$,B8:_$9$k$3$H$r<($9!#(B
-$$x_i \equiv 1 \;(\mod I_i),\;j\neq i \mbox{ $B$N;~$O(B } x_i\equiv 0\;(\mod I_j).$$
-$B5-9f$r8+$d$9$/$9$k$?$a!"(B$i = 1$ $B$N$H$-$r9M$($k!#(B$j\geq 2$ $B$K$D$$$F$O!"(B$I_1 + I_j = R$ $B$@$+$i!"(B$c_1^{(j)}+c_j = 1$ $B$H$J$k!"(B$c_1^{(j)}\in I_1$$B!"(B$c_j\in I_j$ $B$,$"$k!#$9$Y$F$r3]$19g$o$;$k$H!"(B
+\underline{$n > 2$ のとき}\quad まず、各 $i$ について、次の性質を満たす $x_i\in R$ が存在することを示す。
+$$x_i \equiv 1 \;(\mod I_i),\;j\neq i \mbox{ の時は } x_i\equiv 0\;(\mod I_j).$$
+記号を見やすくするため、$i = 1$ のときを考える。$j\geq 2$ については、$I_1 + I_j = R$ だから、$c_1^{(j)}+c_j = 1$ となる、$c_1^{(j)}\in I_1$、$c_j\in I_j$ がある。すべてを掛け合わせると、
 $$1 = \prod_{j=2}^n(c_1^{(j)}+c_j) \equiv c_2\cdots c_n\;(\mod I_1)$$
-$B$@$+$i!"(B$1 - c_2\cdots c_n = c_1$ $B$H$*$/$H!"(B$c_1\in I_1$ $B$G$"$k!#$H$/$K!"(B
-$R = I_1 + I_2\cdots I_n$ $B$9$J$o$A!"Fs$D$N%$%G%"%k(B $I_1$$B!"(B$I_2\cdots I_n$ $B$O8_$$$KAG$G$"$k$3$H$,J,$+$k!#>e5-(B $n=2$ $B$N;~$O!"4{$K<($7$F$"$k$+$i!"(B$x_1\in R$ $B$G!"(B
+だから、$1 - c_2\cdots c_n = c_1$ とおくと、$c_1\in I_1$ である。とくに、
+$R = I_1 + I_2\cdots I_n$ すなわち、二つのイデアル $I_1$、$I_2\cdots I_n$ は互いに素であることが分かる。上記 $n=2$ の時は、既に示してあるから、$x_1\in R$ で、
 $$x_1\equiv 1 \;(\mod I_1),\;x_1\equiv 0\;(\mod I_2\cdots I_n)$$
-$B$rK~$?$9$b$N$,B8:_$9$k$3$H$,J,$+$k!#$H$3$m$,!"(B$j\geq 2$ $B$KBP$7$F!"(B$I_2\cdots I_n \subset I_j$ $B$G$"$k$+$i!"(B$x_1\equiv 0\;(\mod I_j)$ $B$G$b$"$k!#$3$l$G:G=i$N<gD%$,<($5$l$?!#(B
+を満たすものが存在することが分かる。ところが、$j\geq 2$ に対して、$I_2\cdots I_n \subset I_j$ であるから、$x_1\equiv 0\;(\mod I_j)$ でもある。これで最初の主張が示された。
 
-$B:#!"3F(B $i$ $B$K$D$$$F!"(B$x_i$ $B$r$H$j!"(B$x = a_1x_1 + \cdots + a_nx_n$ $B$H$*$/$H!"(B
+今、各 $i$ について、$x_i$ をとり、$x = a_1x_1 + \cdots + a_nx_n$ とおくと、
 \begin{eqnarray*}
 x & \equiv & a_1x_1 + \cdots + a_nx_n \;(\mod I_i)\\
 & \equiv & a_ix_i \;(\mod I_i)\\
 & \equiv & a_i \;(\mod I_i)
 \end{eqnarray*}
-$B$H$J$j!"5a$a$k$b$N$,F@$i$l$?!#(B
+となり、求めるものが得られた。
 \qed
 
 \newpage
-\section{$B>&4D(B}
-$B$3$N@a$G$O!"2D494D$K5U85$r$D$12C$($F$I$l$0$i$$BN$K6a$/=PMh$k$+$r9M$($k!#(B
+\section{商環}
+この節では、可換環に逆元をつけ加えてどれぐらい体に近く出来るかを考える。
 
 \begin{definition}
-$B2D494D(B $R$ $B$NItJ,=89g(B $S$ $B$,<!$N>r7o(B
+可換環 $R$ の部分集合 $S$ が次の条件
 $$(i)\;a,b\in S\rightarrow ab\in S\qquad (ii)\;1\in S,0\not\in S$$
-$B$rK~$?$9$H$-!"(B$S$ $B$O(B $R$ $B$N>hK!E*ItJ,=89g!"@QJD=89g(B (multiplicative subset) $B$H8@$&!#(B
+を満たすとき、$S$ は $R$ の乗法的部分集合、積閉集合 (multiplicative subset) と言う。
 \end{definition}
 
 \begin{eg}
 \begin{enumerate}
-\item $R$ $B$NHsNm0x;RA4BN!JNm0x;R0J30$N85$9$Y$F!K$O!">hK!E*ItJ,=89g$G$"$k!#(B
-\item $P$ $B$r(B $R$ $B$NAG%$%G%"%k$H$7$?$H$-!"(B$R-P$ $B$O!">hK!E*ItJ,=89g$G$"$k!#(B
+\item $R$ の非零因子全体（零因子以外の元すべて）は、乗法的部分集合である。
+\item $P$ を $R$ の素イデアルとしたとき、$R-P$ は、乗法的部分集合である。
 \end{enumerate}
 \end{eg}
 
-$R$ $B$r2D494D(B $S$ $B$r>hK!E*ItJ,=89g$H$9$k!#(B
+$R$ を可換環 $S$ を乗法的部分集合とする。
 
-$R\times S$ $B$K<!$N$h$&$J4X78$rDj5A$9$k!#(B
-$$(a,s)\sim (a',s') \Leftrightarrow (as'-a's)t = 0 \mbox{ $B$H$J$k(B }t\in S\mbox{ $B$,B8:_$9$k!#(B}$$
-$B$9$k$H!"$3$l$OF1CM4X78$K$J$k!#(B$(a,s)$ $B$r4^$`F1CMN`$r(B $a/s$ $B$GI=$7!"F1CMN`A4BN$r(B $S^{-1}R$ $B$GI=$9!#(B$S^{-1}R$ $B$K2CK!$H!">hK!$r<!$N$h$&$KDj5A$9$k!#(B
+$R\times S$ に次のような関係を定義する。
+$$(a,s)\sim (a',s') \Leftrightarrow (as'-a's)t = 0 \mbox{ となる }t\in S\mbox{ が存在する。}$$
+すると、これは同値関係になる。$(a,s)$ を含む同値類を $a/s$ で表し、同値類全体を $S^{-1}R$ で表す。$S^{-1}R$ に加法と、乗法を次のように定義する。
 \begin{itemize}
-\item[$B2CK!!'(B] $(a_1/s_1) + (a_2/s_2) = (a_1s_2 + a_2s_1)/s_1s_2$
-\item[$B>hK!!'(B] $(a_1/s_1)(a_2/s_2) = (a_1a_2/s_1s_2)$
+\item[加法：] $(a_1/s_1) + (a_2/s_2) = (a_1s_2 + a_2s_1)/s_1s_2$
+\item[乗法：] $(a_1/s_1)(a_2/s_2) = (a_1a_2/s_1s_2)$
 \end{itemize}
-$B$3$l$i$NOB!&@Q$O!"(B$S^{-1}R$ $B$NI=$7J}$K$h$i$:!"0l0UE*$KDj$^$j!"2D494D$K$J$k!#$3$l$r(B$R$ $B$N(B $S$ $B$K$h$k>&4D(B (quotient ring) $B$H$$$&!#(B
+これらの和・積は、$S^{-1}R$ の表し方によらず、一意的に定まり、可換環になる。これを$R$ の $S$ による商環 (quotient ring) という。
 
 \note
 \begin{enumerate}
-\item $0_{S^{-1}R} = 0/1$$B!"(B$1_{S^{-1}R} = 1/1$$B!"(B$-(a/s) = (-a)/s$  $B$G$"$j!"(B$s\in S$ $B$J$i$P!"(B$s/1\in U(S^{-1}R)$ $B$G$"$k!#(B
-\item $S$ $B$,Nm0x;R$r4^$^$J$$$H$-$O!"(B$a/s = a'/s' \Leftrightarrow as'-a's = 0$$B!#(B
-\item $\phi_S:R \to S^{-1}R\;(a\mapsto a/1)$ $B$r<+A3$J=`F17?$H$$$&!#(B\\
-$\phi_S$$B!'C1<M(B $\Leftrightarrow$ $S$ $B$O!"Nm0x;R$r4^$^$J$$!#(B
+\item $0_{S^{-1}R} = 0/1$、$1_{S^{-1}R} = 1/1$、$-(a/s) = (-a)/s$  であり、$s\in S$ ならば、$s/1\in U(S^{-1}R)$ である。
+\item $S$ が零因子を含まないときは、$a/s = a'/s' \Leftrightarrow as'-a's = 0$。
+\item $\phi_S:R \to S^{-1}R\;(a\mapsto a/1)$ を自然な準同型という。\\
+$\phi_S$：単射 $\Leftrightarrow$ $S$ は、零因子を含まない。
 \end{enumerate}
 
 \begin{eg}
 \begin{enumerate}
-\item $S$ $B$r(B $R$ $B$NHsNm0x;RA4BN$N;~!"(B$S^{-1}R$ $B$r(B $R$ $B$NA4>&4D(B (ring of total quotients) $B$H$$$&!#(B
-\item $R$ $B$,@00h$N$H$-$O!"(B$R$ $B$NA4>&4D$OBN$K$J$k!#$3$l$r>&BN(B (quotient field) $B$H8F$S!"(B$\cQ(R)$ $B$H$+$/!#(B
+\item $S$ を $R$ の非零因子全体の時、$S^{-1}R$ を $R$ の全商環 (ring of total quotients) という。
+\item $R$ が整域のときは、$R$ の全商環は体になる。これを商体 (quotient field) と呼び、$\cQ(R)$ とかく。
 	\begin{enumerate}
-	\item $\cQ(\bZ) = \bQ$$B!"M-M}@0?t4D$N>&BN$O!"M-M}?tBN$G$"$k!#(B
-	\item $\cQ(K[x_1,\ldots, x_n]) = K(x_1,\ldots, x_n) = \{f/g\mid f,g\in K[x_1,\ldots x_n], \;g\neq 0\}$ $B$G$"$j!"$3$l$rM-M}4X?tBN$H$$$&!#(B
-	\item $P$ $B$r2D494D(B $R$ $B$NAG%$%G%"%k!"(B$(R-p)^{-1}R$ $B$r(B $R_{P}$ $B$H=q$-!"(B$R$ $B$N(B $P$ $B$K$h$k6I=j2=(B (localization) $B$H8F$V!#(B
+	\item $\cQ(\bZ) = \bQ$、有理整数環の商体は、有理数体である。
+	\item $\cQ(K[x_1,\ldots, x_n]) = K(x_1,\ldots, x_n) = \{f/g\mid f,g\in K[x_1,\ldots x_n], \;g\neq 0\}$ であり、これを有理関数体という。
+	\item $P$ を可換環 $R$ の素イデアル、$(R-p)^{-1}R$ を $R_{P}$ と書き、$R$ の $P$ による局所化 (localization) と呼ぶ。
 	\end{enumerate}
 \end{enumerate}
 \end{eg}
 
 \begin{definition}
-$B2D494D(B $R$ $B$,$?$@0l$D$N6KBg%$%G%"%k(B $M$ $B$r;}$D$H$-!"(B$R$ $B$O!"6I=j4D(B (local ring) $B$G$"$k$H$$$&!#(B
+可換環 $R$ がただ一つの極大イデアル $M$ を持つとき、$R$ は、局所環 (local ring) であるという。
 \end{definition}
 
 \note
-$BBN$O!"(B$(0)$ $B$,$?$@0l$D$N6KBg%$%G%"%k$G$"$k$+$i!"6I=j4D$G$"$k!#(B
+体は、$(0)$ がただ一つの極大イデアルであるから、局所環である。
 
-$R$ $B$r6I=j4D!"(B$M$ $B$r$=$N6KBg%$%G%"%k$H$9$k!#(B$I$ $B$r(B $R$ $B$H$O0[$J$k%$%G%"%k$H$9$k$H!"(BZorn $B$NJdBj$rMQ$$$k$3$H$K$h$j!"(B$I$ $B$r4^$`6KBg%$%G%"%k$,0l$DB8:_$9$k!#(B$R$ $B$O!"6I=j4D$G$"$k$+$i(B $I\subset M$ $B$G$"$k$3$H$,J,$+$k!#$9$J$o$A!"(B$M$ $B$O!"(B$R$ $B$N??$N%$%G%"%k$r$9$Y$F4^$`!#(B
+$R$ を局所環、$M$ をその極大イデアルとする。$I$ を $R$ とは異なるイデアルとすると、Zorn の補題を用いることにより、$I$ を含む極大イデアルが一つ存在する。$R$ は、局所環であるから $I\subset M$ であることが分かる。すなわち、$M$ は、$R$ の真のイデアルをすべて含む。
 
 \begin{prop} \label{prop:local_ring}
-$B2D494D(B $R$ $B$K$D$$$F!"<!$NFs$D$O!"F1CM!#(B{\rm [(1) $\Rightarrow$ (2) $B$K$O!"A*Br8xM}$,I,MW(B]}
+可換環 $R$ について、次の二つは、同値。{\rm [(1) $\Rightarrow$ (2) には、選択公理が必要]}
 \begin{itemize}
-\item[$(1)$] $R$ $B$O6I=j4D!#(B
-\item[$(2)$] $R-U(R)$ $B$O!"(B$R$ $B$N%$%G%"%k!#(B
+\item[$(1)$] $R$ は局所環。
+\item[$(2)$] $R-U(R)$ は、$R$ のイデアル。
 \end{itemize}
 \end{prop}
 \proof
-$(1)\Rightarrow (2)$\quad $M$ $B$r(B $R$ $B$N$?$@0l$D$N6KBg%$%G%"%k$H$9$k!#(B$M\neq R$ $B$@$+$i!"(B$M\cap U(R) = \emptyset$ $B$9$J$o$A!"(B$M\subset R - U(R)$$B!#$3$3$G!"(B$a\in R- U(R)$ $B$H$9$k$H!"(B$Ra \neq R$ $B$@$+$i!"(B$a\in Ra \subset M$$B!#$h$C$F!"(B$R - U(R)\subset M$$B!#=>$C$F!"(B$M = R - U(R)$ $B$G$"$j!"$3$l$O%$%G%"%k$G$"$k!#(B
+$(1)\Rightarrow (2)$\quad $M$ を $R$ のただ一つの極大イデアルとする。$M\neq R$ だから、$M\cap U(R) = \emptyset$ すなわち、$M\subset R - U(R)$。ここで、$a\in R- U(R)$ とすると、$Ra \neq R$ だから、$a\in Ra \subset M$。よって、$R - U(R)\subset M$。従って、$M = R - U(R)$ であり、これはイデアルである。
 
-$(2)\Rightarrow (1)$\quad $J$ $B$r(B $R\neq J$ $B$J$k(B $R$ $B$N%$%G%"%k!"(B$I = R - U(R)$ $B$H$9$k!#$3$N$H$-!"(B$J\cap U(R) = \emptyset$  $B$@$+$i!"(B$J\subset I$$B!#$h$C$F(B $I$ $B$O(B $R$ $B$N$?$@0l$D$N6KBg%$%G%"%k$G$"$k!#(B
+$(2)\Rightarrow (1)$\quad $J$ を $R\neq J$ なる $R$ のイデアル、$I = R - U(R)$ とする。このとき、$J\cap U(R) = \emptyset$  だから、$J\subset I$。よって $I$ は $R$ のただ一つの極大イデアルである。
 \qed
 
 \begin{prop}
-$P$  $B$r2D494D(B $R$ $B$NAG%$%G%"%k$H$9$k$H!"6I=j2=(B $R_P$ $B$O6I=j4D$G!"(B
+$P$  を可換環 $R$ の素イデアルとすると、局所化 $R_P$ は局所環で、
 $$P' = \{a/s\mid a\in P,\;s\not\in P\}$$
-$B$,$=$N$?$@0l$D$N6KBg%$%G%"%k$G$"$k!#(B
+がそのただ一つの極大イデアルである。
 \end{prop}
 \proof
-\underline{$P'$ $B$O!"(B$R_P$ $B$N%$%G%"%k$G$"$k!#(B}
+\underline{$P'$ は、$R_P$ のイデアルである。}
 
 \pf
-$(a/s)+(b/t) = (at+bs)/st$$B!"(B$a,b\in P,\;s,t\not\in P$ $B$H$9$k$H!"(B$at+bs\in P$$B!"(B$st\not\in P$ $B$@$+$i!"(B$(at+bs)/st\in P'$$B!#F1MM$K!"(B$r\in R$ $B$N;~!"(B$(r/t)(a/s) = ar/ts\in P'$$B!#=>$C$F!"(B$P'$ $B$O(B $R_P$ $B$N%$%G%"%k$G$"$k!#(B
+$(a/s)+(b/t) = (at+bs)/st$、$a,b\in P,\;s,t\not\in P$ とすると、$at+bs\in P$、$st\not\in P$ だから、$(at+bs)/st\in P'$。同様に、$r\in R$ の時、$(r/t)(a/s) = ar/ts\in P'$。従って、$P'$ は $R_P$ のイデアルである。
 
 \smallskip
 \underline{$a/s\in P'\Leftrightarrow a\not\in P$.}
 
 \pf
-($\Rightarrow$) $a\in P$ $B$J$i$P!"(B$a/s\in P'$ $B$@$+$i!"L@$i$+!#(B
+($\Rightarrow$) $a\in P$ ならば、$a/s\in P'$ だから、明らか。
 
-($\Leftarrow$) $a/s\in P'$ $B$H$9$k$H!"(B$a/s = a'/s'$ $B$H$J$k(B $a'\in P$$B!"(B$s'\not\in P$ $B$,B8:_$9$k!#=>$C$F!"(B$(as' - a's)t = 0$ $B$rK~$?$9(B $t\not\in P$ $B$,B8:_$9$k!#$3$l$h$j!"(B$as't = a'st\in P$ $B$@$+$i!"2>Dj$h$j(B $a\in P$ $B$rF@$k!#(B
+($\Leftarrow$) $a/s\in P'$ とすると、$a/s = a'/s'$ となる $a'\in P$、$s'\not\in P$ が存在する。従って、$(as' - a's)t = 0$ を満たす $t\not\in P$ が存在する。これより、$as't = a'st\in P$ だから、仮定より $a\in P$ を得る。
 
 \smallskip
 \underline{$R_P - P' = U(R_P)$}
 
 \pf
-(`$\subset$' $B$G$"$k$3$H!#(B) $a/s\not\in P'$ $B$H$9$k$H!"(B$a\not\in P$ $B$@$+$i!"(B$s/a\in R_P$$B!#$9$J$o$A!"(B$a/s\in U(R_P)$$B!#(B
+(`$\subset$' であること。) $a/s\not\in P'$ とすると、$a\not\in P$ だから、$s/a\in R_P$。すなわち、$a/s\in U(R_P)$。
 
-(`$\supset$' $B$G$"$k$3$H!#(B) $1\not\in P$ $B$@$+$i!"(B$1/1\not\in P'$$B!#(B$a/s\in U(R_P)\cap P'$ $B$H$9$k$H!"(B$a\in P$ $B$G$"$j!"$+$D!"(B$(a/s)(b/t) = 1/1$ $B$H$J$k!"(B$b\in R$$B!"(B$t\not\in P$ $B$,B8:_$9$k!#$3$l$h$j!"$"$k(B $t'\not\in P$ $B$K$h$j!"(B$abt' = stt'$ $B$H$J$k$,!"$3$N<0$N1&JU$O!"(B$P$ $B$KB0$5$:!":8JU$O!"(B$P$ $B$KB0$9$k$3$H$K$J$jL7=b!#=>$C$F!"(B$U(R_P)\cap P' = \emptyset$$B!#$3$l$h$j!"(B$R_P - P' = U(R_P)$ $B$rF@$k!#(B
+(`$\supset$' であること。) $1\not\in P$ だから、$1/1\not\in P'$。$a/s\in U(R_P)\cap P'$ とすると、$a\in P$ であり、かつ、$(a/s)(b/t) = 1/1$ となる、$b\in R$、$t\not\in P$ が存在する。これより、ある $t'\not\in P$ により、$abt' = stt'$ となるが、この式の右辺は、$P$ に属さず、左辺は、$P$ に属することになり矛盾。従って、$U(R_P)\cap P' = \emptyset$。これより、$R_P - P' = U(R_P)$ を得る。
 \qed
 
 \newpage
-\section{$B0l0UJ,2r@00h(B}
-\subsection{$B0l0UJ,2r@00h$HC19`%$%G%"%k@00h(B}
-$R$ $B$r@00h!"(B$a,b\in R$ $B$H$9$k!#(B
+\section{一意分解整域}
+\subsection{一意分解整域と単項イデアル整域}
+$R$ を整域、$a,b\in R$ とする。
 \begin{itemize}
-\item $(a) \subset (b) \Leftrightarrow a = bc$ $B$H$J$k(B $c\in R$ $B$,$"$k!#$3$N$H$-!"(B$b\mid a$ $B$H=q$/!#(B
-\item $(a) = (b) \Leftrightarrow a = bu$ $B$H$J$k(B $u\in U(R)$ $B$,$"$k!#$3$N$H$-!"(B$a\approx b$ $B$H=q$-F1H<$H$$$&!#(B
-\item $R$ $B$N85(B $p\neq 0$ $B$,@5B'85$G$J$/$+$D!"(B$p = uv \to u\in U(R)$ $BKt$O!"(B$v\in U(R)$ $B$N;~!"(B$p$ $B$rAG85$H$$$&!#(B
+\item $(a) \subset (b) \Leftrightarrow a = bc$ となる $c\in R$ がある。このとき、$b\mid a$ と書く。
+\item $(a) = (b) \Leftrightarrow a = bu$ となる $u\in U(R)$ がある。このとき、$a\approx b$ と書き同伴という。
+\item $R$ の元 $p\neq 0$ が正則元でなくかつ、$p = uv \to u\in U(R)$ 又は、$v\in U(R)$ の時、$p$ を素元という。
 \end{itemize}
 
 \begin{definition}
-$B@00h(B $R$ $B$,<!$NFs$D$N>r7o$rK~$?$9$H$-!"(B$R$ $B$r0l0UJ,2r@00h(B (UFD = Unique Factorization Domain) $B$G$"$k$H$$$&!#(B
+整域 $R$ が次の二つの条件を満たすとき、$R$ を一意分解整域 (UFD = Unique Factorization Domain) であるという。
 \begin{itemize}
-\item[$(i)$] $a\in R$ $B$rNm$G$J$$C185$G$b$J$$85$H$9$k!#(B$a = p_1p_2\cdots p_r$ ($p_i$ $B$OAG85(B) $B$H=q$1$k!#(B
-\item[$(ii)$] $a = p_1p_2\cdots p_r = q_1q_2\cdots q_s$ ($p_i,q_j$ $B$OAG85!K$J$i$P(B $r = s$ $B$GHV9f$rIU$1BX$($l$P(B $p_i\approx q_i$$B!#(B
+\item[$(i)$] $a\in R$ を零でない単元でもない元とする。$a = p_1p_2\cdots p_r$ ($p_i$ は素元) と書ける。
+\item[$(ii)$] $a = p_1p_2\cdots p_r = q_1q_2\cdots q_s$ ($p_i,q_j$ は素元）ならば $r = s$ で番号を付け替えれば $p_i\approx q_i$。
 \end{itemize}
 \end{definition}
 
 \begin{prop} \label{prop:ufd:prime}
-$R$ $B$r@00h!"(B$0\neq p\in R$ $B$H$9$k!#(B
+$R$ を整域、$0\neq p\in R$ とする。
 \begin{itemize}
-\item[$(1)$] $(p)$ $B$,AG%$%G%"%k(B $B$J$i$P!"(B $p$ $B$OAG85!#(B
-\item[$(2)$] $R$ $B$,(B {\rm UFD} $B$J$i$P(B $(p)$ $B$,AG%$%G%"%k$3$H$H!"(B$p$ $B$OAG85$G$"$k$3$H$OF1CM!#(B
+\item[$(1)$] $(p)$ が素イデアル ならば、 $p$ は素元。
+\item[$(2)$] $R$ が {\rm UFD} ならば $(p)$ が素イデアルことと、$p$ は素元であることは同値。
 \end{itemize}
 \end{prop}
 \proof
-$(1)$ $p = ab$ $B$H$9$k!#2>Dj$h$j!"(B$a\in (p)$ $B$^$?$O(B $b\in (p)$$B!#(B$a\in (p)$ $B$H$9$k!#(B
-$(a)\subset (p) = (ab) \subset (a)$ $B$@$+$i!"(B$a\approx p$ $B$G(B $p = au$$B!"(B$u\in U(R)$ $B$H=q$1$k!#(B$a(b - u) = p - p = 0$ $B$G!"(B$R$ $B$O@00h$@$+$i(B $b = u\in U(R)$$B!#(B
+$(1)$ $p = ab$ とする。仮定より、$a\in (p)$ または $b\in (p)$。$a\in (p)$ とする。
+$(a)\subset (p) = (ab) \subset (a)$ だから、$a\approx p$ で $p = au$、$u\in U(R)$ と書ける。$a(b - u) = p - p = 0$ で、$R$ は整域だから $b = u\in U(R)$。
 
-$(2)$ $p$ $B$rAG?t$H$9$k!#(B$ab\in (p)$ $B$H$9$k$H!"(B$a$ $B$^$?$O(B $b\in U(R)$ $B$N$H$-$OL@$i$+!#(B
-$ab = pc$$B!"(B$a = p_1\cdots p_r$$B!"(B$b = q_1\cdots q_s$$B!"(B$c = v_1\cdots v_t$ $B$rAG85J,2r$H$9$k!#(B
+$(2)$ $p$ を素数とする。$ab\in (p)$ とすると、$a$ または $b\in U(R)$ のときは明らか。
+$ab = pc$、$a = p_1\cdots p_r$、$b = q_1\cdots q_s$、$c = v_1\cdots v_t$ を素元分解とする。
 $$p_1\cdots p_rq_1\cdots q_s = pv_1\cdots v_t$$
-$BAG85J,2r$N0l0U@-$h$j(B $p\approx p_i$ $BKt$O(B $p\approx q_j$$B!#$=$3$G!"(B
-$p\approx p_i$ $B$H$9$k$H!"(B$a = p_1\cdots p_r\in (p_i) = (p)$$B!#(B$p\approx q_j$ $B$H$9$k$H!"(B$b = q_1\cdots q_s\in (q_j) = (p)$$B!#(B
+素元分解の一意性より $p\approx p_i$ 又は $p\approx q_j$。そこで、
+$p\approx p_i$ とすると、$a = p_1\cdots p_r\in (p_i) = (p)$。$p\approx q_j$ とすると、$b = q_1\cdots q_s\in (q_j) = (p)$。
 \qed
 
 \medskip
 \note
-$B$3$NL?Bj$O!"$"$k4D(B $R$ $B$,0l0UJ,2r@00h$G$O$J$$$3$H$r<($9$?$a$K$bMQ$$$i$l$k!#$9$J$o$A!"AG85$G$O$"$k$,!"$=$l$G@8@.$5$l$?%$%G%"%k$,!"AG%$%G%"%k$G$O$J$$85$NB8:_$,<($5$l$l$P$=$l$GNI$$!#(B
+この命題は、ある環 $R$ が一意分解整域ではないことを示すためにも用いられる。すなわち、素元ではあるが、それで生成されたイデアルが、素イデアルではない元の存在が示されればそれで良い。
 
 \begin{prop} \label{prop:pid:prime}
-$R$ $B$rC19`%$%G%"%k@00h!"(B$p\neq 0$ $B$H$9$k$H<!$OF1CM!#(B
+$R$ を単項イデアル整域、$p\neq 0$ とすると次は同値。
 \begin{itemize}
-\item[$(1)$] $p$ $B$OAG85!#(B
-\item[$(2)$] $(p)$ $B$OAG%$%G%"%k!#(B
-\item[$(3)$] $(p)$ $B$O6KBg%$%G%"%k!#(B
+\item[$(1)$] $p$ は素元。
+\item[$(2)$] $(p)$ は素イデアル。
+\item[$(3)$] $(p)$ は極大イデアル。
 \end{itemize}
 \end{prop}
 \proof
-$BL?Bj(B~\ref{prop:pid} $B$K$h$j(B $(2)\Leftrightarrow (3)$$B!"$^$?!"L?Bj(B~\ref{prop:ufd:prime} $B$K$h$j(B $(2)\Rightarrow (1)$ $B$b<($7$F$"$k$+$i!"(B$(1)\Rightarrow (3)$ $B$r<($;$P$h$$!#(B
-$(p) \subset I = (q) \subset R$ $B$H$9$k$H!"(B$p = qa$ $B$H=q$1$k!#2>Dj$h$j!"(B$q$ $B$,C185$+!"(B$a$ $B$,C185!#$=$l$>$l!"(B$(q) = R$ $B$^$?$O!"(B$(p) = (q)$ $B$H$J$k!#=>$C$F!"(B$(p)$ $B$O6KBg%$%G%"%k$G$"$k!#(B
+命題~\ref{prop:pid} により $(2)\Leftrightarrow (3)$、また、命題~\ref{prop:ufd:prime} により $(2)\Rightarrow (1)$ も示してあるから、$(1)\Rightarrow (3)$ を示せばよい。
+$(p) \subset I = (q) \subset R$ とすると、$p = qa$ と書ける。仮定より、$q$ が単元か、$a$ が単元。それぞれ、$(q) = R$ または、$(p) = (q)$ となる。従って、$(p)$ は極大イデアルである。
 \qed
 
 \begin{thm} \label{thm:pidisufd}
-$BC19`%$%G%"%k@00h$O0l0UJ,2r@00h$G$"$k!#(B
+単項イデアル整域は一意分解整域である。
 \end{thm}
 \proof
-$R$ $B$rC19`%$%G%"%k@00h$H$7!"(B$0\neq a\in R - U(R)$ $B$H$9$k!#$3$N$H$-!"(B$(a) \neq R$ $B$@$+$i(B $(a)$ $B$r4^$`6KBg%$%G%"%k(B $(p_1)$ $B$,B8:_$9$k!#L?Bj(B~\ref{prop:pid:prime} $B$h$j(B $p_1$ $B$OAG85$G$"$k!#(B
-$(a)\subset (p_1)$ $B$h$j!"(B$a = p_1a_1$ $B$HI=$9$3$H$,=PMh!"(B$p_1\not\in U(R)$ $B$h$j!"(B$(a_1)$ $B$O!"(B$(a)$ $B$r??$K4^$`!#(B$a_1\not\in U(R)$ $B$J$i$PAG85(B $p_2$ $B$,B8:_$7$F!"(B$a_1 = p_2a_2$$B!"(B($a = p_1p_2a_2$) $B$H=q$/$3$H$,=PMh$k!#$3$NMM$K$7$F=g$K(B $a_i$ $B$r<h$C$F$$$/$H$-!"@5B'85$G$J$$8B$j$K$*$$$F!"??$KA}2C$9$kNs(B
+$R$ を単項イデアル整域とし、$0\neq a\in R - U(R)$ とする。このとき、$(a) \neq R$ だから $(a)$ を含む極大イデアル $(p_1)$ が存在する。命題~\ref{prop:pid:prime} より $p_1$ は素元である。
+$(a)\subset (p_1)$ より、$a = p_1a_1$ と表すことが出来、$p_1\not\in U(R)$ より、$(a_1)$ は、$(a)$ を真に含む。$a_1\not\in U(R)$ ならば素元 $p_2$ が存在して、$a_1 = p_2a_2$、($a = p_1p_2a_2$) と書くことが出来る。この様にして順に $a_i$ を取っていくとき、正則元でない限りにおいて、真に増加する列
 $$(a) \subset (a_1) \subset (a_2) \subset \cdots \subset (a_i)\subset \cdots$$
-$B$,$D$/$l$k!#(B
-$\bigcup_{i=1}^\infty (a_i)$  $B$O(B $R$ $B$N%$%G%"%k$@$+$i!"(B$\bigcup_{i = 1}^\infty (a_i) = (d)$ $B$H=q$1$k!#=>$C$F!"$"$k(B $i$ $B$K$D$$$F!"(B$d\in (a_i)$ $B$H$J$k$+$i!"(B$(a_i) = (a_{i+1})$ $B$H$J$j??$KA}2C$9$k$3$H$O$J$$!#$h$C$F$"$k(B $r$ $B$K$D$$$F(B $a_r$ $B$O@5B'85!"$9$J$o$A!"(B$p_ra_r$ $B$OAG85$G!"(B$a = p_1p_2\cdots (p_ra_r)$$B!#(B
+がつくれる。
+$\bigcup_{i=1}^\infty (a_i)$  は $R$ のイデアルだから、$\bigcup_{i = 1}^\infty (a_i) = (d)$ と書ける。従って、ある $i$ について、$d\in (a_i)$ となるから、$(a_i) = (a_{i+1})$ となり真に増加することはない。よってある $r$ について $a_r$ は正則元、すなわち、$p_ra_r$ は素元で、$a = p_1p_2\cdots (p_ra_r)$。
 
-\underline{$B0l0U@-(B}$B!'(B
-$a = p_1p_2\cdots p_r = q_1q_2\cdots q_s$$B!"(B$r\leq s$ $B$H$7!"(B$r$ $B$K4X$9$k5"G<K!$rMQ$$$k!#(B$q_1q_2 \cdots q_s = a\in (p_1)$ $B$G!"(B$(p_1)$ $B$OAG%$%G%"%k$@$+$i!"(B$q_i\in (p_1)$ $B$H$J$k(B $i$ $B$,$"$k!#$7$+$7!"(B$(q_i)\subset (p_1)$ $B$G!"$I$A$i$b6KBg%$%G%"%k$G$"$k$+$i!"(B$(q_i)\approx (p_1)$ $B$G$"$k!#HV9f$rIU$1BX$(!"(B$q_1 = p_1u$$B!"(B$u\in U(R)$ $B$H$9$k$H!"(B
+\underline{一意性}：
+$a = p_1p_2\cdots p_r = q_1q_2\cdots q_s$、$r\leq s$ とし、$r$ に関する帰納法を用いる。$q_1q_2 \cdots q_s = a\in (p_1)$ で、$(p_1)$ は素イデアルだから、$q_i\in (p_1)$ となる $i$ がある。しかし、$(q_i)\subset (p_1)$ で、どちらも極大イデアルであるから、$(q_i)\approx (p_1)$ である。番号を付け替え、$q_1 = p_1u$、$u\in U(R)$ とすると、
 $$p_1p_2\cdots p_r = p_1uq_2\cdots q_s$$
-$B$rF@$k$+$i!"(B$p_2\cdots p_r = uq_2\cdots q_s$$B!#5"G<K!$K$h$j!"(B$r = s$ $B$+$D!"HV9f$NIU$1BX$($K$h$j!"(B$p_i\approx q_i$ $B$H$J$k$3$H$,J,$+$k!#(B
+を得るから、$p_2\cdots p_r = uq_2\cdots q_s$。帰納法により、$r = s$ かつ、番号の付け替えにより、$p_i\approx q_i$ となることが分かる。
 \qed
 
 \medskip
-$B$3$l$K$h$j!"%f!<%/%j%C%I@00h$O!"C19`%$%G%"%k@00h$G$"$j!"C19`%$%G%"%k@00h$O!"0l0UJ,2r@00h$G$"$k$3$H$,J,$+$C$?!#$7$+$7!"$3$l$@$1$G$O!"(B$\bZ[x]$ $B$d!"(B$\bQ[x_1,\cdots, x_n]$ $B$,0l0UJ,2r@00h$+$I$&$+$OJ,$+$i$J$$!#(B
+これにより、ユークリッド整域は、単項イデアル整域であり、単項イデアル整域は、一意分解整域であることが分かった。しかし、これだけでは、$\bZ[x]$ や、$\bQ[x_1,\cdots, x_n]$ が一意分解整域かどうかは分からない。
 
 \begin{eg}
-$\bZ[\sqrt{-5}] = \{a + b\sqrt{-5}\mid a,b\in \bZ\}$ $B$O0l0UJ,2r@00h$G$O$J$$;v$r<($9!#(B
-$B>e$G$bCm0U$7$?$h$&$K!"(B2  $B$OAG85$G$"$k$,!"(B$(2)$ $B$OAG%$%G%"%k$G$O$J$$$3$H$r<($9!#(B
+$\bZ[\sqrt{-5}] = \{a + b\sqrt{-5}\mid a,b\in \bZ\}$ は一意分解整域ではない事を示す。
+上でも注意したように、2  は素元であるが、$(2)$ は素イデアルではないことを示す。
 \begin{itemize}
-\item $\alpha = a +b\sqrt{-5}$ $B$N$H$-!"(B$N(\alpha) = \alpha\bar{\alpha} = a^2 + 5b^2$ $B$H$9$k$H!"(B
+\item $\alpha = a +b\sqrt{-5}$ のとき、$N(\alpha) = \alpha\bar{\alpha} = a^2 + 5b^2$ とすると、
 $$\alpha\in U(\bZ[\sqrt{-5}]) \Leftrightarrow N(\alpha) = 1 \Leftrightarrow \alpha = \pm 1.$$
 
 \pf 
-$\pm 1\in U(\bZ[\sqrt{-5}])$ $B$OL@$i$+!#5U$K(B $\alpha\beta = 1$ $B$H$9$k$H!"(B
+$\pm 1\in U(\bZ[\sqrt{-5}])$ は明らか。逆に $\alpha\beta = 1$ とすると、
 $$1 = N(\alpha\beta) = N(\alpha)N(\beta)$$
-$B$@$+$i!"(B$a^2 + 5b^2 = N(\alpha) = 1$$B!#$3$l$rK~$?$9(B $a,b\in \bZ$ $B$r9M$($k$H!"(B$b = 0$$B!"(B$a = \pm 1$ $B$G$"$k$3$H$,J,$+$k!#(B
-\item $2$ $B$OAG85!#(B
+だから、$a^2 + 5b^2 = N(\alpha) = 1$。これを満たす $a,b\in \bZ$ を考えると、$b = 0$、$a = \pm 1$ であることが分かる。
+\item $2$ は素元。
 
 \pf 
-$2 = \alpha\beta$$B!"(B$N(\alpha)\neq 1$$B!"(B$N(\beta)\neq 1$$B!"(B$\alpha = a + b\sqrt{-5}$ $B$H$9$k!#(B
+$2 = \alpha\beta$、$N(\alpha)\neq 1$、$N(\beta)\neq 1$、$\alpha = a + b\sqrt{-5}$ とする。
 $$4 = N(2) = N(\alpha\beta) = N(\alpha)N(\beta)$$
-$B$@$+$i!"(B$a^2 + 5b^2 = N(\alpha) = 2$$B!#$7$+$7$3$l$OIT2DG=$G$"$k!#=>$C$F!"(B$N(\alpha) = 1$ $BKt$O!"(B$N(\beta) = 1$ $B$9$J$o$A!"(B$\alpha, \beta$ $B$N$&$A$I$A$i$+$O!"C185$G$"$k!#(B
-\item $(2)$ $B$O!"AG%$%G%"%k$G$O$J$$!#(B
+だから、$a^2 + 5b^2 = N(\alpha) = 2$。しかしこれは不可能である。従って、$N(\alpha) = 1$ 又は、$N(\beta) = 1$ すなわち、$\alpha, \beta$ のうちどちらかは、単元である。
+\item $(2)$ は、素イデアルではない。
 
 \pf
-$(1+\sqrt{-5})(1-\sqrt{-5}) = 6 \in (2)$$B!#$3$3$G!"(B$1\pm\sqrt{-5}$ $B$N$I$A$i$+$,!"(B$(2)$ $B$KF~$k$H$9$k$H!"(B$1\pm \sqrt{-5} = 2\gamma$ $B$H=q$$$?$H$-!"(B
+$(1+\sqrt{-5})(1-\sqrt{-5}) = 6 \in (2)$。ここで、$1\pm\sqrt{-5}$ のどちらかが、$(2)$ に入るとすると、$1\pm \sqrt{-5} = 2\gamma$ と書いたとき、
 $$6 = N(1\pm\sqrt{-5}) = 4N(\gamma)$$
-$B$H$J$j!"$3$l$OIT2DG=$G$"$k!#=>$C$F!"(B$1\pm\sqrt{-5}$ $B$I$A$i$b(B $(2)$ $B$KF~$i$J$$!#$3$l$O!"(B$(2)$ $B$,AG%$%G%"%k$G$O$J$$$3$H$r<($9!#(B
+となり、これは不可能である。従って、$1\pm\sqrt{-5}$ どちらも $(2)$ に入らない。これは、$(2)$ が素イデアルではないことを示す。
 \end{itemize}
 \end{eg}
 
 \newpage
-\subsection{$B0l0UJ,2r@00h>e$NB?9`<04D(B}
-$B$3$3$G$O!"(B$R$ $B$r0l0UJ,2r@00h!"(B$K = \cQ(R)$ $B$r>&BN$H$9$k!#(B
+\subsection{一意分解整域上の多項式環}
+ここでは、$R$ を一意分解整域、$K = \cQ(R)$ を商体とする。
 
 \begin{itemize}
-\item $d$ $B$,!"(B$a_1, \ldots, a_n\in R$ $B$N:GBg8xLs85$G$"$k$H$O!"0J2<$N#2>r7o$rK~$?$9$3$H$G$"$k!#(B
+\item $d$ が、$a_1, \ldots, a_n\in R$ の最大公約元であるとは、以下の２条件を満たすことである。
 	\begin{enumerate}
-	\item $d\mid a_i$, $i = 1, 2,\ldots, n$$B!#(B
-	\item $c\mid a_i$, $i = 1, 2, \ldots, n$ $B$J$i$P!"(B$c\mid d$$B!#(B
+	\item $d\mid a_i$, $i = 1, 2,\ldots, n$。
+	\item $c\mid a_i$, $i = 1, 2, \ldots, n$ ならば、$c\mid d$。
 	\end{enumerate}
-\item $l$ $B$,!"(B$a_1, \ldots, a_n\in R$ $B$N:G>.8xG\85$G$"$k$H$O!"0J2<$N#2>r7o$rK~$?$9$3$H$G$"$k!#(B
+\item $l$ が、$a_1, \ldots, a_n\in R$ の最小公倍元であるとは、以下の２条件を満たすことである。
 	\begin{enumerate}
-	\item $a_i\mid l$, $i = 1, 2,\ldots, n$$B!#(B
-	\item $a_i\mid m$, $i = 1, 2, \ldots, n$ $B$J$i$P!"(B$l\mid m$$B!#(B
+	\item $a_i\mid l$, $i = 1, 2,\ldots, n$。
+	\item $a_i\mid m$, $i = 1, 2, \ldots, n$ ならば、$l\mid m$。
 	\end{enumerate}
-\item $a_1, a_2, \ldots, a_n$ $B$N:GBg8xLs85$,(B 1 $B$G$"$k$H$-!"(B$a_1, a_2, \ldots, a_n$ $B$O!"8_$$$KAG(B (coprime) $B$G$"$k$H$$$&!#(B
-\item $a_0, a_1, \ldots, a_n$ $B$,8_$$$KAG$G$"$k;~!"(B$f(x) = a_0 + a_1x + \cdots + a_nx^n\in R[x]$ $B$r86;OB?9`<0(B (primitive polynomial) $B$H$$$&!#(B
+\item $a_1, a_2, \ldots, a_n$ の最大公約元が 1 であるとき、$a_1, a_2, \ldots, a_n$ は、互いに素 (coprime) であるという。
+\item $a_0, a_1, \ldots, a_n$ が互いに素である時、$f(x) = a_0 + a_1x + \cdots + a_nx^n\in R[x]$ を原始多項式 (primitive polynomial) という。
 \end{itemize}
 
-$BN}=,LdBj$K$b$"$k$h$&$K!"(B$R$ $B$,0l0UJ,2r@00h$J$i$P:GBg8xLs85!":G>.8xG\85$OB8:_$9$k!#(B
+練習問題にもあるように、$R$ が一意分解整域ならば最大公約元、最小公倍元は存在する。
 
 \begin{thm} \label{thm:poly_ufd}
-$B0l0UJ,2r@00h(B $R$ $B>e$NB?9`<04D(B $R[x_1,x_2,\ldots,x_n]$ $B$O!"0l0UJ,2r(B|$B@00h$G$"$k!#(B
+一意分解整域 $R$ 上の多項式環 $R[x_1,x_2,\ldots,x_n]$ は、一意分解|整域である。
 \end{thm}
 
 \begin{lemma} \label{lemma:inhalt}
-$f(x)\in K[x]$ $B$H$9$k$H!"(B$c\in K$ $B$H!"86;OB?9`<0(B $f_0(x)\in R[x]$ $B$G!"(B$f(x) = cf_0(x)$ $B$H$J$k$b$N$,$"$k!#$3$N(B $c$ $B$O(B $R$ $B$N@5B'85G\$r$N$>$$$F0l0UE*$K7h$^$k!#$3$l$r(B $I(f)$ $B$H=q$/!#(B
+$f(x)\in K[x]$ とすると、$c\in K$ と、原始多項式 $f_0(x)\in R[x]$ で、$f(x) = cf_0(x)$ となるものがある。この $c$ は $R$ の正則元倍をのぞいて一意的に決まる。これを $I(f)$ と書く。
 \end{lemma}
 \proof
-$f(x) = (b_0/a_0) + (b_1/a_1)x + \cdots + (b_n/a_n)x^n$$B!"(B$0\neq a_i, b_j\in R$$B!#(B$m$ $B$r(B $a_0, a_1, \ldots, a_n$ $B$N:G>.8xG\85!"(B$m = a_ic_i$$B!"(B$d$ $B$r(B $b_0c_0, b_1c_1, \ldots, b_nc_n$ $B$N:GBg8xLs85!"(B$de_i = b_ic_i$ $B$H$9$k!#(B$e_0, e_1, \ldots, e_n$ $B$O8_$$$KAG$G$"$k!#$5$i$K!"(B
+$f(x) = (b_0/a_0) + (b_1/a_1)x + \cdots + (b_n/a_n)x^n$、$0\neq a_i, b_j\in R$。$m$ を $a_0, a_1, \ldots, a_n$ の最小公倍元、$m = a_ic_i$、$d$ を $b_0c_0, b_1c_1, \ldots, b_nc_n$ の最大公約元、$de_i = b_ic_i$ とする。$e_0, e_1, \ldots, e_n$ は互いに素である。さらに、
 \begin{eqnarray*}
 f(x) & = & (b_0/a_0) + (b_1/a_1)x + \cdots + (b_n/a_n)x^n\\
 	& = & \frac1m(b_0c_0 + b_1c_1x + \cdots + b_nc_nx^n)\\
 	& = & \frac dm(e_0 + e_1x + \cdots + e_nx^n)
 \end{eqnarray*}
-$B$3$3$G!"(B$c = d/m$$B!"(B$f_0(x) = e_0 + e_1x + \cdots + e_nx^n$ $B$H$*$1$P$h$$!#(B
+ここで、$c = d/m$、$f_0(x) = e_0 + e_1x + \cdots + e_nx^n$ とおけばよい。
 
-$f(x) = cf_0(x) = c'f'_0(x)$$B!"(B$f_0(x)$$B!"(B$f_0'(x)$ $B$O!"(B$R$ $B>e$N86;OB?9`<0!"(B$c = b/a$$B!"(B$c' = b'/a'$$B!"(B$a$ $B$H(B $b$$B!"(B$a'$ $B$H(B $b'$ $B$O8_$$$KAG$J(B $R$ $B$N85$H$9$k!#(B
-$a'bf_0(x) = ab'f'_0(x)$ $B$@$+$i!"$=$l$>$l$N78?t$N:GBg8xLs85$r9M$($k$H!":GBg8xLs85$O!"@5B'85G\$r$N$>$$$F!"0l0U$K7h$^$j!"(B$f_0(x)$$B!"(B$f_0'(x)$ $B$O$H$b$K86;OB?9`<0$@$+$i!"(B$a'b = ab'u$ $B$H$J$k(B $u\in U(R)$ $B$,$"$k!#=>$C$F!"(B$c = b/a = (b'/a')u = c'u$$B!#(B
+$f(x) = cf_0(x) = c'f'_0(x)$、$f_0(x)$、$f_0'(x)$ は、$R$ 上の原始多項式、$c = b/a$、$c' = b'/a'$、$a$ と $b$、$a'$ と $b'$ は互いに素な $R$ の元とする。
+$a'bf_0(x) = ab'f'_0(x)$ だから、それぞれの係数の最大公約元を考えると、最大公約元は、正則元倍をのぞいて、一意に決まり、$f_0(x)$、$f_0'(x)$ はともに原始多項式だから、$a'b = ab'u$ となる $u\in U(R)$ がある。従って、$c = b/a = (b'/a')u = c'u$。
 \qed
 
 \medskip
-$K$ $B$N#285(B $c, c'$ $B$K$D$$$F!"(B$c' = cu$ $B$H$J$k(B $u\in U(R)$ $B$,B8:_$9$k$H$-!"(B$c\approx c'$ $B$H=q$/!#$3$N$H$-!"(B$f(x)\in K[x]$ $B$K$D$$$F!"(B
+$K$ の２元 $c, c'$ について、$c' = cu$ となる $u\in U(R)$ が存在するとき、$c\approx c'$ と書く。このとき、$f(x)\in K[x]$ について、
 \begin{itemize}
-\item $f(x)\in R[x] \Leftrightarrow I(f)\in R$$B!#(B
-\item $f(x) \mbox{ $B$,86;OB?9`<0(B } \Leftrightarrow I(f)\approx 1$$B!#(B
+\item $f(x)\in R[x] \Leftrightarrow I(f)\in R$。
+\item $f(x) \mbox{ が原始多項式 } \Leftrightarrow I(f)\approx 1$。
 \end{itemize}
 
 \begin{lemma} \label{lemma:productofprimitive}
 \begin{itemize}
-\item[$(1)$] $B86;OB?9`<0$N@Q$O86;OB?9`<0!#(B
-\item[$(2)$] $f(x), g(x)\in K[x]$ $B$J$i$P!"(B$I(fg)\approx I(f)I(g)$$B!#(B
+\item[$(1)$] 原始多項式の積は原始多項式。
+\item[$(2)$] $f(x), g(x)\in K[x]$ ならば、$I(fg)\approx I(f)I(g)$。
 \end{itemize}
 \end{lemma}
 \proof
-$(1)$ $f(x) = a_0 + a_1x + \cdots + a_lx^l$$B!"(B$g(x) = b_0 + b_1x + \cdots + b_mx^m$ $B$r86;OB?9`<0!"(B
+$(1)$ $f(x) = a_0 + a_1x + \cdots + a_lx^l$、$g(x) = b_0 + b_1x + \cdots + b_mx^m$ を原始多項式、
 $$h(x) = f(x)g(x) = c_0 + c_1x + \cdots + a_nx^n,\;p\mid c_i, ;i = 0,1,\ldots, n$$
-$p$ $B$OAG85!"$H$9$k!#(B$a_i$ $B$N$&$A!"(B$p$ $B$G3d$l$J$$:G>.$N(B $i$ $B$r(B $i_0$ $B$H$9$k!#$^$?!"(B$b_j$ $B$N$&$A!"(B$p$ $B$G3d$l$J$$:G>.$N(B $j$ $B$r(B $j_0$ $B$H$9$k!#$9$k$H!"(B
+$p$ は素元、とする。$a_i$ のうち、$p$ で割れない最小の $i$ を $i_0$ とする。また、$b_j$ のうち、$p$ で割れない最小の $j$ を $j_0$ とする。すると、
 \begin{eqnarray*}
 c_{i_0+j_0} & = & a_0b_{i_0+j_0}  + \cdots + a_{i_0-1}b_{j_0+1}+ a_{i_0}b_{j_0}+ a_{i_0+1}b_{j_0-1} + \cdots + a_{i_0+j_0}b_0\\
 & \equiv & a_{i_0}b_{j_0} \;(\mod (p))\\
 & \not\equiv & 0\;(\mod (p))
 \end{eqnarray*}
 
-$(2)$ $f(x) = I(f)f_0(x)$$B!"(B$g(x) = I(g)g_0(x)$ $B$G!"(B$f_0(x)$$B!"(B$g_0(x)$ $B$O86;OB?9`<0$H=q$/!#$9$k$H!"(B$f(x)g(x) = I(f)I(g)f_0(x)g_0(x)$ $B$G!"(B$f_0(x)g_0(x)$ $B$O!"(B$(1)$ $B$h$j!"86;OB?9`<0$@$+$i!"(B$I(f)I(g)\approx I(fg)$$B!#(B
+$(2)$ $f(x) = I(f)f_0(x)$、$g(x) = I(g)g_0(x)$ で、$f_0(x)$、$g_0(x)$ は原始多項式と書く。すると、$f(x)g(x) = I(f)I(g)f_0(x)g_0(x)$ で、$f_0(x)g_0(x)$ は、$(1)$ より、原始多項式だから、$I(f)I(g)\approx I(fg)$。
 \qed
 
 \begin{prop} \label{prop:gauss'lemma}
-$f(x)\in R[x]$ $B$KBP$7$F!"(B$f(x)$ $B$,(B $R[x]$ $B$N85$H$7$F4{Ls$G$"$k$3$H$H!"(B$K[x]$ $B$N85$H$7$F4{Ls$G$"$k$3$H$OF1CM$G$"$k!#(B
+$f(x)\in R[x]$ に対して、$f(x)$ が $R[x]$ の元として既約であることと、$K[x]$ の元として既約であることは同値である。
 \end{prop}
 \proof
-$f(x)$ $B$,(B $K[x]$ $B$N85$H$7$F4{Ls$J$i$P!"(B$R[x]$ $B$N85$H$7$F4{Ls$G$"$k$3$H$OL@$i$+!#(B$K[x]$ $B$K$*$$$F!"(B$f(x) = g(x)h(x)$$B!"(B$g(x), h(x)\in K[x]$ $B$H$9$k!#$3$3$G!"(B$g(x) = I(g)g_0(x)$$B!"(B$h(x) = I(h)h_0(x)$$B!"(B$f_0(x), g_0(x)$ $B$O86;OB?9`<0$H$9$k$H!"(B$f(x) = I(g)I(h)g_0(x)h_0(x)$$B!"(B$f(x)\in R[x]$ $B$h$j!"(B$I(g)I(h)\approx I(gh)\in R$$B!#=>$C$F!"(B$\deg g_0 = \deg g = 0$ $BKt$O!"(B$\deg h_0 = \deg h = 0$$B!#=>$C$F!"(B$K[x]$ $B$K$*$$$F$b4{Ls$G$"$k!#(B
+$f(x)$ が $K[x]$ の元として既約ならば、$R[x]$ の元として既約であることは明らか。$K[x]$ において、$f(x) = g(x)h(x)$、$g(x), h(x)\in K[x]$ とする。ここで、$g(x) = I(g)g_0(x)$、$h(x) = I(h)h_0(x)$、$f_0(x), g_0(x)$ は原始多項式とすると、$f(x) = I(g)I(h)g_0(x)h_0(x)$、$f(x)\in R[x]$ より、$I(g)I(h)\approx I(gh)\in R$。従って、$\deg g_0 = \deg g = 0$ 又は、$\deg h_0 = \deg h = 0$。従って、$K[x]$ においても既約である。
 \qed
 
 \begin{lemma} \label{lemma:primeinpoly}
-$f(x)$ $B$r(B $R[x]$ $B$NAG85$H$9$k$H!"<!$N$$$:$l$+$,@.N)!#(B
+$f(x)$ を $R[x]$ の素元とすると、次のいずれかが成立。
 \begin{itemize}
-\item[$(i)$] $\deg f = 0$ $B$G!"(B$f$ $B$O(B $R$ $B$NAG85!#(B
-\item[$(ii)$] $\deg f>0$ $B$G!"(B$f$ $B$O4{Ls$J86;OB?9`<0!#(B
+\item[$(i)$] $\deg f = 0$ で、$f$ は $R$ の素元。
+\item[$(ii)$] $\deg f>0$ で、$f$ は既約な原始多項式。
 \end{itemize}
 \end{lemma}
 \proof
-$U(R[x]) = U(R)$ $B$G$"$k;v$KCm0U$9$k$H!"$+$D>e$N(B $(i),(ii)$ $B$,AG85$G$"$k$3$H$OL@$+!#(B
+$U(R[x]) = U(R)$ である事に注意すると、かつ上の $(i),(ii)$ が素元であることは明か。
 
-$B5U$K(B $f(x)$ $B$rAG85$H$9$k!#(B$f = gh$ $B$H$9$k$H!"(B$g, h$ $B$N$$$:$l$+$O!"(B$U(R[x]) = U(R)$ $B$N85$@$+$i!"(B$f\in R$ $BKt$O!"F1$8$3$H$@$,(B $\deg f = 0$ $B$J$i$P!"(B$f$ $B$O!"(B$R$ $B$NAG85$G$"$k!#(B$\deg f >0$ $B$J$i$P!"(B$f$ $B$O4{Ls$G!"$+$D(B $f = I(f)f_0$ $B$h$j(B $I(f)\in U(R)$ $B$H$J$j(B $f$ $B$O86;OB?9`<0!#=>$C$F!"$3$N>l9g$O!"(B$(ii)$ $B$,@.N)$9$k!#(B
+逆に $f(x)$ を素元とする。$f = gh$ とすると、$g, h$ のいずれかは、$U(R[x]) = U(R)$ の元だから、$f\in R$ 又は、同じことだが $\deg f = 0$ ならば、$f$ は、$R$ の素元である。$\deg f >0$ ならば、$f$ は既約で、かつ $f = I(f)f_0$ より $I(f)\in U(R)$ となり $f$ は原始多項式。従って、この場合は、$(ii)$ が成立する。
 \qed
 
 \medskip
-{\gt $BDjM}(B~\ref{thm:poly_ufd} $B$N>ZL@(B\quad}
-$R[x_1,\ldots, x_{n-1},x_n] = (R[x_1,\ldots,x_{n-1}])[x_{n}]$ $B$@$+$i!"(B$n = 1$ $B$N>l9g!"$9$J$o$A!"(B$R$ $B$,0l0UJ,2r@00h$N;~!"(B$R[x]$ $B$,0l0UJ,2r@00h$G$"$k$3$H$r<($;$P$h$$!#(B
+{\gt 定理~\ref{thm:poly_ufd} の証明\quad}
+$R[x_1,\ldots, x_{n-1},x_n] = (R[x_1,\ldots,x_{n-1}])[x_{n}]$ だから、$n = 1$ の場合、すなわち、$R$ が一意分解整域の時、$R[x]$ が一意分解整域であることを示せばよい。
 
-$0\neq f(x)\in R[x]$ $B$,AG85J,2r2DG=$G$"$k$3$H$r(B $\deg f$ $B$K4X$9$k5"G<K!$G<($9!#(B$\deg f = 0$ $B$N;~$O!"(B$R$ $B$,0l0UJ,2r@00h$G$"$k$+$i!"JdBj(B~\ref{lemma:primeinpoly} $(i)$ $B$KCm0U$9$l$P(B $R[x]$ $B$NAG85$KJ,2r$G$-$k$3$H$,J,$+$k!#(B$\deg f > 0$ $B$+$D2DLs$N;~$O!"(B$f = gh$$B!"(B$\deg g>0, \deg h>0$ $B$HI=$9$H!"(B$\deg g<\deg f$$B!"(B$\deg h<\deg f$ $B$@$+$i!"5"G<K!$N2>Dj$K$h$j!"(B$g$$B!"(B$h$ $B$H$b$KAG85J,2r$G$-$k!#=>$C$F!"(B$f$ $B$bAG85J,2r$G$-$k!#$=$3$G4{Ls$H$9$k!#$9$k$H!"(B$f = I(f)f_0$$B!"(B$f_0$ $B$O86;OB?9`<0$H=q$/$H!"(B$f_0$ $B$O4{Ls$G$b$"$k$+$i!"JdBj(B~\ref{lemma:primeinpoly} $(ii)$ $B$K$h$jAG85!"8e$O!"(B$I(f)$ $B$K(B $R$ $B$K$*$1$kAG85J,2r$rE,MQ$9$l$P(B $R[x]$ $B$K$*$1$kAG85J,2r$,F@$i$l$k!#(B
+$0\neq f(x)\in R[x]$ が素元分解可能であることを $\deg f$ に関する帰納法で示す。$\deg f = 0$ の時は、$R$ が一意分解整域であるから、補題~\ref{lemma:primeinpoly} $(i)$ に注意すれば $R[x]$ の素元に分解できることが分かる。$\deg f > 0$ かつ可約の時は、$f = gh$、$\deg g>0, \deg h>0$ と表すと、$\deg g<\deg f$、$\deg h<\deg f$ だから、帰納法の仮定により、$g$、$h$ ともに素元分解できる。従って、$f$ も素元分解できる。そこで既約とする。すると、$f = I(f)f_0$、$f_0$ は原始多項式と書くと、$f_0$ は既約でもあるから、補題~\ref{lemma:primeinpoly} $(ii)$ により素元、後は、$I(f)$ に $R$ における素元分解を適用すれば $R[x]$ における素元分解が得られる。
 
-\underline{$B0l0U@-!'(B }
-$f = p_1\cdots p_kf_1\cdots f_l = q_1\cdots q_mg_1\cdots g_n$ $B$r(B $f$ $B$NAG85J,2r$H$7!"(B\\
-$p_1, \ldots, p_k, q_1, \ldots, q_m\in R$$B!"(B$f_1, \ldots, f_l, g_1, \ldots, g_n$ $B$O<!?t$,(B 1 $B0J>e$N4{Ls86;OB?9`<0$H$9$k!#$9$k$H!"(B$f_1\cdots f_l$$B!"(B$g_1\cdots g_n$ $B$O(B $BJdBj(B~\ref{lemma:productofprimitive} $B$K$h$j!"$H$b$K86;OB?9`<0$@$+$i!"(B
+\underline{一意性： }
+$f = p_1\cdots p_kf_1\cdots f_l = q_1\cdots q_mg_1\cdots g_n$ を $f$ の素元分解とし、\\
+$p_1, \ldots, p_k, q_1, \ldots, q_m\in R$、$f_1, \ldots, f_l, g_1, \ldots, g_n$ は次数が 1 以上の既約原始多項式とする。すると、$f_1\cdots f_l$、$g_1\cdots g_n$ は 補題~\ref{lemma:productofprimitive} により、ともに原始多項式だから、
 $$I(f) \approx p_1\cdots p_k \approx q_1\cdots q_m$$
-$B$rF@!"$"$k(B $u\in U(R)$ $B$K$h$C$F!"(B$up_1\cdots p_k = q_1\cdots q_m$ $B$H=q$1$k$+$i!"(B$R$ $B$,0l0UJ,2r@00h$G$"$k$3$H$h$j!"$3$NItJ,$N0l0U@-$OF@$i$l$k!#0lJ}!"(B
-$K[x]$ $B$O!"BN>e$NB?9`<04D$@$+$i%f!<%/%j%C%I@00h!"$H$/$K0l0UJ,2r@00h$G(B $uf_1\cdots f_l = g_1\cdots g_n$ $B$K0l0U@-$rE,MQ$9$k$H!"E,Ev$K=gHV$rF~$lBX$($k$H!"(B$c_if_i = g_i$$B!"(B$c_i\in K$ $B$H=q$/$3$H$,=PMh$k!#(B$I(g_i) = 1$ $B$@$+$i(B $c_i\in R$ $B$rF@!"(B$g_i$ $B$,86;OB?9`<0$G$"$k$3$H$h$j!"(B$c_i\in U(R)$ $B$rF@$k!#=>$C$F!"J,2r$O0l0UE*$G$"$k!#(B
+を得、ある $u\in U(R)$ によって、$up_1\cdots p_k = q_1\cdots q_m$ と書けるから、$R$ が一意分解整域であることより、この部分の一意性は得られる。一方、
+$K[x]$ は、体上の多項式環だからユークリッド整域、とくに一意分解整域で $uf_1\cdots f_l = g_1\cdots g_n$ に一意性を適用すると、適当に順番を入れ替えると、$c_if_i = g_i$、$c_i\in K$ と書くことが出来る。$I(g_i) = 1$ だから $c_i\in R$ を得、$g_i$ が原始多項式であることより、$c_i\in U(R)$ を得る。従って、分解は一意的である。
 \qed
 
 \newpage
-\section{$B2C72(B}
+\section{加群}
 \begin{definition}
-$R$ $B$r4D!"(B$M$ $B$r2C72$H$7!"<LA|!"(B
+$R$ を環、$M$ を加群とし、写像、
 $$R\times M \to M,\;(r,m)\mapsto rm$$
-$B$,M?$($i$l!"<!$N>r7o$rK~$?$9$H$-!"(B$M$ $B$r(B $R$-$B:82C72!J$^$?$OC1$K(B $R$-$B2C72!K$H$$$&!#(B
+が与えられ、次の条件を満たすとき、$M$ を $R$-左加群（または単に $R$-加群）という。
 $$r(x+y) = rx+ry, \;(r+s)x = rx+ry,\;(rs)x = r(sx), \;1x = x$$
-$(x,y\in M,\;r,s\in R)$$B!#(B
+$(x,y\in M,\;r,s\in R)$。
 \end{definition}
 
 \begin{itemize}
-\item $R$-$B1&2C72$bF1MM$KDj5A$5$l$k!#(B$R$ $B$,2D49$N;~$O!"C1$K(B $R$-$B2C72$H8F$V!#(B
-\item $N\subset M$ $B$,(B $R$-$BItJ,2C72$G$"$k$H$O!"(B$N$ $B$,(B $BItJ,2C72$G!"$+$D!"(B$rx\in N$ $B$,$9$Y$F$N!"(B$r\in R$$B!"(B$x\in N$ $B$,@.$jN)$D$3$H$r8@$&!#(B$RN\subset N$ $B$J$k>r7o$r(B $N$ $B$,(B $R$ $B$N:nMQ$GJD$8$F$$$k$H$+0BDj$G$"$k$H$b8@$&!#(B
-\item $f:M\to M'$ $B$,(B $R$-$B2C72$N=`F17?$G$"$k$H$O!"(B
+\item $R$-右加群も同様に定義される。$R$ が可換の時は、単に $R$-加群と呼ぶ。
+\item $N\subset M$ が $R$-部分加群であるとは、$N$ が 部分加群で、かつ、$rx\in N$ がすべての、$r\in R$、$x\in N$ が成り立つことを言う。$RN\subset N$ なる条件を $N$ が $R$ の作用で閉じているとか安定であるとも言う。
+\item $f:M\to M'$ が $R$-加群の準同型であるとは、
 $$f(a+b) = f(a)+f(b),\;f(ra) = rf(a),\;(r\in R,\;a,b\in M)$$
-$B$rK~$?$9;~$r8@$&!#(B$f(ra) = rf(a)$ $B$J$k>r7o$r!"(B$f$ $B$O!"(B$R$ $B$N:nMQ$H2D49$J$I$H$b8@$&!#(B
+を満たす時を言う。$f(ra) = rf(a)$ なる条件を、$f$ は、$R$ の作用と可換などとも言う。
 \end{itemize}
 
 \begin{eg}
 \begin{enumerate}
-\item $B2C72$O!"(B$\bZ$-$B2C72$G$"$k!#(B
-\item $B4D(B $R$ $B$O!"(B$R$-$B2C72$G$"$j!"(B$I$ $B$,(B $R$-$B2C72(B $R$ $B$NItJ,2C72$G$"$k$3$H$H!"(B$I$ $B$,(B $R$ $B$N:8%$%G%"%k$G$"$k$3$H$OF1CM$G$"$k!#(B
-\item $K$ $B$rBN$H$7$?$H$-!"(B$K$-$B2C72$O!"(B$K$-$B%Y%/%H%k6u4V$N;v$G$"$k!#(B
+\item 加群は、$\bZ$-加群である。
+\item 環 $R$ は、$R$-加群であり、$I$ が $R$-加群 $R$ の部分加群であることと、$I$ が $R$ の左イデアルであることは同値である。
+\item $K$ を体としたとき、$K$-加群は、$K$-ベクトル空間の事である。
 \end{enumerate}
 \end{eg}
 
 \begin{definition}
 \begin{enumerate}
-\item $M$ $B$r(B $R$-$B2C72!"(B$S\subset M$ $B$H$9$k$H$-!"(B
+\item $M$ を $R$-加群、$S\subset M$ とするとき、
 $$<U> = \left\{\sum_{i}r_iu_i\mid r_i\in R, \;u_i\in U\right\}$$
-$B$r(B $U$ $B$G@8@.$5$l$k(B $R$-$BItJ,2C72$H$$$&!#(B
-\item $|U|<\infty$ $B$J$k(B$U$ $B$K$D$$$F!"(B$M = <U>$ $B$H$J$k$H$-!"(B$M$ $B$r(B $R$-$BM-8B@8@.$H$$$&!#$3$N$H$-$O!"$=$N@8@.85$r(B $u_1, u_2, \ldots, u_n$ $B$H$9$k$H!"(B$M = Ru_1 + Ru_2 + \cdots + Ru_n$$B!#(B
-\item $r_1u_1 + r_2u_2 + \cdots r_nu_n = 0$$B!"(B$(r_i\in R)$ $B$J$i$P!"(B$r_1 = r_2 = \cdots= r_n = 0$ $B$,@.$jN)$D$H$-!"(B$u_1, u_2, \ldots, u_n$ $B$O!"(B$R$-$B<+M3$G$"$k$H$$$&!#(B$M$ $B$r@8@.$9$kItJ,=89g(B $U$ $B$,(B $R$-$B<+M3!J$9$J$o$A(B $U$ $B$NG$0U$NM-8BItJ,=89g$,(B $R$-$B<+M3!K(B
-$B$G$"$k$H$-!"(B$M$ $B$O!"(B$U$ $B$r4p$H$9$k(B $R$-$B<+M32C72$G$"$k$H$$$&!#(B
+を $U$ で生成される $R$-部分加群という。
+\item $|U|<\infty$ なる$U$ について、$M = <U>$ となるとき、$M$ を $R$-有限生成という。このときは、その生成元を $u_1, u_2, \ldots, u_n$ とすると、$M = Ru_1 + Ru_2 + \cdots + Ru_n$。
+\item $r_1u_1 + r_2u_2 + \cdots r_nu_n = 0$、$(r_i\in R)$ ならば、$r_1 = r_2 = \cdots= r_n = 0$ が成り立つとき、$u_1, u_2, \ldots, u_n$ は、$R$-自由であるという。$M$ を生成する部分集合 $U$ が $R$-自由（すなわち $U$ の任意の有限部分集合が $R$-自由）
+であるとき、$M$ は、$U$ を基とする $R$-自由加群であるという。
 \end{enumerate}
 \end{definition}
 
 \begin{itemize}
-\item $V$ $B$rBN(B $K$ $B>e$N(B $K$-$BM-8B@8@.$J%Y%/%H%k6u4V$H$9$k$H!"(B$V$ $B$O(B $K$-$B<+M32C72$G!"$=$N4p$KB0$9$k85$N8D?t$O4p$N2r$-J}$K$h$i$:0lDj$G$"$k!#(B
+\item $V$ を体 $K$ 上の $K$-有限生成なベクトル空間とすると、$V$ は $K$-自由加群で、その基に属する元の個数は基の解き方によらず一定である。
 \end{itemize}
 
 \begin{definition}
-$R$ $B$r(B $B2D494D$H$9$k!#(B$R$-$B2C72$G$+$D4D$G$"$k(B $A$ $B$,<!$N>r7o$rK~$?$9$H$-(B $A$ $B$O(B $R$ $B>e$NB?854D!J(B$R$-$BBe?t!K$G$"$k$H$$$&!#(B
-$$a, b\in A,\;r\in R\mbox{ $B$KBP$7(B }(ra)b = a(rb) = r(ab).$$
+$R$ を 可換環とする。$R$-加群でかつ環である $A$ が次の条件を満たすとき $A$ は $R$ 上の多元環（$R$-代数）であるという。
+$$a, b\in A,\;r\in R\mbox{ に対し }(ra)b = a(rb) = r(ab).$$
 \end{definition}
 
 \begin{eg}
 \begin{enumerate}
-\item $R$ $B>e$NA49TNs4D$O!"(B$R$ $BB?854D$G$"$k!#(B
-\item $G = \{1 = u_1, u_2, \ldots, u_n\}$ $B$rM-8B72$H$7!"(B$G$ $B$N85$r4p$H$9$k(B $R$-$B<+M32C72(B $R[G] = Ru_1 \oplus \cdots \oplus Ru_n$ $B$K<!$N$h$&$K@Q$rDj5A$7$?$b$N$r724D$H$$$&!#(B
+\item $R$ 上の全行列環は、$R$ 多元環である。
+\item $G = \{1 = u_1, u_2, \ldots, u_n\}$ を有限群とし、$G$ の元を基とする $R$-自由加群 $R[G] = Ru_1 \oplus \cdots \oplus Ru_n$ に次のように積を定義したものを群環という。
 $$\left(\sum_{i=1}^n\alpha_iu_i\right)\left(\sum_{j=1}^n\beta_ju_j\right) = \sum_{i,j = 1}^n\alpha_i\beta_ju_iu_j.$$
 \end{enumerate}
 \end{eg}
 
-$G$ $B$rM-8B72!"(B$A = \bC[G]$$B!"(B$V$ $B$r(B $A$-$B2C72$H$9$k!#(B$g\in G$ $B$N$H$-(B $\phi(g) : V\to V, \;(v\mapsto gv)$ $B$H$9$k$H!"(B$\phi(g)\in \GL(V)$$B!"$^$?!"(B$\phi: G\to \GL(V), \;(g\mapsto \phi(g))$ $B$O!"72$H$7$F$N=`F17?$G$"$k!#5U$K!"72$N=`F17?(B $\phi:G\to GL(V)$ $B$,M?$($i$l$k$H!"(B$V$ $B$O!"(B$A$ $B2C72$H$J$k!#(B
+$G$ を有限群、$A = \bC[G]$、$V$ を $A$-加群とする。$g\in G$ のとき $\phi(g) : V\to V, \;(v\mapsto gv)$ とすると、$\phi(g)\in \GL(V)$、また、$\phi: G\to \GL(V), \;(g\mapsto \phi(g))$ は、群としての準同型である。逆に、群の準同型 $\phi:G\to GL(V)$ が与えられると、$V$ は、$A$ 加群となる。
 
 \medskip
-$M$ $B$r(B $R$-$B2C72$H$9$k!#(B$M$ $B$,(B $0$ $B$H(B $M$ $B0J30$KItJ,2C72$r;}$?$J$$$H$-!"(B$M$ $B$r4{Ls$H8@$&!#4{Ls$G$J$$$H$-!"2DLs$H8@$&!#(B
+$M$ を $R$-加群とする。$M$ が $0$ と $M$ 以外に部分加群を持たないとき、$M$ を既約と言う。既約でないとき、可約と言う。
 
 \begin{thm}{\rm (Schur's Lemma)} \label{thm:schurslemma}
-$M$$B!"(B$N$ $B$r6&$K4{Ls(B $R$-$B2C72$H$9$k!#(B
+$M$、$N$ を共に既約 $R$-加群とする。
 \begin{itemize}
-\item[$(1)$] $f:M\to N$ $B$r(B $R$-$B=`F17?$G91EyE*$K(B $0$ $B$G$J$1$l$P!"(B$f$ $B$OF17?$G$"$k!#(B
-\item[$(2)$] End${}_R(M)$ $B$G(B $M\to M$ $B$J$k=`F17?A4BN$H$9$k$H!"(BEnd${}_R(M)$ $B$O<PBN$H$J$k!#(B
+\item[$(1)$] $f:M\to N$ を $R$-準同型で恒等的に $0$ でなければ、$f$ は同型である。
+\item[$(2)$] End${}_R(M)$ で $M\to M$ なる準同型全体とすると、End${}_R(M)$ は斜体となる。
 \end{itemize}
 \end{thm}
 \proof
-$f$ $B$r(B $R$-$B=`F17?$H$9$k$H!"(B$\ker f$$B!"(B$\im f$ $B$O!"6&$K(B $R$-$BItJ,2C72$G$"$k!#(B
+$f$ を $R$-準同型とすると、$\ker f$、$\im f$ は、共に $R$-部分加群である。
 
-$(1)$ $f\neq 0$ $B$H$9$k$H!"(B$\ker f \neq M$$B!"(B$\im f\neq 0$ $B$@$+$i(B $\ker f = 0$$B!"(B$\im f = N$ $B$H$J$k!#$3$l$O!"(B$f$ $B$,F17?<LA|$G$"$k$3$H$r0UL#$9$k!#(B
+$(1)$ $f\neq 0$ とすると、$\ker f \neq M$、$\im f\neq 0$ だから $\ker f = 0$、$\im f = N$ となる。これは、$f$ が同型写像であることを意味する。
 
-$(2)$ $(1)$ $B$h$jL@$+!#(B
+$(2)$ $(1)$ より明か。
 \qed
 
 \newpage
-\section{$B%R%k%Y%k%H$N4pDjM}(B}
+\section{ヒルベルトの基定理}
 \begin{definition}
 \begin{enumerate}
-\item $R$-($B:8(B)$B2C72(B $M$ $B$KBP$7$F!"$=$N(B $R$-$BItJ,2C72$NG$0U$N6u$G$J$$=89g$K6KBg(B [$B6K>.(B] $B$J$b$N$,B8:_$9$k$H$-!"(B$M$ $B$O!"%M!<%?!<(B [$B%"%k%A%s(B] $B2C72$G$"$k$H8@$&!#(B
-\item $B4D(B $R$ $B$,(B $R$-($B:8(B)$B2C72$H$7$F!"%M!<%?!<(B [$B%"%k%A%s(B] $B4D$G$"$k$H$-(B $R$ $B$O(B ($B:8(B)-$B%M!<%?!<(B [$B%"%k%A%s(B] $B4D$G$"$k$H$$$&!#(B
-\item $M$ $B$N(B $R$-$BItJ,2C72$NG$0U$NNs(B
+\item $R$-(左)加群 $M$ に対して、その $R$-部分加群の任意の空でない集合に極大 [極小] なものが存在するとき、$M$ は、ネーター [アルチン] 加群であると言う。
+\item 環 $R$ が $R$-(左)加群として、ネーター [アルチン] 環であるとき $R$ は (左)-ネーター [アルチン] 環であるという。
+\item $M$ の $R$-部分加群の任意の列
 $$M_1\subset M_2 \subset \cdots \subset M_i\subset \cdots\;(M_1\supset M_2 \supset \cdots \supset M_i\supset \cdots)$$
-$B$KBP$7$F!"$"$k(B $n$ $B$,B8:_$7$F!"(B$M_n = M_{n+1} = \cdots $ $B$H$J$k$H$-!"(B$M$ $B$O>::?N'(B [$B9_:?N'(B] $B$rK~$?$9$H$$$&!#(B
+に対して、ある $n$ が存在して、$M_n = M_{n+1} = \cdots $ となるとき、$M$ は昇鎖律 [降鎖律] を満たすという。
 \end{enumerate}
 \end{definition}
 
 \begin{prop} \label{prop:dcc:acc}
-$R$-$B2C72(B $M$ $B$,%M!<%?!<(B{\rm [$B%"%k%A%s(B] }$B2C72$G$"$k$H$$$&;v$H!"(B$M$ $B$,>::?N'(B {\rm [$B9_:?N'(B]} $B$rK~$?$9$3$H$OF1CM$G$"$k!#(B
+$R$-加群 $M$ がネーター{\rm [アルチン] }加群であるという事と、$M$ が昇鎖律 {\rm [降鎖律]} を満たすことは同値である。
 \end{prop}
 \proof
-$R$-$B2C72(B $M$ $B$,%M!<%?!<2C72$@$H$9$k!#(B$M_1\subset M_2\subset \cdots $ $B$rItJ,2C72$NNs$H$9$k$H!"(B$\{M_i\mid i\in\bN\}$ $B$NCf$K6KBg$J$b$N(B $M_n$ $B$,B8:_$9$k$+$i!"(B$M_n = M_{n+1} = \cdots $$B!#5U$K!"6u$G$J$$ItJ,2C72$NB2(B $S$ $B$K6KBg$J$b$N$,L5$1$l$P!"(B$M_1\subset M_2\subset \cdots \subset M_i$ $B$r??$KA}Bg$9$k:?$H$7$F<h$k!#$9$k$H!"(B$M_i$ $B$O(B $S$ $B$NCf$G6KBg$G$O$J$$$+$i!"(B$M_i\subset M_{i+1},\;M_i\neq M_{i+1}$ $B$H$J$k$b$N$r4^$`!"$3$l$rB3$1$F$$$/$H!"??$KA}Bg$9$kItJ,2C72$NL58BNs$,$H$l$k$N$G>::?N'$rK~$?$5$J$$!#(B
-$B%"%k%A%s2C72$G$"$k$3$H$H!"9_:?N'$rK~$?$9$3$H$,F1CM$G$"$k$3$H$N>ZL@$bF1MM!#(B
+$R$-加群 $M$ がネーター加群だとする。$M_1\subset M_2\subset \cdots $ を部分加群の列とすると、$\{M_i\mid i\in\bN\}$ の中に極大なもの $M_n$ が存在するから、$M_n = M_{n+1} = \cdots $。逆に、空でない部分加群の族 $S$ に極大なものが無ければ、$M_1\subset M_2\subset \cdots \subset M_i$ を真に増大する鎖として取る。すると、$M_i$ は $S$ の中で極大ではないから、$M_i\subset M_{i+1},\;M_i\neq M_{i+1}$ となるものを含む、これを続けていくと、真に増大する部分加群の無限列がとれるので昇鎖律を満たさない。
+アルチン加群であることと、降鎖律を満たすことが同値であることの証明も同様。
 \qed
 
 \begin{prop} \label{prop:noether}
-$R$-$B2C72(B $M$ $B$K$D$$$F!"<!$OF1CM!#(B
+$R$-加群 $M$ について、次は同値。
 \begin{itemize}
-\item[$(i)$] $M$ $B$O%M!<%?!<2C72!#(B
-\item[$(ii)$] $M$ $B$NG$0U$N(B $R$-$BItJ,2C72$O(B $R$-$BM-8B@8@.!#(B
+\item[$(i)$] $M$ はネーター加群。
+\item[$(ii)$] $M$ の任意の $R$-部分加群は $R$-有限生成。
 \end{itemize}
 \end{prop}
 \proof
-$(i)\Rightarrow (ii)$$B!!(B$N$ $B$r(B $M$ $B$NItJ,(B $R$-$B2C72!"(B$S$ $B$r(B $N$ $B$N(B $R$-$BItJ,2C72$G!"(B$R$-$BM-8B@8@.$J$b$NA4BN$H$9$k!#2>Dj$+$i!"(B$S$ $B$K6KBg85(B $N_0$ $B$,B8:_$9$k!#(B$N\neq N_0$ $B$J$i$P!"(B$x\in N-N_0$ $B$H$9$k$H!"(B$Rx + N_0$ $B$O!"M-8B@8@.$G$+$D(B $N_0$ $B$r??$K4^$`$3$H$K$J$j(B $N_0$ $B$N6KBg@-$KH?$9$k$+$i(B $N = N_0$$B!"$9$J$o$A!"(B$N$ $B$bM-8B@8@.$G$"$k!#(B
+$(i)\Rightarrow (ii)$　$N$ を $M$ の部分 $R$-加群、$S$ を $N$ の $R$-部分加群で、$R$-有限生成なもの全体とする。仮定から、$S$ に極大元 $N_0$ が存在する。$N\neq N_0$ ならば、$x\in N-N_0$ とすると、$Rx + N_0$ は、有限生成でかつ $N_0$ を真に含むことになり $N_0$ の極大性に反するから $N = N_0$、すなわち、$N$ も有限生成である。
 
-$(ii)\Rightarrow (i)$ $M_1\subset M_2 \subset \cdots $ $B$r(B $M$ $B$NItJ,2C72$NNs$H$9$k!#(B
-$N = \bigcup_iM_i$ $B$O!"(B$R$-$B2C72$@$+$i!"2>Dj$h$jM-8B@8@.$G!"(B$N = <u_1,u_2,\ldots, u_n>$ $B$H$J$k@8@.85$,$"$j!"(B$N$ $B$N2>Dj$h$j$"$k(B $M_m$ $B$K$9$Y$F$N(B $u_1, u_2, \ldots, u_n$ $B$,F~$k!#=>$C$F!"(B
+$(ii)\Rightarrow (i)$ $M_1\subset M_2 \subset \cdots $ を $M$ の部分加群の列とする。
+$N = \bigcup_iM_i$ は、$R$-加群だから、仮定より有限生成で、$N = <u_1,u_2,\ldots, u_n>$ となる生成元があり、$N$ の仮定よりある $M_m$ にすべての $u_1, u_2, \ldots, u_n$ が入る。従って、
 $$N \subset M_m\subset M_{m+1}\subset \cdots \subset N.$$
-$B$h$C$F!"(B$M$ $B$O>::?N'$rK~$?$9!#L?Bj(B~\ref{prop:dcc:acc} $B$K$h$j(B $M$ $B$O%M!<%?!<2C72$G$"$k!#(B
+よって、$M$ は昇鎖律を満たす。命題~\ref{prop:dcc:acc} により $M$ はネーター加群である。
 \qed
 
 \begin{cor}
-$BC19`%$%G%"%k@00h$O!"%M!<%?!<4D$G$"$k!#(B
+単項イデアル整域は、ネーター環である。
 \end{cor}
 \proof
-$BG$0U$N%$%G%"%k$O!"(B1 $B8D$N85$G@8@.$5$l$k$+$i!"L@$i$+!#(B
+任意のイデアルは、1 個の元で生成されるから、明らか。
 \qed
 
 \begin{thm} \label{thm:polyovernoether}
-$B2D49%M!<%?!<4D(B $R$ $B>e$NB?9`<04D(B $R[x_1,x_2,\ldots, x_n]$ $B$O%M!<%?!<4D$G$"$k!#(B
+可換ネーター環 $R$ 上の多項式環 $R[x_1,x_2,\ldots, x_n]$ はネーター環である。
 \end{thm}
 \proof
-$n=1$ $B$N;~$r<($;$P$h$$!#(B$I$ $B$r(B $R[x]$ $B$N%$%G%"%k$H$9$k!#(B
-$$I_i = \{r\in R\mid f(x) = a_ix^i + \cdots + a_1x + a_0 \in I \mbox{ $B$G(B } a_i = r\mbox{ $B$H$J$k$b$N$,$k!#(B}\}$$
-$B$H$*$/$H!"$3$l$O(B $R$ $B$N%$%G%"%k$G$"$k!#$^$?!"(B$f(x) = a_ix^i + \cdots + a_1x + a_0\in I$ $B$J$i$P!"(B$xf(x) = a_ix^{i+1} + \cdots + a_1x^2 + a_0x\in I$ $B$@$+$i!"(B$I_0\subset I_1\subset I_2 \subset \cdots $ $B$G$"$k!#2>Dj$h$j!"(B$R$ $B$O%M!<%?!<4D$G!"L?Bj(B~\ref{prop:dcc:acc} $B$h$j>::?N'$rK~$?$9$+$i(B$I_r = I_{r+1} = \cdots $ $B$H$J$k(B $r$ $B$,B8:_$9$k!#L?Bj(B~\ref{prop:noether} $B$K$h$j!"3F(B $I_0, I_1, \ldots, I_r$ $B$OM-8B@8@.$@$+$i!"(B$a_{i_1},\ldots, a_{i_{s_i}}$ $B$r(B $I_i$ $(i = 0, 1, \ldots, r)$ $B$N(B $R$ $B>e$N@8@.85$H$9$k!#(B$f_{i_j}$ $B$r:G9b<!$N78?t$,!"(B$a_{i_j}$ $B$H$J$k(B$I$ $B$N(B $i$ $B<!B?9`<0$H$9$k!#$3$N$H$-!"$3$l$i$,(B $I$ $B$r@8@.$9$k$3$H!"$9$J$o$A<!$,@.N)$9$k$3$H$r<($9!#(B
+$n=1$ の時を示せばよい。$I$ を $R[x]$ のイデアルとする。
+$$I_i = \{r\in R\mid f(x) = a_ix^i + \cdots + a_1x + a_0 \in I \mbox{ で } a_i = r\mbox{ となるものがる。}\}$$
+とおくと、これは $R$ のイデアルである。また、$f(x) = a_ix^i + \cdots + a_1x + a_0\in I$ ならば、$xf(x) = a_ix^{i+1} + \cdots + a_1x^2 + a_0x\in I$ だから、$I_0\subset I_1\subset I_2 \subset \cdots $ である。仮定より、$R$ はネーター環で、命題~\ref{prop:dcc:acc} より昇鎖律を満たすから$I_r = I_{r+1} = \cdots $ となる $r$ が存在する。命題~\ref{prop:noether} により、各 $I_0, I_1, \ldots, I_r$ は有限生成だから、$a_{i_1},\ldots, a_{i_{s_i}}$ を $I_i$ $(i = 0, 1, \ldots, r)$ の $R$ 上の生成元とする。$f_{i_j}$ を最高次の係数が、$a_{i_j}$ となる$I$ の $i$ 次多項式とする。このとき、これらが $I$ を生成すること、すなわち次が成立することを示す。
 $$I = \sum_{i=0}^r\sum_{j = 1}^{s_i} R[x]f_{i_j}(x).$$
-$f = a_mx^m + \cdots + a_1x + a_0\in I$ $B$H$7!"(B$m = \deg f$ $B$K4X$9$k5"G<K!$G<($9!#(B
+$f = a_mx^m + \cdots + a_1x + a_0\in I$ とし、$m = \deg f$ に関する帰納法で示す。
 
-$m = 0$ $B$J$i$P!"(B$f = a_0 \in I_0 = \sum_{j=1}^{s_0}Ra_{0_j} = \sum_{j=1}^{s_0}Rf_{0_j}$ $B$@$+$i!"$3$N>l9g$ONI$$!#(B
+$m = 0$ ならば、$f = a_0 \in I_0 = \sum_{j=1}^{s_0}Ra_{0_j} = \sum_{j=1}^{s_0}Rf_{0_j}$ だから、この場合は良い。
 
-$m>0$ $B$H$9$k!#(B$r<m$ $B$N;~$O!"(B$e = m-r$$B!"(B$r\geq m$ $B$N;~$O!"(B$e = 0$ $B$HCV$/$3$H$K$9$k$H!"(B
+$m>0$ とする。$r<m$ の時は、$e = m-r$、$r\geq m$ の時は、$e = 0$ と置くことにすると、
 $$a_m \in I_m = I_{m-e} = \sum_{j = 1}^{s_{m-e}}Ra_{(m-e)_j}$$
-$B$@$+$i!"(B$a_m = \sum_{j = 1}^{s_{m-e}}c_ja_{(m-e)_j}$ $B$H$9$k$H!"(B
+だから、$a_m = \sum_{j = 1}^{s_{m-e}}c_ja_{(m-e)_j}$ とすると、
 $$\deg (f(x) - x^{e}\sum_{j = 1}^{s_{m-e}}c_jf_{(m-e)_j}(x)) < \deg f(x)$$
-$B$@$+$i!"5"G<K!$K$h$j!"(B$f\in \sum_{i=0}^r\sum_{j = 1}^{s_i} R[x]f_{i_j}(x)$ $B$G$"$k$3$H$,J,$+$C$?!#(B
+だから、帰納法により、$f\in \sum_{i=0}^r\sum_{j = 1}^{s_i} R[x]f_{i_j}(x)$ であることが分かった。
 
-$R[x]$ $B$NG$0U$N%$%G%"%k$,!"M-8B@8@.$@$+$i!"L?Bj(B~\ref{prop:noether} $B$h$j!"(B$R[x]$ $B$O%M!<%?!<4D$G$"$k!#(B
+$R[x]$ の任意のイデアルが、有限生成だから、命題~\ref{prop:noether} より、$R[x]$ はネーター環である。
 \qed
 
 \medskip
-$B%M!<%?!<2C72$N>jM>2C72$O%M!<%?!<2C72$G$"$k$3$H$O4JC1$KJ,$+$k$+$i!"%M!<%?!<4D$N>jM>4D$O%M!<%?!<4D$G$"$k!#2D494D(B $S$ $B$,(B $B2D494D(B $R$ $B$rItJ,4D$H$7$F4^$_!"$5$i$K(B $s_1, \ldots, s_n\in S$ $B$KBP$7$F!"(B$R$ $B$H!"(B$\{s_1,\ldots, s_n\}$ $B$r4^$`(B $S$ $B$NItJ,4D$O!"(B$S$ $B$G$"$k$H$9$k!#!J$3$N$H$-!"(B$\{s_1,\ldots, s_n\}$ $B$O!"(B$R$-$B>e(B $S$ $B$r4D$H$7$F@8@.$9$k$H$$$&!#Nc$($P!"(B$\bZ[x]$ $B$K$*$$$F!"(B$x$ $B$O!"(B$\bZ$-$B>e(B $\bZ[x]$ $B$r4D$H$7$F@8@.$9$k$,!"(B$\bZ$-$B2C72$H$7$F$O!"(B$\bZ + \bZ x$ $B$9$J$o$A(B 1$B<!0J2<$NB?9`<0A4BN$,@8@.$5$l$k$b$N$G$"$k!#(B
+ネーター加群の剰余加群はネーター加群であることは簡単に分かるから、ネーター環の剰余環はネーター環である。可換環 $S$ が 可換環 $R$ を部分環として含み、さらに $s_1, \ldots, s_n\in S$ に対して、$R$ と、$\{s_1,\ldots, s_n\}$ を含む $S$ の部分環は、$S$ であるとする。（このとき、$\{s_1,\ldots, s_n\}$ は、$R$-上 $S$ を環として生成するという。例えば、$\bZ[x]$ において、$x$ は、$\bZ$-上 $\bZ[x]$ を環として生成するが、$\bZ$-加群としては、$\bZ + \bZ x$ すなわち 1次以下の多項式全体が生成されるものである。
 
 \begin{cor}
-$B2D49%M!<%?!<4D>eM-8B@8@.$J2D494D$O%M!<%?!<4D$G$"$k!#(B
+可換ネーター環上有限生成な可換環はネーター環である。
 \end{cor}
 \proof
-$R$ $B$r2D49%M!<%?!<4D$H$9$k!#(B$R$-$B>eM-8B@8@.$J2D494D$O!"(B$R$ $B>e$NB?9`<04D$N=`F17?A|$G$"$k$+$i!"(B$R$ $B>e$NB?9`<04D$N>jM>4D$HF17?$G$"$k!#=>$C$F!"%M!<%?!<4D$G$"$k!#(B
+$R$ を可換ネーター環とする。$R$-上有限生成な可換環は、$R$ 上の多項式環の準同型像であるから、$R$ 上の多項式環の剰余環と同型である。従って、ネーター環である。
 \qed
 
 \end{document}

@@ -1,6 +1,6 @@
 %original : April 17,  24, 1996
 %original : May 1, 8, 1996
-%original : ($B@QJ,!K(BMay 22, 29, 1996
+%original : (積分）May 22, 29, 1996
 %original : June 5, 6, 1996
 %%revised : April 16, 17, 23, 24, 30, 1997
 %%revised : May 14, 1997
@@ -23,21 +23,21 @@
 \newcommand{\mysection}[1]{%
 	\section{#1}\setcounter{page}{1}}
 
-\newtheorem{thm}{$BDjM}(B}[section]
-\newtheorem{prop}[thm]{$BL?Bj(B}
-\newtheorem{lemma}[thm]{$BJdBj(B}
-\newtheorem{cor}[thm]{$B7O(B}
-\newtheorem{exercise}{$BN}=,LdBj(B}[section]
-\newtheorem{example}{$BNc(B}[section]
-\newtheorem{problem}{$BLdBj(B}[section]
-\newtheorem{defin}{$BDj5A(B}[section]
+\newtheorem{thm}{定理}[section]
+\newtheorem{prop}[thm]{命題}
+\newtheorem{lemma}[thm]{補題}
+\newtheorem{cor}[thm]{系}
+\newtheorem{exercise}{練習問題}[section]
+\newtheorem{example}{例}[section]
+\newtheorem{problem}{問題}[section]
+\newtheorem{defin}{定義}[section]
 \newenvironment{definition}{\begin{defin} \rm}{\end{defin}}
 \newenvironment{ex}{\begin{exercise} \rm}{\end{exercise}}
 \newenvironment{eg}{\begin{example} \rm}{\end{example}}
 \newenvironment{prob}{\begin{problem} \rm}{\end{problem}}
 \newcommand{\remarks}{\vspace{2ex}\noindent{\bf Remarks.\quad}}
-\newcommand{\note}{\vspace{2ex}\noindent{\gt $BCm(B\quad}}
-\newcommand{\proof}{{\gt $B>ZL@(B\quad}}
+\newcommand{\note}{\vspace{2ex}\noindent{\gt 注\quad}}
+\newcommand{\proof}{{\gt 証明\quad}}
 \newcommand{\qed}{\hfill\hbox{\rule{6pt}{6pt}}}
 \newcommand{\bZ}{\mbox{\boldmath $Z$}}
 \newcommand{\bR}{\mbox{\boldmath $R$}}
@@ -48,407 +48,407 @@
 \setcounter{page}{0}
 \maketitle
 \newpage
-\mysection{$B4X?t$N6K8B$HO"B3(B}
+\mysection{関数の極限と連続}
 \begin{definition}
-$BE@(B $x = a$ $B$N6a$/$GDj5A$5$l$F$$$k4X?t(B $y = f(x)$ $B$K$*$$$F!"<!$N#3$D$N>r7o$,@.$jN)$D$H$-!"(B$y = f(x)$ $B$O!"(B$x = a$  $B$G!"O"B3$G$"$k(B (continuous) $B$H$$$&!#(B
+点 $x = a$ の近くで定義されている関数 $y = f(x)$ において、次の３つの条件が成り立つとき、$y = f(x)$ は、$x = a$  で、連続である (continuous) という。
 \begin{itemize}
-\item[$(1)$] $f(a)$ $B$,!"Dj5A$5$l$F$$$k!#(B
-\item[$(2)$] ${\displaystyle\lim_{x\rightarrow a}f(x)}$  $B$,!"B8:_$9$k!#(B
-\item[$(3)$] ${\displaystyle\lim_{x\rightarrow a}f(x) = f(a)}$$B!#(B
+\item[$(1)$] $f(a)$ が、定義されている。
+\item[$(2)$] ${\displaystyle\lim_{x\rightarrow a}f(x)}$  が、存在する。
+\item[$(3)$] ${\displaystyle\lim_{x\rightarrow a}f(x) = f(a)}$。
 \end{itemize}
-$B$^$?!"$"$k6h4V$N3FE@$G!"O"B3$J4X?t$r!"O"B34X?t$H$$$&!#(B
+また、ある区間の各点で、連続な関数を、連続関数という。
 \end{definition}
 
 \begin{eg}
-$x = 0$ $B$K$*$$$F!"<!$N#4$D$N4X?t$r9M$($k!#(B
+$x = 0$ において、次の４つの関数を考える。
 $$\begin{array}{ll}
 (a)\;f(x) = \left\{\begin{array}{ll}1/x & x\neq 0\\ 0 & x = 0 \end{array}\right. &
 (b)\;g(x) = \left\{\begin{array}{ll}\sin(1/x)& x\neq 0\\ 0 & x = 0 \end{array}\right.\\
-(c)\;h(x) = \left\{\begin{array}{ll}x\sin(1/x) & x\neq 0\\ 0 & x = 0 \end{array}\right. & (d)\;l(x) = \left\{\begin{array}{ll}x & x\mbox{ $BL5M}?t(B}\\ 0 & x\mbox{ $BM-M}?t(B} \end{array}\right.
+(c)\;h(x) = \left\{\begin{array}{ll}x\sin(1/x) & x\neq 0\\ 0 & x = 0 \end{array}\right. & (d)\;l(x) = \left\{\begin{array}{ll}x & x\mbox{ 無理数}\\ 0 & x\mbox{ 有理数} \end{array}\right.
 \end{array}$$
-$(a)$$B!"(B$(b)$ $B$O!"(B$x = 0$ $B$K$*$$$F!"O"B3$G$O$J$$!#(B$(c)$$B!"(B$(d)$ $B$O!"O"B3$G$"$k!#$7$+$7!"(B$(d)$ $B$O!"(B$x = 0$ $B0J30$N3FE@$GITO"B3$G$"$k!#(B
+$(a)$、$(b)$ は、$x = 0$ において、連続ではない。$(c)$、$(d)$ は、連続である。しかし、$(d)$ は、$x = 0$ 以外の各点で不連続である。
 \end{eg}
 
 \begin{eg}
-$BDj?t4X?t(B $c$$B!"B?9`<0!"(B$\sin x$$B!"(B$\cos x$$B!"(B$e^x$ $B$O!"3FE@$GO"B3!"$^$?!"O"B34X?t$NOB!":9!"Dj?tG\!"@Q$b!"O"B34X?t!#>&$b!"J,Jl$,Nm$K$J$i$J$$HO0O$GO"B34X?t$G$"$k!#(B
+定数関数 $c$、多項式、$\sin x$、$\cos x$、$e^x$ は、各点で連続、また、連続関数の和、差、定数倍、積も、連続関数。商も、分母が零にならない範囲で連続関数である。
 \end{eg}
 
 \begin{prop}   \label{prop:inter}
-$BJD6h4V(B $[a,b]$ $B>e$GO"B3$J4X?t(B $f(x)$ $B$K$*$$$F!"(B$C$ $B$r!"(B$f(a)$ $B$H!"(B$f(b)$ $B$N4V$NCM$H$9$k$H!"(B$f(c) = C$ $B$H$J$kE@(B $c$ $B$,!"6h4V(B $[a,b]$ $BFb$K$"$k!#(B
+閉区間 $[a,b]$ 上で連続な関数 $f(x)$ において、$C$ を、$f(a)$ と、$f(b)$ の間の値とすると、$f(c) = C$ となる点 $c$ が、区間 $[a,b]$ 内にある。
 \end{prop}
 
 \begin{eg}
-$f(x) = 4x^5 - 10x^4 - 20x^3 + 4x^2 + 16x - 15$ $B$H$9$k!#(B$f(-2) = -15$$B!"(B$f(-1) = 15$$B!"(B$f(0) = -15$$B!"(B$f(1) = 15$$B!"(B$f(2) = -15$$B!"(B$f(3) = 15$$B!#=>$C$F!"#5$D$N6h4V(B $[-2,-1]$$B!"(B$[-1,0]$$B!"(B$[0,1]$$B!"(B$[1,2]$$B!"(B$[2,3]$ $B$NFbIt$G!"(B$f(x) = 0$ $B$H$J$kE@!"$9$J$o$A:,$r>/$J$/$H$b0l$D$:$D;}$D!#(B$f(x)$ $B$O!"#5<!B?9`<0$@$+$i!"9b!9#58D$N<B:,$r;}$D!#$9$J$o$A!"$3$N#58D0J30$K$O!":,$r;}$?$:!"$3$l$i$N6h4V$KCzEY0l$D$:$D$"$k$3$H$b2r$j$^$9!#!J$J$<$G$7$g$&!#!K(B
+$f(x) = 4x^5 - 10x^4 - 20x^3 + 4x^2 + 16x - 15$ とする。$f(-2) = -15$、$f(-1) = 15$、$f(0) = -15$、$f(1) = 15$、$f(2) = -15$、$f(3) = 15$。従って、５つの区間 $[-2,-1]$、$[-1,0]$、$[0,1]$、$[1,2]$、$[2,3]$ の内部で、$f(x) = 0$ となる点、すなわち根を少なくとも一つずつ持つ。$f(x)$ は、５次多項式だから、高々５個の実根を持つ。すなわち、この５個以外には、根を持たず、これらの区間に丁度一つずつあることも解ります。（なぜでしょう。）
 \end{eg}
 
 \begin{prop}  \label{prop:maxmin}
-$BJD6h4V(B $[a,b]$ $B>e$GO"B3$J4X?t(B $f(x)$ $B$O!"(B$[a,b]$ $B>e$N:GBg!&:G>.$r$H$k!#(B
+閉区間 $[a,b]$ 上で連続な関数 $f(x)$ は、$[a,b]$ 上の最大・最小をとる。
 \end{prop}
 
-\note $B>e$NL?Bj$G!"JD6h4V$G$J$$>l9g$O!"I,$:$7$b!":GBg!&:G>.$r;}$D$H$O8B$i$J$$!#(B
+\note 上の命題で、閉区間でない場合は、必ずしも、最大・最小を持つとは限らない。
 
-$BNc$($P!"(B$f(x) = -x^2 + 2x + 1$$B!"(B$(0 < x < 2)$ $B$H$9$k$H!"(B$1 < f(x) \leq 2 = f(1)$ $B$@$+$i!"6h4V(B $(0,2)$ $B$G:GBgCM$O<h$k$,!":G>.CM$O<h$i$J$$!#(B
+例えば、$f(x) = -x^2 + 2x + 1$、$(0 < x < 2)$ とすると、$1 < f(x) \leq 2 = f(1)$ だから、区間 $(0,2)$ で最大値は取るが、最小値は取らない。
 
 \newpage
-\mysection{$BHyJ,78?t$HF34X?t(B}
+\mysection{微分係数と導関数}
 \begin{definition}
-$B4X?t(B $f(x)$ $B$,!"E@(B $x = a$ $B5Z$S$=$N6a$/$GDj5A$5$l$F$$$F!"$+$D(B
+関数 $f(x)$ が、点 $x = a$ 及びその近くで定義されていて、かつ
 $$\lim_{x\rightarrow a}\frac{f(x)-f(a)}{x-a}$$
-$B$,B8:_$9$k$H$-!"$3$NCM$r(B $f(x)$ $B$NE@(B $a$ $B$K$*$1$kHyJ,78?t$H8@$$!"(B$f'(a)$ $B$H=q$/!#4X?t(B $f(x)$ $B$,!"3FE@(B $a$ $B$GHyJ,2DG=$G$"$k$H$-!"(B$a$ $B$K(B $f'(a)$ $B$rBP1~$5$;$k4X?t$r(B $f(x)$ $B$NF34X?t$H8@$$!"(B$f'(x)$$B!"(B$df/dx$$B!"(B$Df$ $B$GI=$9!#4X?t(B $f(x)$ $B$+$i!"$=$NF34X?t(B $f'(x)$ $B$r5a$a$k$3$H$r!"HyJ,$9$k$H$$$&!#(B
+が存在するとき、この値を $f(x)$ の点 $a$ における微分係数と言い、$f'(a)$ と書く。関数 $f(x)$ が、各点 $a$ で微分可能であるとき、$a$ に $f'(a)$ を対応させる関数を $f(x)$ の導関数と言い、$f'(x)$、$df/dx$、$Df$ で表す。関数 $f(x)$ から、その導関数 $f'(x)$ を求めることを、微分するという。
 \end{definition}
 
 \begin{eg} 
-$f, g$  $B$rHyJ,2DG=$J4X?t!"(B$c$ $B$rDj?t$H$9$k$H0J2<$,@.$jN)$D!#(B
+$f, g$  を微分可能な関数、$c$ を定数とすると以下が成り立つ。
 $$(f + g)' = f' + g'\quad (cf)' = cf'\quad (fg)' = f'g + fg'\quad \left(\frac{f}{g}\right) = \frac{f'g - fg'}{g^2}$$
 \end{eg}
 
 \begin{prop}
-$B4X?t(B $f(x)$ $B$,!"E@(B $a$ $B$GHyJ,2DG=$J$i$P!"E@(B $a$ $B$G!"O"B3$G$"$k!#(B
+関数 $f(x)$ が、点 $a$ で微分可能ならば、点 $a$ で、連続である。
 \end{prop}
 \proof
-$B4X?t(B $a(x)$ $B$r<!$N$h$&$KDj5A$9$k!#(B
+関数 $a(x)$ を次のように定義する。
 $$a(x) = \left\{\begin{array}{ll}
 \displaystyle{\frac{f(x)-f(a)}{x-a}} & x\neq a\\ f'(a) & x = a
 \end{array}\right.$$
-$B$9$k$H!"(B$a(x)$ $B$O!"Dj5A$+$i!"E@(B $a$ $B$GO"B3!#=>$C$F!"(B
+すると、$a(x)$ は、定義から、点 $a$ で連続。従って、
 $$f(x) = a(x)(x-a) + f(a)$$
-$B$b!"E@(B $a$ $B$GO"B3!#(B
+も、点 $a$ で連続。
 \qed
 
 \medskip
-\note $B>e$NL?Bj$K$*$$$F!"5U$OI,$:$7$b@.$jN)$?$J$$!#$9$J$o$A!"O"B3$G$b!"HyJ,2DG=$H$O8@$($J$$!#Nc$($P!"(B$f(x) = |x|$$B!"(B$g(x) = x\sin (1/x)$ $B$O!"$H$b$K(B $x = 0$ $B$GO"B3$@$,!"HyJ,2DG=$G$O$J$$!#(BWeierstrass (1872) $B$O!"$"$k6h4V$N3FE@$GHyJ,2DG=$G$J$$O"B34X?t$N<BNc$r:n$C$F!"Ev;~$N?t3X2q$K>W7b$rM?$($?$H$N;v$G$"$k!#$3$l$O!"(BWeierstrass $B4X?t$H$$$o$l$k!#%U%i%/%?%k?^7A$b;j$k=jHyJ,IT2DG=$J6J@~$G$"$k!#(B
+\note 上の命題において、逆は必ずしも成り立たない。すなわち、連続でも、微分可能とは言えない。例えば、$f(x) = |x|$、$g(x) = x\sin (1/x)$ は、ともに $x = 0$ で連続だが、微分可能ではない。Weierstrass (1872) は、ある区間の各点で微分可能でない連続関数の実例を作って、当時の数学会に衝撃を与えたとの事である。これは、Weierstrass 関数といわれる。フラクタル図形も至る所微分不可能な曲線である。
 
 \begin{eg}
 \begin{enumerate}
-\item $B!JB?9`<0$NHyJ,!K(B$f(x) = x^n$ $B$N!"(B$x = a$ $B$K$*$1$k!"HyJ,78?t$HF34X?t!#(B
+\item （多項式の微分）$f(x) = x^n$ の、$x = a$ における、微分係数と導関数。
 \begin{eqnarray*}
 \lefteqn{\lim_{x\rightarrow a}\frac{x^n - a^n}{x-a}}\\
 & = & \lim_{x\rightarrow a}\frac{(x-a)(x^{n-1} + ax^{n-2} + \cdots + a^{n-2}x + a^{n-1})}{x-a}\\
 & = & \lim_{x\rightarrow a} (x^{n-1} + ax^{n-2} + \cdots + a^{n-2}x + a^{n-1}) \\
 & = & na^{n-1}
 \end{eqnarray*}
-$B=>$C$F!"(B$f(x) = x^n$  $B$NF34X?t$O!"(B$f'(x) = nx^{n-1}$$B!#(B
+従って、$f(x) = x^n$  の導関数は、$f'(x) = nx^{n-1}$。
 
-\item $B!J;03Q4X?t$NHyJ,!K(B$f(x) = \sin x$ $B$N!"(B$x = a$ $B$K$*$1$k!"HyJ,78?t$HF34X?t!#(B
+\item （三角関数の微分）$f(x) = \sin x$ の、$x = a$ における、微分係数と導関数。
 \begin{eqnarray*}
 \lefteqn{\lim_{x\rightarrow a}\frac{\sin x - \sin a}{x-a}}\\
-\lefteqn{x = a+h \mbox{ $B$HCV$/$H!"(B}}\\
+\lefteqn{x = a+h \mbox{ と置くと、}}\\
 & = & \lim_{h\rightarrow 0}\frac{\sin(a+h) - \sin a}{h}\\
 & = & \lim_{h\rightarrow 0}\frac{\cos(a + h/2)\sin(h/2)}{h/2}\\
 & = & \lim_{h\rightarrow 0}{\cos(a + h/2)}\cdot 
 \lim_{h\rightarrow 0}\frac{\sin(h/2)}{h/2}\\
 & = & \cos a
 \end{eqnarray*}
-$B=>$C$F!"(B$f(x) = \sin x$ $B$NF34X?t$O!"(B$f'(x) = \cos x$$B!#(B
-$B$3$3$G!"0J2<$N8x<0$rMQ$$$F$$$k!#(B
+従って、$f(x) = \sin x$ の導関数は、$f'(x) = \cos x$。
+ここで、以下の公式を用いている。
 $$\lim_{\theta\rightarrow 0}\frac{\sin\theta}{\theta} = 1$$
-$B$3$l$O!"C10L1_$N@p7A$H!"$=$l$r64$`!";03Q7A$NLL@Q$rMQ$$$?<!$NITEy<0$+$iF@$i$l$k!#(B
+これは、単位円の扇形と、それを挟む、三角形の面積を用いた次の不等式から得られる。
 $$\frac12\sin\theta \leq \pi\cdot\frac{\theta}{2\pi} \leq \frac12\tan\theta, \quad 1\leq \frac{\theta}{\sin \theta} \leq \frac{1}{\cos\theta}$$
 
-\item $B!J;X?t4X?t$NHyJ,!K(B$(e^x)' = e^x$$B!#$3$3$G!"(B
+\item （指数関数の微分）$(e^x)' = e^x$。ここで、
 $$e = \lim_{n\to \infty}\left(1 + \frac1n\right)^n.$$
-$B$H$9$k!#(B$e = 2.71828182845904523\ldots$ $B$O!"L5M}?t$N$J$+$G$b!"FC$K!"D61[?t$H8F$P$l!"$I$s$JM-M}?t78?t$NB?9`<0$N:,$K$b$J$C$F$$$J$$$3$H$,CN$i$l$F$$$k!#(B
+とする。$e = 2.71828182845904523\ldots$ は、無理数のなかでも、特に、超越数と呼ばれ、どんな有理数係数の多項式の根にもなっていないことが知られている。
 $$\lim_{x\to a}\frac{e^x - e^a}{x-a} = \lim_{h\to 0}\frac{e^{a+h} - e^a}{h} = e^a\lim_{h\to 0}\frac{e^h - 1}{h}$$
-$B=>$C$F!"(B$\lim_{h\to 0}\frac{e^h - 1}{h} = 1$ $B$r<($;$P$h$$!#(B
+従って、$\lim_{h\to 0}\frac{e^h - 1}{h} = 1$ を示せばよい。
 
-$e^h = 1 + 1/t$ $B$H$*$/!#(B$h = \log(1 + 1/t)$ $B$@$+$i!"(B
+$e^h = 1 + 1/t$ とおく。$h = \log(1 + 1/t)$ だから、
 $$\frac{e^h - 1}{h} = \frac{1/t}{\log(1+1/t)} = \frac{1}{\log(1+1/t)^t}$$
-$B=>$C$F!"7k6I!"(B$h\to 0$ $B$N$H$-!"(B$e^h \to 0$ $B$N$H$-!"=>$C$F!"(B$t\to \infty$ $B$G!"(B$(1 + 1/t)^t \to 0$ $B$r8@$($P$h$$!#<B$O!"$3$l$O>e$N!"<+A3BP?t(B $e$ $B$NDj5A$+$iF@$i$l$k!#(B
+従って、結局、$h\to 0$ のとき、$e^h \to 0$ のとき、従って、$t\to \infty$ で、$(1 + 1/t)^t \to 0$ を言えばよい。実は、これは上の、自然対数 $e$ の定義から得られる。
 \end{enumerate}
 \end{eg}
 
 \note
 \begin{itemize}
-\item $f(x) = a^x$ $(a > 0)$ $B$H$7$?$H$-!"(B$f(x)$ $B$NF34X?t$O!"$I$&$J$k$G$7$g$&$+!#$3$NMM$J;X?t4X?t$O!"!V@53N$K$O!W$I$N$h$&$KDj5A$7$?$i$h$$$G$7$g$&$+!#$3$l$i$NDj5A$K$O!"<B?t$NO"B3@-$,?<$/$+$+$o$C$?!"<!$N;v$,=EMW$G$9!#!VM-3&$JC1D4?tNs$O<}B+$9$k!#!W$3$NMM$J!"?t3XE*$K87L)$K5DO@$9$k$3$H$K$O$3$3$G$O==J,N)$AF~$l$^$;$s!#;29M=q$K$"$2$?!"9bLZDg<#Cx!V2r@O35O@!W$J$I$KD)@o$7$F2<$5$$!#(B
-\item $(\log x)' = 1/x$ $B$rDj5A$K=>$C$F!"<($7$F$_$^$7$g$&!#(B
-\item $B:G=i$K=R$Y$?!"(B$e$ $B$NDj5A!"$K$h$C$F!"$"$k?t$,Dj$^$k$3$H$r3N$+$a$F2<$5$$!#$3$3$G$b!"(B
-$B!VM-3&$JC1D4?tNs$O<}B+$9$k!#!W$,=EMW$G$9!#(B
-\item $B$3$l$i$N!"<B?t$NO"B3@-$,?<$/$+$+$o$C$?;v$K$D$$$F$O!"?t3XDLO@(B I (BCMM I) $B$G3X$S$^$9!#(B
+\item $f(x) = a^x$ $(a > 0)$ としたとき、$f(x)$ の導関数は、どうなるでしょうか。この様な指数関数は、「正確には」どのように定義したらよいでしょうか。これらの定義には、実数の連続性が深くかかわった、次の事が重要です。「有界な単調数列は収束する。」この様な、数学的に厳密に議論することにはここでは十分立ち入れません。参考書にあげた、高木貞治著「解析概論」などに挑戦して下さい。
+\item $(\log x)' = 1/x$ を定義に従って、示してみましょう。
+\item 最初に述べた、$e$ の定義、によって、ある数が定まることを確かめて下さい。ここでも、
+「有界な単調数列は収束する。」が重要です。
+\item これらの、実数の連続性が深くかかわった事については、数学通論 I (BCMM I) で学びます。
 \end{itemize}
 
 
 
 \newpage
-\mysection{$BHyJ,K!(B}
-$A$. $B9g@.4X?t$NHyJ,(B
+\mysection{微分法}
+$A$. 合成関数の微分
 \begin{prop}
-$g(x)$ $B$O!"E@(B $a$ $B$GHyJ,2DG=!"(B$f(x)$ $B$O!"E@(B $g(a)$ $B$GHyJ,2DG=$H$9$k!#$3$N$H$-!"(B
+$g(x)$ は、点 $a$ で微分可能、$f(x)$ は、点 $g(a)$ で微分可能とする。このとき、
 $$\frac{d}{dx}f(g(a)) = f'(g(a))g'(a)$$
 \end{prop}
 \proof
-$F(x) = f(g(x))$ $B$H$*$/!#$9$k$H!"(B
+$F(x) = f(g(x))$ とおく。すると、
 \begin{eqnarray*}
 F'(a) & = & \lim_{x\rightarrow a}\frac{f(g(x)) - f(g(a))}{x-a}\\
         & = & \lim_{x\rightarrow a}\frac{f(g(x)) - f(g(a))}{g(x) - g(a)}\lim_{x\rightarrow a}\frac{g(x) - g(a)}{x-a}\\
         & = & f'(g(a))g'(a)
 \end{eqnarray*}
-$g(x)$ $B$O!"E@(B $x = a$ $B$GHyJ,2DG=$@$+$i!"O"B3!"$9$J$o$A!"(B$x$ $B$,!"(B$a$ $B$K6a$E$/$H$-!"(B$g(x)$  $B$O!"(B$g(a)$ $B$K6a$E$/!#(B
+$g(x)$ は、点 $x = a$ で微分可能だから、連続、すなわち、$x$ が、$a$ に近づくとき、$g(x)$  は、$g(a)$ に近づく。
 \qed
 
 \begin{eg}
-$f(x) = e^{-x^2}$ $B$H$9$k!#$3$N$H$-!"(B$f'(x) = -2x\cdot e^{-x^2}$$B!#(B$f''(x) = (-2 + 4x^2)\cdot e^{-x^2}$$B!#(B$f(x)$ $B$r(B $n$ $B2sHyJ,$7$?$b$N$r(B $f(x)$ $B$N(B $n$ $B3,F34X?t$H8@$$(B $f^{(n)}(x)$ $B$H=q$/!#<B$O!"(B$n$ $B<!B?9`<0(B $H_n(x)$ $B$G!"(B$f^{(n)} = (-1)^nH_n(x)e^{-x^2}$ $B$H$J$k$b$N$,$"$k!#$3$N!"(B$H_n(x)$ $B$r(B $n$ $B<!%(%k%_!<%H(B(Hermite) $BB?9`<0$H$$$&!#(B$H_0(x) = 1$$B!"(B$H_1(x) = 2x$$B!"(B$H_2(x) = 4x^2 -2$$B!#(B
+$f(x) = e^{-x^2}$ とする。このとき、$f'(x) = -2x\cdot e^{-x^2}$。$f''(x) = (-2 + 4x^2)\cdot e^{-x^2}$。$f(x)$ を $n$ 回微分したものを $f(x)$ の $n$ 階導関数と言い $f^{(n)}(x)$ と書く。実は、$n$ 次多項式 $H_n(x)$ で、$f^{(n)} = (-1)^nH_n(x)e^{-x^2}$ となるものがある。この、$H_n(x)$ を $n$ 次エルミート(Hermite) 多項式という。$H_0(x) = 1$、$H_1(x) = 2x$、$H_2(x) = 4x^2 -2$。
 \end{eg}
 
 \begin{ex}
-$H_n(x)$ $B$r(B $B>e$NNc$GDj5A$5$l$?(B $n$ $B<!%(%k%_!<%H(B(Hermite) $BB?9`<0$H$9$k$H$-0J2<$r<($;!#(B
+$H_n(x)$ を 上の例で定義された $n$ 次エルミート(Hermite) 多項式とするとき以下を示せ。
 \begin{enumerate}
-\item $H_n(x)$ $B$O<B:](B $n$ $B<!B?9`<0$G$"$k!#(B
-\item $H_{n+1}(x) = 2xH_n(x) - 2nH_{n-1}(x)$$B!#(B
-\item $H'_n(x) = 2nH_{n-1}(x)$$B!#(B
-\item $y = H_n(x)$ $B$H$*$/$H!"(B$y$ $B$O!"<!$NHyJ,J}Dx<0$rK~$?$9!#(B
+\item $H_n(x)$ は実際 $n$ 次多項式である。
+\item $H_{n+1}(x) = 2xH_n(x) - 2nH_{n-1}(x)$。
+\item $H'_n(x) = 2nH_{n-1}(x)$。
+\item $y = H_n(x)$ とおくと、$y$ は、次の微分方程式を満たす。
 $$y'' - 2xy' + 2ny = 0.$$
 \end{enumerate}
 \end{ex}
 
 \medskip
-$B$. $B5U4X?t$NHyJ,(B
+$B$. 逆関数の微分
 
-$B<LA|(B $f: X \to Y$ $B$O!"(B $f(X) = Y$ $B$9$J$o$A!"(B$Y$ $B$N$I$s$J85!JMWAG!K(B$y$ $B$KBP$7$F$b!"(B$f(x) = y$ $B$H$J$k(B $x\in X$ $B$,B8:_$9$k$H$-!"A4<M$G$"$k$H$$$&!#$^$?!"(B
+写像 $f: X \to Y$ は、 $f(X) = Y$ すなわち、$Y$ のどんな元（要素）$y$ に対しても、$f(x) = y$ となる $x\in X$ が存在するとき、全射であるという。また、
 $$x_1\neq x_2 \to f(x_1)\neq f(x_2) \Leftrightarrow f(x_1) = f(x_2) \to x_1 = x_2$$
-$B$,@.$jN)$D$H$-C1<M$G$"$k$H$$$&!#A4<M$+$DC1<M$G$"$k$H$-!"A4C1<MKt$O!"#1BP#1BP1~$G$"$k$H$$$&!#$3$N$H$-$O!"(B$y\in Y$ $B$KBP$7$F!"(B$f(x) = y$ $B$H$J$k(B $x\in X$ $B$,$?$@0l$D$KDj$^$k$N$G!"(B $y$ $B$K$3$N(B $x$ $B$rBP1~$5$;$k<LA|$r(B $f$ $B$N5U<LA|$H$$$&!#Dj5A$+$i!"(B$g(f(x)) = x$$B!"(B$f(g(y)) = y$ $B$,@.$jN)$D!#5U$K!"(B$f(x)$ $B$*$h$S!"(B$g(y)$ $B$,!"$"$k6h4V$G8_$$$K5U<LA|(B $g(f(x)) = x, \;f(g(y)) = y$ $B$H$$$&>r7o$rK~$?$7$F$$$k$H!"(B$f(x)$$B!"(B$g(y)$ $B$O!"A4C1<M$K$J$C$F$$$k!#(B
+が成り立つとき単射であるという。全射かつ単射であるとき、全単射又は、１対１対応であるという。このときは、$y\in Y$ に対して、$f(x) = y$ となる $x\in X$ がただ一つに定まるので、 $y$ にこの $x$ を対応させる写像を $f$ の逆写像という。定義から、$g(f(x)) = x$、$f(g(y)) = y$ が成り立つ。逆に、$f(x)$ および、$g(y)$ が、ある区間で互いに逆写像 $g(f(x)) = x, \;f(g(y)) = y$ という条件を満たしていると、$f(x)$、$g(y)$ は、全単射になっている。
 
 
 \begin{eg}
 \begin{enumerate}
-\item $y = f(x) = 2x -1$ $B$O!"(B$\bR$ $B$+$i!"(B$\bR$ $B$X$NA4C1<M$G$"$k!#$3$l$N5U<LA|$r(B $x = g(y)$ $B$GI=$9$H!"(B$g(y) = (1/2)(y+1)$ $B$H$J$k!#5U<LA|$,$"$k!"$9$J$o$A!"A4C1<M$G$"$k$H$O!"4JC1$K8@$&$H!"3F(B $y$ $B$KBP$7$F!"(B$f(x) = y$ $B$H$J$k!"(B$x$ $B$,!"$$$D$G$b$?$@0l$D$KDj$^$k$H$$$&$3$H$G$"$k!#(B
-\item $y = f(x) = x^2$ $B$O!"(B$\bR$ $B$+$i!"(B$\bR$ $B$X$N<LA|!J?t$N=89g$+$i?t$N=89g$X$N<LA|$r4X?t$H$b8@$&!K$G$O$"$k$,!"$3$l$O!"A4<M$G$bC1<M$G$b$J$$!#$^$:!"CM0h$r(B $BIi$G$J$$?tA4BN!"(B$\bR^+ = \{y\geq 0\mid y\in \bR\}$ $B$H$9$k$H!"(B$f:\bR \to \bR^+$ $B$O!"A4<M$G$"$k!#$7$+$7!"(B$f(-1) = f(1)$ $B$+$i$bJ,$+$k$h$&$K(B $BC1<M$G$O$J$$!#$3$l$+$iA4C1<M$rF@$k$?$a$K$O!"$3$N!"Dj5A0h$r@)8B$7$F!"Nc$($P!"(B$f:\bR^+\to\bR^+$ $B$K@)8B$9$l$P!"$3$l$O!"A4C1<M$G$"$k!#$3$N5U<LA|$O!"(B$g(y) = \sqrt{y}$$B!#CM0h$r(B $B@5$G$J$$?tA4BN(B $\bR^-$ $B$K@)8B$7$?$H$-$O!"5U<LA|(B $h(y)$ $B$O!"(B$-\sqrt{y}$ $B$G$"$k$3$H$KCm0U!#(B
+\item $y = f(x) = 2x -1$ は、$\bR$ から、$\bR$ への全単射である。これの逆写像を $x = g(y)$ で表すと、$g(y) = (1/2)(y+1)$ となる。逆写像がある、すなわち、全単射であるとは、簡単に言うと、各 $y$ に対して、$f(x) = y$ となる、$x$ が、いつでもただ一つに定まるということである。
+\item $y = f(x) = x^2$ は、$\bR$ から、$\bR$ への写像（数の集合から数の集合への写像を関数とも言う）ではあるが、これは、全射でも単射でもない。まず、値域を 負でない数全体、$\bR^+ = \{y\geq 0\mid y\in \bR\}$ とすると、$f:\bR \to \bR^+$ は、全射である。しかし、$f(-1) = f(1)$ からも分かるように 単射ではない。これから全単射を得るためには、この、定義域を制限して、例えば、$f:\bR^+\to\bR^+$ に制限すれば、これは、全単射である。この逆写像は、$g(y) = \sqrt{y}$。値域を 正でない数全体 $\bR^-$ に制限したときは、逆写像 $h(y)$ は、$-\sqrt{y}$ であることに注意。
 \end{enumerate}
 \end{eg}
 
 \begin{prop}
-$f(s)$ $B$*$h$S!"(B$g(t)$ $B$,!"$"$k6h4V$G8_$$$K5U4X?t(B $(g(f(s)) = s, \;f(g(t)) = t)$ $B$J$i$P!"(B
+$f(s)$ および、$g(t)$ が、ある区間で互いに逆関数 $(g(f(s)) = s, \;f(g(t)) = t)$ ならば、
 $$\frac{dg}{dt} = \frac{1}{(\frac{df}{ds})}.$$
 \end{prop}
 \proof
-$f(g(t)) = t$ $B$r9g@.4X?t$NHyJ,$rMQ$$$F!"N>JUHyJ,$9$k$H!"(B$f'(g(t))g'(t) = 1$$B!#$?$@$7!"(B$f'(g(t))$ $B$O!"(B$s$ $B$N4X?t$H$7$F$NHyJ,$G$"$k!#(B
+$f(g(t)) = t$ を合成関数の微分を用いて、両辺微分すると、$f'(g(t))g'(t) = 1$。ただし、$f'(g(t))$ は、$s$ の関数としての微分である。
 \qed
 
 \begin{eg}
 \begin{enumerate}
-\item $\sin x$ $B$N5U4X?t$NHyJ,!#(B
+\item $\sin x$ の逆関数の微分。
 $$y = f(x) = \sin^{-1} x = \arcsin x, \; (-\pi/2 \leq y \leq \pi/2).$$
-$x = \sin y$ $B$@$+$i!"(B
+$x = \sin y$ だから、
 $$\frac{dy}{dx} = \frac{1}{\cos y} = \frac{1}{\sqrt{1-x^2}}.$$
-$B$3$3$G!"(B$y$ $B$NHO0O$r(B $-\pi/2 \leq y \leq \pi/2$ $B$NMM$K@_Dj$7$?$?$a!"(B$\cos y\geq 0$ $B$G$"$k$3$H$KCm0U!#(B
-\item $\cos x$ $B$N5U4X?t$NHyJ,!#(B
+ここで、$y$ の範囲を $-\pi/2 \leq y \leq \pi/2$ の様に設定したため、$\cos y\geq 0$ であることに注意。
+\item $\cos x$ の逆関数の微分。
 $$y = f(x) = \cos^{-1} x = \arccos x, \; (0 \leq y \leq \pi).$$
-$x = \cos y$ $B$@$+$i!"(B
+$x = \cos y$ だから、
 $$\frac{dy}{dx} = \frac{-1}{\sin y} = \frac{-1}{\sqrt{1-x^2}}.$$
-\item $\tan x$ $B$N5U4X?t$NHyJ,!#(B
+\item $\tan x$ の逆関数の微分。
 $$y = f(x) = \tan^{-1} x = \arctan x, \; (-\pi/2 < y < \pi/2).$$
-$x = \tan y$ $B$@$+$i!"(B
+$x = \tan y$ だから、
 $$\frac{dy}{dx} = \frac{1}{\sec^2 y} = \frac{1}{1+x^2}.$$
-\item $e^x$ $B$N5U4X?t(B $y = \log x$ $B$NHyJ,!#(B
-$x = e^x$ $B$@$+$i!"(B
+\item $e^x$ の逆関数 $y = \log x$ の微分。
+$x = e^x$ だから、
 $$\frac{dy}{dx} = \frac{1}{e^y} = \frac{1}{x}.$$
 \end{enumerate}
 \end{eg}
 
 \medskip
-$C$. $BBP?tHyJ,K!(B
+$C$. 対数微分法
 
-$B@Q!">&$,B?$/4^$^$l$k4X?t!";X?t4X?t$K$O!"$^$:!"(B$\log$ $B$r<h$C$F$+$i!"HyJ,$r$9$kBP?tHyJ,K!$,M-8z$G$"$k!#(B$y = f(x)$ $B$N$H$-!"(B$\log y = \log f(x)$ $B$rHyJ,$9$k$H!"(B
+積、商が多く含まれる関数、指数関数には、まず、$\log$ を取ってから、微分をする対数微分法が有効である。$y = f(x)$ のとき、$\log y = \log f(x)$ を微分すると、
 $$\frac{d}{dx}\log f(x) = \frac{f'(x)}{f(x)}.$$
-$B$G$"$C$?!#(B
+であった。
 
 \begin{eg}
 \begin{enumerate}
-\item ${\displaystyle y = \frac{(2x+1)^4}{(x^2-1)^3(4x+3)^2}}$ $B$H$9$k$H!"(B
+\item ${\displaystyle y = \frac{(2x+1)^4}{(x^2-1)^3(4x+3)^2}}$ とすると、
 $$\log y = 4\log(2x+1) - 3\log(x^2-1) - 2\log(4x+3)$$
-$B$H$J$k$+$i!"$3$l$h$j!"<!$rF@$k!#(B
+となるから、これより、次を得る。
 $$\frac{y'}{y} = \frac{4\cdot2}{2x+1} - \frac{3\cdot2x}{x^2 -1} - \frac{2\cdot4}{4x+3}.$$
-\item $y = (1+2x)^{1/x}$ $B$H$9$k$H!"(B$\log y = \frac{1}{x}\log(1+2x)$$B!#$3$l$h$j!"(B
+\item $y = (1+2x)^{1/x}$ とすると、$\log y = \frac{1}{x}\log(1+2x)$。これより、
 $$\frac{y'}{y} = -\frac{1}{x^2}\log(1+2x) + \frac1x\cdot\frac{2}{2x+1}.$$
-\item $u = u(x), v = v(x), w = w(x)$ $B$H$9$k$H!"(B$(uvw)' = u'vw + uv'w + uvw'$ $B$@$,!"BP?tHyJ,K!$r;H$&$3$H$K$h$j!"(B$u(x)v(x)w(x) \neq 0$ $B$NHO0O$G!"(B
+\item $u = u(x), v = v(x), w = w(x)$ とすると、$(uvw)' = u'vw + uv'w + uvw'$ だが、対数微分法を使うことにより、$u(x)v(x)w(x) \neq 0$ の範囲で、
 $$\frac{(uvw)'}{uvw} = \frac{u'}{u} + \frac{v'}{v} + \frac{w'}{w}$$
-$B$G$"$k$3$H$,J,$+$k!#$3$NMM$JI=<($,M-8z$J$H$-$b$h$/$"$k!#(B
+であることが分かる。この様な表示が有効なときもよくある。
 \end{enumerate}
 \end{eg}
 
 \medskip
-$D$. $B%i%$%W%K%C%D(B(Leibniz)$B$N8x<0(B
+$D$. ライプニッツ(Leibniz)の公式
 $$(f\cdot g)^{(n)} = \sum_{k=0}^n {}_nC_k f^{(n-k)}\cdot g^{(k)}.$$
-$B$?$@$7!"(B$f^{(0)} = f$$B!#(B${}_nC_k$ $B$O!"(B${n \choose k}$ $B$HI=$9$3$H$,B?$$!#(B
+ただし、$f^{(0)} = f$。${}_nC_k$ は、${n \choose k}$ と表すことが多い。
 
 \begin{eg}
 \begin{enumerate}
-\item ${\displaystyle (\sin x)^{(k)} = \sin\bigl(x+\frac{k\pi}{2}\bigr)}$ $B$KCm0U$9$k!#$9$k$H!"(B
+\item ${\displaystyle (\sin x)^{(k)} = \sin\bigl(x+\frac{k\pi}{2}\bigr)}$ に注意する。すると、
 \begin{eqnarray*}
 (e^x\sin x)^{(n)} & =  & \sum_{k=0}^n {n\choose k}e^x(\sin x)^{(k)}\\
 & = & \sum_{k=0}^n {n\choose k}e^x\sin\bigl(x+\frac{k\pi}{2}\bigr)
 \end{eqnarray*}
-\item $f(x) = \tan^{-1}x$ $B$H$9$k!#$3$N$H$-!"5U4X?t$NHyJ,$G9M$($?$h$&$K!"(B$f'(x) = 1/(1+x^2)$ $B$G$"$C$?!#$3$l$h$j!"(B$1 = (1+x^2)f'(x)$ $B$rF@$k!#$3$l$K!"%i%$%W%K%C%D$N8x<0$rE,1~$9$k$H!"(B$1+x^2$ $B$O!"#32sHyJ,$9$k$H(B $0$ $B$H$J$k$3$H$+$i!"(B$k\geq 1$ $B$N$H$-!"(B
+\item $f(x) = \tan^{-1}x$ とする。このとき、逆関数の微分で考えたように、$f'(x) = 1/(1+x^2)$ であった。これより、$1 = (1+x^2)f'(x)$ を得る。これに、ライプニッツの公式を適応すると、$1+x^2$ は、３回微分すると $0$ となることから、$k\geq 1$ のとき、
 \begin{eqnarray*}
 0 & = & \sum_{i = 0}^k {k\choose i} (1+x^2)^{(i)}(f'(x))^{(k-i)}\\
    & = & \sum_{i = 0}^2 {k\choose i} (1+x^2)^{(i)}(f^{(k-i+1)}(x))\\
    & = & (1+x^2)f^{(k+1)}(x) + k2xf^{(k)}(x) + \frac{k(k-1)}2\cdot 2f^{(k-1)}(x)\\
    & = &  (1+x^2)f^{(k+1)}(x) + 2kxf^{(k)}(x) + {k(k-1)}f^{(k-1)}(x)
 \end{eqnarray*}
-$B$rF@$k!#Nc$($P!"(B$x = 0$ $B$H$*$/$H!"(B$k\geq 0$ $B$G!"(B
+を得る。例えば、$x = 0$ とおくと、$k\geq 0$ で、
 $$f^{(k+1)}(0) + k(k-1)f^{(k-1)}(0) = 0$$
-$B$rF@$k$+$i!"(B$f^{(0)}(0) = f(0) = 0$$B!"(B$f^{(1)}(0) = 1$ $B$KCm0U$9$k$H!"(B
+を得るから、$f^{(0)}(0) = f(0) = 0$、$f^{(1)}(0) = 1$ に注意すると、
 $$f^{(0)}(0) = f^{(2)}(0) = f^{(4)}(0) = \cdots = f^{(2i)}(0) = 0, \ldots$$
-$B$^$?!"4q?t$N;~$O!"(B
+また、奇数の時は、
 $$f^{(1)}(0) = 1, f^{(3)}(0) = -2, f^{(5)}(0) = 3! , \ldots, f^{(2i-1)}(0) = (-1)^{i-1}i!, \ldots$$
-$B$rF@$k!#$3$NMM$J;H$$J}$b$"$k!#(B
+を得る。この様な使い方もある。
 \end{enumerate}
 \end{eg}
 
 \newpage
-\mysection{$BJ?6QCM$NDjM}(B}
-\begin{prop}$B!J(BRoll $B$NDjM}!K(B\quad \label{prop:roll}
-$B4X?t(B $f(x)$ $B$,!"JD6h4V(B $[a,b]$ $B$G!"O"B3!"3+6h4V(B $(a,b)$ $B$G!"HyJ,2DG=$G$"$j!"(B$f(a) = f(b)$ $B$J$i$P!"3+6h4V(B $(a,b)$ $B$NE@(B $c$ $B$G!"(B$f'(c) = 0$ $B$rK~$?$9$b$N$,$"$k!#(B
+\mysection{平均値の定理}
+\begin{prop}（Roll の定理）\quad \label{prop:roll}
+関数 $f(x)$ が、閉区間 $[a,b]$ で、連続、開区間 $(a,b)$ で、微分可能であり、$f(a) = f(b)$ ならば、開区間 $(a,b)$ の点 $c$ で、$f'(c) = 0$ を満たすものがある。
 \end{prop}
 \proof
-$f(x) = f(a) = f(b)$ $B$,>o$K@.$jN)$F$P!"(B$f'(x) = 0$ $B$@$+$i!"$3$N>l9g$O!"NI$$!#(B
-$f(x) > f(a) = f(b)$ $B$H$J$kE@!"(B$x$ $B$,$"$k$H$9$k!#(B$f(x)$ $B$O!"O"B3$@$+$i!"L?Bj(B \ref{prop:maxmin} $B$K$h$C$F!"6h4VFb$N$"$kE@!"(B$c$ $B$G!":GBgCM(B $f(c)$ $B$r$H$k!#$3$N$H$-!"(B
+$f(x) = f(a) = f(b)$ が常に成り立てば、$f'(x) = 0$ だから、この場合は、良い。
+$f(x) > f(a) = f(b)$ となる点、$x$ があるとする。$f(x)$ は、連続だから、命題 \ref{prop:maxmin} によって、区間内のある点、$c$ で、最大値 $f(c)$ をとる。このとき、
 $$f'(c) = \lim_{x\rightarrow c}\frac{f(x) - f(c)}{x-c} $$
-$B$+$D!"(B
-$$\frac{f(x) - f(c)}{x-c} = \left\{\begin{array}{ll}\mbox{$BIiKt$O#0(B} & x< c \\
-\mbox{$B@5Kt$O#0(B} & x>c \end{array} \right.$$
-$B=>$C$F!"(B$f'(c) = 0$$B!#(B
+かつ、
+$$\frac{f(x) - f(c)}{x-c} = \left\{\begin{array}{ll}\mbox{負又は０} & x< c \\
+\mbox{正又は０} & x>c \end{array} \right.$$
+従って、$f'(c) = 0$。
 
-$f(x) < f(a) = f(b)$ $B$H$J$kE@!"(B$x$ $B$,$"$k>l9g$bF1MM!#(B
+$f(x) < f(a) = f(b)$ となる点、$x$ がある場合も同様。
 \qed
 
-\begin{thm} $B!JJ?6QCM$NDjM}!K(B\quad  \label{thm:mvt}
-$B4X?t(B $f(x)$ $B$,!"JD6h4V(B $[a,b]$ $B$G!"O"B3!"3+6h4V(B $(a,b)$ $B$G!"HyJ,2DG=$J$i$P!"3+6h4V(B $(a,b)$ $B$NE@(B $c$ $B$G!"<!$rK~$?$9$b$N$,$"$k!#(B
+\begin{thm} （平均値の定理）\quad  \label{thm:mvt}
+関数 $f(x)$ が、閉区間 $[a,b]$ で、連続、開区間 $(a,b)$ で、微分可能ならば、開区間 $(a,b)$ の点 $c$ で、次を満たすものがある。
 $$f'(c) = \frac{f(b) - f(a)}{b-a}.$$
 \end{thm}
 \proof
-$F(x) = f(x) - {\displaystyle \frac{f(b) - f(a)}{b-a}}x$ $B$H$9$k$H!"(B
+$F(x) = f(x) - {\displaystyle \frac{f(b) - f(a)}{b-a}}x$ とすると、
 $$F(a) = f(a) - \frac{f(b) - f(a)}{b-a}a = \frac{bf(a) - af(b)}{b-a} = 
 f(b) - \frac{f(b) - f(a)}{b-a}b = F(b)$$
-$B=>$C$F!"L?Bj(B \ref{prop:roll} $B$K$h$C$F!"(B$F'(c) = 0$  $B$H$J$k!"E@(B $c$ $B$,$"$k!#$3$l$O!"(B
+従って、命題 \ref{prop:roll} によって、$F'(c) = 0$  となる、点 $c$ がある。これは、
 $$f'(c) = \frac{f(b) - f(a)}{b-a}$$
-$B$r0UL#$9$k!#(B
+を意味する。
 \qed
 
-\newpage\mysection{$B4X?t$H%0%i%U(B}
+\newpage\mysection{関数とグラフ}
 \begin{definition}
-$BE@(B $x$ $B$,!"E@(B $a$ $B$K==J,6a$$$H$-$O!">o$K!"(B
-$f(a) > f(x)$ $B$,@.$jN)$D$H$-!"(B$f(x)$ $B$O!"(B$x = a$ $B$G!"6KBg$K$J$k$H$$$$!"(B$f(a)$ $B$r$=$N6KBgCM!"E@(B $a$ $B$r!"6KBgE@$H$$$&!#F1MM$K$7$F!"E@(B $x$ $B$,!"E@(B $a$ $B$K==J,6a$$$H$-$O!">o$K!"(B
-$f(a) < f(x)$ $B$,@.$jN)$D$H$-!"(B$f(x)$ $B$O!"(B$x = a$ $B$G!"6K>.$K$J$k$H$$$$!"(B$f(a)$ $B$r$=$N6K>.CM!"E@(B $a$ $B$r!"6K>.E@$H$$$&!#6KBgCM$H6K>.CM$r9g$o$;$F6KCM$H$$$&!#(B
+点 $x$ が、点 $a$ に十分近いときは、常に、
+$f(a) > f(x)$ が成り立つとき、$f(x)$ は、$x = a$ で、極大になるといい、$f(a)$ をその極大値、点 $a$ を、極大点という。同様にして、点 $x$ が、点 $a$ に十分近いときは、常に、
+$f(a) < f(x)$ が成り立つとき、$f(x)$ は、$x = a$ で、極小になるといい、$f(a)$ をその極小値、点 $a$ を、極小点という。極大値と極小値を合わせて極値という。
 \end{definition}
 
 \begin{prop} \label{prop:1stderiv-test}
-$f(x)$ $B$r!"JD6h4V(B $[a,b]$ $B>eO"B3!"3+6h4V(B $(a,b)$  $B>eHyJ,2DG=$H$9$k!#$3$N$H$-<!$,@.N)$9$k!#(B
+$f(x)$ を、閉区間 $[a,b]$ 上連続、開区間 $(a,b)$  上微分可能とする。このとき次が成立する。
 \begin{itemize}
-\item[$(1)$] $(a,b)$ $BFb$NE@(B $c$ $B$G6KCM$r;}$F$P!"(B$f'(c) = 0$$B!#(B
-\item[$(2)$] $(a,b)$ $B>e$G!">o$K(B $f'(x)>0$ $B$J$i$P!"(B$f(x)$  $B$O!"(B$[a,b]$ $B>e$G??$KA}2C!#(B
-\item[$(3)$] $(a,b)$ $B>e$G!">o$K(B $f'(x)<0$ $B$J$i$P!"(B$f(x)$  $B$O!"(B$[a,b]$ $B>e$G??$K8:>/!#(B
-\item[$(4)$] $(a,b)$ $B>e$G!">o$K(B $f'(x)=0$ $B$J$i$P!"(B$f(x)$  $B$O!"(B$[a,b]$ $B>e$GDj?t4X?t!#(B
+\item[$(1)$] $(a,b)$ 内の点 $c$ で極値を持てば、$f'(c) = 0$。
+\item[$(2)$] $(a,b)$ 上で、常に $f'(x)>0$ ならば、$f(x)$  は、$[a,b]$ 上で真に増加。
+\item[$(3)$] $(a,b)$ 上で、常に $f'(x)<0$ ならば、$f(x)$  は、$[a,b]$ 上で真に減少。
+\item[$(4)$] $(a,b)$ 上で、常に $f'(x)=0$ ならば、$f(x)$  は、$[a,b]$ 上で定数関数。
 \end{itemize}
 \end{prop}
 \proof
-$BJ?6QCM$NDjM}(B \ref{thm:mvt} $B$K$h$C$F!"(B
-$$\frac{f(x) - f(c)}{x-c} = f'(d) \;\mbox{ $B$H$J$kE@(B } d \mbox{ $B$,!"(B$x$ $B$H(B $c$ $B$N4V$K$"$k!#(B}$$
+平均値の定理 \ref{thm:mvt} によって、
+$$\frac{f(x) - f(c)}{x-c} = f'(d) \;\mbox{ となる点 } d \mbox{ が、$x$ と $c$ の間にある。}$$
 \begin{itemize}
-\item[$(1)$] $f(c) > f(x)$ $B$N;~$O!">e$NCM$O!"(B$x < c$ $B$N$H$-!"@5!"(B$x>c$ $B$N$H$-!"Ii$@$+$i!"(B$x$ $B$,!"(B$c$ $B$K6a$E$/$H!"$D$^$j!"(B$f'(c)$ $B$O!"(B$0$ $B$K$J$i$6$k$rF@$J$$!#(B
-$f(c) < f(x)$ $B$N$H$-$bF1MM!#(B
-\item[$(2)$] $f(x) - f(c)$ $B$O!"(B$x<c$ $B$N$H$-!"Ii!"(B$x>c$ $B$N$H$-!"@5$@$+$i!"??$KA}2C!#(B
-\item[$(3)$] $BF1MM!#(B
-\item[$(4)$] $BL@$i$+!#(B\qed
+\item[$(1)$] $f(c) > f(x)$ の時は、上の値は、$x < c$ のとき、正、$x>c$ のとき、負だから、$x$ が、$c$ に近づくと、つまり、$f'(c)$ は、$0$ にならざるを得ない。
+$f(c) < f(x)$ のときも同様。
+\item[$(2)$] $f(x) - f(c)$ は、$x<c$ のとき、負、$x>c$ のとき、正だから、真に増加。
+\item[$(3)$] 同様。
+\item[$(4)$] 明らか。\qed
 \end{itemize}
 
-$f'(x)$ $B$NA}2C!"8:>/$O!"(B$f''(x)$ $B$K$h$C$FJ,$+$k$3$H$r9M$($l$P!"<!$rF@$k!#(B
+$f'(x)$ の増加、減少は、$f''(x)$ によって分かることを考えれば、次を得る。
 \begin{prop}
-$f(x)$ $B$r!"JD6h4V(B $[a,b]$ $B>eO"B3!"3+6h4V(B $(a,b)$  $B>e#22sHyJ,2DG=$H$9$k!#$3$N$H$-<!$,@.N)$9$k!#(B
+$f(x)$ を、閉区間 $[a,b]$ 上連続、開区間 $(a,b)$  上２回微分可能とする。このとき次が成立する。
 \begin{itemize}
-\item[$(1)$] $f'(c) = 0$$B!"(B$f''(c) < 0$ $B$J$i$P!"4X?t(B $f(x)$ $B$O!"(B$c$ $B$G6KBgCM(B $f(c)$ $B$r;}$D!#(B
-\item[$(2)$] $f'(c) = 0$$B!"(B$f''(c) > 0$ $B$J$i$P!"4X?t(B $f(x)$ $B$O!"(B$c$ $B$G6K>.CM(B $f(c)$ $B$r;}$D!#(B
+\item[$(1)$] $f'(c) = 0$、$f''(c) < 0$ ならば、関数 $f(x)$ は、$c$ で極大値 $f(c)$ を持つ。
+\item[$(2)$] $f'(c) = 0$、$f''(c) > 0$ ならば、関数 $f(x)$ は、$c$ で極小値 $f(c)$ を持つ。
 \end{itemize}
 \end{prop}
 
 \begin{definition}
-$B4X?t(B $f(x)$ $B$,!"E@(B $c$ $B$K$*$$$F!"@\@~$r;}$A!"(B$c$ $B$N$4$/6a$/$G!"(B$f(x)$ $B$N%0%i%U$,!"@\@~$N>e$K$"$l$P!"(B$f(x)$ $B$O!"E@(B $c$ $B$K$*$$$F!"2<$KFL!"@\@~$N2<$K$"$l$P!">e$KFL$H$$$&!#(B$f(x)$ $B$N%0%i%U$,!"@\@~$N>e$+$i2<!"Kt$O!"2<$+$i>e$K0\$k$H$-!"$3$NE@$r!"JQ6JE@$H$$$&!#(B
+関数 $f(x)$ が、点 $c$ において、接線を持ち、$c$ のごく近くで、$f(x)$ のグラフが、接線の上にあれば、$f(x)$ は、点 $c$ において、下に凸、接線の下にあれば、上に凸という。$f(x)$ のグラフが、接線の上から下、又は、下から上に移るとき、この点を、変曲点という。
 \end{definition}
 
-$B>e$NDj5A$N>r7o$r<0$G=q$$$F$_$k!#E@(B $c$ $B$G$N@\@~$NJ}Dx<0$O!"(B$y = f(c) + f'(c) (x-c)$ $B$@$+$i!"(B$f(x)\geq f(c) + f'(c)(x-c)$ $B$H$J$k!#(B$a, b$ $B$r(B $a < c < b$  $B$G$"$k!"(B$c$ $B$N$4$/6a$/$NE@$H$9$k$H!"(B
+上の定義の条件を式で書いてみる。点 $c$ での接線の方程式は、$y = f(c) + f'(c) (x-c)$ だから、$f(x)\geq f(c) + f'(c)(x-c)$ となる。$a, b$ を $a < c < b$  である、$c$ のごく近くの点とすると、
 $$\frac{f(c) - f(a)}{c-a} \leq f'(c) \leq \frac{f(b) - f(c)}{b-c}$$
-$B$@$+$i!"(B$f'(x)$ $B$,(B $BHyJ,2DG=$H$9$k$H!"(B$c$ $B$N6a$/$G!"(B$f'(x)$ $B$,A}2C$7$F$$$k$3$H$,J,$+$k!#5U$K!"(B$f'(x)$ $B$,(B $c$ $B$N6a$/$G!"A}2C$7$F$$$l$P!">e$N<0$+$i!"(B$c$ $B$N$4$/6a$/$G!"(B$f(x)$ $B$N%0%i%U$,!"@\@~$N>e$K$"$k$3$H$,J,$+$k$+$i!"4X?t(B $f(x)$ $B$,!"E@(B $c$ $B$G!"2<$KFL$G$"$k$?$a$NI,MW==J,>r7o$O!"(B$f(x)$ $B$,!"(B$c$ $B$N6a$/$G!"A}2C$7$F$$$k$3$H$G$"$k$3$H$,J,$+$k!#!J$?$@$7!"(B$f''(c)>0$ $B$r0UL#$7$F$$$k$o$1$G$O$J$$!#!K$3$N$3$H$h$j!"<!$,F@$i$l$k!#(B
+だから、$f'(x)$ が 微分可能とすると、$c$ の近くで、$f'(x)$ が増加していることが分かる。逆に、$f'(x)$ が $c$ の近くで、増加していれば、上の式から、$c$ のごく近くで、$f(x)$ のグラフが、接線の上にあることが分かるから、関数 $f(x)$ が、点 $c$ で、下に凸であるための必要十分条件は、$f(x)$ が、$c$ の近くで、増加していることであることが分かる。（ただし、$f''(c)>0$ を意味しているわけではない。）このことより、次が得られる。
 
 \begin{prop}
-$f(x)$ $B$,!"3+6h4V(B $(a,b)$ $B$K$*$$$F!"#23,F34X?t(B $f''(x)$ $B$r;}$F$P!"<!$,@.N)!#(B
+$f(x)$ が、開区間 $(a,b)$ において、２階導関数 $f''(x)$ を持てば、次が成立。
 \begin{itemize}
-\item[$(1)$]  $f''(x)>0$ $B$J$i$P!"(B$f(x)$ $B$O!"3+6h4V(B $(a,b)$ $B$G!"2<$KFL!#(B
-\item[$(2)$]  $f''(x)<0$ $B$J$i$P!"(B$f(x)$ $B$O!"3+6h4V(B $(a,b)$ $B$G!">e$KFL!#(B
-\item[$(3)$]  $f''(c) = 0$ $B$+$D!"(B$f''(x)$ $B$NId9f!J@5$G$"$k$+!"Ii$G$"$k$+!K$,E@(B $c$ $B$GJQ$o$l$P!"(B$x = c$ $B$O!"JQ6JE@!#(B
+\item[$(1)$]  $f''(x)>0$ ならば、$f(x)$ は、開区間 $(a,b)$ で、下に凸。
+\item[$(2)$]  $f''(x)<0$ ならば、$f(x)$ は、開区間 $(a,b)$ で、上に凸。
+\item[$(3)$]  $f''(c) = 0$ かつ、$f''(x)$ の符号（正であるか、負であるか）が点 $c$ で変われば、$x = c$ は、変曲点。
 \end{itemize}
 \end{prop}
 
 \begin{eg}
-$B6h4V(B $[0,2\pi]$ $B>e$G!"4X?t(B $f(x) = \sin x(1 + \cos x)$ $B9M$($k!#(B
+区間 $[0,2\pi]$ 上で、関数 $f(x) = \sin x(1 + \cos x)$ 考える。
 \begin{eqnarray*}
 f'(x) & = & \cos x(1+ \cos x) + \sin x(-\sin x)\\
         & = & \cos x + \cos^2 x - \sin^2 x\\
         & = & 2\cos^2 x + \cos x - 1\\
         & = & (2\cos x -1)(\cos x+ 1)
 \end{eqnarray*}
-$B=>$C$F!"!!(B$f'(x) = 0$ $B$J$i$P!"(B$\cos x = -1$ $B$^$?$O!"(B$1/2$$B!#M?$($i$l$?6h4V$NCf$G$O!"(B$x = \pi/3, \pi, 5\pi/3$$B!#$^$?!"(B
+従って、　$f'(x) = 0$ ならば、$\cos x = -1$ または、$1/2$。与えられた区間の中では、$x = \pi/3, \pi, 5\pi/3$。また、
 $$f''(x) = -2\sin x(\cos x +1) - \sin x(2\cos x -1) = -\sin x(4\cos x +1)$$
-$B$h$j!"(B$f''(x) = 0$ $B$H$J$k$N$O!"(B$x = 0, \pi, 2\pi$ $B$*$h$S!"(B$\cos x$ $B$,!"(B$-1/4$ $B$H$J$k$H$3$m!#(B$x_1 = \arccos (-1/4)$ $B$H$9$k$H!"$=$N$h$&$JE@$O!"(B$x_1$ $B$H!"(B$2\pi - x_1$$B!#(B
+より、$f''(x) = 0$ となるのは、$x = 0, \pi, 2\pi$ および、$\cos x$ が、$-1/4$ となるところ。$x_1 = \arccos (-1/4)$ とすると、そのような点は、$x_1$ と、$2\pi - x_1$。
 $$\begin{array}{c|ccccccccccccc}
 x & 0 &  & \pi/3 & & x_1 & & \pi & & 2\pi-x_1 & & 5\pi/3 & & 2\pi\\
 \hline 
-f(x) & & \nearrow & \mbox{$BFL(B} & \searrow &  \searrow & \searrow & & \searrow & \searrow & \searrow & \mbox{$B1z(B} & \nearrow & \\
+f(x) & & \nearrow & \mbox{凸} & \searrow &  \searrow & \searrow & & \searrow & \searrow & \searrow & \mbox{凹} & \nearrow & \\
 f'(x) & + & + & 0 & - & - & - & 0 & - & - & - & 0 & + & + \\
 f''(x) & 0 & - & - & - & 0 & + & 0 & - & 0 & + & + & + & 0 
 \end{array}$$
 \end{eg}
 
 \begin{eg}
-$p>1$ $\frac{1}{p} + \frac{1}{q} = 1$ $B$N$H$-!"G$0U$N(B $\alpha$, $\beta$ $B$KBP$7$F!"(B
+$p>1$ $\frac{1}{p} + \frac{1}{q} = 1$ のとき、任意の $\alpha$, $\beta$ に対して、
 $$\frac{1}{p}|\alpha|^p + \frac{1}{q}|\beta|^q \geq |\alpha||\beta|.$$
 \proof
-$\beta$ $B$r8GDj$7$F!"(B
+$\beta$ を固定して、
 $$f(x) = \frac{1}{p}x^p + \frac{1}{q}|\beta|^q - |\beta|x\quad(x\geq 0)$$
-$B$H$*$/!#(B$f(x)\geq 0$ $B$G$"$k$3$H$r<($;$P$h$$!#(B$f'(x) = x^{p-1} - |\beta|$ $B$@$+$i!"(B$x\geq 0$  $B$K$*$$$F!"<!$N$h$&$K$J$k!#(B
+とおく。$f(x)\geq 0$ であることを示せばよい。$f'(x) = x^{p-1} - |\beta|$ だから、$x\geq 0$  において、次のようになる。
 $$\begin{array}{c|cccc}
 x & 0 &  & |\beta|^{1/(p-1)} & \\
 \hline 
 f'(x) & & - & 0 & + \\
-f(x) & & \searrow & \mbox{$B6K>.(B} & \nearrow 
+f(x) & & \searrow & \mbox{極小} & \nearrow 
 \end{array}$$
-$B$7$?$,$C$F!"(B$f(x)\geq f(|\beta|^{1/(p-1)})$ $B$H$J$k!#$H$3$m$,!"(B
+したがって、$f(x)\geq f(|\beta|^{1/(p-1)})$ となる。ところが、
 $$f(|\beta|^{1/(p-1)}) = \frac{1}{p}|\beta|^{p/(p-1)} + \frac{1}{q}|\beta|^{q} - |\beta|^{p/(p-1)} = 0.$$
-$B$3$l$h$j!"(B$f(x)\geq 0$ $B$rF@$k!#(B
+これより、$f(x)\geq 0$ を得る。
 \qed
 \end{eg}
 
-\newpage\mysection{$BHyJ,$N1~MQ!"%F%$%i!<E83+(B}
-\begin{thm} $B!J(BCauchy $B$NJ?6QCM$NDjM}!K(B\label{thm:cauchy-mvt}
-$BJD6h4V(B $[a,b]$ $B$K$*$$$F!"(B$f(x)$$B!"(B$g(x)$ $B$O!"O"B3!"3+6h4V(B $(a,b)$ $B$K$*$$$F!"HyJ,2DG=$H$9$k!#$b$7!"(B$g(a)\neq g(b)$  $B$+$D!"(B$f'(t)$$B!"(B$g'(t)$  $B$,!"F1;~$K(B $0$ $B$K$J$i$J$1$l$P!"(B$(a,b)$ $B$N$"$kE@!"(B$c$ $B$K$*$$$F!"(B $B<!$,@.$jN)$D!#(B
+\newpage\mysection{微分の応用、テイラー展開}
+\begin{thm} （Cauchy の平均値の定理）\label{thm:cauchy-mvt}
+閉区間 $[a,b]$ において、$f(x)$、$g(x)$ は、連続、開区間 $(a,b)$ において、微分可能とする。もし、$g(a)\neq g(b)$  かつ、$f'(t)$、$g'(t)$  が、同時に $0$ にならなければ、$(a,b)$ のある点、$c$ において、 次が成り立つ。
 $$\frac{f(b) - f(a)}{g(b) - g(a)} = \frac{f'(c)}{g'(c)}$$
 \end{thm}
 \proof
-$F(x) = (g(b) - g(a))f(x) - (f(b) - f(a))g(x)$  $B$H$*$/$H!"(B$F(a) = F(b)$ $B$@$+$i!"(BRoll $B$NDjM}$,!";H$($k!#(B
+$F(x) = (g(b) - g(a))f(x) - (f(b) - f(a))g(x)$  とおくと、$F(a) = F(b)$ だから、Roll の定理が、使える。
 \qed
 
 \note
-$B>e5-$NDjM}$K$h$j!"<!$N!"1&JU$N6K8B$,$"$l$P!":8JU$N6K8B$bB8:_$7!"Ey$7$/$J$k!#(B
+上記の定理により、次の、右辺の極限があれば、左辺の極限も存在し、等しくなる。
 $$\lim_{x\rightarrow a}\frac{f(x) - f(a)}{g(x) - g(a)} = 
 \lim_{c\rightarrow a}\frac{f'(c)}{g'(c)}$$
-$BFC$K!"(B$f(a) = g(a) = 0$ $B$N$H$-$J$I$KMxMQ$G$-!"(B
+特に、$f(a) = g(a) = 0$ のときなどに利用でき、
 $$\lim_{x\rightarrow a}\frac{f(x)}{g(x)} = 
 \lim_{x\rightarrow a}\frac{f'(x)}{g'(x)}$$
-$B$,F@$i$l$k!#(B
-$B>ZL@$r!">/$79)IW$9$k$H!"(B$\lim_{x\rightarrow a} f(x) = \pm\infty$$B!"(B
-$\lim_{x\rightarrow a} g(x) = \pm\infty$ $B$N>l9g$b!"F1MM$N$3$H$,8@$($k!#(B
-$B$3$NMM$K!"6K8B$,!"(B$0/0$ $BKt$O!"(B$\pm\infty/\pm\infty$ $B$H$J$k$b$N$r(B{\gt $BITDj7A(B}$B$H$$$&!#(B
+が得られる。
+証明を、少し工夫すると、$\lim_{x\rightarrow a} f(x) = \pm\infty$、
+$\lim_{x\rightarrow a} g(x) = \pm\infty$ の場合も、同様のことが言える。
+この様に、極限が、$0/0$ 又は、$\pm\infty/\pm\infty$ となるものを{\gt 不定形}という。
 
 \smallskip
-$B0J>e$r$^$H$a$k$H<!$N$h$&$K$J$k!#(B
+以上をまとめると次のようになる。
 
-\begin{thm} [L'Hospital $B$NDjM}(B]
+\begin{thm} [L'Hospital の定理]
 \begin{itemize}
-\item[$(1)$] $B4X?t(B $f(x)$$B!"(B$g(x)$ $B$,!"(B$(a,b)$ $B$GHyJ,2DG=$G(B $g'(x) \neq 0$ $B$H$7!"(B
+\item[$(1)$] 関数 $f(x)$、$g(x)$ が、$(a,b)$ で微分可能で $g'(x) \neq 0$ とし、
 $$\lim_{x\to a}f(x) = 0,\;\lim_{x\to a}g(x) = 0$$
-$B$H$9$k!#$3$N$H$-!"(B$\lim_{x\to a}\frac{f'(x)}{g'(x)}$ $B$,B8:_$9$l$P!J(B$\pm\infty$ $B$b4^$a$F!K!"(B
+とする。このとき、$\lim_{x\to a}\frac{f'(x)}{g'(x)}$ が存在すれば（$\pm\infty$ も含めて）、
 $$\lim_{x\to a}\frac{f(x)}{g(x)} = \lim_{x\to a}\frac{f'(x)}{g'(x)}.$$
-\item[$(2)$] $B4X?t(B $f(x)$$B!"(B$g(x)$ $B$,!"(B$(a,b)$ $B$GHyJ,2DG=$G(B $g'(x)$ $B$O!"DjId9f$H$7!"(B
+\item[$(2)$] 関数 $f(x)$、$g(x)$ が、$(a,b)$ で微分可能で $g'(x)$ は、定符号とし、
 $$\lim_{x\to a}f(x) = \pm\infty,\;\lim_{x\to a}g(x) = \pm\infty$$
-$B$H$9$k!#$3$N$H$-!"(B$\lim_{x\to a}\frac{f'(x)}{g'(x)}$ $B$,B8:_$9$l$P!J(B$\pm\infty$ $B$b4^$a$F!K!"(B
+とする。このとき、$\lim_{x\to a}\frac{f'(x)}{g'(x)}$ が存在すれば（$\pm\infty$ も含めて）、
 $$\lim_{x\to a}\frac{f(x)}{g(x)} = \lim_{x\to a}\frac{f'(x)}{g'(x)}.$$
 \end{itemize}
 \end{thm}
@@ -465,85 +465,85 @@ $$\lim_{x\to a}\frac{f(x)}{g(x)} = \lim_{x\to a}\frac{f'(x)}{g'(x)}.$$
 \end{enumerate}
 \end{eg}
 
-$BJ?6QCM$NDjM}$O!"<!$N$h$&$K$b5-=R$G$-$k!#(B
+平均値の定理は、次のようにも記述できる。
 $$f(x) = f(a) + f'(c)(x-a)$$
-$B$?$@$7!"(B$c$ $B$O!"(B$x$ $B$H!"(B$a$ $B$N4V$NE@!#(B$f(x)$  $B$,!"9b3,F34X?t$r;}$D$H$-$O!"$3$NI=<($r0lHL2==PMh$k!#(B
+ただし、$c$ は、$x$ と、$a$ の間の点。$f(x)$  が、高階導関数を持つときは、この表示を一般化出来る。
 
 \begin{prop}
-$B4X?t(B $f(x)$ $B$,!"(B$[a,b]$ $B>e$GO"B3!"(B$(a,b)$ $B>e$G(B $n$ $B2sHyJ,2DG=$J$i$P!"6h4V(B
-$(a,b)$ $BFb$NE@(B $c$ $B$G!"<!$N>r7o$rK~$?$9$b$N$,B8:_$9$k!#(B
+関数 $f(x)$ が、$[a,b]$ 上で連続、$(a,b)$ 上で $n$ 回微分可能ならば、区間
+$(a,b)$ 内の点 $c$ で、次の条件を満たすものが存在する。
 $$f(b) = f(a) + \frac{f'(a)}{1!}(b-a) + \frac{f''(a)}{2!}(b-a)^2 + \cdots + \frac{f^{(n-1)}(a)}{(n-1)!}(b-a)^{n-1} + R_n$$
 $$R_n = \frac{f^{(n)}(c)}{n!}(b-a)^n$$
-$BFC$K!"(B$|f^{(n)}(x)|\leq M$ $B$,!"6h4VFb$G@.$jN)$F$P!"(B
+特に、$|f^{(n)}(x)|\leq M$ が、区間内で成り立てば、
 $$|R_n| \leq \frac{M}{n!}|b-a|^n$$
-$B$3$N$H$-!"(B
+このとき、
 $$f(x) = f(a) + \frac{f'(a)}{1!}(x-a) + \frac{f''(a)}{2!}(x-a)^2 + \cdots + \frac{f^{(n-1)}(a)}{(n-1)!}(x-a)^{n-1} + \frac{f^{(n)}(c)}{n!}(x-a)^n$$
-$B$NMM$KI=$9$3$H$r!"(B$f(x)$ $B$N(B $x = a$ $B$rCf?4$H$9$k(B Taylor $BE83+$H$$$&!#FC$K!"(B$a = 0$ $B$N$H$-$O!"(BMaclaughrin $BE83+$H$$$&!#(B$c = a + \theta(x-a)$ $0<\theta < 1$ $B$HI=$9$3$H$b$"$k!#(B
+の様に表すことを、$f(x)$ の $x = a$ を中心とする Taylor 展開という。特に、$a = 0$ のときは、Maclaughrin 展開という。$c = a + \theta(x-a)$ $0<\theta < 1$ と表すこともある。
 \end{prop}
 \proof
-$F(x)$ $B$r<!$N$h$&$K$7$FDj5A$9$k!#(B
+$F(x)$ を次のようにして定義する。
 \begin{eqnarray*}
 F(x) & =  & -f(b) + f(x) + f'(x)(b-x) + \frac{1}{2!}f''(x)(b-x)^2 + \cdots + \\
   & & \frac{1}{(n-1)!}f^{(n-1)}(x)(b-x)^{n-1} + K(b-x)^n\\
 K & = &  \frac{1}{(b-a)^n}\bigl(f(b) - \bigl(f(a) + f'(a)(b-a) + \frac{1}{2!}f''(x)(b-a)^2 + \cdots +\\
 & & \frac{1}{(n-1)!}f^{(n-1)}(a)(b-a)^{n-1}\bigr)\bigr)
 \end{eqnarray*}
-$B$H$*$/$H!"(B$F(a) = F(b) = 0$ $B$h$j!"(BRoll $B$NDjM}$,;H$($k!#(B
+とおくと、$F(a) = F(b) = 0$ より、Roll の定理が使える。
 \qed
 
 \begin{eg}
 \begin{enumerate}
-\item $f(x) = \sin x$ $B$N%^%/%m!<%j%sE83+(B
+\item $f(x) = \sin x$ のマクローリン展開
 $$f(0) = 0, \;f'(0) = \cos 0 = 1,\; f''(0) = -\sin 0 = 0,\;f'''(0) = -\cos 0 = -1$$
-$B$@$+$i!"0J2<$N$h$&$K$J$C$F$$$k!#(B
-$$f^{(n)}(0) = \left\{\begin{array}{ll}0 & n = 2m\\ (-1)^m & n = 2m+1 \end{array}\right. \mbox{ $B<!$N$h$&$K$b=q$1$k(B} f^{(n)}(x) = \sin\Bigl(x + \frac{n\pi}{2}\Bigr).$$
-$B=>$C$F!"(B
+だから、以下のようになっている。
+$$f^{(n)}(0) = \left\{\begin{array}{ll}0 & n = 2m\\ (-1)^m & n = 2m+1 \end{array}\right. \mbox{ 次のようにも書ける} f^{(n)}(x) = \sin\Bigl(x + \frac{n\pi}{2}\Bigr).$$
+従って、
 $$\sin x = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + \cdots + (-1)^m\frac{x^{2m+1}}{(2m+1)!} + \cdots .$$
-$BNc$($P!"$3$l$rMQ$$$F!"6a;w<0$bF@$i$l$k!#(B$f^{(5)}(x) = \cos x$ $B$G$"$k$3$H$KCm0U$9$k$H!"(B
+例えば、これを用いて、近似式も得られる。$f^{(5)}(x) = \cos x$ であることに注意すると、
 $$\sin x = x - \frac{x^3}{3!} + \frac{f^{(5)}(\theta x)x^5}{5!}, \;(0<\theta<1)$$
-$B$H=q$1$k$+$i!"Nc$($P!"(B$-\pi/2\leq x\leq \pi/2$ $B$NHO0OFb$G$O!"(B
+と書けるから、例えば、$-\pi/2\leq x\leq \pi/2$ の範囲内では、
 $$\left|\sin x - \left(x - \frac{x^3}{3!}\right)\right| = \left|\frac{\cos(\theta x)x^5}{5!}\right| \leq \frac{|x|^5}{5!} \leq \frac{\pi^5}{120\cdot 32}\sim 0.08.$$
-$-\pi/4\leq x\leq \pi/4$ $B$NHO0OFb$G$O!">e$NCM$O!"(B$0.0025$ $B$K$J$k!#$3$N0UL#$G!"FC$K!"(B$0$ $B$N6a$/$G$O!"(B$\sin x$  $B$O!"(B$x - \frac{x^3}{3!}$ $B$KHs>o$K6a$$!#$3$l$O$^$?!"(B
+$-\pi/4\leq x\leq \pi/4$ の範囲内では、上の値は、$0.0025$ になる。この意味で、特に、$0$ の近くでは、$\sin x$  は、$x - \frac{x^3}{3!}$ に非常に近い。これはまた、
 $$\lim_{x\rightarrow 0}\frac{x - \sin x}{x^3} = \lim_{x\rightarrow 0}\left(\frac{x^3}{6} - \frac{x^5}{5!}\cos(\theta x)\right)\Big/x^3 = \lim_{x\rightarrow 0}\left(\frac16 -\frac{x^2}{5!}\cos(\theta x)\right) = \frac{1}{6}.$$
-$B$3$N$3$H$+$i!"(B$O(f(x))$$B!"(B$o(f(x))$ $B$r<!$N$h$&$KDj5A$7$F!";H$&$3$H$b$"$k!#(B
+このことから、$O(f(x))$、$o(f(x))$ を次のように定義して、使うこともある。
 $$\lim_{x\rightarrow 0}\frac{O(f(x))}{f(x)} = C \mbox{ a constant, } 
  \lim_{x\rightarrow 0}\frac{o(f(x))}{f(x)} = 0$$
- $B>e$N>l9g$O!"Nc$($P!"(B
+ 上の場合は、例えば、
 $$\sin x = x - \frac{x^3}{3!} + O(x^5)$$
-\item $f(x) = e^x$ $B$N%^%/%m!<%j%sE83+!#(B
+\item $f(x) = e^x$ のマクローリン展開。
 $$e^x = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \cdots + \frac{x^n}{n!} + e^{\theta x}\frac{x^{n+1}}{(n+1)!}$$
-\item $f(x) = \cos x$ $B$N%^%/%m!<%j%sE83+!#(B
+\item $f(x) = \cos x$ のマクローリン展開。
 $$\cos x = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} + \cdots + (-1)^n\frac{x^{2n}}{(2n)!} + (-1)^{n+1}\cos(\theta x)\frac{x^{2n+2}}{(2n+2)!}$$
-\item $f(x) = \log(1+x)$ $B$N%^%/%m!<%j%sE83+!#(B
+\item $f(x) = \log(1+x)$ のマクローリン展開。
 $$\log(1+x) = x - \frac{x^2}{2} + \frac{x^3}{3} + \cdots + (-1)^{n-1}\frac{x^n}{n} + (-1)^n\frac{x^{n+1}}{n+1}\left(\frac{1}{1+\theta x}\right)^{n+1}$$
-\item $f(x) = (1+x)^\alpha$ $B$N%^%/%m!<%j%sE83+(B ($\alpha$ $B$O!"G$0U$N<B?t(B)$B!#(B
+\item $f(x) = (1+x)^\alpha$ のマクローリン展開 ($\alpha$ は、任意の実数)。
 $$(1+x)^\alpha = 1 + \alpha x + \frac{\alpha(\alpha-1)x^2}{2!} + \cdots + \frac{\alpha(\alpha-1)\cdots (\alpha - n + 1)x^n}{n!} + R_{n+1},$$
 $$\mbox{where }R_{n+1} = \frac{\alpha(\alpha-1)\cdots(\alpha-n)(1+\theta x)^{\alpha -n - 1}x^{n+1}}{(n+1)!}$$
-$\alpha$ $B$,!"@0?t$J$i$P!"(B$n = \alpha$ $B$N$H$-!":G8e$N9`$,!"(B$0$ $B$H$J$j!"#29`DjM}$rF@$k!#(B
-\item $f(x) = \arctan x$ $B$N%^%/%m!<%j%sE83+!#$^$:!"(B$f'(x) = 1/(1+x^2)$ $B$@$+$i!"(B$(1+x^2)f'(x) = 1$$B!#%i%$%W%K%C%D$N8x<0$r;H$&$H!"(B
+$\alpha$ が、整数ならば、$n = \alpha$ のとき、最後の項が、$0$ となり、２項定理を得る。
+\item $f(x) = \arctan x$ のマクローリン展開。まず、$f'(x) = 1/(1+x^2)$ だから、$(1+x^2)f'(x) = 1$。ライプニッツの公式を使うと、
 $$(1+x^2)f^{(n+1)}(x) + n2xf^{(n)}(x) + \frac{n(n-1)}{2}2f^{(n-1)}(x) = 0$$
-$x = 0$ $B$HCV$/$H!"(B$f^{(n+1)}(0) + n(n-1)f^{(n-1)}(0) = 0$, $f'(0) = 1$, $f''(0) = 0$ $B$@$+$i!"(B$f^{(2m)}(0) = 0$ $B$+$D!"(B$f^{(2m+1)}(0) = (-1)^m(2m)!$$B!#=>$C$F!"(B
+$x = 0$ と置くと、$f^{(n+1)}(0) + n(n-1)f^{(n-1)}(0) = 0$, $f'(0) = 1$, $f''(0) = 0$ だから、$f^{(2m)}(0) = 0$ かつ、$f^{(2m+1)}(0) = (-1)^m(2m)!$。従って、
 $$\arctan x = x - \frac{x^3}{3} + \frac{x^5}{5} +\cdots + (-1)^n\frac{x^{2n+1}}{2n+1} + \cdots.$$
 
-$B$3$l$+$i!"(B$\arctan 1 = \pi/4$ $B$G$"$k$3$H$rMQ$$$k$H!"(B$\pi$ $B$,!"7W;;$G$-$k!#(B
+これから、$\arctan 1 = \pi/4$ であることを用いると、$\pi$ が、計算できる。
 \end{enumerate}
 \end{eg}
 
-$BJ?6QCM$NDjM}$d!"(BTaylor $B$NDjM}$O!"4X?t$N%0%i%U$NLdBj$K$bMM!9$K1~MQ$5$l$k!#Nc$($P!"(B$f(x)$ $B$r#22sHyJ,2DG=4X?t$H$9$k$H!"(B
+平均値の定理や、Taylor の定理は、関数のグラフの問題にも様々に応用される。例えば、$f(x)$ を２回微分可能関数とすると、
 $$f(x) - f(a) - f'(a)(x - a) = \frac{1}{2}f''(c)(x-a)^2$$
-$B$H$J$k!"(B$x$ $B$H!"(B$a$ $B$N4V$NE@(B $c$ $B$,B8:_$9$k!#$b$7!"(B$f''(c) > 0$  $B$H$9$k$H!"(B
+となる、$x$ と、$a$ の間の点 $c$ が存在する。もし、$f''(c) > 0$  とすると、
 $$f(x) > f(a) + f'(a)(x-a)$$
-$B$@$+$i!"(B$f(x)$ $B$N%0%i%U$O!"(B$a$ $B$G$N@\@~$N%0%i%U$h$j!">e$K$"$k!#(B
+だから、$f(x)$ のグラフは、$a$ での接線のグラフより、上にある。
 
 
-\newpage\mysection{$BITDj@QJ,(B}
+\newpage\mysection{不定積分}
 \begin{definition}
-$B4X?t(B $F(x)$ $B$NF34X?t$,!"(B$f(x)$ $B$KEy$7$$$H$-!"$9$J$o$A!"(B$F'(x) = f(x)$ $B$,@.$jN)$D$H$-!"(B$F(x)$ $B$r!"(B$f(x)$ $B$N86;O4X?t$H8@$&!#(B
+関数 $F(x)$ の導関数が、$f(x)$ に等しいとき、すなわち、$F'(x) = f(x)$ が成り立つとき、$F(x)$ を、$f(x)$ の原始関数と言う。
 \end{definition}
 
-$F(x)$$B!"(B$G(x)$ $B$r6&$K!"(B$f(x)$ $B$N86;O4X?t$H$9$k!#$9$k$H!"(B$F'(x) = G'(x) = f(x)$ $B$G$"$k$+$i!"(B$(F(x) - G(x))' = 0$  $B$H$J$k!#F34X?t$,!">o$K!"(B$0$ $B$H$J$k4X?t$O!"L?Bj(B \ref{prop:1stderiv-test} (4) $B$K$h$C$F!"Dj?t$H$J$k!#=>$C$F!"(B$G(x) = F(x) + C$ $B$J$kDj?t(B $C$ $B$,B8:_$9$k!#5U$K!"(B$G(x) = F(x) + C$ $B$HI=$;$k4X?t$O!"(B$f(x)$ $B$N86;O4X?t$G$"$k!#$3$N$3$H$r$U$^$(!"86;O4X?t$NBeI=$H$$$&0UL#$G!"(B$f(x)$ $B$NITDj@QJ,$H8F$S!"<!$N$h$&$K=q$/!#(B
+$F(x)$、$G(x)$ を共に、$f(x)$ の原始関数とする。すると、$F'(x) = G'(x) = f(x)$ であるから、$(F(x) - G(x))' = 0$  となる。導関数が、常に、$0$ となる関数は、命題 \ref{prop:1stderiv-test} (4) によって、定数となる。従って、$G(x) = F(x) + C$ なる定数 $C$ が存在する。逆に、$G(x) = F(x) + C$ と表せる関数は、$f(x)$ の原始関数である。このことをふまえ、原始関数の代表という意味で、$f(x)$ の不定積分と呼び、次のように書く。
 $$\int f(x)dx = F(x) + C$$
-$B$3$3$G!"(B$C$ $B$r@QJ,Dj?t$H8@$&!#$?$@$7!"(B$C$ $B$r>JN,$7$F=q$/$3$H$bNI$/$"$k!#(B
+ここで、$C$ を積分定数と言う。ただし、$C$ を省略して書くことも良くある。
 
 \begin{eg}
 \begin{enumerate}
@@ -562,20 +562,20 @@ ${\displaystyle \int a^x dx = \frac{a^x}{\log a} + C,\;(a>0, a\neq 1)}$
 \end{eg}
 
 \begin{eg}
-${\displaystyle \frac{d}{dx}\arccos x = \frac{d}{dx}\cos^{-1}x = \frac{-1}{\sqrt{1-x^2}}}$ $B$G$"$C$?$+$i!"(B$\arcsin x + \arccos x$ $B$O!"Dj?t$N$O$:$G$"$k!#$3$NDj?t$r7hDj$;$h!#(B\hfill ($\frac{\pi}2$)
+${\displaystyle \frac{d}{dx}\arccos x = \frac{d}{dx}\cos^{-1}x = \frac{-1}{\sqrt{1-x^2}}}$ であったから、$\arcsin x + \arccos x$ は、定数のはずである。この定数を決定せよ。\hfill ($\frac{\pi}2$)
 \end{eg}
 
-\newpage\mysection{$BITDj@QJ,$N7W;;(B}
-A. {\gt $BCV49@QJ,(B}\quad $F'(x) = f(x)$ $B$G$"$k$H$9$k$H!"(B
+\newpage\mysection{不定積分の計算}
+A. {\gt 置換積分}\quad $F'(x) = f(x)$ であるとすると、
 $$\frac{d}{dt} F(\phi(t)) = f(\phi(t))\phi'(t)$$
-$B$G$"$k$+$i!"(B$x = \phi(t)$ $B$H$*$$$?$H$-$O!"(B
+であるから、$x = \phi(t)$ とおいたときは、
 $$\int f(x)dx = \int f(\phi(t))\phi'(t)dt$$
-$B$H$J$k!#(B
+となる。
 
 \medskip
-B. {\gt $BItJ,@QJ,(B}\quad $(fg)' = f'g + fg'$  $B$@$+$i!"N>JU$r@QJ,$9$k$H!"(B
+B. {\gt 部分積分}\quad $(fg)' = f'g + fg'$  だから、両辺を積分すると、
 $$\int f(x)g'(x)dx = f(x)g(x) - \int f'(x)g(x)dx$$
-$B$rF@$k!#(B
+を得る。
 
 \begin{eg}
 \begin{enumerate}
@@ -606,18 +606,18 @@ $$\int f(x)g'(x)dx = f(x)g(x) - \int f'(x)g(x)dx$$
 \end{enumerate}
 \end{eg}
 
-\newpage\mysection{$BM-M}4X?t$N@QJ,(B}
-{\gt $BI|=,(B }
+\newpage\mysection{有理関数の積分}
+{\gt 復習 }
 \begin{enumerate}
 \item ${\displaystyle \int \frac{dx}{(x-a)^n} = \frac{1}{(-n+1)(x-a)^{n-1}}, \; (n\neq 1)}$\\
 ${\displaystyle \int \frac{dx}{x-a} = \log|x-a| + C}$
 \item ${\displaystyle \int \frac{2x}{(x^2+a^2)^n} dx = \frac{1}{(-n+1)(x^2+a^2)^{n-1}},\;(n\neq 1)}$
 \item ${\displaystyle \int \frac{2x}{x^2+a^2} dx = \log(x^2+a^2)}$
-\item $a\neq 0$, $n\geq 1$ $B$N;~!"(B${\displaystyle I_n = \int\frac{dx}{(x^2+a^2)^n}}$ $B$H$*$/$H!"(B
+\item $a\neq 0$, $n\geq 1$ の時、${\displaystyle I_n = \int\frac{dx}{(x^2+a^2)^n}}$ とおくと、
 $$ a^2I_n(x) = \frac{1}{2n-2}\frac{x}{(x^2+a^2)^{n-1}} + \frac{2n-3}{2n-2}I_{n-1}(x),\;(n\geq 2)$$
 $$ I_1(x) = \frac{1}{a}\arctan\frac{x}{a}$$
 \proof
-$BN>JU$rHyJ,$9$k$H!"(B
+両辺を微分すると、
 \begin{eqnarray*}
 LHS & = & \frac{a^2}{(x^2+a^2)^{n}}\\
 RHS & = & \frac{1}{(2n-2)(x^2+a^2)^{n-1}} 
@@ -626,8 +626,8 @@ RHS & = & \frac{1}{(2n-2)(x^2+a^2)^{n-1}}
 \\
 & = & \frac{a^2}{(x^2+a^2)^{n}}
 \end{eqnarray*}
-$B=>$C$F!"N>JU$N:9$O!"Dj?t!#$9$J$o$A!"(B$I_n$ $B$KDj?tItJ,$N:90[$r4^$a!">e5-$NEy<0$,@.$jN)$D!#(B
-$B$^$?$O!"ItJ,@QJ,$rMQ$$$k$3$H$b=PMh$k!#(B
+従って、両辺の差は、定数。すなわち、$I_n$ に定数部分の差異を含め、上記の等式が成り立つ。
+または、部分積分を用いることも出来る。
 \begin{eqnarray*}
 I_{n-1} & = & \int\frac{1dx}{(x^2+a^2)^{n-1}} \\
 	& = & \frac{x}{(x^2+a^2)^{n-1}} - \int \frac{x\cdot (-(n-1)2)
@@ -636,27 +636,27 @@ I_{n-1} & = & \int\frac{1dx}{(x^2+a^2)^{n-1}} \\
 	2(n-1)\int\frac{a^2}{(x^2+a^2)^{n}}dx\\
 	& = &  \frac{x}{(x^2+a^2)^{n-1}} + 2(n-1)I_{n-1} - 2(n-1)I_n
 \end{eqnarray*}
-$B$3$l$h$j!">e$N8x<0$rF@$k!#(B
+これより、上の公式を得る。
 \end{enumerate}
 
-$BB?9`<0$H!"B?9`<0$N>&$H$7$FI=$5$l$k4X?t$r(B{\gt $BM-M}4X?t(B}$B$H$$$&!#M-M}4X?t$O!">e5-$N@QJ,$H!"ItJ,J,?tJ,2r$H8@$o$l$kJ}K!$rAH$_9g$o$;$k$H!"=iEy4X?t$NHO0O$GITDj@QJ,$G$-$k!#(B
+多項式と、多項式の商として表される関数を{\gt 有理関数}という。有理関数は、上記の積分と、部分分数分解と言われる方法を組み合わせると、初等関数の範囲で不定積分できる。
 
 \begin{lemma}
-$BM-M}4X?t(B $f(x)/g(x)$ $B$O!"B?9`<0$*$h$S!"(B
+有理関数 $f(x)/g(x)$ は、多項式および、
 $$\frac{A}{(x-a)^k},\;\frac{Bx+C}{((x-\alpha)^2+\beta^2)^k}, \;(k\geq 1)$$
-$B$NM-8B8D$NOB$GI=$5$l$k!#$3$3$G!"(B$k$ $B$O!"(B$g(x)$ $B$K8=$l$k!"0x?t(B $x-a$, $(x-\alpha)^2+
-\beta^2$ $B$N:GBg$Y$-$r1[$5$J$$!#(B
+の有限個の和で表される。ここで、$k$ は、$g(x)$ に現れる、因数 $x-a$, $(x-\alpha)^2+
+\beta^2$ の最大べきを越さない。
 \end{lemma}
 
 \begin{eg}
-$g(x) = (x-1)^3(x-2)(x^2+2x+3)^2(x^2+4)$ $B$G$"$l$P!"$I$s$JB?9`<0(B $f(x)$ $B$KBP$7$F$b!"$"$kB?9`<0(B $h(x)$ $B$H!"Dj?t$,!"$H$l$F!"(B
+$g(x) = (x-1)^3(x-2)(x^2+2x+3)^2(x^2+4)$ であれば、どんな多項式 $f(x)$ に対しても、ある多項式 $h(x)$ と、定数が、とれて、
 \begin{eqnarray*}
 \frac{f(x)}{g(x)} & = & h(x) + \frac{A}{(x-1)^3} + \frac{B}{(x-1)^2} + \frac{C}{x-1}\\
 & & + \frac{D}{x-2} \\
 & & + \frac{Ex + F}{((x+1)^2+(\sqrt{2})^2)^2} + \frac{Gx + H}{(x+1)^2+(\sqrt{2})^2}\\
 & & + \frac{Ix+J}{x^2+2^2}
 \end{eqnarray*}
-$B$HI=$5$l$k!#(B$h(x)$ $B$O!"$^$:!"(B$f(x)$ $B$N(B $g(x)$ $B$K$h$k>&$G$"$k!#(B
+と表される。$h(x)$ は、まず、$f(x)$ の $g(x)$ による商である。
 \end{eg}
 
 \begin{eg}
@@ -685,10 +685,10 @@ $$ = \int\left(\frac{1}{x-1} - \frac{1}{(x-1)^2} + \frac{3}{(x-1)^3}\right)dx = 
 \end{enumerate}
 \end{eg}
 
-\newpage\mysection{$BM-M}4X?t$N@QJ,$N1~MQ(B}
-A. {\gt $B;03Q4X?t$N@QJ,(B}
+\newpage\mysection{有理関数の積分の応用}
+A. {\gt 三角関数の積分}
 
-$t = \tan\frac{x}2$, $B$H$*$/$H!"(B$\sin x = \frac{2t}{1+t^2}$, $\cos x = \frac{1-t^2}{1+t^2}$, $dx = \frac{2}{1+t^2}dt$ $B$H$J$k$N$G!";03Q4X?t$NM-M}4X?t$N@QJ,$O!"M-M}4X?t$N@QJ,$K5"Ce$G$-$k!#(B
+$t = \tan\frac{x}2$, とおくと、$\sin x = \frac{2t}{1+t^2}$, $\cos x = \frac{1-t^2}{1+t^2}$, $dx = \frac{2}{1+t^2}dt$ となるので、三角関数の有理関数の積分は、有理関数の積分に帰着できる。
 
 \begin{eg}
 \begin{enumerate}
@@ -706,17 +706,17 @@ $t = \tan\frac{x}2$, $B$H$*$/$H!"(B$\sin x = \frac{2t}{1+t^2}$, $\cos x = \fra
 \end{eg}
 
 \medskip
-B. {\gt $BL5M}4X?t$N@QJ,(B}
+B. {\gt 無理関数の積分}
 
-$x, f(x)$ $B$K4X$9$k!"M-M}4X?t$r!"(B$R(x,f(x))$ $B$HI=$9$H!"(B
+$x, f(x)$ に関する、有理関数を、$R(x,f(x))$ と表すと、
 $$I = \int R(x,^n\!\!\sqrt{\frac{ax+b}{cx+d}})dx,\; ad-bc\neq 0, \;n\neq 0, \;n\in \bZ$$
-$B$N;~$O!"<!$N$h$&$K$*$1$P$h$$!#(B
+の時は、次のようにおけばよい。
 $$t = ^n\!\!\sqrt{\frac{ax+b}{cx+d}}, \; x = \frac{-dt^n+b}{ct^n-a},\; dx = \frac{n(ad-bc)t^{n-1}}{ct^n-a)^2}dt$$
-$B$3$l$h$j!"<!$N$h$&$KM-M}4X?t$N@QJ,$K5"Ce$G$-$k!#(B
+これより、次のように有理関数の積分に帰着できる。
 $$I = n(ad-bc)\int R(\frac{-dt^n+b}{ct^n-a}, t)\frac{t^{n-1}}{ct^n-a)^2}dt$$
 
 \medskip
-C.{\gt $B$=$NB>!"M-M}4X?t$N@QJ,$K5"Ce$G$-$k$b$N(B}
+C.{\gt その他、有理関数の積分に帰着できるもの}
 \begin{eg}
 \begin{enumerate}
 \item ${\displaystyle \int\frac{1}{e^x+5e^{-x}+6}dx}$
@@ -731,143 +731,143 @@ C.{\gt $B$=$NB>!"M-M}4X?t$N@QJ,$K5"Ce$G$-$k$b$N(B}
 \end{enumerate}
 \end{eg}
 
-\newpage\mysection{$BDj@QJ,$H!"Hy@QJ,3X$N4pK\DjM}(B}
+\newpage\mysection{定積分と、微積分学の基本定理}
 \begin{definition}
-$B4X?t(B $f(x)$ $B$,!"6h4V(B $[a,b]$ $B>eM-3&$H$9$k!#!J$3$N6h4V$GDj5A$5$l$F$*$j!"$^$?!"L58BBg$K$J$C$?$j$O$7$J$$!#!KJ,3d(B $\Delta = \{a = x_0<x_1<\cdots < x_n = b\}$ $B$H<B?t(B $t_i\in [x_{i-1},x_i]$ $B$N=89g(B $\{t_1,t_2,\ldots,t_n\}$ $B$KBP$7$F!"(B
+関数 $f(x)$ が、区間 $[a,b]$ 上有界とする。（この区間で定義されており、また、無限大になったりはしない。）分割 $\Delta = \{a = x_0<x_1<\cdots < x_n = b\}$ と実数 $t_i\in [x_{i-1},x_i]$ の集合 $\{t_1,t_2,\ldots,t_n\}$ に対して、
 $$R_{\Delta,\{t_i\}}(f) = \sum_{i=1}^n f(t_i)(x_i-x_{i-1})$$
-$B$r!"%j!<%^%sOBKt$O!"@QOB$H$$$&!#J,3d(B $\Delta$ $B$r8B$j$J$/:Y$+$/$7$F$$$/$H$-!"!J$9$J$o$A!"(B
+を、リーマン和又は、積和という。分割 $\Delta$ を限りなく細かくしていくとき、（すなわち、
 $$|\Delta| = \max\{|x_i-x_{i-1}|\mid i = 1, 2, \ldots\}$$
- $B$,!"(B$0$ $B$K6a$E$/$h$&$K$H$C$F$$$/$H$-!K(B$R_{\Delta,\{t_i\}}(f)$ $B$,!"(B$\{t_i\}$ $B$N<h$jJ}$K4X78$J$/0lDj$N<B?t(B $I$ $B$K6a$E$/$J$i$P!"(B$f(x)$ $B$O!"(B$[a,b]$ $B>e$G!"!JDj!K@QJ,2DG=$H$$$&!#$3$N(B $I$ $B$r(B $[a,b]$ $B>e(B $f(x)$ $B$NDj@QJ,$H8@$$!"(B
+ が、$0$ に近づくようにとっていくとき）$R_{\Delta,\{t_i\}}(f)$ が、$\{t_i\}$ の取り方に関係なく一定の実数 $I$ に近づくならば、$f(x)$ は、$[a,b]$ 上で、（定）積分可能という。この $I$ を $[a,b]$ 上 $f(x)$ の定積分と言い、
 $$\int_a^b f(x)dx$$
-$B$H=q$/!#$3$N$3$H$r5-9fE*$K!"<!$N$h$&$K$b=q$/!#(B
+と書く。このことを記号的に、次のようにも書く。
 $$\int_a^b f(x)dx = \lim_{|\Delta|\to 0}\sum_{i=1}^n f(t_i)(x_i-x_{i-1})$$
 \end{definition}
 
 \begin{prop}
-$BM-8B8D$NE@$r=|$$$FO"B3$GM-3&$J4X?t$O!"@QJ,2DG=$G$"$k!#(B
+有限個の点を除いて連続で有界な関数は、積分可能である。
 \end{prop}
 
 \begin{prop}
-$B4X?t(B $f(x)$ $B$H(B $g(x)$ $B$O!"6h4V(B $[a,b]$ $B$G@QJ,2DG=$H$9$k!#$3$N$H$-!"<!$,@.$jN)$D!#(B
+関数 $f(x)$ と $g(x)$ は、区間 $[a,b]$ で積分可能とする。このとき、次が成り立つ。
 \begin{itemize}
-\item[$(1)$] ${\displaystyle \int_a^b (f(x) \pm g(x))dx  = \int_a^b f(x)dx \pm \int_a^b g(x)dx}$$B!#(B
-\item[$(2)$] ${\displaystyle \int_a^b k\cdot f(x)dx = k\int_a^b f(x)dx}$$B!"!J(B$k$ $B$O!"Dj?t!#!K(B
-\item[$(3)$] $a\leq x\leq b$ $B$G!"(B$f(x)\geq g(x)$ $B$J$i$P!"(B${\displaystyle \int_a^b f(x)dx \geq \int_a^b g(x)dx}$$B!#(B
+\item[$(1)$] ${\displaystyle \int_a^b (f(x) \pm g(x))dx  = \int_a^b f(x)dx \pm \int_a^b g(x)dx}$。
+\item[$(2)$] ${\displaystyle \int_a^b k\cdot f(x)dx = k\int_a^b f(x)dx}$、（$k$ は、定数。）
+\item[$(3)$] $a\leq x\leq b$ で、$f(x)\geq g(x)$ ならば、${\displaystyle \int_a^b f(x)dx \geq \int_a^b g(x)dx}$。
 \end{itemize}
 \end{prop}
 
-\begin{prop} {\rm ($B@QJ,$NJ?6QCM$NDjM}(B)}
-$B4X?t(B $f(x)$ $B$,!"JD6h4V(B $[a,b]$ $B>e$GO"B3$J$i$P!"$"$k!"(B$c\in (a,b)$  $B$G!"(B
+\begin{prop} {\rm (積分の平均値の定理)}
+関数 $f(x)$ が、閉区間 $[a,b]$ 上で連続ならば、ある、$c\in (a,b)$  で、
 $$\int_a^b f(x)dx = (b-a)f(c)$$
-$B$rK~$?$9$b$N$,$"$k!#(B
+を満たすものがある。
 \end{prop}
 \proof
-$B4X?t(B $f(x)$ $B$O!"JD6h4V(B $[a,b]$ $B$GO"B3$@$+$i!":GBg!":G>.$r$H$k!#:GBgCM$r(B $M$ $B:G>.CM$r(B $m$ $B$H$9$k$H!"%j!<%^%sOB$NDj5A$+$i!"(B
+関数 $f(x)$ は、閉区間 $[a,b]$ で連続だから、最大、最小をとる。最大値を $M$ 最小値を $m$ とすると、リーマン和の定義から、
 $$m(b-a) \leq \int_a^b f(x)dx \leq M(b-a)$$
-$B$3$l$h$j!"(B$m$ $B$H!"(B$M$ $B$N4V$N$"$kCM(B $A$ $B$G!"(B
+これより、$m$ と、$M$ の間のある値 $A$ で、
 $$m(b-a) \leq A = \int_a^b f(x)dx \leq M(b-a)$$
-$B$H$J$k!#(B$f(x)$ $B$O!"O"B3$@$+$i!"Cf4VCM$NDjM}$K$h$j!"(B$m$ $B$H!"(B$M$ $B$N4V$NCM$OA4$F$H$k!#=>$C$F!"(B$f(c) = A$ $B$rK~$?$9(B $a < c < b$ $B$rK~$?$9(B $c$ $B$,B8:_$9$k!#$3$l$O!"L?Bj$N!">r7o$rK~$?$9$b$N$G$"$k!#(B
+となる。$f(x)$ は、連続だから、中間値の定理により、$m$ と、$M$ の間の値は全てとる。従って、$f(c) = A$ を満たす $a < c < b$ を満たす $c$ が存在する。これは、命題の、条件を満たすものである。
 \qed
 
 \medskip
-$a < b$ $B$N$H$-!"(B
+$a < b$ のとき、
 $$\int_b^a f(x)dx = -\int_a^b f(x)dx, \; \int_a^a f(x)dx = 0$$
-$B$HDj5A$9$k!#$3$&Dj5A$9$k$H!"(B$b$ $B$rJQ?t$H$_$J$7$F!"4X?t(B
+と定義する。こう定義すると、$b$ を変数とみなして、関数
 $$F(x) = \int_a^x f(x)dx$$
-$B$,Dj5A$G$-$k!#<B$O!"$3$&$9$k$H!"(B$x = a$ $B$G!"(B$F(x)$ $B$,!"O"B3$G$"$k$3$H$,J,$+$k!#$5$i$K!"<!$,@.$jN)$D!#(B
+が定義できる。実は、こうすると、$x = a$ で、$F(x)$ が、連続であることが分かる。さらに、次が成り立つ。
 $$\int_a^x f(x)dx = \int_a^c f(x)dx + \int_c^x f(x)dx$$
 
-\begin{thm} {\rm ($BHy@QJ,3X$N4pK\DjM}(B)}
-$B4X?t(B $f(x)$ $B$,!"JD6h4V(B $[a,b]$ $B$GO"B3$G$"$k$H$9$k!#(B
+\begin{thm} {\rm (微積分学の基本定理)}
+関数 $f(x)$ が、閉区間 $[a,b]$ で連続であるとする。
 $$F(x) = \int_a^x f(x)dx$$
-$B$H$9$k$H!"(B$F(x)$ $B$O!"3+6h4V(B $(a,b)$ $B$G!"HyJ,2DG=$G$"$j!"(B$F'(x) = f(x)$ $B$,@.N)$9$k!#(B
+とすると、$F(x)$ は、開区間 $(a,b)$ で、微分可能であり、$F'(x) = f(x)$ が成立する。
 \end{thm}
 \proof
-$a < c < b$ $B$H$9$k!#(B
+$a < c < b$ とする。
 \begin{eqnarray*}
 \frac{F(x) - F(c)}{x-c} & = & \frac{{\displaystyle \int_a^x f(x)dx - \int_a^c f(x)dx}}{x-c}\\
 & = & \frac{{\displaystyle \int_c^x f(x)}}{x-c}\\
 & = & f(d(x))
 \end{eqnarray*}
-$B$rK~$?$9!"E@!"(B$d(x)$ $B$,!"(B$x$ $B$H(B $c$ $B$N4V$K$"$k!#=>$C$F!"(B$f(x)$ $B$,!"O"B3$J$3$H$r9M$($k$H!"(B
+を満たす、点、$d(x)$ が、$x$ と $c$ の間にある。従って、$f(x)$ が、連続なことを考えると、
 $$F'(c) = \lim_{x\to c}\frac{F(x) - F(c)}{x-c} = \lim_{x\to c}f(d(x)) = f(c)$$
-$B$3$l$h$j!"(B$F'(x) = f(x)$ $B$rF@$k!#(B
+これより、$F'(x) = f(x)$ を得る。
 \qed
 
 \medskip
-$B$5$F!"0lHL$K!"(B$F(x)$ $B$r(B $B4X?t(B $f(x)$ $B$N86;O4X?t!#$9$J$o$A!"(B$F'(x) = f(x)$ $B$rK~$?$9$b$N$H$9$k!#$9$k$H!"HyJ,@QJ,3X$N4pK\DjM}$h$j!"(B$\int_a^x f(x)dx$ $B$b(B $f(x)$ $B$N0l$D$N86;O4X?t$@$+$i!"$"$k!"Dj?t(B $C$ $B$,!"B8:_$7$F!"(B
+さて、一般に、$F(x)$ を 関数 $f(x)$ の原始関数。すなわち、$F'(x) = f(x)$ を満たすものとする。すると、微分積分学の基本定理より、$\int_a^x f(x)dx$ も $f(x)$ の一つの原始関数だから、ある、定数 $C$ が、存在して、
 $$F(x) = \int_a^x f(x)dx  + C$$ 
-$B$H=q$1$k!#(B$x = a$ $B$H$*$/$H!"(B$F(a) = C$ $B$rF@$k$+$i!"(B$x = b$ $B$H$*$/$H!"(B
+と書ける。$x = a$ とおくと、$F(a) = C$ を得るから、$x = b$ とおくと、
 $$F(x) - F(a) = \int_a^x f(x)dx$$
-$BFC$K!"(B
-$$\int_a^x f(x)dx$B!!!a(BF(b) - F(a)$$
-$B$rF@$k!#$3$l$r!"(B
-$$\int_a^x f(x)dx$B!!!a(BF(b) - F(a) = [F(x)]_a^b = F(x)\mid^b_a$$
-$B$H$b$+$/!#(B
+特に、
+$$\int_a^x f(x)dx　＝F(b) - F(a)$$
+を得る。これを、
+$$\int_a^x f(x)dx　＝F(b) - F(a) = [F(x)]_a^b = F(x)\mid^b_a$$
+ともかく。
 
 \begin{eg}
 \begin{enumerate}
-\item ${\displaystyle \int_0^1\frac{dx}{1+x^2} = \arctan x\mid^1_0 = \arctan 1 - \arctan 0 = \frac{\pi}4}$$B!#$3$l$h$j!"%j!<%^%sOB$NDj5A$KLa$k$H!"(B
+\item ${\displaystyle \int_0^1\frac{dx}{1+x^2} = \arctan x\mid^1_0 = \arctan 1 - \arctan 0 = \frac{\pi}4}$。これより、リーマン和の定義に戻ると、
 \begin{eqnarray*}
 \frac{pi}4 & = & \int_0^1\frac{dx}{1+x^2}\\
 & = &  \lim_{n\to\infty}\sum_{k=1}^n\frac{1}{1+(\frac{k}{n})^2}\cdot\frac{1}{n}\\
 & = &  \lim_{n\to\infty}\sum_{k=1}^n\frac{n}{n^2 + k^2}
 \end{eqnarray*}
-\item $x = \phi(t)$ $B$H$*$/$H!"(B
+\item $x = \phi(t)$ とおくと、
 $$\int_a^bf(x)dx = \int_{phi(a)}^{\phi(b)}f(\phi(t))\phi'(t)dt$$
 \end{enumerate}
 \end{eg}
 
-\newpage\mysection{$B9-5A@QJ,(B}
+\newpage\mysection{広義積分}
 \begin{definition}
-$B4X?t(B $f(x)$ $B$r!"(B$[a,b)$ $B>eO"B3!"$+$D!"(B
+関数 $f(x)$ を、$[a,b)$ 上連続、かつ、
 $$\int_a^bf(x)dx = \lim_{t\to b-0}\int^t_af(x)dx$$
-$B$H$9$k!#$3$N$H$-!"1&JU$N6K8BCM$,B8:_$9$l$P!"9-5A@QJ,(B
+とする。このとき、右辺の極限値が存在すれば、広義積分
 $$\int_a^bf(x)dx$$
-$B$O!"<}B+$9$k$H$$$&!#(B$(a,b]$ $B>e$G!"O"B3$J4X?t$d!"(B$b = \infty$$B!"(B$a = -\infty$ $B$N;~$bF1MM!#(B
+は、収束するという。$(a,b]$ 上で、連続な関数や、$b = \infty$、$a = -\infty$ の時も同様。
 \end{definition}
 
 \begin{eg}
 \begin{enumerate}
 \item ${\displaystyle \int_1^\infty\frac{1}{1+x^2}dx }$
 $$= \lim_{t\to\infty}\int^t_1\frac{1}{1+x^2}dx = \lim_{t\to\infty}(\arctan t - \frac{\pi}{4}) = \frac{\pi}{2} - \frac{\pi}{4} = \frac{\pi}{4}$$
-\item $B<!$,@.$jN)$D!#(B
+\item 次が成り立つ。
 $$\int_0^k\frac{1}{x^r}dx = \left\{\begin{array}{lll}
-\frac{k^{1-r}}{1-r} & (r<1) & \mbox{$B<}B+(B}\\
-\infty & (r\geq 1) & \mbox{$BH/;6(B}\end{array}
+\frac{k^{1-r}}{1-r} & (r<1) & \mbox{収束}\\
+\infty & (r\geq 1) & \mbox{発散}\end{array}
 \right.$$
 $$\int_k^\infty\frac{1}{x^r}dx = \left\{\begin{array}{lll}
-\frac{1}{(r-1)k^{r-1}} & (r>1) & \mbox{$B<}B+(B}\\
-\infty & (r\leq 1) & \mbox{$BH/;6(B}\end{array}
+\frac{1}{(r-1)k^{r-1}} & (r>1) & \mbox{収束}\\
+\infty & (r\leq 1) & \mbox{発散}\end{array}
 \right.$$
 \end{enumerate}
 \end{eg}
 
-\mysection{$B?tCM@QJ,(B}
-$B652J=q$KNI$$@bL@$,$"$j$^$9$N$G!J#4!]#6@a!K>JN,$7$^$9!#(B
+\mysection{数値積分}
+教科書に良い説明がありますので（４−６節）省略します。
 
-\newpage\mysection{$B@QJ,$N1~MQ(B}
-A. $BLL@Q(B
+\newpage\mysection{積分の応用}
+A. 面積
 
-$B4X?t(B $f(x)$$B!"(B$g(x)$$B!"(B$x = a$, $x = b$ $B$G!"0O$^$l$?ItJ,$NLL@Q$O!"(B
+関数 $f(x)$、$g(x)$、$x = a$, $x = b$ で、囲まれた部分の面積は、
 $$S = \int_a^b |f(x) - g(x)|dx$$
-$B$G!"M?$($i$l$k!#(B
+で、与えられる。
 
 \bigskip
-B. $B6K:BI8$HLL@Q(B
+B. 極座標と面積
 
-$r = f(\theta)$$B!"(B$\theta = \alpha$$B!"(B$\theta = \beta$ $B$G0O$^$l$kItJ,$NLL@Q$r9M$($k!#(B
-$B$^$:!"H>7B$,(B $r$$B!"3Q$,!"(B$\theta$ $B$G$"$k!"@p7A$N!"LL@Q$O(B $r\theta^2/2$ $B$G$"$k$3$H$KCm0U$9$k!#(B$\alpha$ $B$+$i!"(B$\theta$ $B$^$G$N!"LL@Q$r(B $S(\theta)$ $B$GI=$9$H!"(B$0\leq \epsilon(\Delta\theta)\leq \Delta\theta$ $B$J$k!"(B$\epsilon(\Delta\theta)$ $B$K$*$$$F!"(B
+$r = f(\theta)$、$\theta = \alpha$、$\theta = \beta$ で囲まれる部分の面積を考える。
+まず、半径が $r$、角が、$\theta$ である、扇形の、面積は $r\theta^2/2$ であることに注意する。$\alpha$ から、$\theta$ までの、面積を $S(\theta)$ で表すと、$0\leq \epsilon(\Delta\theta)\leq \Delta\theta$ なる、$\epsilon(\Delta\theta)$ において、
 $$S(\theta+\Delta\theta) - S(\theta) = \frac{1}{2}(f(\theta + \epsilon(\Delta\theta))^2\Delta\theta$$
-$B$H$J$k!#$3$l$h$j!"(B
+となる。これより、
 $$\lim_{\Delta\theta\to 0}\frac{S(\theta+\Delta\theta) - S(\theta)}{\Delta\theta} = \frac12\lim_{\Delta\theta\to 0}(f(\theta + \epsilon(\Delta\theta))^2 = \frac12(f(\theta))^2$$
-$BHyJ,$NDj5A$h$j!"(B$S'(\theta) = \frac12(f(\theta))^2$$B!#$3$l$h$j!"5a$a$kLL@Q$O!"(B
+微分の定義より、$S'(\theta) = \frac12(f(\theta))^2$。これより、求める面積は、
 $$S = \frac12\int_{\alpha}^{\beta}(f(\theta))^2d\theta$$
-$B$H$J$k!#(B
+となる。
 
 \begin{eg}
 \begin{enumerate}
-\item $r = a(1+\cos\theta)$ $B!J%+!<%G%#%*%$%I!K$G0O$^$l$kItJ,$NLL@Q!#(B
+\item $r = a(1+\cos\theta)$ （カーディオイド）で囲まれる部分の面積。
 \begin{eqnarray*}
 S & = & 2\cdot \frac12\int_0^\pi (a(1+\cos\theta))^2d\theta\\
    & = & 4a^2\int^\pi_0\cos^4\frac\theta2d\theta\\
@@ -875,16 +875,16 @@ S & = & 2\cdot \frac12\int_0^\pi (a(1+\cos\theta))^2d\theta\\
    & = & 8a^2\cdot \frac34\cdot\frac12\cdot\frac\pi2\\
    & = & \frac32\pi a^2
 \end{eqnarray*}
-$B:G8e$N$H$3$m$O!"<!$r!";H$C$?!#$9$J$o$A!"(B$n\geq 2$ $B$H$9$k$H!"(B
+最後のところは、次を、使った。すなわち、$n\geq 2$ とすると、
 \begin{eqnarray*}
 I_n & =  & \int_0^{\pi/2}\cos^nxdx\\
      & = & \int_0^{\pi/2}\cos x\cos^{n-1}xdx\\
      & = & [\sin x\cos^{n-1}x]^{\pi/2}_0 + (n-1)\int_0^{\pi/2}\sin^2x\cos^{n-2}xdx\\
      & = & (n-1)\int_0^{\pi/2}(1-\cos^2 x)\cos^{n-2}xdx\\
-     & = & (n-1)I_{n-2} - (n-1)I_n, \;\mbox{ $B=>$C$F!"(B}\\
+     & = & (n-1)I_{n-2} - (n-1)I_n, \;\mbox{ 従って、}\\
 I_n & = & \frac{n-1}{n} I_{n-2}
 \end{eqnarray*}
-$I_0 = \pi/2$$B!"(B$I_1 = 1$ $B$KCm0U$9$k$H!"(B
+$I_0 = \pi/2$、$I_1 = 1$ に注意すると、
 \begin{eqnarray*}
 I_{2n} & = & \frac{(2n-1)\cdot(2n-3)\cdots1}{(2n)\cdot(2n-2)\cdots2}\cdot\frac\pi2\\
 I_{2n+1} & = & \frac{(2n)\cdot(2n-2)\cdots2}{(2n+1)\cdot(2n-1)\cdots3}
@@ -893,52 +893,52 @@ I_{2n+1} & = & \frac{(2n)\cdot(2n-2)\cdots2}{(2n+1)\cdot(2n-1)\cdots3}
 \end{eg}
 
 \bigskip
-C. $BJ?LL>e$N6J@~$ND9$5(B
+C. 平面上の曲線の長さ
 
-$B6J@~(B $y = f(x)$ $B$N(B $x$ $B$,!"(B$a$ $B$+$i!"(B$b$ $B$^$G!"JQ2=$9$k!"ItJ,$ND9$5(B $L$ $B$r9M$($k!#(B$a\leq x\leq b$ $B$G$"$k!"G$0U$N(B $x$ $B$KBP$7$F!"(B$a$ $B$+$i!"(B$x$ $B$^$G$N!"ItJ,$ND9$5$r(B $L(x)$ $B$H$*$/!#(B$x$ $B$r!"(B$\Delta x$ $B$@$1JQ2=$5$;$?$H$-$N6J@~$ND9$5$O!"(B$\Delta x$$B!"(B$\Delta y$ $B$r#2JU$H$9$k!"D>3Q;03Q7A$N<PJU$ND9$5$H$_$J$5$l$k!#$3$l$h$j!"(B
+曲線 $y = f(x)$ の $x$ が、$a$ から、$b$ まで、変化する、部分の長さ $L$ を考える。$a\leq x\leq b$ である、任意の $x$ に対して、$a$ から、$x$ までの、部分の長さを $L(x)$ とおく。$x$ を、$\Delta x$ だけ変化させたときの曲線の長さは、$\Delta x$、$\Delta y$ を２辺とする、直角三角形の斜辺の長さとみなされる。これより、
 $$\lim_{\Delta x\to 0}\frac{L(x + \Delta x) - L(x)}{\Delta x} = \lim_{\Delta x\to 0}\frac{\sqrt{(\Delta x)^2 + (\Delta y)^2}}{\Delta x} = \lim_{\Delta x\to 0}\sqrt{1 + \left(\frac{\Delta y}{\Delta x}\right)^2} = \sqrt{1+(y')^2}$$
-$BHyJ,$NDj5A$h$j!"(B$L'(x) = \sqrt{1+(y')^2}$$B!#@QJ,$NDj5A$h$j!"5a$a$kD9$5$O!"(B
+微分の定義より、$L'(x) = \sqrt{1+(y')^2}$。積分の定義より、求める長さは、
 $$L = \int_a^b\sqrt{1+(y')^2}dx$$
-$B$H$J$k!#(B
+となる。
 
 \begin{eg}
 \begin{enumerate}
-\item $BH>7B(B $a$ $B$N1_<~$ND9$5!#1_$r(B $x^2 + y^2 = a^2$ $B$H$9$k$H!">eH>1_$O(B $y = \sqrt{a^2-x^2}$ $B$@$+$i!"(B
+\item 半径 $a$ の円周の長さ。円を $x^2 + y^2 = a^2$ とすると、上半円は $y = \sqrt{a^2-x^2}$ だから、
 $$y' = \frac{-x}{\sqrt{a^2-x^2}}, \; 1+(y')^2 = \frac{a^2}{a^2 - x^2}$$
-$B$3$l$h$j!"D9$5$r(B $L$ $B$H$9$k$H!"(B
+これより、長さを $L$ とすると、
 $$L = 4\int_0^a\sqrt{1+(y')^2}dx = 4\int_0^1\sqrt{\frac{a^2}{a^2-x^2}}dx = 4a\left[\arcsin\frac{x}{a}\right]_0^a = 2\pi a$$
 \end{enumerate}
 \end{eg}
 
-D. $B6K:BI8$H6J@~$ND9$5(B
+D. 極座標と曲線の長さ
 
-$r = f(\theta)$ $B$,!"(B$\theta = \alpha$ $B$+$i!"(B$\theta = \beta$ $B$^$GJQ2=$9$kItJ,$ND9$5$r9M$($k!#(B
-$B$^$:!"H>7B$,(B $r$$B!"3Q$,!"(B$\theta$ $B$G$"$k!"@p7A$N8L$ND9$5$O(B $r\theta$ $B$G$"$k$3$H$KCm0U$9$k!#(B$\alpha$ $B$+$i!"(B$\theta$ $B$^$G$N!"8L$ND9$5$r(B $L(\theta)$ $B$GI=$9!#(B$L(\theta + \Delta\theta) - L(\theta)$  $B$r!"D>3Q;03Q7A$N<PJU$H$7$F6a;w$9$k$H!"(B
+$r = f(\theta)$ が、$\theta = \alpha$ から、$\theta = \beta$ まで変化する部分の長さを考える。
+まず、半径が $r$、角が、$\theta$ である、扇形の弧の長さは $r\theta$ であることに注意する。$\alpha$ から、$\theta$ までの、弧の長さを $L(\theta)$ で表す。$L(\theta + \Delta\theta) - L(\theta)$  を、直角三角形の斜辺として近似すると、
 $$L(\theta+\Delta\theta) - L(\theta) = \sqrt{(r\Delta\theta)^2 + (\Delta r)^2}$$
-$B$3$l$h$j!"(B
+これより、
 $$\lim_{\Delta\theta\to 0}\frac{L(\theta+\Delta\theta) - L(\theta)}{\Delta\theta} = \lim_{\Delta\theta\to 0}\sqrt{r^2 + \left(\frac{\Delta r}{\Delta\theta}\right)^2} = \sqrt{r^2 + \left(\frac{dr}{d\theta}\right)^2}$$
-$BHyJ,$NDj5A$h$j!"(B
+微分の定義より、
 $$L'(\theta) = \sqrt{r^2 + \left(\frac{dr}{d\theta}\right)^2}$$
-$B$3$l$h$j!"5a$a$kD9$5$O!"(B
+これより、求める長さは、
 $$L = \int_\alpha^\beta\sqrt{r^2 + \left(\frac{dr}{d\theta}\right)^2}d\theta$$
-$B$H$J$k!#(B
+となる。
 
 \begin{eg}
 \begin{enumerate}
-\item $BH>7B(B $a$ $B$N1_<~$ND9$5!#1_$r(B $r = r(\theta) = a$ $B$H$9$k$H!"(B
+\item 半径 $a$ の円周の長さ。円を $r = r(\theta) = a$ とすると、
 $$\frac{dr}{d\theta} = 0, \; r^2 + \left(\frac{dr}{d\theta}\right)^2 = a^2$$
-$B$3$l$h$j!"D9$5$r(B $L$ $B$H$9$k$H!"(B
+これより、長さを $L$ とすると、
 $$L = \int_0^{2\pi}\sqrt{r^2 + \left(\frac{dr}{d\theta}\right)^2}d\theta = \int_0^{2\pi}a d\theta = [a\theta]_0^{2\pi} = 2\pi a$$
 \end{enumerate}
 \end{eg}
 
-E. $B2sE>BN$NBN@Q(B
+E. 回転体の体積
 
-$y = f(x)$ $B$H!"(B$x = a$$B!"(B$x = b$ $B$G0O$^$l$kItJ,$r(B $x$ $B<4$N<~$j$K2sE>$5$;$F=PMh$k2sE>BN$NBN@Q$r9M$($k!#(B$a\leq x\leq b$ $B$J$k!"G$0U$N(B $x$ $B$KBP$7$F!"(B$a$ $B$+$i!"(B$x$ $B$NItJ,$NBN@Q$r(B $V(x)$ $B$HI=$9$H!"$"$k!"(B$0<\theta<1$ $B$G!"(B
+$y = f(x)$ と、$x = a$、$x = b$ で囲まれる部分を $x$ 軸の周りに回転させて出来る回転体の体積を考える。$a\leq x\leq b$ なる、任意の $x$ に対して、$a$ から、$x$ の部分の体積を $V(x)$ と表すと、ある、$0<\theta<1$ で、
 $$V(x+\Delta x) - V(x) = \pi(f(x+\theta\Delta x))^2\Delta x$$
-$B=>$C$F!"HyJ,$NDj5A$h$j!"(B
+従って、微分の定義より、
 $$V'(x) = \lim_{\Delta x\to 0}\frac{V(x+\Delta x) - V(x)}{\Delta x} = \pi\lim_{\Delta x\to 0}(f(x+\theta\Delta x))^2 = \pi(f(x))^2$$
-$B$3$l$h$j!"@QJ,$NDj5A$rMQ$$$k$H!"(B
+これより、積分の定義を用いると、
 $$V = \pi\int_1^b(f(x))^2dx$$
 
 
