@@ -5,7 +5,7 @@
 </HEAD>
 <BODY BGCOLOR = "#CCFFCC">
 <A NAME = "top"></A>
-<div align = "right"><I>Last Update: March 3, 2017</I></div>
+<div align = "right"><I>Last Update: May 11, 2019</I></div>
 <HR>
 <H2>TeX Online</H2>
 
@@ -15,12 +15,12 @@
 <li><a href="#pdflatex">pdfLaTeX</a>
 <li><a href="#lualatex">LuaLaTeX</a>
 <li><a href="#xelatex">XeLaTeX</a>
-<li>Online TeX Sites
+<li><a href="＃list">Online TeX Sites</a>
 <ul>
 <li><a href="#cloudlatex">CloudLaTeX</a>
 <li><a href="#overleaf">OverLeaf</a>
-<li><a href="#sharelatex">ShareLaTeX</a>
-<li><a href="#smc">SageMath Cloud</a>
+<!--li><a href="#sharelatex">ShareLaTeX</a-->
+<li><a href="#smc">CoCalc (SageMath Cloud)</a>
 <li><a href="#papeeria">Papeeria</a>
 <li><a href="#misc">Miscellaneous</a>
 </ul>
@@ -41,7 +41,11 @@ Screen-capture video: <a href="https://drive.google.com/file/d/0B6PKI5dii8XbQjUt
 </TABLE>
 </DIV>
 <H3>About This Page（このページについて） </H3>
+TeX Online は、進化中であり、いま書いていることも、刻一刻古くなると思うが、2019年5月11日時点で、多少実用に供する程度に更新することにした。
+以前に書いた記事は、編集せず、そのまま残すことにした。
+<p>
 
+[以下は、2017年3月3日以前に書かれたものである。]<BR>
 2014年10月に大学院のコース QALL401 Computing for Researchers で "TeX-Online" と題して一回話し、その後、毎年春に<!--2015年6月と2016年4月に-->、学生（一部大学院生を含む）を対象に TeX Workshop を実施している。卒業論文を作成することを目的とした、Onlie での TeX すなわち、Cloud 上で使える TeX の紹介である。<p>
 
 私は、全くのユーザーということもあり不正確な情報もあると思うが記すことにしたのは、ネット上で得た情報も、不十分または不正確だからである。あまり実際には利用されていない方が書かれたと思われる。おそらく、現段階では、殆どの TeX User は、自分の Computer に Install して利用しており、Cloud 上の TeX は、実験的に使っているからだろう。特に、日本語 TeX を主として使う者は、後で述べる理由から、Online TeX は、使いづらいと考えているのではないだろうか。<p>
@@ -114,7 +118,7 @@ CloudLaTeX 以外では、Default  になっている。
 <li>日本語クラスは、tableofcontents が未確認
 <li>\documentclass[pdflatex, ja=standard, a4paper, 12pt]{bxjsreport} <br>
 \usepackage[whole,autotilde]{bxcjkjatype} 
-<li><a href="ftp://get-software.net/ctan/language/japanese/BX/bxjscls/bxjscls-manual.pdf">BXjscls パッケージ　ユーザーマニュアル</a>
+<li><a href="https://github.com/zr-tex8r/BXjscls">BXjscls パッケージの Github ページ</a><!--a href="ftp://get-software.net/ctan/language/japanese/BX/bxjscls/bxjscls-manual.pdf">BXjscls パッケージ　ユーザーマニュアル</a-->
 </ul>
 
 <p>
@@ -181,17 +185,28 @@ CloudLaTeX 以外では、Default  になっている。
 </DIV>
 <H3>Online TeX Sites</H3>
 
+ここでは、無償で使うことが可能なサイトのみ紹介する。しかし、殆どの、Online TeX Sites は、Free であっても、Account を取得する必要がある。理由としては、TeX (LaTeX など、macro を加えたものを、すべて、TeX と呼ぶことにする）では、いくつかのファイルを読み込んで、compile することが多く、その file の保存場所が必要だからである。source file は一つにまとめることが、基本的に可能であるが、image file はそうはいかない。そこで、image を埋め込む場合には、どうしても、それを、どこかに保存することとなる。oneline site における、一つの問題である。そこで、Account を、まずは、作ることで、管理者が、ある制限のもと、管理可能なようにしていると思われる。そのような image file の埋め込みが必要ない場合には、以下のサイトなどが利用可能である。日本語が使えるのは、奥村先生のもののみ。（papeeria も使えると思われるが、未確認）LaTeX Base は、URL を書けば、web 上の image を埋め込み可能である。
+
+<ul>
+<li><a href="https://oku.edu.mie-u.ac.jp/~okumura/texonweb/">奥村先生のページにある「TeX を使ってみよう」</a></li>
+<p>
+<LI><a href="https://www.papeeria.com">PAPEERIA</a>：アカウントを取得して、Login すれば、殆どなんでも使えるが、Login しないでも、Live demo で使える。[2019.5.11]
+<LI><a href="https://zohooo.github.io/jaxedit/">JaxEdit</a>: Download Version もある。しばらく、開発が中断していたが、新しいものが出ている。[2019.5.11]
+<li><a href="https://www.tutorialspoint.com/online_latex_editor.php">Tutorials Point の LaTeX Editor</a> [2019.5.11]
+<li><a href="https://latexbase.com/">LaTeX Base</a> [2019.5.11]
+</ul>
+
 <a name="cloudlatex"></a>
 <H4>CloudLaTeX</H4>
 
 <ul>
 <li>URL: <A HREF="https://cloudlatex.io/ja">https://cloudlatex.io/ja</A></li>
 <li>日本語が default で Acaric が運営するサイト</li>
-<li>LaTeX engine: pLaTeX, pdfTeX, LuaLaTeX
+<li>LaTeX engine: pLaTeX, pdfTeX, LuaLaTeX, upLatex
 <li>日本語の template いくつかから選択することができ、beamer なども、template からスタートすれば困難が少ない。
 <li>共有環境は提供していない。
 </ul>
-[2016.4.14, 2016.12.13]
+[2016.4.14, 2016.12.13, 2019.5.11]
 <p>
 
 <a name="overleaf"></a>
@@ -199,16 +214,16 @@ CloudLaTeX 以外では、Default  になっている。
 
 <ul>
 <li>URL: <A HREF="https://www.overleaf.com">https://www.overleaf.com</a></li>
-<li>WriteLaTeX として、Online Latex としては、最初にスタートしたサイト</li>
+<li>WriteLaTeX として、Online LaTeX としては、最初にスタートしたサイト。その後、ShareLaTeX とも merge。論文投稿も、このサイトからできるようになっている雑誌もある。</li>
 <li>LaTeX engine: pLaTeX, pdfTeX, LuaLaTeX, XeLaTeX
 <li>設定から engine と preview を選択。
 <li>豊富な template から選択することができる。
 <li>無償版での共有環境は提供していない。
 </ul>
-[2016.4.14, 2016.12.13]
+[2016.4.14, 2016.12.13, 2019.5.11]
 <p>
 
-<a name="sharelatex"></a>
+<!--a name="sharelatex"></a>
 <H4>ShareLaTeX</H4>
 
 <ul>
@@ -220,10 +235,10 @@ CloudLaTeX 以外では、Default  になっている。
 <li>無償版は他に一人と共有することが可能。
 </ul>
 [2016.4.14, 2016.12.13]
-<p>
+<p-->
 
 <a name="smc"></a>
-<H4>SageMathCloud</H4>
+<H4>CoCalc（SageMathCloud）</H4>
 
 <ul>
 <li>URL: <A HREF="https://cloud.sagemath.com">https://cloud.sagemath.com</A></li>
@@ -233,7 +248,7 @@ CloudLaTeX 以外では、Default  になっている。
 <li>共有は Project 毎に何人とでも可能である。
 <li>別途有償版があり、無償版は、ときどき遅く感じられるときがある。
 </ul>
-[2016.4.14, 2016.12.13]
+[2016.4.14, 2016.12.13, 2019.5.11]
 <p>
 
 <a name="papeeria"></a>
@@ -246,7 +261,7 @@ CloudLaTeX 以外では、Default  になっている。
 <li>共有は何人とでも可能。
 <li>無償版は、Project 数などに制限がある。
 </ul>
-[2016.12.13]
+[2016.12.13, 2019.5.11]
 <p>
 <a name="misc"></a>
 <hr>
@@ -257,7 +272,8 @@ CloudLaTeX 以外では、Default  になっている。
 </DIV>
 <H3>Miscellaneous</H3>
 
-JaxEdit なども紹介することを考えていたが、未定。小さな、良いシステムで、ネット上でも利用可能であるが、開発が止まっており、機能も限定されているので、お試し用のみにしか使えないかもしれない。
+JaxEdit なども紹介することを考えていたが、未定。小さな、良いシステムで、ネット上でも利用可能であるが、開発が止まっており、機能も限定されているので、お試し用のみにしか使えないかもしれない。[2015.3]
+
 <p>
 <a name="links"></a>
 <hr>
@@ -269,7 +285,9 @@ JaxEdit なども紹介することを考えていたが、未定。小さな、
 <H3>Links </H3>
 
 <OL>
-<li>
+<li><a href="https://www.slant.co/topics/8032/~online-latex-editors">What are the best online LaTeX editors?</a> [as of May 7, 2019]
+<li><a href="https://qiita.com/Aruneko/items/13e015bce0112143f277">今風なLaTeXに関するメモ</a>: Qiita さんのページ。<br>
+わたしのような全くの素人が書く必要はもうないのでしょう。[as of May 11, 2019]
 </OL>
 <hr>
 <DIV ALIGN = RIGHT><TABLE BORDER = 3 BGCOLOR = "#FFFFFF"><TR>
