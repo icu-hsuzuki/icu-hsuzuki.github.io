@@ -7,7 +7,6 @@
 <meta charset="utf-8" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
-<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 <meta name="author" content="H. Suzuki（鈴木寛）" />
@@ -69,6 +68,8 @@ overflow: auto;
 margin-left: 2%;
 position: fixed;
 border: 1px solid #ccc;
+webkit-border-radius: 6px;
+moz-border-radius: 6px;
 border-radius: 6px;
 }
 
@@ -96,14 +97,9 @@ font-size: 12px;
 .tocify-subheader .tocify-subheader {
 text-indent: 30px;
 }
+
 .tocify-subheader .tocify-subheader .tocify-subheader {
 text-indent: 40px;
-}
-.tocify-subheader .tocify-subheader .tocify-subheader .tocify-subheader {
-text-indent: 50px;
-}
-.tocify-subheader .tocify-subheader .tocify-subheader .tocify-subheader .tocify-subheader {
-text-indent: 60px;
 }
 
 .tocify .tocify-item > a, .tocify .nav-list .nav-header {
@@ -507,13 +503,13 @@ float: none;
 
           item.append($("<a/>", {
 
-            "html": self.html()
+            "text": self.text()
 
           }));
 
         } else {
 
-          item.html(self.html());
+          item.text(self.text());
 
         }
 
@@ -2689,9 +2685,48 @@ summary {
 }
 </style>
 
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
 <!-- code folding -->
 
 
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
 
 <style type="text/css">
 
@@ -2740,6 +2775,8 @@ div.tocify {
 
 .tocify-subheader .tocify-item {
   font-size: 0.90em;
+  padding-left: 25px;
+  text-indent: 0;
 }
 
 .tocify .list-group-item {
@@ -2777,14 +2814,14 @@ div.tocify {
 
 <h1 class="title toc-ignore">ICUHS 数学ツアー2019</h1>
 <h4 class="author">H. Suzuki（鈴木寛）</h4>
-<h4 class="date">2019年8月9日</h4>
+<h4 class="date">2019年8月27日</h4>
 
 </div>
 
 
-<div id="section" class="section level1">
+<div class="section level1">
 <h1><span class="header-section-number">1</span> はじめに</h1>
-<div id="section-1" class="section level2">
+<div class="section level2">
 <h2><span class="header-section-number">1.1</span> 数学ツアー案内</h2>
 <p><strong>2019年8月29日・30日</strong></p>
 <pre><code>タイトル：NAND回路の設計とラグランジュの補間公式
@@ -2797,12 +2834,12 @@ LOGIC LAB: http://www.neuroproductions.be/logic-lab/ （ブラウザーによっ
 
 この２つの全くことなると思われる問題の背後にある、数学の考え方のいくつかを、一緒に学ぶことができればと考えています。</code></pre>
 </div>
-<div id="section-2" class="section level2">
+<div class="section level2">
 <h2><span class="header-section-number">1.2</span> コンピュータ・ツールについて</h2>
 <p>ツールが必要な場合には、そのときに説明します。核となる部分は、数学ですから、コンピュータ・ツールは使わなくても学習できますが、使うことで視覚化でき、理解もしやすくなりますし、発想の幅も広がります。ただ、なれるのには、多少の時間がかかりますので、少し、触っておくことはたいせつです。二日間で、考えられることは時間の関係で限られますが、ツールにもなれておくことで、自分で問題を作って、考えることもでき、発展性もあります。得意な人もそうでない人も、少し、世界を広げるといった気持ちで、この機会に、使ってみてはいかがでしょうか。</p>
 <p>大きく分けて三種類のツールを紹介します。１つ目は、論理回路に関係するもの、２つ目は、グラフを描くためのもの、３つ目は、文書を書くためのものです。３つ目は、みなさんは、基本的に使いませんが、わたしがどのようにして、数式などを書いているかを知ることは、有益だと思うのと、数学やデータ・サイエンスを利用する分野で文章を書く時には、基本的なツールですので、簡単に紹介しておきます。</p>
 <p>すべてフリーのソフトで、かつインターネット上で、オンラインで使えるものです。アカウントを作ったほうが便利なものもありますが、１つ目と２つ目に関しては、それも必要ありません。</p>
-<div id="section-3" class="section level3">
+<div class="section level3">
 <h3><span class="header-section-number">1.2.1</span> 論理回路設計</h3>
 <p>理解を助けるツールです。たくさんありますが、二種類、紹介します。</p>
 <ul>
@@ -2822,7 +2859,7 @@ LOGIC LAB: http://www.neuroproductions.be/logic-lab/ （ブラウザーによっ
 <li>頼れるエンジニアの知恵袋：<a href="https://www.chip1stop.com/sp/knowledge/top" class="uri">https://www.chip1stop.com/sp/knowledge/top</a></li>
 </ul>
 </div>
-<div id="section-4" class="section level3">
+<div class="section level3">
 <h3><span class="header-section-number">1.2.2</span> グラフ・ツール</h3>
 <p>関数のグラフを描画するツールです。二つ上げておきます。</p>
 <ul>
@@ -2831,7 +2868,7 @@ LOGIC LAB: http://www.neuroproductions.be/logic-lab/ （ブラウザーによっ
 </ul>
 <p>Desmos は、関数のグラフの描画に特化したもので、GoeGebra は幾何にも使えるようになっています。今回は、Desmos をほんの少し使う予定ですが、殆どのことは、どちらでも可能です。機能も充実しており、学習にも、教育にも有効だと思います。</p>
 </div>
-<div id="section-5" class="section level3">
+<div class="section level3">
 <h3><span class="header-section-number">1.2.3</span> 文書作成ツール</h3>
 <p>数学の文章は、数式を整えて見やすく書く必要があること、文書全体の論理構造がきっちりしていることがたいせつですが、数学者の D. Knuth が開発し、無償公開した、<span class="math inline">\(\TeX\)</span>（テック） という組版システムが、数学関連の論文や書籍の殆どで使われています。<span class="math inline">\(\TeX\)</span> は、本体だけでなく、フォントを作成し管理するシステムや、<span class="math inline">\(\TeX\)</span> ブログラム自体を改善し使い易くする、マクロと呼ばれるものが最初の設計段階から整備されていたり、説明をも加えられる、web という形式で書かれたこともあり、Reproducible Research（研究の再現性）や、Literate Programming（プログラムの文書化） という、研究や、ソフトウェア開発にも欠かせない分野に大きな影響を与えました。</p>
 <p><span class="math inline">\(\TeX\)</span> を使いやすくするために、やはり、数学者の L. Lamport によるマクロを付け加えた、<span class="math inline">\(\LaTeX\)</span>（ラテック） の名前で呼ばれることもあります。</p>
@@ -2848,9 +2885,9 @@ LOGIC LAB: http://www.neuroproductions.be/logic-lab/ （ブラウザーによっ
 <p>Rmarkdown の中でも、数式は、<span class="math inline">\(\TeX\)</span> 形式で書いています。</p>
 </div>
 </div>
-<div id="section-6" class="section level2">
+<div class="section level2">
 <h2><span class="header-section-number">1.3</span> 問題について</h2>
-<div id="section-7" class="section level3">
+<div class="section level3">
 <h3><span class="header-section-number">1.3.1</span> 論理回路の問題</h3>
 <p>The Logic Lab で説明してみます。ページの下に、Logic Ports と書いてあるものがあります。それは、この<a href="http://www.neuroproductions.be/logic-lab/index.php?id=104983">[リンク]</a> のようになっています。すべてにスイッチがついていて、白になっていれば、OFF、赤になっていれば ON です。それを動かして、AND, NOR, NOT, NAND, XOR, OR, XNOR それぞれで、入力がどうなっているときに、電気が赤くつくかを調べてみてください。案内に書いたように、NAND は、両方が、OFF のときのみ ON になっていることが確かめられると思います。他のものは、それぞれどうなっていますか。</p>
 <p>Logic.ly の場合には、ある回路を選択すると、Truth Table（真理表）を作ってくれる機能もあります。上で書いた、ON または 1 が TRUE で、OFF または 0 が FALSE に対応しています。入力の値によって、出力がどうなるかが読み取れるようになっています。</p>
@@ -2866,25 +2903,25 @@ LOGIC LAB: http://www.neuroproductions.be/logic-lab/ （ブラウザーによっ
 </ul>
 <p>どのように考えていったらよいのでしょうか。ひとに説明できるように、考え方も整理できるとよいですね。</p>
 </div>
-<div id="section-8" class="section level3">
+<div class="section level3">
 <h3><span class="header-section-number">1.3.2</span> いくつかの点を通る多項式関数</h3>
 <ul>
-<li><p>平面上の二点 <span class="math inline">\((a,b)\)</span> と <span class="math inline">\((c,d)\)</span> を通る直線は、いつでも一本ありますね。その方程式はどうなりますか。</p></li>
-<li><p>三点 <span class="math inline">\((a,b)\)</span> と <span class="math inline">\((c,d)\)</span> と <span class="math inline">\((e,f)\)</span> のときは、どうでしょうか。二次関数をつかうと、この三点を通るものがいつでも見つけられますか。 <span class="math display">\[
+<li>平面上の二点 <span class="math inline">\((a,b)\)</span> と <span class="math inline">\((c,d)\)</span> を通る直線は、いつでも一本ありますね。その方程式はどうなりますか。</li>
+<li>三点 <span class="math inline">\((a,b)\)</span> と <span class="math inline">\((c,d)\)</span> と <span class="math inline">\((e,f)\)</span> のときは、どうでしょうか。二次関数をつかうと、この三点を通るものがいつでも見つけられますか。 <span class="math display">\[
 y = \alpha x^2 + \beta x + \gamma
-\]</span> として、<span class="math inline">\(\alpha, \beta, \gamma\)</span> はいつでも見つかりますか。</p></li>
-<li><p>二次関数が見つかる条件は何でしょうか。それは、ただ一つに決まるのでしょうか。</p></li>
-<li><p>二点を通る直線は、1次関数に関係しており、三点を通る直線は、2次関数に関係しているとすると、点の数を、4点、5点、6点とどんどん増やしていくとどうなると思いますか。</p></li>
-<li><p>すっきりした形で記述する方法はあるでしょうか。</p></li>
-<li><p><span class="math inline">\(y = \alpha x^3 + \beta x^2 + \gamma x + \delta\)</span> は、<span class="math inline">\(\alpha \neq 0\)</span> のとき、三次関数と呼びます。三点 <span class="math inline">\((a,b)\)</span> と <span class="math inline">\((c,d)\)</span> と <span class="math inline">\((e,f)\)</span> を通る、三次関数をすべて求めることはできるでしょうか。</p></li>
-<li><p>どのように結果を整理（定理として記述）したら良いでしょうか。</p></li>
-<li><p><span class="math inline">\(y = \alpha x^3 + \beta x^2 + \gamma x + \delta\)</span> は、<span class="math inline">\(\alpha \neq 0\)</span> の左辺は、右辺の <span class="math inline">\(x\)</span> の値によって決まりますから、<span class="math inline">\(x\)</span> の関数とよび、<span class="math inline">\(f(x) = \alpha x^3 + \beta x^2 + \gamma x + \delta\)</span> と書きます。<span class="math inline">\(f(x)\)</span> は三次関数です。<span class="math inline">\(c\)</span> を実数としたとき、 <span class="math display">\[
-f(x) = \alpha x^3 + \beta x^2 + \gamma x + \delta = (\alpha&#39; x^2 + \beta&#39; x + \gamma&#39;)(x-c) +r
-\]</span> と書けることが知られてます（数学II）。<span class="math inline">\(\alpha&#39; = \alpha\)</span> と書けることはわかりますね。上のように書けている時、<span class="math inline">\(f(x)\)</span> を <span class="math inline">\(x-c\)</span> で割って、商が <span class="math inline">\(\alpha&#39; x^2 + \beta&#39; x + \gamma&#39;\)</span> 余りが、<span class="math inline">\(r\)</span> であるともいいます。</p></li>
+\]</span> として、<span class="math inline">\(\alpha, \beta, \gamma\)</span> はいつでも見つかりますか。</li>
+<li>二次関数が見つかる条件は何でしょうか。それは、ただ一つに決まるのでしょうか。</li>
+<li>二点を通る直線は、1次関数に関係しており、三点を通る直線は、2次関数に関係しているとすると、点の数を、4点、5点、6点とどんどん増やしていくとどうなると思いますか。</li>
+<li>すっきりした形で記述する方法はあるでしょうか。</li>
+<li><span class="math inline">\(y = \alpha x^3 + \beta x^2 + \gamma x + \delta\)</span> は、<span class="math inline">\(\alpha \neq 0\)</span> のとき、三次関数と呼びます。三点 <span class="math inline">\((a,b)\)</span> と <span class="math inline">\((c,d)\)</span> と <span class="math inline">\((e,f)\)</span> を通る、三次関数をすべて求めることはできるでしょうか。</li>
+<li>どのように結果を整理（定理として記述）したら良いでしょうか。</li>
+<li><span class="math inline">\(y = \alpha x^3 + \beta x^2 + \gamma x + \delta\)</span> は、<span class="math inline">\(\alpha \neq 0\)</span> の左辺は、右辺の <span class="math inline">\(x\)</span> の値によって決まりますから、<span class="math inline">\(x\)</span> の関数とよび、<span class="math inline">\(f(x) = \alpha x^3 + \beta x^2 + \gamma x + \delta\)</span> と書きます。<span class="math inline">\(f(x)\)</span> は三次関数です。<span class="math inline">\(c\)</span> を実数としたとき、 <span class="math display">\[
+f(x) = \alpha x^3 + \beta x^2 + \gamma x + \delta = (\alpha' x^2 + \beta' x + \gamma')(x-c) +r
+\]</span> と書けることが知られてます（数学II）。<span class="math inline">\(\alpha' = \alpha\)</span> と書けることはわかりますね。上のように書けている時、<span class="math inline">\(f(x)\)</span> を <span class="math inline">\(x-c\)</span> で割って、商が <span class="math inline">\(\alpha' x^2 + \beta' x + \gamma'\)</span> 余りが、<span class="math inline">\(r\)</span> であるともいいます。</li>
 <li><p>上の式で、<span class="math inline">\(r = f(c)\)</span> となっていることに注意してください。特に、<span class="math inline">\(f(c)=0\)</span> のときは、 <span class="math display">\[
-f(x) = (\alpha&#39; x^2 + \beta&#39; x + \gamma&#39;)(x-c)
+f(x) = (\alpha' x^2 + \beta' x + \gamma')(x-c)
 \]</span> と書くことができます。</p></li>
-<li><p>Desmos で遊んでみましょう。</p>
+<li>Desmos で遊んでみましょう。
 <ul>
 <li><a href="https://www.desmos.com/calculator/kgbvajslwl">多項式関数</a> 係数の部分をスライドさせると、グラフの形が変わります。最初の表の値を変えて、それを通る関数を見つけることができますか。</li>
 <li>左上に三本線がありますが、それをクリックすると、例が出てきます。少しずつ変更してどんなことができるか、やってみましょう。</li>
@@ -2892,9 +2929,9 @@ f(x) = (\alpha&#39; x^2 + \beta&#39; x + \gamma&#39;)(x-c)
 </ul>
 </div>
 </div>
-<div id="section-9" class="section level2">
+<div class="section level2">
 <h2><span class="header-section-number">1.4</span> 数学を復習しておきたい人のために</h2>
-<div id="section-10" class="section level3">
+<div class="section level3">
 <h3><span class="header-section-number">1.4.1</span> 2進数の演算</h3>
 <ol style="list-style-type: decimal">
 <li>10進数の 0-15 を2進数で表すと</li>
@@ -2905,7 +2942,7 @@ f(x) = (\alpha&#39; x^2 + \beta&#39; x + \gamma&#39;)(x-c)
 <li>2進数で1より小さい小数を表す方法</li>
 </ol>
 </div>
-<div id="section-11" class="section level3">
+<div class="section level3">
 <h3><span class="header-section-number">1.4.2</span> 直線と二次関数</h3>
 <ol style="list-style-type: decimal">
 <li><span class="math inline">\((0,-2)\)</span> を通り、傾きが <span class="math inline">\(3\)</span> の直線の方程式。</li>
@@ -2923,7 +2960,7 @@ f(x) = (\alpha&#39; x^2 + \beta&#39; x + \gamma&#39;)(x-c)
 <div id="nand-" class="section level1">
 <h1><span class="header-section-number">2</span> NAND ゲートの加算器</h1>
 <p>最初に、1.3.1 にあることから確認していきたいと思います。</p>
-<div id="section-12" class="section level2">
+<div class="section level2">
 <h2><span class="header-section-number">2.1</span> クラスで考えてみたいこと</h2>
 <ol style="list-style-type: decimal">
 <li><span class="math inline">\(p, q, r\)</span> がすべて <span class="math inline">\(0\)</span> か <span class="math inline">\(1\)</span> とすると、三組 <span class="math inline">\((p,q,r)\)</span> は <span class="math display">\[
@@ -2936,23 +2973,23 @@ f(x) = (\alpha&#39; x^2 + \beta&#39; x + \gamma&#39;)(x-c)
 <li>基本的なものをまず作って、それを組み合わせてできないだろうか。</li>
 </ol>
 </div>
-<div id="i-" class="section level2">
+<div id="-i-" class="section level2">
 <h2><span class="header-section-number">2.2</span> 授業 I: 論理回路設計（１）</h2>
-<div id="section-13" class="section level3">
+<div id="-1" class="section level3">
 <h3><span class="header-section-number">2.2.1</span> 2進数の演算</h3>
 <p>答えだけ書いておきます。</p>
 <ol style="list-style-type: decimal">
-<li><p>10進数の 0-15 を2進数で表すと</p>
+<li>10進数の 0-15 を2進数で表すと
 <ul>
 <li><span class="math inline">\(0000_2\)</span>, <span class="math inline">\(0001_2\)</span>, <span class="math inline">\(0010_2\)</span>, <span class="math inline">\(0011_2\)</span>, <span class="math inline">\(0100_2\)</span>, <span class="math inline">\(0101_2\)</span>, <span class="math inline">\(0110_2\)</span>, <span class="math inline">\(0111_2\)</span>, <span class="math inline">\(1000_2\)</span>, <span class="math inline">\(1001_2\)</span>, <span class="math inline">\(1010_2\)</span>, <span class="math inline">\(1011_2\)</span>, <span class="math inline">\(1100_2\)</span>, <span class="math inline">\(1101_2\)</span>, <span class="math inline">\(1110_2\)</span>, <span class="math inline">\(1111_2\)</span>. これらを16進記法で、<span class="math inline">\(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F\)</span> と書く場合もあります。</li>
 </ul></li>
-<li><p>10進数を2進数で表す方法</p>
+<li>10進数を2進数で表す方法
 <ul>
 <li>10進数を <span class="math inline">\(n\)</span> としたとき、2 で割ってあまりを計算していく方法と、<span class="math inline">\(2^m \leqq n &lt; 2^{m+1}\)</span> を満たす、<span class="math inline">\(m\)</span> を見つけて順に引いていく方法があります。</li>
-<li><span class="math inline">\(n = a_m2^m + a_{m-1}2^{m-1} + \cdots + a_12^1 + a_0 2^0\)</span> （<span class="math inline">\(a_m, a_{m-1}, \ldots, a_1, a_0\)</span> は <span class="math inline">\(0\)</span> または <span class="math inline">\(1\)</span>）ですから、上の方法は、<span class="math inline">\(a_0, a_1, \ldots\)</span> の順番に見つけていく方法と、<span class="math inline">\(a_m\)</span>, <span class="math inline">\(a_{m-1}, \ldots\)</span> と見つけていく方法と考えることもでいます。</li>
+<li><span class="math inline">\(n = a_m2^m + a_{m-1}2^{m-1} + \cdots + a_12^1 + a_0 2^0\)</span> （<span class="math inline">\(a_m, a_{m-1}, \ldots, a_1, a_0\)</span> は <span class="math inline">\(0\)</span> または <span class="math inline">\(1\)</span>）ですから、上の方法は、<span class="math inline">\(a_0, a_1, \ldots\)</span> の順番に見つけていく方法と、<span class="math inline">\(a_m\)</span>, <span class="math inline">\(a_{m-1}, \ldots\)</span> と見つけていく方法と考えることもできます。</li>
 <li><span class="math inline">\(n = {a_ma_{m-1}\ldots a_1a_0}_2\)</span> または、<span class="math inline">\(n = {(a_ma_{m-1}\ldots a_1a_0)}_2\)</span> などと書きます。</li>
 </ul></li>
-<li><p>2進数を10進数で表す方法</p>
+<li>2進数を10進数で表す方法
 <ul>
 <li>上の2の説明を逆にたどれば、よいですね。</li>
 </ul></li>
@@ -2966,19 +3003,19 @@ f(x) = (\alpha&#39; x^2 + \beta&#39; x + \gamma&#39;)(x-c)
 <ol start="5" style="list-style-type: decimal">
 <li><p>2進数の掛け算 例：<span class="math inline">\(101_2 \times 110_2\)</span><br />
 <span class="math display">\[ \begin{array}{cccccc}  &amp;  &amp;  &amp; 1  &amp; 0  &amp; 1 \\ \times  &amp;  &amp;  &amp; 1  &amp; 1  &amp; 0\\ \hline  &amp;  &amp; 1  &amp; 0  &amp; 1  &amp; \\  &amp; 1  &amp; 0  &amp; 1  &amp;  &amp; \\ \hline  &amp; 1  &amp; 1  &amp; 1  &amp; 1  &amp; 0 \end{array} \]</span></p></li>
-<li><p>2進数で1より小さい小数を表す方法</p>
+<li>2進数で1より小さい小数を表す方法
 <ul>
 <li>基本的には、10進数の場合と同じです。<span class="math inline">\(0.5 = 2^{-1}= .1_2\)</span> などとなります。<span class="math inline">\(n\)</span> を1より小さい小数とすると、<span class="math inline">\(n = b_12^{-1} + b_2 2^{-2} + b_3 2^{-3} + \cdots\)</span>（<span class="math inline">\(b_1, b_2, \ldots\)</span> は、<span class="math inline">\(0\)</span> または <span class="math inline">\(1\)</span>） となります。ただし、10進数では、小数点以下有限であっても、無限小数になる場合もあります。今回は、使いませんが、考えてみるとよいと思います。</li>
 <li><span class="math inline">\(0.1\)</span>, <span class="math inline">\(0.2\)</span>, <span class="math inline">\(0.3\)</span> などはどうなりますか。<span class="math inline">\(0.625\)</span> などはどうなりますか。</li>
 </ul></li>
 </ol>
 </div>
-<div id="section-14" class="section level3">
+<div class="section level3">
 <h3><span class="header-section-number">2.2.2</span> 論理回路</h3>
 <p>２進演算で、加算器を作ることを考えましょう。単純なものから考えます。すなわち、二進一桁を一ビット（bit）と呼びますが、１ビット＋１ビットの加算器です。<span class="math inline">\(A\)</span>と<span class="math inline">\(B\)</span>であらわしましょう。</p>
 <ul>
-<li><p><span class="math inline">\(0+0=0\)</span>, <span class="math inline">\(0+1=1\)</span>, <span class="math inline">\(1+0=1\)</span>, <span class="math inline">\(1+1 = 10_2\)</span> です。最後だけ二桁になっています。添字の2は、2進であることを示したものです。繰り上がりを Carry と言います。ですから、みな二桁だと考えて、</p></li>
-<li><p><span class="math inline">\(0+0=00_2\)</span>, <span class="math inline">\(0+1=01_2\)</span>, <span class="math inline">\(1+0=01_2\)</span>, <span class="math inline">\(1+1 = 10_2\)</span> と出力を二桁にしてみましょう。</p></li>
+<li><span class="math inline">\(0+0=0\)</span>, <span class="math inline">\(0+1=1\)</span>, <span class="math inline">\(1+0=1\)</span>, <span class="math inline">\(1+1 = 10_2\)</span> です。最後だけ二桁になっています。添字の2は、2進であることを示したものです。繰り上がりを Carry と言います。ですから、みな二桁だと考えて、</li>
+<li><span class="math inline">\(0+0=00_2\)</span>, <span class="math inline">\(0+1=01_2\)</span>, <span class="math inline">\(1+0=01_2\)</span>, <span class="math inline">\(1+1 = 10_2\)</span> と出力を二桁にしてみましょう。</li>
 <li><p>一桁目（<span class="math inline">\(2^0\)</span> の位）を <span class="math inline">\(A\oplus B\)</span> 繰り上がりを <span class="math inline">\(C\)</span> で著しましょう。すると次のようになっていることがわかります。 <span class="math display">\[ \begin{array}{|c|c||c|c|} \hline A  &amp; B  &amp; A\oplus B  &amp; C \\ \hline 0  &amp; 0  &amp; 0  &amp; 0 \\ 0  &amp; 1  &amp; 1  &amp; 0 \\ 1  &amp; 0  &amp; 1  &amp; 0 \\ 1  &amp; 1  &amp; 0  &amp; 1\\ \hline \end{array} \]</span></p></li>
 <li><p>入力が <span class="math inline">\(A\)</span> と <span class="math inline">\(B\)</span> の二つ。出力が、<span class="math inline">\(A\oplus B\)</span> と <span class="math inline">\(C\)</span> の二つということになります。出力は一つ一つ作っていくことにしましょう。</p></li>
 <li><p>これを、いくつかのゲート（ポート）を組み合わせて作りたいので、それぞれの、ゲートが入力に対して、どのような出力をしているか見てみましょう。</p></li>
@@ -3002,7 +3039,7 @@ f(x) = (\alpha&#39; x^2 + \beta&#39; x + \gamma&#39;)(x-c)
 <li><span class="math inline">\(\mbox{NOT}(A \mbox{AND} B) \equiv \mbox{NOT}(A) \mbox{ AND } \mbox{ NOT}(B)\)</span></li>
 <li>公式のようなもので、最後のものは、ド・モルガンの法則とも言われ、高校で習った人もいると思います。</li>
 </ul></li>
-<li><p>複雑になると、簡単な記号を使ったほうがわかりやすいこともありますので、一般的に使われる（論理）記号を紹介しておきます。</p>
+<li>複雑になると、簡単な記号を使ったほうがわかりやすいこともありますので、一般的に使われる（論理）記号を紹介しておきます。
 <ul>
 <li><span class="math inline">\(\mbox{NOT}(A)\)</span>: <span class="math inline">\(\bar{A}\)</span>, <span class="math inline">\(\neg A\)</span>, <span class="math inline">\(\sim A\)</span> 日本の高校では１つ目を使っているので、ここでもそれを使うことにします。</li>
 <li><span class="math inline">\(A \mbox{ AND } B\)</span>: <span class="math inline">\(A \land B\)</span></li>
@@ -3011,11 +3048,11 @@ f(x) = (\alpha&#39; x^2 + \beta&#39; x + \gamma&#39;)(x-c)
 <li><span class="math inline">\(A \mbox{ NAND } B\)</span>: 一般的な記号はありません。<span class="math inline">\(A \uparrow B\)</span></li>
 <li><span class="math inline">\(A \mbox{ NOR } B\)</span>: 一般的な記号はありません。<span class="math inline">\(A \downarrow B\)</span></li>
 </ul></li>
-<li><p>記号をつかうと、次のように書くことができます。</p>
+<li>記号をつかうと、次のように書くことができます。
 <ul>
 <li><span class="math inline">\(A \uparrow B \equiv \overline{A \land B} \equiv \overline{A} \lor \overline{B}\)</span>.</li>
 </ul></li>
-<li><p>二桁以上の場合も一桁ずつ計算しますが、桁上り（Carry）の部分も計算しないといけませんから、入力が <span class="math inline">\(A, B, C\)</span> で出力が <span class="math inline">\(X, Y\)</span> のようになっています。<span class="math inline">\(Y\)</span> を桁上り分としましょう。</p></li>
+<li>二桁以上の場合も一桁ずつ計算しますが、桁上り（Carry）の部分も計算しないといけませんから、入力が <span class="math inline">\(A, B, C\)</span> で出力が <span class="math inline">\(X, Y\)</span> のようになっています。<span class="math inline">\(Y\)</span> を桁上り分としましょう。</li>
 <li><p><span class="math inline">\(A = B = C = 1\)</span> であっても、桁上りをふくめて二桁で収まることを確認しておきましょう。するとどうなるでしょうか。</p></li>
 </ul>
 <p><span class="math display">\[ \begin{array}{|c|c|c||c|c|c|} \hline A  &amp; B  &amp; C  &amp; X  &amp; Y  &amp; Z\\ \hline 0  &amp; 0  &amp; 0  &amp; 0  &amp; 0 \\ 0  &amp; 0  &amp; 1  &amp; 1  &amp; 0\\ 0  &amp; 1  &amp; 0  &amp; 1  &amp; 0\\ 0  &amp; 1  &amp; 1  &amp; 0  &amp; 1\\ 1  &amp; 0  &amp; 0  &amp; 1  &amp; 0\\ 1  &amp; 0  &amp; 1  &amp; 0  &amp; 1\\ 1  &amp; 1  &amp; 0  &amp; 0  &amp; 1 \\ 1  &amp; 1  &amp; 1  &amp; 1  &amp; 1\\ \hline \end{array} \]</span></p>
@@ -3038,7 +3075,7 @@ f(x) = (\alpha&#39; x^2 + \beta&#39; x + \gamma&#39;)(x-c)
 </ul>
 </div>
 </div>
-<div id="ii-" class="section level2">
+<div id="-ii-" class="section level2">
 <h2><span class="header-section-number">2.3</span> 授業 II: 論理回路設計（２）</h2>
 <p>最後に述べた問題の 1 と 2 について考えてみたいと思います。</p>
 <p>具体的には、次の二つの項目について話します。</p>
@@ -3047,7 +3084,7 @@ f(x) = (\alpha&#39; x^2 + \beta&#39; x + \gamma&#39;)(x-c)
 <li>NOT, AND, OR いずれも、NAND で書くことができる。(Functional Completeness, FC)</li>
 </ol>
 <p>注：XOR については、述べていませんが、<span class="math inline">\(A \oplus B\)</span> の値を、<span class="math inline">\(Z\)</span> に書いておけば、そのように、NOT, AND, OR だけで書けるのですから、心配いらないことがわかります。</p>
-<div id="nand--1" class="section level3">
+<div id="nand-" class="section level3">
 <h3><span class="header-section-number">2.3.1</span> NAND の完全性</h3>
 <ul>
 <li><span class="math inline">\(\bar{A} \equiv A \uparrow A\)</span></li>
@@ -3081,77 +3118,55 @@ X  &amp; Y  &amp; Z  &amp; X \land Y \land Z = E_8  &amp; X \lor Y \lor Z  &amp;
 注：日本語では、連言標準形というらしいです。他方、Disjuntive Noraml Form (DNF) は、選言標準形。
 </p>
 </div>
-<div id="section-15" class="section level3">
+<div class="section level3">
 <h3><span class="header-section-number">2.3.3</span> 回路の設計と課題</h3>
 <ul>
-<li><p>原理的には、全加算器の回路ができることを示しました。</p></li>
-<li><p>かなり複雑ですから、全加算器をNAND で簡単に書く方法を考えてください。</p></li>
-<li><p>できれば、３桁＋３桁の計算までできる加算器を作ってください。</p></li>
+<li>原理的には、全加算器の回路ができることを示しました。</li>
+<li>かなり複雑ですから、全加算器をNAND で簡単に書く方法を考えてください。</li>
+<li>できれば、３桁＋３桁の計算までできる加算器を作ってください。</li>
 <li><p>設計した加算器と工夫したこと、考え方などを、説明してもらおうと思います。</p></li>
 <li><p>NAND ではなく、他の一種類のゲートだけで、書くことはできないのでしょうか。考えてみてください。</p></li>
 </ul>
 </div>
-<div id="section-16" class="section level3">
+<div class="section level3">
 <h3><span class="header-section-number">2.3.4</span> 練習問題</h3>
-<ol type="1">
-<li>
-<p>
-<span class="math inline">\(A\Rightarrow B\)</span> （<span class="math inline">\(A \mbox{ IM } B\)</span> ともかく）ゲートを下の表で定義する。空欄を埋めよ。 <span class="math display"><span class="math display">\[ \begin{array}{|c|c||c|c|c|c|} \hline A  &amp; B  &amp; A\Rightarrow B  &amp; \bar{A} \lor B  &amp; \overline{A \land \bar{B}}  &amp; \bar{B} \Rightarrow \bar{A} \\ \hline 0  &amp; 0  &amp; 1  &amp;  &amp;  &amp; \\ 0  &amp; 1  &amp; 1  &amp;  &amp;  &amp; \\ 1  &amp; 0  &amp; 0  &amp;  &amp;  &amp; \\ 1  &amp; 1  &amp; 1  &amp;  &amp;  &amp; \\ \hline \end{array} \]</span> このことから、次がわかる。 <span class="math display"><span class="math display">\[ A\Rightarrow B \equiv \bar{A} \lor B \equiv \overline{A \land \bar{B}} \equiv \bar{B} \Rightarrow \bar{A}. \]</span> <span class="math inline">\(\bar{B} \Rightarrow \bar{A}\)</span> は対偶（contrapositive）と呼ばれる。
-</p>
-<p>
-<li>
-次の二つの式で表される論理回路の出力が同じではない（同値でない）ことを示せ。<span class="math inline">\((A\land B) \lor C\)</span> <span class="math inline">\(A\land (B\lor C)\)</span>。（回路を作って示しても、表を書いて示しても、他の方法でも構いません。）
-<li>
-<p><span class="math inline">\(A \Rightarrow (B\lor C) \equiv A\land (\bar{B}) \Rightarrow C\)</span> すなわち、どちらの論理回路も <span class="math inline">\((A, B, C)\)</span> のすべての値について同じ出力となること（同値であること）を、二つの方法で示せ。</p>
-<ol type="a">
-<li>
-表を完成することで確認せよ。
-<li>
-実際に、論理回路を作って確認せよ。
-<li>
-練習問題 1 などの公式を使った変形により示せ。
-</ol>
-<p>
-<li>
-論理記号 <span class="math inline">\(\uparrow\)</span> NAND だけを用い（NAND 回路で）次を表わせ。NOT も使ってはいけません。
-<ol type="a">
-<li>
-<span class="math inline">\(A \land B\)</span>
-<li>
-<span class="math inline">\(A \lor B\)</span>
-<li>
-<span class="math inline">\(A \oplus B\)</span>
-<li>
-<span class="math inline">\(A \Rightarrow B\)</span>
-<li>
-<span class="math inline">\(A \downarrow B\)</span>
-</ol>
-<p>
-<li>
-<p><span class="math inline">\((A\land \bar{B}) \Rightarrow C\)</span> を以下の指示にしたがって変形せよ。</p>
-<ol type="a">
-<li>
-<span class="math inline">\(\lor\)</span> と NOT（否定）だけを使い、<span class="math inline">\(\land\)</span>、<span class="math inline">\(\Rightarrow\)</span> などを用いない。
-<li>
-<span class="math inline">\(\uparrow\)</span> だけを使い、<span class="math inline">\(\land, \lor, \Rightarrow\)</span> NOT（否定）などを用いない。
-</ol>
-<p>
-<li>
-<p><span class="math inline">\((A, B, C)\)</span> の入力が <span class="math inline">\((0,0,0), (0,1,0), (1,0,1)\)</span> のときだけ <span class="math inline">\(1\)</span> でそれ以外、<span class="math inline">\(0\)</span> を出力する回路を作成せよ。</p>
-<ol type="a">
-<li>
-AND, OR, NOT ゲートだけを用いよ。
-<li>
-NAND ゲートだけを用いよ。
-</ol>
+<ol style="list-style-type: decimal">
+<li><p><span class="math inline">\(A\Rightarrow B\)</span> （<span class="math inline">\(A \mbox{ IM } B\)</span> ともかく）ゲートを下の表で定義する。空欄を埋めよ。 <span class="math display">\[ \begin{array}{|c|c||c|c|c|c|} \hline A  &amp; B  &amp; A\Rightarrow B  &amp; \bar{A} \lor B  &amp; \overline{A \land \bar{B}}  &amp; \bar{B} \Rightarrow \bar{A} \\ \hline 0  &amp; 0  &amp; 1  &amp;  &amp;  &amp; \\ 0  &amp; 1  &amp; 1  &amp;  &amp;  &amp; \\ 1  &amp; 0  &amp; 0  &amp;  &amp;  &amp; \\ 1  &amp; 1  &amp; 1  &amp;  &amp;  &amp; \\ \hline \end{array} \]</span> このことから、次がわかる。 <span class="math display">\[ A\Rightarrow B \equiv \bar{A} \lor B \equiv \overline{A \land \bar{B}} \equiv \bar{B} \Rightarrow \bar{A}. \]</span> <span class="math inline">\(\bar{B} \Rightarrow \bar{A}\)</span> は対偶（contrapositive）と呼ばれる。</p></li>
+<li><p>次の二つの式で表される論理回路の出力が同じではない（同値でない）ことを示せ。<span class="math display">\[
+(A\land B) \lor C, \quad A\land (B\lor C)
+\]</span> （回路を作って示しても、表を書いて示しても、他の方法でも構いません。）</p></li>
+<li><span class="math inline">\(A \Rightarrow (B\lor C) \equiv A\land (\bar{B}) \Rightarrow C\)</span> すなわち、どちらの論理回路も <span class="math inline">\((A, B, C)\)</span> のすべての値について同じ出力となること（同値であること）を、二つの方法で示せ。
+<ol style="list-style-type: lower-alpha">
+<li>表を完成することで確認せよ。</li>
+<li>実際に、論理回路を作って確認せよ。</li>
+<li>練習問題 1 などの公式を使った変形により示せ。</li>
+</ol></li>
+<li>論理記号 <span class="math inline">\(\uparrow\)</span> NAND だけを用い（NAND 回路で）次を表わせ。NOT も使ってはいけません。
+<ol style="list-style-type: lower-alpha">
+<li><span class="math inline">\(A \land B\)</span></li>
+<li><span class="math inline">\(A \lor B\)</span></li>
+<li><span class="math inline">\(A \oplus B\)</span></li>
+<li><span class="math inline">\(A \Rightarrow B\)</span></li>
+<li><span class="math inline">\(A \downarrow B\)</span></li>
+</ol></li>
+<li><span class="math inline">\((A\land \bar{B}) \Rightarrow C\)</span> を以下の指示にしたがって変形せよ。
+<ol style="list-style-type: lower-alpha">
+<li><span class="math inline">\(\lor\)</span> と NOT（否定）だけを使い、<span class="math inline">\(\land\)</span>、<span class="math inline">\(\Rightarrow\)</span> などを用いない。</li>
+<li><span class="math inline">\(\uparrow\)</span> だけを使い、<span class="math inline">\(\land, \lor, \Rightarrow\)</span> NOT（否定）などを用いない。</li>
+</ol></li>
+<li><span class="math inline">\((A, B, C)\)</span> の入力が <span class="math inline">\((0,0,0), (0,1,0), (1,0,1)\)</span> のときだけ <span class="math inline">\(1\)</span> でそれ以外、<span class="math inline">\(0\)</span> を出力する回路を作成せよ。
+<ol style="list-style-type: lower-alpha">
+<li>AND, OR, NOT ゲートだけを用いよ。</li>
+<li>NAND ゲートだけを用いよ。</li>
+</ol></li>
 </ol>
 </div>
 </div>
 </div>
-<div id="section-17" class="section level1">
+<div class="section level1">
 <h1><span class="header-section-number">3</span> いつくかの点を通る多項式関数</h1>
 <p>最初に 1.3.2 に書いてあることから確認していきたいと思います。</p>
-<div id="section-18" class="section level2">
+<div id="-1" class="section level2">
 <h2><span class="header-section-number">3.1</span> クラスで考えてみたいこと</h2>
 <ol style="list-style-type: decimal">
 <li>たくさんの点を考える時、どのような記号がよいだろうか。</li>
@@ -3172,15 +3187,15 @@ poly.calc(x,y)</code></pre>
 <pre><code>## 7 - 2*x + x^3</code></pre>
 <p><a href="https://sagecell.sagemath.org">“SageMathCell” へのリンク</a></p>
 <p>次の二行を copy して、SageMathCell の窓に paste して、Evaluate くだみてさい。</p>
-<pre><code>R = PolynomialRing(QQ, &#39;x&#39;)
+<pre><code>R = PolynomialRing(QQ, 'x')
 R.lagrange_polynomial([(0,7),(2,11),(3,28),(4,63)])</code></pre>
 <p><span class="math inline">\((0,7),(2,11),(3,28),(4,63)\)</span> の部分を変更するとどうなるでしょうか。</p>
-<div id="section-19" class="section level3">
+<div class="section level3">
 <h3><span class="header-section-number">3.2.1</span> いくつかの点を通る（多項式）関数について</h3>
 <p>まず、<span class="math inline">\(c_0, c_1, \ldots, c_n\)</span> を数とし、<span class="math inline">\(x\)</span> を変数としたとき、次の式を考える。<br />
 <span class="math display">\[
 y = c_nx^n + c_{n-1}x^{n-1} + \cdots + c_1x+c_0
-\]</span> 右辺の<span class="math inline">\(x\)</span>にある数を代入すると、<span class="math inline">\(y\)</span> の値が決まるので、<span class="math inline">\(x\)</span> の値によって、<span class="math inline">\(y\)</span> の値が一つ定まることを　<span class="math inline">\(y\)</span> は <span class="math inline">\(x\)</span> の関数であるといい、<span class="math inline">\(y = f(x)\)</span> などと書く。<span class="math inline">\(f\)</span> は function からとっている。右辺は、<span class="math inline">\(x\)</span> の整式ともよばれるが、ここでは、多項式と呼ぶことにする。高校では、一項しかないとき、単項式、複数項のとき、多項式と区別することもあるが、ここでは、すべて多項式と呼ぶことにする。ここで、<span class="math inline">\(c_n\neq 0\)</span> であるとき、<span class="math inline">\(f(x)\)</span> の次数は <span class="math inline">\(n\)</span> であるといい、<span class="math inline">\(\deg f(x) = n\)</span> と書く。右辺が <span class="math inline">\(0\)</span> のとき、すなわち、ゼロ多項式の次数の次数もいくつか決め方があるが、ここでは、<span class="math inline">\(0\)</span> でない多項式のときだけ、次数を間がることにする。定数たとえば、<span class="math inline">\(f(x) = c_0 = 2\)</span> の次数は、<span class="math inline">\(0\)</span> である。右辺が次数<span class="math inline">\(n\)</span> の多項式の時、<span class="math inline">\(y = f(x)\)</span> を次数<span class="math inline">\(n\)</span>（または <span class="math inline">\(n\)</span>次）の多項式関数という。</p>
+\]</span> 右辺の<span class="math inline">\(x\)</span>にある数を代入すると、<span class="math inline">\(y\)</span> の値が決まるので、<span class="math inline">\(x\)</span> の値によって、<span class="math inline">\(y\)</span> の値が一つ定まることを　<span class="math inline">\(y\)</span> は <span class="math inline">\(x\)</span> の関数（function）であるといい、<span class="math inline">\(y = f(x)\)</span> などと書く。<span class="math inline">\(f\)</span> は function からとっている。右辺は、<span class="math inline">\(x\)</span> の整式ともよばれるが、ここでは、多項式（polynomial）と呼ぶことにする。高校では、一項しかないとき、単項式、複数項のとき、多項式と区別することもあるが、ここでは、すべて多項式と呼ぶことにする。ここで、<span class="math inline">\(c_n\neq 0\)</span> であるとき、<span class="math inline">\(f(x)\)</span> の次数（degree）は <span class="math inline">\(n\)</span> であるといい、<span class="math inline">\(\deg f(x) = n\)</span> と書く。右辺が <span class="math inline">\(0\)</span> のとき、すなわち、ゼロ多項式の次数の次数もいくつか決め方があるが、ここでは、<span class="math inline">\(0\)</span> でない多項式のときだけ、次数を考えることにする。定数たとえば、<span class="math inline">\(f(x) = c_0 = 2\)</span> の次数は、<span class="math inline">\(0\)</span> である。右辺が次数<span class="math inline">\(n\)</span> の多項式の時、<span class="math inline">\(y = f(x)\)</span> を次数<span class="math inline">\(n\)</span>（または <span class="math inline">\(n\)</span>次）の多項式関数という。</p>
 <ol style="list-style-type: decimal">
 <li><span class="math inline">\(y = 2x - 1\)</span> は<span class="math inline">\(1\)</span>次の多項式関数。</li>
 <li><span class="math inline">\(y = x^2 -2x + 1\)</span> は <span class="math inline">\(2\)</span> 次の多項式関数である。</li>
@@ -3193,66 +3208,58 @@ y = c_nx^n + c_{n-1}x^{n-1} + \cdots + c_1x+c_0
 <p>「1.4 数学を復習しておきたい人のために」の「直線と二次関数」の問題を眺めながら、考えてみてください。</p>
 </div>
 </div>
-<div id="iii-" class="section level2">
+<div id="-iii-" class="section level2">
 <h2><span class="header-section-number">3.3</span> 授業 III: いくつかの点を通る多項式関数（１）</h2>
 <p>まず、「1.4 数学を復習しておきたい人のために」の「直線と二次関数」の問題の答えを書いておきます。</p>
-<div id="section-20" class="section level3">
+<div id="-1" class="section level3">
 <h3><span class="header-section-number">3.3.1</span> 直線と二次関数</h3>
 <ol style="list-style-type: decimal">
 <li><p>
 <span class="math inline">\((0,-2)\)</span> を通り、傾きが 3 の直線の方程式。
-</p>
 <ul>
 <li><span class="math inline">\(y = 3x-2\)</span></li>
 </ul></li>
 <li><p>
 <span class="math inline">\((0,b)\)</span> を通り、傾きが <span class="math inline">\(a\)</span> の直線の方程式。
-</p>
 <ul>
 <li><span class="math inline">\(y = ax+b\)</span></li>
 </ul></li>
 <li><p>
 平面上の直線で、<span class="math inline">\(y = ax+b\)</span> とは表せないもの。
-</p>
 <ul>
 <li><span class="math inline">\(x = a\)</span> のように、<span class="math inline">\(y\)</span> 軸と平行な直線。</li>
 </ul></li>
 <li><p>
 <span class="math inline">\(ax + by + c = 0\)</span> をみたす平面上の点 <span class="math inline">\((x,y)\)</span> 全体が直線となる条件。
-</p>
 <ul>
 <li><span class="math inline">\(a\neq 0\)</span> または <span class="math inline">\(b\neq 0\)</span>。(<span class="math inline">\((a,b)\neq (0,0)\)</span> とも書きます。)</li>
 </ul></li>
 <li><p>
 <span class="math inline">\((a,0)\)</span> と <span class="math inline">\((0,b)\)</span> を通る直線の方程式。
-</p>
 <ul>
 <li><span class="math inline">\({\displaystyle \frac{x}{a} + \frac{y}{b} = 1}\)</span> (<span class="math inline">\(a\neq 0\)</span>, <span class="math inline">\(b\neq 0\)</span> のとき)　それ以外は、<span class="math inline">\(x\)</span> 軸 <span class="math inline">\(y=0\)</span> または、<span class="math inline">\(y\)</span> 軸 <span class="math inline">\(x=0\)</span> となります。</li>
 <li>なお、一点になるときは、原点を通る直線がすべて条件を満たします。</li>
 </ul></li>
 <li><p>
 <span class="math inline">\((a,b)\)</span> と <span class="math inline">\((c,d)\)</span> を通る直線の方程式。
-</p>
 <ul>
-<li><span class="math inline">\(a\neq c\)</span> のとき、<span class="math inline">\({\displaystyle y = b\cdot \frac{x-c}{a-c} + d\cdot \frac{x-a}{c-a}}\)</span><br /></li>
+<li><span class="math inline">\(a\neq c\)</span> のとき、<span class="math inline">\({\displaystyle y = b\cdot \frac{x-c}{a-c} + d\cdot \frac{x-a}{c-a} = \frac{d-b}{c-a}(x-a) + b}\)</span></li>
 <li><span class="math inline">\(a = c\)</span> のとき、<span class="math inline">\(x=a\)</span> ただし、<span class="math inline">\((a,b) = (c,d)\)</span> のときは、<span class="math inline">\(y = m(x-a) + b\)</span> で <span class="math inline">\(m\)</span> は任意となります。</li>
 </ul></li>
 <li><p>
 <span class="math inline">\((0,0), (1,-1), (3,3)\)</span> を通る二次関数。
-</p>
 <ul>
 <li><span class="math inline">\(y = (x-1)^2 -1 = x^2 -2x\)</span></li>
 </ul></li>
 <li><p>
 <span class="math inline">\((1,a), (2,b), (3,c)\)</span> を通る二次関数（か、１次関数か…)。
-</p>
 <ul>
 <li><span class="math inline">\({\displaystyle y = a\cdot \frac{(x-2)(x-3)}{(1-2)(1-3)} + b\cdot\frac{(x-1)(x-3)}{(2-1)(2-3)} + c\cdot\frac{(x-1)(x-2)}{(3-1)(3-2)}}\)</span></li>
 <li><span class="math inline">\(a, b, c\)</span> の値によっては、一次関数の場合も、定数関数の場合もありますね。例を挙げられますか。</li>
 </ul></li>
 </ol>
 </div>
-<div id="section-21" class="section level3">
+<div class="section level3">
 <h3><span class="header-section-number">3.3.2</span> ラグランジュの補間公式</h3>
 <ul>
 <li><span class="math inline">\(y = f(x)\)</span> の形の多項式関数だけを考えることにすると、<span class="math inline">\(a = b\)</span> のとき、<span class="math inline">\(f(a) = f(b)\)</span> となるので、いくつか、点をとったとき、<span class="math inline">\(x\)</span> 座標は異なることが必要です。</li>
@@ -3278,16 +3285,16 @@ y = c_nx^n + c_{n-1}x^{n-1} + \cdots + c_1x+c_0
 </p></li>
 </ul>
 <p>
-次の授業では、他にはないのかなど、考えてみようと思います。
+次の授業では、他の表し方はないのかなど、考えてみようと思います。
 </p>
 </div>
 </div>
-<div id="iv-" class="section level2">
+<div id="-iv-" class="section level2">
 <h2><span class="header-section-number">3.4</span> 講義 IV: いくつかの点を通る多項式関数（２）</h2>
-<div id="section-22" class="section level3">
+<div class="section level3">
 <h3><span class="header-section-number">3.4.1</span> 因数定理</h3>
 <p>
-<span class="math inline">\(f(x) = \alpha x^3 + \beta x^2 + \gamma x + \delta\)</span> としたとき、実数 <span class="math inline">\(c\)</span> について、<span class="math inline">\(f(c)=0\)</span> ならば、 <span class="math display">\[ f(x) = (\alpha&#39; x^2 + \beta&#39; x + \gamma&#39;)(x-c) \]</span> と書くことができると書きました。これを一般化したものを考えましょう。
+<span class="math inline">\(f(x) = \alpha x^3 + \beta x^2 + \gamma x + \delta\)</span> としたとき、実数 <span class="math inline">\(c\)</span> について、<span class="math inline">\(f(c)=0\)</span> ならば、 <span class="math display">\[ f(x) = (\alpha' x^2 + \beta' x + \gamma')(x-c) \]</span> と書くことができると書きました。これを一般化したものを考えましょう。
 </p>
 <ul>
 <li><span class="math inline">\(f(x)\)</span> を下のような <span class="math inline">\(n\)</span> 次の多項式関数とします。 <span class="math display"><span class="math display">\[ f(x) = c_nx^n + c_{n-1}x^{n-1} + \cdots + c_1x+c_0, \; c_n \neq 0 \]</span> このとき、 <span class="math display"><span class="math display">\[ f(x) = (b_{n-1}x^{n-1}+ b_{n-2}x^{n-2} + \cdots + b_1x + b_0)(x-c) + r = q(x)(x-c) + r \]</span> となる、定数 <span class="math inline">\(r\)</span> と <span class="math inline">\(n-1\)</span> 次多項式 <span class="math display"><span class="math display">\[ q(x) = b_{n-1}x^{n-1}+ b_{n-2}x^{n-2} + \cdots + b_1x + b_0 \]</span> が、ただ一組きまります。</li>
@@ -3295,7 +3302,7 @@ y = c_nx^n + c_{n-1}x^{n-1} + \cdots + c_1x+c_0
 <li>特に、<span class="math inline">\(f(c) = r\)</span> で、<span class="math inline">\(f(c)=0\)</span> ならば <span class="math display"><span class="math display">\[ f(x) = (b_{n-1}x^{n-1}+ b_{n-2}x^{n-2} + \cdots + b_1x + b_0)(x-c) \]</span> と書けます。</li>
 </ul>
 </div>
-<div id="section-23" class="section level3">
+<div class="section level3">
 <h3><span class="header-section-number">3.4.2</span> 一般解</h3>
 <p>
 <span class="math inline">\(f(x) = c_nx^n + c_{n-1}x^{n-1} + \cdots + c_1x+c_0, \; c_n \neq 0\)</span> で、次数に制限をつけず、<br />
@@ -3310,85 +3317,78 @@ y = c_nx^n + c_{n-1}x^{n-1} + \cdots + c_1x+c_0
 <li>これで、どのような定理ができたのでしょうか。理解するとともに考えてみましょう。</li>
 </ul>
 </div>
-<div id="section-24" class="section level3">
+<div id="-1" class="section level3">
 <h3><span class="header-section-number">3.4.3</span> 練習問題</h3>
 <ol style="list-style-type: decimal">
-<li><p>
-次数が3以下の多項式 <span class="math inline">\(f(x)\)</span> で <span class="math inline">\(f(0) = 4\)</span>, <span class="math inline">\(f(1) = 3\)</span>, <span class="math inline">\(f(2) = -6\)</span>, <span class="math inline">\(f(3) = 1\)</span>　を満たすものは何か。
-</p></li>
-<li><p>
-次数が3以下の多項式 <span class="math inline">\(r(x)\)</span>、<span class="math inline">\(f(x)\)</span> で <span class="math inline">\(r(-1) = 1\)</span>, <span class="math inline">\(r(0) = r(1) = r(2) = 0\)</span>、 および <span class="math inline">\(f(-1) = 2\)</span>, <span class="math inline">\(f(0) = -1\)</span>, <span class="math inline">\(f(1) = 3\)</span>, <span class="math inline">\(f(2) = -6\)</span>　となるものを求めよ。
-</p></li>
-<li><p>
-多項式 <span class="math inline">\(f(x)\)</span> は <span class="math inline">\(f(1) = 2, \;f(2) = 7, \;f(3) = 1, \;f(4) = 8\)</span> を満たすものとする。
-</p>
-<ol type="a">
-<li>
-次数が<span class="math inline">\(3\)</span>以下である <span class="math inline">\(f(x)\)</span> を求めよ。
-<li>
-次数が丁度 <span class="math inline">\(4\)</span> である <span class="math inline">\(f(x)\)</span> を求めよ。
+<li>次数が3以下の多項式 <span class="math inline">\(f(x)\)</span> で <span class="math inline">\(f(0) = 4\)</span>, <span class="math inline">\(f(1) = 3\)</span>, <span class="math inline">\(f(2) = -6\)</span>, <span class="math inline">\(f(3) = 1\)</span>　を満たすものは何か。</li>
+<li>次数が3以下の多項式 <span class="math inline">\(r(x)\)</span>、<span class="math inline">\(f(x)\)</span> で <span class="math inline">\(r(-1) = 1\)</span>, <span class="math inline">\(r(0) = r(1) = r(2) = 0\)</span>、 および <span class="math inline">\(f(-1) = 2\)</span>, <span class="math inline">\(f(0) = -1\)</span>, <span class="math inline">\(f(1) = 3\)</span>, <span class="math inline">\(f(2) = -6\)</span>　となるものを求めよ。</li>
+<li>多項式 <span class="math inline">\(f(x)\)</span> は <span class="math inline">\(f(1) = 2, \;f(2) = 7, \;f(3) = 1, \;f(4) = 8\)</span> を満たすものとする。
+<ol style="list-style-type: lower-alpha">
+<li>次数が<span class="math inline">\(3\)</span>以下である <span class="math inline">\(f(x)\)</span> を求めよ。</li>
+<li>次数が丁度 <span class="math inline">\(4\)</span> である <span class="math inline">\(f(x)\)</span> を求めよ。</li>
 </ol></li>
-<li><p>
-多項式 <span class="math inline">\(r(x)\)</span> は <span class="math inline">\(r(-5) = r(0) = r(5) = r(10) = 0\)</span> and <span class="math inline">\(r(15) = 1\)</span> を満たすものとする。次数が4 のものと<span class="math inline">\(5\)</span> のものを一つずつ求めよ。
-</p></li>
-<li><p>
-多項式 <span class="math inline">\(f(x)\)</span> は <span class="math inline">\(f(1) = -2, \;f(2) = 2, \;f(3) = 14, \;f(4) = 40\)</span> を満たすものとする。
-</p>
-<ol type="a">
-<li>
-次数が <span class="math inline">\(3\)</span> 以下の多項式 <span class="math inline">\(g(x)\)</span> で <span class="math inline">\(g(1) = 1, g(2) = g(3) = g(4) = 0\)</span> となるものを求めよ。
-<li>
-次数が <span class="math inline">\(3\)</span> 以下の <span class="math inline">\(f(x)\)</span> を求めよ。
+<li>多項式 <span class="math inline">\(r(x)\)</span> は <span class="math inline">\(r(-5) = r(0) = r(5) = r(10) = 0\)</span> and <span class="math inline">\(r(15) = 1\)</span> を満たすものとする。次数が4 のものと<span class="math inline">\(5\)</span> のものを一つずつ求めよ。</li>
+<li>多項式 <span class="math inline">\(f(x)\)</span> は <span class="math inline">\(f(1) = -2, \;f(2) = 2, \;f(3) = 14, \;f(4) = 40\)</span> を満たすものとする。
+<ol style="list-style-type: lower-alpha">
+<li>次数が <span class="math inline">\(3\)</span> 以下の多項式 <span class="math inline">\(g(x)\)</span> で <span class="math inline">\(g(1) = 1, g(2) = g(3) = g(4) = 0\)</span> となるものを求めよ。</li>
+<li>次数が <span class="math inline">\(3\)</span> 以下の <span class="math inline">\(f(x)\)</span> を求めよ。</li>
 </ol></li>
-<li><p>
-多項式、<span class="math inline">\(f(x)\)</span> は <span class="math inline">\(f(1) = a_1\)</span>, <span class="math inline">\(f(2) = a_2\)</span>, <span class="math inline">\(f(3) = a_3\)</span>, <span class="math inline">\(f(4) = a_4\)</span> を満たすものとする。多項式 <span class="math inline">\(g(x)\)</span> で <span class="math inline">\(g(1) = a_1\)</span>, <span class="math inline">\(g(2) = a_2\)</span>, <span class="math inline">\(g(3) = a_3\)</span>, <span class="math inline">\(g(4) = a_4\)</span>, <span class="math inline">\(g(5) = a_5\)</span> を満たすものを <span class="math inline">\(f(x)\)</span> を利用して求めたい。
-</p>
-<ol type="a">
-<li>
-多項式 <span class="math inline">\(h(x)\)</span> で <span class="math inline">\(g(x) = f(x) + h(x)(x-1)(x-2)(x-3)(x-4)\)</span> となるものが、あることを説明せよ。
-<li>
-もし <span class="math inline">\(h(x)\)</span> が <span class="math inline">\(h(5) = (a_5 - f(5))/(5-1)(5-2)(5-3)(5-4) = (a_5-f(5))/24\)</span>　を満たせば (a) の <span class="math inline">\(g(x)\)</span> は条件を満たすことを示せ。
+<li>多項式、<span class="math inline">\(f(x)\)</span> は <span class="math inline">\(f(1) = a_1\)</span>, <span class="math inline">\(f(2) = a_2\)</span>, <span class="math inline">\(f(3) = a_3\)</span>, <span class="math inline">\(f(4) = a_4\)</span> を満たすものとする。多項式 <span class="math inline">\(g(x)\)</span> で <span class="math inline">\(g(1) = a_1\)</span>, <span class="math inline">\(g(2) = a_2\)</span>, <span class="math inline">\(g(3) = a_3\)</span>, <span class="math inline">\(g(4) = a_4\)</span>, <span class="math inline">\(g(5) = a_5\)</span> を満たすものを <span class="math inline">\(f(x)\)</span> を利用して求めたい。
+<ol style="list-style-type: lower-alpha">
+<li>多項式 <span class="math inline">\(h(x)\)</span> で <span class="math inline">\(g(x) = f(x) + h(x)(x-1)(x-2)(x-3)(x-4)\)</span> となるものが、あることを説明せよ。</li>
+<li>もし <span class="math inline">\(h(x)\)</span> が <span class="math inline">\(h(5) = (a_5 - f(5))/(5-1)(5-2)(5-3)(5-4) = (a_5-f(5))/24\)</span>　を満たせば (a) の <span class="math inline">\(g(x)\)</span> は条件を満たすことを示せ。</li>
 </ol></li>
 </ol>
 </div>
 </div>
 </div>
-<div id="section-25" class="section level1">
+<div class="section level1">
 <h1><span class="header-section-number">4</span> まとめ</h1>
 <ul>
 <li>背景にある数学の考え方について、確認したいと思います。</li>
 </ul>
+<ol style="list-style-type: lower-alpha">
+<li>ある条件のもとで必ず成り立つ「定理」を目指す。</li>
+<li>単純（で基本的）な場合をよく調べ、それを組み合わせて、複雑な問題の解決を図る。</li>
+<li>複雑な問題を、単純な問題が組み合わさったものとして分解して考える。</li>
+<li>目標地点から逆にたどって、そこに行き着く道を探る。</li>
+<li>実験を繰り返し、予想を立てる。</li>
+</ol>
 </div>
-<div id="section-26" class="section level1">
+<div class="section level1">
 <h1><span class="header-section-number">5</span> おわりに</h1>
 <ul>
-<li>関連問題として、どのようなことが考えられるでしょうか。</li>
+<li>関連問題として、どのようなことが考えられるでしょうか。
+<ul>
+<li>一次関数（直線の方程式）：<span class="math inline">\(ax+by+c = 0\)</span></li>
+<li>二次関数（円錐曲線の方程式）：<span class="math inline">\(ax^2 + bxy + cy^2 + dx + fy + g = 0\)</span></li>
+</ul></li>
 <li>疑問におもったことや、考えたいことを話し合えればと思います。</li>
 </ul>
-<p>数学の問題を理解し、考え、英語を利用し、コンピュータ・ツールも利用することは、どのような、分野に進んでも、世界を広げる大きな力となると思います。みなさんと、一緒に学びを楽しむことを願っています。</p>
+<p>数学の問題を理解し、考え、英語を利用し、コンピュータ・ツールも利用し、自律的に、能動的に思考し、かつ他者から学ぶ謙虚さを持ち続けることは、どのような、分野に進んでも、世界を広げる大きな力となると思います。わたしも、みなさんと、一緒に学びを楽しみ続けたいと願っています。</p>
 </div>
-<div id="section-27" class="section level1">
+<div class="section level1">
 <h1><span class="header-section-number">6</span> 備考</h1>
-<div id="section-28" class="section level2">
+<div class="section level2">
 <h2><span class="header-section-number">6.1</span> スケジュール</h2>
-<div id="section-29" class="section level3">
+<div id="29" class="section level3">
 <h3><span class="header-section-number">6.1.1</span> 8月29日(木)</h3>
 <ul>
 <li>9:00　ICU（大学）N館ラウンジ集合ののち、教室N-232 に移動</li>
 <li>9:10〜 先生の紹介</li>
 <li>9:15〜 講義① 論理回路設計（１）</li>
-<li>10:15〜 休憩（N309に移動）</li>
-<li>10:30〜 コンピュータの説明と個人での確認 （N309）</li>
-<li>11:00 〜　講義② 論理回路設計（２）および 質疑応答（N309）</li>
+<li>10:15〜 休憩（N307に移動）</li>
+<li>10:30〜 コンピュータの説明と個人での確認 （N307）</li>
+<li>11:00 〜　講義② 論理回路設計（２）および 質疑応答（N307）</li>
 <li>12:00〜 昼食休憩（大学の学食に移動）</li>
-<li>13:00 集合（N309）</li>
+<li>13:00 集合（N307）</li>
 <li>13:10〜 研究室見学</li>
-<li>14:10〜 グループワーク（4～5名の3グループに分かれて)（N309）</li>
-<li>15:30〜 発表について・予告（N309）</li>
+<li>14:10〜 グループワーク（4～5名の3グループに分かれて)（N307）</li>
+<li>15:30〜 発表について・予告（N307）</li>
 <li>16:00 終了</li>
 </ul>
 </div>
-<div id="section-30" class="section level3">
+<div id="30" class="section level3">
 <h3><span class="header-section-number">6.1.2</span> 8月30日(金)</h3>
 <ul>
 <li>9:00　ICU（大学）N館教室N-232 に直接に集合</li>
@@ -3399,11 +3399,165 @@ y = c_nx^n + c_{n-1}x^{n-1} + \cdots + c_1x+c_0
 <li>11:30〜 質疑応答・発表について（N232）</li>
 <li>12:00〜 昼食休憩（大学の学食に移動）</li>
 <li>13:00 集合（N232）</li>
-<li>13:10〜 グループワーク（N232, N309）</li>
+<li>13:10〜 グループワーク（N232, N307）</li>
 <li>13:40〜 グループワークと平行して、研究室見学　</li>
 <li>15:00〜 グループの発表、各グループ15分（N232）</li>
 <li>15:55〜 講評と補足（N232）</li>
 <li>16:15 終了</li>
+</ul>
+</div>
+</div>
+<div class="section level2">
+<h2><span class="header-section-number">6.2</span> 練習問題の略解</h2>
+<div id="-2.3.4" class="section level3">
+<h3><span class="header-section-number">6.2.1</span> 練習問題 2.3.4</h3>
+<ol style="list-style-type: decimal">
+<li><p><span class="math inline">\(A\Rightarrow B\)</span> （<span class="math inline">\(A \mbox{ IM } B\)</span> ともかく）ゲートを下の表で定義する。空欄を埋めよ。 <span class="math display">\[ \begin{array}{|c|c||c|c|c|c|} \hline A  &amp; B  &amp; A\Rightarrow B  &amp; \bar{A} \lor B  &amp; \overline{A \land \bar{B}}  &amp; \bar{B} \Rightarrow \bar{A} \\ \hline 0  &amp; 0  &amp; 1  &amp; 1 &amp;  1 &amp; 1\\ 0  &amp; 1  &amp; 1  &amp; 1 &amp;  1 &amp; 1 \\ 1  &amp; 0  &amp; 0  &amp; 0 &amp; 0 &amp; 0 \\ 1  &amp; 1  &amp; 1  &amp; 1 &amp; 1 &amp; 1 \\ \hline \end{array} \]</span> このことから、次がわかる。 <span class="math display">\[ A\Rightarrow B \equiv \bar{A} \lor B \equiv \overline{A \land \bar{B}} \equiv \bar{B} \Rightarrow \bar{A}. \]</span> <span class="math inline">\(\bar{B} \Rightarrow \bar{A}\)</span> は対偶（contrapositive）と呼ばれる。</p></li>
+<li><p>次の二つの式で表される論理回路の出力が同じではない（同値でない）ことを示せ。<span class="math display">\[
+(A\land B) \lor C, \quad A\land (B\lor C)
+\]</span> （回路を作って示しても、表を書いて示しても、他の方法でも構いません。） <span class="math display">\[ \begin{array}{|c|c|c||c|c|} \hline A  &amp; B  &amp; C  &amp; (A\land B) \lor C  &amp; A\land (B\lor C) \\ \hline 0  &amp; 0  &amp; 0  &amp; 0 &amp; 0  \\ 0  &amp; 0  &amp; 1  &amp; 1 &amp; 0 \\ 0  &amp; 1  &amp; 0  &amp; 0  &amp; 0\\ 0  &amp; 1  &amp; 1  &amp; 1 &amp; 0 \\ 1  &amp; 0  &amp; 0  &amp; 0 &amp; 0 \\ 1  &amp; 0  &amp; 1  &amp; 1 &amp; 1 \\ 1  &amp; 1  &amp; 0  &amp; 1  &amp; 1 \\ 1  &amp; 1  &amp; 1  &amp; 1 &amp; 1 \\ \hline \end{array} \]</span> A, B が OFF（または 0）で、C が ON（または 1）のとき、<span class="math inline">\((A\land B) \lor C\)</span> はON（または 1）になりますが、<span class="math inline">\(A\land (B\lor C)\)</span> は、OFF（または 0）になり、等しく（同値では）ありません。Aが OFF で、B, C が ON の場合も食い違っていますが、同値ではないことを示すためには、一カ所食い違っていることをしめせば、十分であることに気をつけてください。</p></li>
+<li><span class="math inline">\(A \Rightarrow (B\lor C) \equiv A\land (\bar{B}) \Rightarrow C\)</span> すなわち、どちらの論理回路も <span class="math inline">\((A, B, C)\)</span> のすべての値について同じ出力となること（同値であること）を、三つの方法で示せ。
+<ol style="list-style-type: lower-alpha">
+<li><p>表を完成することで確認せよ。 <span class="math display">\[ \begin{array}{|c|c|c||c|c|} \hline A  &amp; B  &amp; C  &amp; A \Rightarrow (B\lor C)  &amp;  A\land (\bar{B}) \Rightarrow C \\ \hline 0  &amp; 0  &amp; 0  &amp; 1 &amp; 1  \\ 0  &amp; 0  &amp; 1  &amp; 1 &amp; 1 \\ 0  &amp; 1  &amp; 0  &amp; 1  &amp; 1\\ 0  &amp; 1  &amp; 1  &amp; 1 &amp; 1 \\ 1  &amp; 0  &amp; 0  &amp; 0 &amp; 0 \\ 1  &amp; 0  &amp; 1  &amp; 1 &amp; 1 \\ 1  &amp; 1  &amp; 0  &amp; 1  &amp; 1 \\ 1  &amp; 1  &amp; 1  &amp; 1 &amp; 1 \\ \hline \end{array} \]</span></p></li>
+<li>実際に、論理回路を作って確認せよ。<br />
+ヒント：<span class="math inline">\(\Rightarrow\)</span> のゲートはありませんが、<span class="math inline">\(X\Rightarrow Y\)</span> の形の回路は、問題1をもちいて、<span class="math inline">\(\bar{X}\lor Y\)</span> などに置き換えれば良いことを注意しておきます。</li>
+<li><p>練習問題 1 などの公式を使った変形により示せ。<br />
+<span class="math display">\[A \Rightarrow (B\lor C) \equiv \bar{A} \lor (B\lor C) \equiv (\bar{A} \lor B) \lor C \equiv \overline{(\bar{A} \lor B)} \Rightarrow C \equiv A\land (\bar{B}) \Rightarrow C\]</span> それぞれ、どの公式を使って変形したか確認してください。</p></li>
+</ol></li>
+<li>論理記号 <span class="math inline">\(\uparrow\)</span> NAND だけを用い（NAND 回路で）次を表わせ。NOT も使ってはいけません。
+<ol style="list-style-type: lower-alpha">
+<li><span class="math inline">\(A \land B \equiv (A\uparrow B) \uparrow (A\uparrow B)\)</span></li>
+<li><span class="math inline">\(A \lor B \equiv (A\uparrow A) \uparrow (B\uparrow B)\)</span></li>
+<li><span class="math inline">\(A \oplus B \equiv (A\uparrow (B\uparrow B))\uparrow ((A\uparrow A)\uparrow B)\)</span></li>
+<li><span class="math inline">\(A \Rightarrow B \equiv A\uparrow (B\uparrow B)\)</span></li>
+<li><span class="math inline">\(A \downarrow B \equiv ((A\uparrow A) \uparrow (B\uparrow B)) \uparrow (A\uparrow A) \uparrow (B\uparrow B))\)</span></li>
+</ol></li>
+<li><span class="math inline">\((A\land \bar{B}) \Rightarrow C\)</span> を以下の指示にしたがって変形せよ。
+<ol style="list-style-type: lower-alpha">
+<li><span class="math inline">\(\lor\)</span> と NOT（否定）だけを使い、<span class="math inline">\(\land\)</span>、<span class="math inline">\(\Rightarrow\)</span> などを用いない。 <span class="math display">\[(A\land \bar{B}) \Rightarrow C \equiv \overline{A\land \bar{B}} \lor C \equiv (\bar{A} \lor B) \lor C \]</span></li>
+<li><span class="math inline">\(\uparrow\)</span> だけを使い、<span class="math inline">\(\land, \lor, \Rightarrow\)</span> NOT（否定）などを用いない。 <span class="math display">\[(A\uparrow A) \uparrow ((B\uparrow C) \uparrow (B\uparrow C))\]</span></li>
+</ol></li>
+<li><span class="math inline">\((A, B, C)\)</span> の入力が <span class="math inline">\((0,0,0), (0,1,0), (1,0,1)\)</span> のときだけ <span class="math inline">\(1\)</span> でそれ以外、<span class="math inline">\(0\)</span> を出力する回路を作成せよ。
+<ol style="list-style-type: lower-alpha">
+<li>AND, OR, NOT ゲートだけを用いよ。<br />
+CNF を書いておきます。 <span class="math display">\[(\bar{A}\land\bar{B}\land\bar{C})\lor(\bar{A}\land B \land \bar{C}) \lor (A \land \bar{B}\land C)\]</span></li>
+<li>NAND ゲートだけを用いよ。<br />
+ヒント：<span class="math inline">\(\bar{X} \equiv X\uparrow X\)</span> でしたから、問題4を用いることで、書き換えることができます。使う、NAND ゲートの数を少なくするにはどうしたらよいでしょうか。</li>
+</ol></li>
+</ol>
+</div>
+<div id="-3.4.3" class="section level3">
+<h3><span class="header-section-number">6.2.2</span> 練習問題 3.4.3</h3>
+<ol style="list-style-type: decimal">
+<li>次数が3以下の多項式 <span class="math inline">\(f(x)\)</span> で <span class="math inline">\(f(0) = 4\)</span>, <span class="math inline">\(f(1) = 3\)</span>, <span class="math inline">\(f(2) = -6\)</span>, <span class="math inline">\(f(3) = 1\)</span>　を満たすものは何か。 <span class="math display">\[f(x) = 4\cdot \frac{(x-1)(x-2)(x-3)}{(0-1)(0-2)(0-3)} +  3\cdot\frac{x(x-2)(x-3)}{1\cdot (1-2)(1-3)} -6\cdot \frac{x(x-1)(x-3)}{2\cdot (2-1)(2-3)} + \frac{x(x-1)(x-2)}{3\cdot (3-1)(3-2)}\]</span></li>
+</ol>
+<pre class="r"><code># R Program
+library(polynom)
+x&lt;-c(0,1,2,3)
+y&lt;-c(4,3,-6,1)
+poly.calc(x,y)</code></pre>
+<pre><code>## 4 + 11*x - 16*x^2 + 4*x^3</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>次数が3以下の多項式 <span class="math inline">\(r(x)\)</span>、<span class="math inline">\(f(x)\)</span> で <span class="math inline">\(r(-1) = 1\)</span>, <span class="math inline">\(r(0) = r(1) = r(2) = 0\)</span>、 および <span class="math inline">\(f(-1) = 2\)</span>, <span class="math inline">\(f(0) = -1\)</span>, <span class="math inline">\(f(1) = 3\)</span>, <span class="math inline">\(f(2) = -6\)</span>　となるものを求めよ。 <span class="math display">\[r(x) = \frac{x(x-1)(x-2)}{(-1)(-1-1)(-1-2)} = -\frac{1}{6}x(x-1)(x-2)\]</span> <span class="math display">\[f(x) = 2\cdot \frac{x(x-1)(x-2)}{(-1)\cdot(-1-1)(-1-2)} - \frac{(x+1)(x-1)(x-2)}{(0+1)\cdot(- 1)\cdot (0-2)} + 3\cdot \frac{(x+1)x(x-2)}{(1+1)\cdot 1 \cdot (1-2)} -6\cdot\frac{(x+1)x(x-1)}{(2+1)\cdot 2 \cdot (2-1)} \]</span></li>
+</ol>
+<pre class="r"><code># R Program for r(x)
+library(polynom)
+x&lt;-c(-1,0,1,2)
+y&lt;-c(1,0,0,0)
+poly.calc(x,y)</code></pre>
+<pre><code>## -0.3333333*x + 0.5*x^2 - 0.1666667*x^3</code></pre>
+<pre class="r"><code># R Program for f(x)
+library(polynom)
+x&lt;-c(-1,0,1,2)
+y&lt;-c(2,-1,3,-6)
+poly.calc(x,y)</code></pre>
+<pre><code>## -1 + 3.833333*x + 3.5*x^2 - 3.333333*x^3</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li>多項式 <span class="math inline">\(f(x)\)</span> は <span class="math inline">\(f(1) = 2, \;f(2) = 7, \;f(3) = 1, \;f(4) = 8\)</span> を満たすものとする。</li>
+</ol>
+<ol style="list-style-type: lower-alpha">
+<li>次数が<span class="math inline">\(3\)</span>以下である <span class="math inline">\(f(x)\)</span> を求めよ。 <span class="math display">\[f(x) = 2\cdot \frac{(x-2)(x-3)(x-4)}{(1-2)(1-3)(1-4)}+7\cdot\frac{(x-1)(x-3)(x-4)}{(2-1)(2-3)(2-4)} + \frac{(x-1)(x-2)(x-4)}{(3-1)(3-2)(3-4)}+8\cdot\frac{(x-1)(x-2)(x-3)}{(4-1)(4-2)(4-3)}
+ \]</span></li>
+</ol>
+<pre class="r"><code># R Program for f(x)
+library(polynom)
+x&lt;-c(1,2,3,4)
+y&lt;-c(2,7,1,8)
+poly.calc(x,y)</code></pre>
+<pre><code>## -38 + 65.5*x - 29.5*x^2 + 4*x^3</code></pre>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>次数が丁度 <span class="math inline">\(4\)</span> である <span class="math inline">\(f(x)\)</span> を求めよ。<br />
+前の問題 a で求めた <span class="math inline">\(f(x)\)</span> を <span class="math inline">\(a(x)\)</span> と置くと <span class="math display">\[f(x) = a(x) + x(x-1)(x-2)(x-3)(x-4)\]</span> ひとつあげればよいのでこれで良いです。<span class="math inline">\(a(x)\)</span> の次数は、3以下で、第二項目次数が丁度４ですから、全体として次数は4になります。 <span class="math display">\[f(x) = a(x) + c\cdot x(x-1)(x-2)(x-3)(x-4), c\neq 0\]</span> であるものとすることもできます。</li>
+</ol>
+<ol start="4" style="list-style-type: decimal">
+<li>多項式 <span class="math inline">\(r(x)\)</span> は <span class="math inline">\(r(-5) = r(0) = r(5) = r(10) = 0\)</span> and <span class="math inline">\(r(15) = 1\)</span> を満たすものとする。次数が4 のものと<span class="math inline">\(5\)</span> のものを一つずつ求めよ。<br />
+次数４: <span class="math display">\[
+r(x) = \frac{(x+5)x(x-5)(x-10)}{(15+5)\cdot 15\cdot (15-5)(15-10)}
+\]</span> 次数５: <span class="math display">\[
+r(x) = \frac{(x+5)x(x-5)(x-10)}{(15+5)\cdot 15\cdot (15-5)(15-10)} + (x+5)x(x-5)(x-10)(x-15)
+\]</span></li>
+</ol>
+<pre class="r"><code># R Program for r(x)
+library(polynom)
+x&lt;-c(-5,0,5,10, 15)
+y&lt;-c(0,0,0,0,1)
+poly.calc(x,y)</code></pre>
+<pre><code>## 0.01666667*x - 0.001666667*x^2 - 0.0006666667*x^3 + 6.666667e-05*x^4</code></pre>
+<p>分数で書くとどうなりますか。</p>
+<ol start="5" style="list-style-type: decimal">
+<li>多項式 <span class="math inline">\(f(x)\)</span> は <span class="math inline">\(f(1) = -2, \;f(2) = 2, \;f(3) = 14, \;f(4) = 40\)</span> を満たすものとする。</li>
+</ol>
+<ol style="list-style-type: lower-alpha">
+<li>次数が <span class="math inline">\(3\)</span> 以下の多項式 <span class="math inline">\(g(x)\)</span> で <span class="math inline">\(g(1) = 1, g(2) = g(3) = g(4) = 0\)</span> となるものを求めよ。 <span class="math display">\[
+g(x) = \frac{(x-2)(x-3)(x-4)}{(1-2)(1-3)(1-4)} = -\frac16(x-2)(x-3)(x-4)
+\]</span></li>
+</ol>
+<pre class="r"><code># R Program for g(x)
+library(polynom)
+x&lt;-c(1,2,3,4)
+y&lt;-c(1,0,0,0)
+poly.calc(x,y)</code></pre>
+<pre><code>## 4 - 4.333333*x + 1.5*x^2 - 0.1666667*x^3</code></pre>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>次数が <span class="math inline">\(3\)</span> 以下の <span class="math inline">\(f(x)\)</span> を求めよ。 <span class="math display">\[
+f(x) = -2\cdot\frac{(x-2)(x-3)(x-4)}{(1-2)(1-3)(1-4)} + 2\cdot\frac{(x-1)(x-3)(x-4)}{(2-1)(2-3)(2-4)} + 14\cdot\frac{(x-1)(x-2)(x-4)}{(3-1)(3-2)(3-4)} + 40\cdot\frac{(x-1)(x-2)(x-3)}{(4-1)(4-2)(4-3)}
+\]</span></li>
+</ol>
+<pre class="r"><code># R Program for f(x)
+library(polynom)
+x&lt;-c(1,2,3,4)
+y&lt;-c(-2,2,14,40)
+poly.calc(x,y)</code></pre>
+<pre><code>## -4 + 3*x - 2*x^2 + x^3</code></pre>
+<ol start="6" style="list-style-type: decimal">
+<li>多項式、<span class="math inline">\(f(x)\)</span> は <span class="math inline">\(f(1) = a_1\)</span>, <span class="math inline">\(f(2) = a_2\)</span>, <span class="math inline">\(f(3) = a_3\)</span>, <span class="math inline">\(f(4) = a_4\)</span> を満たすものとする。多項式 <span class="math inline">\(g(x)\)</span> で <span class="math inline">\(g(1) = a_1\)</span>, <span class="math inline">\(g(2) = a_2\)</span>, <span class="math inline">\(g(3) = a_3\)</span>, <span class="math inline">\(g(4) = a_4\)</span>, <span class="math inline">\(g(5) = a_5\)</span> を満たすものを <span class="math inline">\(f(x)\)</span> を利用して求めたい。</li>
+</ol>
+<ol style="list-style-type: lower-alpha">
+<li>多項式 <span class="math inline">\(h(x)\)</span> で <span class="math inline">\(g(x) = f(x) + h(x)(x-1)(x-2)(x-3)(x-4)\)</span> となるものが、あることを説明せよ。</li>
+</ol>
+<p>条件から、<span class="math inline">\(f(1)=g(1)\)</span>, <span class="math inline">\(f(2)=g(2)\)</span>, <span class="math inline">\(f(3) = g(3)\)</span>, <span class="math inline">\(f(4)=g(4)\)</span>。したがって、因数定理によて、<span class="math inline">\(g(x)-f(x) = h(x)(x-1)(x-2)(x-3)(x-4)\)</span> と書ける。</p>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>もし <span class="math inline">\(h(x)\)</span> が <span class="math inline">\(h(5) = (a_5 - f(5))/(5-1)(5-2)(5-3)(5-4) = (a_5-f(5))/24\)</span>　を満たせば (a) の <span class="math inline">\(g(x)\)</span> は条件を満たすことを示せ。</li>
+</ol>
+<p><span class="math display">\[
+g(5) = f(5) + h(5)(5-1)(5-2)(5-3)(5-4) = f(5) + 24\cdot h(5) = a_5.
+\]</span></p>
+</div>
+</div>
+<div class="section level2">
+<h2><span class="header-section-number">6.3</span> 参考サイト</h2>
+<div id="open-courseware" class="section level3">
+<h3><span class="header-section-number">6.3.1</span> Open Courseware</h3>
+<ul>
+<li>ICU OCW 数学の方法2014: <a href="http://ocw.icu.ac.jp/ge/gen024_2014w/" class="uri">http://ocw.icu.ac.jp/ge/gen024_2014w/</a></li>
+<li>KYOTO U OCW 農業機械学実験Ⅰ 2011: <a href="http://ocw.kyoto-u.ac.jp/ja/faculty-of-agriculture-jp/5989000" class="uri">http://ocw.kyoto-u.ac.jp/ja/faculty-of-agriculture-jp/5989000</a></li>
+</ul>
+</div>
+<div id="nand-gate" class="section level3">
+<h3><span class="header-section-number">6.3.2</span> NAND GATE</h3>
+<ul>
+<li>Wikipedia（E): <a href="https://en.wikipedia.org/wiki/NAND_gate" class="uri">https://en.wikipedia.org/wiki/NAND_gate</a></li>
+<li>Wikipedia (J): <a href="https://ja.wikipedia.org/wiki/NANDゲート" class="uri">https://ja.wikipedia.org/wiki/NANDゲート</a></li>
 </ul>
 </div>
 </div>
@@ -3427,49 +3581,6 @@ $(document).ready(function () {
 });
 
 
-</script>
-
-<!-- tabsets -->
-
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
-
-<!-- code folding -->
-
-<script>
-$(document).ready(function ()  {
-
-    // move toc-ignore selectors from section div to header
-    $('div.section.toc-ignore')
-        .removeClass('toc-ignore')
-        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
-
-    // establish options
-    var options = {
-      selectors: "h1,h2,h3",
-      theme: "bootstrap3",
-      context: '.toc-content',
-      hashGenerator: function (text) {
-        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
-      },
-      ignoreSelector: ".toc-ignore",
-      scrollTo: 0
-    };
-    options.showAndHide = true;
-    options.smoothScroll = true;
-
-    // tocify
-    var toc = $("#TOC").tocify(options).data("toc-tocify");
-});
 </script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
