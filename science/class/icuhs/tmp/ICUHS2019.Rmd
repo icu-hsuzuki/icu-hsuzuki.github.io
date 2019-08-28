@@ -1,7 +1,7 @@
 ---
 title: 'ICUHS 数学ツアー2019'
 author: 'H. Suzuki（鈴木寛）'
-date: "2019年8月27日"
+date: "2019年8月28日"
 output:
   html_document:
     number_sections: true
@@ -717,6 +717,25 @@ b. もし \(h(x)\) が \(h(5) = (a_5 - f(5))/(5-1)(5-2)(5-3)(5-4) = (a_5-f(5))/2
 \[
 g(5) = f(5) + h(5)(5-1)(5-2)(5-3)(5-4) = f(5) + 24\cdot h(5) = a_5.
 \]
+
+## ロジック・ゲート
+
+### 参考サイト
+
+* Half Adder and Full Adder Circuits: https://www.electronicshub.org/half-adder-and-full-adder-circuits/
+
+### The Logic Lab
+
+* Half Adder: http://www.neuroproductions.be/logic-lab/index.php?id=105072
+* Full Adder: http://www.neuroproductions.be/logic-lab/index.php?id=105073
+
+### Logicly
+
+下のリンクから、Download し、Logicly から開いてください。
+
+* Gates: https://icu-hsuzuki.github.io/science/class/icuhs/logicly/gates.logicly
+* Full Adder: https://icu-hsuzuki.github.io/science/class/icuhs/logicly/full-adder.logicly
+* 23 NAND Adder: https://icu-hsuzuki.github.io/science/class/icuhs/logicly/23nand-adder.logicly
 
 ## 参考サイト
 
