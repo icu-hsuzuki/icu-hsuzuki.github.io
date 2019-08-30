@@ -760,7 +760,7 @@ g(5) = f(5) + h(5)(5-1)(5-2)(5-3)(5-4) = f(5) + 24\cdot h(5) = a_5.
 
 ## 文書について
 
-最初に、文書の作成ツールについても説明しましたので、文書とともに、そのソース・ファイルのリンクもつけておきます。参考になれば幸いです。Rmarkdown を compile するには、Rmarkdown 関連の R package と、ラグランジュの補間公式の計算のため、`polynom` package が必要です。\LaTeX の compile には、\TeX システムが必要です。説明にも書きましたが、Online で使うことも可能です。
+最初に、文書の作成ツールについても説明しましたので、文書とともに、そのソース・ファイルのリンクもつけておきます。参考になれば幸いです。Rmarkdown を compile するには、Rmarkdown 関連の R package と、ラグランジュの補間公式の計算のため、`polynom` package が必要です。$\LaTeX$ の compile には、$\TeX$ システムが必要です。説明にも書きましたが、Online で使うことも可能です。
 
 * 生徒さんには、事前に、この[ノートの一部](https://icu-hsuzuki.github.io/science/class/icuhs/Note2019.html) を共有しました。[Rmarkdown Source File](https://icu-hsuzuki.github.io/science/class/icuhs/tmp/Note2019.Rmd)
 * クラスでの説明は、黒板を中心的に使い、最後にまとめの形で、slide を示しました。
