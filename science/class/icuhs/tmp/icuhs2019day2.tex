@@ -650,7 +650,7 @@ y = c_nx^n + c_{n-1}x^{n-1} + \cdots + c_1x+c_0
 なお、一点になるときは、原点を通る直線がすべて条件を満たします。
 \end{enumerate}
 \end{frame}
-\begin{frame}{いくつかの点を通る（多項式）関数について（つづき）}
+\begin{frame}{復習：直線と二次関数（つづき）}
 \begin{enumerate}
 \setcounter{enumi}{5}
 \item \((a,b)\) と \((c,d)\) を通る直線の方程式。\par
@@ -742,9 +742,18 @@ y = c_nx^n + c_{n-1}x^{n-1} + \cdots + c_1x+c_0
 \begin{itemize}
 \item したがって、 
 \[ f(x) = h(x) + q(x)p(x), \; p(x) = (x-a_1)(x-a_2)\cdots (x-a_m). \]
-\item 次数を考えると、\(\deg f(x) \leqq m-1\) のときは、\(f(x) = h(x)\). \(\deg f(x) \geqq m\) のときは、\(\deg q(x) = \deg(x)-m\) となります。
+\item 次数を考えると、\(\deg f(x) \leqq m-1\) のときは、\(f(x) = h(x)\). \(\deg f(x) \geqq m\) のときは、\(\deg q(x) = \deg f(x)-m\) となります。
 \item これで、どのような定理ができたのでしょうか。理解するとともに考えてみましょう。
 \end{itemize}
+
+\begin{block}{次数（$\deg$）に関する性質}
+$f(x), g(x)$ を $0$ でない多項式とすると以下が成立する。
+\begin{enumerate}
+\item $\deg f(x) + \deg g(x) \leqq \max\{\deg f(x), \deg g(x)\}$
+\item $\deg f(x)g(x) = \deg f(x) + \deg g(x)$
+\end{enumerate}
+注：$\max$ はどちらか大きい（小さくない）方を表します。
+\end{block}
 \end{frame}
 
 \begin{frame}{練習問題}
@@ -840,7 +849,7 @@ y = c_nx^n + c_{n-1}x^{n-1} + \cdots + c_1x+c_0
 \item 12:00〜 昼食休憩（大学の学食に移動） 
 \item 13:00 集合（N232） 
 \item 13:10〜 グループワーク（N232, N307） 
-\item 13:40〜 グループワークと平行して、研究室見学　 
+\item 13:40〜 グループワークと並行して、研究室見学　 
 \item 15:00〜 グループの発表、各グループ15分（N232） 
 \item 15:55〜 講評と補足（N232） 
 \item 16:15 終了 

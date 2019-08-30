@@ -2777,7 +2777,7 @@ div.tocify {
 
 <h1 class="title toc-ignore">ICUHS 数学ツアー2019</h1>
 <h4 class="author">H. Suzuki（鈴木寛）</h4>
-<h4 class="date">2019年8月28日</h4>
+<h4 class="date">2019年8月30日</h4>
 
 </div>
 
@@ -3279,6 +3279,15 @@ y = c_nx^n + c_{n-1}x^{n-1} + \cdots + c_1x+c_0
 <li>次数を考えると、<span class="math inline">\(\deg f(x) \leqq m-1\)</span> のときは、<span class="math inline">\(f(x) = h(x)\)</span>. <span class="math inline">\(\deg f(x) \geqq m\)</span> のときは、<span class="math inline">\(\deg q(x) = \deg(x)-m\)</span> となります。</li>
 <li>これで、どのような定理ができたのでしょうか。理解するとともに考えてみましょう。</li>
 </ul>
+<p>次の、次数（<span class="math inline">\(\deg\)</span>）に関する性質成立することが背景としてあります。</p>
+<ul>
+<li><p>多項式<span class="math inline">\(f(x), g(x)\)</span> が<span class="math inline">\(0\)</span> でないとすると以下が成立する。</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(\deg f(x) + \deg g(x) \leqq \max\{\deg f(x), \deg g(x)\}\)</span></li>
+<li><span class="math inline">\(\deg f(x)g(x) = \deg f(x) + \deg g(x)\)</span></li>
+</ol></li>
+</ul>
+<p>注：<span class="math inline">\(\max\)</span> はどちらか大きい（小さくない）方を表します。</p>
 </div>
 <div id="section-24" class="section level3">
 <h3><span class="header-section-number">3.4.3</span> 練習問題</h3>
@@ -3548,6 +3557,19 @@ g(5) = f(5) + h(5)(5-1)(5-2)(5-3)(5-4) = f(5) + 24\cdot h(5) = a_5.
 <li>Wikipedia (J): <a href="https://ja.wikipedia.org/wiki/NANDゲート" class="uri">https://ja.wikipedia.org/wiki/NANDゲート</a></li>
 </ul>
 </div>
+</div>
+<div id="section-37" class="section level2">
+<h2><span class="header-section-number">6.5</span> 文書について</h2>
+<p>最初に、文書の作成ツールについても説明しましたので、文書とともに、そのソース・ファイルのリンクもつけておきます。参考になれば幸いです。Rmarkdown を compile するには、Rmarkdown 関連の R package と、ラグランジュの補間公式の計算のため、<code>polynom</code> package が必要です。の compile には、システムが必要です。説明にも書きましたが、Online で使うことも可能です。</p>
+<ul>
+<li>生徒さんには、事前に、この<a href="https://icu-hsuzuki.github.io/science/class/icuhs/Note2019.html">ノートの一部</a> を共有しました。<a href="https://icu-hsuzuki.github.io/science/class/icuhs/tmp/Note2019.Rmd">Rmarkdown Source File</a></li>
+<li>クラスでの説明は、黒板を中心的に使い、最後にまとめの形で、slide を示しました。
+<ul>
+<li>1日目：<a href="https://icu-hsuzuki.github.io/science/class/icuhs/day1.pdf">pdf</a>,　<span class="math inline">\(\LaTeX\)</span> <a href="https://icu-hsuzuki.github.io/science/class/icuhs/tmp/icuhs2019day1.tex">Source File</a></li>
+<li>2日目：<a href="https://icu-hsuzuki.github.io/science/class/icuhs/day2.pdf">pdf</a>,　<span class="math inline">\(\LaTeX\)</span> <a href="https://icu-hsuzuki.github.io/science/class/icuhs/tmp/icuhs2019day2.tex">Source File</a></li>
+</ul></li>
+<li>この文書の <a href="https://icu-hsuzuki.github.io/science/class/icuhs/tmp/ICUHS2019.Rmd">Rmarkdown Source File</a></li>
+</ul>
 </div>
 </div>
 

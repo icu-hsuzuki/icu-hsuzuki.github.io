@@ -1,7 +1,7 @@
 ---
 title: 'ICUHS 数学ツアー2019'
 author: 'H. Suzuki（鈴木寛）'
-date: "2019年8月28日"
+date: "2019年8月30日"
 output:
   html_document:
     number_sections: true
@@ -495,6 +495,15 @@ y = c_nx^n + c_{n-1}x^{n-1} + \cdots + c_1x+c_0
 \[ f(x) = h(x) + q(x)p(x), \; p(x) = (x-a_1)(x-a_2)\cdots (x-a_m). \]
 * 次数を考えると、\(\deg f(x) \leqq m-1\) のときは、\(f(x) = h(x)\). \(\deg f(x) \geqq m\) のときは、\(\deg q(x) = \deg(x)-m\) となります。
 * これで、どのような定理ができたのでしょうか。理解するとともに考えてみましょう。
+   
+次の、次数（$\deg$）に関する性質成立することが背景としてあります。
+
+* 多項式$f(x), g(x)$ が$0$ でないとすると以下が成立する。
+
+    1.  $\deg f(x) + \deg g(x) \leqq \max\{\deg f(x), \deg g(x)\}$
+    2.  $\deg f(x)g(x) = \deg f(x) + \deg g(x)$
+    
+注：$\max$ はどちらか大きい（小さくない）方を表します。
 
 
 ### 練習問題
@@ -748,3 +757,13 @@ g(5) = f(5) + h(5)(5-1)(5-2)(5-3)(5-4) = f(5) + 24\cdot h(5) = a_5.
 
 * Wikipedia（E): https://en.wikipedia.org/wiki/NAND_gate
 * Wikipedia (J): https://ja.wikipedia.org/wiki/NANDゲート
+
+## 文書について
+
+最初に、文書の作成ツールについても説明しましたので、文書とともに、そのソース・ファイルのリンクもつけておきます。参考になれば幸いです。Rmarkdown を compile するには、Rmarkdown 関連の R package と、ラグランジュの補間公式の計算のため、`polynom` package が必要です。\LaTeX の compile には、\TeX システムが必要です。説明にも書きましたが、Online で使うことも可能です。
+
+* 生徒さんには、事前に、この[ノートの一部](https://icu-hsuzuki.github.io/science/class/icuhs/Note2019.html) を共有しました。[Rmarkdown Source File](https://icu-hsuzuki.github.io/science/class/icuhs/tmp/Note2019.Rmd)
+* クラスでの説明は、黒板を中心的に使い、最後にまとめの形で、slide を示しました。
+    + 1日目：[pdf](https://icu-hsuzuki.github.io/science/class/icuhs/day1.pdf),　$\LaTeX$ [Source File](https://icu-hsuzuki.github.io/science/class/icuhs/tmp/icuhs2019day1.tex)
+    + 2日目：[pdf](https://icu-hsuzuki.github.io/science/class/icuhs/day2.pdf),　$\LaTeX$ [Source File](https://icu-hsuzuki.github.io/science/class/icuhs/tmp/icuhs2019day2.tex)
+* この文書の [Rmarkdown Source File](https://icu-hsuzuki.github.io/science/class/icuhs/tmp/ICUHS2019.Rmd)
