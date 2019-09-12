@@ -1,0 +1,945 @@
+\documentclass[10pt, dvipdfmx]{beamer}
+%%%%% no overlays %%%%%%%%%
+%%\documentclass[handout]{beamer} % no overlays; or 
+%\documentclass[10pt, dvipdfmx,handout]{beamer} % no overlays
+
+%%%%%% beamer article on a4 paper %%%%%%%%%%%
+%\documentclass{article} % or
+%\documentclass[dvipdfmx, 11pt]{article}
+%\usepackage{beamerarticle}
+%%A4 Size Setting
+%\topmargin = 0cm
+%\oddsidemargin = 0cm \evensidemargin = 0cm
+%\textheight = 22.5cm \textwidth = 16cm % default 23cm 16cm
+%A4 size Setting End
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\hypersetup{unicode}% しおりの和文出力に必要
+%\usepackage[whole]{bxcjkjatype}% whole % for pdflatex 
+%\usepackage{amsmath}
+\usepackage{graphicx}
+
+\usepackage{tikz}% (pgf and pgffor are included)
+\usepackage{tkz-berge}
+\usetikzlibrary{cd, arrows.meta}
+
+\setbeamertemplate{navigation symbols}{} %% no icon
+
+%\usetheme{CambridgeUS} % there are various themes
+\usetheme{Warsaw}
+\useoutertheme{infolines}
+%\usecolortheme{beaver} 
+\usecolortheme{orchid} 
+%albatross, beaver, beetle, crane, dolphin, dove, fly, lily, orchid, rose, seagull, seahorse, whale, wolverine 
+ %default, seagull, seahorse, orchid, dolphin, beetle, crane, 
+%\setbeamertemplate{frametitle}{%
+%\begin{beamercolorbox}[ht=0.5cm, dp=0.2cm]{frametitle}%[wd=\textwidth, ht=0.5cm, dp=0.2cm]{frametitle}
+%\usebeamerfont{frametitle}\insertframetitle
+%\end{beamercolorbox}}
+%\setbeamercovered{transparent} %15% =50%
+
+\title[Science and Religion]{科学と宗教 そして わたしたちの未来 }
+%\subtitle{Science Education at ICU}
+\author[H. Suzuki]{鈴木寛（Hiroshi Suzuki）}            %% 
+\institute[ICU]{国際基督教大学（International Christian University）}  %% なるべく設定した方が良い
+\date[2019/9/13]{September 13, 2019}
+
+\usepackage[greek, english, japanese]{babel}
+\languageattribute{greek}{polutoniko}
+\usepackage[utf8]{inputenc} %% or utfx
+
+\newcommand\itemref[1]{{\renewcommand{\insertenumlabel}{\ref{#1}}%
+  \usebeamertemplate{enumerate item}}}
+
+
+\begin{document}
+\begin{frame}
+\titlepage                    %% Title Page Only \maketitle is fine.
+\end{frame}
+\begin{frame}                  %% Table of Contents
+\frametitle{Table of Contents}%% \begin{frame}..\end{frame} で 1 枚のスライド
+\tableofcontents
+
+\vfill
+%\centering{\fbox{\color{red}{個人的な見解です。Personal Opinions. Welcome Discussion!}}}
+\end{frame}
+
+\section{はじめに}
+%\subsection{「科学と信仰」? トピックについて}
+\begin{frame}{「科学と宗教」? トピックについて}{To me, the topic ``Science and Religion'' is $\ldots$}
+
+\begin{alertblock}{わたしの「科学と信仰」に対する基本姿勢}
+わたしは「真理」（科学的真理、神の御心・指針）といわれるものがあると信じて探求しているが、わたしはそれを得ていないことを確信している。
+\end{alertblock}
+
+\begin{exampleblock}{しかし\ldots}
+\begin{itemize}
+\item 宗教（キリスト）を信じるとき、また、信じてからも悩んでいる人が多い
+\item 宗教は非科学的？　科学者と信仰者は両立するのか？　
+\item 科学文明、科学・技術の時代には宗教は不要？　
+\item 宗教は民衆のアヘンである。（宗教的幻影に麻痺・依存し社会変革力を失う。）
+\item キリスト教会（または宗教界）の中の問題
+\begin{itemize}
+\item 奇跡をどう理解・解釈するのか
+\item 創世記1章から11章をどう理解・解釈するのか
+\item 聖書は神のことばであるというとき、それは、何を意味するのか
+\item 祈りの答えとしての神の歴史への介入をどう考えるのか
+\end{itemize}
+\end{itemize}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}{「科学と信仰」? トピックについて（続き）}{Science and Religion? \hfill Continued}
+
+\begin{exampleblock}{講演を依頼されるにあたって}
+\begin{itemize}
+\item 何故、科学と宗教は対立するのか？ そもそも対立しているのか？ 対立しなければならないものか？
+\begin{itemize}
+\item 地動説vs天動説、進化論vs創造論(ID理論)
+\item ビッグバンvs若い地球理論
+\end{itemize}
+\item 科学と宗教の関係はどうあるべきか？
+\item 科学の真理と宗教の真理　科学の限界・宗教の限界
+\item 科学と宗教の類似点・相違点
+\item 日本人にとっての科学、日本人にとっての宗教
+\item 何故宗教が大切なのか？
+\end{itemize}
+\end{exampleblock}
+
+\begin{alertblock}{問いをことばに}
+\begin{enumerate}
+\item みなさん、一人ひとりの「問い」を言葉にしながら、受講してください。
+\item 「ひとさま」の迷惑にならなければ、一人ひとり何を信じるのも自由？
+\end{enumerate}
+\end{alertblock}
+\end{frame}
+
+\begin{frame}{表題：科学と宗教そしてわたしたちの未来}{Title and Contents}
+\begin{enumerate}
+\item アインシュタイン著「科学と宗教」を読む \par
+共通の起点を作る
+
+\bigskip
+\item イアン・G. バーバー著「科学が宗教と出会うとき—四つのモデル」\\
+Ian G. Barbour, {\it When Science Meets Religion}\par
+課題の整理といくつかの視点\par
+対立（Conflict）・独立（Independence）・対話（Dialogue）・統合（Integration）
+
+\bigskip
+\item わたしたちにとっての意味\par
+わたし？ 講演者？ わたしたち？ \par
+最近考えていること
+\end{enumerate}
+
+\end{frame}
+
+\section{アインシュタイン「科学と宗教」を読む} %Science and Religion by A. Einstein}
+\begin{frame}{アインシュタイン「科学と宗教」}{``Science and Religion'' by A. Einstein}
+\begin{block}{配布文書の出典 \hfill A. Einstein (理論物理学者 1879-1955)}
+\begin{enumerate}
+\item Religion and Science, New York Times Magazine, November 9, 1930
+\item Science and Religion I, Address: Princeton Theological Seminary, May 19, 1939 \label{sr1}
+\item Science and Religion II, Science, Philosophy and Religion, A Symposium, 1941 \label{sr2}
+\item Religion and Science: Irreconcilable? The Christian Register, June, 1948
+\end{enumerate}
+\end{block}
+
+\begin{block}{和訳と日本語の文書}
+\begin{itemize}
+\item アインシュタイン著「晩年に思う」中村誠太郎\footnote{理論物理学者1913-2007}・南部陽一郎\footnote{理論物理学者 1921-2015}・市井三郎訳\footnote{哲学者 1922-1989}、講談社文庫 (1971)\hfill
+上記の文書 \itemref{sr1},\itemref{sr2} の部分
+\item 西島和彦\footnote{理論物理学者 1926-2009}著「アインシュタインと信仰」仁科記念財団
+\end{itemize}
+\end{block}
+
+\end{frame}
+
+\begin{frame}{アルベルト・アインシュタイン}{Albert Einstein}
+
+\begin{block}{略歴 \hfill HatenaKeyword から改編}
+\begin{itemize}
+\item 1879年3月14日、ドイツ・ウルム市に生まれる。
+\item 1896年スイス連邦工科大学入学。
+\item 1902年、スイス特許局技官に。
+\item 1905年25歳にて発表した論文（三大論文：『光量子仮説』『ブラウン運動理論』『特殊相対性理論』Annalen der Physik 誌(17 号)）が世界を驚かせた。
+\item 1916年、ドイツ・ベルリン大学教授時代に「一般相対性理論」完成。
+\item 1922年、ノーベル物理学賞受賞、来日。
+\item 1933年ヒトラー政権成立の年、ナチによる迫害を逃れ米国へ。プリンストン高級研究所などで研究生活を送る。第二次世界大戦ののち、自己の理論が、マンハッタン計画、原子爆弾へとつながったことを重く考え、科学の平和利用ための言論も行う。
+\item 1955年4月13日、以前から分かっていた腹部大動脈瘤が破裂し出血が始まったが手術拒否。
+\item 1955年4月18日、プリンストン病院で死去。享年76歳。
+\end{itemize}
+\end{block}
+\end{frame}
+%\subsection
+
+\begin{frame}{Religion and Science（1930）}
+
+\begin{block}{What is religion? What is behind it?}
+\begin{enumerate}
+\item Everything that the human race has done and thought is concerned with the satisfaction of deeply felt needs and the assuagement of pain.
+\begin{itemize}
+\item With primitive man it is above all fear that evokes religious notions% - fear of hunger, wild beasts, sickness, death. 
+\end{itemize}
+\item The desire for guidance, love, and support prompts men to form the social or moral conception of God. 
+\begin{itemize}
+\item %Common to all these types is 
+The anthropomorphic character of their conception of God.
+\end{itemize}
+\item Cosmic religious feeling \hfill Democritus\footnote{BC460?-BC370?}, Francis of Assisi\footnote{1181?-1226}, and Spinoza\footnote{1632-1677}
+\begin{itemize}
+\item Individual existence impresses him as a sort of prison and he wants to experience the universe as a single significant whole.
+\item I maintain that the cosmic religious feeling is the strongest and noblest motive for scientific research.
+\end{itemize}
+\end{enumerate}
+A contemporary has said, not unjustly, that in this materialistic age of ours the serious scientific workers are the only profoundly religious people.
+\end{block}
+
+\end{frame}
+
+
+
+\begin{frame}{「科学と宗教 I (1939), II（1941）」}
+
+\begin{block}{科学とは・宗教とは \hfill 科学と宗教 II}
+\begin{itemize}
+\item 科学とは、組織的な思索を展開して、この世界の知覚しうる諸現象を、できるかぎり徹底的な一つの連合にもちきたそうとする、数世紀を年経た努力\par
+科学とは、概念化という過程によって、後から存在を再建しようとする試み
+\item 宗教とは何か?
+\end{itemize}
+\end{block}
+
+\bigskip
+\begin{block}{宗教の目標 \hfill 科学と宗教 I}
+（ユダヤ・キリスト教の宗教的伝統の中にあたえられている我々の抱負の最高の原理）個人を自由\footnote{何からの自由？ 責任ある発展をさせるもの？ 全人類のため？}に、そして責任ある発展をさせ、その結果、個人が諸能力を、全人類のために自由に喜んで奉仕させるようにすることです。
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{宗教的人格 \hfill 科学と宗教 II}
+私に宗教的だという印象を与える人がもっている抱負の特徴
+\begin{itemize}
+\item 自己の能力のあたうかぎり、自己的な欲望の拘束から自らを解き放ち、超個人的な価値のために執着している思想、感情、抱負に余念が無い人
+\item この超個人的内容の力強さと、その圧倒的な意義に対する確信の深さ
+\item その内容を神と結びつける試みがなされているかどうかは、問題ではありません。（e.g. 仏陀やスピノザ\footnote{Benedict de Spinoza, Hebrew forename Baruch, Latin forename Benedictus, Portuguese Bento de Espinosa, (born November 24, 1632, Amsterdam—died February 21, 1677, The Hague), Dutch Jewish philosopher, one of the foremost exponents of 17th-century Rationalism and one of the early and seminal figures of the Enlightenment. His masterwork is the treatise Ethics (1677). 
+\url{https://www.britannica.com/biography/Benedict-de-Spinoza/The-period-of-the-Ethics}}）
+\end{itemize}
+\end{block}
+
+\begin{block}{現代の危機 \hfill 科学と宗教 I}
+\begin{itemize}
+\item 全体主義的諸国家においては、人間性の精神を実際に破壊しようと努めているのは、支配者自身なのです。まだそれほどの脅威にさらされていない国々では、そのもっとも貴重な伝統を閉塞させようとしているのは、国家主義と頑迷、また経済的手段による個人的抑圧なのです。
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+
+
+\begin{block}{宗教と科学の違い \hfill 科学と宗教 II}
+\begin{itemize}
+\item 宗教とは、これらの価値や目標を明瞭に完全に意識し、その効果を間断なく強化し、拡大しようとする人類の年経た努力
+\item 科学は、こうあるべきだということではなくて、こうであるということを確かめるにすぎないし、科学の領域外では、あらゆる種類の価値判断が依然として必要
+\item 宗教は、人間の思想と行動との評価のみを問題とします。宗教は、事実や事実間の関係について、正当に語ることはできません。
+\item 「聖書に記されたあらゆる言明が、絶対に真実である」干渉が起こると紛糾が起こる\hfill (e.g. ガリレオやダーウィンの説)
+\end{itemize}
+\end{block}
+
+\bigskip
+\begin{alertblock}{対立 vs 独立}
+\begin{itemize}
+\item なぜ、紛糾が起こるのでしょうか。
+\end{itemize}
+\end{alertblock}
+
+\end{frame}
+
+\begin{frame}{}
+
+\begin{block}{合理的立場の弱点　\hfill 科学と宗教 I}
+\begin{itemize}
+\item 我々の行為や判断に必要であり、またその基準となるさまざまの確信は、その堅固な科学的方法によってのみ見いだしうるものではない点です。というのは科学的方法は、諸事実が相互にどのように 関係し合っているか、また相互にどのように条件付けら れているか、ということ以上には何物をも教えることが できないからです。
+%\item これこれであるという知識は、これこれであるべきだ、 ということへ直接通じる扉を開いてはくれないのです。
+\end{itemize}
+\end{block}
+
+\begin{block}{相互依存性\hfill 科学と宗教 II}
+\begin{itemize}
+\item 宗教は目標を決定するものではありますが、それが設定した目標達成に、どのような手段が役立つかということを、もっとも広い意味で科学から学びました。
+\item 科学は、真理と理解に対する熱望を徹底していだいている人々によってのみ創造されます。しかしその感情の源泉は、宗教の分野から派生するのです。
+\item 存在の世界に妥当する諸規則は合理的である、すなわち理性によって理解しうるのだ、という可能性への信仰もまた、宗教の分野に属します。
+\item すなわち、宗教なき科学はびっこであり、科学なき宗教はめくらなのです。\par
+Science without religion is lame, religion without science is blind.
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+
+\begin{block}{全能で正義の人格神という存在の矛盾\hfill 科学と宗教 II}
+\begin{itemize}
+\item その神々は、自らの意志を働かせて、現象の世界を決定したり、あるいはそれに影響をあたえるものと考えられたのです。人間はその神々の気質を、呪術や祈祷によって思い通りに変えようとしました。
+\item %現在説かれている諸宗教における神の観念は、この神々という古い概念の昇華したものです。
+その擬人的な性格は、例えば人々が、祈りの中で神に訴えたり、自分の願望をかなえて下さいと嘆願する事実に示されています。
+\item もし神が全能であれば、あらゆる人間の行動、思想、感情、抱負をも含めたすべての出来事が、やはり神のみ業であるということになり、そうだとすれば、そのような全能の存在の前に、人間が自らの行為や思想に責任を負わねばならないとは、どうして考えることができるのでしょうか？　
+\item 神が処罰や報償を行われる時には、ある程度まで神は、自分自身に審判を下していることになりましょう。このようなことは、神に帰せられている善良と正義ということと、どうして宥和させることができるのでしょうか？
+\end{itemize}
+\end{block}
+
+\begin{alertblock}{擬人化された神・全能の神 \hfill 問題提起}
+\begin{itemize}
+\item 人間の祈りに応答される神 \hfill 呪術や祈祷による人間の介入
+\item 全能の神 vs 人間の責任 \hfill 神の義の問題
+\end{itemize}
+\end{alertblock}
+
+\end{frame}
+
+%\begin{frame}{ホロコースト（Holocaust）}
+%ナチスによるホロコーストで犠牲となったユダヤ人は600万人以上、最多で1,100万人を超えるとされている。また、同時期にナチス・ドイツの人種政策（英語版）によって行われたロマ人に対するポライモス、成人の精神障害者へのT4作戦、反社会分子とされた人々（労働忌避者、浮浪者、シンティ・ロマ人など）や障害者、同性愛者（ナチス・ドイツによる同性愛者迫害（英語版））、エホバの証人、スラヴ人に対する迫害などもホロコーストに含んで語られることもある。主に独ソ戦における戦争捕虜、現地住民が飢餓や強制労働による死亡者に対しても「ホロコースト」の語が使用されることがあるが、この語をユダヤ人以外にも拡大して使用することに反発する個人・団体がある[要出典]。こうした広い概念でとらえた場合の犠牲者数は、900万から1,100万人にのぼるとも考えられている。
+%\end{frame}
+
+\begin{frame}{}
+
+\begin{block}{科学的諸法則 \hfill 科学と宗教 II}
+\begin{itemize}
+\item 時間と空間における対象と出来事との、相互関係を決定する一般的諸規則を確立するのは、科学の目的です。
+\item 自然の諸法則には、絶対に一般的な妥当性が要求されます。がそれは証明されはしないのです。
+\item 原理的にそれが成就される可能性への信仰は、部分的な成功に基づいているにすぎません。
+\item ごく少ししか把握していないとしても、その諸法則を基礎として、我々がある領域の諸現象の一時的あり方を、非常な精密さと確実さで予測することができるのです。
+\begin{itemize}
+\item e.g 太陽系に属するさまざまな惑星の軌道 etc
+\item 天候という分野におけるさまざまな出来事は、精密な予測の埒（らち）外にあります。なぜならそれは、自然に秩序が欠けているからではなく、作用している諸因子が種種雑多であるからです。
+\item 生物の領域: 欠如しているのは、秩序そのものの知識ではなくて、該博な一般性をもった関連の把握
+\end{itemize}
+\end{itemize}
+\end{block}
+
+%\bigskip
+\begin{alertblock}{科学の限界？ 帰納的手法・パラメターの数}
+\begin{itemize}
+\item 科学の範疇でありながら「精密な予測が不可能」なものの存在
+\end{itemize}
+\end{alertblock}
+
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{秩序ある規則性をもたない領域？ \hfill 科学と宗教 II}
+\begin{itemize}
+\item あらゆる出来事の秩序ある規則性をより多く感じれば感じるほど、異なった性質の諸原理からこの秩序ある規則性をもたない、といった領域は存在しないという確信はますます強固になります。この確信をもった人にとっては自然の出来事の独立した原因としての人間の支配、あるいは神の支配、というものは存在しないでしょう。
+\item 人格神が自然の出来事に干渉しているという教義は、科学によって真の意味で反駁されたことはけっしてありません。
+\item その教義は、科学的知識がまだ足をふみいれなかった諸領域へ、つねに避難することができる
+\item 明るい光の下ではなく、暗がりの中においてのみ自らを主張しうるような教義は、必然的に人類に対する効果を失い、人間の進歩に測り知れない害毒を及ぼすだろうから
+\item （他に重要なすべきことがある）人間性そのものにおける、真、善、美を育成しうるさまざまな力を、自らの職分として活用しなければならないでしょう。
+\end{itemize}
+\end{block}
+
+
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{科学の宗教の目的への寄与 \hfill 科学と宗教 II}
+\begin{itemize}
+\item 自己中心的な執着、欲望、恐怖の絆から、できるかぎり人類を解放することが、宗教の目標の一つであるとすれば、科学的推理はまた別の意味で、宗教を助けることができます。
+\item 科学の領域において、立派な進歩をなしとげた強烈な経験をもつすべての人々は、存在の中に明らかにされた合理性に対して、深い畏敬をいだくものなのです。
+\item 人間の精神的進化が進めば進むほど、真の宗教性への路は、生や死に対する恐怖とか盲目的信仰に通じているのではなく、合理的知識への努力に通じていることが、ますます確実となるように思われます。この意味で私は、僧侶が自らの高邁な教育的使命を果たそうとするならば、教師にならなくてはならないと信じています。
+\end{itemize}
+\end{block}
+
+\bigskip
+\begin{alertblock}{対話、目指す方向？　統合？}
+\begin{itemize}
+\item 科学と宗教がよい関係を保ちながら発展していく道がある。
+\item 真の宗教性への路は、合理的知識への努力に通じている？
+\end{itemize}
+\end{alertblock}
+
+\end{frame}
+
+\section{いくつかの視点}
+\begin{frame}{イアン・G. バーバー著「科学が宗教と出会うとき」}%—四つのモデル」}
+{Ian G. Barbour, {\it When Science Meets Religion}}
+
+\begin{block}{本書について \hfill hsuzuki's homepage より}
+著者は1923年生まれ。アメリカの物理学者・キリスト教神学者。中国で宣教師の子として生まれ、イギリスを経て、アメリカへ。シカゴ大学で物理学者フェルミの助手を務め、1950年物理学の博士号を受ける。1956年には、イェール大学から神学博士の学位を受け、カールトン大学で物理学と宗教学の両学部で教える。訳者は、国際基督教大学キリスト教と文化研究所非常勤研究員。
+
+科学と宗教の問題をそれまでの対立と独立の考え方だけでなく、対話と統合を加えた四つのモデルでとらえ、天文学と創造（第二章）、量子物理学が意味すること（第三章）、進化と継続する創造（第四章）、遺伝学、神経科学、および人間の本性（第五章）、神と自然（第六章）とかなり広い範囲において四つのモデルに分けて語っている。
+
+よくまとまっているが、その広さの故に、訳者も読者であるわたしも十分理解できているかは不明である。少しずつ学びを深めたいと思う一方、この分野がこのように学問的に語られると、数学と数学基礎論の関係のように、科学と宗教とも異なる１分野、おそらく、科学哲学の１分野という位置づけとなり、人間としての自然な疑問からは、少し離れてしまっているようにさえ感じる。学問とは、そのようなものなのだろう。
+\end{block}
+
+\end{frame}
+
+%\begin{frame}{}%{Subtitle}
+%
+%\begin{block}{備忘録 \hfill hsuzuki's homepage より}
+%\begin{itemize}
+%%\item 「（手引き書は）じかに接する探求の代用品としてではなく、人々が自分自身の道を見いだすことを手助けするのが、その意図である。」（p.23）
+%\item 科学は、錯誤と迷信から、宗教を浄化することができる。宗教は、偶像崇拝と誤った絶対化から、科学を浄化することができる。それぞれが、より広い世界に、つまり両方ともが反映することができる世界に、他者を呼び込むことができる。（ヨハネ・パウロ二世）（p.39）
+%\item 前提や限界問題のような、方法論的かつ概念的平行関係が、それぞれの分野を傷つけることなく、科学と宗教の間に重要な対話の可能性をもたらす。（p.54）
+%\item キリスト教徒の生活の中心は、環境への再適応の体験、破局からの癒やしと新しい全体性の獲得、および神と隣人への新しい関係への表明である。（p.68）
+%\item このような議論は、聖句の中心的な宗教的指針から注意をそらしてしまう。（p.82-3）
+%\item 今のところ、他に類を見ないビッグバンが、最も妥当な理論と思われる。そして有神論者は、それを神による創始の瞬間と見ることができる。しかし、我々は、自らの宗教的信仰を、一つの理論に決定的に結びつけるべきではない。（p.107-8）
+%\end{itemize}
+%\end{block}
+%\end{frame}
+%
+%\begin{frame}{}%{Subtitle}
+%
+%\begin{block}{備忘録（続き） \hfill hsuzuki's homepage より}
+%\begin{itemize}
+%\item ナポレオン『ラプラスさん、宇宙体系についてのこのような膨大な著作を書いても、あなたは一度としてその創造主に言及したことがない、と皆が私に言うのですよ』ラプラス（還元主義）『私には、そのような仮説の必要はありません。』（p.118）
+%\item 人間の本性の理念は、二元論ではなく、総合体を暗示する。これらの用語が直感的に示唆するような対照が、身体と霊魂との間にあるのではない。（Ｈ．ウィーラー・ロビンソン）（p.203）
+%\item 聖書の人間観は、二元論的ではなく、全体論的である。（中略）つまり人間は、霊魂、身体、肉組織、精神などの統合体であり、すべてがひとつになって人間全体を構成する。（p.204）
+%\item 人間は、身体と霊魂の両方をもつ主体者である。（p.208）
+%\item それゆえ原罪は、アダムからの遺産ではなく、人間差別、抑圧、および暴力を永続させる罪深い社会構造の中に、我々が生まれているという認識である。すべての集団は、自己利益の正当化に気づかず、自らを絶対化する傾向がある。個人の貪欲と同様、社会的不正義は、神の意思と正反対である。（p.210）
+%\end{itemize}
+%\end{block}
+%\end{frame}
+%
+%\begin{frame}{}%{Subtitle}
+%
+%\begin{block}{備忘録（続き） \hfill hsuzuki's homepage より}
+%\begin{itemize}
+%\item 購いとは、神との、他の人々との、そして他の被造物との関係の回復である。破局と疎外が、全体性、癒やし、および和解に取って代わるとき、購いが生じる。（p.211）
+%\item 責任ある行為の主体者（p.213）
+%\item 最近の神学と最近の科学の両方が、生物学的有機体であると同時に、責任能力を持つ自己である、多水準的心身統合体という人間観を指示していると私は信じる。（p.233）
+%\item それゆえ自己は、ばらばらな存在としてではなく、考え、感じ、そして行動する統一された活動のなかの人格と見なすことができる。（p.233-4）
+%\item 還元主義的科学は、全能である。科学が乗り越えられない障壁に遭遇したことは一度もなかった。あるいは、科学は乗り越える力を持っているし、また、やがてそうすることができるようになると、考えることが合理的である。宗教は失敗した。そしてその失敗をさらけ出すべきである。知性にとって至高の喜びである。最小のものを認識することを通して、普遍的能力の追求に今や成功した科学が、王者であることを認めるべきである。（ピーター・アトキンズ）（p.242） 
+%\end{itemize}
+%\end{block}
+%\end{frame}
+
+\begin{frame}{Ian G. Barbour, {\it When Science Meets Religion}}{Introduction}
+
+\begin{block}{G. Bishop, The Religious Worldview and American Beliefs About Human Origins}
+\begin{itemize}
+\item Forty-five percent of Americans believe that ``God created man pretty much in this present form at one time within the last 10,000 years.''
+\item Forty percent believe that ``man developed over millions of years from less advanced forms of life but God guided the process.''
+\item Ten percent believe that God had not part in the process.
+\item In other advanced industrial nations the fraction who take the Bible literally and reject evolution is far lower -- only 7 percent in Great Britain, for example.
+\end{itemize}
+\hfill {\small \url{https://ropercenter.cornell.edu/sites/default/files/2018-07/95039.pdf}}
+\end{block}
+
+\begin{alertblock}{この数字をどう思いますか。}
+\begin{itemize}
+\item アメリカはかなり特殊? 他の国の人達はどうなのだろうか？
+\item 日本も特殊かもしれない。
+\end{itemize}
+\end{alertblock}
+
+
+\end{frame}
+
+\begin{frame}{Ian G. Barbour, {\it When Science Meets Religion}}{Typology: Conflict, Independence, Dialogue, Integration, Part I}
+
+\begin{block}{Conflict}
+\begin{itemize}
+\item Biblical literalists believe that the theory of evolutoin conflicts with religious faith.
+\item Atheistic scientists claim that scientific evidence for evolution is incompatible with any form of theism.
+\end{itemize}
+{\it These two opposing groups get most attention from the media, since a conflict makes a more exciting news story than the distinctions made by persons between these two extremes who accept both evolution and some form of theism}
+\end{block}
+
+\begin{block}{Independence}
+\begin{itemize}
+\item Science and religions are strangers who can coexist as long as they keep a safe distance from each other.
+%\item They refer to differing domains of life or aspects of reality
+%\item Their assertions are two kinds of language that do not compete because they serve completely differenct funcions in human life
+\item Science asks how things work and deals with objective facts; religion deals with values and ultimate meaning.
+\end{itemize}
+{\it Conflict arises when religious people make scientific claims, or when scientists go beyond their area of expertise to promote naturalistic philosophies.}
+\end{block}
+
+
+\end{frame}
+
+\begin{frame}{Ian G. Barbour, {\it When Science Meets Religion}}{Typology: Conflict, Independence, Dialogue, Integration, Part II}
+
+\begin{block}{Dialogue}
+\begin{itemize}
+\item A comparison of the methods of two fields.%, for example, conceptual models and analogies.
+\item At %science's 
+limit-questions, for example, why is the universe orderly and intelligible.
+\item God can be conceived to be the determiner of the indeterminacies left open by quantum physics, without any violation of the laws of physics.
+\end{itemize}
+{\it Both scientists and theologians are engaged as dialogue partners in critical reflection on such topics, while respecting the integrity of each other's fields.}
+\end{block}
+
+\begin{block}{Integration}
+\begin{itemize}
+\item The natural theology has sought in nature a proof, or at least suggestive evidence, of the existence of God, for example, the physical constants at the Big Bang.
+\item Theology of nature: reformulation of a particular religious tradition in the light of science.
+\end{itemize}
+{\it The author's sympathies lie with Dialogue and Integration, especially a theology of nature and a cautious use of process philosophy.}
+\end{block}
+\end{frame}
+
+\begin{frame}{アインシュタインの論考とバーバーの４つの視点}
+
+\begin{block}{ここまでのまとめ}
+\begin{itemize}
+\item 科学と宗教を「対立」という軸だけで考える必要はない。
+\item 科学と宗教を「独立」または「相補的なもの」として捉えることもできるが、対立も生じうる。
+\item アインシュタインは、既存の宗教を信じているわけではないが、神の存在を認め、独自の宗教観をもっているだけでなく、それが、科学者としての探究心を支えているようである。
+\item バーバーは「対立」「独立」以外の軸を模索しているが、明確な答えがあるかは不明。
+\item どのような「対話」が可能なのだろうか。
+\end{itemize}
+
+\end{block}
+
+\begin{alertblock}{個人的な感想}
+\begin{itemize}
+\item わたしも、おふたりに敬意をもちつつ、さまざまな方々と、対話を続けたい。
+\item わたしが、求めている「真理」の方向性とは、すこし異なる気がする。
+\end{itemize}
+\end{alertblock}
+
+%\begin{exampleblock}{Title}
+%Contents
+%\end{exampleblock}
+%
+\end{frame}
+
+\section{わたしたちの未来}
+
+\begin{frame}
+\frametitle{「ひと」とは？ 「いのち」の尊厳とは？}
+%\framesubtitle{}
+
+\vspace*{-1ex}
+\begin{block}{「中学生からの大学講義３　科学は未来をひらく」筑摩書房}
+\begin{itemize}
+%\item この宇宙は、約138億年前にビッグバンによって生まれた。
+\item チンパンジーとヒトの遺伝子の違いは、５パーセント程度、600万年前までは同じ生き物で、ホモ・サピエンスは20万年前に出現、チンパンジーとの明らかな違いは、前頭前野の発達（チンパンジーの脳380cc、人間1400cc）。前頭前野は「自分を客観的に見る」感覚を司っているという。「他者の気持ちを読み、力を合わせて共同作業をすること」。\hfill（長谷川眞理子）
+\item 『脳死』『脳始』の線引がされるようになったのは、先端医療にとって好都合だからだ。脳が死ねば、その時点から死体とみなされ、臓器を取り出せる。一方、脳始に至っていない状態は細胞の塊だから、再生医療に使う材料をえることができる。まだ、人ではないから殺人にはあたらないというわけだ。結局のところ、先端医療はわたしたちの寿命をのばしているわけではなく、むしろ両側から縮めているわけだ。脳が始まるずっと前から動的平衡としての生命は始まり、脳が死んでもまだ動的平衡は止まらない。生命の始まりと終わりを決めるのは、本当は非常に難しいことなのだ。脳死と脳始のような考え方は、機械論的生命観がはらんでいる問題とも言える。（福岡信一）
+\end{itemize}
+\end{block}
+
+%\centerline{\color{red}{科学の問い？ 宗教の問い？}}
+\begin{alertblock}{いろいろな問いと関係がありそうですが、\ldots}
+\begin{itemize}
+\item 科学の問い？ 宗教の問い？
+\end{itemize}
+\end{alertblock}
+
+%\begin{alertblock}{科学の問い？ 宗教の問い？}
+%\begin{itemize}
+%\item あなたは、どのように答えますか。「ひと」とは、「いのち」とは。
+%\end{itemize}
+%\end{alertblock}
+
+%\begin{alertblock}{あなたはどう考えますか。}
+%\begin{itemize}
+%\item 「ヒト」を「ひと」たらしめるものは。
+%\item 「ひと」の「いのち」の尊厳とは。
+%\end{itemize}
+%\end{alertblock}
+
+
+\end{frame}
+
+
+\begin{frame}{最近のニュースから\hfill 2019年9月3日}
+
+\begin{block}{NHK NEWS WEB: 4か月間脳死状態の女性が出産 延命治療と親族の支えで}
+%2019年9月3日 23時49分
+チェコで妊娠16週目で脳出血を起こして脳死状態となり、延命治療を受けていた女性が、およそ４か月後の先月、女の子を無事に出産したと病院が発表しました。
+
+チェコの第２の都市、ブルノにある大学病院は、脳死の判定を受けた27歳の女性が、先月、妊娠34週目に入り、帝王切開で女の子を出産したと発表しました。
+
+この女性は、妊娠16週目のことし４月、脳出血を起こして脳死の判定を受けましたが、胎児が安定した状態になるまで女性の子宮の中で育てることになり、病院は117日間にわたって、女性の心臓や肺などを人工的に動かす延命治療を続けました。
+また、看護師らは、胎児が健康に育つようにと、女性の足を動かして歩く動作を再現したり、おなかの中の胎児に語りかけたりしたほか、女性の親族は、胎児におとぎ話しを読み聞かせたりしていたということです。
+
+現地からの報道では女の子は生まれたとき、体重2130グラム、身長42センチの元気な赤ちゃんで、今は、父親や祖母らと一緒だということです。
+
+出産を終えた女性は、夫や親族らにみとられながら延命治療を終えたということで、病院側は記者会見で「親族が一丸となって見守ってくれた。親族のサポートや関心がなければ、成功はできなかった」と話していました。
+
+\url{https://www3.nhk.or.jp/news/html/20190903/k10012062281000.html}
+\end{block}
+
+%\begin{alertblock}{Title}
+%Contents
+%\end{alertblock}
+%
+%\begin{exampleblock}{Title}
+%Contents
+%\end{exampleblock}
+%
+\end{frame}
+
+\begin{frame}{人工中絶}{2017（平成29）年度 164,621件 \hfill 厚生労働省：平成 29年度衛生行政報告例の概況}
+
+\begin{block}{「＜死＞の臨床学ー超高齢社会における『生と死』」村上陽一郎著、新曜社}
+我が国の刑法には堕胎罪があるが、その適用除外の措置として、母体保護法が存在する。受胎後一定期間（法律上は『胎児が、母体外において、生命を保続できない時期』としか定めがないが、厚労省の次官通達によって、現在の取り決めでは22週未満）は、中絶が許されるわけだが、容認されるのは２つの場合に限られる。第１は、妊娠の継続が、母体の健康、もしくは、経済状況に顕著な障害となる場合であり、第２は暴行など、本人の意志に反する強制的な妊娠である場合である。『経済的理由』は、『貧乏人の子沢山』などという言葉が実質的な意味を持っていた、戦争直後極めて貧しい状況にあった頃の日本社会において、必要とされた条項であるが、それが未だに残っているのは、この条件を外すと、現在日本で行われている人工中絶のほとんどが、違法になるからである。言い換えれば、胎児異常が見つかって、両親が中絶を決意したときにも、中絶の合法性の根拠は、この経済条項しかない、という極めて欺瞞的な事態にある。」（p.42）
+\end{block}
+
+\begin{alertblock}{あなたはどのように考えますか。}
+\begin{itemize}
+\item 「産む」「産まない」を決めるのは女性の権利？
+\item 男性の責任はどのように法的に問われるの？
+\end{itemize}
+\end{alertblock}
+%
+%\begin{exampleblock}{Title}
+%Contents
+%\end{exampleblock}
+\end{frame}
+
+\begin{frame}{ヒトの定義・ヒトの死}%{Subtitle}
+
+\vspace*{-1ex}
+\begin{block}{長谷川眞理子のヒトの定義：「中学生からの大学講義３　科学は未来をひらく」}
+%ヒトの定義とは、\hfill （p.165）
+\begin{enumerate}
+\item 脳が大きく、大人は複雑な文化的行動をとる。
+\item 分業し相互扶助する社会を形成。
+\item 子どもが一人前に成長し、社会の輪の一つになるまでに時間がかかる。%（皆で共同作業）。大変な
+\item こどもの生産と文化の継承という２つの柱がある。
+\end{enumerate}
+\end{block}
+
+\begin{block}{「＜死＞の臨床学ー超高齢社会における『生と死』」村上陽一郎著、新曜社}
+\begin{itemize}
+\item 如何に自らの遺伝子が保続プログラムを持ち、（中略）連続性のプログラムに従っているにしても、なお、人間は自らの死ということを、決定的な不連続のように解釈することになれている。それは『体質』が滅びることだけではなく、一人の人間の意識、想念、感覚、意志、技能などが、死によって断絶するという、死の理解によって支えられた、抜き難い発想があるからであろう。（p.89）
+\item 死によって生まれる非連続性、断絶を乗り越えようとする、このような（死を知る）人間の二次的な生産物の相対を、わたしたちは『文化』とよぶのではないか。言い換えれば、文化は、『死』のなかから生まれてきたことになる。（p.90）
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}{わたしたちの未来 }{For Our Future\hfill 科学的な問い・宗教的な問い}
+
+\begin{block}{最近考えていること}
+\begin{itemize}
+\item 社会は、永続的ではなく、非常に速いスピードで変化している。それが定常状態だと受け入れなければいけないのかもしれない。
+\item いくつかの限られた数の変数、または、普遍的な価値、変わらない（不変な）ものをさがして、それを拠り所とするのは、むずかしいかもしれない。
+\item 共有するメディアがないなかで、わたしたちは、どのように、たいせつなものを共有することができるのだろうか。
+\item 動的なもの、変動するものに、目をむけ、達し得たところにしたがって、ていねいに合意を形成していきたい。
+\item ひとの尊厳とは、いのちとは、いのちを生きるとは。
+\item たいへんな状態にあるひとたち、たとえば、不登校、発達障害、差別を受けているようなひとたちがどうにかしなければ、いけない世界ではないはず。
+\end{itemize}
+\end{block}
+
+\begin{alertblock}{変化し続けている世界}
+\begin{itemize}
+\item 普遍的な哲学や宗教に解をもとめるのではなく、自分に対しても、相手に対しても、達し得たところに従って生きることを是とし合意を形成しながら。
+\end{itemize}
+
+\end{alertblock}
+
+\end{frame}
+
+%\begin{alertblock}{Title}
+%Contents
+%\end{alertblock}
+%
+%\begin{exampleblock}{Title}
+%Contents
+%\end{exampleblock}
+
+
+%\end{document}
+%\section{わたしたちの未来}
+\section{おわりに}
+\begin{frame}{学ぶこと・信じること}
+\framesubtitle{Learning and Believing}
+
+\begin{block}{なぜ？ Why?  }
+%\begin{quote}
+\begin{itemize}
+\item なぜ、学ぶ（研究する）のか？
+\item なぜ、信じるのか？
+%
+%\bigskip
+%\item あなたのなかで、このふたつの問いはつながっていますか？
+\end{itemize}
+
+%\end{quote}
+\end{block}
+
+%\pause
+%\begin{block}{二つのなぜ}
+%%\begin{quote}
+%あなたのなかで、このふたつの「問い」はつながっていますか？
+%\end{block}
+%
+%\end{frame}
+%
+%\begin{frame}{わたしの答え / My Answer}
+
+\begin{alertblock}{わたしは、なぜ、学ぶ（研究する）のか？}
+\begin{itemize}
+\item 真理を手にしていないから。
+\item 自分の中に解決策・こたえがないから。
+\end{itemize}
+\end{alertblock}
+
+%\pause
+\begin{alertblock}{わたしは、なぜ、信じるのか？}
+\begin{itemize}
+\item 真理を手にしていないから。
+\item 自分の中に解決策・こたえがないから。
+\end{itemize}
+\end{alertblock}
+
+\begin{alertblock}{わたしの「科学と信仰」に対する基本姿勢 \hfill [再掲]}
+わたしは「真理」（科学的真理、神の御心・指針）といわれるものがあると信じて探求しているが、わたしはそれを得ていないことを確信している。
+\end{alertblock}
+
+%\pause
+%\begin{exampleblock}{ピリピ 1:6}
+%そして、あなたがたのうちに良いわざを始められたかたが、キリスト・イエスの日までにそれを完成して下さるにちがいないと、確信している。 
+%\end{exampleblock}
+\end{frame}
+
+\begin{frame}{わたしが求めていること}
+
+\begin{alertblock}{わたしの信仰とは}
+価値判断が困難な世の中で生きていく中で、方向を指し示してくれるものを求めているのであって、それが絶対正しいということの保証を求めているのではない。
+\end{alertblock}
+
+\begin{alertblock}{対立が起こるのは}
+達し得たところのものが、間違っていないという保証を求めるから？
+\end{alertblock}
+
+\begin{exampleblock}{ヨハネ 13:34, 35}
+あなたがたに新しい掟を与える。互いに愛し合いなさい。わたしが
+あなたがたを愛したように、あなたがたも互いに愛し合いなさい。
+互いに愛し合うならば、それによってあなたがたがわたしの弟子で
+あることを、皆が知るようになる。」
+\end{exampleblock}
+
+\begin{exampleblock}{ローマ12:15}
+喜ぶ人と共に喜び、泣く人と共に泣きなさい。 
+\end{exampleblock}
+
+%\bigskip
+%\pause
+%
+%\begin{block}{あなたは「アーメン」と言えますか？}
+%\begin{itemize}
+%\item わたしたちは「イエス様が愛されたすべての人たち」と、互いに愛し合う関係の中で生きている。
+%\item わたしたちが互いに愛し合っているので、皆が、わたしたちが、イエス様の弟子であることを知るようになっている。
+%%\item わたしたちは、この世のなかで、どうしたら、互いに愛し合うことができるかを知っている。
+%\end{itemize}
+%
+%\end{block}
+\end{frame}
+
+
+\begin{frame}{わたしが達し得たとことろ}
+
+\begin{alertblock}{指針として生き、ともに、求めていきたい}
+喜ぶ人と共に喜び、泣く人と共になきながら、一人ひとりを、そして互いに愛（{\greektext >agap'aw}, Welcome）し合いながら生きていく未来をめざしたい。
+\end{alertblock}
+
+\begin{exampleblock}{コメント\hfill 問い}
+\begin{itemize}
+\item みながそれを求めても、矛盾することなく成り立つ世界を求めていたい。
+\item 完璧なルールを探すことよりも、合意の形成を求めるプロセスがたいせつなのではないだろうか。
+\item 自分のいのちを、所有物と考える世界ではなく、ともにいのちを生きる世界を求めているのかもしれない。
+%\item いのちを、ともにいきることを求めて。
+\item だれかが頑張って作り上げるものではないだろう。
+\item あるスケールで、長い時間たもたれることは、主要な要件にしなくてよいのかもしれない。
+\item AI が普及していく世界で、一番心配なのは、ほとんどのひとたちが、考えなくなること。考えることを、だれかに、または何かに任せてしまうこと。
+\item 考えなくなりつつあるひとたちも、Welcome しながら生きていく世界とは？
+\end{itemize}
+
+\end{exampleblock}
+
+%\bigskip
+%\pause
+%
+%\begin{block}{あなたは「アーメン」と言えますか？}
+%\begin{itemize}
+%\item わたしたちは「イエス様が愛されたすべての人たち」と、互いに愛し合う関係の中で生きている。
+%\item わたしたちが互いに愛し合っているので、皆が、わたしたちが、イエス様の弟子であることを知るようになっている。
+%%\item わたしたちは、この世のなかで、どうしたら、互いに愛し合うことができるかを知っている。
+%\end{itemize}
+%
+%\end{block}
+\end{frame}
+
+
+
+\begin{frame}{参考文献}{References}
+
+\begin{enumerate}
+%\item 「この世の富に忠実に - キリスト教倫理と経済社会」大谷順彦著、すぐ書房（ISBN4-88068-243-8, 1993.10.11）
+\item 「コペルニクス-人とその体系」アーサー・ケストラー著、有賀寿訳、すぐ書房（0023-200000I-3739, 1977.10.20）
+\item 「科学的自然像と人間観ー現代において宗教は可能か」P.M. マッカイ著、池田光男、有賀寿訳、すぐ書房（0023-200038-3937, 1978.9.5）
+\item 「進化をめぐる科学と信仰〜創造科学などを考えなおすわけ」大谷順彦著、すぐ書房（ISBN4-88068-281-0, 2001.4.5）
+\item 「人間にとって科学とは何か」村上陽一郎著、新潮選書、新潮社（ISBN978-4-10-603662-0, 2010.6.25）
+\item 「奇跡を考えるー科学と宗教」村上陽一郎著、講談社学術文庫2259、講談社（ISBN978-4-06-292269-2, 2014.12.10）
+\item 「中学生からの大学講義３　科学は未来をひらく」桐光学園＋ちくまプリマー新書編集部・編、筑摩書房（ISBN978-4-480-68933-7, 2015.3.10）
+%\item "THE 2030 AGENDA FOR SUSTAINABLE DEVELOPMENT", United Nations 2015, 40pp
+\item 「分かちあう心の進化」松沢哲郎著、岩波科学ライブラリー 273（ISBN978-4-00-029674-8, 2018.6.14）
+\item 参考：Developing a Christian Mind at Oxford: \url{https://dcmoxford.org}
+%\item 参考：Christians in Science: \url{http://www.cis.org.uk}
+\end{enumerate}
+
+\end{frame}
+
+\section{}
+\begin{frame}
+\frametitle{}
+\framesubtitle{}
+
+\begin{center}
+{\LARGE ご静聴ありがとうございます
+
+\bigskip
+Thank You for Listening!}
+
+\end{center}
+\end{frame}
+
+\begin{frame}{みなさんに考えていただきたいこと}%{Discussion Topics}
+
+\begin{block}{コメント・質問があれば \hfill コメントシート}
+何でも。できるだけ、応答させていただきます。別に、個人的に、時間をとっても構いません。
+\end{block}
+
+\begin{alertblock}{ディスカッションのために}
+\begin{itemize}
+\item アインシュタインの「科学と宗教」から学んだこと
+\item アインシュタインの「科学と宗教」から得た問い
+\item 自分にとっての「科学と宗教」の問い
+\item 「科学と宗教」の問題として、議論すべきこと
+\item 科学と宗教とわたしたちの未来
+\end{itemize}
+
+\end{alertblock}
+%
+%\begin{exampleblock}{Title}
+%%Contents
+%\end{exampleblock}
+
+\end{frame}
+
+%%%%%%%%
+%
+%	END
+%
+%%%%%%%%
+\end{document}
+
+
+
+\begin{frame}{Title}{Subtitle}
+
+\begin{block}{Title}
+Contents
+\end{block}
+
+\begin{alertblock}{Title}
+Contents
+\end{alertblock}
+
+\begin{exampleblock}{Title}
+Contents
+\end{exampleblock}
+
+\end{frame}
+
+\begin{frame}{Title}{Subtitle}
+
+\begin{block}{Title}
+Contents
+\end{block}
+
+\begin{alertblock}{Title}
+Contents
+\end{alertblock}
+
+\begin{exampleblock}{Title}
+Contents
+\end{exampleblock}
+
+\end{frame}
+%%%%%%%%%%%
+%
+%	NOT USED
+%
+%%%%%%%%%%%
+\begin{frame}{わたしたちの未来}{For Our Future}
+
+\begin{itemize}
+\item 主は心を見る。内心。見えないけれど、大切。恵みでもある。
+\item 組織は必要？ダンバー数：150人。
+\item 人は、因果応報に思考が縛られ、自業自得、自己責任として、悲しい出来事を理解しようとする。世界の中心の存在として認識する。だれかが悪い。
+\item 自分を相対化するとき（アインシュタインの神概念、日常的なこころの注ぎだし、いたみを痛みとすること）
+\item もっとも、たいせつなこと。もの、ひと。本当に知りたいこと。真理？なにをしてもよいよ、どんなことでも可能だよ、といわれたときに、何をするか。あることの一部となることもひとつ。
+\item 家庭内暴力
+\begin{itemize}
+\item うまくいかない。悲しみ、それを親に向けてしまう。第三者の前では起こりにくい。
+\item 暴力が起こった直後。ひきこもり相談センター。
+\end{itemize}
+
+\item 不登校、発達障害
+\end{itemize}
+
+\end{frame}
+\begin{frame}{研究職：困難さ}
+\begin{itemize}
+\item  孤独：大学でも研究でも日常生活でも、そして教会でも
+\item 経済的必要：絶対的にも、相対的にも
+\item 使命：わたしにとって、神と人とに仕えるとは
+\end{itemize}
+
+\bigskip
+\begin{exampleblock}{ルカ 9:23}
+それから、イエスは皆に言われた。「わたしについて来たい者は、自分を捨て、日々、自分の十字架を背負って、わたしに従いなさい。 
+\end{exampleblock}
+
+\bigskip
+\begin{itemize}
+\item \color{red}{{[ニュース]} 修士・博士課程の学生の減少：主要七ヶ国で日本のみ}
+
+\end{itemize}
+\end{frame}
+
+%\section{Topics in Assgnment}
+\begin{frame}{学問・信仰}
+
+\begin{block}{わたしの学び・研究を通しての経験}
+\begin{itemize}
+\item 一瞬にして世界が広がり、ある真理が、見えるようにな る。
+\item 知りたいと願うこと、理解できないことが、何倍も多くなる。
+\end{itemize}
+\end{block}
+
+\bigskip
+\begin{block}{学問と信仰}
+
+\begin{itemize}
+\item 学問：真摯に（人間・社会・自然などに関する）真理を求め、互いに愛し共に生きる道を求めながら、ゆだねられていることと、限界を知る。
+\item 信仰：限界を超えたところにある希望に生きる。
+\end{itemize}
+\end{block}
+
+\end{frame}
+
+\begin{frame}{あなたはなぜ研究をするのですか}
+
+\begin{itemize}
+\item （自分の）知的好奇心を満たすため!?
+
+\bigskip
+\item 謙虚に真理を求める $>$ キリスト者の歩み
+\item  信じることと、学ぶ（研究する）こと\par %$>$
+ \dotfill 真理を得ていないから（一般恩寵：普遍性）
+\item 召されているから、導きのもとで\par
+\dotfill そうでないかもしれない（特別恩寵：普遍的には決まらない）
+
+\bigskip
+\item 研究によってより謙虚に求められる
+\item (ある部分を知っている) 信仰を告白しつつも、真摯に向き合う\par
+どのように、神様が用いてくださるかはわからない
+
+\end{itemize}
+
+\end{frame}
+
+
