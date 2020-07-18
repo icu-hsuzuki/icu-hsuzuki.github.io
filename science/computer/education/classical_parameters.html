@@ -1,0 +1,180 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="TEXT/HTML; CHARSET=UTF-8">
+<TITLE>Distance-Regular Graphs of Classical Parameters</TITLE>
+    <script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script>
+    <script>
+    sagecell.makeSagecell({inputLocation: 'div.compute',
+                           evalButtonText: 'Evaluate'});
+    </script>
+</HEAD>
+<BODY BGCOLOR = "#CCFFCC">
+<A NAME = "top"></A>
+<div align = "right"><I>Last Update: July 18, 2020</I></div>
+<HR>
+
+<H2>Distance-Regular Graphs of Classical Parameters (d, q, a, b)</H2>
+
+<ul>
+<li> Click the “Evaluate” button below to calculate parameters.
+<li> The outputs will be at the bottom.
+<li> Edit the parameters in array at the top, and see the results.
+<li> The program below only work for numeric values.
+<li> If you want to get the text form of matrices, edit 'show' to 'print'
+<li> You can get latex-format output as shown below.
+<p>
+<li> <a href="https://sagecell.sagemath.org">Link to SageCell Server</a>
+<li> <a href="https://sagecell.sagemath.org/static/about.html?v=a01a6feae5b07628bcaac5676b74bf5e">Instruction to make similar pages</a>
+</ul>
+
+<H3>Examples of Distance-Regular Graphs of Classical Parameters</H3>
+
+<ul>
+<li>Johnson graph J(n,d): (d, 1, 1, n-d)
+<li>Hamming graph H(d,n): (d, 1, 0, n-1)
+<li>Gosset graph E7(1): (3, 1, 4, 9)
+<li>Witt graph M24: (3, -2, -4, 10)
+<li>Witt graph M23: (3, -2, -2, 5)
+</ul>
+
+<div class="compute"><script type="text/x-sage">
+
+# Default parameters for (d, q, alpha, beta)
+array = [4,-3,-2,-41]
+
+# Program of Functions
+# q-binary coefficient
+def bq(q,n):
+    if q != 1:
+        return (q^n-1)/(q-1)
+    else:
+        return n
+
+# [b0, b1, b2, ... , bd]
+def bi(array):
+    d = array[0]; q = array[1]; a = array[2]; b = array[3]
+    bi = []
+    for i in range(0,d+1):
+        bi.append((bq(q,d)-bq(q,i))*(b-a*bq(q,i)))
+    return bi
+
+# [c0, c1, c2, ... , cd]
+def ci(array):
+    d = array[0]; q = array[1]; a = array[2]; b = array[3]
+    ci = [0]
+    for i in range(1,d+1):
+        ci.append(bq(q,i)*(1+a*bq(q,i-1)))
+    return ci
+
+# [a0, a1, a2, ... , ad]
+def ai(array):
+    d = array[0]; q = array[1]; a = array[2]; b = array[3]
+    ai = [0]
+    for i in range(1,d+1):
+        ai.append(bq(q,i)*(b-1+a*(bq(q,d)-bq(q,i)-bq(q,i-1))))
+    return ai
+
+# intersection array
+def intersection_array(array):
+    return matrix([ci(array), ai(array), bi(array)])
+
+# intersection matrix B = B1
+def intersection_matrix(array):
+    d = array[0]
+    B1 = zero_matrix(d+1)
+    for i in range(0,d):
+        B1[i+1,i] = bi(array)[i]
+    for i in range(0,d+1):
+        B1[i,i] = ai(array)[i]
+    for i in range(0,d):
+        B1[i,i+1] = ci(array)[i+1]
+    return B1
+
+# intersection matrices [B1, B2, ... , Bd]
+def intersection_matrices(array):
+    d = array[0]
+    B = [identity_matrix(d+1), intersection_matrix(array)]
+    X = B[1]
+    for i in range(2,d+1):
+        B.append((1/ci(array)[i])*(X*B[i-1] - ai(array)[i-1]*B[i-1] - bi(array)[i-2]*B[i-2]))
+    return B
+
+# degrees [k0, k1, ..., kd]
+def ki(array):
+    d = array[0]
+    ki = [1]
+    for i in range(1,d+1):
+        ki.append(ki[i-1]*bi(array)[i-1]/ci(array)[i])
+    return ki
+
+# P matrix: the first eigen matrix
+def first_eigenmatrix(array):
+    d = array[0]
+    P = zero_matrix(d+1)
+    ev = intersection_matrix(array).eigenvalues()
+    for i in range(0,d+1):
+        P[i,0] = 1
+        P[i,1] = ev[i]
+        for j in range(2,d+1):
+            P[i,j] = (1/ci(array)[j])*(ev[i]*P[i,j-1] - ai(array)[j-1]*P[i,j-1] - bi(array)[j-2]*P[i,j-2])
+    return P
+
+# multiplicities [m0, m1, ... , md]
+def mi(array):
+    d = array[0]
+    mi = [1]
+    n = sum([ki(array)[i] for i in range(0,d+1)])
+    P = first_eigenmatrix(array)
+    for i in range(1,d+1):
+        mi.append(n/(sum([P[i,j]^2/ki(array)[j] for j in range(0,d+1)])))
+    return mi
+
+# Q matrix: the second eigen matrix
+def second_eigenmatrix(array):
+    d = array[0]
+    Q = zero_matrix(QQ, d+1)
+    P = first_eigenmatrix(array)
+    m = mi(array)
+    k = ki(array)
+    for i in range(0,d+1):
+        for j in range(0,d+1):
+            Q[i,j] = m[j]*P[j,i]/k[i]
+    return Q
+
+# Outputs for the array defined above
+show("Intersection Array", "=", intersection_array(array))
+
+show("Degrees", "=", ki(array))
+
+show("Multiplicities", "=", mi(array))
+
+show("First Eigenmatrix", "=", first_eigenmatrix(array))
+
+show("Second Eigenmatrix", "=", second_eigenmatrix(array))
+
+show("Intersection Matrices", "=", intersection_matrices(array))
+
+print("Latex Outputs")
+
+latex(first_eigenmatrix(array))
+
+# latex(second_eigenmatrix(array))
+</script></div>
+<hr>
+<DIV ALIGN = RIGHT><TABLE BORDER = 3 BGCOLOR = "#FFFFFF"><TR>
+<TD><A HREF = "../index-j.html">HOME</A></TD>
+</TR>
+</TABLE>
+</DIV>
+
+
+<HR>
+<DIV ALIGN = RIGHT><TABLE BORDER = 3 BGCOLOR = "#FFFFFF"><TR>
+<TD><A HREF = "#top">TOP</A></TD>
+<TD><A HREF = "../books-j.html">BOOKS(J)</TD>
+<TD><A HREF = "../index-j.html">HOME</A></TD>
+</TR>
+</TABLE>
+</DIV>
+</BODY>
+</HTML>
