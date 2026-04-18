@@ -1,5 +1,5 @@
-<HTML>
-<HEAD>
+<!DOCTYPE html><html lang="ja">
+<head>
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 <TITLE>Books</TITLE>
 </HEAD>
@@ -17,7 +17,7 @@
 </TR>
 </TABLE>
 </DIV>
-<UL>
+<ol id="source-list">
 <LI>「愛する人へ - あなたを愛する真実な方にふれて -」絵と文 志熊ふく子、His ミニストリーズ<br>
 ある方から、この本をいただき、後に志熊さんも紹介されたが、驚きは、序文を私の恩師 加藤亮一先生が書かれそれも、１９９１年１１月３日とあったことである。先生は、この年のクリスマス １２月２５日に天に召されている。その序文から。「何といっても本書の圧巻で読みどころは、その格調の高い散文詩であると思う。それこと、十字架の血によって救われ、あがなわれた著者が目に見えない上からの力によって示され、書き止めずにはおられなかったその着想を、直観的に或は瞑想的に又は、叙情的に書き綴られておられることに、私は、心からの尊敬と共に驚きの目を見張らざるを得ない。この散文詩の中に、志熊ふく子さんのしんしな信仰者としての姿が、また忠実な「主の証人」としての姿が浮き彫りとなって、わたしどもの目に迫って来るのではなかろうか。」わたしも、全く同感である。<br>
 (２００１年１月６日)
@@ -231,7 +231,7 @@ When Jonas turns twelve he is singled out to receive special training from The G
 1. General Theory 2. Representation Theory 3. Coherent Configuration 4. The O'Nan-Scott Theorem 5. Oligomorphic Groups 6. Miscellanea 7. Tables 有限単純群分類以後の扱いおよび、無限置換群にかんする扱いが含まれている。古典的な問題もいくつか含まれ、十分楽しんで読むことが出来る。Exercises も豊富で、Cameron の博識と有能さがあふれている。しかし、無限置換群に関することなどは、個人的には、どうしてもなじむことが出来なかった。結果として、５章以降は、とばして読んだものもある。書き方の問題というより、現在このトピックについて標準的な教科書を書くことはむずかしく、Cameron の興味の分野を訪ね歩くこと以上はむずかしいということかもしれない。<br>
 （２００１年１２月）
 <a name="new"></a>
-</UL>
+</ol>
 
 <p>
 <HR>
@@ -242,6 +242,14 @@ When Jonas turns twelve he is singled out to receive special training from The G
 </TR>
 </TABLE>
 </DIV>
-</BODY>
+<script>
+  // '#source-list > li' とすることで、入れ子の li を無視して直下の li だけを取得
+  const listItems = document.querySelectorAll('#source-list > li');
+  
+  listItems.forEach((li, i) => {
+    li.id = `item-${i + 1}`;
+  });
+</script>
+</body>
 </HTML>
 

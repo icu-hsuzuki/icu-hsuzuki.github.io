@@ -1,5 +1,5 @@
-<HTML>
-<HEAD>
+<!DOCTYPE html><html lang="ja">
+<head>
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 <TITLE>Books</TITLE>
 </HEAD>
@@ -16,7 +16,7 @@
 </TABLE>
 </DIV>
 <A NAME = "books2000"></A>
-<UL>
+<ol id="source-list">
 <LI>「科学は冒険」ピエール＝ジル・ド・ジェンヌ、西成勝好、大江秀房訳 講談社 (BLUE BACKS B1271, ISMN4-06-257271-0)<br>
 『ノーベル賞受賞者の著者が、語る成功する科学の目のつけどころ』と副題がついているが、非常に話が平易に書かれており、かつ、一流の研究者の本質が表れていて、自然科学で研究者を目指す若い人には非常におすすめ。とても楽しんで読むことができました。<br>
 (２０００年２月１９日)
@@ -66,7 +66,7 @@
 <LI>「新約聖書」(口語訳) 日本聖書協会<br>
 ギデオン協会版の日英訳対照聖書(英語版は、Today's English Version) を一日２章ずつ８月１６日から読み始め、日本語を中心にして、聖書ノートをつけながら１２月２６日読み終える。今回もいくつもの新しい発見ができた。感謝。２００１年１月１日からは、日本聖書協会の新共同訳と、Today's English Version が併記されている聖書を入手したので、これを日英両語で読みたいと思う。<br>
 (２０００年１２月２６日)
-</UL>
+</ol>
 <p>
 <hr>
 <DIV ALIGN = RIGHT><TABLE BORDER = 3 BGCOLOR = "#FFFFFF"><TR>
@@ -76,5 +76,13 @@
 </TR>
 </TABLE>
 </DIV>
-</BODY>
+<script>
+  // '#source-list > li' とすることで、入れ子の li を無視して直下の li だけを取得
+  const listItems = document.querySelectorAll('#source-list > li');
+  
+  listItems.forEach((li, i) => {
+    li.id = `item-${i + 1}`;
+  });
+</script>
+</body>
 </HTML>

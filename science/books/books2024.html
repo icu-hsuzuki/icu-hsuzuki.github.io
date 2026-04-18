@@ -266,8 +266,10 @@ For the last 100 years, economists have used the same word to mean something els
 </TABLE>
 </DIV>
 <script>
-  // 各行に item-1, item-2... とIDを振る
-  document.querySelectorAll('#source-list li').forEach((li, i) => {
+  // '#source-list > li' とすることで、入れ子の li を無視して直下の li だけを取得
+  const listItems = document.querySelectorAll('#source-list > li');
+  
+  listItems.forEach((li, i) => {
     li.id = `item-${i + 1}`;
   });
 </script>
