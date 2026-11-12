@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Mathematics in Lean</title>
+    <style>
+        /* 1. 全体を横並びにする設定 */
+        .container {
+            display: flex;         /* 中の要素を横に並べる */
+            min-height: 100vh;     /* 画面の高さいっぱいに広げる */
+        }
+
+        /* 2. 左側のメニュー帯のデザイン */
+        .menu {
+            width: 220px;          /* メニューの幅 */
+            background-color: #333;/* 背景色（ダークグレー） */
+            color: #fff;           /* 文字の色（白） */
+            padding: 20px;         /* 内側の余白 */
+            flex-shrink: 0;        /* 画面が縮んでもメニュー幅を維持 */
+        }
+
+        .menu h2 {
+            font-size: 18px;
+            margin-top: 0;
+        }
+
+        .menu ul {
+            list-style: none;      /* 黒丸を消す */
+            padding: 0;
+        }
+
+        .menu li {
+            margin-bottom: 10px;
+        }
+
+        .menu a {
+            color: #ddd;           /* リンクの色 */
+            text-decoration: none; /* 下線を消す */
+        }
+
+        .menu a:hover {
+            color: #fff;           /* マウスを乗せたときに白くする */
+        }
+
+        /* 3. 右側のメインコンテンツのデザイン */
+        .main-content {
+            flex: 1;               /* 残りのスペースをすべて埋める */
+            padding: 30px;         /* 内側の余白 */
+            background-color: #f4f4f4; /* 背景色（薄いグレー） */
+            min-width: 0;          /* はみ出し防止 */
+        }
+
+        /* 4. コードブロック（<pre>）のスタイル */
+        .main-content pre {
+            background-color: #ffffff; /* コード部分だけ白背景にして際立たせる */
+            border: 1px solid #d0d7de; /* 枠線 */
+            border-radius: 6px;        /* 角丸 */
+            padding: 16px;             /* 内側の余白 */
+            overflow-x: auto;          /* はみ出たときの横スクロール */
+            font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, Courier, monospace;
+            font-size: 14px;
+            margin: 20px 0;
+        }
+
+        /* 5. <pre> の中にある <code> のスタイル */
+        .main-content pre code {
+            background-color: transparent; 
+            padding: 0;                    
+            color: inherit;                
+            font-size: 100%;
+        }
+
+        /* 6. 文中に埋め込むインラインの <code> */
+        .main-content p code, 
+        .main-content li code {
+            background-color: #e5e5e5; /* 文中のコードには少し濃いグレーの背景 */
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 85%;
+            font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, Courier, monospace;
+        }
+
+        /* 7. 謝辞ボックスのスタイル */
+        .acknowledgments {
+            font-size: 14px;
+            color: #555;
+            background-color: #ffffff;
+            border-left: 4px solid #888;
+            padding: 15px;
+            margin-top: 30px;
+            border-radius: 0 4px 4px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 全体を囲む箱 -->
+    <div class="container">
+        
+        <!-- 左側のメニュー帯 -->
+        <nav class="menu">
+            <h2>LEAN で数学</h2>
+            <ul>
+                <li><a href="#">はじめに</a></li>
+                <li><a href="#">サービス</a></li>
+                <li><a href="#">お知らせ</a></li>
+                <li><a href="#">お問い合わせ</a></li>
+            </ul>
+        </nav>
+
+        <!-- 右側のメインコンテンツ -->
+        <main class="main-content">
+            <h1>1. はじめに</h1>
+
+            <h2 id="getting-started">1.1. 導入（Getting Started）</h2>
+            <p>本書の目的は、対話型定理証明支援系「Lean 4」を使用して数学を形式化する方法を学ぶことです。前提として、ある程度の数学的知識を仮定していますが、それほど高度なものは必要ありません。数論から測度論、解析学に至るまで幅広い例を取り上げますが、それらの分野の初歩的な側面に焦点を当てているため、もし馴染みのない内容であっても、学習を進めながら身につけていくことができるでしょう。また、形式手法に関する事前の知識も一切仮定していません。形式化とは、一種のプログラミングのようなものだと考えることができます。私たちは、Leanが理解できるような規則正しい言語（プログラミング言語のようなもの）で数学的な定義、定理、証明を記述します。その見返りとして、Leanはフィードバックや情報を提供し、式を解釈してそれが整形式（well-formed）であることを保証し、最終的に私たちの証明の正しさを保証してくれます。</p>
+            
+            <p>Leanについての詳細は、<a href="https://leanprover-community.github.io/" target="_blank">Leanプロジェクトのページ</a>や<a href="https://leanprover-community.github.io/" target="_blank">Leanコミュニティのウェブページ</a>をご覧ください。本チュートリアルは、Leanの巨大かつ常に成長し続けているライブラリ「Mathlib」に基づいています。また、まだ参加していない方は、<a href="https://leanprover.zulipchat.com/" target="_blank">Lean Zulipオンラインチャットグループ</a>に参加することを強くお勧めします。そこには、質問に喜んで答え、精神的にサポートしてくれる、活気に満ちた温かいLean愛好家のコミュニティがあります。</p>
+            
+            <p>本書のPDF版やHTML版をオンラインで読むことも可能ですが、VS Codeエディタ内からLeanを実行しながら、対話的に読み進めるように設計されています。始めるには：</p>
+            <ol>
+                <li>以下の<a href="https://leanprover-community.github.io/get_started.html" target="_blank">インストール手順</a>に従って、Lean 4とVS Codeをインストールします。</li>
+                <li>VS Codeの右上隅にある「forall（<code>∀</code>）」記号をクリックし、「Open Project」、「Download Project」、「Mathematics in Lean」の順に選択してリポジトリを取得します。</li>
+                <li>本書の各セクションには、例と演習問題を含む対応するLeanファイルが用意されています。これらは章ごとに整理された <code>MIL</code> フォルダ内にあります。そのフォルダのコピーを作成し、そのコピーの中で実験したり演習問題を解いたりすることを強くお勧めします。これにより元のファイルがそのまま保たれ、リポジトリが変更された際に行う更新も容易になります（下記参照）。コピーの名前は <code>my_files</code> など好きなものにして構いませんし、自分自身のLeanファイルを作成するためにも使用できます。</li>
+            </ol>
+            
+            <p>その上で、VS Codeのサイドパネルで教科書を開くには、次のように操作します：</p>
+            <ol>
+                <li><code>ctrl-shift-P</code> （macOSの場合は <code>command-shift-P</code>）を押します。</li>
+                <li>表示されるバーに <code>Lean 4: Docs: Show Documentation Resources</code> と入力し、リターンキーを押します（メニュー内でハイライトされたらすぐにリターンキーを押して選択できます）。</li>
+                <li>開いたウィンドウで <code>Mathematics in Lean</code> をクリックします。</li>
+            </ol>
+            
+            <p>あるいは、Codespacesを使用して、クラウド上でLeanとVS Codeを実行することもできます。その方法についての詳細は、Github上の Mathematics in Lean <a href="https://github.com/leanprover-community/mathematics_in_lean" target="_blank">プロジェクトページ</a>に記載されています。なお、前述したように、<code>MIL</code> フォルダのコピー内で作業することをお勧めします。</p>
+            
+            <p>この教科書と関連リポジトリは現在も制作途中のものです。リポジトリを更新するには、<code>mathematics_in_lean</code> フォルダ内で <code>git pull</code> に続けて <code>lake exe cache get</code> と入力します（これは <code>MIL</code> フォルダの内容を変更していないことを前提としています。コピーの作成を勧めたのはそのためです）。</p>
+            
+            <p>本書では、解説、指示、ヒントが含まれる教科書を読みながら、<code>MIL</code> フォルダ内の演習問題に取り組むことを想定しています。本文には、以下のような例が頻繁に登場します：</p>
+            <pre><code>#eval "Hello, World!"</code></pre>
+            <p>対応するLeanファイル内で該当箇所を見つけることができるはずです。その行をクリックすると、VS Codeの「Lean InfoView」ウィンドウにLeanからのフィードバックが表示され、カーソルを <code>#eval</code> コマンドの上に合わせると、ポップアップウィンドウにこのコマンドに対するLeanの応答が表示されます。ファイルを編集して、ご自身の例を試してみることをお勧めします。</p>
+            
+            <p>さらに本書には、挑戦しがいのある演習問題がたくさん用意されています。これらを急いで飛ばしてしまわないようにしましょう！ Leanの本質は、ただ読むことではなく、対話的に数学を「実践する」ことにあります。演習問題を解き進めることは、その体験の中心となります。すべてを解く必要はありません。関連するスキルをマスターしたと感じたら、自由に先に進んで構いません。自分の解答は、各セクションに関連付けられた <code>solutions</code> フォルダ内の解答といつでも比較することができます。</p>
+
+            <h2 id="overview">1.2. 概要（Overview）</h2>
+            <p>簡単に言えば、Leanは「依存型理論（dependent type theory）」として知られる形式言語で複雑な式を構築するためのツールです。</p>
+            <p>すべての式には<strong>型（type）</strong>があり、<code>#check</code> コマンドを使用することでそれを表示させることができます。一部の式は ℕ や ℕ → ℕ のような型を持ちます。これらは数学的対象です。</p>
+            <pre><code>#check 2 + 2
+def f (x : ℕ) := x + 3
+#check f</code></pre>
+            <p>一部の式は <code>Prop</code> 型を持ちます。これらは数学的命題です。</p>
+            <pre><code>#check 2 + 2 = 4
+def FermatLastTheorem := ∀ x y z n : ℕ, n > 2 ∧ x * y * z ≠ 0 → x ^ n + y ^ n ≠ z ^ n
+#check FermatLastTheorem</code></pre>
+            <p>一部の式は型 <em>P</em> を持ち、その <em>P</em> 自身が <code>Prop</code> 型を持ちます。そのような式は、命題 <em>P</em> の<strong>証明</strong>となります。</p>
+            <pre><code>theorem easy : 2 + 2 = 4 := rfl
+#check easy
+theorem hard : FermatLastTheorem := sorry
+#check hard</code></pre>
+            <p>もしあなたが <code>FermatLastTheorem</code> 型の式を何とか構築し、Leanがそれをその型の項として受け入れたならば、それは非常に素晴らしい成果です（<code>sorry</code> を使うのはズルであり、Leanはそれを知っています）。これでゲームのルールは分かりました。あとはルールを学ぶだけです。</p>
+            
+            <p>本書は、姉妹編のチュートリアルである『Theorem Proving in Lean』（Leanでの定理証明）を補完するものです。同書では、背後にある論理的枠組みやLeanのコアな構文について、より徹底的な入門を提供しています。『Theorem Proving in Lean』は、新しい食洗機を使う前に、取扱説明書を最初から最後まで読みたい人のためのものです。もしあなたが、とりあえず「スタート」ボタンを押して、ポットスクラバー機能の有効化はそのあとで考えたいタイプの人であれば、本書から始めて、必要に応じて『Theorem Proving in Lean』を参照する方が理にかなっているでしょう。</p>
+            
+            <p>『Mathematics in Lean』が『Theorem Proving in Lean』と異なるもう一つの点は、本書では<strong>タクティク（tactics）</strong>の使用に遥かに重点を置いていることです。複雑な式を構築しようとする際、Leanには2つのアプローチがあります。式そのものを書き下す（つまり、その適切なテキスト表現を記述する）か、あるいは式をどのように構築すべきかについての<strong>指示（instructions）</strong>をLeanに与えるかです。例えば、次の式は、「<em>n</em> が偶数ならば <em>m * n</em> も偶数である」という事実の証明を表しています：</p>
+            <pre><code>example : ∀ m n : Nat, Even n → Even (m * n) := fun m n ⟨k, (hk : n = k + k)⟩ ↦
+  have hmn : m * n = m * k + m * k := by rw [hk, mul_add]
+  show ∃ l, m * n = l + l from ⟨_, hmn⟩</code></pre>
+            <p>この<strong>証明項（proof term）</strong>は、1行に圧縮することができます：</p>
+            <pre><code>example : ∀ m n : Nat, Even n → Even (m * n) :=
+  fun m n ⟨k, hk⟩ ↦ ⟨m * k, by rw [hk, mul_add]⟩</code></pre>
+            <p>一方、次のコードは同じ定理の<strong>タクティクスタイル（tactic-style）</strong>の証明です。<code>--</code> で始まる行はコメントであるため、Leanからは無視されます：</p>
+            <pre><code>example : ∀ m n : Nat, Even n → Even (m * n) := by
+  -- m と n を自然数とし、n = 2 * k と仮定する。
+  rintro m n ⟨k, hk⟩
+  -- m * n が自然数の2倍であることを証明する必要がある。m * k の2倍であることを示そう。
+  use m * k
+  -- n を代入し、
+  rw [hk]
+  -- これで明らかになる。
+  ring</code></pre>
+            <p>VS Codeでこのような証明の各行を入力していくと、Leanは別のウィンドウに<strong>証明の状態（proof state）</strong>を表示し、すでに確立した事実と、定理を証明するために残っているタスクを教えてくれます。カーソルがある時点での証明の状態をLeanが常時表示してくれるため、行をステップ実行しながら証明を再現することができます。この例では、証明の最初の行が <em>m</em> と <em>n</em> を導入し（必要であればその時点で名前を変更することもできました）、さらに仮説 <code>Even n</code> を <em>k</em> と <em>n = 2 * k</em> という仮定に分解していることがわかります。2行目の <code>use m * k</code> は、<em>m * n = 2 * (m * k)</em> を示すことによって <em>m * n</em> が偶数であることを示すという宣言です。次の行では <code>rw</code> タクティクを使用してゴール内の <em>n</em> を <em>2 * k</em> に置き換え（<code>rw</code> は "rewrite" の略）、最後の <code>ring</code> タクティクによって得られたゴール <em>m * (2 * k) = 2 * (m * k)</em> を解きます。</p>
+            
+            <p>小さなステップとインクリメンタルなフィードバックを受け取りながら証明を構築できる能力は、非常に強力です。そのため、タクティクによる証明は、多くの場合、証明項を書くよりも簡単で迅速に行えます。両者の間に厳密な境界線があるわけではなく、上記の例の <code>by rw [hk, mul_add]</code> のように、証明項の中にタクティクを挿入することもできます。同様に、タクティク証明の途中に短い証明項を挿入することが役立つ場合も多々あります。とはいえ、本書ではタクティクの使用に重点を置きます。</p>
+            
+            <p>上の例では、タクティク証明も1行にまとめることができます：</p>
+            <pre><code>example : ∀ m n : Nat, Even n → Even (m * n) := by
+  rintro m n ⟨k, hk⟩; use m * k; rw [hk]; ring</code></pre>
+            <p>ここでは小さな証明ステップを実行するためにタクティクを使用しました。しかし、タクティクは高度な自動化を提供し、より長大な計算や大規模な推論ステップを正当化することもできます。例えば、パリティに関する命題を自動的に証明するための特定の規則を持ったLeanのシンプリファイア（simplifier）を呼び出すことができます。</p>
+            <pre><code>example : ∀ m n : Nat, Even n → Even (m * n) := by
+  intros; simp [*, parity_simps]</code></pre>
+            
+            <p>2つの導入部のもう一つの大きな違いは、『Theorem Proving in Lean』がコアとなるLeanと組み込みのタクティクのみに依存しているのに対し、『Mathematics in Lean』はLeanの強力かつ常に成長し続けているライブラリ「Mathlib」の上に構築されている点です。その結果、ライブラリに含まれる数学的対象や定理の使い方、そして非常に便利なタクティクのいくつかを紹介することができます。本書はライブラリの完全な概要として使用されることを意図したものではなく、詳細なドキュメントは<a href="https://leanprover-community.github.io/" target="_blank">コミュニティのウェブページ</a>に掲載されています。むしろ私たちの目的は、その形式化の根底にある思考様式を紹介し、ライブラリをブラウジングして自分で物事を見つけやすくなるように基本的なエントリーポイントを示すことです。</p>
+            
+            <p>対話型定理証明はフラストレーションが溜まることもあり、学習曲線は急峻です。しかし、Leanコミュニティは新参者を非常に温かく迎え入れており、<a href="https://leanprover.zulipchat.com/" target="_blank">Lean Zulipチャットグループ</a>には質問に答えてくれる人々が24時間体制で待機しています。そこであなたにお会いできることを楽しみにしていますし、あなたもすぐにそのような質問に答えられるようになり、Mathlibの開発に貢献できるようになると確信しています。</p>
+            
+            <p>それでは、受諾することを選んだ場合のあなたのミッションです：飛び込み、演習問題を解き、質問を抱えてZulipを訪れ、そして楽しんでください。ただし警告しておきます：対話型定理証明は、数学および数学的推論について全く新しい方法で考えるようあなたに挑戦してきます。あなたの人生は二度と元には戻らないかもしれません。</p>
+
+            <div class="acknowledgments">
+                <strong>謝辞：</strong><br>
+                VS Codeで本チュートリアルを実行するためのインフラストラクチャを構築してくださったGabriel Ebner氏、およびLean 4への移植にご協力いただいたKim Morrison氏とMario Carneiro氏に感謝いたします。また、ご協力と修正をいただいた以下の皆様に感謝いたします：<br>
+                Takeshi Abe, Julian Berman, Alex Best, Axel Boldt, Thomas Browning, Bulwi Cha, Hanson Char, Bryan Gin-ge Chen, Steven Clontz, Mauricio Collaris, Johan Commelin, Mark Czubin, Alexandru Duca, Pierpaolo Frasa, Denis Gorbachev, Winston de Greef, Darij Grinberg, Mathieu Guay-Paquet, Rik Heurter, Marc Huisinga, Benjamin Jones, Julian Külshammer, Victor Liu, Jimmy Lu, Martin C. Martin, Giovanni Mascellani, John McDowell, Joseph McKinsey, Bhavik Mehta, Sebastian Miele, Isaiah Mindich, Kabelo Moiloa, Hunter Monroe, Pietro Monticone, Oliver Nash, Emanuelle Natale, Filippo A. E. Nuccio, Pim Otte, Nicolas Rolland, Keith Rush, Yannick Seurin, Guilherme Silva, Bernardo Subercaseaux, Pedro Sánchez Terraf, Matthew Toohey, Alistair Tucker, Floris van Doorn, Veniamin Viflyantsev, Eric Wieser, その他の方々。<br>
+                私たちの研究は、形式数学のためのホスキンソン・センター（Hoskinson Center for Formal Mathematics）からの部分的支援を受けて行われました。
+            </div>
+        </main>
+
+    </div>
+
+</body>
+</html>
