@@ -200,6 +200,450 @@ theorem hard : FermatLastTheorem := sorry
                 Takeshi Abe, Julian Berman, Alex Best, Axel Boldt, Thomas Browning, Bulwi Cha, Hanson Char, Bryan Gin-ge Chen, Steven Clontz, Mauricio Collaris, Johan Commelin, Mark Czubin, Alexandru Duca, Pierpaolo Frasa, Denis Gorbachev, Winston de Greef, Darij Grinberg, Mathieu Guay-Paquet, Rik Heurter, Marc Huisinga, Benjamin Jones, Julian Külshammer, Victor Liu, Jimmy Lu, Martin C. Martin, Giovanni Mascellani, John McDowell, Joseph McKinsey, Bhavik Mehta, Sebastian Miele, Isaiah Mindich, Kabelo Moiloa, Hunter Monroe, Pietro Monticone, Oliver Nash, Emanuelle Natale, Filippo A. E. Nuccio, Pim Otte, Nicolas Rolland, Keith Rush, Yannick Seurin, Guilherme Silva, Bernardo Subercaseaux, Pedro Sánchez Terraf, Matthew Toohey, Alistair Tucker, Floris van Doorn, Veniamin Viflyantsev, Eric Wieser, その他の方々。<br>
                 私たちの研究は、形式数学のためのホスキンソン・センター（Hoskinson Center for Formal Mathematics）からの部分的支援を受けて行われました。
             </div>
+
+</a></li>
+                <li><a href="#">お知らせ</a></li>
+                <li><a href="#">お問い合わせ</a></li>
+            </ul>
+        </nav>
+
+        <!-- 右側のメインコンテンツ -->
+<!--        <main class="main-content">-->
+            <h1>2. 基本事項（Basics）</h1>
+            <p>本章の目的は、Leanにおける数学的推論の基本、すなわち「計算の実行」「補題や定理の適用」「汎用的な構造についての推論」を学ぶことです。</p>
+
+            <h2 id="calculating">2.1. 計算（Calculating）</h2>
+            <p>私たちは通常、数学的な計算を行う際、それを証明として意識することはありません。しかし、Leanが要求するように計算の各ステップを正当化していくと、その結果として「計算の左辺と右辺が等しい」という証明が完成します。</p>
+            <p>Leanでは、定理を述べることはゴール（すなわち、その定理を証明するというゴール）を述べることと同義です。Leanには、ゴールの等式の左辺を右辺で置き換えるための <code>rw</code>（rewrite）タクティクが用意されています。<em>a</em>、<em>b</em>、<em>c</em> が実数であるとき、<code>mul_assoc a b c</code> は等式 <code>a * b * c = a * (b * c)</code> であり、<code>mul_comm a b</code> は等式 <code>a * b = b * a</code> です。Leanには、このような事実を明示的に言及する必要性を一般になくしてくれる自動化機能が備わっていますが、ここでは説明の目的のためにこれらを使用します。Leanでは乗算は左結合であるため、<code>mul_assoc</code> の左辺は <code>(a * b) * c</code> と書くこともできます。しかし、Leanの記法上の規約に留意し、Leanがそうするように括弧を省略するのが一般に良いスタイルとされています。</p>
+            <p>実際に <code>rw</code> を試してみましょう。</p>
+            <pre><code>example (a b c : ℝ) : a * b * c = b * (a * c) := by
+  rw [mul_comm a b]
+  rw [mul_assoc b a c]</code></pre>
+
+            <p>対応する例ファイルの先頭にある <code>module</code> および <code>public import</code> 行は、Mathlibから実数の理論と便利な自動化機能をインポートします。より正確には、<code>module</code> 行はMathlibから <code>public</code> とマークされた定義と定理のみをインポートするようにLeanに指示し、<code>public</code> キーワードは、このファイルをインポートするすべてのファイルにおいてそれらを公開し続けるようLeanに指示します。これらの詳細については今のところ無視して構いません。「import」コマンドは、Mathlibのどの部分を使用したいかをLeanに伝えるものである、という点を知っておくことが最も重要です。紙幅の都合上、本書ではこのような情報は一般に省略しています。</p>
+
+            <p>変更を加えるとどうなるか、自由に試してみてください。VS Codeでは、ℝ 文字を <code>\R</code> または <code>\real</code> と入力できます。スペースキーまたはタブキーを押すまで、記号は表示されません。Leanファイルを読んでいるときに記号にカーソルを合わせると、その入力に使用できる構文がVS Codeに表示されます。利用可能なすべての省略形を確認したい場合は、<code>Ctrl-Shift-P</code> を押してから <code>abbreviations</code> と入力すると、<code>Lean 4: Show Unicode Input Abbreviations</code> コマンドにアクセスできます。お使いのキーボードにアクセスしやすいバックスラッシュがない場合は、<code>lean4.input.leader</code> 設定を変更することで先頭の文字を変更できます。</p>
+
+            <p>タクティクによる証明の途中にカーソルがある場合、Leanは <code>Lean Infoview</code> ウィンドウに現在の<strong>証明の状態（proof state）</strong>を表示します。証明の各ステップを進めるにつれて、状態の変化を確認できます。Leanにおける典型的な証明の状態は、次のような見た目をしています：</p>
+            <pre><code>1 goal
+x y : ℕ,
+h₁ : Prime x,
+h₂ : ¬Even x,
+h₃ : y > x
+⊢ y ≥ 4</code></pre>
+            <p><code>⊢</code> で始まる行より前の行は<strong>コンテキスト（context）</strong>を表しており、現在有効なオブジェクトと仮定を示しています。この例では、それぞれが自然数である <em>x</em> と <em>y</em> という2つのオブジェクトが含まれています。また、<em>h</em>₁, <em>h</em>₂, <em>h</em>₃ とラベル付けされた3つの仮定も含まれています。Leanでは、コンテキスト内のすべてのものに識別子がラベル付けされます。これらの下付文字のラベルは <code>h\1</code>、<code>h\2</code>、<code>h\3</code> と入力できますが、どの正当な識別子でも構いません。代わりに <code>h1</code>、<code>h2</code>、<code>h3</code> を使っても良いですし、<code>foo</code>、<code>bar</code>、<code>baz</code> でも構いません。最後の行は<strong>ゴール（goal）</strong>、すなわち証明すべき事実を表します。証明すべき事実に対して <code>target</code> という言葉を使い、コンテキストとターゲットの組み合わせに対して <code>goal</code> という言葉を使う人もいます。実用上、意図される意味は通常明確です。</p>
+
+            <p>それぞれの場所で <code>sorry</code> をタクティク証明に置き換えながら、次の等式を証明してみてください。<code>rw</code> タクティクでは、左矢印（<code>\l</code>）を使用して等式を逆に適用することができます。例えば、<code>rw [← mul_assoc a b c]</code> は、現在のゴール内の <code>a * (b * c)</code> を <code>a * b * c</code> に置き換えます。左を向く矢印は、<code>mul_assoc</code> が提供する等式を右から左へ辿ることを指しており、ゴールの左側や右側とは何ら関係がないことに注意してください。</p>
+            <pre><code>example (a b c : ℝ) : c * b * a = b * (a * c) := by
+  sorry
+
+example (a b c : ℝ) : a * (b * c) = b * (a * c) := by
+  sorry</code></pre>
+
+            <p>また、<code>mul_assoc</code> や <code>mul_comm</code> のような等式を引数なしで使用することもできます。この場合、書き換え（rewrite）タクティクは、最初に見つかったパターンを使用して、左辺とゴール内の式をマッチさせようと試みます。</p>
+            <pre><code>example (a b c : ℝ) : a * b * c = b * c * a := by
+  rw [mul_assoc]
+  rw [mul_comm]</code></pre>
+
+            <p><strong>部分的な</strong>情報を与えることもできます。例えば、<code>mul_comm a</code> は <code>a * ?</code> の形の任意のパターンにマッチし、<code>? * a</code> に書き換えます。引数を一切与えずに1番目の例を解き、引数を1つだけ与えて2番目の例を解いてみてください。</p>
+            <pre><code>example (a b c : ℝ) : a * (b * c) = b * (c * a) := by
+  sorry
+
+example (a b c : ℝ) : a * (b * c) = b * (a * c) := by
+  sorry</code></pre>
+
+            <p>ローカルコンテキストにある事実と一緒に <code>rw</code> を使用することもできます。</p>
+            <pre><code>example (a b c d e f : ℝ) (h : a * b = c * d) (h' : e = f) : a * (b * e) = c * (d * f) := by
+  rw [h']
+  rw [← mul_assoc]
+  rw [h]
+  rw [mul_assoc]</code></pre>
+            <p>2番目の例では定理 <code>sub_self</code> を使用して、次を解いてみてください：</p>
+            <pre><code>example (a b c d e f : ℝ) (h : b * c = e * f) : a * b * c * d = a * e * f * d := by
+  sorry
+
+example (a b c d : ℝ) (hyp : c = b * a - d) (hyp' : d = a * b) : c = 0 := by
+  sorry</code></pre>
+
+            <p>角括弧の中にカンマで区切って関連する等式を並べることで、複数の書き換えコマンドをひとつのコマンドで実行できます。</p>
+            <pre><code>example (a b c d e f : ℝ) (h : a * b = c * d) (h' : e = f) : a * (b * e) = c * (d * f) := by
+  rw [h', ← mul_assoc, h, mul_assoc]</code></pre>
+            <p>書き換えのリスト内のカンマの後にカーソルを置くことで、段階的な進捗を確認することができます。</p>
+
+            <p>もう一つのテクニックとして、例や定理の外側で変数を一度だけ宣言するという方法があります。これにより、Leanはそれらを自動的に含めてくれます。</p>
+            <pre><code>variable (a b c d e f : ℝ)
+
+example (h : a * b = c * d) (h' : e = f) : a * (b * e) = c * (d * f) := by
+  rw [h', ← mul_assoc, h, mul_assoc]</code></pre>
+            <p>上記証明の開始時点におけるタクティク状態を検査すると、Leanが実際にすべての変数を含めていることが分かります。宣言の有効範囲は、<code>section</code> ... <code>end</code> ブロック内に置くことで区切ることができます。最後に、導入部で触れたように、Leanには式の型を決定するコマンドが用意されていることを思い出してください：</p>
+            <pre><code>section
+variable (a b c : ℝ)
+
+#check a
+#check a + b
+#check (a : ℝ)
+#check mul_comm a b
+#check (mul_comm a b : a * b = b * a)
+#check mul_assoc c a b
+#check mul_comm a
+#check mul_comm
+end</code></pre>
+
+            <p><code>#check</code> コマンドは、オブジェクトと事実の両方に対して機能します。<code>#check a</code> というコマンドに対して、Leanは <em>a</em> が ℝ 型であると報告します。<code>#check mul_comm a b</code> というコマンドに対して、Leanは <code>mul_comm a b</code> が <code>a * b = b * a</code> という事実の証明であると報告します。コマンド <code>#check (a : ℝ)</code> は、<em>a</em> の型が ℝ であるという私たちの期待を表明するものであり、そうでない場合、Leanはエラーを発生させます。最後の3つの <code>#check</code> コマンドの出力については後ほど説明しますが、その間にそれらを確認したり、ご自身の <code>#check</code> コマンドをいくつか試したりしてみてください。</p>
+
+            <p>さらにいくつかの例を試してみましょう。定理 <code>two_mul a</code> は <code>2 * a = a + a</code> であることを述べます。定理 <code>add_mul</code> および <code>mul_add</code> は乗算の加算に対する分配律を表し、定理 <code>add_assoc</code> は加算の結合律を表します。正確な記述を確認するには、<code>#check</code> コマンドを使用してください。</p>
+            <pre><code>example : (a + b) * (a + b) = a * a + 2 * (a * b) + b * b := by
+  rw [mul_add, add_mul, add_mul]
+  rw [← add_assoc, add_assoc (a * a)]
+  rw [mul_comm b a, ← two_mul]</code></pre>
+
+            <p>エディタでステップ実行して何が起きているかを把握することは可能ですが、これ単体では読むのが困難です。Leanには、<code>calc</code> キーワードを使用してこのような証明をより構造化して書く方法が用意されています。</p>
+            <pre><code>example : (a + b) * (a + b) = a * a + 2 * (a * b) + b * b :=
+  calc
+    (a + b) * (a + b) = a * a + b * a + (a * b + b * b) := by
+      rw [mul_add, add_mul, add_mul]
+    _ = a * a + (b * a + a * b) + b * b := by
+      rw [← add_assoc, add_assoc (a * a)]
+    _ = a * a + 2 * (a * b) + b * b := by
+      rw [mul_comm b a, ← two_mul]</code></pre>
+
+            <p>証明が <code>by</code> で始まっていないことに注意してください。<code>calc</code> で始まる式は<strong>証明項（proof term）</strong>です。<code>calc</code> 式はタクティク証明の中でも使用できますが、Leanはそれを「結果として得られる証明項を使用してゴールを解く」という指示として解釈します。<code>calc</code> の構文は厳格です。アンダースコアと正当化（justification）は上記で示されたフォーマットに従う必要があります。Leanは、タクティクのブロックや <code>calc</code> ブロックがどこで始まりどこで終わるかなどの判定にインデントを利用します。上の証明のインデントを変更して何が起きるか試してみてください。</p>
+
+            <p><code>calc</code> 証明を書く一つの方法として、正当化のために <code>sorry</code> タクティクを使用してまず全体の輪郭を描き、Leanがそれらを法として式を受け入れることを確認してから、タクティクを使って個々のステップを正当化するというやり方があります。</p>
+            <pre><code>example : (a + b) * (a + b) = a * a + 2 * (a * b) + b * b :=
+  calc
+    (a + b) * (a + b) = a * a + b * a + (a * b + b * b) := by
+      sorry
+    _ = a * a + (b * a + a * b) + b * b := by
+      sorry
+    _ = a * a + 2 * (a * b) + b * b := by
+      sorry</code></pre>
+
+            <p>純粋な <code>rw</code> 証明と、より構造化された <code>calc</code> 証明の両方を使って、次の等式を証明してみてください：<br>
+            以下の演習問題は少し挑戦しがいがあります。下部に挙げられている定理を使用できます（すべてを使う必要はありません）。</p>
+            <pre><code>example (a b : ℝ) : (a + b) * (a - b) = a ^ 2 - b ^ 2 := by
+  sorry
+
+#check pow_two a
+#check mul_sub a b c
+#check add_mul a b c
+#check add_sub a b c
+#check sub_sub a b c
+#check sub_add a b c
+#check add_zero a
+#check sub_zero a
+#check sub_self a</code></pre>
+
+            <p>コンテキスト内の仮定に対して書き換えを行うこともできます。例えば、<code>rw [mul_comm a b] at hyp</code> は、仮定 <code>hyp</code> の中の <code>a * b</code> を <code>b * a</code> に置き換えます。</p>
+            <pre><code>variable (a b c d : ℝ)
+
+example (hyp : c = d * a + b) (hyp' : b = a * d) : c = 2 * a * d := by
+  rw [hyp'] at hyp
+  rw [mul_comm d a] at hyp
+  rw [← two_mul (a * d)] at hyp
+  rw [← mul_assoc 2 a d] at hyp
+  exact hyp</code></pre>
+            <p>最後のステップでは、その時点で <code>hyp</code> がゴールと完全に一致するため、<code>exact</code> タクティクは <code>hyp</code> を用いてゴールを解くことができます。</p>
+
+            <p>本節の締めくくりとして、Mathlibには <code>ring</code> タクティクという便利な自動化機能が備わっていることに触れておきます。これは、ローカルな仮定を使用せず、もっぱら環の公理から従う限り、任意の可換環における等式を証明するように設計されています。</p>
+            <pre><code>example : c * b * a = b * (a * c) := by
+  ring
+
+example : (a + b) * (a + b) = a * a + 2 * (a * b) + b * b := by
+  ring
+
+example : (a + b) * (a - b) = a ^ 2 - b ^ 2 := by
+  ring
+
+example (hyp : c = d * a + b) (hyp' : b = a * d) : c = 2 * a * d := by
+  rw [hyp, hyp']
+  ring</code></pre>
+            <p><code>ring</code> タクティクは、<code>Mathlib.Basic.Real.Basic</code> を public importするときに間接的にインポートされますが、次のセクションで見るとおり、実数以外の構造に関する計算にも使用できます。これはコマンド <code>import Mathlib.Tactic</code> で明示的にインポートすることもできます。他の一般的な種類の代数構造に対しても、同様のタクティクが存在することが分かります。</p>
+
+            <p><code>rw</code> のバリエーションとして <code>nth_rw</code> と呼ばれるものがあり、これを使うとゴール内の式の特定の部分インスタンスのみを置き換えることができます。可能なマッチは1から始まる番号で列挙されるため、次の例では、<code>nth_rw 2 [h]</code> は <code>a + b</code> の2番目の出現を <em>c</em> に置き換えます。</p>
+            <pre><code>example (a b c : ℕ) (h : a + b = c) : (a + b) * (a + b) = a * c + b * c := by
+  nth_rw 2 [h]
+  rw [add_mul]</code></pre>
+
+            <h2 id="algebraic-structures">2.2. 代数構造における等式の証明（Proving Identities in Algebraic Structures）</h2>
+            <p>数学的に、環（ring）は、オブジェクトの集合 <em>R</em>、演算 <code>+</code> および <code>*</code>、定数 <code>0</code> および <code>1</code>、そして演算 <code>-</code> からなり、以下を満たします：</p>
+            <ul>
+                <li><code>+</code> を伴う <em>R</em> はアーベル群であり、<code>0</code> が加法の単位元、加法逆元がマイナスである。</li>
+                <li>乗算は単位元 <code>1</code> を持って結合的であり、乗算は加算に対して分配する。</li>
+            </ul>
+            <p>Leanでは、オブジェクトの集合は型 <em>R</em> として表現されます。環の公理は以下の通りです：</p>
+            <pre><code>variable (R : Type*) [Ring R]
+
+#check (add_assoc : ∀ a b c : R, a + b + c = a + (b + c))
+#check (add_comm : ∀ a b : R, a + b = b + a)
+#check (zero_add : ∀ a : R, 0 + a = a)
+#check (neg_add_cancel : ∀ a : R, -a + a = 0)
+#check (mul_assoc : ∀ a b c : R, a * b * c = a * (b * c))
+#check (mul_one : ∀ a : R, a * 1 = a)
+#check (one_mul : ∀ a : R, 1 * a = a)
+#check (mul_add : ∀ a b c : R, a * (b + c) = a * b + a * c)
+#check (add_mul : ∀ a b c : R, (a + b) * c = a * c + b * c)</code></pre>
+
+            <p>最初の行にある角括弧については後ほど詳しく学びますが、現時点では、この宣言によって型 <em>R</em> と、<em>R</em> 上の環構造が得られる、と言えば十分です。これによりLeanでは、<em>R</em> の元に対して一般的な環の表記法を使用できるようになり、環に関する定理のライブラリを利用できるようになります。</p>
+
+            <p>定理の名のいくつかは見覚えがあるはずです：それらはまさに前節で実数の計算に使用したものです。Leanは、自然数や整数のような具体的な数学的構造についての証明だけでなく、環のように公理的に特徴づけられる抽象的な構造についての証明にも優れています。さらに、Leanは抽象的構造と具体的構造の両方に関する<strong>汎用的な推論（generic reasoning）</strong>をサポートしており、適切なインスタンスを認識するように訓練することができます。したがって、環に関する任意の定理を、整数 ℤ、有理数 ℚ、複素数 ℂ といった具体的な環に適用することができます。また、順序環や体など、環を拡張する抽象構造の任意のインスタンスにも適用できます。</p>
+
+            <p>ただし、実数のすべての重要な性質が任意の環で成り立つわけではありません。例えば、実数における乗算は可換ですが、それは一般には成り立ちません。線形代数のコースを受講したことがある方であれば、任意の環において、実数の <em>n</em> 次正方行列全体が通常は可換性が成り立たない環をなすことが分かるでしょう。実際、<em>R</em> を<strong>可換</strong>環（commutative ring）として宣言すれば、ℝ を <em>R</em> に置き換えても前節のすべての定理がそのまま成り立ちます。</p>
+            <pre><code>variable (R : Type*) [CommRing R]
+variable (a b c d : R)
+
+example : c * b * a = b * (a * c) := by ring
+example : (a + b) * (a + b) = a * a + 2 * (a * b) + b * b := by ring
+example : (a + b) * (a - b) = a ^ 2 - b ^ 2 := by ring
+example (hyp : c = d * a + b) (hyp' : b = a * d) : c = 2 * a * d := by
+  rw [hyp, hyp']
+  ring</code></pre>
+
+            <p>残りの証明がそのまま成り立つことの確認は読者の皆様にお任せします。証明が <code>by ring</code> や <code>by linarith</code>、<code>by sorry</code> のように短い場合、それを <code>by</code> と同じ行に置くことが一般的であり（かつ許容されており）、推奨されます。良い証明記述のスタイルは、簡潔性と可読性のバランスを取るべきです。</p>
+
+            <p>本節の目的は、前節で培ったスキルを強化し、それを環に関する公理的推論に応用することです。上記の公理から始めて、他の事実を導出します。私たちが証明する事実のほとんどはすでにMathlibに含まれています。ライブラリの内容や命名規則を学べるよう、証明するバージョンには同じ名前を付けます。</p>
+
+            <p>Leanにはプログラミング言語で使用されるものと同様の組織化の仕組みが用意されています：定義や定理 <code>foo</code> が名前空間 <code>bar</code> 内で導入されるとき、その完全な名前は <code>bar.foo</code> になります。その後のコマンド <code>open bar</code> は名前空間を開き、より短い名前 <code>foo</code> を使用できるようにします。名前の衝突によるエラーを避けるため、次の例では、ライブラリの定理の私たちのバージョンを <code>MyRing</code> という新しい名前空間に入れます。</p>
+
+            <p>次の例は、他の公理から従うため、<code>add_zero</code> や <code>add_neg_cancel</code> を環の公理として必要としないことを示しています。</p>
+            <pre><code>namespace MyRing
+variable {R : Type*} [Ring R]
+
+theorem add_zero (a : R) : a + 0 = a := by rw [add_comm, zero_add]
+
+theorem add_neg_cancel (a : R) : a + -a = 0 := by rw [add_comm, neg_add_cancel]
+
+#check MyRing.add_zero
+#check add_zero
+
+end MyRing</code></pre>
+
+            <p>結果として、ライブラリ内の定理を一時的に再証明し、その後はライブラリのバージョンを使い続けることができます。しかし、ズルをしてはいけません！続く演習問題では、このセクションの前半で証明した環に関する一般的な事実のみを使用するように注意してください。</p>
+
+            <p>（注意深く見ておられる方であれば、<code>(R : Type*)</code> の丸括弧が <code>{R : Type*}</code> の波括弧に変更されていることに気づいたかもしれません。これは <em>R</em> を<strong>暗黙の引数（implicit argument）</strong>として宣言するものです。これが何を意味するかは後ほど説明しますが、現時点では気にしないでください。）</p>
+
+            <p>ここに有用な定理があります：</p>
+            <pre><code>theorem neg_add_cancel_left (a b : R) : -a + (a + b) = b := by
+  rw [← add_assoc, neg_add_cancel, zero_add]</code></pre>
+            <p>対となるバージョンを証明してください：</p>
+            <pre><code>theorem add_neg_cancel_right (a b : R) : a + b + -b = a := by
+  sorry</code></pre>
+            <p>これらを使用して次を証明してください：</p>
+            <pre><code>theorem add_left_cancel {a b c : R} (h : a + b = a + c) : b = c := by
+  sorry
+
+theorem add_right_cancel {a b c : R} (h : a + b = c + b) : a = c := by
+  sorry</code></pre>
+            <p>十分な計画を立てれば、それぞれ3回の書き換えで実行できます。</p>
+
+            <p>それでは、波括弧の使用法について説明します。コンテキスト内に <em>a</em>、<em>b</em>、<em>c</em> があり、さらに仮定 <code>h : a + b = a + c</code> があって、結論 <code>b = c</code> を導き出したいという状況を想像してください。Leanでは、オブジェクトに適用するのと全く同じ方法で、定理を仮定や事実にも適用できるため、<code>add_left_cancel a b c h</code> が事実 <code>b = c</code> の証明であると思われるかもしれません。しかし、<em>a</em>、<em>b</em>、<em>c</em> を明示的に記述することは冗長であることに注意してください。なぜなら、仮定 <code>h</code> がそれらが念頭に置いているオブジェクトであることを明確にしているからです。この場合、数文字多くタイピングすることは大きな負担ではありませんが、より複雑な式に <code>add_left_cancel</code> を適用したい場合、それらを書き下すのは面倒です。このような場合に備えて、Leanでは引数を<strong>暗黙（implicit）</strong>としてマークすることができます。これは、それらを省略し、後の引数や仮定などの他の手段から推論させるべきであることを意味します。<code>{a b c : R}</code> の波括弧はまさにそれを行います。したがって、上記の定理の記述が与えられたとき、正しい式は単に <code>add_left_cancel h</code> となります。</p>
+
+            <p>例として、<code>a * 0 = 0</code> が環の公理から従うことを示しましょう。</p>
+            <pre><code>theorem mul_zero (a : R) : a * 0 = 0 := by
+  have h : a * 0 + a * 0 = a * 0 + 0 := by
+    rw [← mul_add, add_zero, add_zero]
+  rw [add_left_cancel h]</code></pre>
+
+            <p>新しいテクニックを使用しました！ステップ実行すると、何が起きているか分かります。<code>have</code> タクティクは、元のゴールと同じコンテキストで、新しいゴール <code>a * 0 + a * 0 = a * 0 + 0</code> を導入します。次の行がインデントされているという事実は、Leanがこの新しいゴールを証明するためのタクティクのブロックを期待していることを示しています。したがって、インデントはモジュール式の証明スタイルを促進します：インデントされたサブ証明が <code>have</code> によって導入されたゴールを確立します。その後、新しい仮定 <code>h</code> が追加された点を除いて、元のゴールの証明に戻ります：それを証明したため、自由にそれを使用できるようになります。この時点で、ゴールはまさに <code>add_left_cancel h</code> の結果となります。</p>
+
+            <p><code>apply add_left_cancel h</code> または <code>exact add_left_cancel h</code> で証明を締めくくることも同様に可能です。<code>exact</code> タクティクは、新しいゴールを一切作成せずに、現在のゴールを完全に証明する証明項を引数として取ります。<code>apply</code> タクティクはその変種であり、その引数は必ずしも完全な証明である必要はありません。足りない部分はLeanによって自動的に推論されるか、証明すべき新しいゴールになります。<code>exact</code> タクティクは、<code>apply</code> よりも厳密に能力が低いため技術的には冗長ですが、人間にとって証明スクリプトをわずかに分かりやすくし、ライブラリが発展したときの保守を容易にします。</p>
+
+            <p>乗算は可換であるとは仮定されていないため、次の定理にもいくらかの作業が必要です。</p>
+            <pre><code>theorem zero_mul (a : R) : 0 * a = 0 := by
+  sorry</code></pre>
+
+            <p>ここまでくれば、<code>a = b</code> が <code>b = a</code> を意味する補題 <code>Eq.symm</code> と共に、このセクションで確立した環に関する事実のみを使用して、次の演習におけるそれぞれの <code>sorry</code> を証明に置き換えることができるはずです。</p>
+            <pre><code>theorem neg_eq_of_add_eq_zero {a b : R} (h : a + b = 0) : -a = b := by
+  sorry
+
+theorem eq_neg_of_add_eq_zero {a b : R} (h : a + b = 0) : a = -b := by
+  sorry
+
+theorem neg_zero : (-0 : R) = 0 := by
+  apply neg_eq_of_add_eq_zero
+  rw [add_zero]
+
+theorem neg_neg (a : R) : - -a = a := by
+  sorry</code></pre>
+            <p>3番目の定理では、<code>0</code> の代わりに注釈 <code>(-0 : R)</code> を使用する必要がありました。なぜなら、<em>R</em> を指定しない場合、私たちがどの <code>0</code> を念頭に置いているかをLeanが推論することは不可能であり、デフォルトでは自然数として解釈されてしまうからです。</p>
+
+            <p>Leanでは、環における減算は、加法逆元の加算と証明可能に等しいです。</p>
+            <pre><code>example (a b : R) : a - b = a + -b :=
+  sub_eq_add_neg a b</code></pre>
+            <p>実数上では、それはそのように<strong>定義</strong>されています：</p>
+            <pre><code>example (a b : ℝ) : a - b = a + -b :=
+  rfl
+
+example (a b : ℝ) : a - b = a + -b := by
+  rfl</code></pre>
+            <p>証明項 <code>rfl</code> は「反射律（reflexivity）」の略です。これを <code>a - b = a + -b</code> の証明として提示すると、Leanは定義を展開し、両辺が同一であることを認識するよう強いられます。<code>rfl</code> タクティクも同様のことを行います。これはLeanの基盤となるロジックにおける<strong>定義的等式（definitional equality）</strong>として知られるもののインスタンスです。これは、<code>sub_eq_add_neg</code> で書き換えて <code>a - b = a + -b</code> を置き換えることができるだけでなく、いくつかの文脈（実数を扱う場合など）では、等式の両辺を互換的に使用できることを意味します。例えば、前節の定理 <code>self_sub</code> を証明するのに十分な情報が揃いました：</p>
+            <pre><code>theorem self_sub (a : R) : a - a = 0 := by
+  sorry</code></pre>
+            <p><code>rw</code> を使ってこれを証明できることを示しつつ、任意の環 <em>R</em> を実数に置き換えた場合には、<code>apply</code> または <code>exact</code> のいずれかを使って証明できることも示してください。</p>
+
+            <p>Leanは、任意の環において <code>1 + 1 = 2</code> が成り立つことを知っています。少しの労力で、それを利用して前節の定理 <code>two_mul</code> を証明することができます：</p>
+            <pre><code>example : 1 + 1 = (2 : R) := by
+  norm_num
+
+theorem two_mul (a : R) : 2 * a = a + a := by
+  sorry</code></pre>
+
+            <p>本節の締めくくりとして、上記で確立した加算とマイナスに関する事実の一部は、環の公理のフルパワーや、加算の可換性さえも必要としないことに触れておきます。より弱い概念である<strong>群（group）</strong>は、次のように公理化できます：</p>
+            <pre><code>variable (A : Type*) [AddGroup A]
+
+#check (add_assoc : ∀ a b c : A, a + b + c = a + (b + c))
+#check (zero_add : ∀ a : A, 0 + a = a)
+#check (neg_add_cancel : ∀ a : A, -a + a = 0)</code></pre>
+            <p>群演算が可換である場合は加法記法を使用するのが慣習であり、そうでない場合は乗法記法を使用します。そのため、Leanは加法バージョンと同様に乗法バージョン（およびそのアーベル版である <code>AddCommGroup</code> と <code>CommGroup</code>）も定義しています。</p>
+            <pre><code>variable {G : Type*} [Group G]
+
+#check (mul_assoc : ∀ a b c : G, a * b * c = a * (b * c))
+#check (one_mul : ∀ a : G, 1 * a = a)
+#check (inv_mul_cancel : ∀ a : G, a⁻¹ * a = 1)</code></pre>
+            <p>もし自信があれば、これらの公理のみを使用して、群に関する次の事実を証明してみてください。その過程で、いくつかのヘルパー補題を証明する必要があります。このセクションで私たちが実行した証明は、いくつかのヒントを提供しています。</p>
+            <pre><code>theorem mul_inv_cancel (a : G) : a * a⁻¹ = 1 := by
+  sorry
+
+theorem mul_one (a : G) : a * 1 = a := by
+  sorry
+
+theorem mul_inv_rev (a b : G) : (a * b)⁻¹ = b⁻¹ * a⁻¹ := by
+  sorry</code></pre>
+            <p>それらの補題を明示的に呼び出すのは面倒なため、Mathlibにはほとんどの用途をカバーするために <code>ring</code> に似たタクティクが用意されています：非可換乗法群に対しては <code>group</code>、アーベル加法群に対しては <code>abel</code>、非可換環に対しては <code>noncomm_ring</code> があります。代数構造が <code>Ring</code> と <code>CommRing</code> と呼ばれる一方で、タクティクが <code>noncomm_ring</code> と <code>ring</code> と名付けられているのは奇妙に見えるかもしれません。これは歴史的な理由もありますが、可換環を扱うタクティクの方が頻繁に使用されるため、より短い名前を使用する利便性のためでもあります。</p>
+
+            <h2 id="using-theorems-and-lemmas">2.3. 定理と補題の使用（Using Theorems and Lemmas）</h2>
+            <p>書き換えは等式の証明には最適ですが、他の種類の定理についてはどうでしょうか？例えば、 <em>a</em> ≤ <em>b</em> であるときはいつでも <em>f</em>(<em>a</em>) ≤ <em>f</em>(<em>b</em>) が成り立つというような不等式をどのように証明すればよいでしょうか？定理を引数や仮定に適用できること、そして <code>apply</code> や <code>exact</code> タクティクを用いてゴールを解けることはすでに見てきました。本節では、これらのツールを大いに活用します。</p>
+
+            <p>ライブラリの定理 <code>le_refl</code> と <code>le_trans</code> を考えてみましょう：</p>
+            <pre><code>#check (le_refl : ∀ a : ℝ, a ≤ a)
+#check (le_trans : a ≤ b → b ≤ c → a ≤ c)</code></pre>
+            <p>3.1節 で詳しく説明するように、<code>le_trans</code> の記述における暗黙の括弧は右結合であるため、これは <code>a ≤ b → (b ≤ c → a ≤ c)</code> として解釈されるべきです。ライブラリの設計者は、Leanがそれらを明示的に提供させてしまわないように（後で説明するように、どうしても主張する場合を除き）、<code>le_trans</code> の引数 <em>a</em>、<em>b</em>、<em>c</em> を暗黙に設定しています。むしろ、それらが使用されるコンテキストから推論されることを期待しています。例えば、仮定 <code>h : a ≤ b</code> と <code>h' : b ≤ c</code> がコンテキストにある場合、以下のすべてが機能します：</p>
+            <pre><code>variable (h : a ≤ b) (h' : b ≤ c)
+
+#check (le_refl : ∀ a : Real, a ≤ a)
+#check (le_refl a : a ≤ a)
+#check (le_trans : a ≤ b → b ≤ c → a ≤ c)
+#check (le_trans h : b ≤ c → a ≤ c)
+#check (le_trans h h' : a ≤ c)</code></pre>
+
+            <p><code>apply</code> タクティクは、一般のステートメントや含意の証明を受け取り、結論を現在のゴールにマッチさせようとし、もしあれば仮定を新しいゴールとして残します。与えられた証明が（定義的等式を法として）ゴールと完全に一致する場合、<code>apply</code> の代わりに <code>exact</code> タクティクを使用できます。したがって、これらはすべて機能します：</p>
+            <pre><code>example (x y z : ℝ) (h₀ : x ≤ y) (h₁ : y ≤ z) : x ≤ z := by
+  apply le_trans
+  · apply h₀
+  · apply h₁
+
+example (x y z : ℝ) (h₀ : x ≤ y) (h₁ : y ≤ z) : x ≤ z := by
+  apply le_trans h₀
+  apply h₁
+
+example (x y z : ℝ) (h₀ : x ≤ y) (h₁ : y ≤ z) : x ≤ z :=
+  le_trans h₀ h₁
+
+example (x : ℝ) : x ≤ x := by
+  apply le_refl
+
+example (x : ℝ) : x ≤ x :=
+  le_refl x</code></pre>
+            <p>最初の例では、<code>le_trans</code> を適用すると2つのゴールが生成され、それぞれの証明がどこから始まるかを示すために中黒（ドット）を使用しています。ドットは省略可能ですが、ゴールを<strong>フォーカス（focus）</strong>する役割を果たします：ドットによって導入されたブロック内では1つのゴールのみが見えており、ブロックが終了する前にそれを完了しなければなりません。ここでは、別のドットで新しいブロックを開始することで最初のブロックを終了しています。インデントを減らしても同様に機能します。3番目の例と最後の例では、タクティクモードに入ることを完全に回避しています：<code>le_trans h₀ h₁</code> と <code>le_refl x</code> は私たちが必要とする証明項です。</p>
+
+            <p>ライブラリの定理をもう少し挙げます：</p>
+            <pre><code>#check (le_refl : ∀ a, a ≤ a)
+#check (le_trans : a ≤ b → b ≤ c → a ≤ c)
+#check (lt_of_le_of_lt : a ≤ b → b < c → a < c)
+#check (lt_of_lt_of_le : a < b → b ≤ c → a < c)
+#check (lt_trans : a < b → b < c → a < c)</code></pre>
+            <p>これらを <code>apply</code> や <code>exact</code> と一緒に使用して、次を証明してください：</p>
+            <pre><code>example (h₀ : a ≤ b) (h₁ : b < c) (h₂ : c ≤ d) (h₃ : d < e) : a < e := by
+  sorry</code></pre>
+
+            <p>実際、Leanにはこの種の処理を自動で行うタクティクがあります：</p>
+            <pre><code>example (h₀ : a ≤ b) (h₁ : b < c) (h₂ : c ≤ d) (h₃ : d < e) : a < e := by
+  linarith</code></pre>
+            <p><code>linarith</code> タクティクは<strong>線形算術（linear arithmetic）</strong>を処理するように設計されています。</p>
+            <pre><code>example (h : 2 * a ≤ 3 * b) (h' : 1 ≤ a) (h'' : d = 2) : d + a ≤ 5 * b := by
+  linarith</code></pre>
+
+            <p>コンテキスト内の等式や不等式に加えて、<code>linarith</code> は引数として渡す追加の不等式も使用します。次の例では、後で説明するように、<code>exp_le_exp.mpr h'</code> は <code>exp b ≤ exp c</code> の証明です。Leanでは、事実や定理 <em>h</em> を引数 <em>x</em> に適用した結果を表すのに <code>h x</code> と書くのと全く同じ方法で、関数 <em>f</em> を引数 <em>x</em> に適用したことを表すために <code>f x</code> と書くことに注意してください。括弧が必要なのは、<code>f (x + y)</code> のような複合引数の場合のみです。括弧がない場合、<code>f x + y</code> は <code>(f x) + y</code> としてパースされます。</p>
+            <pre><code>example (h : 1 ≤ a) (h' : b ≤ c) : 2 + a + exp b ≤ 3 * a + exp c := by
+  linarith [exp_le_exp.mpr h']</code></pre>
+
+            <p>実数上の不等式を確立するために使用できるライブラリの定理を他にもいくつか示します。</p>
+            <pre><code>#check (exp_le_exp : exp a ≤ exp b ↔ a ≤ b)
+#check (exp_lt_exp : exp a < exp b ↔ a < b)
+#check (log_le_log : 0 < a → a ≤ b → log a ≤ log b)
+#check (log_lt_log : 0 < a → a < b → log a < log b)
+#check (add_le_add : a ≤ b → c ≤ d → a + c ≤ b + d)
+#check (add_le_add_right : a ≤ b → ∀ c, c + a ≤ c + b)
+#check (add_le_add_left : a ≤ b → ∀ c, a + c ≤ b + c)
+#check (add_lt_add_of_le_of_lt : a ≤ b → c < d → a + c < b + d)
+#check (add_lt_add_of_lt_of_le : a < b → c ≤ d → a + c < b + d)
+#check (add_lt_add_right : a < b → ∀ c, c + a < c + b)
+#check (add_lt_add_left : a < b → ∀ c, a + c < b + c)
+#check (add_nonneg : 0 ≤ a → 0 ≤ b → 0 ≤ a + b)
+#check (add_pos : 0 < a → 0 < b → 0 < a + b)
+#check (add_pos_of_pos_of_nonneg : 0 < a → 0 ≤ b → 0 < a + b)
+#check (exp_pos : ∀ a, 0 < exp a)</code></pre>
+
+            <p>定理の中には、<code>exp_le_exp</code> や <code>exp_lt_exp</code> のように「必要十分条件」を表す双方向含意（bi-implication）を使用するものがあります。（VS Codeでは <code>\lr</code> または <code>\iff</code> で入力できます）。この結合子については次章で詳しく説明します。このような定理は、ゴールを等価なものに書き換えるために <code>rw</code> と共に使用できます：</p>
+            <pre><code>example (h : a ≤ b) : exp a ≤ exp b := by
+  rw [exp_le_exp]
+  exact h</code></pre>
+            <p>しかし、本節では、<code>h : A ↔ B</code> がそのような同値性である場合、<code>h.mp</code> が正方向 <code>A → B</code> を確立し、<code>h.mpr</code> が逆方向 <code>B → A</code> を確立するという事実を利用します。ここで、<code>mp</code> は「モデウス・ポネンス（modus ponens）」の略であり、<code>mpr</code> は「モデウス・ポネンス・リバース（modus ponens reverse）」の略です。お好みであれば、<code>h.mp</code> や <code>h.mpr</code> の代わりに <code>h.1</code> や <code>h.2</code> を使用することもできます。したがって、次の証明が機能します：</p>
+            <pre><code>example (h₀ : a ≤ b) (h₁ : c < d) : a + exp c + e < b + exp d + e := by
+  apply add_lt_add_of_lt_of_le
+  · apply add_lt_add_of_le_of_lt h₀
+    apply exp_lt_exp.mpr h₁
+  apply le_refl</code></pre>
+            <p>最初の行 <code>apply add_lt_add_of_lt_of_le</code> は2つのゴールを生成し、ここでも1つ目の証明を2つ目の証明から切り離すためにドットを使用しています。</p>
+
+            <p>ご自身で次の例を試してみてください。中央の例は、具体的な数値のゴールを解くために <code>norm_num</code> タクティクを使用できることを示しています。</p>
+            <pre><code>example (h₀ : d ≤ e) : c + exp (a + d) ≤ c + exp (a + e) := by sorry
+
+example : (0 : ℝ) < 1 := by norm_num
+
+example (h : a ≤ b) : log (1 + exp a) ≤ log (1 + exp b) := by
+  have h₀ : 0 < 1 + exp a := by sorry
+  apply log_le_log h₀
+  sorry</code></pre>
+
+            <p>これらの例から、必要なライブラリの定理を見つけられることが形式化の重要な部分を占めていることは明らかです。次のような多くの戦略を利用できます：</p>
+            <ul>
+                <li>GitHubリポジトリでMathlibを閲覧する。</li>
+                <li>MathlibのウェブページのAPIドキュメントを使用する。</li>
+                <li>パターンによってLeanおよびMathlibの定義や定理を検索するために <strong>Loogle</strong> を使用する。</li>
+                <li>Mathlibの命名規則とエディタでのCtrl-space補完に頼って定理名を推測する。Leanでは、<code>A_of_B_of_C</code> と名付けられた定理は、形式 <em>B</em> と <em>C</em> の仮定から形式 <em>A</em> の何かを確立します。ここで <em>A</em>、<em>B</em>、<em>C</em> はゴールの読み上げ方を近似したものです。したがって、<code>x + y ≤ ...</code> のようなものを確立する定理はおそらく <code>add_le</code> で始まります。<code>add_le</code> と入力してCtrl-spaceを押すと、役立つ選択肢がいくつか表示されます。なお、Ctrl-spaceを2回押すと、利用可能な補完に関するより多くの情報が表示されます。</li>
+                <li>VS Codeで既存の定理名を右クリックすると、その定理が定義されているファイルへジャンプするオプション付きのメニューが表示され、その近くで類似の定理を見つけることができる。</li>
+                <li>ライブラリから関連する定理を見つけようと試みる <code>apply?</code> タクティクを使用する。</li>
+            </ul>
+            <pre><code>example : 0 ≤ a ^ 2 := by
+  -- apply?
+  exact sq_nonneg a</code></pre>
+            <p>この例で <code>apply?</code> を試すには、<code>exact</code> コマンドを削除し、前の行のコメントアウトを外してください。これらのテクニックを使って、次の例を解くために必要なものを見つけられるか試してみてください：</p>
+            <pre><code>example (h : a ≤ b) : c - exp b ≤ c - exp a := by
+  sorry</code></pre>
+            <p>同じテクニックを使用して、<code>apply?</code> の代わりに <code>linarith</code> でも同様に処理を完了できることを確認してください。</p>
+
+            <p>不等式の別の例を示します：</p>
+            <pre><code>example : 2*a*b ≤ a^2 + b^2 := by
+  have h : 0 ≤ a^2 - 2*a*b + b^2
+  calc
+    a^2 - 2*a*b + b^2 = (a - b)^2 := by ring
+    _ ≥ 0 := by apply pow_two_nonneg
+  calc
+    2*a*b = 2*a*b + 0 := by ring
+    _ ≤ 2*a*b + (a^2 - 2*a*b + b^2) := add_le_add (le_refl _) h
+    _ = a^2 + b^2 := by ring</code></pre>
+            <p>Mathlibは <code>*</code> や <code>^</code> のような二項演算子の周囲にスペースを置く傾向がありますが、この例では、より圧縮されたフォーマットにより可読性が向上しています。いくつか注目すべき点があります。第一に、式 <code>s ≥ t</code> は <code>t ≤ s</code> と定義上同値です。原則として、これはそれらを互換的に使用できるべきであることを意味します。しかし、Leanの自動化の中にはこの同値性を認識しないものもあるため、Mathlibは <code>≥</code> よりも <code>≤</code> を好む傾向があります。第二に、私たちは <code>ring</code> タクティクを多用しました。これは大変な時間の節約になります！最後に、2つ目の <code>calc</code> 証明の2行目で、<code>by exact add_le_add (le_refl _) h</code> と書く代わりに、単に証明項 <code>add_le_add (le_refl _) h</code> と書くことができることに注目してください。</p>
+
+            <p>実際、上記の証明における唯一の工夫は仮定 <em>h</em> を見つけ出すことです。それを手に入れさえすれば、2つ目の計算は線形算術のみを含んでおり、<code>linarith</code> がそれを処理できます：</p>
+            <pre><code>example : 2*a*b ≤ a^2 + b^2 := by
+  have h : 0 ≤ a^2 - 2*a*b + b^2
+  calc
+    a^2</code></pre>
+        </main>
+    </div>
+
+
         </main>
 
     </div>
